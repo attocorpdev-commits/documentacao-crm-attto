@@ -1,0 +1,178 @@
+---
+title: "Disparos"
+description: "Envie uma mesma mensagem de WhatsApp para vários contatos do CRM, com ritmo controlado e acompanhamento do resultado."
+---
+
+Na tela **Disparos** você cria campanhas: escolhe os contatos, escreve a mensagem e o CRM envia para cada pessoa, uma conversa por vez. Depois, você acompanha quem recebeu e quem respondeu.
+
+## Como acessar
+
+No menu lateral, abra **Marketing** e clique em **Disparos**. A tela abre na aba **Campanhas**.
+
+<Note>
+  Se aparecer o aviso **Disparos em massa** dizendo que seu perfil não tem permissão, peça a liberação ao responsável pela conta da sua empresa.
+</Note>
+
+<Warning>
+  Enviar muitas mensagens para pessoas que não pediram pode levar ao bloqueio do seu número de WhatsApp. Envie apenas para contatos que conhecem o seu negócio e mantenha volumes moderados.
+</Warning>
+
+## Antes de começar
+
+Você precisa de um canal de WhatsApp conectado. Veja [Conectar seu WhatsApp](/primeiros-passos/conectar-whatsapp).
+
+Se a sua empresa tem mais de um canal, escolha por qual deles a campanha sai no campo **Canal de envio**, no topo da tela. Um canal desligado aparece com **(desconectado)** ao lado do nome.
+
+O tipo de canal muda a forma de escrever a mensagem:
+
+| Tipo de canal | Como é a mensagem |
+| --- | --- |
+| **WhatsApp** (conectado por QR Code) | Texto livre, escrito por você |
+| **WhatsApp Oficial (Meta)** | Um modelo de mensagem já aprovado pela Meta, chamado de template |
+
+## Criar uma campanha
+
+O quadro **Nova Campanha** tem três partes numeradas.
+
+<Steps>
+  <Step title="Escolha os contatos">
+    Em **Origem dos contatos**, no bloco **Contatos CRM**, marque quem vai receber.
+
+    - Use **Buscar por nome ou número...** para achar uma pessoa.
+    - Clique em **Incluir tag** para mostrar só quem tem determinada tag.
+    - Clique em **Excluir tag** para tirar da lista quem tem determinada tag.
+    - Marque **Selecionar todos** para escolher todos os contatos da lista de uma vez.
+
+    O contador **no público** mostra quantas pessoas se encaixam nos filtros.
+  </Step>
+  <Step title="Dê um nome e escreva a mensagem">
+    Em **Mensagem**, preencha **Nome da campanha**. Esse nome é só para você, o contato não vê.
+
+    No canal **WhatsApp**, escreva em **Texto da mensagem**.
+
+    No canal **WhatsApp Oficial (Meta)**, clique em **Selecionar template...** e escolha um modelo. Se ainda não houver nenhum, clique em **Criar template**.
+  </Step>
+  <Step title="Ajuste o ritmo de envio">
+    Defina os intervalos entre os envios. Veja os detalhes em [Ritmo de envio](#ritmo-de-envio).
+  </Step>
+  <Step title="Confira e envie">
+    Em **Confirmar e enviar**, revise o resumo: nome da campanha, total de contatos, intervalo e **Tempo estimado**. Depois clique em **Iniciar Campanha**.
+  </Step>
+</Steps>
+
+### Combinar tags
+
+Ao incluir mais de uma tag, aparecem duas opções:
+
+- **qualquer uma**: o contato entra se tiver pelo menos uma das tags.
+- **todas as tags**: o contato só entra se tiver todas as tags escolhidas.
+
+A mesma tag não pode estar em incluir e em excluir ao mesmo tempo. Para criar e organizar tags, veja [Tags](/crm/tags).
+
+### Opções da campanha
+
+- **Ignorar duplicados**: vem ligado. Envia só uma vez por número, mesmo que ele apareça repetido.
+- **Vendedor responsável** (opcional): os contatos do disparo já ficam atribuídos a esse vendedor, na conversa e no Pipeline.
+- **Aplicar tag ao enviar** (opcional): cada contato que receber a mensagem ganha as tags escolhidas.
+- **Personalização com IA**: disponível no canal **WhatsApp**. Gera variações únicas da mensagem para cada contato.
+
+### Nome do contato e mídia no template
+
+No canal **WhatsApp Oficial (Meta)**, o template pode ter espaços variáveis, escritos como `{{1}}`. No disparo, todos esses espaços são preenchidos com o primeiro nome do contato. Se o contato não tem nome, entra a palavra "cliente".
+
+Se o template tem imagem, vídeo ou documento, todos os contatos recebem o mesmo arquivo aprovado junto com o modelo.
+
+Antes de enviar, confira a **Prévia do envio**. Ela mostra a mensagem final com uma amostra de contatos reais da sua seleção.
+
+## Ritmo de envio
+
+O CRM nunca envia tudo de uma vez. Você define o intervalo e a tela mostra o tempo estimado.
+
+**No canal WhatsApp:** preencha **Intervalo mínimo (min)** e **Intervalo máximo (min)**. O menor valor aceito é 1 minuto.
+
+**No canal WhatsApp Oficial (Meta):** preencha **Intervalo entre lotes** e escolha **segundos** ou **minutos**. O envio sai em grupos de cerca de 15 mensagens por vez. A tela recomenda de 2 a 3 minutos. Para mais de 200 contatos, recomenda de 3 a 5 minutos.
+
+<Tip>
+  Se você escolher um intervalo curto demais, a tela avisa: **Intervalo abaixo do recomendado — risco de bloqueio ou queda na entrega.** Prefira seguir a recomendação.
+</Tip>
+
+No canal oficial, campanhas com mais de 1.000 contatos dependem do limite diário do seu número na Meta. O que passar do limite sai só no dia seguinte.
+
+## Definir horário permitido para envios
+
+O quadro **Janela de envio permitida** impede disparos fora do horário que você escolher. Vale para todas as campanhas da empresa e usa o horário de Brasília.
+
+<Steps>
+  <Step title="Ligue a janela">
+    Ative a chave ao lado de **Janela de envio permitida**.
+  </Step>
+  <Step title="Escolha horários e dias">
+    Em **Horários permitidos**, defina início e fim. Use **Adicionar bloco** para ter mais de um período no dia. Em **Dias permitidos**, marque os dias da semana.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar janela**.
+  </Step>
+</Steps>
+
+Fora da janela, o disparo pausa e retoma sozinho na próxima abertura. Na lista, a campanha mostra **Aguardando janela** com o horário de retomada.
+
+Para usar um horário diferente em uma única campanha, ligue **Personalizar janela desta campanha** ao criá-la.
+
+## Acompanhar o resultado
+
+O quadro **Campanhas** lista seus disparos mais recentes. Cada um mostra a situação (**Enviando**, **Pausada** ou **Concluída**), a barra de progresso e a contagem de envios e falhas.
+
+Clique em uma campanha para abrir os detalhes, com **Enviados**, **Falhas**, **Total** e **Taxa**.
+
+Clique em **Ver relatório** para abrir o **Relatório do disparo**. Ele mostra **Entregues**, **Respondidos**, **Taxa de entrega** e **Taxa de resposta**, além da situação de cada contato. No relatório você pode:
+
+- clicar em **Abrir conversa** para falar com um contato;
+- clicar em **Exportar CSV** para baixar a lista em planilha.
+
+## Pausar, retomar, repetir e excluir
+
+- **Pausar**: a fila para onde está e nada é perdido.
+- **Retomar**: o envio continua de onde parou.
+- **Repetir**: preenche uma nova campanha com o nome, a mensagem e os intervalos da anterior. Você escolhe os contatos de novo. No canal oficial, escolha o template de novo e confira o intervalo.
+- **Excluir**: abra os detalhes e clique no ícone de lixeira. Só aparece quando a campanha não está enviando. Essa ação não pode ser desfeita.
+
+## Contatos que pediram para não receber
+
+Quem pediu para sair da sua lista aparece com a etiqueta **Descadastrado**. Esse contato não pode ser marcado e não recebe disparos, mesmo com **Selecionar todos**. A tela mostra quantos descadastrados ficaram de fora.
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Posso agendar um disparo para outro dia?">
+    Não há campo de data e hora para agendar. A campanha começa quando você clica em **Iniciar Campanha**. Para controlar o horário, use a **Janela de envio permitida**.
+  </Accordion>
+  <Accordion title="Posso anexar imagem no disparo?">
+    No canal **WhatsApp**, a mensagem do disparo é só texto. No canal **WhatsApp Oficial (Meta)**, a mídia vem do template aprovado e é a mesma para todos.
+  </Accordion>
+  <Accordion title="Como cancelo uma campanha que já começou?">
+    Clique em **Pausar** e confirme. Depois, abra os detalhes e exclua a campanha pelo ícone de lixeira.
+  </Accordion>
+  <Accordion title="O mesmo contato pode receber a mensagem duas vezes?">
+    Com **Ignorar duplicados** ligado, não. O envio acontece uma vez por número.
+  </Accordion>
+  <Accordion title="Por que a campanha está parada em Aguardando janela?">
+    O horário atual está fora da janela de envio. O disparo retoma sozinho no horário indicado.
+  </Accordion>
+</AccordionGroup>
+
+## Veja também
+
+<CardGroup cols={2}>
+  <Card title="Tags" icon="tag" href="/crm/tags">
+    Organize contatos para montar o público dos disparos.
+  </Card>
+  <Card title="Contatos" icon="address-book" href="/crm/contatos">
+    Veja e atualize a sua base de contatos.
+  </Card>
+  <Card title="Conexões" icon="plug" href="/conta/conexoes">
+    Gerencie os canais usados nos envios.
+  </Card>
+  <Card title="Atendimento no WhatsApp" icon="whatsapp" href="/atendimento/whatsapp">
+    Responda quem retornou o seu disparo.
+  </Card>
+</CardGroup>

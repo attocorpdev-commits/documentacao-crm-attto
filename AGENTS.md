@@ -1,33 +1,44 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# Instruções do projeto de documentação
 
-# Documentation project instructions
+## Sobre este projeto
 
-## About this project
+- Central de ajuda do CRM da Atto Corp, publicada com [Mintlify](https://mintlify.com)
+- Público: cliente que usa o CRM no dia a dia (dono de negócio, atendente, vendedor, gestor). Não é desenvolvedor
+- Páginas são arquivos MDX com frontmatter YAML (`title`, `description`)
+- Menu e configuração ficam em `docs.json`
+- Idioma: português do Brasil
+- Prévia local exige Node LTS: `PATH=/opt/homebrew/opt/node@22/bin:$PATH mint dev`
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+## Fonte da verdade
 
-## Terminology
+- Código do CRM: repositório `atto-corp-crm`, branch `origin/main`
+- Documente apenas o que existe na tela. Se o código não confirma, não escreva
+- Nomes de menu, botão e campo devem ser idênticos aos da tela
+- Texto da tela vem de `src/i18n/locales/pt-BR/*.json`. A tradução vence o texto reserva escrito no código
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+## Terminologia
 
-## Style preferences
+- "conversas", nunca "créditos" nem "tokens"
+- "Pipeline" para o funil de vendas (nome do menu)
+- "etapa" no texto corrido para coluna do Pipeline. A tela mistura "Estágio" e "Etapa"; em negrito, repetir o rótulo exato da tela
+- "lead" ou "contato" para a pessoa atendida
+- "canal" para cada número de WhatsApp ou conta de Instagram conectada
+- "Agente IA" (nome do menu) para o atendente automático; "Assistente IA" para o chat de ajuda interno
+- Planos: Start, Prime, Ultra
 
-{/* Add any project-specific style rules below */}
+## Estilo
 
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+- Trate o leitor por "você"
+- Frases curtas, uma ideia por frase
+- Sem jargão técnico: nada de API, webhook, banco de dados, token, endpoint
+- Títulos em minúsculas, só a primeira letra maiúscula
+- Negrito para elemento de tela: clique em **Salvar**
+- Passo a passo numerado com o componente `<Steps>`
+- Avisos com `<Note>`, `<Tip>` e `<Warning>`
 
-## Content boundaries
+## Limites de conteúdo
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Não documentar telas de administrador da Atto: Banco de Dados, Usuários, Logs
+- Não citar preço. Para valores, apontar para https://attocorp.com/#planos
+- Nunca usar dado real de cliente: nome, telefone, conversa, empresa
+- Não citar fornecedores internos nem nomes de tecnologia por trás do produto

@@ -1,0 +1,171 @@
+---
+title: "Contatos"
+description: "Consulte, cadastre, importe, exporte e organize todos os leads da sua empresa em uma única lista."
+---
+
+A tela Contatos reúne todos os leads da empresa. Aqui você busca uma pessoa, corrige dados, aplica tags, importa uma planilha e começa uma conversa.
+
+## Como acessar
+
+No menu lateral, abra a categoria **CRM** e clique em **Contatos**.
+
+A tela tem duas abas: **Lista de contatos** e **Importar CSV**. No topo da lista ficam quatro números: **Total na base**, **Exibindo**, **Valor (filtro)** e **Com tags**.
+
+<Note>
+  Os leads entram nesta lista sozinhos, conforme as conversas chegam. Você só precisa cadastrar à mão quem ainda não falou com você.
+</Note>
+
+## Buscar um contato
+
+Digite no campo **Buscar telefone, nome ou tag...**. A lista é filtrada enquanto você digita.
+
+- **Por telefone:** basta um pedaço do número, de preferência os últimos 8 dígitos. Use só números, sem parênteses, espaços ou traço. O 9 inicial do celular pode não ser reconhecido na busca: se o contato não aparecer, digite o número sem ele.
+- **Por nome:** não precisa acertar acento nem maiúscula. "joao" encontra "João".
+- **Por tag:** digite parte do nome da tag.
+
+Você também pode usar **Filtrar por tag** para marcar uma ou mais tags. Se houver Instagram conectado, o filtro **Canal** mostra só os contatos daquela conta.
+
+Os dois botões ao lado da busca trocam entre **Visualização em tabela** e **Visualização em cards**. A lista mostra 50 contatos por vez. Clique em **Mostrar mais** para ver os próximos.
+
+## Adicionar um contato
+
+<Steps>
+  <Step title="Abra o cadastro">
+    Clique em **Novo Contato**.
+  </Step>
+  <Step title="Preencha os dados">
+    O **Telefone** é obrigatório. Escolha o país e digite o número com DDD, por exemplo `11900000000`. Os campos **Nome**, **Valor (R$)**, **Tags**, **Canal** e **Estágio** são opcionais.
+  </Step>
+  <Step title="Salve">
+    Clique em **Criar contato**.
+  </Step>
+</Steps>
+
+<Note>
+  Não é possível cadastrar o mesmo telefone duas vezes na mesma empresa. Se isso acontecer, aparece o aviso **Contato já existe**.
+</Note>
+
+## Editar um contato
+
+Clique em uma linha da lista. Abre um painel lateral com os dados do lead.
+
+- **Nome e telefone:** clique no campo, altere e clique fora. A mudança é salva na hora.
+- **Tags:** clique em **Adicionar tag...** para escolher uma tag existente ou criar outra. Para tirar, clique no **x** da tag.
+- **Valor estimado** e **Notas:** altere e clique fora do campo para salvar.
+- **Mover para pipeline:** clique no pipeline desejado. Em **Estágio**, escolha a etapa.
+- **Resumo IA:** mostra o resumo da conversa feito pela IA.
+- **Agendar atividade:** cria um compromisso para esse contato. Ele aparece na Agenda no dia escolhido.
+
+## Abrir a conversa de um contato
+
+Abra o contato e clique em **Iniciar Conversa**, no fim do painel. O CRM leva você para a conversa no WhatsApp. Se ela ainda não existir, é criada na hora.
+
+<Warning>
+  É preciso ter um WhatsApp conectado. Sem isso, aparece o aviso **WhatsApp não conectado**, com um atalho **Ir para Conexões**.
+</Warning>
+
+## Alterar vários contatos de uma vez
+
+Marque a caixa ao lado dos contatos, ou use **Selecionar todos** para marcar todos os que estão no filtro. Aparece uma barra com as ações:
+
+- **Aplicar:** digite as tags, separadas por vírgula, e adicione a todos os selecionados.
+- **Remover tags:** retira as tags digitadas dos selecionados.
+- **Excluir:** apaga os contatos selecionados.
+- **Limpar:** desmarca a seleção.
+
+<Warning>
+  A exclusão de contatos não pode ser desfeita.
+</Warning>
+
+## Importar uma planilha
+
+Você pode importar uma planilha nos formatos `.csv`, `.xlsx` ou `.xls`.
+
+<Steps>
+  <Step title="Abra a aba de importação">
+    Clique em **Importar CSV**.
+  </Step>
+  <Step title="Escolha o destino">
+    Em **Pipeline de destino**, selecione o pipeline que vai receber os leads. Eles entram na primeira etapa.
+  </Step>
+  <Step title="Envie o arquivo">
+    Arraste a planilha para a área indicada ou clique para selecionar.
+  </Step>
+  <Step title="Confirme">
+    Na janela **Importar Contatos**, confira o arquivo e o pipeline e clique em **Importar**.
+  </Step>
+</Steps>
+
+A planilha precisa de uma coluna de telefone. O CRM reconhece a coluna mesmo com nomes diferentes, como `telefone`, `celular` ou `WhatsApp`. As colunas `nome` e `tags` são opcionais. Dentro da coluna de tags, separe por vírgula ou ponto e vírgula.
+
+<Tip>
+  Clique em **Baixar template (.xlsx)** para usar um modelo pronto. Em **Formato e colunas** você vê o resumo das colunas aceitas.
+</Tip>
+
+Ao terminar, o CRM informa quantos contatos são novos e quantos já existiam. Os que já existiam não são duplicados.
+
+## Exportar os contatos
+
+Clique em **Exportar** e escolha **Exportar CSV** ou **Exportar XLSX**.
+
+A exportação leva apenas os contatos que estão visíveis, respeitando a busca, as tags e o canal filtrados. O número ao lado do botão mostra quantos serão exportados.
+
+O arquivo traz as colunas Nome, Telefone, Tags, Valor estimado, Responsável, Estágio, Pipeline, Origem e Data de criação.
+
+## Unificar contatos duplicados
+
+Quando o CRM encontra mais de um cadastro para o mesmo número, aparece um aviso amarelo no topo da lista.
+
+<Steps>
+  <Step title="Abra a lista de duplicados">
+    Clique em **Unificar contatos duplicados com segurança**.
+  </Step>
+  <Step title="Revise um grupo">
+    Clique em **Revisar e unificar** no número desejado. Escolha o **Contato principal (mantido)** e confira o **Resultado final**.
+  </Step>
+  <Step title="Confirme">
+    Clique em **Unificar contatos**.
+  </Step>
+</Steps>
+
+Para resolver tudo de uma vez, clique em **Unificar todos os seguros**.
+
+Na unificação, as tags de todos os cadastros são somadas e o maior valor é mantido. Nome, anotação e responsável vêm do contato principal. Se ele não tiver, vêm de um dos duplicados. As conversas são preservadas e o CRM guarda uma cópia de segurança.
+
+<Note>
+  Quando o mesmo número tem duas conversas separadas no mesmo canal, o grupo fica marcado como **Revisão manual** e não é unificado automaticamente.
+</Note>
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Por que a aba Importar CSV está desativada para mim?">
+    A importação exige a permissão de acesso completo a Contatos. Peça ao dono da conta para liberar.
+  </Accordion>
+  <Accordion title="Por que não vejo todos os contatos da empresa?">
+    Dependendo da sua permissão, você vê apenas os contatos dos canais atribuídos a você.
+  </Accordion>
+  <Accordion title="Apareceu um aviso sobre número de WhatsApp incompleto. O que é?">
+    Alguns celulares foram gravados sem o nono dígito. Clique em **Corrigir agora** para o CRM completar o número. Nenhum contato é apagado e o telefone original é preservado.
+  </Accordion>
+  <Accordion title="Apareceu um aviso de leads sem pipeline. O que faço?">
+    Escolha um pipeline na lista ao lado do aviso e clique em **Mover**. Os leads entram no funil para você acompanhar por etapas.
+  </Accordion>
+</AccordionGroup>
+
+## Continue por aqui
+
+<CardGroup cols={2}>
+  <Card title="Tags" icon="tag" href="/crm/tags">
+    Crie e organize as etiquetas dos seus leads.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/crm/pipeline">
+    Acompanhe os leads por etapa do funil.
+  </Card>
+  <Card title="Atendimento por WhatsApp" icon="whatsapp" href="/atendimento/whatsapp">
+    Converse com os contatos da sua lista.
+  </Card>
+  <Card title="Disparos" icon="bullhorn" href="/marketing/disparos">
+    Envie mensagens para vários contatos.
+  </Card>
+</CardGroup>

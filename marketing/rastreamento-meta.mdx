@@ -1,0 +1,161 @@
+---
+title: "Rastreamento Meta"
+description: "Avise a Meta quais leads dos seus anúncios avançaram ou compraram, para os anúncios encontrarem clientes melhores."
+---
+
+Quando você anuncia no Facebook ou no Instagram, a Meta sabe quem clicou no anúncio. Mas ela não sabe o que aconteceu depois, na conversa de WhatsApp.
+
+O **Rastreamento de Conversão** resolve isso. Sempre que um lead vindo de anúncio chega a uma etapa importante do Pipeline, o CRM avisa a Meta. Esse aviso se chama conversão. Com ele, os anúncios aprendem a buscar pessoas parecidas com as que realmente compram.
+
+<Note>
+  O aviso só é enviado para leads que chegaram por anúncio com botão de WhatsApp (Click-to-WhatsApp). Leads que chegaram por outros caminhos não geram conversão.
+</Note>
+
+<Note>
+  Este recurso está disponível nos planos Prime e Ultra. Veja [Planos e cobrança](/conta/planos-e-cobranca).
+</Note>
+
+## Como acessar
+
+No menu lateral, abra **Configurações** e clique em **Conexões**. No grupo **Rastreamento**, clique em **Rastreamento de Conversão**.
+
+No celular, o item aparece no menu como **Rastreamento**.
+
+<Note>
+  Esta tela depende do seu plano e da sua permissão de acesso. Se ela não aparece para você, fale com o responsável pela conta da sua empresa.
+</Note>
+
+## O que você precisa ter em mãos
+
+Os dois dados abaixo vêm da sua conta de anúncios, no Gerenciador de Eventos da Meta:
+
+- **Pixel da Meta**: o pixel é o número que identifica a sua conta de anúncios para receber os avisos de conversão. Na Meta, ele também aparece como Dataset ID.
+- **Token da Conversions API**: uma chave de acesso, gerada na Meta, que autoriza o CRM a enviar os avisos.
+
+Se outra pessoa cuida dos seus anúncios, peça esses dois dados a ela.
+
+## Conectar com a Meta
+
+<Steps>
+  <Step title="Preencha o Pixel">
+    No quadro **Conversions API do Meta**, cole o número no campo **Pixel da Meta**.
+  </Step>
+  <Step title="Cole a chave de acesso">
+    No campo **Token da Conversions API**, cole a chave gerada na Meta.
+  </Step>
+  <Step title="Teste a conexão">
+    Clique em **Testar conexão**. Se estiver tudo certo, aparece a mensagem **Conexão testada com sucesso. Você já pode ativar o rastreio.**
+  </Step>
+  <Step title="Ative o rastreamento">
+    Ligue a chave no canto do quadro. O texto ao lado muda de **Inativo** para **Ativo**.
+  </Step>
+</Steps>
+
+<Warning>
+  O CRM só deixa ativar depois de um teste com sucesso. Se você mudar o Pixel ou a chave de acesso, teste de novo antes de ativar.
+</Warning>
+
+<Note>
+  Depois de testar, o topo da tela mostra o aviso **Este é o resultado de um TESTE de conexão**. Ele fala só do teste: nenhuma conversão de verdade foi enviada. Quando terminar de ajustar, clique em **Limpar** para tirar esse resultado da tela.
+</Note>
+
+Depois de salva, a chave de acesso não é mais exibida. No lugar dela aparece **Token configurado**. Para substituir, clique em **Trocar**, cole a nova chave e clique em **Testar conexão**. Com o teste aprovado, clique em **Salvar**. Com o rastreamento ativo, o CRM só aceita salvar depois de um teste com sucesso.
+
+Enquanto a chave de ativação estiver desligada, a tela avisa que o módulo está inativo e nenhuma conversão é enviada.
+
+## Escolher qual etapa envia qual evento
+
+A conexão sozinha não envia nada. Você precisa dizer quais etapas do Pipeline contam como conversão.
+
+<Steps>
+  <Step title="Abra o Pipeline">
+    No quadro **Mapear etapas → eventos**, clique em **Ir para o Pipeline**.
+  </Step>
+  <Step title="Abra a edição de etapas">
+    Passe o mouse sobre o título de uma coluna e clique no ícone de lápis, **Editar estágios**.
+  </Step>
+  <Step title="Escolha o evento da etapa">
+    Edite a etapa desejada. No campo **Conversão Meta:**, escolha o evento que ela deve enviar.
+  </Step>
+  <Step title="Escolha se envia valor">
+    Se quiser, defina o valor que acompanha a conversão: **Sem valor**, **Valor do lead** ou **Preço do agendamento**. Ao mover o card no Pipeline, o valor só é enviado com a opção **Valor do lead**.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**. A etapa passa a mostrar uma etiqueta com o nome do evento.
+  </Step>
+</Steps>
+
+### Eventos disponíveis
+
+| Opção na tela | Quando usar |
+| --- | --- |
+| **Não enviar (só CRM)** | A etapa não avisa a Meta |
+| **Lead (chegou)** | O lead entrou em contato |
+| **Contato (Contact)** | Houve conversa com o lead |
+| **Agendamento (Schedule)** | O lead marcou um horário |
+| **Compra (Purchase)** | O lead fechou negócio |
+
+<Tip>
+  Comece simples. Marque **Compra (Purchase)** na etapa em que a venda é fechada.
+</Tip>
+
+A partir daí, sempre que um lead de anúncio entrar em uma etapa marcada, o CRM envia a conversão. Para saber mais sobre etapas, veja [Pipeline](/crm/pipeline).
+
+## Conferir se está funcionando
+
+A tela mostra avisos quando algo precisa de atenção:
+
+- **Nenhuma etapa envia conversão ainda.** O rastreamento está ativo, mas nenhuma etapa do Pipeline tem evento escolhido. Marque pelo menos uma etapa.
+- **A última conversão não foi enviada ao Meta.** A última tentativa falhou. Confira o Pixel e a chave de acesso e clique em **Testar conexão** de novo. Esse aviso só aparece quando a falha foi em uma conversão de verdade.
+- **Este é o resultado de um TESTE de conexão.** O último resultado guardado veio do botão **Testar conexão**, e não de uma conversão de verdade. Por isso ele não mostra a saúde real do rastreamento. Logo abaixo você lê **O teste de conexão passou.** ou **O teste de conexão falhou.** — quando a Meta explica o motivo, aparece o motivo — com a data e a hora.
+- **A Meta recusou.** O teste não passou. Revise os dados colados. Se precisar de ajuda, abra **Detalhe técnico (para o suporte)** e envie essas informações ao suporte.
+
+Para tirar o resultado do teste da tela, clique em **Limpar**, no canto do aviso. Isso apaga só esse registro: o próximo envio, de teste ou de verdade, volta a aparecer.
+
+Em **Conexões**, o item **Rastreamento de Conversão** mostra um ponto verde quando o rastreamento está ativo.
+
+### Ver os testes dentro da Meta
+
+O campo **Código de evento de teste (opcional)** serve para acompanhar os testes pela própria Meta. Copie o código no Gerenciador de Eventos, cole nesse campo, clique em **Testar conexão** e depois em **Salvar**. Os eventos de teste aparecem na aba **Eventos de teste** da Meta.
+
+O campo abre vazio toda vez que você entra na tela. Cole o código de novo sempre que for testar.
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Preciso ter um site para usar o rastreamento?">
+    Não. Os avisos saem do próprio CRM, quando o lead muda de etapa no Pipeline.
+  </Accordion>
+  <Accordion title="Movi um lead e nada foi enviado. Por quê?">
+    Confira três pontos: o rastreamento está **Ativo**, a etapa de destino tem um evento em **Conversão Meta:** e o lead chegou por anúncio com botão de WhatsApp.
+  </Accordion>
+  <Accordion title="O aviso de teste ficou na tela. O rastreamento está com problema?">
+    Não necessariamente. Esse aviso mostra o resultado do último **Testar conexão**, que não representa a saúde real do rastreamento. Clique em **Limpar** para tirar o aviso e acompanhe os próximos envios de verdade.
+  </Accordion>
+  <Accordion title="Mudei o nome de uma etapa. O evento continua?">
+    Sim. A etapa continua enviando o mesmo evento. O CRM avisa para você conferir se o novo nome ainda combina com ele.
+  </Accordion>
+  <Accordion title="Por que não consigo ver a chave de acesso que salvei?">
+    Por segurança, ela é gravada e nunca é exibida de novo. Se precisar mudar, clique em **Trocar** e cole uma nova.
+  </Accordion>
+  <Accordion title="Como paro de enviar conversões?">
+    Desligue a chave de ativação no quadro **Conversions API do Meta**. O texto muda para **Inativo** e o envio para na hora.
+  </Accordion>
+</AccordionGroup>
+
+## Veja também
+
+<CardGroup cols={2}>
+  <Card title="Pipeline" icon="table-columns" href="/crm/pipeline">
+    Organize as etapas do seu funil de vendas.
+  </Card>
+  <Card title="Conexões" icon="plug" href="/conta/conexoes">
+    Gerencie seus canais e integrações.
+  </Card>
+  <Card title="Dashboard" icon="chart-line" href="/gestao/dashboard">
+    Acompanhe os números do seu atendimento.
+  </Card>
+  <Card title="Relatório semanal" icon="file-lines" href="/gestao/relatorios">
+    Veja análises de desempenho.
+  </Card>
+</CardGroup>

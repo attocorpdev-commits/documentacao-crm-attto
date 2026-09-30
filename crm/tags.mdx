@@ -1,0 +1,167 @@
+---
+title: "Tags"
+description: "Crie etiquetas coloridas para organizar seus leads e encontrar grupos de contatos com facilidade."
+---
+
+Tags são etiquetas coloridas que você coloca nos leads. Elas servem para separar grupos, como clientes VIP, leads de uma campanha ou pessoas que pediram retorno.
+
+Na tela Tags você cria, edita e exclui as etiquetas. A aplicação da tag em cada lead é feita no Pipeline e em Contatos.
+
+## Como acessar
+
+No menu lateral, abra a categoria **CRM** e clique em **Tags**.
+
+No topo da tela ficam três números:
+
+- **Total de tags:** quantas tags existem.
+- **Usos em leads:** quantas vezes as tags foram aplicadas.
+- **Com descrição:** quantas tags têm descrição preenchida.
+
+Cada tag aparece em um cartão com a cor, o nome, a descrição e a quantidade de leads que a usam.
+
+## Criar uma tag
+
+<Steps>
+  <Step title="Abra o cadastro">
+    Clique em **Nova tag**.
+  </Step>
+  <Step title="Dê um nome">
+    Preencha o campo **Nome**. Exemplo: Cliente VIP.
+  </Step>
+  <Step title="Escolha a cor">
+    Em **Cor**, clique em uma das cores. A prévia no topo da janela mostra como a tag vai ficar.
+  </Step>
+  <Step title="Descreva, se quiser">
+    Em **Descrição**, explique quando usar a tag. O campo é opcional.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+<Tip>
+  Preencha a descrição. Ela ajuda toda a equipe a usar a mesma tag do mesmo jeito.
+</Tip>
+
+## Editar uma tag
+
+<Steps>
+  <Step title="Abra a edição">
+    Passe o mouse sobre o cartão da tag e clique no lápis.
+  </Step>
+  <Step title="Altere o que precisar">
+    Mude o nome, a cor ou a descrição.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+<Note>
+  Ao mudar o nome, a tag é renomeada em todos os leads que já a usam. A janela avisa quantos leads serão afetados.
+</Note>
+
+## Excluir uma tag
+
+<Steps>
+  <Step title="Clique na lixeira">
+    Passe o mouse sobre o cartão da tag e clique na lixeira.
+  </Step>
+  <Step title="Confirme">
+    Na janela **Excluir tag**, clique em **Excluir**.
+  </Step>
+</Steps>
+
+<Warning>
+  Ao excluir, a tag é removida de todos os leads que a usam. Os leads não são apagados, apenas perdem essa etiqueta.
+</Warning>
+
+## Ver os leads de uma tag
+
+Clique no cartão da tag. Abre um painel lateral com:
+
+- A quantidade em **Leads vinculados**
+- A cor da tag
+- A lista de leads com nome, telefone, data de entrada e etapa
+- Os botões **Editar** e **Excluir**
+
+A lista mostra 20 leads por página. Use **Anterior** e **Próxima** para navegar.
+
+## Encontrar uma tag
+
+Digite no campo **Buscar tags...**. A tela mostra só as tags que contêm o texto digitado.
+
+As tags aparecem em ordem de uso, da mais usada para a menos usada. A tela mostra 12 tags por página.
+
+Clique em **Atualizar** para recarregar os números depois de aplicar tags em outra tela.
+
+## Aplicar tags aos leads
+
+Existem quatro formas de colocar uma tag em um lead.
+
+### Em um lead, pelo Pipeline
+
+<Steps>
+  <Step title="Abra o card">
+    No Pipeline, clique no card do lead.
+  </Step>
+  <Step title="Digite as tags">
+    No campo **Tags (separadas por vírgula)**, escreva as tags. Exemplo: vip, retorno.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+### Em um lead, por Contatos
+
+<Steps>
+  <Step title="Abra o contato">
+    Em Contatos, clique na linha do lead.
+  </Step>
+  <Step title="Adicione a tag">
+    Clique em **Adicionar tag...** e escolha uma tag da lista. Para criar uma nova, digite o nome e pressione Enter.
+  </Step>
+</Steps>
+
+Para tirar uma tag, clique no **x** ao lado dela.
+
+### Em vários leads de uma vez
+
+Em Contatos, marque os leads desejados. Na barra que aparece, digite as tags e clique em **Aplicar**. Para retirar, clique em **Remover tags**.
+
+### Em todos os leads de uma etapa
+
+No Pipeline, passe o mouse no título da coluna e clique no ícone de etiqueta (**Aplicar tag à coluna**). Escolha ou digite a tag.
+
+<Note>
+  Se você digitar em um lead uma tag que ainda não existe, ela passa a aparecer na tela Tags. Depois você pode abrir a edição para escolher a cor e a descrição.
+</Note>
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Excluir uma tag apaga os leads?">
+    Não. Os leads continuam no CRM. Eles só perdem a etiqueta excluída.
+  </Accordion>
+  <Accordion title="Um lead pode ter mais de uma tag?">
+    Sim. No card do Pipeline aparecem as três primeiras, com um contador para as demais.
+  </Accordion>
+  <Accordion title="Criei uma tag, mas ela mostra zero leads. Está certo?">
+    Sim. A tag já existe e fica disponível para uso. O número sobe quando você aplica a tag em algum lead.
+  </Accordion>
+  <Accordion title="Apliquei a tag e o número não mudou. O que faço?">
+    Clique em **Atualizar** para recarregar a tela.
+  </Accordion>
+</AccordionGroup>
+
+## Continue por aqui
+
+<CardGroup cols={2}>
+  <Card title="Contatos" icon="address-book" href="/crm/contatos">
+    Filtre a lista por tag e aplique etiquetas em massa.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/crm/pipeline">
+    Veja as tags direto no card do lead.
+  </Card>
+</CardGroup>

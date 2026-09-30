@@ -1,0 +1,215 @@
+---
+title: "Conexões"
+description: "Conecte e gerencie os números de WhatsApp e as contas de Instagram que atendem pelo CRM."
+---
+
+A tela de conexões reúne todos os canais da sua empresa. Um canal é cada número de WhatsApp ou conta de Instagram ligada ao CRM.
+
+## Como acessar
+
+No menu lateral, abra **Configurações** e clique em **Conexões**. A tela abre com o título **Integrações**.
+
+Ela é dividida em três grupos:
+
+| Grupo | Opções |
+| --- | --- |
+| **WhatsApp** | **WhatsApp** e **WhatsApp Oficial (Meta)** |
+| **Instagram** | **Instagram Oficial (Meta)** |
+| **Rastreamento** | **Rastreamento de Conversão** |
+
+Um ponto verde ao lado da opção indica que já existe conexão ativa. Para voltar à lista, clique em **Voltar para Integrações**.
+
+## WhatsApp por QR Code
+
+Clique no cartão **WhatsApp**. Aqui você conecta números escaneando um QR Code.
+
+O passo a passo completo está em [Conectar seu WhatsApp](/primeiros-passos/conectar-whatsapp).
+
+### O que a tela mostra
+
+- **Canais utilizados**: quantos canais você já criou e quantos o seu plano permite.
+- A lista de canais, cada um com o selo **Conectado** ou **Desconectado**.
+- O número de telefone de cada canal conectado.
+
+### Ações de cada canal
+
+Clique nos três pontos ao lado do canal para ver as ações.
+
+| Ação | O que faz |
+| --- | --- |
+| **Renomear** | Muda o **Nome do canal** e a **Sigla (apelido, até 5 caracteres)**, que aparece nos cartões e nas conversas. |
+| **Desconectar** | Desliga o número do CRM. Aparece só em canal conectado. |
+| **Excluir canal** | Remove o canal. Aparece só em canal desconectado. |
+
+Para excluir, digite **CONFIRMAR** na janela e clique em **Excluir**.
+
+Quando o canal é o único da empresa ou está ligado à IA, a janela mostra um aviso antes: ao excluir, a empresa fica sem esse canal, a IA é desvinculada dele e a vaga fica livre para você conectar outro canal. Depois da exclusão, o CRM ainda avisa que a IA ficou sem canal, para você ligá-la a outro número.
+
+<Warning>
+  A exclusão não pode ser desfeita. O canal e todas as suas configurações são removidos de vez, e a IA para de atender por ele. As conversas que já chegaram por esse número continuam em **WhatsApp**, no grupo **Atendimento**.
+</Warning>
+
+<Note>
+  O primeiro canal da lista, marcado com uma estrela, não pode ser excluído.
+</Note>
+
+### Quando um número cai
+
+Se um número perde a conexão, a tela mostra o aviso **Um número precisa ser reconectado** e o canal ganha o selo **Precisa reconectar**. Clique em **Reconectar**. Se não voltar, escaneie o QR Code de novo.
+
+### Quando a sessão fica dessincronizada
+
+Às vezes o número continua conectado, mas a sessão sai de sincronia. Nesse caso, parte das mensagens que você envia pode não chegar ao cliente.
+
+Quando o CRM percebe isso, abre a janela **Sessão do WhatsApp pode estar dessincronizada** (ou **Sessões do WhatsApp podem estar dessincronizadas**, se for mais de um número). Ela lista os números afetados e traz dois botões:
+
+- **Sincronizar**: leva você para a lista de canais do WhatsApp, para reconectar o número.
+- **Dispensar**: fecha o aviso.
+
+Na lista, o canal afetado fica com o selo **Sessão pode estar dessincronizada**.
+
+<Note>
+  **Dispensar** só esconde o aviso, não resolve a sessão. Se a falha acontecer de novo, o aviso volta a aparecer. Para resolver, reconecte o número: clique em **Reconectar**, quando o botão aparecer, ou desconecte o canal e escaneie o QR Code de novo.
+</Note>
+
+## WhatsApp Oficial (Meta)
+
+Clique no cartão **WhatsApp Oficial (Meta)**. A tela tem duas abas: **Canais** e **Templates**.
+
+### Conectar um canal
+
+<Steps>
+  <Step title="Inicie a conexão">
+    Na aba **Canais**, clique em **Conectar via Meta**. Na janela que abre, clique de novo em **Conectar via Meta**.
+  </Step>
+  <Step title="Confirme">
+    Na janela **Confirmar ativação do canal**, clique em **Sim, conectar**.
+  </Step>
+  <Step title="Autorize na janela da Meta">
+    Uma janela da Meta abre. Escolha a conta e autorize.
+  </Step>
+  <Step title="Finalize">
+    Quando aparecer **Canal conectado com sucesso!**, clique em **Concluir**.
+  </Step>
+</Steps>
+
+<Tip>
+  Se o navegador bloquear a janela, libere os pop-ups para o site e clique em **Tentar novamente**. Se preferir ajuda, clique em **Fazer com o suporte**.
+</Tip>
+
+<Note>
+  Se a sua equipe já recebe aviso de lead novo no WhatsApp, ao terminar a conexão (ou uma reconexão) aparece a janela **Templates de aviso criados**. As mensagens de aviso são criadas no número novo e passam pela análise da Meta, o que costuma levar alguns minutos. Clique em **Fechar** ou em **Ver status dos templates** para acompanhar. Você configura esse aviso em [Agente IA](/ia/agente-de-ia).
+</Note>
+
+### Gerenciar canais
+
+Em cada canal você pode escolher o **Pipeline padrão deste canal**, para definir onde entram os leads que chegam por ele.
+
+Clique nos três pontos para ver as ações. Elas mudam conforme o canal está conectado ou não.
+
+| Ação | Quando aparece | O que faz |
+| --- | --- | --- |
+| **Renomear** | sempre | Muda o nome e a sigla do canal. |
+| **Desconectar** | canal conectado | Desliga o canal. Você pode reconectar depois. |
+| **Reautorizar (conta errada)** | canal conectado | Remove o canal e começa a conexão de novo, para você escolher a conta certa na Meta. |
+| **Reconectar** | canal desconectado | Liga o canal de novo, aproveitando a conexão que já existe. |
+| **Excluir canal** | sempre | Remove o canal. Digite **CONFIRMAR** e clique em **Excluir**. |
+
+Ao clicar em **Reconectar**, abre a janela **Reconectar WhatsApp**. Clique em **Reconectar canal** e confirme em **Sim, conectar**. Não é preciso abrir a janela da Meta e isso não gasta uma vaga nova do seu plano. No fim, clique em **Concluir**.
+
+<Warning>
+  **Reautorizar (conta errada)** remove o canal antes de reconectar. Confirme em **Remover e reconectar**. O canal e as suas configurações são removidos, e você precisa autorizar de novo pela Meta e escolher a conta certa. As conversas desse canal são preservadas. Se a remoção falhar, o CRM avisa que nada foi excluído e você pode tentar de novo em instantes.
+</Warning>
+
+Ao excluir um canal, a vaga volta a ficar livre no seu plano. Se a IA atendia por ele, o CRM avisa que a IA ficou sem canal: ligue a IA a outro número.
+
+O selo **Silencioso** indica que o canal não recebe mensagens há mais de 7 dias. Verifique se o número segue ativo.
+
+### Templates
+
+Templates são mensagens prontas, aprovadas pela Meta. Eles servem para enviar mensagens fora da janela de 24h.
+
+<Steps>
+  <Step title="Abra a aba Templates">
+    Se houver mais de um canal, escolha o canal no campo **Canal**.
+  </Step>
+  <Step title="Crie o template">
+    Clique em **Novo Template**. Preencha **Nome**, **Categoria** e **Idioma**.
+  </Step>
+  <Step title="Escreva a mensagem">
+    Preencha o **Corpo da mensagem**. Se quiser, adicione **Cabeçalho (opcional)**, **Rodapé (opcional)** e **Botões (opcional)**.
+  </Step>
+  <Step title="Confira e envie">
+    Veja o resultado na aba **Prévia** e clique em **Criar Template**.
+  </Step>
+</Steps>
+
+As categorias são **Marketing**, **Utilitário** e **Autenticação**. O nome aceita só letras minúsculas, números e o sinal de sublinhado.
+
+Se usar variáveis, como o nome do contato, preencha um exemplo para cada uma. Use exemplos fictícios, como "Maria". A Meta revisa esses exemplos.
+
+| Status | Significado |
+| --- | --- |
+| **Pendente** | Aguardando aprovação da Meta. |
+| **Aprovado** | Pronto para uso. |
+| **Rejeitado** | A Meta não aceitou. Revise e crie de novo. |
+| **Pausado** | O template está temporariamente parado. |
+| **Não criado** | O template ainda não existe neste canal. |
+
+Use a busca para achar um template por nome ou conteúdo. Clique em **Detalhes** para ver a mensagem completa.
+
+## Instagram Oficial (Meta)
+
+Clique no cartão **Instagram Oficial (Meta)**.
+
+<Note>
+  O canal de Instagram é um item adicional dos planos Prime e Ultra. No plano Start, o CRM não deixa adicionar canal de Instagram: na janela **Limite de canais Instagram atingido** aparece o aviso de que o canal é exclusivo dos planos Prime e Ultra, e o botão de compra não é exibido. Veja o seu plano em [Planos e cobrança](/conta/planos-e-cobranca).
+</Note>
+
+<Steps>
+  <Step title="Inicie a conexão">
+    Clique em **Conectar via Meta**. Na janela que abre, clique de novo em **Conectar via Meta**.
+  </Step>
+  <Step title="Confirme e autorize">
+    Clique em **Sim, conectar** e autorize sua conta na janela da Meta.
+  </Step>
+  <Step title="Finalize">
+    Clique em **Concluir**. O canal aparece na lista com o selo **Conectado**.
+  </Step>
+</Steps>
+
+A tela mostra **Canais utilizados** e quantas vagas restam no seu plano. Em cada canal você pode definir o **Pipeline padrão deste canal**, **Renomear** ou **Excluir canal**.
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Atingi o limite de canais. Como conecto mais?">
+    No WhatsApp Oficial, a janela de limite traz o botão **Contratar canal extra**. No Instagram, o botão é **Adquirir canal Instagram** — no plano Start ele não aparece, porque o canal de Instagram é dos planos Prime e Ultra. No WhatsApp por QR Code, clique em **Falar com o suporte**.
+  </Accordion>
+  <Accordion title="O limite de canais de WhatsApp conta os dois tipos?">
+    Sim. O limite do plano soma os canais de WhatsApp por QR Code e os canais oficiais.
+  </Accordion>
+  <Accordion title="Não consigo ver os templates de um canal.">
+    O canal pode estar desconectado. Na aba **Canais**, clique nos três pontos do canal, escolha **Reconectar** e depois clique em **Atualizar**. Com mais de um canal oficial, o botão vira um ícone de recarregar ao lado do campo **Canal**.
+  </Accordion>
+  <Accordion title="Conectei a conta errada da Meta no canal oficial. Como troco?">
+    Clique nos três pontos do canal e escolha **Reautorizar (conta errada)**. Confirme em **Remover e reconectar**: o canal é removido e a conexão começa de novo, para você escolher a conta certa. As conversas desse canal são preservadas.
+  </Accordion>
+  <Accordion title="Dispensei o aviso de sessão dessincronizada e ele voltou.">
+    **Dispensar** apenas esconde o aviso. Se a falha acontecer de novo no mesmo número, o CRM avisa outra vez. Reconecte o número para resolver.
+  </Accordion>
+  <Accordion title="Onde configuro o rastreamento de anúncios?">
+    No cartão **Rastreamento de Conversão**. Veja os detalhes em [Rastreamento Meta](/marketing/rastreamento-meta).
+  </Accordion>
+</AccordionGroup>
+
+## Veja também
+
+<CardGroup cols={2}>
+  <Card title="Atendimento no Instagram" icon="instagram" href="/atendimento/instagram">
+    Responda às mensagens da sua conta.
+  </Card>
+  <Card title="Disparos" icon="bullhorn" href="/marketing/disparos">
+    Use seus templates para enviar mensagens em massa.
+  </Card>
+</CardGroup>

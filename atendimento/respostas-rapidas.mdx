@@ -1,0 +1,137 @@
+---
+title: "Respostas rápidas"
+description: "Crie mensagens prontas e use um atalho para inserir cada uma delas durante o atendimento."
+---
+
+Respostas rápidas são mensagens prontas que você insere na conversa com poucos toques. Use para saudações, horários de atendimento, formas de pagamento e outras respostas que se repetem.
+
+As respostas são compartilhadas. Todos os usuários da sua empresa veem e usam a mesma lista.
+
+## Como acessar
+
+No menu lateral, abra a categoria **CRM** e clique em **Respostas rápidas**.
+
+No topo da tela você vê três números: **Total**, **Com atalho** e **Ativas**.
+
+## Criar uma resposta
+
+<Steps>
+  <Step title="Abra o formulário">
+    Clique em **Nova resposta**. Se a lista ainda está vazia, clique em **Criar primeira resposta**.
+  </Step>
+  <Step title="Dê um título">
+    Preencha **Título** com um nome fácil de reconhecer. Exemplo: `Saudação`.
+  </Step>
+  <Step title="Defina o atalho">
+    Preencha **Atalho** com uma palavra curta. Exemplo: `oi`. Esse campo é opcional.
+  </Step>
+  <Step title="Escreva a mensagem">
+    Preencha **Conteúdo** com o texto da resposta.
+  </Step>
+  <Step title="Confira a prévia">
+    Abaixo do conteúdo, a **Prévia** mostra como o contato vai receber a mensagem, usando um contato de exemplo.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+<Note>
+  **Título** e **Conteúdo** são obrigatórios. O botão **Salvar** só fica disponível depois de preencher os dois.
+</Note>
+
+## Personalizar com variáveis
+
+Variáveis são trechos que o CRM troca pelos dados reais na hora de inserir a resposta.
+
+| Variável | É trocada por |
+| --- | --- |
+| `{{nome}}` | Nome completo do contato |
+| `{{primeiro_nome}}` | Primeiro nome do contato |
+| `{{empresa}}` | Nome da sua empresa |
+| `{{vendedor}}` | Nome de quem está atendendo |
+
+Exemplo: o texto `Oi {{primeiro_nome}}, aqui é da {{empresa}}!` chega como "Oi Maria, aqui é da Sua Empresa!".
+
+No formulário, clique em **Ver exemplos** para comparar os tipos de variável.
+
+<Warning>
+  Variáveis numeradas, como `{{1}}`, não funcionam em respostas rápidas. Elas chegariam ao contato sem ser trocadas. Se você usar uma, o CRM mostra um aviso. Clique em **Trocar por variável de nome** para corrigir.
+</Warning>
+
+## Usar uma resposta na conversa
+
+### No WhatsApp
+
+<Steps>
+  <Step title="Digite a barra">
+    No campo de mensagem, digite `/`. A lista de respostas aparece acima do campo.
+  </Step>
+  <Step title="Filtre a lista">
+    Continue digitando o atalho, parte do título ou parte do conteúdo. Exemplo: `/oi`.
+  </Step>
+  <Step title="Escolha a resposta">
+    Use as setas para cima e para baixo e pressione **Enter**. Você também pode clicar na resposta.
+  </Step>
+  <Step title="Revise e envie">
+    O texto entra no campo de mensagem, já com as variáveis preenchidas. Ajuste se quiser e envie.
+  </Step>
+</Steps>
+
+Outra forma: clique no botão **+** (**Anexos e ações**) e escolha **Resposta rápida**. A mesma lista é aberta.
+
+Para fechar a lista sem inserir nada, pressione **Esc**.
+
+<Tip>
+  A resposta nunca é enviada sozinha. Ela entra no campo de mensagem para você revisar antes de enviar.
+</Tip>
+
+### No Instagram
+
+Clique no botão **+** (**Anexos e ações**), abra **Resposta rápida** e escolha a resposta. No Instagram, o atalho com `/` não abre a lista.
+
+## Encontrar, editar e excluir
+
+- **Buscar respostas...**: procura pelo título, pelo atalho ou pelo conteúdo.
+- **Atualizar**: recarrega a lista.
+- **Copiar**: aparece só nas respostas que têm atalho. Passe o mouse sobre o cartão e clique no ícone de copiar. O atalho é copiado com a barra, como `/oi`.
+- **Editar**: passe o mouse sobre o cartão e clique no ícone de lápis. Altere os campos e clique em **Salvar**.
+- **Excluir**: passe o mouse sobre o cartão e clique no ícone de lixeira. Confirme em **Excluir**.
+
+<Warning>
+  A exclusão vale para toda a equipe. A resposta some da lista de todos os usuários da empresa.
+</Warning>
+
+## Dicas para organizar
+
+- Use títulos que descrevem o assunto, como `Horário de atendimento` ou `Formas de pagamento`.
+- Crie atalhos curtos e fáceis de lembrar.
+- Use a busca para conferir se já existe uma resposta parecida antes de criar outra.
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Digitei a barra e a lista não apareceu. Por quê?">
+    A lista só abre quando há respostas que combinam com o que você digitou. Confira se já existe alguma resposta cadastrada. A barra precisa estar no começo do texto ou depois de um espaço.
+  </Accordion>
+  <Accordion title="A variável apareceu sem ser trocada. O que fazer?">
+    O CRM só reconhece as quatro variáveis desta página. Confira se o nome foi escrito corretamente. A **Prévia** do formulário avisa o que chegaria sem ser trocado.
+  </Accordion>
+  <Accordion title="Quem pode criar e editar respostas?">
+    Qualquer usuário da empresa com acesso ao CRM.
+  </Accordion>
+  <Accordion title="Preciso criar um atalho?">
+    Não. Sem atalho, você ainda encontra a resposta digitando parte do título ou do conteúdo depois da barra.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp" icon="whatsapp" href="/atendimento/whatsapp">
+    Use as respostas durante o atendimento.
+  </Card>
+  <Card title="Instagram" icon="instagram" href="/atendimento/instagram">
+    Insira respostas prontas nas conversas do Instagram.
+  </Card>
+</CardGroup>
