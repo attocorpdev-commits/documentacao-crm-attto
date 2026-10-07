@@ -75,7 +75,25 @@ No topo da lista, o ícone de sino liga ou desliga o som e o destaque de novas m
   </Step>
 </Steps>
 
-Ao lado do horário de cada mensagem enviada, um tique significa **Enviado** e dois tiques significam **Entregue**. Se aparecer um ícone de alerta, a mensagem não foi entregue. Clique nele para tentar novamente. Enquanto o CRM tenta de novo, o ícone gira e mostra **Reenviando…**.
+### Marcas de entrega
+
+Ao lado do horário de cada mensagem enviada, o CRM mostra em que ponto ela está:
+
+| Marca | O que significa |
+| --- | --- |
+| Círculo girando | **Enviando**: a mensagem está saindo agora |
+| Um tique | **Enviado**: o WhatsApp aceitou a mensagem |
+| Dois tiques | **Entregue**: a mensagem chegou ao contato |
+| Ícone de alerta | **Não entregue — clique para tentar novamente**. Quando o CRM sabe o motivo, ele aparece no aviso |
+| Ícone de relógio | **Não foi possível enviar. Toque para tentar novamente.** O envio travou antes de sair |
+
+Clique no ícone de alerta ou no de relógio para tentar de novo. Enquanto o CRM tenta, o ícone gira e mostra **Reenviando…**. Para ver o estado por escrito, abra **Mais opções** e clique em **Dados da mensagem**.
+
+As mensagens enviadas pela IA e as enviadas por um disparo seguem as mesmas marcas, com o estado real do envio. Veja [Disparos](/marketing/disparos).
+
+<Note>
+  Os dois tiques só aparecem quando a entrega é confirmada. Se o WhatsApp recusar a mensagem depois de aceitá-la, os dois tiques saem e a mensagem passa a mostrar o ícone de alerta. O CRM não deixa marca de entrega que não aconteceu.
+</Note>
 
 <Note>
   Se a mensagem que falhou foi enviada por um template, o CRM não repete o texto solto. Aparece o aviso **Reenvie pelo modelo** e a janela **Enviar Template** abre para você escolher o template de novo.
@@ -121,6 +139,10 @@ Você pode enviar imagem, vídeo, PDF, documento do Office ou arquivo compactado
 | Vídeo e áudio | 16 MB |
 | Documento | 95 MB |
 
+<Note>
+  Em alguns canais o WhatsApp só aceita foto em JPG ou PNG e vídeo em MP4. Uma foto em outro formato, uma foto acima de 5 MB ou um vídeo gravado no iPhone (`.mov`) chegam ao contato como arquivo, para não deixarem de chegar. Na conversa do CRM a mensagem continua aparecendo como foto ou vídeo.
+</Note>
+
 ### Outras ações do menu de anexos
 
 - **Resposta rápida**: insere uma mensagem pronta. Veja [Respostas rápidas](/atendimento/respostas-rapidas).
@@ -130,6 +152,10 @@ Você pode enviar imagem, vídeo, PDF, documento do Office ou arquivo compactado
 <Warning>
   Em alguns canais aparece o aviso **Fora da janela de 24h**. Nesse caso o campo de mensagem e o botão **+** ficam bloqueados. Se o aviso mostrar o botão **Enviar Template**, clique nele. Se não mostrar, aguarde o contato responder.
 </Warning>
+
+<Note>
+  Preencha todos os campos da janela **Enviar Template** antes de enviar. Se um campo ficar em branco, a mensagem não sai e o CRM mostra **Template não entregue** com o motivo **Variável do modelo não preenchida**.
+</Note>
 
 ## Ações em uma mensagem
 
@@ -192,11 +218,32 @@ Os controles de IA ficam no topo da conversa. Eles aparecem conforme o seu plano
 | Controle | O que faz |
 | --- | --- |
 | **Pausar IA integrada nesta conversa** | A IA para de responder só nesta conversa |
-| **Retomar IA integrada nesta conversa** | A IA volta a responder nesta conversa |
+| **Retomar IA integrada nesta conversa** | A IA volta a responder nesta conversa e a marca de que uma pessoa assumiu é removida |
 | **Assumir** | Você assume a conversa e a IA é pausada |
 | **Desativar IA Personalizada nesta conversa** | Desliga a IA Personalizada só nesta conversa |
 | **Desligar IA Integrada neste canal** | Desliga a IA Integrada em todas as conversas do canal |
 | **Reiniciar memória da IA** | A IA esquece o histórico desta conversa e recomeça do zero |
+
+Quando você retoma uma conversa que estava pausada, o CRM confirma o que aconteceu:
+
+| Aviso | Quando aparece |
+| --- | --- |
+| **A conversa voltou para a IA.** | Alguém da equipe tinha usado **Assumir**. O aviso completa: **Alguém da equipe tinha assumido esta conversa. A IA voltou a responder só nela.** |
+| **A IA voltou a responder nesta conversa.** | A IA estava apenas pausada aqui. O aviso completa: **A IA estava pausada só nesta conversa e foi reativada.** |
+
+Enquanto o CRM salva, o botão de pausar e retomar mostra um círculo girando e não aceita um segundo clique. Se a mudança não for salva, a conversa volta a como estava e aparece **Não foi possível alterar a IA nesta conversa.** com **Nada foi alterado. Tente de novo em instantes.**
+
+<Tip>
+  Retomar a conversa também tira dela a marca **Com uma pessoa**. Com isso, ela volta a ser ligada e desligada em lote na tela [Agente IA](/ia/agente-de-ia).
+</Tip>
+
+<Note>
+  **Reiniciar memória da IA** aparece para o dono da conta e para quem tem acesso à tela [Agente IA](/ia/agente-de-ia).
+</Note>
+
+<Note>
+  Quando a IA responde com áudio, o contato recebe uma nota de voz, como se alguém tivesse gravado. Quando ela responde com foto ou vídeo, a mensagem chega como foto ou vídeo.
+</Note>
 
 <Warning>
   Os ícones de IA no topo da lista **Conversas** ligam ou desligam a IA em todas as conversas ou em todos os canais da empresa. Use com atenção.
@@ -216,13 +263,9 @@ Com a IA desligada para todas as conversas, o botão de pausa muda de função:
 - **Ativar a IA só nesta conversa (IA global desligada)**: libera a IA apenas nesta conversa. O aviso passa a ser **IA global desligada, ativa aqui**.
 - **Voltar ao global (desligar a IA nesta conversa)**: desfaz a liberação. A conversa volta a seguir o desligamento geral.
 
-<Warning>
-  Se a conversa já foi pausada por uma pessoa, seja pelo botão **Assumir** ou por **Pausar IA integrada nesta conversa**, não dá para liberar a IA por aqui. O CRM mostra **Esta conversa foi assumida por uma pessoa.** e **Retome a conversa antes de reativar a IA aqui.** A pausa feita por uma pessoa sempre tem prioridade.
-</Warning>
+Isso funciona mesmo quando a conversa está pausada por uma pessoa, seja pelo botão **Assumir** ou por **Pausar IA integrada nesta conversa**. Um clique em **Ativar a IA só nesta conversa (IA global desligada)** faz as duas coisas de uma vez: devolve a conversa para a IA e libera a IA só nela. Você não precisa ligar a IA de novo para todas as conversas.
 
-<Tip>
-  Para liberar uma conversa nessa situação, ligue a IA de novo para todas as conversas na tela [Agente IA](/ia/agente-de-ia) e depois clique em **Retomar IA integrada nesta conversa**.
-</Tip>
+O CRM confirma com o mesmo aviso de retomada: **A conversa voltou para a IA.** quando alguém tinha usado **Assumir**, ou **A IA voltou a responder nesta conversa.** quando a IA estava apenas pausada.
 
 <Note>
   O aviso **IA global desligada** aparece em telas largas. Em telas estreitas ele fica escondido, mas o botão de pausa continua funcionando do mesmo jeito.
@@ -270,6 +313,12 @@ O painel também mostra a quantidade de mensagens **Recebidas** e **Enviadas**, 
   </Accordion>
   <Accordion title="O topo da conversa mostra IA global desligada. A IA parou de responder?">
     Sim, enquanto esse aviso estiver ali. Alguém usou **Desligar IA para todas as conversas** na tela [Agente IA](/ia/agente-de-ia). Você pode liberar a IA só nesta conversa pelo botão **Ativar a IA só nesta conversa (IA global desligada)**.
+  </Accordion>
+  <Accordion title="Alguém assumiu a conversa e a IA não volta. O que eu faço?">
+    Clique no botão de IA no topo da conversa. Um clique devolve a conversa para a IA, mesmo com a IA desligada para todas as conversas. Nesse caso a IA volta a responder só nesta conversa e o CRM mostra **A conversa voltou para a IA.**
+  </Accordion>
+  <Accordion title="A mensagem estava com dois tiques e agora mostra um alerta. Por quê?">
+    O WhatsApp aceitou a mensagem e depois a recusou. O CRM tira os dois tiques para não mostrar uma entrega que não aconteceu. Clique no ícone de alerta para tentar novamente.
   </Accordion>
   <Accordion title="Cliquei para reenviar e o CRM abriu a lista de templates. Por quê?">
     A mensagem que falhou era um template. Para a entrega sair certa, o CRM não repete o texto solto: ele mostra **Reenvie pelo modelo** e abre a janela **Enviar Template** para você escolher o template de novo.

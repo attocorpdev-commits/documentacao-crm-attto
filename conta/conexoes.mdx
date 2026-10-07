@@ -42,7 +42,7 @@ Clique nos três pontos ao lado do canal para ver as ações.
 | Ação | O que faz |
 | --- | --- |
 | **Renomear** | Muda o **Nome do canal** e a **Sigla (apelido, até 5 caracteres)**, que aparece nos cartões e nas conversas. |
-| **Desconectar** | Desliga o número do CRM. Aparece só em canal conectado. |
+| **Desconectar** | Desliga o número do CRM. Aparece só em canal conectado. As conversas que já chegaram por ele continuam no CRM. |
 | **Excluir canal** | Remove o canal. Aparece só em canal desconectado. |
 
 Para excluir, digite **CONFIRMAR** na janela e clique em **Excluir**.
@@ -60,6 +60,15 @@ Quando o canal é o único da empresa ou está ligado à IA, a janela mostra um 
 ### Quando um número cai
 
 Se um número perde a conexão, a tela mostra o aviso **Um número precisa ser reconectado** e o canal ganha o selo **Precisa reconectar**. Clique em **Reconectar**. Se não voltar, escaneie o QR Code de novo.
+
+Quando o CRM tenta religar sozinho e não consegue, ele também abre a janela **Número desconectado** (ou **Números desconectados**, se for mais de um), em qualquer tela do sistema. Ela lista os números afetados e traz dois botões:
+
+- **Ir para Conexões**: leva você à lista de canais do WhatsApp para reconectar.
+- **Agora não**: fecha o aviso.
+
+<Note>
+  Quem tem acesso a canais específicos só é avisado sobre os canais que enxerga. Veja [Equipe](/conta/equipe).
+</Note>
 
 ### Quando a sessão fica dessincronizada
 
@@ -102,7 +111,7 @@ Clique no cartão **WhatsApp Oficial (Meta)**. A tela tem duas abas: **Canais** 
 </Tip>
 
 <Note>
-  Se a sua equipe já recebe aviso de lead novo no WhatsApp, ao terminar a conexão (ou uma reconexão) aparece a janela **Templates de aviso criados**. As mensagens de aviso são criadas no número novo e passam pela análise da Meta, o que costuma levar alguns minutos. Clique em **Fechar** ou em **Ver status dos templates** para acompanhar. Você configura esse aviso em [Agente IA](/ia/agente-de-ia).
+  Se a sua equipe já recebe aviso de lead novo no WhatsApp, ao terminar a conexão (ou uma reconexão) aparece a janela **Templates de aviso criados**. O CRM cria uma única mensagem de aviso no número novo, que serve para todos os tipos de aviso, e ela passa pela análise da Meta. Isso costuma levar alguns minutos. Clique em **Fechar** ou em **Ver status dos templates**, que abre a aba **Templates**. Você configura esse aviso em [Agente IA](/ia/agente-de-ia).
 </Note>
 
 ### Gerenciar canais
@@ -125,9 +134,17 @@ Ao clicar em **Reconectar**, abre a janela **Reconectar WhatsApp**. Clique em **
   **Reautorizar (conta errada)** remove o canal antes de reconectar. Confirme em **Remover e reconectar**. O canal e as suas configurações são removidos, e você precisa autorizar de novo pela Meta e escolher a conta certa. As conversas desse canal são preservadas. Se a remoção falhar, o CRM avisa que nada foi excluído e você pode tentar de novo em instantes.
 </Warning>
 
-Ao excluir um canal, a vaga volta a ficar livre no seu plano. Se a IA atendia por ele, o CRM avisa que a IA ficou sem canal: ligue a IA a outro número.
+Ao excluir um canal, a vaga volta a ficar livre no seu plano e você pode conectar outro número no lugar. Se a IA atendia por ele, o CRM avisa que a IA ficou sem canal: ligue a IA a outro número.
 
-O selo **Silencioso** indica que o canal não recebe mensagens há mais de 7 dias. Verifique se o número segue ativo.
+<Note>
+  O canal só sai do CRM depois que o número é desligado de verdade. Se esse desligamento falhar, nada é excluído: o CRM avisa e você pode tentar de novo em instantes.
+</Note>
+
+O selo **Silencioso** indica que o canal não recebe mensagens há mais de 7 dias. Verifique se o número segue ativo. Quem é proprietário também recebe um e-mail quando um canal passa a ficar silencioso.
+
+<Note>
+  A contagem olha a última mensagem recebida nas conversas desse canal. Canal que está recebendo mensagem não ganha o selo, e canal criado há poucos dias também não.
+</Note>
 
 ### Templates
 
@@ -151,6 +168,10 @@ Templates são mensagens prontas, aprovadas pela Meta. Eles servem para enviar m
 As categorias são **Marketing**, **Utilitário** e **Autenticação**. O nome aceita só letras minúsculas, números e o sinal de sublinhado.
 
 Se usar variáveis, como o nome do contato, preencha um exemplo para cada uma. Use exemplos fictícios, como "Maria". A Meta revisa esses exemplos.
+
+<Tip>
+  Logo abaixo do **Corpo da mensagem**, clique em **Ver exemplos de variáveis**. A janela **Variáveis: duas sintaxes diferentes** mostra que no template a variável é numerada, enquanto na resposta rápida ela vai pelo nome. Veja [Respostas rápidas](/atendimento/respostas-rapidas).
+</Tip>
 
 | Status | Significado |
 | --- | --- |
@@ -184,11 +205,13 @@ Clique no cartão **Instagram Oficial (Meta)**.
 
 A tela mostra **Canais utilizados** e quantas vagas restam no seu plano. Em cada canal você pode definir o **Pipeline padrão deste canal**, **Renomear** ou **Excluir canal**.
 
+Em **Renomear** você preenche o **Nome do canal** e a **Sigla (apelido, até 5 caracteres)**, que aparece ao lado do nome nos cartões e nas conversas.
+
 ## Perguntas frequentes
 
 <AccordionGroup>
   <Accordion title="Atingi o limite de canais. Como conecto mais?">
-    No WhatsApp Oficial, a janela de limite traz o botão **Contratar canal extra**. No Instagram, o botão é **Adquirir canal Instagram** — no plano Start ele não aparece, porque o canal de Instagram é dos planos Prime e Ultra. No WhatsApp por QR Code, clique em **Falar com o suporte**.
+    No WhatsApp Oficial, abre a janela **Limite de canais do plano atingido**, que mostra quantos canais o seu plano permite e quantos você já tem. Ela traz os botões **Fechar** e **Contratar canal extra**. No Instagram, o botão é **Adquirir canal Instagram** — no plano Start ele não aparece, porque o canal de Instagram é dos planos Prime e Ultra. No WhatsApp por QR Code, clique em **Falar com o suporte**.
   </Accordion>
   <Accordion title="O limite de canais de WhatsApp conta os dois tipos?">
     Sim. O limite do plano soma os canais de WhatsApp por QR Code e os canais oficiais.

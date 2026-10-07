@@ -111,10 +111,15 @@ A tela mostra avisos quando algo precisa de atenção:
 
 - **Nenhuma etapa envia conversão ainda.** O rastreamento está ativo, mas nenhuma etapa do Pipeline tem evento escolhido. Marque pelo menos uma etapa.
 - **A última conversão não foi enviada ao Meta.** A última tentativa falhou. Confira o Pixel e a chave de acesso e clique em **Testar conexão** de novo. Esse aviso só aparece quando a falha foi em uma conversão de verdade.
+- **Nenhuma conversão chegou ao Meta ainda** ou **Nenhuma conversão chegou ao Meta há X dias** (o X é o número de dias desde a última). O rastreamento está ligado, mas a Meta não confirmou nenhuma conversão nos últimos 7 dias. Quando existe uma conversão confirmada mais antiga, o aviso mostra **Última conversão confirmada:** com a data e a hora. Clique no ícone de ajuda ao lado do título para lembrar o que conferir: se os leads estão chegando por anúncio com botão de WhatsApp e se as etapas do Pipeline têm evento escolhido.
 - **Este é o resultado de um TESTE de conexão.** O último resultado guardado veio do botão **Testar conexão**, e não de uma conversão de verdade. Por isso ele não mostra a saúde real do rastreamento. Logo abaixo você lê **O teste de conexão passou.** ou **O teste de conexão falhou.** — quando a Meta explica o motivo, aparece o motivo — com a data e a hora.
 - **A Meta recusou.** O teste não passou. Revise os dados colados. Se precisar de ajuda, abra **Detalhe técnico (para o suporte)** e envie essas informações ao suporte.
 
 Para tirar o resultado do teste da tela, clique em **Limpar**, no canto do aviso. Isso apaga só esse registro: o próximo envio, de teste ou de verdade, volta a aparecer.
+
+<Note>
+  Só conta como conversão enviada aquela que a Meta confirmou ter recebido. Resultado do botão **Testar conexão** não entra nessa conta.
+</Note>
 
 Em **Conexões**, o item **Rastreamento de Conversão** mostra um ponto verde quando o rastreamento está ativo.
 
@@ -132,6 +137,9 @@ O campo abre vazio toda vez que você entra na tela. Cole o código de novo semp
   </Accordion>
   <Accordion title="Movi um lead e nada foi enviado. Por quê?">
     Confira três pontos: o rastreamento está **Ativo**, a etapa de destino tem um evento em **Conversão Meta:** e o lead chegou por anúncio com botão de WhatsApp.
+  </Accordion>
+  <Accordion title="A tela diz que nenhuma conversão chegou ao Meta. O que conferir?">
+    Confira duas coisas: as etapas do Pipeline têm evento escolhido em **Conversão Meta:** e os leads que avançaram chegaram por anúncio com botão de WhatsApp. Se nenhum lead de anúncio passou por essas etapas nos últimos dias, o aviso é esperado e sai sozinho no próximo envio. Se tudo estiver certo e o aviso continuar, clique em **Testar conexão** para checar o Pixel e a chave de acesso.
   </Accordion>
   <Accordion title="O aviso de teste ficou na tela. O rastreamento está com problema?">
     Não necessariamente. Esse aviso mostra o resultado do último **Testar conexão**, que não representa a saúde real do rastreamento. Clique em **Limpar** para tirar o aviso e acompanhe os próximos envios de verdade.

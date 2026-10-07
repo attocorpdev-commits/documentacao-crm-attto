@@ -12,7 +12,7 @@ No menu lateral, abra a categoria **CRM** e clique em **Contatos**.
 A tela tem duas abas: **Lista de contatos** e **Importar CSV**. No topo da lista ficam quatro números: **Total na base**, **Exibindo**, **Valor (filtro)** e **Com tags**.
 
 <Note>
-  Os leads entram nesta lista sozinhos, conforme as conversas chegam. Você só precisa cadastrar à mão quem ainda não falou com você.
+  Os leads entram nesta lista sozinhos, conforme as conversas chegam. Você só precisa cadastrar à mão quem ainda não falou com você. Quando a conversa chega pelo WhatsApp, o CRM guarda o nome que a pessoa usa no perfil dela, então a maioria dos contatos já entra com nome.
 </Note>
 
 <Card title="Abrir Contatos no CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/contacts" horizontal>
@@ -23,9 +23,13 @@ A tela tem duas abas: **Lista de contatos** e **Importar CSV**. No topo da lista
 
 Digite no campo **Buscar telefone, nome ou tag...**. A lista é filtrada enquanto você digita.
 
-- **Por telefone:** basta um pedaço do número, de preferência os últimos 8 dígitos. Use só números, sem parênteses, espaços ou traço. O 9 inicial do celular pode não ser reconhecido na busca: se o contato não aparecer, digite o número sem ele.
+- **Por telefone:** basta um pedaço do número, de preferência os últimos 8 dígitos. Use só números, sem parênteses, espaços ou traço. O 9 inicial do celular pode não ser reconhecido na busca pelo número principal: se o contato não aparecer, digite o número sem ele.
 - **Por nome:** não precisa acertar acento nem maiúscula. "joao" encontra "João".
 - **Por tag:** digite parte do nome da tag.
+
+<Tip>
+  Quando um contato tem um segundo número guardado, como o telefone que a pessoa deixou em um formulário, a busca também encontra o contato por esse número. Aí tanto faz digitar com o 9 ou sem.
+</Tip>
 
 Você também pode usar **Filtrar por tag** para marcar uma ou mais tags. Se houver Instagram conectado, o filtro **Canal** mostra só os contatos daquela conta.
 
@@ -89,24 +93,63 @@ Você pode importar uma planilha nos formatos `.csv`, `.xlsx` ou `.xls`.
   <Step title="Abra a aba de importação">
     Clique em **Importar CSV**.
   </Step>
+  <Step title="Baixe o modelo">
+    Clique em **Baixar modelo (.xlsx)**. O arquivo já vem com todas as colunas que o CRM lê e com duas linhas de exemplo. Em **Formato e colunas** você vê as regras completas.
+  </Step>
   <Step title="Escolha o destino">
-    Em **Pipeline de destino**, selecione o pipeline que vai receber os leads. Eles entram na primeira etapa.
+    Em **Pipeline de destino**, selecione o pipeline que vai receber os leads.
   </Step>
   <Step title="Envie o arquivo">
     Arraste a planilha para a área indicada ou clique para selecionar.
   </Step>
+  <Step title="Confira a prévia">
+    O CRM lê o arquivo antes de gravar nada e mostra quantas linhas leu, quantos contatos são válidos e quantas linhas estão sem telefone válido. Logo abaixo ele diz qual coluna usou como telefone e lista uma amostra com os cinco primeiros contatos.
+  </Step>
   <Step title="Confirme">
-    Na janela **Importar Contatos**, confira o arquivo e o pipeline e clique em **Importar**.
+    Na janela **Importar Contatos**, clique em **Importar**.
   </Step>
 </Steps>
 
-A planilha precisa de uma coluna de telefone. O CRM reconhece a coluna mesmo com nomes diferentes, como `telefone`, `celular` ou `WhatsApp`. As colunas `nome` e `tags` são opcionais. Dentro da coluna de tags, separe por vírgula ou ponto e vírgula.
+<Note>
+  O botão **Importar** só libera depois que a prévia termina, e apenas se o CRM tiver encontrado uma coluna de telefone com ao menos um contato válido. Se ele não encontrar, o aviso diz para dar à coluna um nome como Telefone, Celular ou WhatsApp e enviar de novo.
+</Note>
+
+### Colunas da planilha
+
+A primeira linha precisa ser o cabeçalho, com o nome das colunas. Só a coluna de telefone é obrigatória.
+
+| Coluna | O que o CRM faz com ela |
+| --- | --- |
+| **Telefone** | Obrigatória. Número com DDD, como 11999991234 ou 5511999991234. Linha sem telefone válido não é importada |
+| **Nome** | Nome do contato. Sem essa coluna, os contatos entram sem nome |
+| **Tags** | Uma ou mais tags, separadas por vírgula ou ponto e vírgula |
+| **Etapa** | Nome de uma etapa do pipeline escolhido. Em branco, o contato entra na primeira etapa |
+| **Canal** | Nome de um canal de WhatsApp conectado. Em branco, o contato entra no canal conectado mais antigo |
+| **Valor** | Valor da negociação. Aceita 1.500,50, R$ 1500 ou 1500.5 |
+| **Observação** | Texto livre, que vira a anotação do contato |
+| **Origem** | De onde veio o lead, em texto livre |
+| **Responsável** | E-mail ou nome de um integrante da equipe |
+
+O cabeçalho é reconhecido pela palavra, não pelo nome exato. **Nome do cliente** vira nome e **Tags do lead** vira tags.
+
+<Warning>
+  Uma linha é recusada quando a **Etapa** não existe no pipeline escolhido, quando o **Canal** não existe ou está desconectado, quando o **Valor** não é um número ou quando o **Responsável** não é encontrado. O CRM recusa a linha em vez de gravar um dado errado, e conta quantas foram no fim da importação.
+</Warning>
+
+Cada arquivo aceita até 50.000 linhas e 25 MB. Se tiver mais linhas que isso, a prévia avisa quantas ficaram de fora e só importa até o limite. Se passar de 25 MB, o arquivo não é lido e o aviso pede para dividir em arquivos menores.
 
 <Tip>
-  Clique em **Baixar template (.xlsx)** para usar um modelo pronto. Em **Formato e colunas** você vê o resumo das colunas aceitas.
+  Confira os acentos na amostra da prévia. Se aparecerem trocados, o próprio aviso pede para salvar a planilha de novo como CSV UTF-8.
 </Tip>
 
-Ao terminar, o CRM informa quantos contatos são novos e quantos já existiam. Os que já existiam não são duplicados.
+### Quem já está na sua base
+
+- Contato que já existe não é duplicado. As tags novas são somadas às que ele já tem.
+- **Valor**, **Observação**, **Origem** e **Responsável** só preenchem o que estiver vazio no contato. Nada que você já tinha é sobrescrito.
+- Contato que já está em outro pipeline não é movido para o pipeline escolhido. Ele aparece no aviso do fim da importação.
+- Linhas repetidas dentro do próprio arquivo viram um contato só, com as tags somadas. A prévia avisa quantas são.
+
+Ao terminar, aparece **Importação concluída** com o resultado: quantos contatos são novos, quantos já existiam, quantos não foram gravados, quantos foram recusados e quantos já estavam em outro funil.
 
 ## Exportar os contatos
 
@@ -140,6 +183,19 @@ Na unificação, as tags de todos os cadastros são somadas e o maior valor é m
   Quando o mesmo número tem duas conversas separadas no mesmo canal, o grupo fica marcado como **Revisão manual** e não é unificado automaticamente.
 </Note>
 
+### Quando a pessoa usa dois números
+
+Acontece de alguém preencher um formulário com um número e depois falar com você no WhatsApp por outro. Antes isso virava dois cards. Agora o CRM junta os dois em um card só, sem você fazer nada.
+
+Para juntar sozinho, ele exige que:
+
+- O nome do formulário tenha sobrenome e seja o mesmo nos dois
+- O formulário e a mensagem no WhatsApp tenham chegado com até 15 minutos de diferença
+- O card do formulário ainda não tenha conversa
+- Só exista um card com aquele nome nesse intervalo
+
+O card passa a usar o número do WhatsApp, e o número do formulário fica guardado nele. Esse número guardado continua valendo na busca. Nos casos em que o CRM não tem certeza, ele não junta nada: os dois cards ficam na lista e você resolve à mão.
+
 ## Perguntas frequentes
 
 <AccordionGroup>
@@ -154,6 +210,12 @@ Na unificação, as tags de todos os cadastros são somadas e o maior valor é m
   </Accordion>
   <Accordion title="Apareceu um aviso de leads sem pipeline. O que faço?">
     Escolha um pipeline na lista ao lado do aviso e clique em **Mover**. Os leads entram no funil para você acompanhar por etapas.
+  </Accordion>
+  <Accordion title="A importação terminou dizendo que algumas linhas foram recusadas. Por quê?">
+    Uma linha é recusada quando alguma coluna opcional traz um dado que não existe na sua conta: uma **Etapa** que não está no pipeline escolhido, um **Canal** que não existe ou está desconectado, um **Valor** que não é número ou um **Responsável** que não é da equipe. Corrija essas linhas na planilha e importe só elas de novo.
+  </Accordion>
+  <Accordion title="Importei um contato que eu já tinha e ele não entrou no pipeline escolhido.">
+    Contato que já está em outro pipeline não é movido pela importação. O aviso do fim da importação conta quantos ficaram nessa situação. Para trazer esses leads, abra o contato e use **Mover para pipeline**.
   </Accordion>
 </AccordionGroup>
 

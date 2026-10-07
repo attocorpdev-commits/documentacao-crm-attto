@@ -55,6 +55,8 @@ O quadro **Nova Campanha** tem três partes numeradas.
     No canal **WhatsApp**, escreva em **Texto da mensagem**.
 
     No canal **WhatsApp Oficial (Meta)**, clique em **Selecionar template...** e escolha um modelo. Se ainda não houver nenhum, clique em **Criar template**.
+
+    Antes de escrever, leia a seção "Variáveis na mensagem", mais abaixo nesta página. Variável escrita no lugar errado trava o envio.
   </Step>
   <Step title="Ajuste o ritmo de envio">
     Defina os intervalos entre os envios. Veja os detalhes em [Ritmo de envio](#ritmo-de-envio).
@@ -80,9 +82,33 @@ A mesma tag não pode estar em incluir e em excluir ao mesmo tempo. Para criar e
 - **Aplicar tag ao enviar** (opcional): cada contato que receber a mensagem ganha as tags escolhidas.
 - **Personalização com IA**: disponível no canal **WhatsApp**. Gera variações únicas da mensagem para cada contato.
 
+<Note>
+  Quem responder ao seu disparo entra no atendimento como qualquer outra conversa. Se o **Agente IA** estiver ativo na sua empresa, ele atende essas respostas automaticamente. Veja [Agente IA](/ia/agente-de-ia) para ligar ou desligar.
+</Note>
+
+### Variáveis na mensagem
+
+O CRM tem duas formas de escrever variável, e elas não funcionam no mesmo lugar:
+
+| Onde funciona | Como se escreve | Exemplos |
+| --- | --- | --- |
+| Template do canal **WhatsApp Oficial (Meta)** | numerada | `{{1}}`, `{{2}}` |
+| Resposta rápida, dentro da conversa | por nome | `{{primeiro_nome}}`, `{{nome}}`, `{{empresa}}`, `{{vendedor}}` |
+
+No **Texto da mensagem** do canal **WhatsApp**, o disparo não tem variável: o que você escrever sai igual para todos os contatos.
+
+O CRM tem um guia com exemplos das duas formas, chamado **Variáveis: duas sintaxes diferentes**. Ele abre em dois lugares:
+
+- na tela de templates do **WhatsApp Oficial**, no link **Ver exemplos de variáveis**, embaixo de **Corpo da mensagem**. É a mesma tela que abre pelo botão **Criar template**;
+- em [Respostas rápidas](/atendimento/respostas-rapidas), no botão **Ver exemplos**.
+
+<Warning>
+  Não misture as duas formas. Se sobrar alguma variável sem preenchimento na mensagem, aquele contato não recebe nada: o envio vira falha com o motivo **Variável do modelo não preenchida**. É de propósito: assim ninguém recebe a mensagem com a variável crua no lugar do nome.
+</Warning>
+
 ### Nome do contato e mídia no template
 
-No canal **WhatsApp Oficial (Meta)**, o template pode ter espaços variáveis, escritos como `{{1}}`. No disparo, todos esses espaços são preenchidos com o primeiro nome do contato. Se o contato não tem nome, entra a palavra "cliente".
+No canal **WhatsApp Oficial (Meta)**, o template pode ter espaços variáveis numerados. No disparo, todos esses espaços são preenchidos com o primeiro nome do contato. Se o contato não tem nome, entra a palavra "cliente".
 
 Se o template tem imagem, vídeo ou documento, todos os contatos recebem o mesmo arquivo aprovado junto com o modelo.
 
@@ -133,6 +159,12 @@ Clique em **Ver relatório** para abrir o **Relatório do disparo**. Ele mostra 
 - clicar em **Abrir conversa** para falar com um contato;
 - clicar em **Exportar CSV** para baixar a lista em planilha.
 
+Quando um contato aparece como falha, o relatório mostra o motivo ao lado dele, e o motivo também vai para a planilha do **Exportar CSV**. Se o motivo for **Variável do modelo não preenchida**, foi o próprio CRM que barrou o envio: corrija a mensagem e dispare de novo para esses contatos.
+
+### A mensagem na conversa do contato
+
+Cada envio do disparo também aparece na conversa do contato, com a situação real de entrega. Se o WhatsApp recusar a mensagem, a marca de entregue sai dela e o erro aparece no lugar. O CRM ainda revisa essas marcas de tempo em tempo e corrige sozinho as que ficaram com a situação errada.
+
 ## Pausar, retomar, repetir e excluir
 
 - **Pausar**: a fila para onde está e nada é perdido.
@@ -143,6 +175,21 @@ Clique em **Ver relatório** para abrir o **Relatório do disparo**. Ele mostra 
 ## Contatos que pediram para não receber
 
 Quem pediu para sair da sua lista aparece com a etiqueta **Descadastrado**. Esse contato não pode ser marcado e não recebe disparos, mesmo com **Selecionar todos**. A tela mostra quantos descadastrados ficaram de fora.
+
+A etiqueta entra sozinha quando a pessoa:
+
+- responde só "sair", "parar", "cancelar" ou "descadastrar";
+- deixa claro que não é a pessoa certa ou que não quer contato, com frases como "não conheço", "número errado", "foi engano", "não fui eu", "não pedi", "me tira da lista" ou "pare de mandar mensagem".
+
+Nesse segundo caso, o **Agente IA** também para de responder aquela conversa e ela fica esperando um atendente. É de propósito: insistir com quem nunca pediu contato é o que leva ao bloqueio do seu número.
+
+<Note>
+  Frase comum no meio da conversa não descadastra ninguém. "Posso sair às 18h" ou "não quero parar de receber" continuam valendo como mensagem normal.
+</Note>
+
+Se a Meta avisar que um número não tem WhatsApp, ele também fica fora dos disparos por 30 dias e aparece como **Descadastrado** nesse período.
+
+O descadastro pedido pela própria pessoa nunca é desfeito sozinho.
 
 ## Perguntas frequentes
 
@@ -161,6 +208,15 @@ Quem pediu para sair da sua lista aparece com a etiqueta **Descadastrado**. Esse
   </Accordion>
   <Accordion title="Por que a campanha está parada em Aguardando janela?">
     O horário atual está fora da janela de envio. O disparo retoma sozinho no horário indicado.
+  </Accordion>
+  <Accordion title="O relatório mostra Variável do modelo não preenchida. O que fazer?">
+    A mensagem foi enviada com uma variável que ficou sem preenchimento, então o CRM barrou o envio antes de sair. Ninguém recebeu a mensagem com a variável crua. Confira as regras na seção "Variáveis na mensagem", corrija a mensagem e dispare de novo para esses contatos.
+  </Accordion>
+  <Accordion title="Posso usar o nome do contato no texto livre do disparo?">
+    No canal **WhatsApp**, não: o **Texto da mensagem** sai igual para todos. Quem preenche o nome é o template do canal **WhatsApp Oficial (Meta)**. Dentro da conversa, as respostas rápidas também preenchem nome, empresa e vendedor — veja [Respostas rápidas](/atendimento/respostas-rapidas).
+  </Accordion>
+  <Accordion title="Quem responder ao disparo é atendido pela IA?">
+    Sim, se o **Agente IA** estiver ativo na sua empresa. A conversa aberta pelo disparo nasce com a IA ligada, como qualquer outra. Você pode desligar a IA conversa por conversa no atendimento. Veja [Agente IA](/ia/agente-de-ia).
   </Accordion>
 </AccordionGroup>
 

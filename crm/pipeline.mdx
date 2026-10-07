@@ -117,17 +117,29 @@ Com um **Canal vinculado**, os leads que chegam por aquele canal entram sozinhos
 Na mesma lista existem duas opções para reorganizar funis:
 
 - **Mesclar com…** junta dois pipelines. Você indica para qual etapa de destino vai cada etapa de origem.
-- **Desmesclar por canal…** cria um pipeline novo com as mesmas etapas e leva para ele os contatos de um canal.
+- **Desmesclar por canal…** cria um pipeline novo com as mesmas etapas e leva para ele os contatos de um canal, cada um na etapa em que já estava. Escolha o **Canal** (WhatsApp ou Instagram), o **Canal específico** e o **Nome da nova pipeline**. O funil novo vira o padrão daquele canal.
 
-Se aparecer o botão **Sem funil**, existem leads fora de qualquer pipeline. Clique nele, escolha o lead e use **Atribuir funil**.
+Se aparecer o botão **Sem funil**, existem leads fora de qualquer pipeline. Clique nele para abrir a janela **Leads sem funil**.
+
+<Steps>
+  <Step title="Ache o lead">
+    Use o campo **Buscar por nome ou telefone...**. Um segundo número guardado no lead, como o do formulário, também vale aqui. Para ver o resto da lista, clique em **Carregar mais**.
+  </Step>
+  <Step title="Escolha o destino">
+    Clique em **Atribuir funil** no lead e selecione o **Pipeline** e o **Estágio**.
+  </Step>
+  <Step title="Confirme">
+    Clique em **Mover para o funil**.
+  </Step>
+</Steps>
 
 ## Filtros e busca
 
-- **Buscar lead...** procura por nome, telefone, resumo da IA ou anotação.
+- **Buscar lead...** procura por nome, telefone, resumo da IA ou anotação. Se o lead tiver um segundo número guardado, como o telefone que a pessoa deixou em um formulário, esse número também vale na busca.
 - **Canal** mostra só os leads dos canais marcados.
 - **Membro** mostra só os leads de um responsável, ou os que estão **Sem responsável**.
 - **Data** filtra pelo período em que o lead entrou: **Hoje**, **Últimos 7 dias**, **Últimos 30 dias**, **Últimos 60 dias** ou **Últimos 90 dias**. Use **Personalizado** para escolher as datas.
-- O botão de funil ao lado abre **Filtrar estágios**, para esconder ou mostrar colunas.
+- O botão de funil ao lado abre **Filtrar estágios**, para esconder ou mostrar colunas. Quando o funil tem muitas etapas, a lista rola dentro da janela. No pé dela, **Todos** e **Nenhum** marcam e desmarcam tudo de uma vez.
 
 ## Aplicar uma tag a uma etapa inteira
 
@@ -149,6 +161,8 @@ O Agente IA pode mover o lead de etapa sozinho, conforme a conversa avança. Iss
 - A IA não troca o lead de pipeline.
 - Quando ela move um lead, aparece o aviso **Lead movimentado automaticamente**.
 - No **Histórico de movimentação**, essas mudanças aparecem como **Sistema (IA)**.
+
+A IA também mantém o **Valor (R$)** do card em dia: sempre que ela recalcula o valor da negociação durante a conversa, o card passa a mostrar o número novo. A exceção é o lead que chegou por formulário já com valor preenchido. Nesse caso o valor do formulário vale, e a IA não mexe nele.
 
 <Note>
   Esse recurso depende do que está liberado na sua conta. Se os leads não se movem sozinhos, fale com o responsável pela conta da sua empresa.
