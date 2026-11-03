@@ -1,0 +1,68 @@
+---
+title: "WhatsApp (QR Code) ou WhatsApp Oficial (Meta)"
+sidebarTitle: "Tipos de WhatsApp"
+description: "Entenda a diferença entre os dois jeitos de ligar um número ao CRM e escolha o melhor para a sua empresa."
+icon: "code-compare"
+keywords: ["WhatsApp Oficial", "QR Code", "Meta", "API oficial", "template", "janela de 24 horas", "bloqueio"]
+---
+
+O CRM liga números de WhatsApp de dois jeitos. Os dois atendem pela mesma tela de conversas, mas funcionam de forma diferente.
+
+<Columns cols={2}>
+  <Card title="WhatsApp (QR Code)" icon="qrcode">
+    Você liga o número escaneando um QR Code com o celular, como no WhatsApp Web.
+  </Card>
+
+  <Card title="WhatsApp Oficial (Meta)" icon="badge-check">
+    O número é ligado pela API oficial da Meta, com autorização feita na própria Meta.
+  </Card>
+</Columns>
+
+## Comparação
+
+| | WhatsApp (QR Code) | WhatsApp Oficial (Meta) |
+| --- | --- | --- |
+| **Como conecta** | Escaneando o QR Code com o celular | Autorizando pela Meta, ou colando o token do canal |
+| **Janela de 24 horas** | Não tem. Você responde quando quiser | Depois de 24 horas sem mensagem do contato, só sai template aprovado |
+| **Templates** | Não usa | Usa modelos aprovados pela Meta |
+| **Disparos** | Texto livre, com intervalo em minutos | Template aprovado, enviado em lotes |
+| **Reações nas mensagens** | Sim | Não |
+| **Agente IA** | Sim | Sim |
+| **Risco de bloqueio** | Sujeito a bloqueio em volume | Estável e sem risco de bloqueio |
+| **Custos da Meta** | Não se aplica | A Meta cobra pelo uso e pode limitar ou encarecer o canal a qualquer momento |
+| **Quando o número cai** | Reconecte e, se preciso, escaneie o QR Code de novo | Reconecte pela tela, sem gastar vaga nova do plano |
+| **Limite do plano** | Limite próprio de canais | Limite próprio de canais |
+
+## Qual escolher
+
+<AccordionGroup>
+  <Accordion title="WhatsApp (QR Code)" icon="qrcode">
+    Bom para começar rápido com o número que você já usa no celular. Leva poucos minutos e não depende de aprovação da Meta.
+
+    Por não ser um canal oficial, a conexão pode ser bloqueada ou banida pelo WhatsApp, principalmente com envio em volume, e não tem garantia de disponibilidade.
+  </Accordion>
+
+  <Accordion title="WhatsApp Oficial (Meta)" icon="badge-check">
+    Indicado para volume maior e para quem precisa mandar mensagem fora da janela de 24 horas, com templates aprovados.
+
+    Para conectar, o número precisa estar ativo na Meta, com a taxa paga.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  A Atto Corp recomenda o WhatsApp Oficial (Meta) para operações com muitos contatos ou com campanhas frequentes.
+</Tip>
+
+Você pode ter os dois tipos ao mesmo tempo, dentro do limite de canais de cada um no seu plano. Veja [Planos e cobrança](/conta/planos).
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Conectar seu WhatsApp" icon="link" href="/primeiros-passos/conectar-whatsapp">
+    Passo a passo para os dois tipos.
+  </Card>
+
+  <Card title="Conexões" icon="plug" href="/conta/conexoes">
+    Gerencie canais e templates.
+  </Card>
+</CardGroup>
