@@ -32,7 +32,7 @@
             "pages": [
               "atendimento/whatsapp",
               "atendimento/instagram",
-              "atendimento/instagram-controle-das-conversas",
+              "atendimento/instagram-mensagens-recusadas",
               "atendimento/respostas-rapidas"
             ]
           },
@@ -50,7 +50,7 @@
             "group": "Inteligência artificial",
             "pages": [
               "ia/assistente-ia",
-              "ia/agente-de-ia"
+              "ia/agente-ia"
             ]
           },
           {
@@ -65,7 +65,7 @@
             "pages": [
               "gestao/dashboard",
               "gestao/relatorios",
-              "gestao/area-do-gestor"
+              "gestao/area-gestor"
             ]
           },
           {
@@ -73,8 +73,23 @@
             "pages": [
               "conta/conexoes",
               "conta/equipe",
-              "conta/planos-e-cobranca",
+              "conta/planos",
               "conta/perfil"
+            ]
+          },
+          {
+            "group": "Plataforma",
+            "pages": [
+              "plataforma/visao-geral"
+            ]
+          },
+          {
+            "group": "Empresa",
+            "tag": "Atto Corp",
+            "pages": [
+              "empresa/marca",
+              "empresa/politicas",
+              "empresa/suporte"
             ]
           }
         ]
@@ -86,12 +101,46 @@
       "type": "button",
       "label": "Entrar no CRM",
       "href": "https://attocorp.com/auth"
-    }
+    },
+    "links": [
+      {
+        "icon": "headset",
+        "href": "https://wa.me/5562982340293",
+        "label": "Suporte"
+      },
+      {
+        "icon": "instagram",
+        "href": "https://www.instagram.com/attocorp",
+        "label": "Instagram"
+      }
+    ]
   },
   "contextual": {
     "options": [
       "copy",
       "view"
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/ia/agente-de-ia",
+      "destination": "/ia/agente-ia",
+      "permanent": true
+    },
+    {
+      "source": "/gestao/area-do-gestor",
+      "destination": "/gestao/area-gestor",
+      "permanent": true
+    },
+    {
+      "source": "/conta/planos-e-cobranca",
+      "destination": "/conta/planos",
+      "permanent": true
+    },
+    {
+      "source": "/atendimento/instagram-controle-das-conversas",
+      "destination": "/atendimento/instagram-mensagens-recusadas",
+      "permanent": true
+    }
+  ]
 }
