@@ -32,7 +32,7 @@
             "pages": [
               "atendimento/whatsapp",
               "atendimento/instagram",
-              "atendimento/instagram-controle-das-conversas",
+              "atendimento/instagram-mensagens-recusadas",
               "atendimento/respostas-rapidas"
             ]
           },
@@ -50,7 +50,7 @@
             "group": "Inteligência artificial",
             "pages": [
               "ia/assistente-ia",
-              "ia/agente-de-ia"
+              "ia/agente-ia"
             ]
           },
           {
@@ -65,7 +65,7 @@
             "pages": [
               "gestao/dashboard",
               "gestao/relatorios",
-              "gestao/area-do-gestor"
+              "gestao/area-gestor"
             ]
           },
           {
@@ -73,7 +73,7 @@
             "pages": [
               "conta/conexoes",
               "conta/equipe",
-              "conta/planos-e-cobranca",
+              "conta/planos",
               "conta/perfil"
             ]
           }
@@ -93,5 +93,27 @@
       "copy",
       "view"
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/ia/agente-de-ia",
+      "destination": "/ia/agente-ia",
+      "permanent": true
+    },
+    {
+      "source": "/gestao/area-do-gestor",
+      "destination": "/gestao/area-gestor",
+      "permanent": true
+    },
+    {
+      "source": "/conta/planos-e-cobranca",
+      "destination": "/conta/planos",
+      "permanent": true
+    },
+    {
+      "source": "/atendimento/instagram-controle-das-conversas",
+      "destination": "/atendimento/instagram-mensagens-recusadas",
+      "permanent": true
+    }
+  ]
 }
