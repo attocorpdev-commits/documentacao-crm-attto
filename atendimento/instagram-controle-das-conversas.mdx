@@ -1,0 +1,97 @@
+---
+title: "Instagram: mensagens recusadas por outro aplicativo"
+sidebarTitle: "Instagram: mensagens recusadas"
+description: "Por que o CRM não consegue responder algumas conversas do Instagram e como liberar em 5 minutos na Meta."
+icon: "instagram"
+---
+
+<Info>
+  **Resumo:** se o Instagram estiver ligado a outras ferramentas (ManyChat, Kommo, n8n, automações de comentário), a Meta pode entregar uma conversa a uma delas. Enquanto isso, as respostas enviadas pelo CRM são recusadas. A correção é uma configuração única na Meta, feita por quem administra a conta.
+</Info>
+
+## O que é a NotificaMe
+
+A **NotificaMe** é a nossa parceira de integração com o Instagram e **parceira oficial da Meta**. É por meio dela que o CRM recebe e envia as mensagens do Direct e dos comentários, usando os canais oficiais da Meta (sem automações não autorizadas e sem risco para a conta).
+
+Na lista de aplicativos conectados da sua Página, ela aparece com o nome **NotificaMeHub-IG**. É esse aplicativo que precisa ter permissão para assumir as conversas, como mostrado abaixo.
+
+## Como saber se é esse o caso
+
+No CRM, a mensagem enviada aparece **em vermelho** com o ícone de exclamação e o texto:
+
+> "Outro aplicativo conectado ao Instagram controla esta conversa."
+
+Sinais comuns:
+
+- A pessoa chegou por um **comentário com palavra-chave** em post, reel ou live (exemplo: comentar "QUERO" para receber um link).
+- Pelo **celular**, no app do Instagram, a resposta sai normalmente.
+- Em outras conversas, o CRM envia normalmente.
+
+<Note>
+  Não é falha do CRM. A recusa vem da própria Meta, por uma regra chamada **controle da conversa**: apenas o aplicativo dono da conversa pode responder por integração. O app do Instagram no celular não passa por essa regra.
+</Note>
+
+## Por que acontece
+
+1. A conta do Instagram tem vários aplicativos conectados (por exemplo, NotificaMe, ManyChat, Kommo, n8n).
+2. Uma automação de outro aplicativo responde a pessoa (por exemplo, envia o link depois de um comentário).
+3. A Meta passa a considerar esse aplicativo o **dono** daquela conversa.
+4. Quando a equipe responde pelo CRM, a Meta recusa com o erro `100 - not the thread owner`.
+
+## Como resolver (uma vez, 5 minutos)
+
+<Warning>
+  Precisa ser feito por quem é **administrador da Página do Facebook** ligada ao Instagram, entrando no Facebook **como a Página**.
+</Warning>
+
+<Steps>
+  <Step title="Abrir as configurações da Página">
+    No Facebook, troque o perfil para a **Página** ligada ao Instagram e abra **Configurações e privacidade**.
+    No campo de busca da esquerda, digite **"Configuração da Página"**.
+  </Step>
+  <Step title="Permitir que a NotificaMe assuma as conversas">
+    Clique em **Configurações avançadas de mensagens**.
+    Na lista **Connected Apps** (Apps conectados), clique em **Editar** no **NotificaMeHub-IG**.
+    Ligue as duas opções:
+    - **Acessar o canal em espera**
+    - **Assumir o controle das conversas** ("O NotificaMeHub-IG pode assumir o controle de conversas de outros apps")
+
+    Clique em **Save**.
+  </Step>
+  <Step title="Definir a NotificaMe como app padrão">
+    Volte em **Configuração da Página** e clique em **Encaminhamento de conversas do Instagram**.
+    Em **App padrão de encaminhamento**, clique em **Config...** e escolha **NotificaMeHub-IG**.
+    A Meta confirma com a mensagem: *"O encaminhamento de conversas está configurado para o Instagram"*.
+  </Step>
+  <Step title="Testar">
+    Responda pelo CRM uma conversa que antes era recusada (dentro de 24 horas da última mensagem da pessoa). A mensagem deve sair sem o aviso vermelho.
+  </Step>
+</Steps>
+
+<Tip>
+  Endereço direto da tela de encaminhamento (logado como a Página): `facebook.com/settings/?tab=ig_conversation_routing`
+</Tip>
+
+## As outras ferramentas continuam funcionando?
+
+Sim. ManyChat, Kommo, n8n e outras continuam conectadas e respondendo normalmente. A diferença é que, quando a equipe responde pelo CRM, a conversa passa para o CRM automaticamente, em vez de ser recusada.
+
+<Note>
+  Não remova os outros aplicativos sem falar com quem configurou as automações: eles podem ter fluxos ativos que a empresa usa.
+</Note>
+
+## Outros avisos do Instagram no CRM
+
+| Aviso no CRM | O que significa | O que fazer |
+|---|---|---|
+| **Fora da janela de 24 horas** | A Meta só permite mensagem direta até 24 h depois da última mensagem da pessoa. Comentário não abre essa janela. | Peça para a pessoa mandar mensagem no Direct (o CRM oferece "Responder no comentário" com um convite) e responda em até 24 h. |
+| **Outro aplicativo controla esta conversa** | Explicado nesta página. | Siga os passos acima. |
+| **Perfil não abre** | O contato trocou o @ no Instagram e a integração ainda envia o @ antigo. | A conversa funciona normalmente; o @ é atualizado quando o Instagram enviar o novo. |
+
+## Ainda com problema?
+
+Fale com o suporte informando:
+
+- O nome da conta do Instagram.
+- O contato e o horário da mensagem recusada.
+- Um print da tela **Encaminhamento de conversas do Instagram** e da tela **Editar** do NotificaMeHub-IG.
