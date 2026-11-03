@@ -84,7 +84,8 @@
           {
             "group": "Plataforma",
             "pages": [
-              "plataforma/visao-geral"
+              "plataforma/visao-geral",
+              "plataforma/mcp"
             ]
           },
           {
