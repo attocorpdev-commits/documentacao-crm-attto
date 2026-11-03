@@ -1,0 +1,114 @@
+---
+title: "Verificação em duas etapas"
+sidebarTitle: "Segurança"
+description: "Proteja a sua conta com um código do app autenticador além da senha."
+icon: "shield-check"
+keywords: ["verificação em duas etapas", "2FA", "MFA", "autenticador", "segurança", "código", "login"]
+---
+
+Com a verificação em duas etapas ligada, o CRM pede a sua senha e, depois, um código de 6 números do app autenticador do seu celular. Mesmo que alguém descubra a sua senha, não entra sem esse código.
+
+<Tip>
+  Recomendado para donos de empresa: protege a conta mesmo se a senha vazar.
+</Tip>
+
+## Antes de começar
+
+Instale um app autenticador no celular. Funcionam, por exemplo, o **Google Authenticator**, o **Microsoft Authenticator** e o **1Password**.
+
+## Ativar
+
+<Steps>
+  <Step title="Abra o Meu Perfil">
+    Clique na sua foto ou inicial, no canto superior direito, e escolha **Meu Perfil**. Na seção **Perfil**, desaça até o cartão **Senha**.
+  </Step>
+  <Step title="Comece a ativação">
+    Em **Verificação em duas etapas**, o selo mostra **Desativada**. Clique em **Ativar**.
+  </Step>
+  <Step title="Escaneie o QR code">
+    Na janela **Ativar verificação em duas etapas**, abra o app autenticador e escaneie o QR code.
+
+    Não consegue escanear? Copie a chave que aparece abaixo do QR code com **Copiar chave** e digite no app. No celular, você também pode tocar em **Abrir no app autenticador**.
+  </Step>
+  <Step title="Confirme o código">
+    Digite os 6 números que o app mostra e clique em **Confirmar código**.
+  </Step>
+</Steps>
+
+O CRM confirma com **Verificação em duas etapas ativada** e o selo passa para **Ativada**. A partir do próximo acesso, o código será pedido.
+
+<Card title="Abrir Meu Perfil no CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/profile">
+  Leva direto para a tela. É preciso estar com a sua conta aberta no CRM.
+</Card>
+
+## Entrar com o código
+
+Depois da senha, ou do login com o Google, aparece a tela **Verificação em duas etapas**.
+
+<Steps>
+  <Step title="Abra o app autenticador">
+    Procure o código da Atto Corp. Ele muda a cada poucos segundos.
+  </Step>
+  <Step title="Digite e verifique">
+    Digite os 6 números e clique em **Verificar**.
+  </Step>
+</Steps>
+
+O CRM só abre depois do código certo. Para trocar de conta, clique em **Sair e entrar com outra conta**.
+
+## Desativar
+
+Em **Meu Perfil**, no cartão **Senha**, clique em **Desativar**. A janela **Desativar verificação em duas etapas?** avisa que a conta volta a pedir só a senha. Confirme em **Desativar**.
+
+<Warning>
+  Recomendamos manter a verificação ativada. Sem ela, quem tiver a sua senha entra na sua conta.
+</Warning>
+
+## Segurança da equipe
+
+Na tela [Equipe](/conta/equipe), o cartão **Segurança da equipe** mostra quem da equipe já tem a verificação ativa (**Verificação ativa** ou **Sem verificação**) e o último acesso de cada pessoa.
+
+<Note>
+  A opção **Exigir verificação em duas etapas da equipe** ainda não pode ser ligada. Por enquanto, o cartão serve para você conferir quem já ativou.
+</Note>
+
+Quando a empresa passar a exigir a verificação, quem ainda não ativou verá a tela **Sua empresa exige verificação em duas etapas** ao entrar e só acessa a empresa depois de ativar.
+
+## Mensagens que podem aparecer
+
+| Mensagem | O que fazer |
+| --- | --- |
+| **Digite os 6 números do app autenticador.** | O campo está vazio ou incompleto. Digite os 6 números. |
+| **Código inválido ou expirado. Confira o app e tente de novo.** | O código mudou ou foi digitado errado. Use o código que aparece agora no app. Confira também se a hora do celular está no automático. |
+| **Não foi possível verificar sua segurança** | Falha de conexão. Confira a internet e clique em **Tentar de novo**. Por segurança, o acesso só é liberado depois dessa verificação. |
+| **Não foi possível concluir. Tente de novo em instantes.** | Erro temporário. Espere alguns segundos e repita. |
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Troquei ou perdi o celular. Como entro?">
+    Sem o app autenticador, o CRM não libera o acesso. Fale com o [Suporte](/empresa/suporte) informando o e-mail da sua conta.
+
+    Antes de trocar de celular, transfira as contas do app autenticador para o aparelho novo, ou desative a verificação e ative de novo no celular novo.
+  </Accordion>
+
+  <Accordion title="O código não funciona, mesmo digitado certo.">
+    O código depende da hora do celular. Deixe a data e a hora do aparelho no modo automático e tente com o código novo.
+  </Accordion>
+
+  <Accordion title="Preciso digitar o código toda vez?">
+    O código é pedido a cada novo acesso à conta, inclusive no login com o Google.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Perfil" icon="user" href="/conta/perfil">
+    Troque a senha e ajuste os seus dados.
+  </Card>
+
+  <Card title="Equipe" icon="users" href="/conta/equipe">
+    Veja quem da equipe já ativou a verificação.
+  </Card>
+</CardGroup>
