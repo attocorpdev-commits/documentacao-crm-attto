@@ -1,0 +1,238 @@
+---
+title: "Contacts"
+description: "Look up, add, import, export and organize all of your company's leads in a single list."
+icon: "address-book"
+---
+
+The Contacts screen brings together all of the company's leads. Here you search for a person, fix details, apply tags, import a spreadsheet and start a conversation.
+
+## How to access
+
+In the side menu, open the **CRM** category and click **Contacts**.
+
+The screen has two tabs: **Contact list** and **Import CSV**. At the top of the list there are four numbers: **Total in base**, **Showing**, **Value (filter)** and **With tags**.
+
+<Note>
+  Leads come into this list on their own as conversations arrive. You only need to add by hand the people who have not talked to you yet. When the conversation comes in through WhatsApp, the CRM saves the name the person uses on their profile, so most contacts already come in with a name.
+</Note>
+
+<Card title="Open Contacts in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/contacts" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Search for a contact
+
+Type in the **Search phone, name or tag...** field. The list is filtered as you type.
+
+- **By phone:** a part of the number is enough, ideally the last 8 digits. Use numbers only, without parentheses, spaces or dashes. The leading 9 of a mobile number may not be recognized when searching by the main number: if the contact does not appear, type the number without it.
+- **By name:** you do not need to get accents or capital letters right. "joao" finds "João".
+- **By tag:** type part of the tag name.
+
+<Tip>
+  When a contact has a second number saved, such as the phone the person left on a form, the search also finds the contact by that number. In that case it does not matter whether you type it with or without the 9.
+</Tip>
+
+You can also use **Filter by tag** to select one or more tags. If an Instagram account is connected, the **Channel** filter shows only the contacts from that account.
+
+The two buttons next to the search switch between **Table view** and **Cards view**. The list shows 50 contacts at a time. Click **Show more** to see the next ones.
+
+## Add a contact
+
+<Steps>
+  <Step title="Open the form">
+    Click **New contact**.
+  </Step>
+  <Step title="Fill in the details">
+    The **Phone** is required. Choose the country and type the number with the area code, for example `11900000000`. The **Name**, **Value (R$)**, **Tags**, **Channel** and **Stage** fields are optional.
+  </Step>
+  <Step title="Save">
+    Click **Create contact**.
+  </Step>
+</Steps>
+
+<Note>
+  You cannot add the same phone twice in the same company. If that happens, the **Contact already exists** notice appears.
+</Note>
+
+## Edit a contact
+
+Click a row in the list. A side panel opens with the lead's details.
+
+- **Name and phone:** click the field, change it and click outside. The change is saved right away.
+- **Tags:** click **Add tag...** to choose an existing tag or create a new one. To remove one, click the tag's **x**.
+- **Estimated value** and **Notes:** change them and click outside the field to save.
+- **Move to pipeline:** click the pipeline you want. In **Stage**, choose the stage.
+- **AI summary:** shows the conversation summary written by the AI.
+- **Schedule activity:** creates an appointment for this contact. It appears in the Calendar on the chosen day.
+
+## Open a contact's conversation
+
+Open the contact and click **Start conversation**, at the bottom of the panel. The CRM takes you to the conversation on WhatsApp. If it does not exist yet, it is created right away.
+
+<Warning>
+  You need a connected WhatsApp. Without it, the **WhatsApp not connected** notice appears, with a **Go to Connections** shortcut.
+</Warning>
+
+## Change several contacts at once
+
+Check the box next to the contacts, or use **Select all** to check all the ones in the filter. A bar with the actions appears:
+
+- **Apply:** type the tags, separated by commas, and add them to all selected contacts.
+- **Remove tags:** removes the typed tags from the selected contacts.
+- **Delete:** deletes the selected contacts.
+- **Clear:** clears the selection.
+
+<Warning>
+  Deleting contacts cannot be undone.
+</Warning>
+
+## Import a spreadsheet
+
+You can import a spreadsheet in `.csv`, `.xlsx` or `.xls` format.
+
+<Steps>
+  <Step title="Open the import tab">
+    Click **Import CSV**.
+  </Step>
+  <Step title="Download the template">
+    Click **Download template (.xlsx)**. The file already comes with all the columns the CRM reads and two example rows. In **Format and columns** you can see the full rules.
+  </Step>
+  <Step title="Choose the destination">
+    In **Target pipeline**, select the pipeline that will receive the leads.
+  </Step>
+  <Step title="Upload the file">
+    Drag the spreadsheet to the indicated area or click to select it.
+  </Step>
+  <Step title="Check the preview">
+    The CRM reads the file before saving anything and shows how many rows it read, how many contacts are valid and how many rows have no valid phone. Just below, it tells you which column it used as the phone and lists a sample with the first five contacts.
+  </Step>
+  <Step title="Confirm">
+    In the **Import contacts** window, click **Import**.
+  </Step>
+</Steps>
+
+<Note>
+  The **Import** button is only enabled after the preview finishes, and only if the CRM found a phone column with at least one valid contact. If it does not find one, the notice tells you to give the column a name like Telefone, Celular or WhatsApp and upload it again.
+</Note>
+
+### Spreadsheet columns
+
+The first row must be the header, with the column names. Only the phone column is required.
+
+| Column | What the CRM does with it |
+| --- | --- |
+| **Phone** | Required. Number with area code, such as 11999991234 or 5511999991234. A row without a valid phone is not imported |
+| **Name** | Contact name. Without this column, contacts come in without a name |
+| **Tags** | One or more tags, separated by commas or semicolons |
+| **Stage** | Name of a stage in the chosen pipeline. If blank, the contact goes into the first stage |
+| **Channel** | Name of a connected WhatsApp channel. If blank, the contact goes into the oldest connected channel |
+| **Value** | Deal value. Accepts 1.500,50, R$ 1500 or 1500.5 |
+| **Notes** | Free text, which becomes the contact's note |
+| **Source** | Where the lead came from, in free text |
+| **Owner** | Email or name of a team member |
+
+The header is recognized by the word, not by the exact name. **Customer name** becomes name and **Lead tags** becomes tags.
+
+<Warning>
+  A row is rejected when the **Stage** does not exist in the chosen pipeline, when the **Channel** does not exist or is disconnected, when the **Value** is not a number or when the **Owner** is not found. The CRM rejects the row instead of saving wrong data, and counts how many were rejected at the end of the import.
+</Warning>
+
+Each file accepts up to 50,000 rows and 25 MB. If it has more rows than that, the preview tells you how many were left out and only imports up to the limit. If it is over 25 MB, the file is not read and the notice asks you to split it into smaller files.
+
+<Tip>
+  Check the accents in the preview sample. If they look wrong, the notice itself asks you to save the spreadsheet again as CSV UTF-8.
+</Tip>
+
+### People already in your base
+
+- A contact that already exists is not duplicated. The new tags are added to the ones it already has.
+- **Value**, **Notes**, **Source** and **Owner** only fill in what is empty on the contact. Nothing you already had is overwritten.
+- A contact that is already in another pipeline is not moved to the chosen pipeline. It appears in the notice at the end of the import.
+- Repeated rows within the same file become a single contact, with the tags added together. The preview tells you how many there are.
+
+When it finishes, **Import completed** appears with the result: how many contacts are new, how many already existed, how many were not saved, how many were rejected and how many were already in another funnel.
+
+## Export contacts
+
+Click **Export** and choose **Export CSV** or **Export XLSX**.
+
+The export includes only the contacts that are visible, following the search, tags and channel you filtered. The number next to the button shows how many will be exported.
+
+The file has the columns Name, Phone, Tags, Estimated value, Owner, Stage, Pipeline, Source and Creation date.
+
+## Merge duplicate contacts
+
+When the CRM finds more than one record for the same number, a yellow notice appears at the top of the list.
+
+<Steps>
+  <Step title="Open the list of duplicates">
+    Click **Merge duplicate contacts safely**.
+  </Step>
+  <Step title="Review a group">
+    Click **Review and merge** on the number you want. Choose the **Primary contact (kept)** and check the **Final result**.
+  </Step>
+  <Step title="Confirm">
+    Click **Merge contacts**.
+  </Step>
+</Steps>
+
+To resolve everything at once, click **Merge all safe ones**.
+
+When merging, the tags from all records are added together and the highest value is kept. Name, note and owner come from the primary contact. If it does not have them, they come from one of the duplicates. Conversations are kept and the CRM saves a backup copy.
+
+<Note>
+  When the same number has two separate conversations on the same channel, the group is marked as **Manual review** and is not merged automatically.
+</Note>
+
+### When a person uses two numbers
+
+Sometimes someone fills in a form with one number and then talks to you on WhatsApp from another. This used to create two cards. Now the CRM combines them into a single card, without you doing anything.
+
+To combine them on its own, it requires that:
+
+- The name on the form has a last name and is the same in both
+- The form and the WhatsApp message arrived no more than 15 minutes apart
+- The form card does not have a conversation yet
+- There is only one card with that name in that time frame
+
+The card starts using the WhatsApp number, and the form number stays saved on it. That saved number still works in the search. When the CRM is not sure, it does not combine anything: both cards stay in the list and you resolve it by hand.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why is the Import CSV tab disabled for me?">
+    Importing requires full access permission to Contacts. Ask the account owner to give you access.
+  </Accordion>
+  <Accordion title="Why can't I see all of the company's contacts?">
+    Depending on your permission, you see only the contacts from the channels assigned to you.
+  </Accordion>
+  <Accordion title="A notice about an incomplete WhatsApp number appeared. What is it?">
+    Some mobile numbers were saved without the ninth digit. Click **Fix now** for the CRM to complete the number. No contact is deleted and the original phone is kept.
+  </Accordion>
+  <Accordion title="A notice about leads without a pipeline appeared. What do I do?">
+    Choose a pipeline in the list next to the notice and click **Move**. The leads go into the funnel so you can track them by stage.
+  </Accordion>
+  <Accordion title="The import finished saying some rows were rejected. Why?">
+    A row is rejected when an optional column has data that does not exist in your account: a **Stage** that is not in the chosen pipeline, a **Channel** that does not exist or is disconnected, a **Value** that is not a number or an **Owner** who is not on the team. Fix these rows in the spreadsheet and import only them again.
+  </Accordion>
+  <Accordion title="I imported a contact I already had and it did not go into the chosen pipeline.">
+    A contact that is already in another pipeline is not moved by the import. The notice at the end of the import counts how many were in that situation. To bring these leads over, open the contact and use **Move to pipeline**.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Tags" icon="tags" href="/en/crm/tags">
+    Create and organize the labels for your leads.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/en/crm/pipeline">
+    Track leads by funnel stage.
+  </Card>
+  <Card title="WhatsApp inbox" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Talk to the contacts in your list.
+  </Card>
+  <Card title="Broadcasts" icon="bullhorn" href="/en/marketing/disparos">
+    Send messages to many contacts.
+  </Card>
+</CardGroup>

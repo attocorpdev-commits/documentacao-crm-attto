@@ -1,0 +1,583 @@
+---
+title: "AI Agent"
+description: "Create, teach, test and turn on the automatic attendant that replies to your leads on WhatsApp."
+icon: "robot"
+---
+
+The AI Agent is the CRM's automatic attendant. It talks to **your leads** on WhatsApp, the way you teach it.
+
+<Note>
+  Don't confuse it with the [AI Assistant](/en/ia/assistente-ia). The AI Agent talks to your leads. The AI Assistant talks to you, about the data in your CRM.
+</Note>
+
+<Warning>
+  The AI handles **WhatsApp conversations only**. [Instagram](/en/atendimento/instagram) conversations stay with manual service: on the Instagram conversation screen, the CRM shows the notice "The integrated AI only handles WhatsApp conversations."
+</Warning>
+
+## What the AI does on each plan
+
+On every plan, the AI talks to the lead, qualifies the contact, hands the conversation to a person when needed and alerts the team about a new lead.
+
+On the Start plan, the AI stays in the conversation only. On the Prime and Ultra plans, it also takes actions inside the CRM.
+
+| What the AI does | Start | Prime and Ultra |
+| --- | --- | --- |
+| Reply, qualify and hand off to a person | Yes | Yes |
+| Apply a [tag](/en/crm/tags) to the lead | No | Yes |
+| Book an appointment in the [Calendar](/en/crm/agenda) and move the card in the [Pipeline](/en/crm/pipeline) | No | Yes |
+| Send a document, product, photos or video to the lead | No | Yes |
+| Build the automatic conversation summary and the lead profile | No | Yes |
+| Alert the team about the lead | Only **New lead** and **Showed interest** | All five moments |
+
+On Start, the AI keeps replying to the lead as usual. Only the action inside the CRM does not happen.
+
+On no plan does the AI serve customers on Instagram. The Instagram channel is still available for service handled by people.
+
+<Note>
+  The [Manager Area](/en/gestao/area-gestor) is not included in Start, but it can be enabled for specific accounts. For the prices of each plan, see [attocorp.com](https://attocorp.com/#planos).
+</Note>
+
+## How to access
+
+At the top of the side menu, click the **AI Agent** card, which has the caption **Your customer service AI**. If you have already named your AI, the card shows that name.
+
+You land on the **Your AI agents** screen, with one card for each agent in your company. Each card shows the agent's status:
+
+| Status | What it means |
+| --- | --- |
+| **Live** | The agent is set up and active. |
+| **Paused** | The agent is set up, but it was paused. |
+| **Setup pending** | The agent doesn't have a personality yet. |
+
+Click **Open and configure** to go into an agent.
+
+<Card title="Open AI Agent in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/ai-agent" horizontal>
+  Goes straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Create your AI
+
+If your AI hasn't been set up yet, the screen shows the notice **Let's create your AI**.
+
+<Steps>
+  <Step title="Start the setup">
+    Click **Create my AI** and then **Get started**. If you'd rather leave it for later, click **Set up later**.
+  </Step>
+  <Step title="Choose the pace">
+    In **How do you want to set it up?**, choose **Quick onboarding** (just the essentials) or **Advanced onboarding** (tone, limits and hours in more detail).
+  </Step>
+  <Step title="Choose how to answer">
+    In **How would you rather answer?**, choose **Answer by text**, **Answer by voice** or **Create from documents**.
+  </Step>
+  <Step title="Answer the questions">
+    Enter your type of business and answer the questions. Use **Next** and **Back** to move around.
+  </Step>
+  <Step title="Generate the AI">
+    Click **Generate my AI**. When **Your AI is ready!** appears, choose **Connect to my WhatsApp** or **Test in the Playground**.
+  </Step>
+</Steps>
+
+<Tip>
+  If you stop halfway, come back to the screen and click **Continue setup**. The system picks up where you left off.
+</Tip>
+
+## The agent tabs
+
+Inside an agent, the tabs appear in this order: **General**, **Personality**, **Documents**, **Channels**, **Advanced**, **Test** and **Metrics**.
+
+<Tabs>
+  <Tab title="General">
+    Brings together the agent summary.
+
+    - **AI switch**: turns the AI on or pauses it. See [Turn the AI on and off](#turn-the-ai-on-and-off).
+    - **Turn the AI off for all conversations**: a control separate from the switch. See [Turn the AI off for all conversations](#turn-the-ai-off-for-all-conversations).
+    - **Your AI setup**: shows the completed and pending steps. Click **Fix** to go straight to the step.
+    - **Identity**: fill in **Your AI's name** and click **Save**. The name is for internal use. Your customer doesn't see it.
+    - **Credits**: shows **Credit balance**, with the **Top up**, **See detailed usage** and **View usage** buttons. When there is usage history, the block also estimates how many days the balance will last at the current pace. See [AI conversations and credits](/en/ia/creditos).
+    - **Next steps**: shortcuts to **Adjust personality**, **Upload documents** and **Review channels**.
+    - **Recent activity**: the latest messages the AI delivered today.
+    - **Reset AI memory**: makes the AI forget what has already been discussed. See [Make the AI forget conversations](#make-the-ai-forget-conversations).
+    - **Turn the AI on or off per conversation**: turns the AI on or off in several conversations at once. See [Turn the AI on or off per conversation](#turn-the-ai-on-or-off-per-conversation).
+    - **Reset the AI**: starts the setup over from scratch.
+
+    The **Reset AI memory**, **Turn the AI on or off per conversation** and **Reset the AI** blocks appear for the account owner and for team members who have permission to access the AI Agent. See [Team](/en/conta/equipe).
+  </Tab>
+  <Tab title="Personality">
+    Here you define how the AI talks, what it can do and what it can't do.
+
+    - Click **Generate my prompt** the first time, or **Edit prompt** if a version already exists. The **Start building** button opens the same window.
+    - The **Prompt Builder** window has three tabs: **Questionnaire**, **Editor and preview** and **Versions**.
+    - In the **Questionnaire**, fill in fields such as **Company name**, **What you sell / offer**, **Target audience**, **Tone of voice**, **Service hours**, **What the AI CAN do** and **What the AI CANNOT do**. Then click **Generate prompt**.
+    - You can also use **Attach documents** so the AI builds the text from one of your files.
+    - In **Editor and preview**, review the text and click **Save and activate version**. Saving puts the text live right away.
+    - **Active version** is the text the AI is using to reply right now.
+    - In **Version history**, click **Restore** to go back to an earlier version.
+
+    To adjust the text without rewriting all of it, see [Improve the AI text](#improve-the-ai-text).
+  </Tab>
+  <Tab title="Documents">
+    These are the files the AI uses when serving customers. With each document, the AI can read the content to reply and send the file to the customer.
+
+    Sending the file to the customer is an action on the Prime and Ultra plans. On Start, the AI uses the content to reply, but does not send the file.
+
+    See the step by step in [Teach the AI with documents](#teach-the-ai-with-documents).
+  </Tab>
+  <Tab title="Channels">
+    Here you choose which WhatsApp numbers the AI replies on. See [Choose the channels](#choose-the-channels).
+  </Tab>
+  <Tab title="Advanced">
+    Optional settings. The defaults work well. See the "Hours, handoff and other settings" section further down this page.
+  </Tab>
+  <Tab title="Test">
+    A practice conversation with your AI. See [Test the AI](#test-the-ai).
+  </Tab>
+  <Tab title="Metrics">
+    Shows the performance of **this agent** over the **Last 7 days** or **Last 30 days**. You see, among others, **Total services**, **Unique chats served**, **Delivered**, **Response time**, **Handoffs to human**, **Why the AI didn't reply**, **By channel** and **By agent**.
+  </Tab>
+</Tabs>
+
+<Note>
+  If you changed a field and switched tabs without saving, the CRM opens the **Unsaved changes** notice. Choose **Save all**, **Discard** or **Cancel** to continue where you were.
+</Note>
+
+## Improve the AI text
+
+In the **Personality** tab, open the **Prompt Builder** and go to **Editor and preview**. There you have two ways to change the text that guides the AI's replies.
+
+| Path | What it does |
+| --- | --- |
+| **Improve with AI** | You ask for the change in your own words and compare before applying. The caption is **Chat and compare the changes**. |
+| **Edit manually** | Opens the full text for you to write by hand. The caption is **Edit the full text**. |
+
+### Ask for an improvement
+
+<Steps>
+  <Step title="Open the window">
+    Click **Improve with AI**. The **Prompt improvement** window opens, with the caption **Describe what you want to adjust**.
+  </Step>
+  <Step title="Write the request">
+    In the **Improvement request** field, say what you want to change. Example: "make the greeting shorter" or "add that we are open on Saturdays". Press Enter to send and Shift + Enter for a new line. If you prefer to speak, click **Dictate by voice**.
+  </Step>
+  <Step title="Compare">
+    In **Suggested changes**, the CRM shows what goes out and what comes in, with the number of changes. The caption is **Compare before applying to the prompt**. On small screens, use the **Chat** and **Changes** tabs.
+  </Step>
+  <Step title="Apply or discard">
+    Click **Apply change** to put it live. The notice "Done! Your AI is already using the new prompt." appears. To give up, click **Discard** and ask in a different way.
+  </Step>
+</Steps>
+
+<Warning>
+  Read the comparison before applying. When the suggestion changes the name of your AI or your company, the window warns you: "This suggestion changes your AI's or company's name. If you didn't ask for that, don't apply it."
+
+  Other warnings that may appear: the change was added at the end of the text, or the text got new headings and formatting. In every case, check that it looks the way you want.
+</Warning>
+
+<Note>
+  The AI may reply that it can't do what you asked ("I can't make this change through the prompt alone.") or that it is already in the text ("That's already in your prompt. Nothing needed to change."). Rewrite the request in a different way.
+
+  If your text is very long, the window guides you to use **Edit manually**.
+</Note>
+
+### Ask for a ready-made suggestion
+
+At the top of **Editor and preview** there is the **Suggest improvement** button, with the caption **by analyzing conversations**. It reads the real conversations on your number and proposes a better text. While it works, it shows "Analyzing conversations..."; when it finishes, it shows **Suggestion ready**. You review it and save if you like it.
+
+<Tip>
+  When you restore an old version, the CRM asks **Restore this version?** and explains that the current active version stays saved in the history. Confirm with **Restore version**.
+</Tip>
+
+## Teach the AI with documents
+
+<Steps>
+  <Step title="Open the Documents tab">
+    Click **Upload file** or drag the file into the **Drag a file here or click to upload** area.
+  </Step>
+  <Step title="Fill in the details">
+    In **Name**, write how the document appears to you. In **Alias for the AI**, enter a short name. In **When the AI should send it**, say in which situation it sends the file. Example: when the customer asks for prices.
+  </Step>
+  <Step title="Decide whether it goes in the first reply">
+    Check **Send automatically with the AI's first reply** if you want this file to go out with the first message of the conversation. Example: a welcome audio. In the list, the document then shows the **Sent with 1st reply** badge.
+  </Step>
+  <Step title="Confirm">
+    Click **Add document**. The file goes into the **Added documents** list.
+  </Step>
+</Steps>
+
+The screen accepts PDF, DOCX, XLSX, TXT or audio (OGG, OPUS, MP3, M4A, WAV), up to 20 MB per file.
+
+<Tip>
+  Audio reaches the customer in different ways: OGG and OPUS arrive as a voice note; M4A recorded on iPhone, MP3 and WAV arrive as an audio file.
+</Tip>
+
+You can also check or uncheck **Send automatically with the AI's first reply** later, by opening the document in the list. The change is saved right away.
+
+In the list, each document's badge shows its status:
+
+| Badge | What it means |
+| --- | --- |
+| **Indexed** | The AI reads the content and can also send the file. |
+| **Processing** | The content is still being read. |
+| **Send only** | The AI sends the file, but can't read the content. |
+
+If there is more than one document, drag them to set the sending priority.
+
+<Warning>
+  The documents in this tab may be sent to the customer. If the system finds private information in the file, it shows the notice **This file has private information**. Prefer **Cancel and rework** and remove the private part before uploading.
+</Warning>
+
+## Choose the channels
+
+The **Channels** tab has the title **Where the AI responds** and lists only your WhatsApp numbers. Instagram accounts don't show up as an option to turn on the AI.
+
+<Steps>
+  <Step title="Open the Channels tab">
+    The **Your channels** list shows the connected numbers of both types. Each one's badge shows **WhatsApp Normal** (QR Code) or **Official WhatsApp**.
+  </Step>
+  <Step title="Turn on the channel switch">
+    Turn on the switch next to the channel and confirm with **Turn on Integrated AI**. The AI starts replying to all conversations on that number.
+  </Step>
+  <Step title="To stop, turn off the switch">
+    Turn off the switch and confirm with **Turn off Integrated AI**. Service on that number goes back to manual.
+  </Step>
+</Steps>
+
+The AI stays on for at most one WhatsApp number. When you turn it on for a new number, the previous one is turned off automatically, and the screen tells you: "The Integrated AI now answers only on this channel. It was turned off automatically on your other WhatsApp numbers."
+
+Each channel is served by only one AI at a time. If another agent already serves the channel, turn that agent's AI off first.
+
+If the list is empty, click **Connect channel**. See [Connections](/en/conta/conexoes).
+
+<Note>
+  The switch can only be turned on when the agent is active and already has an active personality. Without that, the switch stays locked.
+</Note>
+
+<Note>
+  If you have an Instagram account connected, the footer of the list reminds you: "The integrated AI only handles WhatsApp conversations." An Instagram profile that still had the AI turned on from before stays visible only so you can turn it off. Turning on the AI for Instagram is no longer possible: the screen replies **Cannot enable**.
+
+  The Instagram channel is still an add-on feature of the Prime and Ultra plans for service handled by people. See [Instagram](/en/atendimento/instagram) and [Plans and billing](/en/conta/planos).
+</Note>
+
+<Warning>
+  If the AI is on and no connected channel is served by it, the CRM opens the notice **Your AI has no connected channel**: "The AI is turned on, but there's no connected channel for it to serve. Activate a channel so the AI can respond to your customers again."
+
+  Click **Activate number** to go straight to the **Channels** tab, or **Check connections** to open [Connections](/en/conta/conexoes). You can also close the notice. While there is no channel, the AI doesn't reply to anyone.
+
+  This notice only appears for the account owner, because connecting a number is their task.
+
+  When you delete the channel the AI was serving, the CRM also lets you know right away: "The AI is left without a channel. Connect another number so it can respond again."
+</Warning>
+
+## Hours, handoff and other settings
+
+Everything is in the **Advanced** tab. After making changes, click **Save changes**. To drop what you just changed, click **Discard**. To go back to the defaults, click **Restore defaults** and save: the screen confirms with **Defaults restored** and reminds you to click **Save changes** to apply.
+
+<AccordionGroup>
+  <Accordion title="Responses and pacing">
+    Set **Maximum characters**, **Minimum wait (s)**, **Maximum wait (s)** and **Group messages (s)**. The **Simulate typing** option shows "typing..." before the reply.
+  </Accordion>
+  <Accordion title="Restrict by business hours">
+    Turn on the option and check the days and hours when the AI serves customers. In **Out-of-hours message**, write the notice the customer receives outside that period. If you leave it empty, the AI stays silent until business hours return.
+  </Accordion>
+  <Accordion title="Hand off to an agent">
+    In **Keywords**, add words or phrases that make the AI transfer the conversation right away. Example: "talk to a human". In **Transfer after N AI replies**, set a reply limit. In **Message when transferring**, write the notice the customer receives.
+
+    Each transfer creates a unique code for the conversation. See [Service protocol](/en/ia/protocolo-atendimento).
+  </Accordion>
+  <Accordion title="WhatsApp for lead notifications">
+    Enter the numbers that receive the alert and, in **When to alert**, choose the lead moments.
+
+    The available moments depend on your plan. On Start, **New lead** and **Showed interest** appear. On the Prime and Ultra plans, **Qualified lead**, **No reply** and **Received link** also appear. Moments your plan doesn't include simply don't appear in the list.
+
+    **New lead** and **Showed interest** come turned on.
+
+    All moments use a single message template. Right below the list, a line shows the status of this template: **Alert template ready**, **Template under Meta review (approves in minutes)**, "Alert template not created yet." or "Checking template...". Use the refresh button next to it to update.
+
+    The alert your team receives includes your **company** name, the contact's name and their phone number. It is not the name you gave the AI.
+
+    When you save with the first number in the list, the CRM creates the template on its own and opens the **Alert templates created** window. Click **View template status** to follow along, or **Close**. If you prefer to create it right away, click **Create alert template**. Approval usually takes a few minutes, and the alert only works after that.
+
+    The **Create alert template** button stays locked while there is no number in the list. The screen explains: "Add at least 1 member to the lead alert before creating the template."
+
+    The team alert only works on an **Official WhatsApp (Meta)** channel. Without an official number, the section appears locked with the message **Available on the official Meta channel** and the **Connect official channel** button.
+
+    The screen also reminds you: "Meta may limit or raise the cost of official WhatsApp at any time. The in-app alert (bell) guarantees the team never misses the lead."
+  </Accordion>
+  <Accordion title="Media reading and scheduling">
+    In **Fine-tuning (advanced)**, the **Media reading** section sets whether the AI understands **Images**, **Audio**, **Documents** and **Videos** sent by the customer. When it's off, the AI asks for the content in text. The **AI can schedule** option lets the AI book appointments in the [Calendar](/en/crm/agenda).
+
+    Scheduling is an action on the Prime and Ultra plans. On Start, the AI doesn't book appointments or move the card, even with the option turned on.
+  </Accordion>
+</AccordionGroup>
+
+## Test the AI
+
+<Steps>
+  <Step title="Open the Test tab">
+    Write in the **Type a test message...** field as if you were a customer.
+  </Step>
+  <Step title="Use the suggestions, if you want">
+    The screen offers ready-made questions: "What are your business hours?", "What payment methods do you accept?" and "I want to talk to a human".
+  </Step>
+  <Step title="Start over when you need to">
+    Click **Clear** to erase the practice run and test again from the first message.
+  </Step>
+</Steps>
+
+Nothing you write in the test is sent to real customers.
+
+<Warning>
+  Test replies also use up your account balance.
+</Warning>
+
+## Turn the AI on and off
+
+There are several controls, from the broadest to the most specific.
+
+| Where | What it does |
+| --- | --- |
+| **General** tab, AI switch | Turns the AI on or pauses it. When you turn it off, the screen asks for confirmation with **Turn off AI** and warns that the AI stops replying on all of the company's channels. |
+| **General** tab, **Turn the AI off for all conversations** | Turns the AI off in all conversations, including new ones. See [Turn the AI off for all conversations](#turn-the-ai-off-for-all-conversations). |
+| **Your AI agents** screen, **Pause** or **Activate** button | Pauses or reactivates a specific agent. |
+| **Channels** tab, channel switch | Turns the AI on or off on a single channel. |
+| **General** tab, **Control the AI per conversation** | Turns the AI on or off in several chosen conversations. See [Turn the AI on or off per conversation](#turn-the-ai-on-or-off-per-conversation). |
+| Conversation screen | Turns the AI on or off only in that conversation. See [When a person takes over the conversation](#when-a-person-takes-over-the-conversation). |
+
+## Turn the AI off for all conversations
+
+This control is in the **General** tab, in the **Turn the AI off for all conversations** block. It is separate from the AI switch.
+
+<Steps>
+  <Step title="Turn on the block switch">
+    In the **General** tab, turn on the switch next to **Turn the AI off for all conversations**.
+  </Step>
+  <Step title="Confirm">
+    The screen asks **Turn the AI off for all conversations?** and warns that the AI stops replying in all conversations, including new ones. Click **Turn off for all**.
+  </Step>
+</Steps>
+
+With the switch on, the block shows the notice: "The AI is off for all conversations. To re-enable it in a specific conversation, open the chat and tap to re-enable the AI there."
+
+To go back to normal, turn off the switch. The notice **AI re-enabled for conversations** appears.
+
+<Tip>
+  Use this control when you want to handle everything by hand for a while, but keep the AI working in a few conversations. Your messages keep working as usual.
+</Tip>
+
+## Turn the AI on or off per conversation
+
+In the **General** tab, in the **Turn the AI on or off per conversation** block, click **Pick conversations**. The **Turn AI on/off per conversation** window opens.
+
+<Steps>
+  <Step title="Find the conversations">
+    Use the **Search by name, number or @...** field or scroll the list. The conversations from the channels linked to this AI appear, yours and the rest of the team's. Only WhatsApp conversations are in the list.
+  </Step>
+  <Step title="Check each conversation's status">
+    Next to each name, a badge shows who replies there: **AI on**, **AI off** or **With a person**.
+  </Step>
+  <Step title="Select the conversations">
+    Click each conversation to select it. To select everything at once, click **Select all**. To start over, click **Clear selection**. The counter next to it shows how many are selected.
+  </Step>
+  <Step title="Choose on or off">
+    Click **Turn AI on** or **Turn AI off** and confirm in the question that appears. The number next to the button shows how many conversations will actually change. If you don't want to apply anything, click **Cancel**.
+  </Step>
+</Steps>
+
+This way you change many conversations at once, without opening each one.
+
+Only the button that changes something is available. Hover over the disabled button to see why:
+
+| Reason | When it appears |
+| --- | --- |
+| "Select at least one conversation." | You haven't selected anything yet. |
+| "All selected conversations already have the AI on." | There is nothing to turn on. |
+| "All selected conversations already have the AI off." | There is nothing to turn off. |
+
+<Note>
+  **Turn AI on** is a manual resume: conversations marked as **With a person** also go back to the AI. The confirmation question makes this clear: "Conversations with a person also go back to the AI."
+
+  **Turn AI off** is different: it doesn't touch conversations someone has taken over. If any conversation is left out, the final notice tells you how many.
+
+  The window's footer has a note saying that conversations taken over by a person are not affected. This used to apply to both actions and now only applies to **Turn AI off**. Follow the confirmation question.
+</Note>
+
+<Note>
+  If nothing changes, the CRM shows **No conversation was changed** and explains: "The conversations were already like this or could not be changed."
+</Note>
+
+<Note>
+  Team members with limited access to conversations may not see the AI status in them. In that case the window warns: "You can't see the AI state of these conversations. Turning it on or off is still available: the change applies to the conversations your permission covers."
+
+  If reading fails, "Couldn't read the AI state of these conversations." appears with the **Try again** button. Your selection is kept.
+</Note>
+
+<Warning>
+  Selecting all applies to the whole agent. With every conversation in the list selected, **Turn AI off** and **Turn AI on** do the same as the **Turn the AI off for all conversations** block: they also apply to new conversations that come in. To change only some, select them one by one.
+</Warning>
+
+## Make the AI forget conversations
+
+The AI keeps a summary and some learned facts about each contact, so it doesn't start from scratch with every message. When this memory gets outdated, you can erase it.
+
+The block is in the **General** tab, named **Reset AI memory**, with the **Forget conversations** card. There are two ways to use it.
+
+**Choose conversations**
+
+<Steps>
+  <Step title="Open the list">
+    Click **Choose conversations**. The **Reset memory per conversation** window opens.
+  </Step>
+  <Step title="Select the conversations">
+    Use the **Search by name, number, or @...** field, click the conversations you want or use **Select all**. Only conversations from the channels linked to this AI appear.
+  </Step>
+  <Step title="Confirm">
+    Click **Reset memory**. The screen asks **Reset the memory of these conversations?** and explains that the AI will forget the summary and the learned facts and start over from scratch with these contacts. Confirm with **Reset memory**.
+  </Step>
+</Steps>
+
+When everything works, the notice **Memory reset** appears. If any conversation fails, **Partial reset** appears with how many worked and how many failed, and the ones that failed stay selected so you can try again.
+
+**Reset all**
+
+Click **Reset all** to erase the memory of all conversations for this AI at once. The screen asks **Reset the memory of ALL conversations?**. Confirm with **Reset everything**.
+
+<Warning>
+  Forgetting conversations can't be undone. The AI loses the summary and the facts it learned about these contacts and starts over from scratch with them.
+
+  The chat history is kept: messages stay visible to you and to the customer. The AI setup also stays intact: personality, documents and channels are not erased. To erase the setup, use **Reset AI**.
+</Warning>
+
+## Have more than one agent
+
+On the **Your AI agents** screen, click **Create another AI**. The new agent opens on the **General** tab for you to set up.
+
+If your company has already used all the available agents, the **Add another AI** window appears. Click **Go to payment** to buy an extra agent, or **Not now** to close. See [Plans and billing](/en/conta/planos).
+
+In the three dots menu on each card, you find:
+
+- **Open and configure**
+- **Rename**
+- **View metrics**: opens that agent's **Metrics** tab, with only its own numbers.
+- **Pause** or **Activate**
+- **Reset**: clears the setup and the personality. Channels and conversation history are not affected.
+- **Delete**: removes the agent. The main agent, included in the plan, can't be deleted.
+
+The **View metrics** button also appears directly on the card, next to **Pause** and **Open and configure**, and takes you to the same place.
+
+### See the account usage
+
+On the **Your AI agents** screen, next to the search field, there is the **View usage** button, right before **Create another AI**. Its tooltip explains what it shows: **Conversations used by the AI on your account (all AIs)**.
+
+It opens the **Usage** window, with the caption "Track how many conversations the AI has handled on your account." There you see **Conversations used** with the progress bar, the **Used** and **Available** blocks and the **Add conversations** shortcut, which takes you to top-ups.
+
+<Note>
+  These are two different things. **Usage** is the balance for the whole account, adding up all your AIs, because the conversation package belongs to the plan. **Metrics** is the performance of a single agent.
+</Note>
+
+<Warning>
+  **Delete** on the agents screen and **Reset AI** on the **General** tab can't be undone. **Reset AI** erases the personality, versions, documents and knowledge, and turns the AI off.
+
+  Don't confuse it with **Reset AI memory**, which only erases what the AI learned in conversations and keeps the setup intact.
+</Warning>
+
+## When a person takes over the conversation
+
+On channels with the AI turned on, the [WhatsApp](/en/atendimento/whatsapp) conversation screen shows AI controls at the top.
+
+- **Take over**: you take over the conversation and the AI is paused in it. The notice **You took over this conversation.** appears. The conversation also gets a [service protocol](/en/ia/protocolo-atendimento).
+- **Pause integrated AI in this conversation**: pauses the AI only there. Click again, now on **Resume integrated AI in this conversation**, to give it back to the AI.
+- **Reset AI memory**: the AI forgets the history of that conversation and starts over from scratch with that contact. The button appears for the account owner and for team members who have permission to access the AI Agent.
+
+The pause applies to that conversation. The other conversations on the channel keep the AI.
+
+Resuming works even when another person had already taken over the conversation. The CRM confirms with one of these notices:
+
+| Notice | What happened |
+| --- | --- |
+| **The conversation is back with the AI.** | Someone on the team had taken over the conversation. The human service mark was removed and the AI started replying again in that conversation only. |
+| **The AI is replying in this conversation again.** | The AI was only paused there and was reactivated. |
+
+If something fails, "Could not change the AI in this conversation." appears with the explanation "Nothing was changed. Please try again in a moment."
+
+<Note>
+  On the screen of an [Instagram](/en/atendimento/instagram) conversation, instead of the AI controls, the notice "The integrated AI only handles WhatsApp conversations." appears. That service is always manual.
+</Note>
+
+When you use the **Turn the AI off for all conversations** block, the top of the conversation shows a badge with the status:
+
+| Badge | What it means |
+| --- | --- |
+| **AI globally off** | The AI is off and doesn't reply in this conversation. |
+| **AI globally off, active here** | The AI is off in the other conversations, but keeps replying in this one. |
+
+In this state, the same button applies only to that conversation: **Turn the AI on only in this conversation (AI globally off)** turns the AI on there, and **Back to global (turn the AI off in this conversation)** returns the conversation to the general off setting.
+
+The AI can also transfer on its own, following the **Hand off to an agent** rules in the **Advanced** tab.
+
+## Conversations and usage
+
+AI usage is counted in conversations. One conversation equals one contact served within a 24-hour window.
+
+The AI doesn't use a conversation when it doesn't reply or when the message arrives outside business hours. If the customer sends several messages in a row, it replies to all of them at once and counts only one conversation.
+
+When the month's conversations run out and there is no extra package, the AI pauses until the renewal. See [Plans and billing](/en/conta/planos).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Does the customer see the name I gave the AI?">
+    No. The **Your AI's name** field is for internal use. It helps you identify the agent inside the CRM.
+  </Accordion>
+  <Accordion title="Why can't I turn on the AI on a channel?">
+    The switch stays locked when the agent isn't active or doesn't have an active personality yet. If you see a notice that the channel already has another AI turned on, turn the other one off first.
+  </Accordion>
+  <Accordion title="I changed the personality and didn't like it. Can I go back?">
+    Yes. In the **Personality** tab, under **Version history**, click **Restore** on the version you want. The version that was active stays saved in the history.
+  </Accordion>
+  <Accordion title="The AI stopped replying. What should I check?">
+    Check that the switch on the **General** tab is on, that the **Turn the AI off for all conversations** switch is off, that the channel switch is on in the **Channels** tab, that the message arrived within the set hours and that there is still **Credit balance** left. Also check whether the conversation was paused by someone on the team or turned off in bulk. If the notice **Your AI has no connected channel** appears, connect a number. The **Metrics** tab shows the reasons in **Why the AI didn't reply**.
+  </Accordion>
+  <Accordion title="Does resetting the memory erase the conversation messages?">
+    No. The chat history is kept: messages stay visible to you and to the customer. The AI only forgets the summary and the facts it learned and starts over from scratch with that contact. The personality, documents and channels also stay intact.
+  </Accordion>
+  <Accordion title="I turned the AI off for all conversations. Can I turn it on in just one?">
+    Yes. Open the conversation on the [WhatsApp](/en/atendimento/whatsapp) screen and use the **Turn the AI on only in this conversation (AI globally off)** button. The conversation then shows the **AI globally off, active here** badge. To return it to the general off setting, click **Back to global (turn the AI off in this conversation)**.
+  </Accordion>
+  <Accordion title="The AI replies, but doesn't apply tags, schedule or send files. Why?">
+    These actions are part of the Prime and Ultra plans. On the Start plan the AI is conversational only: it replies, qualifies, hands off to a person and alerts about the lead, but it doesn't apply a [tag](/en/crm/tags), doesn't book appointments in the [Calendar](/en/crm/agenda), doesn't move the card and doesn't send files or photos. See [Plans and billing](/en/conta/planos).
+  </Accordion>
+  <Accordion title="Why don't I see all the moments in When to alert?">
+    The list only shows the moments your plan includes. On Start, **New lead** and **Showed interest** appear. On the Prime and Ultra plans, **Qualified lead**, **No reply** and **Received link** also appear.
+  </Accordion>
+  <Accordion title="I got a notice that my AI has no connected channel. What do I do?">
+    This happens when the AI is on but no connected channel is served by it, usually after deleting the number it used. Click **Activate number** to go to the **Channels** tab and turn on the switch for a number, or **Check connections** to open [Connections](/en/conta/conexoes) and check the status of your channels. The notice appears for the account owner.
+  </Accordion>
+  <Accordion title="Does the AI reply on Instagram?">
+    No. The integrated AI only handles WhatsApp conversations. On the screen of an [Instagram](/en/atendimento/instagram) conversation, the notice "The integrated AI only handles WhatsApp conversations." appears, and the **Channels** tab doesn't offer to turn on the AI for Instagram accounts. The Instagram channel is still available for service handled by people.
+  </Accordion>
+  <Accordion title="Who on my team can turn the AI on and off in bulk?">
+    The account owner and anyone with permission to access the AI Agent. These people see the **Reset AI memory**, **Turn the AI on or off per conversation** and **Reset the AI** blocks on the **General** tab, plus the **Reset AI memory** button on the conversation screen. See [Team](/en/conta/equipe).
+  </Accordion>
+  <Accordion title="Someone on the team took over a conversation. How do I give it back to the AI?">
+    Open the conversation and click **Resume integrated AI in this conversation**. The CRM shows **The conversation is back with the AI.** and the human service mark is removed. To give several conversations back at once, use **Turn AI on** in the **Turn AI on/off per conversation** window: conversations marked as **With a person** also go back.
+  </Accordion>
+  <Accordion title="I want to change the AI text without rewriting all of it. How do I do that?">
+    In the **Personality** tab, open the **Prompt Builder**, go to **Editor and preview** and click **Improve with AI**. Write what you want to change, compare in **Suggested changes** and click **Apply change**. See [Improve the AI text](#improve-the-ai-text).
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="AI Assistant" icon="sparkles" href="/en/ia/assistente-ia">
+    Chat with the CRM about your data.
+  </Card>
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Connect the channels the AI will serve.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Follow and take over conversations.
+  </Card>
+  <Card title="Plans and billing" icon="wallet" href="/en/conta/planos">
+    Understand the conversations in your plan.
+  </Card>
+</CardGroup>

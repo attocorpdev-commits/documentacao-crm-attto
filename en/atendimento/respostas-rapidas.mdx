@@ -1,0 +1,147 @@
+---
+title: "Quick replies"
+description: "Create ready-made messages and use a shortcut to insert each one during a conversation."
+icon: "bolt"
+---
+
+Quick replies are ready-made messages you insert into the conversation with just a few taps. Use them for greetings, business hours, payment methods and other answers you repeat often.
+
+Replies are shared. Every user in your company sees and uses the same list.
+
+## How to access
+
+In the side menu, open the **CRM** category and click **Quick replies**.
+
+At the top of the screen you see three numbers: **Total**, **With shortcut** and **Active**.
+
+<Card title="Open Quick replies in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/quick-replies" horizontal>
+  Goes straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Create a reply
+
+<Steps>
+  <Step title="Open the form">
+    Click **New reply**. If the list is still empty, click **Create first reply**.
+  </Step>
+  <Step title="Give it a title">
+    Fill in **Title** with a name that is easy to recognize. Example: `Saudação`.
+  </Step>
+  <Step title="Set the shortcut">
+    Fill in **Shortcut** with a short word. Example: `oi`. This field is optional.
+  </Step>
+  <Step title="Write the message">
+    Fill in **Content** with the reply text.
+  </Step>
+  <Step title="Check the preview">
+    Below the content, the **Preview** shows how the contact will receive the message, using a sample contact.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Note>
+  **Title** and **Content** are required. The **Save** button is only available after you fill in both.
+</Note>
+
+## Personalize with variables
+
+Variables are bits of text that the CRM replaces with real data when you insert the reply.
+
+| Variable | Is replaced with |
+| --- | --- |
+| `{{nome}}` | Contact's full name |
+| `{{primeiro_nome}}` | Contact's first name |
+| `{{empresa}}` | Your company name |
+| `{{vendedor}}` | Name of the person handling the conversation |
+
+Example: the text `Oi {{primeiro_nome}}, aqui é da {{empresa}}!` arrives as "Oi Maria, aqui é da Sua Empresa!".
+
+In the form, click **See examples** to open the **Variables: two different syntaxes** window. It shows both types side by side and marks **you are here** on the type that applies to the screen you are on:
+
+- **Quick reply: variables by NAME**: lists the four variables on this page and what each one replaces.
+- **Official WhatsApp template: NUMBERED variables**: these only work in the template editor in [Broadcasts](/en/marketing/disparos).
+
+The window ends with the notice **Do not mix them: a numbered variable in a quick reply goes out raw to the client.**
+
+<Warning>
+  Numbered variables, such as `{{1}}`, don't work in quick replies. They would reach the contact without being replaced. If you use one, the CRM shows a warning. Click **Switch to name variable** to fix it.
+</Warning>
+
+## Use a reply in the conversation
+
+### On WhatsApp
+
+<Steps>
+  <Step title="Type the slash">
+    In the message field, type `/`. The list of replies appears above the field.
+  </Step>
+  <Step title="Filter the list">
+    Keep typing the shortcut, part of the title or part of the content. Example: `/oi`.
+  </Step>
+  <Step title="Choose the reply">
+    Use the up and down arrows and press **Enter**. You can also click the reply.
+  </Step>
+  <Step title="Review and send">
+    The text goes into the message field, with the variables already filled in. Adjust it if you want and send.
+  </Step>
+</Steps>
+
+Another way: click the **+** button (**Attachments and actions**) and choose **Quick reply**. The same list opens.
+
+To close the list without inserting anything, press **Esc**.
+
+<Tip>
+  The reply is never sent on its own. It goes into the message field so you can review it before sending.
+</Tip>
+
+### On Instagram
+
+Click the **+** button (**Attachments and actions**), open **Quick reply** and choose the reply. On Instagram, the `/` shortcut does not open the list.
+
+## Find, edit and delete
+
+- **Search replies...**: searches by title, shortcut or content.
+- **Refresh**: reloads the list.
+- **Copy**: only appears on replies that have a shortcut. Hover over the card and click the copy icon. The shortcut is copied with the slash, like `/oi`.
+- **Edit**: hover over the card and click the pencil icon. Change the fields and click **Save**.
+- **Delete**: hover over the card and click the trash icon. Confirm with **Delete**.
+
+<Warning>
+  Deleting applies to the whole team. The reply disappears from the list of every user in the company.
+</Warning>
+
+## Tips for staying organized
+
+- Use titles that describe the topic, such as `Horário de atendimento` or `Formas de pagamento`.
+- Create short shortcuts that are easy to remember.
+- Use search to check whether a similar reply already exists before creating another one.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I typed the slash and the list didn't appear. Why?">
+    The list only opens when there are replies that match what you typed. Check that at least one reply has been created. The slash must be at the start of the text or after a space.
+  </Accordion>
+  <Accordion title="The variable showed up without being replaced. What do I do?">
+    The CRM only recognizes the four variables on this page. Check that the name is spelled correctly. The form's **Preview** warns you about anything that would arrive without being replaced.
+  </Accordion>
+  <Accordion title="Who can create and edit replies?">
+    Any user in the company with access to the CRM.
+  </Accordion>
+  <Accordion title="Do I need to create a shortcut?">
+    No. Without a shortcut, you can still find the reply by typing part of the title or content after the slash.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Use replies during conversations.
+  </Card>
+  <Card title="Instagram" icon="instagram" href="/en/atendimento/instagram">
+    Insert ready-made replies in Instagram conversations.
+  </Card>
+</CardGroup>

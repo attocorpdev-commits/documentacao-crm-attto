@@ -1,0 +1,239 @@
+---
+title: "Broadcasts"
+description: "Send the same WhatsApp message to many CRM contacts, at a controlled pace, and track the results."
+icon: "paper-plane"
+---
+
+On the **Broadcasts** screen you create campaigns: you choose the contacts, write the message and the CRM sends it to each person, one conversation at a time. Then you track who received it and who replied.
+
+## How to access
+
+In the side menu, open **Marketing** and click **Broadcasts**. The screen opens on the **Campaigns** tab.
+
+<Note>
+  If the **Mass broadcasts** notice appears saying your profile does not have permission, ask the person in charge of your company's account to give you access.
+</Note>
+
+<Warning>
+  Sending many messages to people who did not ask for them hurts your number. On WhatsApp (QR Code), it can lead to the number being blocked or banned. On Official WhatsApp (Meta), it can lower the number's quality and limit sending. Send only to contacts who know your business and keep volumes moderate.
+</Warning>
+
+<Card title="Open Broadcasts in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/broadcast" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Before you start
+
+You need a connected channel, either WhatsApp (QR Code) or Official WhatsApp (Meta). See [Connect your WhatsApp](/en/primeiros-passos/conectar-whatsapp) or open [Connections in the CRM](https://app.attocorp.com/app/connections) to connect now.
+
+If your company has more than one channel, choose which one the campaign goes out from in the **Sending channel** field, at the top of the screen. A disconnected channel shows **(disconnected)** next to its name.
+
+The channel type changes how you write the message:
+
+| Channel type | What the message is like |
+| --- | --- |
+| **WhatsApp (QR Code)** | Free text, written by you |
+| **Official WhatsApp (Meta)** | A message model already approved by Meta, called a template |
+
+## Create a campaign
+
+The **New Campaign** panel has three numbered parts.
+
+<Steps>
+  <Step title="Choose the contacts">
+    In **Contact source**, in the **CRM Contacts** block, select who will receive the message.
+
+    - Use **Search by name or number...** to find a person.
+    - Click **Include tag** to show only people who have a certain tag.
+    - Click **Exclude tag** to remove from the list people who have a certain tag.
+    - Check **Select all** to choose all the contacts in the list at once.
+
+    The **in audience** counter shows how many people match the filters.
+  </Step>
+  <Step title="Name it and write the message">
+    In **Message**, fill in **Campaign name**. This name is just for you, the contact does not see it.
+
+    On the **WhatsApp** channel, write in **Message text**.
+
+    On the **Official WhatsApp (Meta)** channel, click **Select template...** and choose a template. If there are none yet, click **Create template**.
+
+    Before writing, read the "Variables in the message" section, further down this page. A variable written in the wrong place blocks sending.
+  </Step>
+  <Step title="Set the sending pace">
+    Set the intervals between sends. See the details in [Sending pace](#sending-pace).
+  </Step>
+  <Step title="Review and send">
+    In **Confirm and send**, review the summary: campaign name, total contacts, interval and **Estimated time**. Then click **Start Campaign**.
+  </Step>
+</Steps>
+
+### Combine tags
+
+When you include more than one tag, two options appear:
+
+- **Any**: the contact is included if they have at least one of the tags.
+- **All tags**: the contact is included only if they have all the chosen tags.
+
+The same tag cannot be in include and exclude at the same time. To create and organize tags, see [Tags](/en/crm/tags).
+
+### Campaign options
+
+- **Ignore duplicates**: on by default. Sends only once per number, even if it appears more than once.
+- **Assigned salesperson** (optional): the broadcast contacts are assigned to this salesperson, in the conversation and in the Pipeline.
+- **Apply tag on send** (optional): each contact who receives the message gets the chosen tags.
+- **AI personalization**: available on the **WhatsApp** channel. Creates unique variations of the message for each contact.
+
+<Note>
+  People who reply to your broadcast come into your inbox like any other conversation. If the **AI Agent** is active in your company, it handles these replies automatically. See [AI Agent](/en/ia/agente-ia) to turn it on or off.
+</Note>
+
+### Variables in the message
+
+The CRM has two ways to write a variable, and they do not work in the same place:
+
+| Where it works | How it is written | Examples |
+| --- | --- | --- |
+| Template on the **Official WhatsApp (Meta)** channel | numbered | `{{1}}`, `{{2}}` |
+| Quick reply, inside the conversation | by name | `{{primeiro_nome}}`, `{{nome}}`, `{{empresa}}`, `{{vendedor}}` |
+
+In the **Message text** on the **WhatsApp** channel, the broadcast has no variables: what you write goes out the same for every contact.
+
+The CRM has a guide with examples of both ways, called **Variables: two different syntaxes**. It opens in two places:
+
+- on the **Official WhatsApp** templates screen, in the **See variable examples** link, below **Message body**. It is the same screen that opens with the **Create template** button;
+- in [Quick replies](/en/atendimento/respostas-rapidas), with the **See examples** button.
+
+<Warning>
+  Do not mix the two ways. If any variable is left unfilled in the message, that contact receives nothing: the send becomes a failure with the reason **Template variable not filled in**. This is on purpose: this way nobody receives the message with the raw variable in place of their name.
+</Warning>
+
+### Contact name and media in the template
+
+On the **Official WhatsApp (Meta)** channel, the template can have numbered variable spaces. In the broadcast, all of these spaces are filled with the contact's first name. If the contact has no name, the word "cliente" is used.
+
+If the template has an image, video or document, all contacts receive the same file that was approved with the template.
+
+Before sending, check the **Send preview**. It shows the final message with a sample of real contacts from your selection.
+
+## Sending pace
+
+The CRM never sends everything at once. You set the interval and the screen shows the estimated time.
+
+**On WhatsApp (QR Code):** fill in **Minimum interval (min)** and **Maximum interval (min)**. The smallest value accepted is 1 minute.
+
+**On Official WhatsApp (Meta):** fill in **Interval between batches** and choose **seconds** or **minutes**. Messages go out in groups of about 15 at a time. The screen recommends 2 to 3 minutes. For more than 200 contacts, it recommends 3 to 5 minutes.
+
+<Tip>
+  If you choose an interval that is too short, the screen warns you: **Interval below recommended: risk of blocking or drop in delivery.** It is best to follow the recommendation.
+</Tip>
+
+On Official WhatsApp (Meta), campaigns with more than 1,000 contacts depend on your number's daily limit at Meta. Anything over the limit only goes out the next day.
+
+## Set allowed hours for sending
+
+The **Allowed send window** panel prevents broadcasts outside the hours you choose. It applies to all of the company's campaigns and uses Brasília time.
+
+<Steps>
+  <Step title="Turn on the window">
+    Turn on the switch next to **Allowed send window**.
+  </Step>
+  <Step title="Choose hours and days">
+    In **Allowed hours**, set the start and end. Use **Add block** to have more than one period in the day. In **Allowed days**, check the days of the week.
+  </Step>
+  <Step title="Save">
+    Click **Save window**.
+  </Step>
+</Steps>
+
+Outside the window, the broadcast pauses and resumes on its own at the next opening. In the list, the campaign shows **Waiting for window** with the time it will resume.
+
+To use different hours for a single campaign, turn on **Customize this campaign's window** when you create it.
+
+## Track the results
+
+The **Campaigns** panel lists your most recent broadcasts. Each one shows its status (**Sending**, **Paused** or **Completed**), the progress bar and the count of sends and failures.
+
+Click a campaign to open the details, with **Sent**, **Failures**, **Total** and **Rate**.
+
+Click **View report** to open the **Broadcast report**. It shows **Delivered**, **Replied**, **Delivery rate** and **Response rate**, along with the status of each contact. In the report you can:
+
+- click **Open conversation** to talk to a contact;
+- click **Export CSV** to download the list as a spreadsheet.
+
+When a contact shows as a failure, the report shows the reason next to it, and the reason also goes into the **Export CSV** spreadsheet. If the reason is **Template variable not filled in**, the CRM itself blocked the send: fix the message and send again to those contacts.
+
+### The message in the contact's conversation
+
+Each broadcast send also appears in the contact's conversation, with the real delivery status. If WhatsApp rejects the message, the delivered mark is removed and the error appears in its place. The CRM also reviews these marks from time to time and fixes on its own any that show the wrong status.
+
+## Pause, resume, repeat and delete
+
+- **Pause**: the queue stops where it is and nothing is lost.
+- **Resume**: sending continues from where it stopped.
+- **Repeat**: fills in a new campaign with the name, message and intervals of the previous one. You choose the contacts again. On the official channel, choose the template again and check the interval.
+- **Delete**: open the details and click the trash icon. It only appears when the campaign is not sending. This action cannot be undone.
+
+## Contacts who asked not to receive messages
+
+People who asked to leave your list show the **Unsubscribed** label. These contacts cannot be selected and do not receive broadcasts, even with **Select all**. The screen shows how many unsubscribed contacts were left out.
+
+The label is added on its own when the person:
+
+- replies only "sair", "parar", "cancelar" or "descadastrar";
+- makes it clear they are not the right person or do not want to be contacted, with phrases like "não conheço", "número errado", "foi engano", "não fui eu", "não pedi", "me tira da lista" or "pare de mandar mensagem".
+
+In this second case, the **AI Agent** also stops replying in that conversation and it waits for an agent. This is on purpose: insisting with people who never asked to be contacted is what gets your number blocked.
+
+<Note>
+  A common phrase in the middle of the conversation does not unsubscribe anyone. "Posso sair às 18h" or "não quero parar de receber" still count as normal messages.
+</Note>
+
+If Meta reports that a number does not have WhatsApp, it is also left out of broadcasts for 30 days and shows as **Unsubscribed** during that period.
+
+An unsubscribe requested by the person is never undone on its own.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can I schedule a broadcast for another day?">
+    There is no date and time field for scheduling. The campaign starts when you click **Start Campaign**. To control the time, use the **Allowed send window**.
+  </Accordion>
+  <Accordion title="Can I attach an image to the broadcast?">
+    On the **WhatsApp** channel, the broadcast message is text only. On the **Official WhatsApp (Meta)** channel, the media comes from the approved template and is the same for everyone.
+  </Accordion>
+  <Accordion title="How do I cancel a campaign that has already started?">
+    Click **Pause** and confirm. Then open the details and delete the campaign with the trash icon.
+  </Accordion>
+  <Accordion title="Can the same contact receive the message twice?">
+    With **Ignore duplicates** on, no. The message is sent once per number.
+  </Accordion>
+  <Accordion title="Why is the campaign stuck on Waiting for window?">
+    The current time is outside the send window. The broadcast resumes on its own at the time shown.
+  </Accordion>
+  <Accordion title="The report shows Template variable not filled in. What do I do?">
+    The message was sent with a variable that was left unfilled, so the CRM blocked the send before it went out. Nobody received the message with the raw variable. Check the rules in the "Variables in the message" section, fix the message and send again to those contacts.
+  </Accordion>
+  <Accordion title="Can I use the contact's name in the broadcast free text?">
+    On the **WhatsApp** channel, no: the **Message text** goes out the same for everyone. The name is filled in by the template on the **Official WhatsApp (Meta)** channel. Inside the conversation, quick replies also fill in the name, company and salesperson. See [Quick replies](/en/atendimento/respostas-rapidas).
+  </Accordion>
+  <Accordion title="Are people who reply to the broadcast handled by the AI?">
+    Yes, if the **AI Agent** is active in your company. The conversation opened by the broadcast starts with the AI on, like any other. You can turn the AI off conversation by conversation in your inbox. See [AI Agent](/en/ia/agente-ia).
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Tags" icon="tags" href="/en/crm/tags">
+    Organize contacts to build your broadcast audience.
+  </Card>
+  <Card title="Contacts" icon="address-book" href="/en/crm/contatos">
+    See and update your contact base.
+  </Card>
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Manage the channels used for sending.
+  </Card>
+  <Card title="WhatsApp inbox" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Reply to people who answered your broadcast.
+  </Card>
+</CardGroup>

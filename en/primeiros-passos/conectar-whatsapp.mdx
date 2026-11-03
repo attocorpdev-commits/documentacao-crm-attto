@@ -1,0 +1,119 @@
+---
+title: "Connect your WhatsApp"
+description: "Link a number to the CRM through WhatsApp (QR Code) or Official WhatsApp (Meta)."
+icon: "link"
+---
+
+To serve customers through the CRM, you need to connect at least one number. There are two types of connection. If you are not sure which one to use yet, see [WhatsApp types](/en/primeiros-passos/tipos-whatsapp).
+
+## How to access
+
+In the side menu, open **Settings** and click **Connections**. In the **WhatsApp** group, choose the card for the type you want to connect: **WhatsApp** (by QR Code) or **Official WhatsApp (Meta)**.
+
+<Card title="Open Connections in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections">
+  Goes straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Step by step
+
+<Tabs>
+  <Tab title="WhatsApp (QR Code)" icon="qrcode">
+    Have the phone with the number's WhatsApp at hand and use the CRM on your computer, so you can scan the screen.
+
+    <Steps>
+      <Step title="Add a channel">
+        On the **WhatsApp** card, click **Add channel**. If there is no number yet, you can also click **Connect number**.
+      </Step>
+      <Step title="Name the channel">
+        In **Channel name**, write something that helps identify the number. Examples: Sales, Support, Finance. Click **Create channel**.
+      </Step>
+      <Step title="Generate the QR Code">
+        The channel shows up in the list with the **Connect WhatsApp** area open. Click **Connect WhatsApp** to generate the QR Code.
+      </Step>
+      <Step title="Scan it with your phone">
+        On your phone, open WhatsApp, go to **Linked devices** and scan the QR Code on the screen.
+      </Step>
+      <Step title="Check the connection">
+        The CRM shows the message **Channel connected successfully!**. The channel now displays the **Connected** badge and the phone number.
+      </Step>
+    </Steps>
+
+    <Warning>
+      The QR Code expires in 60 seconds. The screen shows the countdown in **QR expires in**. To swap the QR before it runs out, click **Generate new QR**. If time runs out, click **Try again**.
+    </Warning>
+
+    <Tip>
+      If the QR Code area is closed, click the QR Code icon next to the channel name to open it again.
+    </Tip>
+
+    <Card title="Open WhatsApp (QR Code) in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/whatsapp">
+      Goes straight to the list of QR Code channels.
+    </Card>
+  </Tab>
+  <Tab title="Official WhatsApp (Meta)" icon="badge-check">
+    The number must be active at Meta, with the fee paid. Without that, use **Add** and paste the channel token.
+
+    <Steps>
+      <Step title="Start the connection">
+        On the **Official WhatsApp (Meta)** card, in the **Channels** tab, click **Connect via Meta**. In the window that opens, click **Connect via Meta** again.
+      </Step>
+      <Step title="Confirm">
+        In the **Confirm channel activation** window, click **Yes, connect**.
+      </Step>
+      <Step title="Authorize in the Meta window">
+        A Meta window opens. Choose the account and authorize. You don't need to paste a token.
+      </Step>
+      <Step title="Finish">
+        When **Channel connected successfully!** appears, click **Done**.
+      </Step>
+    </Steps>
+
+    <Tip>
+      If your browser blocks the window, allow pop-ups for the site and click **Try again**. If you prefer help, click **Do it with support**.
+    </Tip>
+
+    After connecting, create the templates in the **Templates** tab. They are needed to talk to contacts outside the 24-hour window. See [Connections](/en/conta/conexoes).
+
+    <Card title="Open Official WhatsApp (Meta) in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/whatsapp-oficial/canais">
+      Goes straight to the list of official channels.
+    </Card>
+  </Tab>
+</Tabs>
+
+## After connecting
+
+Messages that arrive on both types of number show up in **WhatsApp**, in the **Support** group of the menu.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I got a message saying the channel limit was reached.">
+    Each plan has a channel limit for each type of WhatsApp. To connect more numbers, click **Talk to support** in that same window. See [Plans and billing](/en/conta/planos).
+  </Accordion>
+  <Accordion title="I don't see the Add channel button.">
+    Your user does not have permission to create channels. Ask the account owner to grant this permission on the **Company Team** screen.
+  </Accordion>
+  <Accordion title="WhatsApp (QR Code): an error appeared instead of the QR Code.">
+    Click **Try again**. The CRM generates a new QR Code.
+  </Accordion>
+  <Accordion title="WhatsApp (QR Code): my number shows the Needs reconnection notice.">
+    Click **Reconnect**. If that doesn't solve it, open the channel's QR Code and scan it again.
+  </Accordion>
+  <Accordion title="WhatsApp (QR Code): the WhatsApp session may be out of sync window appeared.">
+    The number stays connected, but some of the messages you send may not reach the customer. Click **Sync** to go to the channel list and reconnect the number, or **Dismiss** to close the notice. In the channel list, this number shows the **Session may be out of sync** badge. Learn more in [Connections](/en/conta/conexoes).
+  </Accordion>
+  <Accordion title="Official WhatsApp (Meta): I connected the wrong account.">
+    In the channel's three dots menu, use **Reauthorize (wrong account)** and choose the right account at Meta. See [Connections](/en/conta/conexoes).
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp types" icon="code-compare" href="/en/primeiros-passos/tipos-whatsapp">
+    Compare WhatsApp (QR Code) and Official WhatsApp (Meta).
+  </Card>
+  <Card title="WhatsApp support" icon="comments" href="/en/atendimento/whatsapp">
+    Learn how to chat with your leads.
+  </Card>
+</CardGroup>

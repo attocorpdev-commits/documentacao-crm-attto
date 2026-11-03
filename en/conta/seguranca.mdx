@@ -1,0 +1,114 @@
+---
+title: "Two-step verification"
+sidebarTitle: "Security"
+description: "Protect your account with a code from an authenticator app in addition to your password."
+icon: "shield-check"
+keywords: ["two-step verification", "2FA", "MFA", "authenticator", "security", "code", "login"]
+---
+
+With two-step verification on, the CRM asks for your password and then for a 6-digit code from the authenticator app on your phone. Even if someone finds out your password, they cannot get in without this code.
+
+<Tip>
+  Recommended for business owners: it protects the account even if the password leaks.
+</Tip>
+
+## Before you start
+
+Install an authenticator app on your phone. For example, **Google Authenticator**, **Microsoft Authenticator** and **1Password** all work.
+
+## Turn it on
+
+<Steps>
+  <Step title="Open My Profile">
+    Click your photo or initial, in the top right corner, and choose **My Profile**. In the **Profile** section, scroll down to the **Password** card.
+  </Step>
+  <Step title="Start turning it on">
+    In **Two-step verification**, the badge shows **Off**. Click **Turn on**.
+  </Step>
+  <Step title="Scan the QR code">
+    In the **Turn on two-step verification** window, open the authenticator app and scan the QR code.
+
+    Can't scan it? Copy the key shown below the QR code with **Copy key** and type it in the app. On your phone, you can also tap **Open in authenticator app**.
+  </Step>
+  <Step title="Confirm the code">
+    Type the 6 digits the app shows and click **Confirm code**.
+  </Step>
+</Steps>
+
+The CRM confirms with **Two-step verification turned on** and the badge changes to **On**. From your next sign-in on, the code will be requested.
+
+<Card title="Open My Profile in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/profile">
+  Takes you straight to the screen. You need to be signed in to your account in the CRM.
+</Card>
+
+## Sign in with the code
+
+After the password, or after signing in with Google, the **Two-step verification** screen appears.
+
+<Steps>
+  <Step title="Open the authenticator app">
+    Look for the Atto Corp code. It changes every few seconds.
+  </Step>
+  <Step title="Type and verify">
+    Type the 6 digits and click **Verify**.
+  </Step>
+</Steps>
+
+The CRM only opens after the right code. To switch accounts, click **Sign out and use another account**.
+
+## Turn it off
+
+In **My Profile**, on the **Password** card, click **Turn off**. The **Turn off two-step verification?** window warns that the account will go back to asking only for the password. Confirm with **Turn off**.
+
+<Warning>
+  We recommend keeping verification on. Without it, anyone who has your password can get into your account.
+</Warning>
+
+## Team security
+
+On the [Team](/en/conta/equipe) screen, the **Team security** card shows who on the team already has verification on (**Verification on** or **No verification**) and each person's last access.
+
+<Note>
+  The **Require two-step verification from the team** option cannot be turned on yet. For now, the card lets you check who has already turned it on.
+</Note>
+
+When your company starts requiring verification, anyone who has not turned it on yet will see the **Your company requires two-step verification** screen when signing in, and will only access the company after turning it on.
+
+## Messages you may see
+
+| Message | What to do |
+| --- | --- |
+| **Type the 6 digits from the authenticator app.** | The field is empty or incomplete. Type the 6 digits. |
+| **Invalid or expired code. Check the app and try again.** | The code changed or was typed wrong. Use the code that shows in the app right now. Also check that your phone's time is set to automatic. |
+| **We could not verify your security** | Connection failure. Check your internet and click **Try again**. For security, access is only allowed after this check. |
+| **Could not complete it. Try again in a moment.** | Temporary error. Wait a few seconds and try again. |
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I changed or lost my phone. How do I sign in?">
+    Without the authenticator app, the CRM does not allow access. Contact [Support](/en/empresa/suporte) and include your account email.
+
+    Before changing phones, transfer the accounts in your authenticator app to the new device, or turn off verification and turn it on again on the new phone.
+  </Accordion>
+
+  <Accordion title="The code does not work, even when typed correctly.">
+    The code depends on your phone's time. Set the device's date and time to automatic and try with a new code.
+  </Accordion>
+
+  <Accordion title="Do I need to type the code every time?">
+    The code is requested on every new sign-in to the account, including when signing in with Google.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Profile" icon="user" href="/en/conta/perfil">
+    Change your password and adjust your details.
+  </Card>
+
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    See who on the team has already turned on verification.
+  </Card>
+</CardGroup>

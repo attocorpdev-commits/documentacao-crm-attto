@@ -1,0 +1,86 @@
+---
+title: "Service protocol"
+sidebarTitle: "Service protocol"
+description: "Unique code a conversation gets when it moves from the AI to a person on the team."
+icon: "hashtag"
+keywords: ["protocol", "code", "transfer", "agent", "take over", "AI"]
+---
+
+When the AI transfers the conversation to an agent, the conversation gets a unique code, the **service protocol**. It helps the team and the customer talk about the same conversation.
+
+<Info>
+  The company owner and managers can see this setting. Only the owner can change it.
+</Info>
+
+## When the protocol is created
+
+- When the AI hands the conversation to a person on the team.
+- When someone clicks **Take over** in a conversation, on [WhatsApp](/en/atendimento/whatsapp) or on [Instagram](/en/atendimento/instagram).
+
+The code appears at the top of the conversation, next to the contact's name, with a button to copy it.
+
+## Send the protocol to the customer
+
+The protocol is always created. You choose whether the customer also receives a message with the code.
+
+<Steps>
+  <Step title="Open the settings">
+    Click your photo or initial, in the top right corner, and choose **Settings**. In the **Artificial intelligence** group, click **Service protocol**.
+  </Step>
+  <Step title="Turn on sending">
+    Turn on the **Send the protocol to the customer** switch. The message is only sent when a new protocol is created.
+  </Step>
+  <Step title="Write the message">
+    In the **Message** field, write the text. Use `{protocolo}` where the code should appear. The default text is `Seu protocolo de atendimento é {protocolo}.`
+  </Step>
+  <Step title="Check and save">
+    The **Preview** shows how the message looks with a sample code. Click **Save**. The CRM confirms with **Protocol saved**.
+  </Step>
+</Steps>
+
+<Card title="Open Service protocol in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/settings/protocol">
+  Takes you straight to the screen. You need to be signed in to your account in the CRM.
+</Card>
+
+<Tip>
+  The message accepts up to 500 characters. The counter is below the field.
+</Tip>
+
+## Messages you may see
+
+| Message | What to do |
+| --- | --- |
+| **Write the message the customer will receive.** | The field is empty. Write the text or turn off sending. |
+| **Include** `{protocolo}` **where the code should appear.** | Put `{protocolo}` in the text. |
+| **Use up to 500 characters.** | Shorten the message. |
+| **Only the company owner can change this setting.** | You are viewing it in read-only mode. Ask the company owner. |
+| **No permission to change this company's protocol.** | Your account cannot save. Ask the company owner. |
+| **Could not load the protocol settings.** | Click **Try again**. |
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I turned off sending. Does the protocol stop existing?">
+    No. The code is still created and appears at the top of the conversation. Turning it off only stops the customer from receiving the message.
+  </Accordion>
+
+  <Accordion title="I don't see Service protocol in the settings.">
+    The option only appears for the company owner and managers. See [Team](/en/conta/equipe).
+  </Accordion>
+
+  <Accordion title="Does the customer get a message on every transfer?">
+    The message is only sent when a new protocol is created.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="AI Agent" icon="robot" href="/en/ia/agente-ia">
+    Set when the AI hands the conversation to a person.
+  </Card>
+
+  <Card title="WhatsApp" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Take over and follow conversations.
+  </Card>
+</CardGroup>
