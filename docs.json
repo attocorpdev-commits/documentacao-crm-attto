@@ -89,7 +89,8 @@
             "pages": [
               "empresa/marca",
               "empresa/politicas",
-              "empresa/suporte"
+              "empresa/suporte",
+              "empresa/embaixadores"
             ]
           }
         ]
@@ -100,7 +101,7 @@
     "primary": {
       "type": "button",
       "label": "Entrar no CRM",
-      "href": "https://attocorp.com/auth"
+      "href": "https://app.attocorp.com/auth"
     },
     "links": [
       {
