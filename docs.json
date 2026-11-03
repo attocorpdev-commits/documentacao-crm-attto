@@ -100,7 +100,7 @@
     "primary": {
       "type": "button",
       "label": "Entrar no CRM",
-      "href": "https://attocorp.com/auth"
+      "href": "https://app.attocorp.com/auth"
     },
     "links": [
       {
