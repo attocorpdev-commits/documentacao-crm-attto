@@ -99,6 +99,48 @@
             ]
           }
         ]
+      },
+      {
+        "language": "en",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": []
+          },
+          {
+            "group": "Customer service",
+            "pages": []
+          },
+          {
+            "group": "CRM",
+            "pages": []
+          },
+          {
+            "group": "Artificial intelligence",
+            "pages": []
+          },
+          {
+            "group": "Marketing",
+            "pages": []
+          },
+          {
+            "group": "Management",
+            "pages": []
+          },
+          {
+            "group": "Account",
+            "pages": []
+          },
+          {
+            "group": "Platform",
+            "pages": []
+          },
+          {
+            "group": "Company",
+            "tag": "Atto Corp",
+            "pages": []
+          }
+        ]
       }
     ]
   },
