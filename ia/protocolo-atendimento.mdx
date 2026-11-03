@@ -1,0 +1,86 @@
+---
+title: "Protocolo de atendimento"
+sidebarTitle: "Protocolo de atendimento"
+description: "Código único que a conversa recebe quando sai da IA e passa para uma pessoa da equipe."
+icon: "hashtag"
+keywords: ["protocolo", "código", "transferência", "atendente", "assumir", "IA"]
+---
+
+Quando a IA transfere a conversa para um atendente, a conversa recebe um código único, o **protocolo de atendimento**. Ele ajuda a equipe e o cliente a falarem da mesma conversa.
+
+<Info>
+  O dono e os gerentes da empresa veem esta configuração. Só o dono altera.
+</Info>
+
+## Quando o protocolo é criado
+
+- Quando a IA passa a conversa para uma pessoa da equipe.
+- Quando alguém clica em **Assumir** numa conversa, no [WhatsApp](/atendimento/whatsapp) ou no [Instagram](/atendimento/instagram).
+
+O código aparece no topo da conversa, ao lado do nome do contato, com um botão para copiar.
+
+## Enviar o protocolo ao cliente
+
+O protocolo é sempre criado. Você escolhe se o cliente também recebe uma mensagem com o código.
+
+<Steps>
+  <Step title="Abra as configurações">
+    Clique na sua foto ou inicial, no canto superior direito, e escolha **Configurações**. No grupo **Inteligência artificial**, clique em **Protocolo de atendimento**.
+  </Step>
+  <Step title="Ligue o envio">
+    Ligue a chave **Enviar o protocolo ao cliente**. A mensagem sai só quando um protocolo novo é criado.
+  </Step>
+  <Step title="Escreva a mensagem">
+    No campo **Mensagem**, escreva o texto. Use `{protocolo}` onde o código deve aparecer. O texto padrão é `Seu protocolo de atendimento é {protocolo}.`
+  </Step>
+  <Step title="Confira e salve">
+    A **Prévia** mostra como a mensagem fica com um código de exemplo. Clique em **Salvar**. O CRM confirma com **Protocolo salvo**.
+  </Step>
+</Steps>
+
+<Card title="Abrir Protocolo de atendimento no CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/settings/protocol">
+  Leva direto para a tela. É preciso estar com a sua conta aberta no CRM.
+</Card>
+
+<Tip>
+  A mensagem aceita até 500 caracteres. O contador fica abaixo do campo.
+</Tip>
+
+## Mensagens que podem aparecer
+
+| Mensagem | O que fazer |
+| --- | --- |
+| **Escreva a mensagem que o cliente vai receber.** | O campo está vazio. Escreva o texto ou desligue o envio. |
+| **Inclua** `{protocolo}` **onde o código deve aparecer.** | Coloque `{protocolo}` no texto. |
+| **Use até 500 caracteres.** | Encurte a mensagem. |
+| **Só o dono da empresa altera esta configuração.** | Você está vendo em modo leitura. Peça ao dono da empresa. |
+| **Sem permissão para alterar o protocolo desta empresa.** | Sua conta não pode salvar. Peça ao dono da empresa. |
+| **Não foi possível carregar a configuração do protocolo.** | Clique em **Tentar de novo**. |
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Desliguei o envio. O protocolo deixa de existir?">
+    Não. O código continua sendo criado e aparece no topo da conversa. Desligar só impede que o cliente receba a mensagem.
+  </Accordion>
+
+  <Accordion title="Não vejo Protocolo de atendimento nas configurações.">
+    A opção aparece só para o dono e os gerentes da empresa. Veja [Equipe](/conta/equipe).
+  </Accordion>
+
+  <Accordion title="O cliente recebe uma mensagem a cada transferência?">
+    A mensagem sai só quando um protocolo novo é criado.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Agente IA" icon="robot" href="/ia/agente-ia">
+    Configure quando a IA passa a conversa para uma pessoa.
+  </Card>
+
+  <Card title="WhatsApp" icon="whatsapp" href="/atendimento/whatsapp">
+    Assuma e acompanhe as conversas.
+  </Card>
+</CardGroup>
