@@ -76,6 +76,21 @@
               "conta/planos",
               "conta/perfil"
             ]
+          },
+          {
+            "group": "Plataforma",
+            "pages": [
+              "plataforma/visao-geral"
+            ]
+          },
+          {
+            "group": "Empresa",
+            "tag": "Atto Corp",
+            "pages": [
+              "empresa/marca",
+              "empresa/politicas",
+              "empresa/suporte"
+            ]
           }
         ]
       }
@@ -86,7 +101,19 @@
       "type": "button",
       "label": "Entrar no CRM",
       "href": "https://attocorp.com/auth"
-    }
+    },
+    "links": [
+      {
+        "icon": "headset",
+        "href": "https://wa.me/5562982340293",
+        "label": "Suporte"
+      },
+      {
+        "icon": "instagram",
+        "href": "https://www.instagram.com/attocorp",
+        "label": "Instagram"
+      }
+    ]
   },
   "contextual": {
     "options": [
