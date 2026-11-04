@@ -18,168 +18,212 @@
     "languages": [
       {
         "language": "pt-BR",
-        "groups": [
+        "tabs": [
           {
-            "group": "Primeiros passos",
-            "pages": [
-              "index",
-              "primeiros-passos/primeiro-acesso",
-              "primeiros-passos/tipos-whatsapp",
-              "primeiros-passos/conectar-whatsapp"
+            "tab": "Central de ajuda",
+            "groups": [
+              {
+                "group": "Primeiros passos",
+                "pages": [
+                  "index",
+                  "primeiros-passos/primeiro-acesso",
+                  "primeiros-passos/planos",
+                  "primeiros-passos/tipos-whatsapp",
+                  "primeiros-passos/conectar-whatsapp",
+                  "primeiros-passos/problemas-comuns"
+                ]
+              },
+              {
+                "group": "Inteligência artificial",
+                "pages": [
+                  "ia/assistente-ia",
+                  "ia/agente-ia",
+                  "ia/entrevista-inicial",
+                  "ia/protocolo-atendimento",
+                  "ia/creditos"
+                ]
+              },
+              {
+                "group": "Atendimento",
+                "pages": [
+                  "atendimento/whatsapp",
+                  "atendimento/instagram",
+                  "atendimento/instagram-mensagens-recusadas",
+                  "atendimento/respostas-rapidas",
+                  "atendimento/janela-24h",
+                  "atendimento/templates-whatsapp",
+                  "atendimento/fila-rodizio",
+                  "atendimento/status-ausente"
+                ]
+              },
+              {
+                "group": "CRM",
+                "pages": [
+                  "crm/pipeline",
+                  "crm/contatos",
+                  "crm/tags",
+                  "crm/atividades",
+                  "crm/agenda",
+                  "crm/importar-contatos",
+                  "crm/privacidade-lgpd"
+                ]
+              },
+              {
+                "group": "Marketing",
+                "pages": [
+                  "marketing/disparos",
+                  "marketing/rastreamento-meta"
+                ]
+              },
+              {
+                "group": "Gestão",
+                "pages": [
+                  "gestao/dashboard",
+                  "gestao/relatorios",
+                  "gestao/area-gestor"
+                ]
+              },
+              {
+                "group": "Conta",
+                "pages": [
+                  "conta/conexoes",
+                  "conta/equipe",
+                  "conta/planos",
+                  "conta/perfil",
+                  "conta/seguranca",
+                  "conta/recuperar-senha",
+                  "conta/trocar-empresa"
+                ]
+              },
+              {
+                "group": "Plataforma",
+                "pages": [
+                  "plataforma/visao-geral",
+                  "plataforma/mcp"
+                ]
+              },
+              {
+                "group": "Empresa",
+                "tag": "Atto Corp",
+                "pages": [
+                  "empresa/marca",
+                  "empresa/politicas",
+                  "empresa/suporte",
+                  "empresa/embaixadores"
+                ]
+              }
             ]
           },
           {
-            "group": "Atendimento",
+            "tab": "Atualizações e Novidades",
             "pages": [
-              "atendimento/whatsapp",
-              "atendimento/instagram",
-              "atendimento/instagram-mensagens-recusadas",
-              "atendimento/respostas-rapidas"
-            ]
-          },
-          {
-            "group": "CRM",
-            "pages": [
-              "crm/pipeline",
-              "crm/contatos",
-              "crm/tags",
-              "crm/atividades",
-              "crm/agenda"
-            ]
-          },
-          {
-            "group": "Inteligência artificial",
-            "pages": [
-              "ia/assistente-ia",
-              "ia/agente-ia",
-              "ia/protocolo-atendimento",
-              "ia/creditos"
-            ]
-          },
-          {
-            "group": "Marketing",
-            "pages": [
-              "marketing/disparos",
-              "marketing/rastreamento-meta"
-            ]
-          },
-          {
-            "group": "Gestão",
-            "pages": [
-              "gestao/dashboard",
-              "gestao/relatorios",
-              "gestao/area-gestor"
-            ]
-          },
-          {
-            "group": "Conta",
-            "pages": [
-              "conta/conexoes",
-              "conta/equipe",
-              "conta/planos",
-              "conta/perfil",
-              "conta/seguranca"
-            ]
-          },
-          {
-            "group": "Plataforma",
-            "pages": [
-              "plataforma/visao-geral",
-              "plataforma/mcp"
-            ]
-          },
-          {
-            "group": "Empresa",
-            "tag": "Atto Corp",
-            "pages": [
-              "empresa/marca",
-              "empresa/politicas",
-              "empresa/suporte",
-              "empresa/embaixadores"
+              "novidades/changelog"
             ]
           }
         ]
       },
       {
         "language": "en",
-        "groups": [
+        "tabs": [
           {
-            "group": "Getting started",
-            "pages": [
-              "en/index",
-              "en/primeiros-passos/primeiro-acesso",
-              "en/primeiros-passos/tipos-whatsapp",
-              "en/primeiros-passos/conectar-whatsapp"
+            "tab": "Help center",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "en/index",
+                  "en/primeiros-passos/primeiro-acesso",
+                  "en/primeiros-passos/planos",
+                  "en/primeiros-passos/tipos-whatsapp",
+                  "en/primeiros-passos/conectar-whatsapp",
+                  "en/primeiros-passos/problemas-comuns"
+                ]
+              },
+              {
+                "group": "Artificial intelligence",
+                "pages": [
+                  "en/ia/assistente-ia",
+                  "en/ia/agente-ia",
+                  "en/ia/entrevista-inicial",
+                  "en/ia/protocolo-atendimento",
+                  "en/ia/creditos"
+                ]
+              },
+              {
+                "group": "Customer service",
+                "pages": [
+                  "en/atendimento/whatsapp",
+                  "en/atendimento/instagram",
+                  "en/atendimento/instagram-mensagens-recusadas",
+                  "en/atendimento/respostas-rapidas",
+                  "en/atendimento/janela-24h",
+                  "en/atendimento/templates-whatsapp",
+                  "en/atendimento/fila-rodizio",
+                  "en/atendimento/status-ausente"
+                ]
+              },
+              {
+                "group": "CRM",
+                "pages": [
+                  "en/crm/pipeline",
+                  "en/crm/contatos",
+                  "en/crm/tags",
+                  "en/crm/atividades",
+                  "en/crm/agenda",
+                  "en/crm/importar-contatos",
+                  "en/crm/privacidade-lgpd"
+                ]
+              },
+              {
+                "group": "Marketing",
+                "pages": [
+                  "en/marketing/disparos",
+                  "en/marketing/rastreamento-meta"
+                ]
+              },
+              {
+                "group": "Management",
+                "pages": [
+                  "en/gestao/dashboard",
+                  "en/gestao/relatorios",
+                  "en/gestao/area-gestor"
+                ]
+              },
+              {
+                "group": "Account",
+                "pages": [
+                  "en/conta/conexoes",
+                  "en/conta/equipe",
+                  "en/conta/planos",
+                  "en/conta/perfil",
+                  "en/conta/seguranca",
+                  "en/conta/recuperar-senha",
+                  "en/conta/trocar-empresa"
+                ]
+              },
+              {
+                "group": "Platform",
+                "pages": [
+                  "en/plataforma/visao-geral",
+                  "en/plataforma/mcp"
+                ]
+              },
+              {
+                "group": "Company",
+                "tag": "Atto Corp",
+                "pages": [
+                  "en/empresa/marca",
+                  "en/empresa/politicas",
+                  "en/empresa/suporte",
+                  "en/empresa/embaixadores"
+                ]
+              }
             ]
           },
           {
-            "group": "Customer service",
+            "tab": "Updates and news",
             "pages": [
-              "en/atendimento/whatsapp",
-              "en/atendimento/instagram",
-              "en/atendimento/instagram-mensagens-recusadas",
-              "en/atendimento/respostas-rapidas"
-            ]
-          },
-          {
-            "group": "CRM",
-            "pages": [
-              "en/crm/pipeline",
-              "en/crm/contatos",
-              "en/crm/tags",
-              "en/crm/atividades",
-              "en/crm/agenda"
-            ]
-          },
-          {
-            "group": "Artificial intelligence",
-            "pages": [
-              "en/ia/assistente-ia",
-              "en/ia/agente-ia",
-              "en/ia/protocolo-atendimento",
-              "en/ia/creditos"
-            ]
-          },
-          {
-            "group": "Marketing",
-            "pages": [
-              "en/marketing/disparos",
-              "en/marketing/rastreamento-meta"
-            ]
-          },
-          {
-            "group": "Management",
-            "pages": [
-              "en/gestao/dashboard",
-              "en/gestao/relatorios",
-              "en/gestao/area-gestor"
-            ]
-          },
-          {
-            "group": "Account",
-            "pages": [
-              "en/conta/conexoes",
-              "en/conta/equipe",
-              "en/conta/planos",
-              "en/conta/perfil",
-              "en/conta/seguranca"
-            ]
-          },
-          {
-            "group": "Platform",
-            "pages": [
-              "en/plataforma/visao-geral",
-              "en/plataforma/mcp"
-            ]
-          },
-          {
-            "group": "Company",
-            "tag": "Atto Corp",
-            "pages": [
-              "en/empresa/marca",
-              "en/empresa/politicas",
-              "en/empresa/suporte",
-              "en/empresa/embaixadores"
+              "en/novidades/changelog"
             ]
           }
         ]

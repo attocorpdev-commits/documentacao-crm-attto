@@ -83,7 +83,7 @@ If your AI hasn't been set up yet, the screen shows the notice **Let's create yo
 
 ## The agent tabs
 
-Inside an agent, the tabs appear in this order: **General**, **Personality**, **Documents**, **Channels**, **Advanced**, **Test** and **Metrics**.
+Inside an agent, the tabs appear in this order: **General**, **Personality**, **Documents**, **Knowledge base**, **Channels**, **Advanced**, **Test** and **Metrics**.
 
 <Tabs>
   <Tab title="General">
@@ -121,6 +121,14 @@ Inside an agent, the tabs appear in this order: **General**, **Personality**, **
     Sending the file to the customer is an action on the Prime and Ultra plans. On Start, the AI uses the content to reply, but does not send the file.
 
     See the step by step in [Teach the AI with documents](#teach-the-ai-with-documents).
+  </Tab>
+  <Tab title="Knowledge base">
+    Shows every text the AI checks before replying, including what the setup assistant created during configuration. Each block shows its source: **Document**, **Setup assistant** or **Added manually**.
+
+    - Click **Edit** to fix the **Title** or the **Content**, then click **Save**. The AI uses the new text on the next reply and in **Test**.
+    - Click the trash icon to delete a block. The screen asks **Delete this knowledge?**. This cannot be undone.
+
+    Changing the **Personality** text does not delete these blocks. Check this tab when you change products or services.
   </Tab>
   <Tab title="Channels">
     Here you choose which WhatsApp numbers the AI replies on. See [Choose the channels](#choose-the-channels).
@@ -203,7 +211,7 @@ At the top of **Editor and preview** there is the **Suggest improvement** button
   </Step>
 </Steps>
 
-The screen accepts PDF, DOCX, XLSX, TXT or audio (OGG, OPUS, MP3, M4A, WAV), up to 20 MB per file.
+The screen accepts PDF, DOCX, XLSX, TXT or audio (OGG, OPUS, MP3, M4A, WAV), up to 20 MB per file. You can also upload images: the AI sends the image to the customer, but doesn't read its content. Above the list, the screen shows how much of the 100 MB of space is already used.
 
 <Tip>
   Audio reaches the customer in different ways: OGG and OPUS arrive as a voice note; M4A recorded on iPhone, MP3 and WAV arrive as an audio file.
@@ -273,13 +281,13 @@ Everything is in the **Advanced** tab. After making changes, click **Save change
 
 <AccordionGroup>
   <Accordion title="Responses and pacing">
-    Set **Maximum characters**, **Minimum wait (s)**, **Maximum wait (s)** and **Group messages (s)**. The **Simulate typing** option shows "typing..." before the reply.
+    Set **Maximum characters**, **Minimum wait (s)**, **Maximum wait (s)** and **Group messages (s)**. The wait applied never goes over 8 seconds, even if you enter a higher value. The **Simulate typing** option shows "typing..." before the reply.
   </Accordion>
   <Accordion title="Restrict by business hours">
     Turn on the option and check the days and hours when the AI serves customers. In **Out-of-hours message**, write the notice the customer receives outside that period. If you leave it empty, the AI stays silent until business hours return.
   </Accordion>
   <Accordion title="Hand off to an agent">
-    In **Keywords**, add words or phrases that make the AI transfer the conversation right away. Example: "talk to a human". In **Transfer after N AI replies**, set a reply limit. In **Message when transferring**, write the notice the customer receives.
+    In **Keywords**, add words or phrases that make the AI transfer the conversation right away. Example: "talk to a human". Click **See suggestions** to check ready-made words, then click **Add selected**. In **Transfer after N AI replies**, set a reply limit. In **Message when transferring**, write the notice the customer receives.
 
     Each transfer creates a unique code for the conversation. See [Service protocol](/en/ia/protocolo-atendimento).
   </Accordion>
@@ -298,7 +306,7 @@ Everything is in the **Advanced** tab. After making changes, click **Save change
 
     The **Create alert template** button stays locked while there is no number in the list. The screen explains: "Add at least 1 member to the lead alert before creating the template."
 
-    The team alert only works on an **Official WhatsApp (Meta)** channel. Without an official number, the section appears locked with the message **Available on the official Meta channel** and the **Connect official channel** button.
+    The team alert only works on an **Official WhatsApp (Meta)** channel. Without an official number, the section appears locked with the message **Available on the official Meta channel** and the **Connect official channel** button. If your company already has an official number but this AI isn't linked to it, the section shows **Link the AI to the official channel** and the **Link in the Channels tab** button.
 
     The screen also reminds you: "Meta may limit or raise the cost of official WhatsApp at any time. The in-app alert (bell) guarantees the team never misses the lead."
   </Accordion>
@@ -383,6 +391,8 @@ In the **General** tab, in the **Turn the AI on or off per conversation** block,
 </Steps>
 
 This way you change many conversations at once, without opening each one.
+
+The window also has a **Contacts** tab, next to **Conversations**. There you pick contacts in **Pick from list**, with search and filters, or upload a list of numbers in **Import**. Then click **Silence** or **Turn AI on**. A silenced contact gets the **Silenced** badge, and the AI stops replying to them in every WhatsApp conversation. The team replies normally. Import only applies to numbers already in your contacts.
 
 Only the button that changes something is available. Hover over the disabled button to see why:
 
@@ -579,5 +589,8 @@ When the month's conversations run out and there is no extra package, the AI pau
   </Card>
   <Card title="Plans and billing" icon="wallet" href="/en/conta/planos">
     Understand the conversations in your plan.
+  </Card>
+  <Card title="Onboarding interview" icon="comments" href="/en/ia/entrevista-inicial">
+    Answer a few questions about your business and the CRM builds your first customer service AI. See each path, what is generated and how to adjust it later.
   </Card>
 </CardGroup>

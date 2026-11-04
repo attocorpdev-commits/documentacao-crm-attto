@@ -1,0 +1,182 @@
+---
+title: "Fila e rodízio de atendimento"
+sidebarTitle: "Fila e rodízio"
+description: "Entenda como as novas conversas do WhatsApp são distribuídas entre a equipe e como atribuir ou transferir um atendimento."
+icon: "shuffle"
+---
+
+Quando um contato novo manda mensagem, o CRM pode escolher sozinho quem da equipe vai atender. Você decide se essa escolha segue uma ordem fixa (o rodízio) ou se vai para qualquer pessoa disponível. E, a qualquer momento, pode atribuir ou transferir a conversa à mão.
+
+## Quando a distribuição acontece
+
+A distribuição automática vale para as conversas que chegam nos canais do **WhatsApp (QR Code)**.
+
+| Situação | O que o CRM faz |
+| --- | --- |
+| Contato novo manda a primeira mensagem | Escolhe um responsável entre as pessoas disponíveis. |
+| Contato que já tem responsável manda mensagem | Mantém o mesmo responsável. |
+| Contato sem responsável manda mensagem | Coloca a conversa em espera até alguém ficar disponível. |
+
+<Note>
+  Conversas do WhatsApp Oficial (Meta) e do Instagram não são distribuídas automaticamente. Nelas, defina o responsável pela janela **Atribuir responsável**, explicada mais abaixo.
+</Note>
+
+<Warning>
+  O canal precisa ter pelo menos uma pessoa com acesso. Um canal sem ninguém vinculado não distribui conversas. Veja como dar acesso aos canais em [Equipe](/conta/equipe).
+</Warning>
+
+## Quem pode receber conversas
+
+Para entrar na distribuição automática, a pessoa precisa cumprir tudo isto:
+
+| Condição | Onde se define |
+| --- | --- |
+| Estar com o status **Online**, com o CRM aberto | No menu do perfil. Veja [Status e ausência](/atendimento/status-ausente). |
+| Ser membro ativo da equipe ou o proprietário da empresa | Em **Equipe da Empresa**. |
+| Estar com **Participa da fila de atendimento** marcado | Em **Equipe da Empresa**, nas permissões do membro. |
+
+Quem está **Ausente** ou **Offline** não recebe conversas novas. O mesmo vale para quem fechou o navegador sem sair: depois de 10 minutos sem sinal do CRM aberto, a pessoa deixa de receber.
+
+<Tip>
+  Gestores e outras pessoas que não atendem podem ficar fora da distribuição. Desmarque **Participa da fila de atendimento** nas permissões delas. Elas continuam podendo abrir, responder e receber conversas atribuídas à mão.
+</Tip>
+
+## Os dois modos de distribuição
+
+| Modo | Como a pessoa é escolhida |
+| --- | --- |
+| **Fila automática** ligada (rodízio) | Segue a ordem da lista **Vendedores na fila**, a partir de quem está marcado como **Próximo**. Pula quem está desligado na fila, fora da fila de atendimento ou não está **Online**. Depois de cada entrega, a vez passa para o seguinte da lista. |
+| **Fila automática** desligada | Sorteia uma pessoa entre as que estão **Online** e têm acesso ao canal. |
+
+## Quando ninguém está disponível
+
+Se não houver ninguém disponível na hora, a conversa fica **Sem atribuição** e entra em espera. Ela não vai para quem está ausente ou offline.
+
+- Assim que alguém fica **Online**, a conversa que espera há mais tempo pode ir para essa pessoa.
+- Enquanto houver conversas em espera, o CRM tenta entregá-las a quem está disponível e tem acesso ao canal, dando preferência a quem está com menos conversas abertas.
+- Depois de 24 horas, a conversa sai da espera e continua **Sem atribuição**. A partir daí, alguém precisa atribuí-la à mão.
+
+<Tip>
+  Para achar essas conversas, use o filtro **Sem atrib.** na lista de conversas. Veja [WhatsApp](/atendimento/whatsapp).
+</Tip>
+
+## Configurar a fila
+
+<Note>
+  Só o proprietário e os gerentes conseguem salvar a configuração da fila. Para os demais, a janela abre, mas a mudança não é salva e aparece **Erro ao salvar**.
+</Note>
+
+<Steps>
+  <Step title="Abra uma conversa">
+    No menu lateral, abra **WhatsApp** e clique em qualquer conversa.
+  </Step>
+  <Step title="Abra o menu da fila">
+    No topo da conversa, clique em **Fila**. No menu **Fila de Atribuição**, clique em **Configurar fila**.
+  </Step>
+  <Step title="Ligue o rodízio">
+    Na janela **Configurar Fila**, ligue **Fila automática**. O texto abaixo muda para **Leads distribuídos automaticamente**.
+  </Step>
+  <Step title="Adicione as pessoas">
+    Em **Adicionar vendedor...**, escolha uma pessoa e clique em **Adicionar**. Repita para cada pessoa que vai atender.
+  </Step>
+  <Step title="Defina a ordem">
+    Use as setas ao lado de cada nome para subir ou descer a pessoa na lista. O número mostra a posição dela no rodízio.
+  </Step>
+</Steps>
+
+Cada mudança é salva na hora e aparece o aviso **Fila atualizada**. Não há botão de salvar.
+
+### O que aparece na lista
+
+| Elemento | Para que serve |
+| --- | --- |
+| Bolinha no avatar | Mostra o status da pessoa: verde para **Online**, amarelo para **Ausente** e cinza para **Offline**. |
+| **Próximo** | Marca quem recebe a próxima conversa. O mesmo nome aparece no alto da lista, em **Próximo:**. |
+| Chave **Ativo na fila** | Desligue para pular a pessoa por um tempo, sem tirá-la da lista. |
+| Lixeira **Remover** | Tira a pessoa da fila. |
+| **Reiniciar rotação** | Volta a vez para a primeira pessoa da lista. |
+
+Para desligar o rodízio, desligue **Fila automática**. O texto muda para **Distribuição automática desligada** e as conversas novas passam a ser sorteadas entre quem está disponível.
+
+<Warning>
+  A lista **Vendedores na fila** e a opção **Participa da fila de atendimento**, em **Equipe da Empresa**, trabalham juntas. Quem está na lista mas com **Participa da fila de atendimento** desmarcado é pulado no rodízio.
+</Warning>
+
+## Atribuir ou transferir uma conversa
+
+Você pode trocar o responsável a qualquer momento, com a distribuição automática ligada ou não.
+
+<Steps>
+  <Step title="Abra a janela de atribuição">
+    No topo da conversa, clique no botão que mostra o responsável atual ou **Sem atribuição**.
+  </Step>
+  <Step title="Escolha o responsável">
+    Na janela **Atribuir responsável**, escolha uma das opções da tabela abaixo.
+  </Step>
+  <Step title="Confira">
+    O nome do novo responsável aparece no topo da conversa.
+  </Step>
+</Steps>
+
+| Opção | O que faz |
+| --- | --- |
+| **Atribuir a mim** | Você passa a ser o responsável. Aparece **Conversa atribuída a você**. |
+| **Próximo da fila** | Entrega a conversa para o próximo vendedor **Online** do rodízio. |
+| Um nome da lista **Equipe** | Transfere a conversa para essa pessoa. A pessoa atual aparece como **Responsável atual**. |
+| **Remover atribuição** | Deixa a conversa sem responsável. |
+
+Quem recebe a conversa é avisado por e-mail.
+
+O botão **Fila**, no topo da conversa, também tem o atalho **Atribuir próximo da fila**. Quando dá certo, aparece **Atribuído a** seguido do nome da pessoa e de **pela fila**.
+
+<Note>
+  **Próximo da fila** e **Atribuir próximo da fila** usam o rodízio. Se a **Fila automática** estiver desligada, ou se ninguém da lista estiver **Online**, aparece **Nenhum vendedor online na fila**.
+</Note>
+
+### Pelo Pipeline
+
+No [Pipeline](/crm/pipeline), abra o card de um lead de WhatsApp. Em **Responsável pela conversa**, escolha a pessoa.
+
+- Quem está **Ausente** ou **Offline** aparece apagado e não pode ser escolhido. Se tentar, aparece **Este vendedor está ausente/offline e não pode receber atribuições**.
+- Com a **Fila automática** ligada, aparece também o botão **Fila**, que entrega o lead ao próximo vendedor do rodízio.
+
+## Assumir não é o mesmo que atribuir
+
+O botão **Assumir**, no topo da conversa, serve para pausar a IA e passar o atendimento para uma pessoa. Ele não muda o responsável da conversa. Para isso, use a janela **Atribuir responsável**. Veja [Agente IA](/ia/agente-ia) e [Protocolo de atendimento](/ia/protocolo-atendimento).
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Apareceu Nenhum vendedor online na fila. O que faço?">
+    Confira três pontos: se a **Fila automática** está ligada, se há alguém na lista com **Ativo na fila** ligado e se essa pessoa está **Online**. Enquanto isso, atribua a conversa a alguém da lista **Equipe**.
+  </Accordion>
+  <Accordion title="Fiquei ausente. Perco as conversas que já são minhas?">
+    Não. Mudar o status não tira conversas de ninguém. Você só deixa de receber conversas novas pela distribuição automática.
+  </Accordion>
+  <Accordion title="Um contato antigo voltou a falar. Ele vai para outra pessoa?">
+    Não. Se o contato já tem responsável, a conversa continua com a mesma pessoa.
+  </Accordion>
+  <Accordion title="As conversas do Instagram também entram no rodízio?">
+    Não. A distribuição automática vale só para os canais do WhatsApp (QR Code). No Instagram e no WhatsApp Oficial (Meta), atribua pela janela **Atribuir responsável**.
+  </Accordion>
+  <Accordion title="Posso atribuir uma conversa a quem está ausente?">
+    Na tela **WhatsApp**, sim: a lista **Equipe** mostra todos. No Pipeline, não: quem está **Ausente** ou **Offline** fica bloqueado em **Responsável pela conversa**.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Status e ausência" icon="user-clock" href="/atendimento/status-ausente">
+    Veja como o seu status muda a distribuição de conversas.
+  </Card>
+  <Card title="Equipe" icon="users" href="/conta/equipe">
+    Dê acesso aos canais e defina quem participa da fila.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/atendimento/whatsapp">
+    Atenda e organize as conversas do WhatsApp.
+  </Card>
+  <Card title="Área do Gestor" icon="chart-line" href="/gestao/area-gestor">
+    Acompanhe a fila e a equipe em tempo real.
+  </Card>
+</CardGroup>

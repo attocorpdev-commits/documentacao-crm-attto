@@ -1,0 +1,212 @@
+---
+title: "Import contacts"
+sidebarTitle: "Import contacts"
+description: "Bring your contacts from a CSV or Excel spreadsheet into the CRM: format, columns, limits, duplicates and what to do when something goes wrong."
+icon: "file-import"
+---
+
+You can bring in, all at once, the contacts you already have outside the CRM, such as a customer list in a spreadsheet. There are two paths, and each one is for something different:
+
+| Path | Where it is | What it does |
+| --- | --- | --- |
+| **Import CSV** | Tab on the Contacts screen | Creates or updates leads and places each one in a pipeline |
+| **External base** | Button at the top of the Contacts screen | Keeps a list of phone numbers tagged by type, such as customers or former students. Does not create leads |
+
+## Who can import
+
+Both paths require full access to the Contacts screen. The account owner always has it. For team members, access depends on the permissions granted in [Team](/en/conta/equipe).
+
+<Note>
+  Without that access, the **Import CSV** tab appears disabled and the **External base** button does not appear.
+</Note>
+
+## Prepare the spreadsheet
+
+The CRM accepts `.csv`, `.xlsx` and `.xls` files. In an Excel file, only the first sheet is read.
+
+The first row must be the header, with the name of each column. The only required column is the phone column.
+
+<Tip>
+  The safest way is to start from the template. In the **Import CSV** tab, click **Download template (.xlsx)**. The file already comes with every column the CRM reads.
+</Tip>
+
+### Columns the CRM reads
+
+| Column | Required | How to fill it in |
+| --- | --- | --- |
+| **Phone** | Yes | Number with area code, such as `11999991234` or `5511999991234`. A row without a valid phone is not imported |
+| **Name** | No | The contact's name. Without this column, contacts are imported without a name |
+| **Tags** | No | One or more tags, separated by comma or semicolon |
+| **Stage** | No | Name of a stage in the chosen pipeline. If empty, the contact goes to the first stage |
+| **Channel** | No | Name of a connected channel. If empty, the contact goes to the oldest connected channel |
+| **Value** | No | Deal value. Accepts `1.500,50`, `R$ 1500` or `1500.5` |
+| **Notes** | No | Free text, which becomes the contact's note |
+| **Source** | No | Where the lead came from, in free text |
+| **Owner** | No | Email or name of a team member |
+
+### How the CRM finds the phone column
+
+Headers are recognized by word, not by exact name. **Customer name** becomes the name and **Lead tags** becomes tags.
+
+For the phone, names such as Phone, Mobile, WhatsApp, Telefone, Celular, Fone, Tel, Cel, Zap or Phone number work. A column called just **Número** also works.
+
+<Warning>
+  The CRM does not mistake other columns for the phone. **Número do pedido** (order number), for example, is not read as a phone. If your phone column has a different name, rename it to **Phone** before uploading.
+</Warning>
+
+### File limits
+
+- Up to 50,000 rows per file. Rows above that are not imported, and the preview tells you how many were left out.
+- Up to 25 MB per file. Above that, the file is not read and the notice asks you to split it into smaller files.
+
+If you have more contacts than that, split the list into several files and import one at a time.
+
+## Import as leads
+
+<Steps>
+  <Step title="Open the import">
+    In the side menu, open **CRM** and click **Contacts**. Then click the **Import CSV** tab. The area is called **Bulk import**.
+  </Step>
+  <Step title="Choose the pipeline">
+    In **Target pipeline**, select the pipeline that will receive the leads. Contacts without a **Stage** in the spreadsheet go to the first stage of that pipeline.
+  </Step>
+  <Step title="Upload the file">
+    Drag the spreadsheet to **Drag the file here or click to select**, or click the area to choose the file.
+  </Step>
+  <Step title="Check the preview">
+    The **Import contacts** window opens. Before saving anything, the CRM reads the file and shows how many rows it read, how many contacts are valid and how many have no valid phone. Right below, you see the **Column used as phone:** and a sample with the first five contacts.
+  </Step>
+  <Step title="Decide about the AI">
+    In **AI for imported contacts**, choose **Enable** or **Silence (AI off)**. See [AI for imported contacts](#ai-for-imported-contacts).
+  </Step>
+  <Step title="Confirm">
+    Check the **Target pipeline** and click **Import**.
+  </Step>
+</Steps>
+
+<Note>
+  The **Import** button is only enabled after the preview finishes, and only if the CRM found a phone column with at least one valid contact.
+</Note>
+
+<Tip>
+  Check the accents in the preview sample. If the file was not in UTF-8, the preview tells you. If the accents look wrong, save the spreadsheet again as CSV UTF-8 and upload it again.
+</Tip>
+
+### AI for imported contacts
+
+The **AI for imported contacts** option appears for those who can turn the AI on and off for contacts: the account owner, the manager and anyone with the AI Agent permission.
+
+| Option | What happens |
+| --- | --- |
+| **Enable** | The AI replies as usual. Contacts already in **Silenced** stay silenced |
+| **Silence (AI off)** | Contacts go to **Silenced** and the AI does not reply to them. Your team handles them as usual and can turn the AI back on in the contact or in the conversation |
+
+Use **Silence (AI off)** when the list is made of customers your team prefers to handle personally.
+
+## Contacts already in the CRM
+
+The import does not create duplicate records.
+
+- An existing contact is not duplicated. The new tags are added to the ones it already has.
+- **Value**, **Notes**, **Source** and **Owner** only fill in what is empty on the contact. Nothing you already had is overwritten.
+- A contact that is already in another pipeline is not moved to the chosen pipeline.
+- Repeated rows within the file become a single contact, with the tags added together. The preview tells you how many there are.
+
+## The import result
+
+When it finishes, **Import completed** appears with a summary. Each line of the summary only appears when there is something to report.
+
+| Summary line | What it means |
+| --- | --- |
+| Contacts saved | Total contacts saved |
+| New | Contacts that did not exist yet |
+| Already existed | Contacts that were already in the base. The tags were merged |
+| Without a valid phone | Rows not imported because they have no phone |
+| Repeated rows | Identical rows in the file, merged into the same contact |
+| Above the limit | Rows beyond 50,000, not imported |
+| Not saved | Contacts the CRM could not save |
+| Rejected | Rows with an invalid stage, channel, value or owner |
+| Already in another pipeline | Contacts that were not moved to the chosen pipeline |
+
+### Why a row is rejected
+
+The CRM rejects the row instead of saving wrong data. This happens when:
+
+- the **Stage** does not exist in the chosen pipeline;
+- the **Channel** does not exist, is disconnected or two channels share the same name;
+- the **Value** is not a number;
+- the **Owner** is not found on the team or has a repeated name.
+
+Fix those rows in the spreadsheet and import only them again.
+
+## Import an external base
+
+The external base keeps lists of phone numbers you want the CRM to recognize, without turning each number into a lead. Numbers imported here do not go into the **Contact list**.
+
+<Steps>
+  <Step title="Open the window">
+    On the Contacts screen, click **External base**. The **Import external base** window opens.
+  </Step>
+  <Step title="Choose the type">
+    In **Base type**, choose **Customer**, **Former student**, **Student**, **Blocked** or **Other**.
+  </Step>
+  <Step title="Upload the file">
+    In **File**, click **Click to select (.csv, .xlsx, .xls)**. The phone column is found automatically, with the same rules as the lead import.
+  </Step>
+  <Step title="Check and import">
+    The window shows how many numbers are valid and how many were discarded. Click **Import**.
+  </Step>
+</Steps>
+
+When it finishes, **External base imported** appears with how many contacts were saved. In the **Contact list**, the **External base** box shows how many numbers there are of each type.
+
+<Note>
+  Importing the same number again with the same type does not create a duplicate. Numbers of the **Blocked** type show up as contacts to avoid in the Manager Area.
+</Note>
+
+## When something goes wrong
+
+| Notice | What to do |
+| --- | --- |
+| **Invalid file** | The file must have a header and at least one data row. Check the spreadsheet and upload it again |
+| **Phone column not found** | Give the column a name like Phone, Mobile, WhatsApp or Phone number |
+| **No valid record** | No row has a valid phone. Check that the numbers include the area code |
+| **Import error** | Saving stopped halfway. Try again. Contacts already saved are not duplicated on the new attempt |
+| File too large | The file is over 25 MB. Split it into smaller files and import each one |
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can I import Instagram contacts?">
+    No. The import reads phone numbers. Instagram contacts enter the CRM when the person sends a message to your account.
+  </Accordion>
+  <Accordion title="Does the import send any message to the contacts?">
+    No. Importing only registers the contacts. To send messages to several contacts, use [Broadcasts](/en/marketing/disparos).
+  </Accordion>
+  <Accordion title="I imported a contact I already had and it did not go into the chosen pipeline.">
+    A contact that is already in another pipeline is not moved by the import. To bring the lead over, open the contact in [Contacts](/en/crm/contatos) and use **Move to pipeline**.
+  </Accordion>
+  <Accordion title="My spreadsheet has several sheets. Which one is read?">
+    Only the first one. Put the contacts in the first sheet or save each sheet as a separate file.
+  </Accordion>
+  <Accordion title="What is the difference between Import CSV and External base?">
+    **Import CSV** creates leads, which show up in the list and in the pipeline. **External base** only keeps the numbers by type, so the CRM can recognize who is already a customer or who should be avoided.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Contacts" icon="address-book" href="/en/crm/contatos">
+    Search, edit and export your leads.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/en/crm/pipeline">
+    Track imported leads by stage.
+  </Card>
+  <Card title="Tags" icon="tags" href="/en/crm/tags">
+    Organize contacts with labels.
+  </Card>
+  <Card title="Privacy and LGPD" icon="shield-halved" href="/en/crm/privacidade-lgpd">
+    Export or anonymize a contact's data.
+  </Card>
+</CardGroup>

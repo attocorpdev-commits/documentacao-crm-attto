@@ -1,0 +1,279 @@
+---
+title: "Official WhatsApp templates"
+sidebarTitle: "WhatsApp templates"
+description: "Create Official WhatsApp (Meta) templates, track Meta's approval and send templates in a conversation or a broadcast."
+icon: "file-lines"
+keywords: ["template", "message template", "Official WhatsApp", "Meta", "approval", "variables", "Send Template", "24-hour window"]
+---
+
+A template is a ready-made message that Meta approves before it can be used. On Official WhatsApp (Meta), it lets you reach the contact outside the [24-hour window](/en/atendimento/janela-24h) and run broadcasts.
+
+<Info>
+  Templates exist only on **Official WhatsApp (Meta)**. On WhatsApp (QR Code) you send free-form text at any time. See [WhatsApp types](/en/primeiros-passos/tipos-whatsapp).
+</Info>
+
+<Note>
+  Meta charges for Official WhatsApp usage according to its own rules. For CRM pricing, see [Plans and billing](/en/conta/planos).
+</Note>
+
+## Where templates live
+
+<Steps>
+  <Step title="Open Connections">
+    Open the **Connections** screen and click the **Official WhatsApp (Meta)** card.
+  </Step>
+  <Step title="Open the Templates tab">
+    The screen has two tabs: **Channels** and **Templates**. Click **Templates**.
+  </Step>
+  <Step title="Choose the channel">
+    Each channel has its own templates. If there is more than one channel, choose it in the **Channel** field. With a single channel, it appears next to **Channel:**.
+  </Step>
+</Steps>
+
+The list shows each template's **Name**, **Content**, **Category**, **Status** and **Language**. Use **Search templates by name or content...** to filter. Click **Details** to see the full message, including its buttons.
+
+To fetch the channel's templates again, for example after an approval, click **Refresh**. With more than one channel, use the reload button next to the **Channel** field.
+
+<Warning>
+  If the channel is disconnected, the CRM does not show its templates. A notice says the channel is disconnected. Reconnect the channel in the **Channels** tab. See [Connections](/en/conta/conexoes).
+</Warning>
+
+## Create a template
+
+<Steps>
+  <Step title="Start a new template">
+    In the **Templates** tab, click **New Template**. The **New WhatsApp Template** window opens, with the **Edit** and **Preview** tabs.
+  </Step>
+  <Step title="Name it">
+    Fill in **Name**. Use only lowercase letters, numbers and `_`, such as `welcome`. The **Adjust for Meta** button fixes the name to this format. If you do not like the result, click **Undo**.
+  </Step>
+  <Step title="Choose category and language">
+    Choose the **Category** and the **Language**.
+  </Step>
+  <Step title="Write the message">
+    Fill in the **Message body**. If you want, add **Header (optional)**, **Footer (optional)** and **Buttons (optional)**.
+  </Step>
+  <Step title="Fill in the samples">
+    For each variable, fill in an example in **Samples for body content**.
+  </Step>
+  <Step title="Check and submit for approval">
+    Check the result in the **Preview** tab and click **Create Template**. The CRM shows **Template created! Awaiting Meta approval.**
+  </Step>
+</Steps>
+
+### Template fields
+
+| Field | What it is |
+| --- | --- |
+| **Name** | Identifies the template. Lowercase letters, numbers and `_` only, up to 512 characters |
+| **Category** | **Marketing**, **Utility** or **Authentication** |
+| **Language** | **Português (BR)**, **English (US)** or **Español** |
+| **Header (optional)** | **None**, **Text**, **Image**, **Video** or **Document**. Text is up to 60 characters |
+| **Message body** | The main text. Required, up to 1,024 characters |
+| **Footer (optional)** | A short line at the end, such as the company name. Up to 60 characters |
+| **Buttons (optional)** | **Quick reply**, **Link (URL)** or **Phone** |
+| **Allow Meta to reclassify the category** | If Meta thinks the category is wrong, it adjusts it instead of rejecting the template |
+
+In the **Message body**, the toolbar has **Emoji**, **Bold**, **Italic**, **Strikethrough** and **Monospace**. The **Reword** and **Fix spelling** buttons use AI to improve the text. After each change, you can click **Undo**.
+
+If Meta changes the category, the creation notice shows the new category and the one you had chosen.
+
+### Header with media
+
+In the header, choose **Image**, **Video** or **Document** and upload the file with **Select image**, **Select video** or **Select document**.
+
+| Type | Format and size |
+| --- | --- |
+| Image | JPG or PNG, up to 5 MB |
+| Video | MP4, up to 16 MB |
+| Document | PDF, up to 100 MB |
+
+The file is the example sent to Meta. Wait for the upload to finish before clicking **Create Template**.
+
+<Note>
+  In some cases the CRM cannot pass the header media to Meta. It warns that a template with a video, image or document header must be created outside the CRM, and that text-only templates can be created here. If you need help, contact [support](/en/empresa/suporte).
+</Note>
+
+### Variables
+
+A variable is a placeholder that becomes the contact's data at send time, such as a name, amount or date. In a template it is numbered: `{{1}}`, `{{2}}`, and so on.
+
+- Click **Add variable** to insert the next variable at the cursor position.
+- Variables must be in order, starting at `{{1}}`, without skipping numbers.
+- The body cannot start or end with a variable.
+- Do not put two variables next to each other. Leave some text between them.
+- A text header also accepts one variable, such as `{{1}}`.
+
+Example: `Hi {{1}}, your order {{2}} has been confirmed.`
+
+For each variable, fill in an example in **Samples for body content**, such as "Maria". Meta uses these examples during review.
+
+<Warning>
+  Do not use real customer data in the examples. Meta reviews what you write.
+</Warning>
+
+<Tip>
+  Just below the **Message body**, click **See variable examples**. The **Variables: two different syntaxes** window shows that in a template the variable is numbered, while in a quick reply it uses the name. See [Quick replies](/en/atendimento/respostas-rapidas).
+</Tip>
+
+### Buttons
+
+Click **Add** under **Buttons (optional)** and choose the type:
+
+| Type | How it works |
+| --- | --- |
+| **Quick reply** | A button with short text, no link and no phone number |
+| **Link (URL)** | Opens a website. The URL can have one `{{1}}` variable, only at the end. In that case, fill in the example of the full URL |
+| **Phone** | Calls a number in international format, such as `+5534999999999` |
+
+Button limits:
+
+- up to 10 buttons per template;
+- up to 2 link buttons and 1 phone button;
+- button text up to 25 characters, with no emoji, no line break, no variable and no `*`, `_`, `~` or backtick.
+
+## Approval status
+
+After it is created, the template goes through Meta's review. The **Status** column shows where it stands:
+
+| Status | What it means |
+| --- | --- |
+| **Pending** | Waiting for Meta's approval |
+| **Approved** | Ready to use in conversations and broadcasts |
+| **Rejected** | Meta did not accept it. Review it and create it again |
+| **Paused** | The template is temporarily stopped |
+| **Not created** | The template does not exist on this channel yet |
+
+<Note>
+  Only templates with the **Approved** status appear when sending, both in conversations and in broadcasts.
+</Note>
+
+## Send a template in a conversation
+
+<Steps>
+  <Step title="Open the conversation">
+    On the **WhatsApp** screen, open a conversation on the official channel.
+  </Step>
+  <Step title="Open the Send Template window">
+    With the 24-hour window open, click the **\+** button (**Attachments and actions**) and then **Send template**. With the window closed, click **Send Template** in the **Outside the 24h window** notice.
+  </Step>
+  <Step title="Choose the template">
+    The window shows the approved templates for the conversation's channel. Use **Search template by name...** to find one. Click **View broadcast message** to see the text before choosing.
+  </Step>
+  <Step title="Fill in the fields">
+    Fill in what the template asks for. To pick another template, click **← Back**.
+  </Step>
+  <Step title="Send">
+    Click **Send**. The CRM confirms with **Template enviado!**.
+  </Step>
+</Steps>
+
+### Fields that may appear
+
+| Field | When it appears |
+| --- | --- |
+| **Header `{{1}}`** | The text header has a variable. Fill in the **Header value** |
+| **Fill in the variables:** | The body has variables. Each **Value for variable** field matches one of them, in order |
+| **Fill in the buttons:** | There is a link button with a variable **(link suffix)** or a code button **(code)** |
+
+Above the fields, the CRM shows the body text with the values you typed.
+
+The **Send** button is only enabled when every field is filled in.
+
+<Note>
+  If the template has an image, video or document in the header, the contact receives the approved file with the template.
+</Note>
+
+## Send a template in a broadcast
+
+In a broadcast, you choose an approved template and send it to many contacts at once.
+
+- Choose the **Official WhatsApp (Meta)** channel and click **Select template...**.
+- All body variables are filled with the contact's first name. If the contact has no name, the word "cliente" is used.
+- If the header has a variable, it also gets the contact's name.
+- A button with a variable value uses the template's default value for every contact.
+- A template with media sends the same approved file to everyone.
+
+Before sending, check the **Send preview**. The full walkthrough is in [Broadcasts](/en/marketing/disparos).
+
+<Warning>
+  If the template has more than one variable, the broadcast puts the same name in all of them. Write the template with that in mind.
+</Warning>
+
+## Delete a template
+
+The **Delete template** button appears for the account owner and for managers.
+
+<Steps>
+  <Step title="Click delete">
+    In the list, click the template's **Delete template** icon.
+  </Step>
+  <Step title="Confirm">
+    In the **Delete template?** window, type the template name and click **Delete**.
+  </Step>
+</Steps>
+
+<Warning>
+  The template is deleted on WhatsApp (Meta) in all languages. This cannot be undone. If running or paused campaigns use the template, the CRM warns that their sends will fail. To continue, check **I understand, delete anyway**.
+</Warning>
+
+The templates that notify your team about new leads are managed by the CRM and cannot be deleted. If you try, **System-protected template** appears, with the **Integrated AI** badge.
+
+## Common errors
+
+| What appears | What to do |
+| --- | --- |
+| **Could not publish the template. Fix the highlighted fields.** | Fix the fields marked in red. Each field's message explains the rule |
+| **Fill in an example for each variable (`{{n}}`) before publishing.** | Fill in an example for each variable in **Samples for body content** |
+| **Fix the buttons before publishing.** | Review the buttons' text, link and phone number |
+| **Attach and upload the header media before creating the template** | Upload the header file and wait for it to finish |
+| **Meta did not accept the template. Review the fields and try again.** | Review the content and create it again |
+| **No approved template found.** | The channel has no approved template. Create one and wait for approval |
+| **Template não entregue** with **Template variable not filled in** | A variable was left without a value. Fill in every field and send again |
+| **Template não entregue** with another reason | The send was refused. Read the reason in the notice and try again |
+| **Template with a media header but no image available** | The CRM could not find the template's media. Recreate the template or send it through a broadcast |
+
+<Note>
+  Some sending notices appear in Portuguese even when the CRM is set to English, such as **Template não entregue** and **Template enviado!**.
+</Note>
+
+<Note>
+  When a template message fails and you click to resend, the CRM shows **Resend using the template** and opens the **Send Template** window again. That way the template goes out correctly, instead of becoming plain text.
+</Note>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How long does Meta take to approve?">
+    It depends on Meta. Meanwhile, the status stays **Pending**. Click **Refresh** in the **Templates** tab to see the latest status.
+  </Accordion>
+  <Accordion title="My template does not appear in the Send Template window. Why?">
+    Only **Approved** templates from the conversation's channel appear. Check the status in the **Templates** tab and whether the template was created on the same channel.
+  </Accordion>
+  <Accordion title="Can I edit a template after creating it?">
+    The CRM has no edit button for templates. Create a new template with the changes.
+  </Accordion>
+  <Accordion title="Why does the name only accept lowercase letters?">
+    It is a Meta rule. Use lowercase letters, numbers and `_`. The **Adjust for Meta** button makes this fix for you.
+  </Accordion>
+  <Accordion title="Can I use a named variable, like the contact's name, in a template?">
+    No. In a template the variable is numbered, such as `{{1}}`. Named variables work in [Quick replies](/en/atendimento/respostas-rapidas).
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="24-hour window" icon="clock" href="/en/atendimento/janela-24h">
+    When you need a template.
+  </Card>
+  <Card title="Broadcasts" icon="paper-plane" href="/en/marketing/disparos">
+    Send templates to many contacts.
+  </Card>
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Connect and manage your channels.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Serve your leads on the conversations screen.
+  </Card>
+</CardGroup>

@@ -1,0 +1,146 @@
+---
+title: "Official WhatsApp 24-hour window"
+sidebarTitle: "24-hour window"
+description: "Understand the Official WhatsApp (Meta) 24-hour window, how the CRM tells you it has closed and how to reach the contact again with a template."
+icon: "clock"
+keywords: ["24-hour window", "24h", "Official WhatsApp", "Meta", "template", "outside the window", "locked message field"]
+---
+
+The 24-hour window is a Meta rule for Official WhatsApp (Meta). It defines when you can send a free-form message to the contact and when you can only send an approved template.
+
+<Info>
+  This page applies only to **Official WhatsApp (Meta)**. WhatsApp (QR Code) has no window: you can reply at any time. See the difference in [WhatsApp types](/en/primeiros-passos/tipos-whatsapp).
+</Info>
+
+## How the window works
+
+- The window opens when the contact sends a message to your number.
+- It stays open for 24 hours, counted from the **contact's last message**.
+- While it is open, you reply with text, audio, images and files, like in any conversation.
+- After 24 hours without a new message from the contact, the window closes. From then on, only a Meta-approved **template** can be sent.
+- When the contact writes again, the window opens again for another 24 hours.
+
+<Note>
+  Your own messages do not reopen the window. Only the contact's message counts.
+</Note>
+
+### Contact who never wrote
+
+If the contact has never sent a message on that channel, the window starts closed. To start the conversation, you need to send a template.
+
+In that case, the conversation area shows **This contact has no conversation on this channel yet. Send a template to start.**
+
+## How the CRM shows a closed window
+
+When the window is closed, the conversation changes like this:
+
+| What you see | Where it appears |
+| --- | --- |
+| The **Outside the 24h window** notice, saying only templates are available, with the **Send Template** button | Above the message field |
+| A text saying the 24h window has expired and you should use a template | Inside the message field |
+| Message field, **\+** button (**Attachments and actions**), record audio button and send button locked | In the send bar |
+
+On some official channels the notice has a different text: it says the customer must reply to reopen the conversation, and that to start one you send a template approved through the channel's template flow. That notice does not have the **Send Template** button. In that case, wait for the contact to reply.
+
+<Note>
+  On WhatsApp the CRM does not show a countdown of the time left. The notice appears once the window has closed. To know whether it is still open, check the time of the contact's last message.
+</Note>
+
+## Reaching the contact outside the window
+
+Outside the window, the only way to reach the contact is an approved template.
+
+<Steps>
+  <Step title="Open the conversation">
+    On the **WhatsApp** screen, open the contact's conversation on the official channel.
+  </Step>
+  <Step title="Click Send Template">
+    In the **Outside the 24h window** notice, click **Send Template**.
+  </Step>
+  <Step title="Choose the template">
+    The **Send Template** window shows only the approved templates for that channel. Use **Search template by name...** to find the one you want.
+  </Step>
+  <Step title="Fill in and send">
+    Fill in the requested fields, such as **Fill in the variables:**, and click **Send**.
+  </Step>
+</Steps>
+
+When the contact replies to the template, the window opens again. The notice disappears and the message field works again.
+
+The full walkthrough, with variables, header and buttons, is in [Official WhatsApp templates](/en/atendimento/templates-whatsapp).
+
+<Tip>
+  To reach many contacts at once outside the window, use a broadcast with a template. See [Broadcasts](/en/marketing/disparos).
+</Tip>
+
+<Note>
+  No approved template yet? The **Send Template** window shows **No approved template found.** Create one in **Connections**, on the **Official WhatsApp (Meta)** card, **Templates** tab, and wait for Meta's approval.
+</Note>
+
+## The AI outside the window
+
+If the AI Agent is triggered in an Official WhatsApp (Meta) conversation with the window closed, it does not reply. The conversation is left for a person on your team. In the AI Agent metrics, this case appears with the reason **Outside the 24h window**.
+
+See more in [AI Agent](/en/ia/agente-ia).
+
+## What about Instagram?
+
+Instagram has a similar rule, with some differences:
+
+| | Official WhatsApp (Meta) | Instagram |
+| --- | --- | --- |
+| **Time limit** | 24 hours since the contact's last message | 24 hours since the person's last Direct message |
+| **After the limit** | Only an approved template can be sent | There are no templates. The person needs to send a Direct message again |
+| **Countdown** | None | Shows **Instagram window closes in** with the hours and minutes left |
+
+On Instagram, a comment on a post or live does not open this window. See the details in [Instagram](/en/atendimento/instagram).
+
+## Common errors
+
+| What appears | What it means | What to do |
+| --- | --- | --- |
+| Message field locked and the **Outside the 24h window** notice | 24 hours have passed since the contact's last message | Send a template or wait for the contact to reply |
+| Message with an alert icon and the reason **Faz mais de 24h desde a última resposta do cliente. Envie um modelo aprovado para reabrir a conversa.** | Meta refused the message because the window had already closed | Send an approved template |
+| **No approved template found.** | The channel has no approved template | Create a template and wait for Meta's approval |
+| **Template não entregue** with **Template variable not filled in** | A variable was left without a value | Fill in every field and send again |
+
+<Note>
+  Some of these notices appear in Portuguese even when the CRM is set to English, such as **Template não entregue** and the reason for a message refused outside the window.
+</Note>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I type in the conversation?">
+    The conversation is outside the 24-hour window. The contact has not sent a message for more than 24 hours, or has never sent one on this channel. Send a template with the **Send Template** button or wait for the contact to reply.
+  </Accordion>
+  <Accordion title="I sent several messages. Why did the window close anyway?">
+    Only the contact's message opens the window. Messages sent by you or your team do not count.
+  </Accordion>
+  <Accordion title="The notice does not show the Send Template button. What do I do?">
+    On some official channels the notice does not have this button. Wait for the contact to reply so the window opens again.
+  </Accordion>
+  <Accordion title="I sent a template. Can I send free-form text now?">
+    Not yet. The window opens when the contact replies. After that, you can send text, audio and files for 24 hours.
+  </Accordion>
+  <Accordion title="Does WhatsApp (QR Code) have this rule too?">
+    No. The 24-hour window exists only on Official WhatsApp (Meta).
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Official WhatsApp templates" icon="file-lines" href="/en/atendimento/templates-whatsapp">
+    Create templates and send outside the window.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Serve your leads on the conversations screen.
+  </Card>
+  <Card title="WhatsApp types" icon="code-compare" href="/en/primeiros-passos/tipos-whatsapp">
+    Difference between QR Code and Official.
+  </Card>
+  <Card title="Broadcasts" icon="paper-plane" href="/en/marketing/disparos">
+    Send templates to many contacts.
+  </Card>
+</CardGroup>

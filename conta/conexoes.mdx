@@ -10,13 +10,14 @@ A tela de conexões reúne todos os canais da sua empresa. Um canal é cada núm
 
 No menu lateral, abra **Configurações** e clique em **Conexões**. A tela abre com o título **Integrações**.
 
-Ela é dividida em três grupos:
+Ela é dividida em quatro grupos:
 
 | Grupo | Opções |
 | --- | --- |
 | **WhatsApp** | **WhatsApp** (por QR Code) e **WhatsApp Oficial (Meta)** |
 | **Instagram** | **Instagram Oficial (Meta)** |
 | **Rastreamento** | **Rastreamento de Conversão** |
+| **Diversos** | **n8n**, **Microsoft Clarity** e **MCP**, com o selo **Em breve**. Ainda não estão disponíveis. |
 
 Os dois tipos de WhatsApp funcionam de forma diferente. Veja a comparação em [Tipos de WhatsApp](/primeiros-passos/tipos-whatsapp).
 
@@ -34,7 +35,7 @@ O passo a passo completo está em [Conectar seu WhatsApp](/primeiros-passos/cone
 
 ### O que a tela mostra
 
-- **Canais utilizados**: quantos canais você já criou e quantos o seu plano permite.
+- **Canais WhatsApp QR Code utilizados**: quantos canais por QR Code você já criou e quantos o seu plano permite. O WhatsApp Oficial tem um limite separado.
 - A lista de canais, cada um com o selo **Conectado** ou **Desconectado**.
 - O número de telefone de cada canal conectado.
 
@@ -46,7 +47,7 @@ Clique nos três pontos ao lado do canal para ver as ações.
 | --- | --- |
 | **Renomear** | Muda o **Nome do canal** e a **Sigla (apelido, até 5 caracteres)**, que aparece nos cartões e nas conversas. |
 | **Desconectar** | Desliga o número do CRM. Aparece só em canal conectado. As conversas que já chegaram por ele continuam no CRM. |
-| **Excluir canal** | Remove o canal. Aparece só em canal desconectado. |
+| **Excluir canal** | Remove o canal. Aparece só em canal desconectado e só para o proprietário ou um gerente. |
 
 Para excluir, digite **CONFIRMAR** na janela e clique em **Excluir**.
 
@@ -214,10 +215,10 @@ Em **Renomear** você preenche o **Nome do canal** e a **Sigla (apelido, até 5 
 
 <AccordionGroup>
   <Accordion title="Atingi o limite de canais. Como conecto mais?">
-    No WhatsApp Oficial, abre a janela **Limite de canais do plano atingido**, que mostra quantos canais o seu plano permite e quantos você já tem. Ela traz os botões **Fechar** e **Contratar canal extra**. No Instagram, o botão é **Adquirir canal Instagram**. No plano Start ele não aparece, porque o canal de Instagram é dos planos Prime e Ultra. No WhatsApp por QR Code, clique em **Falar com o suporte**.
+    No WhatsApp Oficial, abre a janela **Limite de canais da API oficial atingido**, que mostra quantos canais o seu plano permite e quantos você já tem. Ela traz os botões **Fechar** e **Contratar canal extra**. No Instagram, o botão é **Adquirir canal Instagram**. No plano Start ele não aparece, porque o canal de Instagram é dos planos Prime e Ultra. No WhatsApp por QR Code, abre a janela **Limite de canais WhatsApp QR Code atingido**. Clique em **Falar com o suporte**.
   </Accordion>
   <Accordion title="O limite de canais de WhatsApp conta os dois tipos?">
-    Sim. O limite do plano soma os canais de WhatsApp por QR Code e os canais oficiais.
+    Não. Cada tipo tem o seu limite: o plano define quantos canais por QR Code e quantos canais oficiais você pode ter. Um tipo não ocupa a vaga do outro.
   </Accordion>
   <Accordion title="Não consigo ver os templates de um canal.">
     O canal pode estar desconectado. Na aba **Canais**, clique nos três pontos do canal, escolha **Reconectar** e depois clique em **Atualizar**. Com mais de um canal oficial, o botão vira um ícone de recarregar ao lado do campo **Canal**.
@@ -241,5 +242,8 @@ Em **Renomear** você preenche o **Nome do canal** e a **Sigla (apelido, até 5 
   </Card>
   <Card title="Disparos" icon="bullhorn" href="/marketing/disparos">
     Use seus templates para enviar mensagens em massa.
+  </Card>
+  <Card title="Templates do WhatsApp" icon="file-lines" href="/atendimento/templates-whatsapp">
+    Crie templates do WhatsApp Oficial (Meta), acompanhe a aprovação da Meta e envie templates numa conversa ou num disparo.
   </Card>
 </CardGroup>

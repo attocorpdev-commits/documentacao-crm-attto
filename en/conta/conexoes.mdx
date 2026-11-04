@@ -10,13 +10,14 @@ The connections screen brings together all of your company's channels. A channel
 
 In the side menu, open **Settings** and click **Connections**. The screen opens with the title **Integrations**.
 
-It is split into three groups:
+It is split into four groups:
 
 | Group | Options |
 | --- | --- |
 | **WhatsApp** | **WhatsApp** (by QR Code) and **Official WhatsApp (Meta)** |
 | **Instagram** | **Official Instagram (Meta)** |
 | **Tracking** | **Conversion Tracking** |
+| **Other** | **n8n**, **Microsoft Clarity** and **MCP**, with the **Coming soon** badge. They are not available yet. |
 
 The two types of WhatsApp work differently. See the comparison in [WhatsApp types](/en/primeiros-passos/tipos-whatsapp).
 
@@ -34,7 +35,7 @@ The full step by step is in [Connect your WhatsApp](/en/primeiros-passos/conecta
 
 ### What the screen shows
 
-- **Channels used**: how many channels you have created and how many your plan allows.
+- **WhatsApp QR Code channels used**: how many QR Code channels you have created and how many your plan allows. Official WhatsApp has a separate limit.
 - The list of channels, each with the **Connected** or **Disconnected** badge.
 - The phone number of each connected channel.
 
@@ -46,7 +47,7 @@ Click the three dots next to the channel to see the actions.
 | --- | --- |
 | **Rename** | Changes the **Channel name** and the **Short name (nickname, up to 5 characters)**, which appears on cards and in conversations. |
 | **Disconnect** | Disconnects the number from the CRM. Appears only on a connected channel. Conversations that already came in through it stay in the CRM. |
-| **Delete channel** | Removes the channel. Appears only on a disconnected channel. |
+| **Delete channel** | Removes the channel. Appears only on a disconnected channel, and only to the owner or a manager. |
 
 To delete, type **CONFIRMAR** in the window and click **Delete**.
 
@@ -214,10 +215,10 @@ In **Rename** you fill in the **Channel name** and the **Short name (nickname, u
 
 <AccordionGroup>
   <Accordion title="I reached the channel limit. How do I connect more?">
-    On Official WhatsApp, the **Plan channel limit reached** window opens, showing how many channels your plan allows and how many you already have. It has the **Close** and **Buy extra channel** buttons. On Instagram, the button is **Purchase Instagram channel**. On the Start plan it does not appear, because the Instagram channel is for the Prime and Ultra plans. On WhatsApp by QR Code, click **Talk to support**.
+    On Official WhatsApp, the **Official API channel limit reached** window opens, showing how many channels your plan allows and how many you already have. It has the **Close** and **Buy extra channel** buttons. On Instagram, the button is **Purchase Instagram channel**. On the Start plan it does not appear, because the Instagram channel is for the Prime and Ultra plans. On WhatsApp by QR Code, the **WhatsApp QR Code channel limit reached** window opens. Click **Talk to support**.
   </Accordion>
   <Accordion title="Does the WhatsApp channel limit count both types?">
-    Yes. The plan limit adds up WhatsApp channels by QR Code and official channels.
+    No. Each type has its own limit: your plan sets how many QR Code channels and how many official channels you can have. One type does not take a slot from the other.
   </Accordion>
   <Accordion title="I can't see a channel's templates.">
     The channel may be disconnected. On the **Channels** tab, click the channel's three dots, choose **Reconnect** and then click **Refresh**. With more than one official channel, the button becomes a reload icon next to the **Channel** field.
@@ -241,5 +242,8 @@ In **Rename** you fill in the **Channel name** and the **Short name (nickname, u
   </Card>
   <Card title="Broadcasts" icon="bullhorn" href="/en/marketing/disparos">
     Use your templates to send bulk messages.
+  </Card>
+  <Card title="WhatsApp templates" icon="file-lines" href="/en/atendimento/templates-whatsapp">
+    Create Official WhatsApp (Meta) templates, track Meta's approval and send templates in a conversation or a broadcast.
   </Card>
 </CardGroup>

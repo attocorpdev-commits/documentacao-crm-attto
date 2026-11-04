@@ -1,0 +1,168 @@
+---
+title: "Privacy and LGPD"
+sidebarTitle: "Privacy and LGPD"
+description: "Export or anonymize a contact's data, silence the AI for one person and understand what the CRM keeps afterwards."
+icon: "shield-halved"
+---
+
+When a contact asks to see or erase their data, the CRM has tools for you to handle the request without leaving the Contacts screen. This page shows each one, who can use it and what happens to the data.
+
+<Note>
+  This page explains how the tools work in the CRM. It is not legal advice. To learn how Atto Corp handles your account's data, see [Policies](/en/empresa/politicas). If you have questions about your obligations, talk to your legal team.
+</Note>
+
+## What you can do
+
+| Tool | Where it is | What it is for |
+| --- | --- | --- |
+| **Export subject data** | Contact panel, **Privacy (LGPD)** block | Downloads a file with that contact's data in your company |
+| **Anonymize subject** | Contact panel, **Privacy (LGPD)** block | Replaces the contact's name, phone, messages and data with anonymous values |
+| **AI replies to this contact** | Contact panel | Turns the AI on or off for that person only |
+| Broadcast unsubscribe | Automatic, in [Broadcasts](/en/marketing/disparos) | Removes from broadcasts anyone who asked to leave |
+
+## Who can use them
+
+| Action | Who sees the option |
+| --- | --- |
+| **Export subject data** and **Anonymize subject** | Account owner and **Manager** |
+| **AI replies to this contact** | Account owner, **Manager** and anyone with the AI Agent permission |
+
+For people with the **Support Agent** role, the **Privacy (LGPD)** block does not appear. See the roles in [Team](/en/conta/equipe).
+
+## Find the privacy block
+
+<Steps>
+  <Step title="Open the contact">
+    In the side menu, open **CRM**, click **Contacts** and click the contact's row. The side panel opens with their details.
+  </Step>
+  <Step title="Scroll to the end of the panel">
+    The **Privacy (LGPD)** block is at the end of the panel, after **Schedule activity**.
+  </Step>
+</Steps>
+
+## Export a contact's data
+
+Click **Export subject data**. The CRM downloads a `.json` file named `lgpd-titular-` followed by the contact's name or phone and the date. When it finishes, **Subject data exported** appears.
+
+The file gathers what your company has about this person in the CRM, for example:
+
+- the contact's records in the pipelines, with their tags;
+- conversations and messages on WhatsApp and Instagram;
+- activities, appointments and stage changes;
+- broadcast and follow-up sends;
+- the summaries and information the AI kept about the contact;
+- whether the number is on the do-not-contact list or in the [external base](/en/crm/importar-contatos#import-an-external-base);
+- the list of attachments in the conversations.
+
+<Tip>
+  The file is made to be read by systems. If you need to hand the data over to the contact, store the file in a safe place and send it through a trusted channel.
+</Tip>
+
+If **No data found for this subject** appears, the CRM found nothing about this contact in your company.
+
+## Anonymize a contact
+
+Anonymization replaces personal data with anonymous values across all pipelines and conversations in your company. It cannot be undone.
+
+<Warning>
+  This action is irreversible. The original data cannot be recovered. If you need a copy, use **Export subject data** first.
+</Warning>
+
+<Steps>
+  <Step title="Open the confirmation">
+    In the **Privacy (LGPD)** block, click **Anonymize subject**. The **Anonymize subject** window opens, with a summary of what will happen.
+  </Step>
+  <Step title="Type the confirmation word">
+    In the field, type `ANONIMIZAR`. Upper or lower case makes no difference.
+  </Step>
+  <Step title="Confirm">
+    Click **Anonymize permanently**. To give up, click **Cancel**.
+  </Step>
+</Steps>
+
+When it finishes, **Subject anonymized** appears, the panel closes and the list reloads. The notice also says how many media files were removed.
+
+### What changes
+
+| Data | After anonymization |
+| --- | --- |
+| Name | Becomes **Titular anonimizado** |
+| Phone | Becomes an anonymous numeric code |
+| Messages, notes and summaries | The text becomes `[anonimizado]` |
+| Photos, audio, videos and files in the conversations | Are deleted |
+| AI and follow-ups | Are turned off for this number |
+
+### What the CRM keeps
+
+- **Your metrics numbers.** Records are not deleted, only their content is replaced. That way, counts and reports still add up.
+- **The phone on the do-not-contact list.** It is the minimum needed for the CRM not to contact this person again. A new conversation from this number already starts with the AI off.
+- **The number in the Blocked external base**, if it was there. Without it, the block would stop working.
+- **A record of the action**, with date and counts, with no personal data.
+
+### Media that is not deleted
+
+A media file is kept when it is outside the CRM, when it is shared or when it appears in another conversation. In that case, the final notice says how many were kept and that this was logged.
+
+If the CRM cannot confirm the removal of some media, the notice shows how many are pending. The anonymization has already happened, and the pending ones are logged for cleanup.
+
+## Silence the AI for a contact
+
+When someone asks not to be served by the AI, you can turn the AI off for that person only.
+
+<Steps>
+  <Step title="Open the contact">
+    In **Contacts**, click the contact's row.
+  </Step>
+  <Step title="Turn off the switch">
+    At the top of the panel, turn off **AI replies to this contact**. **Contact silenced: the AI will not reply to them** appears.
+  </Step>
+</Steps>
+
+The contact gets the **Silenced** label. Your team keeps handling them as usual. To see all contacts in this situation, use the **Silenced** filter in the list.
+
+To turn it back on, switch it on again. If the contact was silenced by the owner or a manager, someone with only the AI Agent permission may not be able to turn it back on.
+
+<Tip>
+  To silence several contacts at once, use the **Silence (AI off)** option when [importing contacts](/en/crm/importar-contatos#ai-for-imported-contacts).
+</Tip>
+
+## Broadcast unsubscribe
+
+Anyone who replies to a broadcast asking to leave, with words like "sair" or "parar", shows the **Unsubscribed** label and no longer receives broadcasts. An unsubscribe requested by the person is never undone automatically. See the full rules in [Broadcasts](/en/marketing/disparos).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="What is the difference between deleting and anonymizing a contact?">
+    **Delete**, in the Contacts list, removes the contact's record. **Anonymize subject** replaces the person's data with anonymous values across all of the company's pipelines and conversations, deletes the media and puts the number on the do-not-contact list.
+  </Accordion>
+  <Accordion title="After anonymizing, can the person talk to me again?">
+    Yes. If they send a message again, the conversation enters the CRM with the AI off. Your team handles it as usual.
+  </Accordion>
+  <Accordion title="A notice appeared about more than one profile with the same @username.">
+    This happens with Instagram contacts. The CRM does not know which profile is the right one and does nothing. Open the contact by their phone or identifier and try again.
+  </Accordion>
+  <Accordion title="Why don't I see the Privacy (LGPD) block?">
+    The block only appears for the account owner and for people with the **Manager** role. Ask one of them to do the export or the anonymization.
+  </Accordion>
+  <Accordion title="Does anonymization apply to the other companies in my account?">
+    No. It only applies to the company that is active in the CRM. If the contact is also in another company, switch companies and repeat the process.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Contacts" icon="address-book" href="/en/crm/contatos">
+    Open the contact panel and edit the details.
+  </Card>
+  <Card title="Policies" icon="book-bookmark" href="/en/empresa/politicas">
+    Atto Corp's Privacy Policy and Terms of Use.
+  </Card>
+  <Card title="Broadcasts" icon="paper-plane" href="/en/marketing/disparos">
+    See how unsubscribing works.
+  </Card>
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    Choose who is a Manager in your company.
+  </Card>
+</CardGroup>
