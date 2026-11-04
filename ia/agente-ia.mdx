@@ -83,7 +83,7 @@ Se a sua IA ainda não foi configurada, a tela mostra o aviso **Vamos criar sua 
 
 ## As abas do agente
 
-Dentro de um agente, as abas aparecem nesta ordem: **Geral**, **Personalidade**, **Documentos**, **Canais**, **Avançado**, **Testar** e **Métricas**.
+Dentro de um agente, as abas aparecem nesta ordem: **Geral**, **Personalidade**, **Documentos**, **Base de conhecimento**, **Canais**, **Avançado**, **Testar** e **Métricas**.
 
 <Tabs>
   <Tab title="Geral">
@@ -121,6 +121,14 @@ Dentro de um agente, as abas aparecem nesta ordem: **Geral**, **Personalidade**,
     Enviar o arquivo ao cliente é uma ação dos planos Prime e Ultra. No Start, a IA usa o conteúdo para responder, mas não envia o arquivo.
 
     Veja o passo a passo em [Ensinar a IA com documentos](#ensinar-a-ia-com-documentos).
+  </Tab>
+  <Tab title="Base de conhecimento">
+    Mostra todos os textos que a IA consulta antes de responder, inclusive o que o assistente inicial criou na configuração. Cada bloco indica a origem: **Documento**, **Assistente inicial** ou **Adicionado à mão**.
+
+    - Clique em **Editar** para corrigir o **Título** ou o **Conteúdo** e depois em **Salvar**. A IA usa o texto novo já na próxima resposta e no **Testar**.
+    - Clique na lixeira para excluir um bloco. A tela pergunta **Excluir este conhecimento?**. Essa ação não pode ser desfeita.
+
+    Trocar o texto da **Personalidade** não apaga estes blocos. Confira esta aba quando mudar de produto ou serviço.
   </Tab>
   <Tab title="Canais">
     Aqui você escolhe em quais números de WhatsApp a IA responde. Veja [Escolher os canais](#escolher-os-canais).
@@ -203,7 +211,7 @@ No alto de **Editor e prévia** existe o botão **Sugerir melhoria**, com a lege
   </Step>
 </Steps>
 
-A tela aceita PDF, DOCX, XLSX, TXT ou áudio (OGG, OPUS, MP3, M4A, WAV), com até 20 MB por arquivo.
+A tela aceita PDF, DOCX, XLSX, TXT ou áudio (OGG, OPUS, MP3, M4A, WAV), com até 20 MB por arquivo. Você também pode enviar imagens: a IA envia a imagem ao cliente, mas não lê o conteúdo dela. Acima da lista, a tela mostra quanto dos 100 MB de espaço já foi usado.
 
 <Tip>
   O áudio chega de formas diferentes para o cliente: OGG e OPUS chegam como nota de voz; o M4A gravado no iPhone, o MP3 e o WAV chegam como arquivo de áudio.
@@ -273,13 +281,13 @@ Tudo fica na aba **Avançado**. Depois de alterar, clique em **Salvar ajustes**.
 
 <AccordionGroup>
   <Accordion title="Respostas e ritmo">
-    Defina **Máximo de caracteres**, **Espera mínima (s)**, **Espera máxima (s)** e **Agrupar mensagens (s)**. A opção **Simular digitação** mostra "digitando..." antes da resposta.
+    Defina **Máximo de caracteres**, **Espera mínima (s)**, **Espera máxima (s)** e **Agrupar mensagens (s)**. A espera aplicada nunca passa de 8 segundos, mesmo que você coloque um valor maior. A opção **Simular digitação** mostra "digitando..." antes da resposta.
   </Accordion>
   <Accordion title="Restringir por horário comercial">
     Ligue a opção e marque os dias e os horários em que a IA atende. Em **Mensagem fora do horário**, escreva o aviso que o cliente recebe fora desse período. Se deixar vazio, a IA fica em silêncio até o horário voltar.
   </Accordion>
   <Accordion title="Passar para um atendente">
-    Em **Palavras-chave**, adicione palavras ou frases que fazem a IA transferir a conversa na hora. Exemplo: "falar com humano". Em **Transferir após N respostas da IA**, defina um limite de respostas. Em **Mensagem ao transferir**, escreva o aviso que o cliente recebe.
+    Em **Palavras-chave**, adicione palavras ou frases que fazem a IA transferir a conversa na hora. Exemplo: "falar com humano". Clique em **Ver sugestões** para marcar palavras prontas e depois em **Adicionar selecionadas**. Em **Transferir após N respostas da IA**, defina um limite de respostas. Em **Mensagem ao transferir**, escreva o aviso que o cliente recebe.
 
     Cada transferência gera um código único para a conversa. Veja [Protocolo de atendimento](/ia/protocolo-atendimento).
   </Accordion>
@@ -298,7 +306,7 @@ Tudo fica na aba **Avançado**. Depois de alterar, clique em **Salvar ajustes**.
 
     O botão **Criar modelo de aviso** fica bloqueado enquanto não houver nenhum número na lista. A tela explica: "Adicione ao menos 1 membro no aviso de lead antes de criar o modelo."
 
-    O aviso para a equipe funciona apenas em canal **WhatsApp Oficial (Meta)**. Sem um número oficial, a seção aparece bloqueada com a mensagem **Disponível no canal oficial Meta** e o botão **Conectar canal oficial**.
+    O aviso para a equipe funciona apenas em canal **WhatsApp Oficial (Meta)**. Sem um número oficial, a seção aparece bloqueada com a mensagem **Disponível no canal oficial Meta** e o botão **Conectar canal oficial**. Se a sua empresa já tem um número oficial, mas esta IA não está ligada nele, a seção mostra **Vincule a IA ao canal oficial** e o botão **Vincular na aba Canais**.
 
     A tela também lembra: "O WhatsApp oficial pode ser limitado ou encarecido pela Meta a qualquer momento. O aviso no painel (sininho) é a garantia de que o time não perde o lead."
   </Accordion>
@@ -383,6 +391,8 @@ Na aba **Geral**, no bloco **Ligar ou desligar a IA por conversa**, clique em **
 </Steps>
 
 Assim você muda muitas conversas de uma vez, sem abrir cada uma.
+
+A janela também tem a aba **Contatos**, ao lado de **Conversas**. Ali você escolhe contatos em **Escolher na lista**, com busca e filtros, ou envia uma lista de números em **Importar**. Depois clique em **Silenciar** ou em **Ligar IA**. O contato silenciado ganha o selo **Silenciado**, e a IA para de responder a ele em todas as conversas de WhatsApp. A equipe atende normalmente. A importação vale só para números que já estão nos seus contatos.
 
 Só o botão que muda algo fica disponível. Passe o mouse no botão desativado para ver o motivo:
 
@@ -579,5 +589,8 @@ Quando as conversas do mês acabam e não há pacote extra, a IA pausa até a re
   </Card>
   <Card title="Planos e cobrança" icon="wallet" href="/conta/planos">
     Entenda as conversas do seu plano.
+  </Card>
+  <Card title="Entrevista inicial" icon="comments" href="/ia/entrevista-inicial">
+    Responda algumas perguntas sobre o seu negócio e o CRM monta a sua primeira IA de atendimento. Veja cada caminho, o que é gerado e como ajustar depois.
   </Card>
 </CardGroup>
