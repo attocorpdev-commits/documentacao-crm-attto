@@ -32,7 +32,7 @@ Digite no campo **Buscar telefone, nome ou tag...**. A lista é filtrada enquant
   Quando um contato tem um segundo número guardado, como o telefone que a pessoa deixou em um formulário, a busca também encontra o contato por esse número. Aí tanto faz digitar com o 9 ou sem.
 </Tip>
 
-Você também pode usar **Filtrar por tag** para marcar uma ou mais tags. Se houver Instagram conectado, o filtro **Canal** mostra só os contatos daquela conta.
+Você também pode usar **Filtrar por tag** para marcar uma ou mais tags. O filtro **Canal** mostra **Todos os canais**, só WhatsApp, só Instagram ou um canal específico. O filtro de funil mostra os contatos de um pipeline, ou os que estão **Sem pipeline**. O botão **Silenciados** mostra só os contatos em que a IA está desligada.
 
 Os dois botões ao lado da busca trocam entre **Visualização em tabela** e **Visualização em cards**. A lista mostra 50 contatos por vez. Clique em **Mostrar mais** para ver os próximos.
 
@@ -43,7 +43,7 @@ Os dois botões ao lado da busca trocam entre **Visualização em tabela** e **V
     Clique em **Novo Contato**.
   </Step>
   <Step title="Preencha os dados">
-    O **Telefone** é obrigatório. Escolha o país e digite o número com DDD, por exemplo `11900000000`. Os campos **Nome**, **Valor (R$)**, **Tags**, **Canal** e **Estágio** são opcionais.
+    O **Telefone** é obrigatório. Escolha o país e digite o número com DDD, por exemplo `11900000000`. Os campos **Nome**, **E-mail**, **Valor (R\$)**, **Tags**, **Canal** e **Estágio** são opcionais.
   </Step>
   <Step title="Salve">
     Clique em **Criar contato**.
@@ -64,10 +64,12 @@ Clique em uma linha da lista. Abre um painel lateral com os dados do lead.
 - **Mover para pipeline:** clique no pipeline desejado. Em **Estágio**, escolha a etapa.
 - **Resumo IA:** mostra o resumo da conversa feito pela IA.
 - **Agendar atividade:** cria um compromisso para esse contato. Ele aparece na Agenda no dia escolhido.
+- **IA responde este contato:** desligue para a IA não responder esse contato no WhatsApp. A equipe atende normalmente e o contato aparece como **Silenciado**. Depende da permissão do Agente IA.
+- **Privacidade (LGPD):** aparece para o dono e para gestores. **Exportar dados do titular** baixa os dados do contato. **Anonimizar titular** troca nome, telefone e mensagens por valores anônimos e apaga as mídias das conversas. Essa ação não pode ser desfeita.
 
 ## Abrir a conversa de um contato
 
-Abra o contato e clique em **Iniciar Conversa**, no fim do painel. O CRM leva você para a conversa no WhatsApp. Se ela ainda não existir, é criada na hora.
+Abra o contato e clique em **Iniciar Conversa**, no fim do painel. O CRM leva você para a conversa no WhatsApp. Se ela ainda não existir, é criada na hora. Em contato do Instagram, o botão é **Abrir no Direct**.
 
 <Warning>
   É preciso ter um WhatsApp conectado. Sem isso, aparece o aviso **WhatsApp não conectado**, com um atalho **Ir para Conexões**.
@@ -107,7 +109,7 @@ Você pode importar uma planilha nos formatos `.csv`, `.xlsx` ou `.xls`.
     O CRM lê o arquivo antes de gravar nada e mostra quantas linhas leu, quantos contatos são válidos e quantas linhas estão sem telefone válido. Logo abaixo ele diz qual coluna usou como telefone e lista uma amostra com os cinco primeiros contatos.
   </Step>
   <Step title="Confirme">
-    Na janela **Importar Contatos**, clique em **Importar**.
+    Na janela **Importar Contatos**, escolha em **IA para os contatos importados** se a IA fica **Ativar** ou **Silenciar (IA desligada)**. Depois clique em **Importar**.
   </Step>
 </Steps>
 
@@ -234,5 +236,11 @@ O card passa a usar o número do WhatsApp, e o número do formulário fica guard
   </Card>
   <Card title="Disparos" icon="bullhorn" href="/marketing/disparos">
     Envie mensagens para vários contatos.
+  </Card>
+  <Card title="Importar contatos" icon="file-import" href="/crm/importar-contatos">
+    Traga seus contatos de uma planilha CSV ou Excel para o CRM: formato, colunas, limites, duplicados e o que fazer quando algo dá errado.
+  </Card>
+  <Card title="Privacidade e LGPD" icon="shield-halved" href="/crm/privacidade-lgpd">
+    Exporte ou anonimize os dados de um contato, silencie a IA para uma pessoa e entenda o que o CRM guarda depois.
   </Card>
 </CardGroup>

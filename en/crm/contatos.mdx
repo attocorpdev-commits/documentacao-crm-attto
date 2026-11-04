@@ -32,7 +32,7 @@ Type in the **Search phone, name or tag...** field. The list is filtered as you 
   When a contact has a second number saved, such as the phone the person left on a form, the search also finds the contact by that number. In that case it does not matter whether you type it with or without the 9.
 </Tip>
 
-You can also use **Filter by tag** to select one or more tags. If an Instagram account is connected, the **Channel** filter shows only the contacts from that account.
+You can also use **Filter by tag** to select one or more tags. The **Channel** filter shows **All channels**, WhatsApp only, Instagram only or one specific channel. The pipeline filter shows the contacts of one pipeline, or those with **No pipeline**. The **Silenced** button shows only the contacts with the AI turned off.
 
 The two buttons next to the search switch between **Table view** and **Cards view**. The list shows 50 contacts at a time. Click **Show more** to see the next ones.
 
@@ -43,7 +43,7 @@ The two buttons next to the search switch between **Table view** and **Cards vie
     Click **New contact**.
   </Step>
   <Step title="Fill in the details">
-    The **Phone** is required. Choose the country and type the number with the area code, for example `11900000000`. The **Name**, **Value (R$)**, **Tags**, **Channel** and **Stage** fields are optional.
+    The **Phone** is required. Choose the country and type the number with the area code, for example `11900000000`. The **Name**, **Email**, **Value (R\$)**, **Tags**, **Channel** and **Stage** fields are optional.
   </Step>
   <Step title="Save">
     Click **Create contact**.
@@ -64,10 +64,12 @@ Click a row in the list. A side panel opens with the lead's details.
 - **Move to pipeline:** click the pipeline you want. In **Stage**, choose the stage.
 - **AI summary:** shows the conversation summary written by the AI.
 - **Schedule activity:** creates an appointment for this contact. It appears in the Calendar on the chosen day.
+- **AI replies to this contact:** turn it off so the AI does not reply to this contact on WhatsApp. Your team handles them as usual and the contact shows as **Silenced**. Depends on the AI Agent permission.
+- **Privacy (LGPD):** shown to the owner and managers. **Export subject data** downloads the contact's data. **Anonymize subject** replaces name, phone and messages with anonymous values and deletes the media in the conversations. This action cannot be undone.
 
 ## Open a contact's conversation
 
-Open the contact and click **Start conversation**, at the bottom of the panel. The CRM takes you to the conversation on WhatsApp. If it does not exist yet, it is created right away.
+Open the contact and click **Start conversation**, at the bottom of the panel. The CRM takes you to the conversation on WhatsApp. If it does not exist yet, it is created right away. For an Instagram contact, the button is **Open in Direct**.
 
 <Warning>
   You need a connected WhatsApp. Without it, the **WhatsApp not connected** notice appears, with a **Go to Connections** shortcut.
@@ -107,7 +109,7 @@ You can import a spreadsheet in `.csv`, `.xlsx` or `.xls` format.
     The CRM reads the file before saving anything and shows how many rows it read, how many contacts are valid and how many rows have no valid phone. Just below, it tells you which column it used as the phone and lists a sample with the first five contacts.
   </Step>
   <Step title="Confirm">
-    In the **Import contacts** window, click **Import**.
+    In the **Import contacts** window, choose under **AI for imported contacts** whether the AI is set to **Enable** or **Silence (AI off)**. Then click **Import**.
   </Step>
 </Steps>
 
@@ -234,5 +236,11 @@ The card starts using the WhatsApp number, and the form number stays saved on it
   </Card>
   <Card title="Broadcasts" icon="bullhorn" href="/en/marketing/disparos">
     Send messages to many contacts.
+  </Card>
+  <Card title="Import contacts" icon="file-import" href="/en/crm/importar-contatos">
+    Bring your contacts from a CSV or Excel spreadsheet into the CRM: format, columns, limits, duplicates and what to do when something goes wrong.
+  </Card>
+  <Card title="Privacy and LGPD" icon="shield-halved" href="/en/crm/privacidade-lgpd">
+    Export or anonymize a contact's data, silence the AI for one person and understand what the CRM keeps afterwards.
   </Card>
 </CardGroup>
