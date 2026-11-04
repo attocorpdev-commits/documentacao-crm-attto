@@ -1,0 +1,68 @@
+---
+title: "WhatsApp (QR Code) or Official WhatsApp (Meta)"
+sidebarTitle: "WhatsApp types"
+description: "Understand the difference between the two ways to connect a number to the CRM and choose the best one for your company."
+icon: "code-compare"
+keywords: ["Official WhatsApp", "QR Code", "Meta", "official API", "template", "24-hour window", "ban"]
+---
+
+The CRM connects WhatsApp numbers in two ways. Both work from the same conversations screen, but they behave differently.
+
+<Columns cols={2}>
+  <Card title="WhatsApp (QR Code)" icon="qrcode">
+    You connect the number by scanning a QR Code with your phone, just like WhatsApp Web.
+  </Card>
+
+  <Card title="Official WhatsApp (Meta)" icon="badge-check">
+    The number is connected through Meta's official API, with authorization done on Meta itself.
+  </Card>
+</Columns>
+
+## Comparison
+
+| | WhatsApp (QR Code) | Official WhatsApp (Meta) |
+| --- | --- | --- |
+| **How it connects** | By scanning the QR Code with your phone | By authorizing through Meta, or by pasting the channel token |
+| **24-hour window** | None. You reply whenever you want | After 24 hours without a message from the contact, only approved templates can be sent |
+| **Templates** | Not used | Uses templates approved by Meta |
+| **Broadcasts** | Free text, with an interval in minutes | Approved template, sent in batches |
+| **Message reactions** | Yes | No |
+| **AI Agent** | Yes | Yes |
+| **Risk of being banned** | Subject to bans at high volume | Stable and with no risk of being banned |
+| **Meta costs** | Does not apply | Meta charges for usage and can limit the channel or make it more expensive at any time |
+| **When the number drops** | Reconnect and, if needed, scan the QR Code again | Reconnect from the screen, without using a new plan slot |
+| **Plan limit** | Its own channel limit | Its own channel limit |
+
+## Which one to choose
+
+<AccordionGroup>
+  <Accordion title="WhatsApp (QR Code)" icon="qrcode">
+    Good for getting started quickly with the number you already use on your phone. It takes a few minutes and does not depend on Meta approval.
+
+    Because it is not an official channel, the connection can be blocked or banned by WhatsApp, especially with high-volume sending, and there is no availability guarantee.
+  </Accordion>
+
+  <Accordion title="Official WhatsApp (Meta)" icon="badge-check">
+    Recommended for higher volume and for those who need to send messages outside the 24-hour window, with approved templates.
+
+    To connect, the number must be active on Meta, with the fee paid.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Atto Corp recommends Official WhatsApp (Meta) for operations with many contacts or frequent campaigns.
+</Tip>
+
+You can have both types at the same time, within each one's channel limit on your plan. See [Plans and billing](/en/conta/planos).
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Connect your WhatsApp" icon="link" href="/en/primeiros-passos/conectar-whatsapp">
+    Step-by-step for both types.
+  </Card>
+
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Manage channels and templates.
+  </Card>
+</CardGroup>

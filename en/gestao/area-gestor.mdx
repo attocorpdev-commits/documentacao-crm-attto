@@ -1,0 +1,154 @@
+---
+title: "Manager Area"
+description: "Track your service queue, team performance and company channels live."
+icon: "user-tie"
+---
+
+The **Manager Area** shows the team's queue live: who is waiting, for how long and with whom. It helps you decide where to act first.
+
+<Note>
+  Available on the **Prime** and **Ultra** plans, and as an add-on enabled on specific accounts. It appears for the account owner. Members registered as agents do not see this item in the menu.
+</Note>
+
+## How to access
+
+In the side menu, open the **CRM** category and click **Manager Area**.
+
+If your company's plan does not include this feature, the screen shows the **Prime · Ultra feature** notice with the **Upgrade now** and **Talk to support** buttons. See [Plans and billing](/en/conta/planos).
+
+The screen updates on its own. You do not need to reload the page.
+
+<Card title="Open Manager Area in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/gestor" horizontal>
+  Takes you straight to the screen. You need to be signed in to your account in the CRM.
+</Card>
+
+## Queue counters
+
+At the top there are four counters. Click one to filter the list. The screen opens with **Awaiting reply** selected.
+
+| Indicator | What it shows |
+| --- | --- |
+| **In queue** | Conversations awaiting a reply or with no agent. |
+| **Awaiting reply** | Conversations where the customer spoke last and is waiting for a response. |
+| **Long wait** | Conversations awaiting a reply for longer than the limit set in **Long wait (min)**. |
+| **Unassigned** | Conversations with no agent in charge. |
+
+Next to the subtitle you see the total of open conversations, for example "42 open".
+
+<Note>
+  The list loads up to 300 conversations. When there are more, you see the notice **showing the 300 oldest**.
+</Note>
+
+## Filters and sorting
+
+| Filter | How to use it |
+| --- | --- |
+| **Agent** | Click a name to see only that person's conversations. The number in parentheses is how many are waiting. Click again to remove the filter. |
+| **Stage** | Click a Pipeline stage to see only the conversations in that stage. |
+| **Depth** | Filter by lead temperature: **Hot**, **Warm** or **Cold**. The **Avoid** button shows only contacts that should not be approached. |
+| **Sort** | Choose between **Longest wait**, **Shortest wait**, **Name** and **Stage**. |
+| **Long wait (min)** | Set after how many minutes a wait counts as long. The default is 60. It accepts 5 to 1440. |
+
+Above the list, the **Showing X of Y** line tells you how many conversations passed the filters.
+
+<Tip>
+  The filters are saved in the page address. Copy the link to share the same view with another manager, or save it to your bookmarks.
+</Tip>
+
+## How to read each conversation in the list
+
+Each row is a conversation. Click it to open the conversation and act.
+
+- **Name and stage**: the contact's name and the Pipeline stage they are in.
+- **Robot icon**: the AI is on in this conversation.
+- **Shield icon**: the contact asked not to receive messages.
+- **Last message**: the customer's last message.
+- **Owner**: the agent's name or **Unassigned**.
+- **1 message**: the conversation has a single message.
+- **Wait time**: shown on the right, for example "2h 15min". It is highlighted when the customer is waiting.
+- **Highlighted number**: number of unread messages.
+
+### Service quality signals
+
+Below the last message you see labels that help you assess the conversation.
+
+| Signal | What it means |
+| --- | --- |
+| **Hot**, **Warm**, **Cold** | Lead temperature, based on the interest shown and the time since their last message. |
+| **Avoid** | Contact that should not be approached. Hover to see the reason, such as **opt-out**, **refused** or **already a client**. |
+| **pasted number** | The team's last send was just a number, with no message. |
+| **false premise** | Someone resumed a conversation idle for 30 days or more as if it were recent. |
+| **greeting without name** | The greeting sent did not use the contact's name. |
+| Person or robot icon | Shows whether the last send was made by a person, on the conversation screen, or automatically. |
+| Delivery icon | One check for sent, two checks for delivered or read, an alert for a delivery error. |
+
+## Team now
+
+The **Team now** table shows each person on the team and the day's numbers. The dot next to the name shows whether the person is **online**, **away** or **offline**.
+
+| Column | What it shows |
+| --- | --- |
+| **Agent** | The person's name. **Owner** marks the account owner. **in queue** marks who is receiving leads in the distribution. |
+| **Open** | Open conversations with this person. |
+| **Waiting** | Their conversations where the customer is waiting for a reply. |
+| **Oldest** | Time of the longest wait among the waiting conversations. |
+| **Sent today** | Messages sent today from the conversation screen. Automatic sends and broadcasts do not count. |
+| **Received today** | Messages received today, counted for the conversation's current owner. |
+| **Moved today** | Leads the person dragged to another stage in the Pipeline today. Changes made in other ways are not included. |
+| **Activities** | This person's activities for the day. |
+
+## Channels, queue and today's leads
+
+At the bottom of the screen there are three cards.
+
+- **Channels down**: lists channels with a problem, marked as **reconnect**, **disconnected** or **delivery error**. With no problems, you see **All connected.**
+- **Queue now**: how many leads are waiting to be distributed, with their names. When empty, it shows **No one waiting in the queue.**
+- **Leads received today**: leads distributed by the assignment queue today.
+
+## How to act from the screen
+
+<Steps>
+  <Step title="Start with long waits">
+    Click **Long wait** and keep the order on **Longest wait**. Whoever has waited longest stays at the top.
+  </Step>
+  <Step title="Handle conversations with no owner">
+    Click **Unassigned** to see the conversations no one has taken. Click one of them to open the conversation.
+  </Step>
+  <Step title="Prioritize hot leads">
+    In **Depth**, click **Hot** to see first who is most likely to close.
+  </Step>
+  <Step title="Check the team">
+    In **Team now**, see who has many conversations in **Waiting** and who is offline.
+  </Step>
+  <Step title="Check the channels">
+    If there is anything in **Channels down**, reconnect the channel in [Connections](/en/conta/conexoes).
+  </Step>
+</Steps>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I don't see the Manager Area in the menu. Why?">
+    The item appears for companies on the Prime and Ultra plans and is hidden for agents. It is not enabled on the Team screen. Check your plan in [Plans and billing](/en/conta/planos). If your plan includes the screen and it does not appear for you, talk to support.
+  </Accordion>
+  <Accordion title="The list went empty after filtering.">
+    You see **Nothing in the queue with this filter.** when no conversation matches the filters. Click the active filters again to remove them, or select the **In queue** counter.
+  </Accordion>
+  <Accordion title="Why is Sent today low for an agent?">
+    The column counts only the messages the person sent from the conversation screen. Automatic replies and broadcasts are left out.
+  </Accordion>
+  <Accordion title="A notice said the queue could not be loaded.">
+    Click **Try again**. If the notice continues, talk to support.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    Manage users and permissions.
+  </Card>
+  <Card title="Weekly report" icon="file-lines" href="/en/gestao/relatorios">
+    See the weekly service summary.
+  </Card>
+</CardGroup>

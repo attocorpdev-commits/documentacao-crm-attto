@@ -99,6 +99,90 @@
             ]
           }
         ]
+      },
+      {
+        "language": "en",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "en/index",
+              "en/primeiros-passos/primeiro-acesso",
+              "en/primeiros-passos/tipos-whatsapp",
+              "en/primeiros-passos/conectar-whatsapp"
+            ]
+          },
+          {
+            "group": "Customer service",
+            "pages": [
+              "en/atendimento/whatsapp",
+              "en/atendimento/instagram",
+              "en/atendimento/instagram-mensagens-recusadas",
+              "en/atendimento/respostas-rapidas"
+            ]
+          },
+          {
+            "group": "CRM",
+            "pages": [
+              "en/crm/pipeline",
+              "en/crm/contatos",
+              "en/crm/tags",
+              "en/crm/atividades",
+              "en/crm/agenda"
+            ]
+          },
+          {
+            "group": "Artificial intelligence",
+            "pages": [
+              "en/ia/assistente-ia",
+              "en/ia/agente-ia",
+              "en/ia/protocolo-atendimento",
+              "en/ia/creditos"
+            ]
+          },
+          {
+            "group": "Marketing",
+            "pages": [
+              "en/marketing/disparos",
+              "en/marketing/rastreamento-meta"
+            ]
+          },
+          {
+            "group": "Management",
+            "pages": [
+              "en/gestao/dashboard",
+              "en/gestao/relatorios",
+              "en/gestao/area-gestor"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "en/conta/conexoes",
+              "en/conta/equipe",
+              "en/conta/planos",
+              "en/conta/perfil",
+              "en/conta/seguranca"
+            ]
+          },
+          {
+            "group": "Platform",
+            "pages": [
+              "en/plataforma/visao-geral",
+              "en/plataforma/mcp"
+            ]
+          },
+          {
+            "group": "Company",
+            "tag": "Atto Corp",
+            "pages": [
+              "en/empresa/marca",
+              "en/empresa/politicas",
+              "en/empresa/suporte",
+              "en/empresa/embaixadores"
+            ]
+          }
+        ]
       }
     ]
   },

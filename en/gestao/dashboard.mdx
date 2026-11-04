@@ -1,0 +1,163 @@
+---
+title: "Dashboard"
+description: "Understand each number, chart and filter on the CRM home screen and track leads, messages and appointments."
+icon: "gauge"
+---
+
+The **Dashboard** is the first screen of the CRM. It brings together the numbers of your operation: leads that arrived, conversion, messages exchanged and appointments.
+
+The data always belongs to the company selected in your account.
+
+## How to access
+
+In the side menu, open the **Main** category and click **Dashboard**.
+
+<Note>
+  If you see a notice saying your profile does not have permission to view the dashboard, ask the person in charge of the account to enable this page for you. See [Team](/en/conta/equipe).
+</Note>
+
+<Card title="Open Dashboard in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/dashboard" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Filter bar and shortcuts
+
+At the top of the screen, next to the greeting, are the controls that change what you see.
+
+| Control | What it does |
+| --- | --- |
+| **Pipeline** | Shortcut to open the Pipeline screen. |
+| **Calendar** | Shortcut to open the Calendar. |
+| **All channels** | Chooses a specific channel. Use **Search channel...** to find it by name. |
+| Period | Choose between **Today**, **Yesterday**, **7 days**, **30 days** and **90 days**. The default is **7 days**. |
+| **Custom** | Opens a calendar for you to pick the start and end dates. |
+| **PDF** | Downloads a report with the numbers on the screen. |
+| **Reset** | Deletes the company's conversations and statistics. Read the notice below. |
+
+<Warning>
+  The **Reset** button opens the **Reset all data** confirmation. When you click **Reset everything**, all conversations and statistics are deleted. This action cannot be undone.
+</Warning>
+
+### What each filter changes
+
+- **Period**: changes the leads, the conversion rate, the funnel, the source table, the message charts and the appointments chart.
+- **Channel**: changes the leads, the conversion rate, the funnel, the source table and today's message numbers. The message volume and appointment charts keep showing the whole company.
+- Cards with the word "today" always show the current day, even if you choose another period.
+
+<Note>
+  The channel selector only shows for the account owner. Members see the data of the channels assigned to them.
+</Note>
+
+## Top cards
+
+Click any card to open the details for that number.
+
+| Indicator | What it shows |
+| --- | --- |
+| **Leads in period** | New leads created in the chosen period, within the pipeline shown in the funnel. Each phone number counts once. With the **Today** period, the card is called **Leads today**. |
+| **Conversion rate** | Percentage of the period's leads that are in a conversion stage. Below the number you see, for example, "3 of 40 converted". The details show **Converted**, **Lost** and **Total leads**. |
+| **Sent today** | Messages sent by your company today. The details also show the total for the period and the total per day. |
+| **AI responses** | Replies sent by the artificial intelligence today. |
+
+## Lead funnel
+
+The **Lead Funnel** block shows how many contacts are in each stage of the pipeline. The title shows the chosen period and, next to it, the total number of contacts in the stages right now.
+
+### Choose the pipeline
+
+Use the selector in the corner of the block to choose which pipeline shows. The **Automatic (channel or most recent)** option lets the system choose based on the selected channel. Your choice is saved for your next visit.
+
+### How to read the funnel
+
+- **Inside the funnel**: recent contacts, who entered the stage in the chosen period.
+- **Above the funnel**: idle contacts, who were already in the stage before the period and are still there.
+- **Stage total**: recent plus idle.
+- **Percentage**: the conversion up to that stage. The first stage is 100%.
+
+### See the contacts in a stage
+
+<Steps>
+  <Step title="Click the stage">
+    Click a stage in the funnel. A window opens with the stage name and the number of contacts.
+  </Step>
+  <Step title="Check both lists">
+    Contacts are split into **Recent** and **Idle**. When the lead has a value, it shows next to the name.
+  </Step>
+  <Step title="Open the lead">
+    Click a contact to go to the Pipeline with that lead open.
+  </Step>
+</Steps>
+
+## Leads by source
+
+The **Leads by source** table shows where the period's leads came from. It shows when there is at least one lead.
+
+| Column | What it shows |
+| --- | --- |
+| **Source / Campaign** | Where the lead came from. Leads from ads are grouped by ad name. When there is no information, you see **Source not informed**. |
+| **Leads** | Number of leads from that source. |
+| **Converted** | How many of these leads are in a conversion stage. |
+| **Conversion** | Percentage converted out of the total for that source. |
+
+## Messages and recent activity
+
+Next to the funnel are two cards with charts and a list.
+
+- **Messages received**: how many different contacts sent a message today. The chart shows messages received per day in the period. In the details, the same number shows as **Unique contacts today**.
+- **Sent today**: messages sent today. The chart shows messages sent per day in the period. Click a bar to see that day's total.
+- **Recent Activity**: the most recent conversations. Click one to open the conversation. The arrow in the corner opens the conversations screen.
+
+In the charts, the highlighted bar is the busiest day.
+
+## Period charts
+
+| Chart | What it shows |
+| --- | --- |
+| **Weekly Message Volume** | Total messages per day in the chosen period, split into **Sent** and **Received**. It counts messages, not contacts. |
+| **Hourly Message Volume** | Total messages in each hour of the day, adding up the chosen period. It shows at what time your customers talk to you the most. Click a bar to see the number. |
+| **Appointments per Day** | How many appointments are booked for each day of the period. It counts by the appointment date, not by the date it was created. |
+
+## Download the PDF report
+
+<Steps>
+  <Step title="Choose the period">
+    Select the period or use **Custom**.
+  </Step>
+  <Step title="Click PDF">
+    The file is downloaded to your computer. When it finishes, you see the message **Report exported successfully!**.
+  </Step>
+</Steps>
+
+The file includes message totals, leads by stage, conversion, leads by source, the charts on the screen, the list of leads and messages per day.
+
+<Tip>
+  Compare the **Conversion rate** across the rows of the **Leads by source** table. This way you find out which sources bring leads that actually close.
+</Tip>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="The funnel does not show. What should I do?">
+    The funnel depends on a pipeline with stages. If you see **No pipeline created** or **Pipeline without stages**, create the pipeline and the stages on the [Pipeline](/en/crm/pipeline) screen. If the pipeline exists but there are no leads, the funnel shows as soon as the first lead comes in.
+  </Accordion>
+  <Accordion title="I see a notice saying no channel was assigned to my account.">
+    Your user does not have channels enabled yet. Until then, the Dashboard does not show leads or statistics. Ask the person in charge of the account to assign the channels in [Team](/en/conta/equipe).
+  </Accordion>
+  <Accordion title="Why is the funnel total higher than the number of leads in the period?">
+    They are different counts. **Leads in period** only counts the leads created in the period. The funnel total counts all contacts in the stages right now, including idle ones.
+  </Accordion>
+  <Accordion title="What counts as converted?">
+    A lead that is in a pipeline stage marked as conversion. Leads in a loss stage count as **Lost**.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Pipeline" icon="table-columns" href="/en/crm/pipeline">
+    Create stages and move your leads.
+  </Card>
+  <Card title="Weekly Report" icon="file-lines" href="/en/gestao/relatorios">
+    Get a summary of the week.
+  </Card>
+</CardGroup>

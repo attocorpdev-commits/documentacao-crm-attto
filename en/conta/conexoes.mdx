@@ -1,0 +1,245 @@
+---
+title: "Connections"
+description: "Connect and manage the WhatsApp numbers and Instagram accounts that serve customers through the CRM."
+icon: "plug"
+---
+
+The connections screen brings together all of your company's channels. A channel is each WhatsApp number or Instagram account linked to the CRM.
+
+## How to access
+
+In the side menu, open **Settings** and click **Connections**. The screen opens with the title **Integrations**.
+
+It is split into three groups:
+
+| Group | Options |
+| --- | --- |
+| **WhatsApp** | **WhatsApp** (by QR Code) and **Official WhatsApp (Meta)** |
+| **Instagram** | **Official Instagram (Meta)** |
+| **Tracking** | **Conversion Tracking** |
+
+The two types of WhatsApp work differently. See the comparison in [WhatsApp types](/en/primeiros-passos/tipos-whatsapp).
+
+A green dot next to the option means there is already an active connection. To go back to the list, click **Back to Integrations**.
+
+<Card title="Open Connections in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/connections" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## WhatsApp (QR Code)
+
+Click the **WhatsApp** card. Here you connect numbers by scanning a QR Code.
+
+The full step by step is in [Connect your WhatsApp](/en/primeiros-passos/conectar-whatsapp).
+
+### What the screen shows
+
+- **Channels used**: how many channels you have created and how many your plan allows.
+- The list of channels, each with the **Connected** or **Disconnected** badge.
+- The phone number of each connected channel.
+
+### Actions for each channel
+
+Click the three dots next to the channel to see the actions.
+
+| Action | What it does |
+| --- | --- |
+| **Rename** | Changes the **Channel name** and the **Short name (nickname, up to 5 characters)**, which appears on cards and in conversations. |
+| **Disconnect** | Disconnects the number from the CRM. Appears only on a connected channel. Conversations that already came in through it stay in the CRM. |
+| **Delete channel** | Removes the channel. Appears only on a disconnected channel. |
+
+To delete, type **CONFIRMAR** in the window and click **Delete**.
+
+When the channel is the company's only channel or is linked to the AI, the window shows a warning first: when you delete it, the company no longer has this channel, the AI is unlinked from it and the slot becomes free for you to connect another channel. After the deletion, the CRM also tells you the AI has no channel, so you can link it to another number.
+
+<Warning>
+  Deletion cannot be undone. The channel and all of its settings are removed for good, and the AI stops serving customers through it. Conversations that already came in through this number stay in **WhatsApp**, in the **Support** group.
+</Warning>
+
+<Note>
+  The first channel in the list, marked with a star, cannot be deleted.
+</Note>
+
+### When a number drops
+
+If a number loses its connection, the screen shows the **One number needs to be reconnected** notice and the channel gets the **Needs reconnection** badge. Click **Reconnect**. If it does not come back, scan the QR Code again.
+
+When the CRM tries to reconnect on its own and cannot, it also opens the **Number disconnected** window (or **Numbers disconnected**, if there is more than one), on any screen of the system. It lists the affected numbers and has two buttons:
+
+- **Go to Connections**: takes you to the list of WhatsApp channels to reconnect.
+- **Not now**: closes the notice.
+
+<Note>
+  People with access to specific channels are only notified about the channels they can see. See [Team](/en/conta/equipe).
+</Note>
+
+### When the session gets out of sync
+
+Sometimes the number stays connected, but the session gets out of sync. In that case, some of the messages you send may not reach the customer.
+
+When the CRM notices this, it opens the **WhatsApp session may be out of sync** window (or **WhatsApp sessions may be out of sync**, if there is more than one number). It lists the affected numbers and has two buttons:
+
+- **Sync**: takes you to the list of WhatsApp channels so you can reconnect the number.
+- **Dismiss**: closes the notice.
+
+In the list, the affected channel gets the **Session may be out of sync** badge.
+
+<Note>
+  **Dismiss** only hides the notice, it does not fix the session. If the problem happens again, the notice comes back. To fix it, reconnect the number: click **Reconnect**, when the button appears, or disconnect the channel and scan the QR Code again.
+</Note>
+
+## Official WhatsApp (Meta)
+
+Click the **Official WhatsApp (Meta)** card. The screen has two tabs: **Channels** and **Templates**.
+
+### Connect a channel
+
+<Steps>
+  <Step title="Start the connection">
+    On the **Channels** tab, click **Connect via Meta**. In the window that opens, click **Connect via Meta** again.
+  </Step>
+  <Step title="Confirm">
+    In the **Confirm channel activation** window, click **Yes, connect**.
+  </Step>
+  <Step title="Authorize in the Meta window">
+    A Meta window opens. Choose the account and authorize.
+  </Step>
+  <Step title="Finish">
+    When **Channel connected successfully!** appears, click **Done**.
+  </Step>
+</Steps>
+
+<Tip>
+  If the browser blocks the window, allow pop-ups for the site and click **Try again**. If you prefer help, click **Do it with support**.
+</Tip>
+
+<Note>
+  If your team already receives new lead alerts on WhatsApp, when you finish the connection (or a reconnection) the **Alert templates created** window appears. The CRM creates a single alert message on the new number, which works for all alert types, and it goes through Meta's review. This usually takes a few minutes. Click **Close** or **View template status**, which opens the **Templates** tab. You set up this alert in [AI Agent](/en/ia/agente-ia).
+</Note>
+
+### Manage channels
+
+On each channel you can choose the **Default pipeline for this channel**, to set where leads that come in through it go.
+
+Click the three dots to see the actions. They change depending on whether the channel is connected or not.
+
+| Action | When it appears | What it does |
+| --- | --- | --- |
+| **Rename** | always | Changes the channel's name and short name. |
+| **Disconnect** | connected channel | Disconnects the channel. You can reconnect it later. |
+| **Reauthorize (wrong account)** | connected channel | Removes the channel and starts the connection again, so you can choose the right account at Meta. |
+| **Reconnect** | disconnected channel | Turns the channel back on, using the connection that already exists. |
+| **Delete channel** | always | Removes the channel. Type **CONFIRMAR** and click **Delete**. |
+
+When you click **Reconnect**, the **Reconnect WhatsApp** window opens. Click **Reconnect channel** and confirm with **Yes, connect**. You do not need to open the Meta window and this does not use up a new slot in your plan. At the end, click **Done**.
+
+<Warning>
+  **Reauthorize (wrong account)** removes the channel before reconnecting. Confirm with **Remove and reconnect**. The channel and its settings are removed, and you need to authorize again through Meta and choose the right account. The conversations from this channel are kept. If the removal fails, the CRM tells you nothing was deleted and you can try again in a moment.
+</Warning>
+
+When you delete a channel, the slot becomes free again in your plan and you can connect another number in its place. If the AI was serving customers through it, the CRM tells you the AI has no channel: link the AI to another number.
+
+<Note>
+  The channel only leaves the CRM after the number is actually disconnected. If that disconnection fails, nothing is deleted: the CRM tells you and you can try again in a moment.
+</Note>
+
+The **Silent** badge means the channel has not received messages for more than 7 days. Check whether the number is still active. Owners also receive an email when a channel becomes silent.
+
+<Note>
+  The count looks at the last message received in this channel's conversations. A channel that is receiving messages does not get the badge, and neither does a channel created a few days ago.
+</Note>
+
+### Templates
+
+Templates are ready-made messages approved by Meta. They are used to send messages outside the 24h window.
+
+<Steps>
+  <Step title="Open the Templates tab">
+    If there is more than one channel, choose the channel in the **Channel** field.
+  </Step>
+  <Step title="Create the template">
+    Click **New Template**. Fill in **Name**, **Category** and **Language**.
+  </Step>
+  <Step title="Write the message">
+    Fill in the **Message body**. If you want, add **Header (optional)**, **Footer (optional)** and **Buttons (optional)**.
+  </Step>
+  <Step title="Review and send">
+    See the result on the **Preview** tab and click **Create Template**.
+  </Step>
+</Steps>
+
+The categories are **Marketing**, **Utility** and **Authentication**. The name accepts only lowercase letters, numbers and the underscore.
+
+If you use variables, such as the contact's name, fill in an example for each one. Use made-up examples, such as "Maria". Meta reviews these examples.
+
+<Tip>
+  Just below the **Message body**, click **See variable examples**. The **Variables: two different syntaxes** window shows that in a template the variable is numbered, while in a quick reply it uses the name. See [Quick replies](/en/atendimento/respostas-rapidas).
+</Tip>
+
+| Status | Meaning |
+| --- | --- |
+| **Pending** | Waiting for Meta's approval. |
+| **Approved** | Ready to use. |
+| **Rejected** | Meta did not accept it. Review it and create it again. |
+| **Paused** | The template is temporarily on hold. |
+| **Not created** | The template does not exist on this channel yet. |
+
+Use the search to find a template by name or content. Click **Details** to see the full message.
+
+## Official Instagram (Meta)
+
+Click the **Official Instagram (Meta)** card.
+
+<Note>
+  The Instagram channel is an add-on for the Prime and Ultra plans. On the Start plan, the CRM does not let you add an Instagram channel: the **Instagram channel limit reached** window shows a notice that the channel is exclusive to the Prime and Ultra plans, and the purchase button is not shown. See your plan in [Plans and billing](/en/conta/planos).
+</Note>
+
+<Steps>
+  <Step title="Start the connection">
+    Click **Connect via Meta**. In the window that opens, click **Connect via Meta** again.
+  </Step>
+  <Step title="Confirm and authorize">
+    Click **Yes, connect** and authorize your account in the Meta window.
+  </Step>
+  <Step title="Finish">
+    Click **Done**. The channel appears in the list with the **Connected** badge.
+  </Step>
+</Steps>
+
+The screen shows **Channels used** and how many slots are left in your plan. On each channel you can set the **Default pipeline for this channel**, **Rename** or **Delete channel**.
+
+In **Rename** you fill in the **Channel name** and the **Short name (nickname, up to 5 characters)**, which appears next to the name on cards and in conversations.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I reached the channel limit. How do I connect more?">
+    On Official WhatsApp, the **Plan channel limit reached** window opens, showing how many channels your plan allows and how many you already have. It has the **Close** and **Buy extra channel** buttons. On Instagram, the button is **Purchase Instagram channel**. On the Start plan it does not appear, because the Instagram channel is for the Prime and Ultra plans. On WhatsApp by QR Code, click **Talk to support**.
+  </Accordion>
+  <Accordion title="Does the WhatsApp channel limit count both types?">
+    Yes. The plan limit adds up WhatsApp channels by QR Code and official channels.
+  </Accordion>
+  <Accordion title="I can't see a channel's templates.">
+    The channel may be disconnected. On the **Channels** tab, click the channel's three dots, choose **Reconnect** and then click **Refresh**. With more than one official channel, the button becomes a reload icon next to the **Channel** field.
+  </Accordion>
+  <Accordion title="I connected the wrong Meta account to the official channel. How do I change it?">
+    Click the channel's three dots and choose **Reauthorize (wrong account)**. Confirm with **Remove and reconnect**: the channel is removed and the connection starts again, so you can choose the right account. The conversations from this channel are kept.
+  </Accordion>
+  <Accordion title="I dismissed the out-of-sync session notice and it came back.">
+    **Dismiss** only hides the notice. If the problem happens again on the same number, the CRM warns you again. Reconnect the number to fix it.
+  </Accordion>
+  <Accordion title="Where do I set up ad tracking?">
+    On the **Conversion Tracking** card. See the details in [Meta tracking](/en/marketing/rastreamento-meta).
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Instagram inbox" icon="instagram" href="/en/atendimento/instagram">
+    Reply to your account's messages.
+  </Card>
+  <Card title="Broadcasts" icon="bullhorn" href="/en/marketing/disparos">
+    Use your templates to send bulk messages.
+  </Card>
+</CardGroup>

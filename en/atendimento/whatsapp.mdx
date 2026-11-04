@@ -1,0 +1,350 @@
+---
+title: "WhatsApp"
+description: "Reply to your leads on WhatsApp, organize conversations and update contact details without leaving the screen."
+icon: "whatsapp"
+---
+
+The **WhatsApp** screen brings together the conversations from all your channels, both WhatsApp (QR Code) and Official WhatsApp (Meta). There you reply to messages, send audio and files, choose who handles each conversation and update the lead in the Pipeline.
+
+<Info>
+  Almost everything on this page applies to both types. When something applies to only one of them, the text says so. See the difference in [WhatsApp types](/en/primeiros-passos/tipos-whatsapp).
+</Info>
+
+## How to access
+
+In the side menu, open the **Support** category and click **WhatsApp**.
+
+The screen has three parts: the **Conversations** list on the left, the open conversation in the center and the contact's **Profile** panel on the right.
+
+<Note>
+  If the list shows **Connect WhatsApp to receive messages**, click **Connect WhatsApp**. See the step by step in [Connect your WhatsApp](/en/primeiros-passos/conectar-whatsapp).
+</Note>
+
+<Card title="Open WhatsApp in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/whatsapp" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## Conversation list
+
+Pinned conversations appear first. Then come the conversations with the most recent activity. A conversation with a typed message that was not sent moves up the list and shows the **Draft:** notice.
+
+Each conversation shows the contact's name or number, the channel, the last message and how long ago it arrived. The green number shows unread messages. The circle with initials shows who the owner is. **ME** means the conversation is assigned to you.
+
+When new conversations arrive while you are scrolling the list, a notice like **1 new conversation** appears. Click it to go back to the top.
+
+### Search for a conversation
+
+Use the **Search conversation...** field at the top of the list. The search finds conversations by:
+
+- contact name or number
+- text of a message
+- contact tag
+- date, such as `hoje` or `08/09/2026`
+
+### Filter the list
+
+| Filter | What it shows |
+| --- | --- |
+| **All** | All the conversations you can see |
+| **Mine** | Conversations assigned to you |
+| **Unassigned** | Conversations with no owner |
+
+Each filter shows the total number of conversations. The red number shows how many have unread messages.
+
+Click the bell icon next to the channel selector to turn on **Show unread only**. Click it again to see all of them.
+
+### Switch channels
+
+If you have access to more than one channel, use the **All channels** selector. Choose a channel to see only its conversations. Use **Search channel...** to find a channel by name. The green dot next to the name means the channel is connected.
+
+### Pin and mark as unread
+
+- Hover over the contact's photo and click **Pin conversation**. To undo, click **Unpin**.
+- Hover over the conversation and click **Mark as unread**. It gets a green dot. When you open the conversation, the mark goes away.
+
+### New message alerts
+
+At the top of the list, the bell icon turns the sound and highlight for new messages on or off. The setting applies only to the browser you are using.
+
+## Send messages
+
+<Steps>
+  <Step title="Open the conversation">
+    Click the conversation in the list. The messages appear in the center of the screen.
+  </Step>
+  <Step title="Write the message">
+    Type in the **Type a message...** field.
+  </Step>
+  <Step title="Send">
+    Press **Enter** or click the send button. To add a line break without sending, use **Shift + Enter**.
+  </Step>
+</Steps>
+
+### Delivery marks
+
+Next to the time of each sent message, the CRM shows where it stands:
+
+| Mark | What it means |
+| --- | --- |
+| Spinning circle | **Sending**: the message is going out right now |
+| One tick | **Sent**: WhatsApp accepted the message |
+| Two ticks | **Delivered**: the message reached the contact |
+| Alert icon | **Not delivered: click to try again**. When the CRM knows the reason, it appears in the notice |
+| Clock icon | **Could not send. Tap to try again.** Sending got stuck before it went out |
+
+Click the alert icon or the clock icon to try again. While the CRM retries, the icon spins and shows **Resending…**. To see the status in writing, open **More options** and click **Message info**.
+
+Messages sent by the AI and messages sent by a broadcast follow the same marks, with the real sending status. See [Broadcasts](/en/marketing/disparos).
+
+<Note>
+  The two ticks only appear when delivery is confirmed. If WhatsApp rejects the message after accepting it, the two ticks go away and the message shows the alert icon. The CRM never shows a delivery mark for a delivery that did not happen.
+</Note>
+
+<Note>
+  On Official WhatsApp (Meta), if the failed message was sent with a template, the CRM does not repeat it as plain text. The **Resend using the template** notice appears and the **Send Template** window opens so you can choose the template again.
+</Note>
+
+### Send audio
+
+<Steps>
+  <Step title="Start recording">
+    With the message field empty, click **Record audio**.
+  </Step>
+  <Step title="Stop recording">
+    Click **Stop**. To discard it, click **Cancel**.
+  </Step>
+  <Step title="Send">
+    Check the length of the audio and click the send button.
+  </Step>
+</Steps>
+
+<Note>
+  The first time you record, the browser asks for permission to use the microphone. If you deny it, the CRM shows the steps to allow access.
+</Note>
+
+### Send an image or file
+
+<Steps>
+  <Step title="Open the attachments menu">
+    Click the **+** button (**Attachments and actions**) next to the message field.
+  </Step>
+  <Step title="Choose the type">
+    Click **Attach image** or **Attach file** and select the file on your computer.
+  </Step>
+  <Step title="Send">
+    If you want, write a text to go with it. Then click the send button.
+  </Step>
+</Steps>
+
+You can send images, videos, PDFs, Office documents or compressed files. The size limits are:
+
+| Type | Maximum size |
+| --- | --- |
+| Image | 5 MB |
+| Video and audio | 16 MB |
+| Document | 95 MB |
+
+<Note>
+  On some channels, WhatsApp only accepts photos in JPG or PNG and videos in MP4. A photo in another format, a photo over 5 MB or a video recorded on an iPhone (`.mov`) reaches the contact as a file, so that it still gets there. In the CRM conversation, the message still shows as a photo or video.
+</Note>
+
+### Other actions in the attachments menu
+
+- **Quick reply**: inserts a ready-made message. See [Quick replies](/en/atendimento/respostas-rapidas).
+- **Fix with AI**: corrects the text you typed. The corrected text goes back to the message field. Review it before sending.
+- **Send template**: appears only in Official WhatsApp (Meta) conversations. Sends a message approved by Meta.
+
+<Warning>
+  On Official WhatsApp (Meta), when the contact has not sent a message for more than 24 hours, the **Outside the 24h window** notice appears. In that case the message field and the **\+** button are locked. If the notice shows the **Send Template** button, click it. If it does not, wait for the contact to reply.
+
+  On WhatsApp (QR Code) there is no such window: you can reply at any time.
+</Warning>
+
+<Note>
+  Fill in every field in the **Send Template** window before sending. If a field is left blank, the message does not go out and the CRM shows **Template not delivered** with the reason **Template variable not filled in**.
+</Note>
+
+## Actions on a message
+
+Hover over the message to see the action buttons.
+
+| Action | What it does |
+| --- | --- |
+| **Reply** | Replies quoting the chosen message |
+| **Edit** | Changes a text message you sent less than 15 minutes ago |
+| **Delete for everyone** | Deletes the message for you and for the contact. Available up to 15 minutes after sending |
+| **Delete for me** | Removes the message from the CRM only. The contact still sees it on WhatsApp |
+
+When you click **Edit**, the **Editing message** notice appears above the message field, with the original text. To cancel the edit, click the **X** next to the notice.
+
+The **More options** button (three dots) has other actions:
+
+- **Message info**: shows direction, date, status and type.
+- **Copy**: copies the text.
+- **Forward**: sends the message to other conversations. Select the conversations and click **Forward**.
+- **Pin**: keeps the message at the top of the conversation. Click it at the top to go back to the message.
+- **Star**: marks the message with a star.
+- **Save as**: downloads the image, video or file from the message.
+
+<Note>
+  You can pin up to 3 messages per conversation. To pin another one, click **Unpin** on one of the pinned messages.
+</Note>
+
+### React to a message
+
+Open an image or video in the conversation. In the action bar, click **React** and choose the reaction. This button appears only in WhatsApp (QR Code) conversations.
+
+### Search within the conversation
+
+Click the **Search in conversation** magnifying glass at the top of the conversation. Type the term and use the arrows to move between results.
+
+## Assign or transfer a conversation
+
+<Steps>
+  <Step title="Open the assignment window">
+    At the top of the conversation, click the button that shows the current owner or **Unassigned**.
+  </Step>
+  <Step title="Choose the owner">
+    In the **Assign owner** window, choose **Assign to me**, **Next in queue** or a person from the **Team** list.
+  </Step>
+  <Step title="Check">
+    The new owner's name appears at the top of the conversation.
+  </Step>
+</Steps>
+
+To leave the conversation with no owner, click **Remove assignment**.
+
+The **Queue** button offers **Assign next in queue**, which hands the conversation to the next online salesperson, and **Configure queue**.
+
+If you are an agent and the conversation is assigned to you, the **End** button appears. Enter the reason, if you want, and click **End service**. The responsible manager is notified.
+
+## Turn the AI on and off
+
+The AI controls are at the top of the conversation. They appear according to your plan and your permission. Hover over each icon to see what it does.
+
+| Control | What it does |
+| --- | --- |
+| **Pause integrated AI in this conversation** | The AI stops replying in this conversation only |
+| **Resume integrated AI in this conversation** | The AI replies again in this conversation and the mark showing that a person took over is removed |
+| **Take over** | You take over the conversation and the AI is paused. The conversation gets a [service protocol](/en/ia/protocolo-atendimento) |
+| **Disable Custom AI in this conversation** | Turns off the Custom AI in this conversation only |
+| **Turn off Integrated AI on this channel** | Turns off the Integrated AI in all conversations on the channel |
+| **Reset AI memory** | The AI forgets the history of this conversation and starts from scratch |
+
+When you resume a conversation that was paused, the CRM confirms what happened:
+
+| Notice | When it appears |
+| --- | --- |
+| **The conversation is back with the AI.** | Someone on the team had used **Take over**. The notice adds: **Someone on the team had taken over this conversation. The AI is replying again, only here.** |
+| **The AI is replying in this conversation again.** | The AI was only paused here. The notice adds: **The AI was paused only in this conversation and has been re-enabled.** |
+
+While the CRM saves, the pause and resume button shows a spinning circle and does not accept a second click. If the change is not saved, the conversation goes back to how it was and **Could not change the AI in this conversation.** appears with **Nothing was changed. Please try again in a moment.**
+
+<Tip>
+  Resuming the conversation also removes the **With a person** mark from it. With that, it can once again be turned on and off in bulk on the [AI Agent](/en/ia/agente-ia) screen.
+</Tip>
+
+<Note>
+  **Reset AI memory** appears for the account owner and for anyone with access to the [AI Agent](/en/ia/agente-ia) screen.
+</Note>
+
+<Note>
+  When the AI replies with audio, the contact receives a voice note, as if someone had recorded it. When it replies with a photo or video, the message arrives as a photo or video.
+</Note>
+
+<Warning>
+  The AI icons at the top of the **Conversations** list turn the AI on or off in all conversations or on all of the company's channels. Use them with care.
+</Warning>
+
+### When the AI is off in all conversations
+
+On the [AI Agent](/en/ia/agente-ia) screen you can use **Turn the AI off for all conversations**. This also applies to new conversations that come in. When this option is on, conversations that have the AI controls show a notice at the top:
+
+| Notice at the top of the conversation | What it means |
+| --- | --- |
+| **AI globally off** | The AI does not reply in this conversation |
+| **AI globally off, active here** | The AI stays off in other conversations, but replies again in this one |
+
+With the AI off for all conversations, the pause button changes its function:
+
+- **Turn the AI on only in this conversation (AI globally off)**: allows the AI in this conversation only. The notice changes to **AI globally off, active here**.
+- **Back to global (turn the AI off in this conversation)**: undoes the exception. The conversation goes back to following the general setting.
+
+This works even when the conversation was paused by a person, either with the **Take over** button or with **Pause integrated AI in this conversation**. One click on **Turn the AI on only in this conversation (AI globally off)** does both things at once: it hands the conversation back to the AI and allows the AI in this conversation only. You do not need to turn the AI back on for all conversations.
+
+The CRM confirms with the same resume notice: **The conversation is back with the AI.** when someone had used **Take over**, or **The AI is replying in this conversation again.** when the AI was only paused.
+
+<Note>
+  The **AI globally off** notice appears on wide screens. On narrow screens it is hidden, but the pause button still works the same way.
+</Note>
+
+To set up how the AI replies, see [AI Agent](/en/ia/agente-ia).
+
+## Contact panel
+
+Click the contact's name or photo at the top of the conversation to open the **Profile** panel.
+
+| Field | What you do |
+| --- | --- |
+| Contact number | Click to copy |
+| **Save contact** | Sets the contact's name. The name is visible to the whole team |
+| **Owner** | Click **Change owner** or **Assign owner** |
+| **Create activity** | Creates an activity linked to this contact |
+| **Pipeline** | Chooses which Pipeline the lead is in |
+| **Stage** | Chooses the lead's stage in the Pipeline |
+| **Tags** | Click **Add tag...** to search for or create a tag |
+| **AI summary** | Shows the conversation summary written by the AI |
+| **Value (R$)** | Deal value |
+| **Notes** | Notes about the lead |
+
+The panel also shows the number of **Received** and **Sent** messages, the **First contact** date and the **Last interaction**.
+
+<Tip>
+  Pipeline, stage and tags are saved as soon as you choose them. After filling in **Value (R$)** and **Notes**, click **Save**.
+</Tip>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I edit a message or delete it for everyone?">
+    These actions are available for 15 minutes after sending. After that, only **Delete for me** appears. Editing works only for text messages.
+  </Accordion>
+  <Accordion title="My file was not attached. What happened?">
+    The CRM tells you when the file type is not accepted or when the file is over the maximum size. Check the limits in the section about sending files.
+  </Accordion>
+  <Accordion title="The conversation I was handling disappeared from the list. Where is it?">
+    Check the selected filter, the chosen channel and whether **Showing unread only** is on. Go back to **All** and **All channels** to see the full list.
+  </Accordion>
+  <Accordion title="I don't see the AI buttons in the conversation. Is that normal?">
+    Yes. The AI controls depend on your plan and your access permission. Talk to the person in charge of your company's account.
+  </Accordion>
+  <Accordion title="The top of the conversation shows AI globally off. Did the AI stop replying?">
+    Yes, while that notice is there. Someone used **Turn the AI off for all conversations** on the [AI Agent](/en/ia/agente-ia) screen. You can allow the AI in this conversation only with the **Turn the AI on only in this conversation (AI globally off)** button.
+  </Accordion>
+  <Accordion title="Someone took over the conversation and the AI won't come back. What do I do?">
+    Click the AI button at the top of the conversation. One click hands the conversation back to the AI, even with the AI off for all conversations. In that case the AI replies again in this conversation only and the CRM shows **The conversation is back with the AI.**
+  </Accordion>
+  <Accordion title="The message had two ticks and now shows an alert. Why?">
+    WhatsApp accepted the message and then rejected it. The CRM removes the two ticks so it does not show a delivery that did not happen. Click the alert icon to try again.
+  </Accordion>
+  <Accordion title="I clicked to resend and the CRM opened the template list. Why?">
+    This happens on Official WhatsApp (Meta). The failed message was a template. To make sure it is delivered correctly, the CRM does not repeat it as plain text: it shows **Resend using the template** and opens the **Send Template** window so you can choose the template again.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Quick replies" icon="bolt" href="/en/atendimento/respostas-rapidas">
+    Create ready-made messages to reply faster.
+  </Card>
+  <Card title="Instagram" icon="instagram" href="/en/atendimento/instagram">
+    Reply to Instagram messages.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/en/crm/pipeline">
+    Track each lead in the sales funnel.
+  </Card>
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Connect and manage your channels.
+  </Card>
+</CardGroup>

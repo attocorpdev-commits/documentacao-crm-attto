@@ -1,0 +1,174 @@
+---
+title: "Meta tracking"
+description: "Tell Meta which leads from your ads moved forward or bought, so your ads find better customers."
+icon: "bullseye"
+---
+
+When you advertise on Facebook or Instagram, Meta knows who clicked the ad. But it does not know what happened next, in the WhatsApp conversation.
+
+**Conversion Tracking** solves this. Whenever a lead from an ad reaches an important stage in the Pipeline, the CRM tells Meta. This notice is called a conversion. With it, your ads learn to look for people similar to the ones who actually buy.
+
+<Note>
+  The notice is only sent for leads that came from an ad with a WhatsApp button (Click-to-WhatsApp). Leads that came in other ways do not generate conversions.
+</Note>
+
+<Note>
+  Available on the **Prime** and **Ultra** plans. See [Plans and billing](/en/conta/planos).
+</Note>
+
+## How to access
+
+In the side menu, open **Settings** and click **Connections**. In the **Tracking** group, click **Conversion Tracking**.
+
+On a phone, the item shows in the menu as **Tracking**.
+
+<Note>
+  This screen depends on your plan and your access permission. If you do not see it, talk to the person in charge of your company's account.
+</Note>
+
+<Card title="Open Conversion Tracking in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/connections/rastreamento" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+## What you need to have on hand
+
+The two items below come from your ad account, in Meta's Events Manager:
+
+- **Meta Pixel**: the pixel is the number that identifies your ad account to receive the conversion notices. In Meta, it also shows as Dataset ID.
+- **Conversions API Token**: an access key, generated in Meta, that allows the CRM to send the notices.
+
+If someone else manages your ads, ask them for these two items.
+
+## Connect to Meta
+
+<Steps>
+  <Step title="Fill in the Pixel">
+    In the **Meta Conversions API** panel, paste the number in the **Meta Pixel** field.
+  </Step>
+  <Step title="Paste the access key">
+    In the **Conversions API Token** field, paste the key generated in Meta.
+  </Step>
+  <Step title="Test the connection">
+    Click **Test connection**. If everything is correct, you see the message **Connection tested successfully. You can now turn on tracking.**
+  </Step>
+  <Step title="Turn on tracking">
+    Turn on the switch in the corner of the panel. The text next to it changes from **Inactive** to **Active**.
+  </Step>
+</Steps>
+
+<Warning>
+  The CRM only lets you turn it on after a successful test. If you change the Pixel or the access key, test again before turning it on.
+</Warning>
+
+<Note>
+  After testing, the top of the screen shows the notice **This is the result of a connection TEST**. It only refers to the test: no real conversion was sent. When you finish adjusting, click **Clear** to remove this result from the screen.
+</Note>
+
+Once saved, the access key is no longer shown. In its place you see **Token configured**. To replace it, click **Replace**, paste the new key and click **Test connection**. Once the test passes, click **Save**. With tracking active, the CRM only lets you save after a successful test.
+
+While the activation switch is off, the screen says the module is inactive and no conversion is sent.
+
+## Choose which stage sends which event
+
+The connection alone does not send anything. You need to say which Pipeline stages count as a conversion.
+
+<Steps>
+  <Step title="Open the Pipeline">
+    In the **Map stages → events** panel, click **Go to Pipeline**.
+  </Step>
+  <Step title="Open stage editing">
+    Hover over a column title and click the pencil icon, **Edit stages**.
+  </Step>
+  <Step title="Choose the stage's event">
+    Edit the stage you want. In the **Meta conversion:** field, choose the event it should send.
+  </Step>
+  <Step title="Choose whether to send a value">
+    If you want, set the value that goes with the conversion: **No value**, **Lead value** or **Appointment price**. When you move the card in the Pipeline, the value is only sent with the **Lead value** option.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The stage now shows a label with the event name.
+  </Step>
+</Steps>
+
+### Available events
+
+| Option on screen | When to use |
+| --- | --- |
+| **Don't send (CRM only)** | The stage does not notify Meta |
+| **Lead (arrived)** | The lead got in touch |
+| **Contact** | There was a conversation with the lead |
+| **Schedule** | The lead booked a time |
+| **Purchase** | The lead closed the deal |
+
+<Tip>
+  Start simple. Select **Purchase** on the stage where the sale is closed.
+</Tip>
+
+From then on, whenever a lead from an ad enters a marked stage, the CRM sends the conversion. To learn more about stages, see [Pipeline](/en/crm/pipeline).
+
+## Check that it is working
+
+The screen shows notices when something needs attention:
+
+- **No stage sends conversions yet.** Tracking is active, but no Pipeline stage has an event chosen. Mark at least one stage.
+- **The last conversion was not sent to Meta.** The last attempt failed. Check the Pixel and the access key and click **Test connection** again. This notice only shows when the failure was on a real conversion.
+- **No conversion has reached Meta yet** or **No conversion has reached Meta in X days** (X is the number of days since the last one). Tracking is on, but Meta has not confirmed any conversion in the last 7 days. When there is an older confirmed conversion, the notice shows **Last confirmed conversion:** with the date and time. Click the help icon next to the title to remember what to check: whether leads are arriving from ads with a WhatsApp button and whether the Pipeline stages have an event chosen.
+- **This is the result of a connection TEST.** The last saved result came from the **Test connection** button, not from a real conversion. That is why it does not show the real health of tracking. Right below it you read **The connection test passed.** or **The connection test failed.** When Meta explains the reason, it shows along with the date and time.
+- **Meta rejected.** The test did not pass. Review the data you pasted. If you need help, open **Technical details (for support)** and send this information to support.
+
+To remove the test result from the screen, click **Clear**, in the corner of the notice. This only deletes that record: the next send, test or real, shows again.
+
+<Note>
+  Only a conversion that Meta confirmed it received counts as sent. Results from the **Test connection** button do not count.
+</Note>
+
+In **Connections**, the **Conversion Tracking** item shows a green dot when tracking is active.
+
+### See tests inside Meta
+
+The **Test event code (optional)** field lets you follow tests in Meta itself. Copy the code in Events Manager, paste it in this field, click **Test connection** and then **Save**. Test events show in Meta's **Test events** tab.
+
+The field opens empty every time you enter the screen. Paste the code again whenever you test.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Do I need a website to use tracking?">
+    No. The notices are sent by the CRM itself, when the lead changes stage in the Pipeline.
+  </Accordion>
+  <Accordion title="I moved a lead and nothing was sent. Why?">
+    Check three things: tracking is **Active**, the destination stage has an event in **Meta conversion:** and the lead came from an ad with a WhatsApp button.
+  </Accordion>
+  <Accordion title="The screen says no conversion reached Meta. What should I check?">
+    Check two things: the Pipeline stages have an event chosen in **Meta conversion:** and the leads that moved forward came from ads with a WhatsApp button. If no ad lead went through these stages in the last few days, the notice is expected and goes away on its own with the next send. If everything is correct and the notice stays, click **Test connection** to check the Pixel and the access key.
+  </Accordion>
+  <Accordion title="The test notice stayed on the screen. Is something wrong with tracking?">
+    Not necessarily. This notice shows the result of the last **Test connection**, which does not reflect the real health of tracking. Click **Clear** to remove the notice and keep an eye on the next real sends.
+  </Accordion>
+  <Accordion title="I renamed a stage. Does the event still work?">
+    Yes. The stage keeps sending the same event. The CRM reminds you to check whether the new name still matches it.
+  </Accordion>
+  <Accordion title="Why can't I see the access key I saved?">
+    For security, it is stored and never shown again. If you need to change it, click **Replace** and paste a new one.
+  </Accordion>
+  <Accordion title="How do I stop sending conversions?">
+    Turn off the activation switch in the **Meta Conversions API** panel. The text changes to **Inactive** and sending stops right away.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Pipeline" icon="table-columns" href="/en/crm/pipeline">
+    Organize the stages of your sales funnel.
+  </Card>
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Manage your channels and integrations.
+  </Card>
+  <Card title="Dashboard" icon="chart-line" href="/en/gestao/dashboard">
+    Track your customer service numbers.
+  </Card>
+  <Card title="Weekly Report" icon="file-lines" href="/en/gestao/relatorios">
+    See performance analyses.
+  </Card>
+</CardGroup>
