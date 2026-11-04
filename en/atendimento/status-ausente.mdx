@@ -1,0 +1,122 @@
+---
+title: "Status and away"
+sidebarTitle: "Status and away"
+description: "Choose whether you are Online, Away or Offline and understand the inactivity warning and how your status affects conversation distribution."
+icon: "user-clock"
+---
+
+Your status tells the team and the CRM whether you are available to handle conversations. It decides whether you receive new conversations through automatic distribution.
+
+## The three statuses
+
+| Status | Color | Receives new conversations from automatic distribution? |
+| --- | --- | --- |
+| **Online** | Green | Yes, if you take part in the support queue. |
+| **Away** | Yellow | No. |
+| **Offline** | Gray | No. |
+
+The colored dot on your photo shows your current status. The same dot appears next to your name for the team, for example in the **Configurar Fila** window and in the **Team now** table of the [Manager Area](/en/gestao/area-gestor).
+
+## Your status changes on its own
+
+- When you open the CRM, your status becomes **Online**.
+- When you close the CRM tab or sign out, your status becomes **Offline**.
+- If the browser closes without notifying the CRM, you stop receiving new conversations after 10 minutes.
+
+<Warning>
+  If you chose **Away** and then closed and reopened the CRM, your status goes back to **Online**. Check the dot on your photo every time you sign in.
+</Warning>
+
+## Change your status
+
+<Steps>
+  <Step title="From the profile menu">
+    Click your photo or initial, in the top right corner, and choose **Online**, **Away** or **Offline** under **Status**.
+  </Step>
+  <Step title="From preferences">
+    In **My Profile**, open **Preferences** and choose under **Status**.
+  </Step>
+</Steps>
+
+The change applies right away to conversation distribution.
+
+## Inactivity warning
+
+The warning appears only for team members. The company owner does not get it.
+
+After 25 minutes without using the CRM, the **Are you still there?** window opens, with the text **In 2 minutes your status changes to Away and you stop receiving new conversations.** A countdown shows the time left **until you're marked as away**.
+
+| Button | What happens |
+| --- | --- |
+| **Continue** | The window closes, you stay **Online** and the 25 minutes start over. |
+| **Set me as away** | Your status changes to **Away** right away and the window closes. |
+
+<Tip>
+  For the CRM, using it means clicking, typing, scrolling or tapping the screen. Just moving the mouse does not count.
+</Tip>
+
+<Note>
+  If you are already **Away** or **Offline**, the warning does not appear.
+</Note>
+
+### When the countdown ends
+
+If nobody answers within 2 minutes, your status changes to **Away**. The window then shows **Welcome back**, with the time you went away, and tells you that you did not receive new conversations from the queue in the meantime.
+
+| Button | What happens |
+| --- | --- |
+| **Resume work** | Your status goes back to **Online**. |
+| **Stay as away** | The window closes and you stay **Away**. |
+
+The countdown follows the clock, even with the CRM in another tab or the computer asleep. If the time ran out while you were gone, you see **Welcome back** as soon as you return.
+
+<Tip>
+  The Esc key also answers the window. During the countdown, it works as **Continue**. After you went away, it works as **Stay as away**.
+</Tip>
+
+## What your status changes in customer service
+
+| Situation | What happens |
+| --- | --- |
+| A new conversation arrives and you are **Online** | You may receive it through automatic distribution. See [Queue and round-robin](/en/atendimento/fila-rodizio). |
+| A new conversation arrives and you are **Away** or **Offline** | It goes to another available person or goes on hold. |
+| You go back **Online** and there are conversations on hold | The conversation that has been waiting the longest may go to you. |
+| Conversations that are already yours | Stay with you, whatever your status. |
+| Assignment from the Pipeline | People who are **Away** or **Offline** cannot be chosen in **Conversation owner**. |
+| Assignment from the **WhatsApp** screen | Anyone in the **Team** list can be chosen, even if away. |
+
+Your status does not change your notifications. Bell and push alerts follow the choices you made in the bell's **Preferences** tab. See [Profile](/en/conta/perfil).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I'm going to lunch. Do I need to change my status?">
+    It is the safest choice. Pick **Away** before you leave, so you do not receive new conversations while you are gone. If you forget, the inactivity warning does it for you after 25 minutes plus the 2-minute countdown.
+  </Accordion>
+  <Accordion title="I'm Online, but I'm not getting new conversations. Why?">
+    Check whether **Participates in the support queue** is checked in your permissions, whether you have access to the channel and, with **Fila automática** on, whether you are on the list with **Ativo na fila** on. The owner or a manager can change this. See [Queue and round-robin](/en/atendimento/fila-rodizio).
+  </Accordion>
+  <Accordion title="The Are you still there? warning never shows up for me.">
+    It does not show up for the company owner. It also does not show up if you are already **Away** or **Offline**.
+  </Accordion>
+  <Accordion title="Does going away take my conversations?">
+    No. You remain the owner of the conversations that are already yours. You only stop receiving new conversations through automatic distribution.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Queue and round-robin" icon="shuffle" href="/en/atendimento/fila-rodizio">
+    See how new conversations are distributed.
+  </Card>
+  <Card title="Profile" icon="user" href="/en/conta/perfil">
+    Adjust your details, theme, language and notifications.
+  </Card>
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    Set who takes part in the support queue.
+  </Card>
+  <Card title="Manager Area" icon="chart-line" href="/en/gestao/area-gestor">
+    See who on the team is online right now.
+  </Card>
+</CardGroup>

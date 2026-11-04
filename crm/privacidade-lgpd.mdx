@@ -1,0 +1,168 @@
+---
+title: "Privacidade e LGPD"
+sidebarTitle: "Privacidade e LGPD"
+description: "Exporte ou anonimize os dados de um contato, silencie a IA para uma pessoa e entenda o que o CRM guarda depois."
+icon: "shield-halved"
+---
+
+Quando um contato pede para ver ou apagar os dados dele, o CRM tem ferramentas para você atender o pedido sem sair da tela de Contatos. Esta página mostra cada uma, quem pode usar e o que acontece com os dados.
+
+<Note>
+  Esta página explica como as ferramentas funcionam no CRM. Ela não é orientação jurídica. Para saber como a Atto Corp trata os dados da sua conta, veja [Políticas](/empresa/politicas). Em caso de dúvida sobre as suas obrigações, consulte o seu jurídico.
+</Note>
+
+## O que você pode fazer
+
+| Ferramenta | Onde fica | Para que serve |
+| --- | --- | --- |
+| **Exportar dados do titular** | Painel do contato, bloco **Privacidade (LGPD)** | Baixa um arquivo com os dados daquele contato na sua empresa |
+| **Anonimizar titular** | Painel do contato, bloco **Privacidade (LGPD)** | Troca nome, telefone, mensagens e dados do contato por valores anônimos |
+| **IA responde este contato** | Painel do contato | Liga ou desliga a IA só para aquela pessoa |
+| Descadastro em disparos | Automático, nos [Disparos](/marketing/disparos) | Tira dos disparos quem pediu para sair |
+
+## Quem pode usar
+
+| Ação | Quem vê a opção |
+| --- | --- |
+| **Exportar dados do titular** e **Anonimizar titular** | Dono da conta e **Gerente** |
+| **IA responde este contato** | Dono da conta, **Gerente** e quem tem a permissão do Agente IA |
+
+Para quem tem o papel **Agente de Atendimento**, o bloco **Privacidade (LGPD)** não aparece. Veja os papéis em [Equipe](/conta/equipe).
+
+## Encontrar o bloco de privacidade
+
+<Steps>
+  <Step title="Abra o contato">
+    No menu lateral, abra **CRM**, clique em **Contatos** e clique na linha do contato. Abre o painel lateral com os dados dele.
+  </Step>
+  <Step title="Role até o fim do painel">
+    O bloco **Privacidade (LGPD)** fica no fim do painel, depois de **Agendar atividade**.
+  </Step>
+</Steps>
+
+## Exportar os dados de um contato
+
+Clique em **Exportar dados do titular**. O CRM baixa um arquivo `.json` com o nome `lgpd-titular-` seguido do nome ou telefone do contato e da data. Ao terminar, aparece **Dados do titular exportados**.
+
+O arquivo reúne o que a sua empresa tem sobre essa pessoa no CRM, por exemplo:
+
+- os cadastros do contato nos pipelines, com as tags;
+- as conversas e mensagens no WhatsApp e no Instagram;
+- atividades, agendamentos e mudanças de etapa;
+- envios de disparos e de follow-up;
+- os resumos e as informações que a IA guardou sobre o contato;
+- se o número está na lista de não contato ou na [base externa](/crm/importar-contatos#importar-uma-base-externa);
+- a lista dos anexos das conversas.
+
+<Tip>
+  O arquivo é feito para ser lido por sistemas. Se você precisar entregar os dados ao contato, guarde o arquivo em local seguro e envie por um canal de confiança.
+</Tip>
+
+Se aparecer **Nenhum dado encontrado para este titular**, o CRM não achou nada desse contato na sua empresa.
+
+## Anonimizar um contato
+
+A anonimização troca os dados pessoais por valores anônimos em todos os funis e conversas da sua empresa. Ela não pode ser desfeita.
+
+<Warning>
+  Esta ação é irreversível. Os dados originais não podem ser recuperados. Se você precisa de uma cópia, use **Exportar dados do titular** antes.
+</Warning>
+
+<Steps>
+  <Step title="Abra a confirmação">
+    No bloco **Privacidade (LGPD)**, clique em **Anonimizar titular**. Abre a janela **Anonimizar titular**, com o resumo do que vai acontecer.
+  </Step>
+  <Step title="Digite a palavra de confirmação">
+    No campo, digite `ANONIMIZAR`. Maiúsculas e minúsculas não fazem diferença.
+  </Step>
+  <Step title="Confirme">
+    Clique em **Anonimizar definitivamente**. Para desistir, clique em **Cancelar**.
+  </Step>
+</Steps>
+
+Ao terminar, aparece **Titular anonimizado**, o painel fecha e a lista é recarregada. O aviso também diz quantas mídias foram removidas.
+
+### O que muda
+
+| Dado | Depois da anonimização |
+| --- | --- |
+| Nome | Passa a ser **Titular anonimizado** |
+| Telefone | Vira um código numérico anônimo |
+| Mensagens, notas e resumos | O texto vira `[anonimizado]` |
+| Fotos, áudios, vídeos e arquivos das conversas | São apagados |
+| IA e follow-ups | Ficam desligados para esse número |
+
+### O que o CRM guarda
+
+- **Os números das suas métricas.** Os registros não são apagados, só têm o conteúdo trocado. Por isso, contagens e relatórios continuam batendo.
+- **O telefone na lista de não contato.** É o mínimo para o CRM não voltar a falar com essa pessoa. Uma conversa nova desse número já começa com a IA desligada.
+- **O número na base externa do tipo Bloqueado**, se ele estava lá. Sem isso, o bloqueio deixaria de valer.
+- **Um registro da ação**, com data e quantidades, sem nenhum dado pessoal.
+
+### Mídias que não são apagadas
+
+Uma mídia é mantida quando está fora do CRM, quando é compartilhada ou quando aparece em outra conversa. Nesse caso, o aviso final diz quantas foram mantidas e que isso ficou registrado.
+
+Se o CRM não conseguir confirmar a remoção de alguma mídia, o aviso mostra quantas ficaram pendentes. A anonimização já aconteceu, e as pendentes ficam registradas para limpeza.
+
+## Silenciar a IA para um contato
+
+Quando alguém pede para não ser atendido pela IA, você pode desligar a IA só para essa pessoa.
+
+<Steps>
+  <Step title="Abra o contato">
+    Em **Contatos**, clique na linha do contato.
+  </Step>
+  <Step title="Desligue a chave">
+    No topo do painel, desligue **IA responde este contato**. Aparece **Contato silenciado: a IA não responde a ele**.
+  </Step>
+</Steps>
+
+O contato ganha a etiqueta **Silenciado**. A equipe continua atendendo normalmente. Para ver todos os contatos nessa situação, use o filtro **Silenciados** na lista.
+
+Para religar, ligue a chave de novo. Se o contato foi silenciado pelo dono ou por um gerente, quem tem só a permissão do Agente IA pode não conseguir religar.
+
+<Tip>
+  Para silenciar vários contatos de uma vez, use a opção **Silenciar (IA desligada)** ao [importar contatos](/crm/importar-contatos#a-ia-nos-contatos-importados).
+</Tip>
+
+## Descadastro em disparos
+
+Quem responde a um disparo pedindo para sair, com palavras como "sair" ou "parar", aparece com a etiqueta **Descadastrado** e não recebe mais disparos. O descadastro pedido pela própria pessoa nunca é desfeito sozinho. Veja as regras completas em [Disparos](/marketing/disparos).
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Qual a diferença entre excluir e anonimizar um contato?">
+    **Excluir**, na lista de Contatos, apaga o cadastro do contato. **Anonimizar titular** troca os dados da pessoa por valores anônimos em todos os funis e conversas da empresa, apaga as mídias e coloca o número na lista de não contato.
+  </Accordion>
+  <Accordion title="Depois de anonimizar, a pessoa pode voltar a falar comigo?">
+    Pode. Se ela mandar mensagem de novo, a conversa entra no CRM com a IA desligada. A sua equipe atende normalmente.
+  </Accordion>
+  <Accordion title="Apareceu um aviso sobre mais de um perfil com o mesmo @usuário.">
+    Isso acontece com contatos do Instagram. O CRM não sabe qual dos perfis é o certo e não faz nada. Abra o contato pelo telefone ou pelo identificador dele e tente de novo.
+  </Accordion>
+  <Accordion title="Por que não vejo o bloco Privacidade (LGPD)?">
+    O bloco aparece só para o dono da conta e para quem tem o papel **Gerente**. Peça a um deles para fazer a exportação ou a anonimização.
+  </Accordion>
+  <Accordion title="A anonimização vale para as outras empresas da minha conta?">
+    Não. Ela vale só para a empresa que está ativa no CRM. Se o contato também está em outra empresa, troque de empresa e repita o processo.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Contatos" icon="address-book" href="/crm/contatos">
+    Abra o painel do contato e edite os dados.
+  </Card>
+  <Card title="Políticas" icon="book-bookmark" href="/empresa/politicas">
+    Política de Privacidade e Termos de Uso da Atto Corp.
+  </Card>
+  <Card title="Disparos" icon="paper-plane" href="/marketing/disparos">
+    Veja como funciona o descadastro.
+  </Card>
+  <Card title="Equipe" icon="users" href="/conta/equipe">
+    Defina quem é Gerente na sua empresa.
+  </Card>
+</CardGroup>

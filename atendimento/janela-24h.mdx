@@ -1,0 +1,142 @@
+---
+title: "Janela de 24 horas do WhatsApp Oficial"
+sidebarTitle: "Janela de 24 horas"
+description: "Entenda a janela de 24 horas do WhatsApp Oficial (Meta), como o CRM avisa quando ela fecha e como voltar a falar com o contato usando um template."
+icon: "clock"
+keywords: ["janela de 24 horas", "24h", "WhatsApp Oficial", "Meta", "template", "fora da janela", "campo bloqueado"]
+---
+
+A janela de 24 horas é uma regra da Meta para o WhatsApp Oficial (Meta). Ela define quando você pode mandar mensagem livre para o contato e quando só pode mandar um template aprovado.
+
+<Info>
+  Esta página vale só para o **WhatsApp Oficial (Meta)**. No WhatsApp (QR Code) não existe janela: você responde a qualquer momento. Veja a diferença em [Tipos de WhatsApp](/primeiros-passos/tipos-whatsapp).
+</Info>
+
+## Como a janela funciona
+
+- A janela abre quando o contato manda uma mensagem para o seu número.
+- Ela fica aberta por 24 horas, contadas a partir da **última mensagem do contato**.
+- Enquanto está aberta, você responde com texto, áudio, imagem e arquivo, como em qualquer conversa.
+- Quando passam 24 horas sem mensagem nova do contato, a janela fecha. A partir daí só sai **template** aprovado pela Meta.
+- Quando o contato escreve de novo, a janela abre outra vez por mais 24 horas.
+
+<Note>
+  As suas mensagens não reabrem a janela. Só a mensagem do contato conta.
+</Note>
+
+### Contato que nunca escreveu
+
+Se o contato nunca mandou mensagem por aquele canal, a janela já começa fechada. Para iniciar a conversa, você precisa enviar um template.
+
+Nesse caso, a área da conversa mostra **Este contato ainda não tem conversa neste canal. Envie um template para iniciar.**
+
+## Como o CRM mostra a janela fechada
+
+Quando a janela está fechada, a conversa muda assim:
+
+| O que você vê | Onde aparece |
+| --- | --- |
+| Aviso **Fora da janela de 24h. Apenas templates disponíveis.** com o botão **Enviar Template** | Acima do campo de mensagem |
+| Texto **Janela de 24h expirada. Envie um template para reabrir a conversa.** | Dentro do campo de mensagem |
+| Campo de mensagem, botão **\+** (**Anexos e ações**), botão de gravar áudio e botão de enviar bloqueados | Na barra de envio |
+
+Em alguns canais oficiais o aviso aparece com outro texto: **Fora da janela de 24h: o cliente precisa responder para reabrir a conversa. Para iniciar, envie um template aprovado pelo fluxo de templates do canal.** Esse aviso não traz o botão **Enviar Template**. Nesse caso, aguarde o contato responder.
+
+<Note>
+  No WhatsApp o CRM não mostra contagem regressiva do tempo que falta. O aviso aparece quando a janela já fechou. Para saber se ela ainda está aberta, olhe o horário da última mensagem do contato.
+</Note>
+
+## Falar com o contato fora da janela
+
+Fora da janela, o único jeito de chegar ao contato é um template aprovado.
+
+<Steps>
+  <Step title="Abra a conversa">
+    Na tela **WhatsApp**, abra a conversa do contato no canal oficial.
+  </Step>
+  <Step title="Clique em Enviar Template">
+    No aviso **Fora da janela de 24h. Apenas templates disponíveis.**, clique em **Enviar Template**.
+  </Step>
+  <Step title="Escolha o template">
+    A janela **Enviar Template** mostra só os templates aprovados daquele canal. Use **Buscar template pelo nome...** para encontrar o modelo.
+  </Step>
+  <Step title="Preencha e envie">
+    Preencha os campos pedidos, como **Preencha as variáveis:**, e clique em **Enviar**.
+  </Step>
+</Steps>
+
+Quando o contato responder ao template, a janela abre de novo. O aviso some e o campo de mensagem volta a funcionar.
+
+O passo a passo completo, com variáveis, cabeçalho e botões, está em [Templates do WhatsApp Oficial](/atendimento/templates-whatsapp).
+
+<Tip>
+  Para falar com muitos contatos de uma vez fora da janela, use um disparo com template. Veja [Disparos](/marketing/disparos).
+</Tip>
+
+<Note>
+  Ainda não tem template aprovado? A janela **Enviar Template** mostra **Nenhum template aprovado encontrado.** Crie um em **Conexões**, no cartão **WhatsApp Oficial (Meta)**, aba **Templates**, e aguarde a aprovação da Meta.
+</Note>
+
+## A IA fora da janela
+
+Se o Agente IA for acionado numa conversa do WhatsApp Oficial (Meta) com a janela fechada, ele não responde. A conversa fica para uma pessoa da equipe. Nas métricas do Agente IA, esse caso aparece com o motivo **Fora da janela de 24h**.
+
+Veja mais em [Agente IA](/ia/agente-ia).
+
+## E no Instagram?
+
+O Instagram tem uma regra parecida, mas com diferenças:
+
+| | WhatsApp Oficial (Meta) | Instagram |
+| --- | --- | --- |
+| **Prazo** | 24 horas desde a última mensagem do contato | 24 horas desde a última mensagem da pessoa no Direct |
+| **Fora do prazo** | Só sai template aprovado | Não há template. A pessoa precisa mandar mensagem no Direct de novo |
+| **Contagem regressiva** | Não tem | Mostra **Janela do Instagram fecha em** com as horas e minutos que faltam |
+
+No Instagram, comentário no post ou na live não abre esse prazo. Veja os detalhes em [Instagram](/atendimento/instagram).
+
+## Erros comuns
+
+| O que aparece | O que significa | O que fazer |
+| --- | --- | --- |
+| Campo de mensagem bloqueado e aviso **Fora da janela de 24h** | Passaram 24 horas desde a última mensagem do contato | Envie um template ou aguarde o contato responder |
+| Mensagem com ícone de alerta e o motivo **Faz mais de 24h desde a última resposta do cliente. Envie um modelo aprovado para reabrir a conversa.** | A Meta recusou a mensagem porque a janela já tinha fechado | Envie um template aprovado |
+| **Nenhum template aprovado encontrado.** | O canal não tem template aprovado | Crie um template e aguarde a aprovação da Meta |
+| **Template não entregue** com **Variável do modelo não preenchida** | Sobrou uma variável sem valor | Preencha todos os campos e envie de novo |
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Por que não consigo digitar na conversa?">
+    A conversa está fora da janela de 24 horas. O contato não manda mensagem há mais de 24 horas, ou nunca mandou por este canal. Envie um template pelo botão **Enviar Template** ou aguarde o contato responder.
+  </Accordion>
+  <Accordion title="Eu mandei várias mensagens. Por que a janela fechou mesmo assim?">
+    Só a mensagem do contato abre a janela. As mensagens que você ou a sua equipe enviam não contam.
+  </Accordion>
+  <Accordion title="O aviso não mostra o botão Enviar Template. O que eu faço?">
+    Em alguns canais oficiais o aviso não traz esse botão. Aguarde o contato responder para a janela abrir de novo.
+  </Accordion>
+  <Accordion title="Enviei um template. Já posso mandar texto livre?">
+    Ainda não. A janela abre quando o contato responder. Depois disso você pode mandar texto, áudio e arquivos por 24 horas.
+  </Accordion>
+  <Accordion title="O WhatsApp (QR Code) também tem essa regra?">
+    Não. A janela de 24 horas existe só no WhatsApp Oficial (Meta).
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Templates do WhatsApp Oficial" icon="file-lines" href="/atendimento/templates-whatsapp">
+    Crie templates e envie fora da janela.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/atendimento/whatsapp">
+    Atenda seus leads na tela de conversas.
+  </Card>
+  <Card title="Tipos de WhatsApp" icon="code-compare" href="/primeiros-passos/tipos-whatsapp">
+    Diferença entre QR Code e Oficial.
+  </Card>
+  <Card title="Disparos" icon="paper-plane" href="/marketing/disparos">
+    Envie templates para muitos contatos.
+  </Card>
+</CardGroup>

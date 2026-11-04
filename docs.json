@@ -27,8 +27,10 @@
                 "pages": [
                   "index",
                   "primeiros-passos/primeiro-acesso",
+                  "primeiros-passos/planos",
                   "primeiros-passos/tipos-whatsapp",
-                  "primeiros-passos/conectar-whatsapp"
+                  "primeiros-passos/conectar-whatsapp",
+                  "primeiros-passos/problemas-comuns"
                 ]
               },
               {
@@ -36,6 +38,7 @@
                 "pages": [
                   "ia/assistente-ia",
                   "ia/agente-ia",
+                  "ia/entrevista-inicial",
                   "ia/protocolo-atendimento",
                   "ia/creditos"
                 ]
@@ -46,7 +49,11 @@
                   "atendimento/whatsapp",
                   "atendimento/instagram",
                   "atendimento/instagram-mensagens-recusadas",
-                  "atendimento/respostas-rapidas"
+                  "atendimento/respostas-rapidas",
+                  "atendimento/janela-24h",
+                  "atendimento/templates-whatsapp",
+                  "atendimento/fila-rodizio",
+                  "atendimento/status-ausente"
                 ]
               },
               {
@@ -56,7 +63,9 @@
                   "crm/contatos",
                   "crm/tags",
                   "crm/atividades",
-                  "crm/agenda"
+                  "crm/agenda",
+                  "crm/importar-contatos",
+                  "crm/privacidade-lgpd"
                 ]
               },
               {
@@ -81,7 +90,9 @@
                   "conta/equipe",
                   "conta/planos",
                   "conta/perfil",
-                  "conta/seguranca"
+                  "conta/seguranca",
+                  "conta/recuperar-senha",
+                  "conta/trocar-empresa"
                 ]
               },
               {
@@ -104,7 +115,10 @@
             ]
           },
           {
-            "tab": "Atualizações e Novidades"
+            "tab": "Atualizações e Novidades",
+            "pages": [
+              "novidades/changelog"
+            ]
           }
         ]
       },
@@ -119,8 +133,10 @@
                 "pages": [
                   "en/index",
                   "en/primeiros-passos/primeiro-acesso",
+                  "en/primeiros-passos/planos",
                   "en/primeiros-passos/tipos-whatsapp",
-                  "en/primeiros-passos/conectar-whatsapp"
+                  "en/primeiros-passos/conectar-whatsapp",
+                  "en/primeiros-passos/problemas-comuns"
                 ]
               },
               {
@@ -128,6 +144,7 @@
                 "pages": [
                   "en/ia/assistente-ia",
                   "en/ia/agente-ia",
+                  "en/ia/entrevista-inicial",
                   "en/ia/protocolo-atendimento",
                   "en/ia/creditos"
                 ]
@@ -138,7 +155,11 @@
                   "en/atendimento/whatsapp",
                   "en/atendimento/instagram",
                   "en/atendimento/instagram-mensagens-recusadas",
-                  "en/atendimento/respostas-rapidas"
+                  "en/atendimento/respostas-rapidas",
+                  "en/atendimento/janela-24h",
+                  "en/atendimento/templates-whatsapp",
+                  "en/atendimento/fila-rodizio",
+                  "en/atendimento/status-ausente"
                 ]
               },
               {
@@ -148,7 +169,9 @@
                   "en/crm/contatos",
                   "en/crm/tags",
                   "en/crm/atividades",
-                  "en/crm/agenda"
+                  "en/crm/agenda",
+                  "en/crm/importar-contatos",
+                  "en/crm/privacidade-lgpd"
                 ]
               },
               {
@@ -173,7 +196,9 @@
                   "en/conta/equipe",
                   "en/conta/planos",
                   "en/conta/perfil",
-                  "en/conta/seguranca"
+                  "en/conta/seguranca",
+                  "en/conta/recuperar-senha",
+                  "en/conta/trocar-empresa"
                 ]
               },
               {
@@ -196,7 +221,10 @@
             ]
           },
           {
-            "tab": "Updates and news"
+            "tab": "Updates and news",
+            "pages": [
+              "en/novidades/changelog"
+            ]
           }
         ]
       }

@@ -1,0 +1,186 @@
+---
+title: "Queue and round-robin distribution"
+sidebarTitle: "Queue and round-robin"
+description: "Learn how new WhatsApp conversations are distributed across your team and how to assign or transfer a conversation."
+icon: "shuffle"
+---
+
+When a new contact sends a message, the CRM can choose on its own who on the team will handle it. You decide whether that choice follows a fixed order (round-robin) or goes to anyone available. And at any time you can assign or transfer the conversation by hand.
+
+## When distribution happens
+
+Automatic distribution applies to conversations that arrive on **WhatsApp (QR Code)** channels.
+
+| Situation | What the CRM does |
+| --- | --- |
+| A new contact sends the first message | Chooses an owner among the available people. |
+| A contact that already has an owner sends a message | Keeps the same owner. |
+| A contact with no owner sends a message | Puts the conversation on hold until someone becomes available. |
+
+<Note>
+  Conversations from the Official WhatsApp (Meta) and from Instagram are not distributed automatically. For those, set the owner in the **Assign owner** window, explained below.
+</Note>
+
+<Warning>
+  The channel needs at least one person with access. A channel with nobody linked to it does not distribute conversations. See how to give channel access in [Team](/en/conta/equipe).
+</Warning>
+
+## Who can receive conversations
+
+To be part of automatic distribution, a person must meet all of these:
+
+| Condition | Where it is set |
+| --- | --- |
+| Have the **Online** status, with the CRM open | In the profile menu. See [Status and away](/en/atendimento/status-ausente). |
+| Be an active team member or the company owner | In **Company Team**. |
+| Have **Participates in the support queue** checked | In **Company Team**, in the member's permissions. |
+
+People who are **Away** or **Offline** do not receive new conversations. The same goes for someone who closed the browser without signing out: after 10 minutes without a signal from an open CRM, that person stops receiving.
+
+<Tip>
+  Managers and other people who do not handle customers can stay out of distribution. Uncheck **Participates in the support queue** in their permissions. They can still open, reply to and receive conversations assigned by hand.
+</Tip>
+
+## The two distribution modes
+
+<Note>
+  The **Configurar Fila** window and some messages on this page are shown in Portuguese in every language. On this page, the Portuguese label comes first, with the English meaning in parentheses.
+</Note>
+
+| Mode | How the person is chosen |
+| --- | --- |
+| **Fila automática** (automatic queue) on: round-robin | Follows the order of the **Vendedores na fila** (salespeople in the queue) list, starting from whoever is marked as **Próximo** (next). Skips anyone turned off in the queue, out of the support queue or not **Online**. After each hand-off, the turn moves to the next person on the list. |
+| **Fila automática** off | Picks a random person among those who are **Online** and have access to the channel. |
+
+## When nobody is available
+
+If nobody is available at that moment, the conversation stays **Unassigned** and goes on hold. It is not sent to people who are away or offline.
+
+- As soon as someone goes **Online**, the conversation that has been waiting the longest may go to that person.
+- While conversations are on hold, the CRM keeps trying to hand them to someone available with access to the channel, preferring whoever has fewer open conversations.
+- After 24 hours, the conversation leaves the hold and stays **Unassigned**. From then on, someone needs to assign it by hand.
+
+<Tip>
+  To find these conversations, use the **Unassigned** filter in the conversation list. See [WhatsApp](/en/atendimento/whatsapp).
+</Tip>
+
+## Set up the queue
+
+<Note>
+  Only the owner and managers can save the queue settings. For everyone else, the window opens, but the change is not saved and **Erro ao salvar** (error saving) appears.
+</Note>
+
+<Steps>
+  <Step title="Open a conversation">
+    In the side menu, open **WhatsApp** and click any conversation.
+  </Step>
+  <Step title="Open the queue menu">
+    At the top of the conversation, click **Queue**. In the **Assignment queue** menu, click **Configure queue**.
+  </Step>
+  <Step title="Turn on round-robin">
+    In the **Configurar Fila** window, turn on **Fila automática**. The text below changes to **Leads distribuídos automaticamente** (leads distributed automatically).
+  </Step>
+  <Step title="Add people">
+    In **Adicionar vendedor...** (add salesperson), pick a person and click **Adicionar** (add). Repeat for each person who will handle conversations.
+  </Step>
+  <Step title="Set the order">
+    Use the arrows next to each name to move the person up or down the list. The number shows their position in the rotation.
+  </Step>
+</Steps>
+
+Each change is saved right away and the **Fila atualizada** (queue updated) message appears. There is no save button.
+
+### What the list shows
+
+| Element | What it is for |
+| --- | --- |
+| Dot on the avatar | Shows the person's status: green for **Online**, yellow for **Away** and gray for **Offline**. |
+| **Próximo** (next) | Marks who gets the next conversation. The same name appears at the top of the list, in **Próximo:**. |
+| **Ativo na fila** (active in queue) switch | Turn it off to skip the person for a while, without removing them from the list. |
+| **Remover** (remove) trash can | Removes the person from the queue. |
+| **Reiniciar rotação** (restart rotation) | Gives the turn back to the first person on the list. |
+
+To turn round-robin off, turn off **Fila automática**. The text changes to **Distribuição automática desligada** (automatic distribution off) and new conversations are picked at random among available people.
+
+<Warning>
+  The **Vendedores na fila** list and the **Participates in the support queue** option, in **Company Team**, work together. Someone on the list but with **Participates in the support queue** unchecked is skipped in the rotation.
+</Warning>
+
+## Assign or transfer a conversation
+
+You can change the owner at any time, whether automatic distribution is on or not.
+
+<Steps>
+  <Step title="Open the assignment window">
+    At the top of the conversation, click the button that shows the current owner or **Unassigned**.
+  </Step>
+  <Step title="Choose the owner">
+    In the **Assign owner** window, choose one of the options in the table below.
+  </Step>
+  <Step title="Check">
+    The new owner's name appears at the top of the conversation.
+  </Step>
+</Steps>
+
+| Option | What it does |
+| --- | --- |
+| **Assign to me** | You become the owner. **Conversation assigned to you** appears. |
+| **Next in queue** | Hands the conversation to the next **Online** salesperson in the rotation. |
+| A name in the **Team** list | Transfers the conversation to that person. The current one appears as **Current owner**. |
+| **Remove assignment** | Leaves the conversation with no owner. |
+
+The person who receives the conversation is notified by email.
+
+The **Queue** button, at the top of the conversation, also has the **Assign next in queue** shortcut. When it works, a message says the conversation was assigned to that person by the queue.
+
+<Note>
+  **Next in queue** and **Assign next in queue** use the rotation. If **Fila automática** is off, or if nobody on the list is **Online**, **No seller online in the queue** appears.
+</Note>
+
+### From the Pipeline
+
+In the [Pipeline](/en/crm/pipeline), open the card of a WhatsApp lead. In **Conversation owner**, pick the person.
+
+- People who are **Away** or **Offline** appear grayed out and cannot be chosen. If you try, **Este vendedor está ausente/offline e não pode receber atribuições** (this salesperson is away/offline and cannot receive assignments) appears.
+- With **Fila automática** on, a **Fila** (queue) button also appears. It hands the lead to the next salesperson in the rotation.
+
+## Take over is not the same as assign
+
+The **Take over** button, at the top of the conversation, pauses the AI and hands the service to a person. It does not change the conversation owner. For that, use the **Assign owner** window. See [AI Agent](/en/ia/agente-ia) and [Service protocol](/en/ia/protocolo-atendimento).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I got No seller online in the queue. What do I do?">
+    Check three things: whether **Fila automática** is on, whether someone on the list has **Ativo na fila** on and whether that person is **Online**. Meanwhile, assign the conversation to someone in the **Team** list.
+  </Accordion>
+  <Accordion title="I went away. Do I lose the conversations that are already mine?">
+    No. Changing your status does not take conversations away from anyone. You only stop receiving new conversations through automatic distribution.
+  </Accordion>
+  <Accordion title="An old contact wrote again. Will it go to someone else?">
+    No. If the contact already has an owner, the conversation stays with the same person.
+  </Accordion>
+  <Accordion title="Do Instagram conversations also go into the rotation?">
+    No. Automatic distribution applies only to WhatsApp (QR Code) channels. On Instagram and on the Official WhatsApp (Meta), assign through the **Assign owner** window.
+  </Accordion>
+  <Accordion title="Can I assign a conversation to someone who is away?">
+    On the **WhatsApp** screen, yes: the **Team** list shows everyone. In the Pipeline, no: people who are **Away** or **Offline** are blocked in **Conversation owner**.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Status and away" icon="user-clock" href="/en/atendimento/status-ausente">
+    See how your status changes conversation distribution.
+  </Card>
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    Give channel access and set who takes part in the queue.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/en/atendimento/whatsapp">
+    Handle and organize WhatsApp conversations.
+  </Card>
+  <Card title="Manager Area" icon="chart-line" href="/en/gestao/area-gestor">
+    Follow the queue and the team in real time.
+  </Card>
+</CardGroup>
