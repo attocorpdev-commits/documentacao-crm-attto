@@ -1,0 +1,359 @@
+---
+title: "Cobranças"
+sidebarTitle: "Cobranças"
+description: "Suba a planilha de quem deve e o CRM manda lembretes de pagamento automáticos pelo WhatsApp, de segunda a sábado."
+icon: "receipt"
+---
+
+Na tela **Cobranças** você sobe uma planilha com quem deve, quanto e quando vence. O CRM manda os lembretes de pagamento pelo WhatsApp sozinho, no dia e no horário que você escolher. Você acompanha quanto está em aberto, quem pagou e quem respondeu.
+
+<Note>
+  Esta tela cobra os **seus clientes**. Ela não tem relação com a assinatura da sua empresa na Atto Corp. Para ver o seu plano e as suas faturas, veja [Planos e cobrança](/conta/planos).
+</Note>
+
+## Como acessar
+
+No menu lateral, abra **Marketing** e clique em **Cobranças**.
+
+<Card title="Abrir Cobranças no CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/cobrancas" horizontal>
+  Leva direto para a tela. É preciso estar com a sua conta aberta no CRM.
+</Card>
+
+### Quem pode usar
+
+| Perfil | Acesso |
+| --- | --- |
+| Dono da empresa | Sim, quando o plano da empresa inclui **Disparos** |
+| Gerente | Sempre |
+| Outros membros da equipe | Só com a página **Cobranças** marcada em **Páginas permitidas** |
+
+Para liberar a tela para alguém da equipe, veja [Equipe](/conta/equipe).
+
+Se o seu perfil não tiver acesso, a tela mostra: **Seu perfil não tem permissão para acessar as cobranças. Peça ao administrador para liberar a página "Cobranças" nas permissões do plano ou do usuário.**
+
+<Note>
+  Quem só tem acesso a alguns canais de WhatsApp só consegue usar esses canais nas cobranças.
+</Note>
+
+## O que o CRM faz e o que não faz
+
+O CRM **lembra** a pessoa de pagar. Ele não recebe o dinheiro.
+
+- O pagamento acontece pelo link que você coloca na planilha, na coluna **Link de pagamento**. Pode ser o link do seu banco, do seu sistema de cobrança ou de onde você já recebe.
+- O CRM não confere sozinho se a pessoa pagou. Quando o dinheiro cair, você marca a cobrança como paga, uma por uma ou por planilha. Veja [Marcar quem pagou](#marcar-quem-pagou).
+
+## O painel
+
+No topo da tela ficam seis quadros em reais. Cada um mostra o valor e quantas pessoas estão naquela situação.
+
+| Quadro | O que mostra |
+| --- | --- |
+| **Em aberto** | Tudo o que ainda não foi pago |
+| **Vence hoje** | Contas com vencimento hoje |
+| **Vencido de 1 a 7 dias** | Contas vencidas há até uma semana |
+| **Vencido de 8 a 30 dias** | Contas vencidas há até um mês |
+| **Vencido há mais de 30 dias** | Contas vencidas há mais tempo |
+| **Recebido no mês** | O que foi marcado como pago no mês |
+
+Abaixo, em **Suas cobranças**, fica a lista das suas cobranças. Cada cobrança é uma planilha com quem deve e quando vence. Cada linha mostra o nome, a situação, quantas pessoas tem, quantas estão aguardando você, o próximo lembrete e os valores **Em aberto** e **Recebido**.
+
+A situação de cada cobrança aparece num selo:
+
+| Selo | O que significa |
+| --- | --- |
+| **Rascunho** | Salva, mas os lembretes ainda estão desligados |
+| **Lembretes ligados** | O CRM está mandando os lembretes |
+| **Pausada** | Os lembretes estão parados até você ligar de novo |
+
+## Criar uma cobrança
+
+Clique em **Nova cobrança**. O fluxo tem quatro passos.
+
+<Steps>
+  <Step title="Suba sua lista">
+    Preencha **Nome da cobrança**, por exemplo "Mensalidades de dezembro". Só você e sua equipe veem esse nome.
+
+    Em **Por qual WhatsApp os lembretes vão sair?**, escolha o canal. Cada canal mostra o tipo: **WhatsApp oficial** ou **WhatsApp por QR code**.
+
+    Em **Planilha de quem deve**, arraste o arquivo ou clique para escolher. Se preferir, clique em **Baixar planilha modelo** e preencha o modelo pronto.
+  </Step>
+  <Step title="Quando lembrar">
+    Ligue os lembretes que quiser. São quatro:
+
+    - **3 dias antes do vencimento**
+    - **No dia do vencimento**
+    - **2 dias depois do vencimento**
+    - **7 dias depois do vencimento**
+
+    Cada lembrete mostra a data em que sai, com uma conta de exemplo. Escolha também os dias e o horário de envio. Veja a seção "Dias e horário de envio", mais abaixo.
+  </Step>
+  <Step title="O que dizer">
+    Escreva a mensagem de cada lembrete. Já vem uma sugestão pronta. Veja [Escrever a mensagem](#escrever-a-mensagem).
+  </Step>
+  <Step title="Conferir e ligar">
+    Confira o **Resumo**, escolha **Quem cuida das respostas** e, se quiser, mande um teste para o seu WhatsApp. Depois clique em **Ligar lembretes**.
+
+    Ainda não quer ligar? Clique em **Salvar rascunho** e volte depois.
+  </Step>
+</Steps>
+
+### A planilha
+
+A planilha pode ser .csv, .xlsx ou .xls. Ela precisa ter telefone, valor e vencimento. Nome, referente a e link de pagamento ajudam na mensagem.
+
+A planilha modelo tem estas colunas:
+
+| Coluna | Obrigatória | Exemplo |
+| --- | --- | --- |
+| **Nome** | Não | Maria Exemplo |
+| **Telefone** | Sim | 5511900000001 |
+| **Valor** | Sim | 150,00 |
+| **Vencimento** | Sim | 10/12/2026 |
+| **Referente a** | Não | Mensalidade de dezembro |
+| **Link de pagamento** | Não | Link da sua cobrança |
+
+<Tip>
+  Não precisa usar exatamente esses nomes de coluna. O CRM reconhece variações comuns, como "Cliente" para nome, "Vcto" para vencimento ou "Pix" e "Boleto" para o link.
+</Tip>
+
+Depois de ler o arquivo, a tela mostra quantas linhas estão **prontos** e quantas estão **sem telefone**, **com data estranha** ou **com valor estranho**.
+
+- Em **Corrija as linhas com problema**, ajuste o telefone, o valor ou o vencimento ali mesmo, ou clique em **Remover**. Linha com problema não recebe lembrete.
+- Linhas repetidas, com o mesmo telefone e o mesmo vencimento, ficam de fora.
+- Se a planilha passar do limite de linhas, a tela avisa **Planilha grande demais** e as linhas a mais ficam de fora.
+
+### Quem vai receber
+
+Com a planilha lida e o canal escolhido, o quadro **Quem vai receber** separa as pessoas em:
+
+- **já conversaram**: já mandaram mensagem para esse WhatsApp;
+- **nunca conversaram**: nunca falaram com esse número;
+- **sem WhatsApp**: o número não tem WhatsApp. Essa conferência só acontece no WhatsApp por QR code conectado;
+- **pediram para não receber**: pessoas descadastradas.
+
+Quem pediu para não receber e quem não tem WhatsApp ficam de fora dos lembretes.
+
+### Dias e horário de envio
+
+Em **Em quais dias pode mandar**, marque os dias de segunda a sábado. O padrão é segunda a sábado.
+
+Em **Em qual horário**, escolha o início e o fim, no horário de Brasília. O padrão é das 8h às 18h.
+
+- Domingo nunca tem envio.
+- Cada pessoa recebe no máximo 1 lembrete por dia, mesmo que esteja em mais de uma cobrança.
+- Se a data do lembrete cair num domingo ou num dia desmarcado, ele sai no próximo dia escolhido.
+
+## Escrever a mensagem
+
+No passo **O que dizer**, escolha um lembrete na lateral e ajuste a mensagem dele.
+
+- Em **Tom da mensagem**, escolha **Amigável**, **Neutro** ou **Firme**. Trocar o tom troca o texto por uma sugestão pronta. Depois é só ajustar.
+- Em **Mensagem**, edite o texto livremente.
+- Em **Inserir campo**, clique em **Nome**, **Valor**, **Vencimento**, **Referente a** ou **Link de pagamento**. O campo entra no texto entre colchetes, como `[nome]` e `[valor]`, e é trocado pelos dados de cada pessoa da planilha.
+
+O quadro **Como a pessoa vai ver** mostra a prévia com a primeira pessoa da planilha.
+
+### No WhatsApp oficial
+
+No WhatsApp oficial, cada mensagem precisa ser aprovada antes de sair. O lembrete de cobrança entra como mensagem de utilidade, que custa menos que propaganda. A aprovação costuma sair em minutos.
+
+<Steps>
+  <Step title="Envie para aprovação">
+    Com o texto pronto, clique em **Enviar para aprovação**. Faça isso em cada lembrete ligado.
+  </Step>
+  <Step title="Acompanhe a situação">
+    Clique em **Atualizar situação** para ver se o WhatsApp já respondeu.
+  </Step>
+</Steps>
+
+| Selo | O que significa |
+| --- | --- |
+| **Ainda não enviada** | Falta clicar em **Enviar para aprovação** |
+| **Aguardando aprovação** | O WhatsApp ainda está analisando |
+| **Aprovada pelo WhatsApp** | Pode ser usada nos lembretes |
+| **Recusada pelo WhatsApp** | Ajuste o texto e envie de novo |
+| **Texto mudou, envie de novo** | Você mudou o texto depois de enviar |
+
+A tela avisa antes de enviar quando o texto tem algo que o WhatsApp recusa. Por exemplo:
+
+- a mensagem não pode começar nem terminar com um campo;
+- dois campos não podem ficar um do lado do outro;
+- campo demais para pouco texto;
+- mais de 1024 caracteres;
+- palavras de propaganda.
+
+<Warning>
+  No WhatsApp oficial, os lembretes só podem ser ligados depois que o WhatsApp aprovar todas as mensagens. Salve o rascunho e volte quando aprovar.
+</Warning>
+
+### No WhatsApp por QR code
+
+No WhatsApp por QR code não tem aprovação. A tela mostra o risco de bloqueio, de acordo com quantas pessoas nunca conversaram com o número:
+
+| Aviso | Quando aparece |
+| --- | --- |
+| **Risco baixo** | Quase todo mundo já conversou com esse número |
+| **Risco médio de bloqueio** | Uma parte das pessoas nunca conversou com esse número |
+| **Risco alto de bloqueio** | A maioria nunca conversou com esse número |
+
+Para diminuir o risco:
+
+- deixe ligado **Variar o texto com IA**, para cada pessoa receber um texto um pouco diferente;
+- em **Ritmo de envio**, escolha **Calmo** (1 a cada 40 a 120 s) em vez de **Normal** (1 a cada 20 a 60 s).
+
+<Warning>
+  Muitas mensagens para quem não conhece o seu número podem fazer o WhatsApp bloquear o número. Quando a maioria nunca conversou com você, o mais seguro é usar o WhatsApp oficial. Veja [WhatsApp (QR Code) ou WhatsApp Oficial (Meta)](/primeiros-passos/tipos-whatsapp).
+</Warning>
+
+## Conferir, testar e ligar
+
+No passo **Conferir e ligar**:
+
+- o **Resumo** mostra em uma frase quantas pessoas, quanto em aberto, os dias e o horário;
+- a lista de lembretes mostra a situação de cada um;
+- em **Quem cuida das respostas**, escolha a pessoa da equipe que vai receber as conversas de quem responder, ou **Ninguém em especial**.
+
+### Mandar um teste
+
+Em **Mandar um teste para mim**, digite **Seu WhatsApp**, escolha **Qual lembrete** e clique em **Mandar teste**. A mensagem chega do jeito que o cliente vai ver, com dados de exemplo.
+
+- O teste sai na hora, entre 8h e 20h, de segunda a sábado.
+- São até 10 testes por dia.
+- No WhatsApp oficial, o teste fica liberado quando o WhatsApp aprovar aquele lembrete.
+
+## Acompanhar uma cobrança
+
+Clique numa cobrança em **Suas cobranças** para abrir os detalhes. O topo mostra quantas pessoas, o total **Em aberto** e o **Recebido**.
+
+Use **Buscar por nome, telefone ou referente** para achar alguém. Para filtrar, clique numa das situações abaixo. Cada uma mostra quantas pessoas tem.
+
+| Situação | O que significa |
+| --- | --- |
+| **Todas** | Todo mundo da cobrança |
+| **A vencer** | O vencimento ainda não chegou |
+| **Vence hoje** | O vencimento é hoje |
+| **Vencida** | O vencimento passou e não foi pago |
+| **Respondeu** | A pessoa respondeu e os lembretes pararam para ela |
+| **Não chegou** | O último lembrete não foi entregue |
+| **Paga** | Marcada como paga |
+
+Em cada pessoa, o ícone de conversa abre a conversa dela no atendimento.
+
+### Quando a pessoa responde
+
+Se a pessoa responder depois de um lembrete, os lembretes param só para ela. Ela aparece como **Respondeu** e o topo mostra quantas pessoas estão aguardando você.
+
+Converse com ela. Se quiser voltar a lembrar, clique em **Retomar** na linha dela.
+
+### Tags no lead
+
+O CRM coloca uma tag de situação no lead de cada pessoa da cobrança e troca a tag quando a situação muda. São elas:
+
+- `cobrança: a vencer`, `cobrança: vence hoje`, `cobrança: vencida`, `cobrança: respondeu`, `cobrança: não chegou` e `cobrança: paga`;
+- `cobrança: já conversou` e `cobrança: nunca conversou`.
+
+Se a pessoa ainda não tem lead no CRM, a tag entra quando o lead aparecer. Para usar essas tags em filtros e disparos, veja [Tags](/crm/tags).
+
+## Marcar quem pagou
+
+### Uma ou várias pessoas
+
+<Steps>
+  <Step title="Selecione">
+    Marque a caixa ao lado de cada pessoa que pagou. Para marcar todas as que estão na tela, use a caixa do cabeçalho.
+  </Step>
+  <Step title="Marque como pago">
+    Clique em **Marcar como pago**. Quem foi marcado para de receber lembretes.
+  </Step>
+</Steps>
+
+Marcou alguém por engano? Selecione a pessoa e clique em **Voltar para em aberto**.
+
+### Por planilha
+
+<Steps>
+  <Step title="Abra a janela">
+    Nos detalhes da cobrança, clique em **Subir planilha com os pagos**.
+  </Step>
+  <Step title="Suba o arquivo">
+    Use uma planilha com a coluna de telefone e, se tiver, a de vencimento. A tela mostra quantos telefones encontrou.
+  </Step>
+  <Step title="Confirme">
+    Clique em **Marcar como pagos**.
+  </Step>
+</Steps>
+
+- Com a coluna de vencimento, só a conta daquele vencimento é marcada como paga.
+- Sem a coluna de vencimento, todas as contas em aberto daquele telefone nesta cobrança são marcadas como pagas.
+- Linha com vencimento inválido fica de fora. Corrija a data no formato dd/mm/aaaa e suba de novo.
+
+## Pausar, ligar e editar
+
+Nos detalhes da cobrança:
+
+- **Pausar lembretes** para todos os envios da cobrança. Nada é perdido.
+- **Ligar lembretes** volta a mandar.
+- **Editar lembretes** abre de novo os quatro passos. Num rascunho, o botão se chama **Continuar configurando**.
+
+Ao editar, você pode subir outra planilha. Ela acrescenta ou atualiza as pessoas, e quem já pagou continua pago.
+
+<Note>
+  No WhatsApp oficial, se você mudar o texto de um lembrete já aprovado, envie de novo para aprovação. Até o WhatsApp aprovar a versão nova, os lembretes seguem com a mensagem aprovada antes.
+</Note>
+
+A tela não tem botão para excluir uma cobrança. Para parar de vez, use **Pausar lembretes**.
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="O CRM recebe o pagamento por mim?">
+    Não. O CRM só manda os lembretes. A pessoa paga pelo link que você coloca na coluna **Link de pagamento**. Quando o dinheiro cair, marque a cobrança como paga.
+  </Accordion>
+  <Accordion title="O CRM descobre sozinho quem pagou?">
+    Não. Marque quem pagou com **Marcar como pago** ou com **Subir planilha com os pagos**. Enquanto a conta estiver em aberto, os lembretes ligados continuam saindo.
+  </Accordion>
+  <Accordion title="Por que um lembrete não saiu no domingo?">
+    Domingo nunca tem envio. O lembrete sai no próximo dia escolhido em **Em quais dias pode mandar**.
+  </Accordion>
+  <Accordion title="Uma pessoa está em duas cobranças. Ela recebe dois lembretes no mesmo dia?">
+    Não. Cada pessoa recebe no máximo 1 lembrete por dia.
+  </Accordion>
+  <Accordion title="Por que não consigo clicar em Ligar lembretes?">
+    No WhatsApp oficial, todas as mensagens dos lembretes ligados precisam estar aprovadas. Nos outros passos, o botão de avançar só libera com o nome da cobrança, o canal, ao menos uma pessoa pronta, ao menos um lembrete ligado e um horário válido.
+  </Accordion>
+  <Accordion title="O teste não foi enviado. O que fazer?">
+    Confira a mensagem de erro. As mais comuns: o teste só sai entre 8h e 20h, de segunda a sábado; o número precisa ter DDD e 10 ou 11 dígitos; o limite é de 10 testes por dia; e, no WhatsApp oficial, a mensagem precisa estar aprovada antes.
+  </Accordion>
+  <Accordion title="Alguém aparece como Não chegou. O que significa?">
+    O último lembrete para essa pessoa não foi entregue. Confira se o número está certo e se o canal está conectado. Abra a conversa dela pelo ícone de conversa para ver o que aconteceu.
+  </Accordion>
+  <Accordion title="O WhatsApp escolhido aparece como desconectado. Os lembretes saem?">
+    Não. Os lembretes só saem depois que o canal for reconectado. Veja [Conexões](/conta/conexoes).
+  </Accordion>
+  <Accordion title="Não vejo Cobranças no menu.">
+    O seu perfil não tem a página liberada, ou o plano da empresa não inclui **Disparos**. Peça ao dono ou a um gerente para liberar a página **Cobranças** para você.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Disparos" icon="paper-plane" href="/marketing/disparos">
+    Envie uma mesma mensagem para vários contatos do CRM.
+  </Card>
+  <Card title="Tags" icon="tags" href="/crm/tags">
+    Use as tags de cobrança para filtrar leads e montar públicos.
+  </Card>
+  <Card title="Templates do WhatsApp Oficial" icon="file-lines" href="/atendimento/templates-whatsapp">
+    Entenda a aprovação de mensagens no WhatsApp Oficial (Meta).
+  </Card>
+  <Card title="WhatsApp (QR Code) ou WhatsApp Oficial (Meta)" icon="whatsapp" href="/primeiros-passos/tipos-whatsapp">
+    Compare o WhatsApp oficial com o WhatsApp por QR code.
+  </Card>
+  <Card title="Equipe" icon="users" href="/conta/equipe">
+    Libere a página Cobranças para membros da equipe.
+  </Card>
+  <Card title="Conexões" icon="plug" href="/conta/conexoes">
+    Conecte e reconecte os canais usados nos lembretes.
+  </Card>
+</CardGroup>
