@@ -26,7 +26,7 @@ No menu lateral, abra **Marketing** e clique em **Disparos**. A tela abre na aba
 
 Você precisa de um canal conectado, de WhatsApp (QR Code) ou de WhatsApp Oficial (Meta). Veja [Conectar seu WhatsApp](/primeiros-passos/conectar-whatsapp) ou abra [Conexões no CRM](https://app.attocorp.com/app/connections) para conectar agora.
 
-Se a sua empresa tem mais de um canal, escolha por qual deles a campanha sai no campo **Canal de envio**, no topo da tela. Um canal desligado aparece com **(desconectado)** ao lado do nome.
+Você escolhe por qual canal a campanha sai no passo **O que enviar?**, no campo **Por qual número enviar?**. Um canal desligado aparece com **(desconectado)** ao lado do nome.
 
 O tipo de canal muda a forma de escrever a mensagem:
 
@@ -37,35 +37,35 @@ O tipo de canal muda a forma de escrever a mensagem:
 
 ## Criar uma campanha
 
-O quadro **Nova Campanha** tem três partes numeradas.
+Clique em **Nova campanha**, no topo da tela. A campanha é montada em 4 passos. Use **Continuar** para avançar e **Voltar** para rever um passo. Para sair sem criar, clique em **Voltar para campanhas**.
 
 <Steps>
-  <Step title="Escolha os contatos">
-    Em **Origem dos contatos**, no bloco **Contatos CRM**, marque quem vai receber.
+  <Step title="Quem vai receber?">
+    No bloco **Contatos CRM**, marque quem vai receber.
 
     - Use **Buscar por nome ou número...** para achar uma pessoa.
-    - Clique em **Incluir tag** para mostrar só quem tem determinada tag.
+    - Em **Filtrar por tags**, clique em **Incluir tag** para mostrar só quem tem determinada tag.
     - Clique em **Excluir tag** para tirar da lista quem tem determinada tag.
     - Marque **Selecionar todos** para escolher todos os contatos da lista de uma vez.
 
     O contador **no público** mostra quantas pessoas se encaixam nos filtros. Ele conta um contato por número e já tira descadastrados e números bloqueados.
 
-    Em **Origem**, só **WhatsApp** fica marcado. Contatos do Instagram aparecem com a contagem, mas não recebem disparo de WhatsApp.
+    Em **Origem**, só **WhatsApp** fica marcado. Contatos do Instagram aparecem com a contagem, mas não recebem disparo de WhatsApp. Neste passo também fica a opção **Ignorar duplicados**.
   </Step>
-  <Step title="Dê um nome e escreva a mensagem">
-    Em **Mensagem**, preencha **Nome da campanha**. Esse nome é só para você, o contato não vê.
+  <Step title="O que enviar?">
+    Em **Por qual número enviar?**, escolha o canal. Preencha **Nome da campanha**. Esse nome é só para você, o contato não vê.
 
     No canal **WhatsApp**, escreva em **Texto da mensagem**.
 
-    No canal **WhatsApp Oficial (Meta)**, clique em **Selecionar template...** e escolha um modelo. Se ainda não houver nenhum, clique em **Criar template**.
+    No canal **WhatsApp Oficial (Meta)**, em **Template aprovado**, clique em **Selecionar template...** e escolha um modelo. Se ainda não houver nenhum, clique em **Criar template**.
 
-    Antes de escrever, leia a seção "Variáveis na mensagem", mais abaixo nesta página. Variável escrita no lugar errado trava o envio.
+    Ao lado, **Como a mensagem vai chegar** mostra a prévia. Antes de escrever, leia a seção "Variáveis na mensagem", mais abaixo nesta página. Variável escrita no lugar errado trava o envio.
   </Step>
-  <Step title="Ajuste o ritmo de envio">
-    Defina os intervalos entre os envios. Veja os detalhes em [Ritmo de envio](#ritmo-de-envio).
+  <Step title="Quando enviar?">
+    Em **Ritmo dos envios**, defina os intervalos entre os envios. Veja os detalhes em [Ritmo de envio](#ritmo-de-envio). Em **Depois do envio**, escolha, se quiser, o vendedor responsável e as tags.
   </Step>
-  <Step title="Confira e envie">
-    Em **Confirmar e enviar**, revise o resumo: nome da campanha, total de contatos, intervalo e **Tempo estimado**. Depois clique em **Iniciar Campanha**.
+  <Step title="Conferir e enviar">
+    Revise o resumo: campanha, número, total de contatos, intervalo e **Tempo estimado**. Depois clique em **Iniciar Campanha**. Os envios começam na hora e respeitam o horário permitido.
   </Step>
 </Steps>
 
@@ -149,7 +149,7 @@ O quadro **Janela de envio permitida** impede disparos fora do horário que voc�
 
 Fora da janela, o disparo pausa e retoma sozinho na próxima abertura. Na lista, a campanha mostra **Aguardando janela** com o horário de retomada.
 
-Para usar um horário diferente em uma única campanha, ligue **Personalizar janela desta campanha** ao criá-la.
+Para usar um horário diferente em uma única campanha, ligue **Personalizar janela desta campanha** no passo **Quando enviar?**.
 
 ## Acompanhar o resultado
 
@@ -177,7 +177,7 @@ Cada envio do disparo também aparece na conversa do contato, com a situação r
 
 ## Contatos que pediram para não receber
 
-Quem pediu para sair da sua lista aparece com a etiqueta **Descadastrado**. Esse contato não pode ser marcado e não recebe disparos, mesmo com **Selecionar todos**. A tela mostra quantos descadastrados ficaram de fora.
+Quem pediu para sair da sua lista aparece com a etiqueta **Descadastrado**. Esse contato não pode ser marcado e não recebe disparos, mesmo com **Selecionar todos**, a não ser que você inclua descadastrados de propósito (veja abaixo). A tela mostra quantos descadastrados ficaram de fora.
 
 A etiqueta entra sozinha quando a pessoa:
 
@@ -193,6 +193,16 @@ Nesse segundo caso, o **Agente IA** também para de responder aquela conversa e 
 Se a Meta avisar que um número não tem WhatsApp, ele também fica fora dos disparos por 30 dias e aparece como **Descadastrado** nesse período.
 
 O descadastro pedido pela própria pessoa nunca é desfeito sozinho.
+
+### Incluir descadastrados num disparo
+
+Quando há descadastrados entre os contatos, o passo **Quem vai receber?** mostra a chave **Incluir descadastrados mesmo assim**. Ao ligar, o CRM pede confirmação na janela **Incluir descadastrados neste disparo?**. Confirme em **Entendo o risco, incluir**. Depois disso, os descadastrados podem ser marcados na lista.
+
+<Warning>
+  Só ligue se você tem base legal para falar com quem pediu descadastro. Enviar para essas pessoas aumenta denúncias e o risco de banimento do seu número oficial pela Meta, além de risco legal (LGPD).
+</Warning>
+
+A escolha vale só para aquela campanha. Contatos anonimizados por LGPD, números inválidos e quem disse que não é a pessoa certa continuam sempre bloqueados.
 
 ## Perguntas frequentes
 
@@ -243,5 +253,8 @@ O descadastro pedido pela própria pessoa nunca é desfeito sozinho.
   </Card>
   <Card title="Privacidade e LGPD" icon="shield-halved" href="/crm/privacidade-lgpd">
     Exporte ou anonimize os dados de um contato, silencie a IA para uma pessoa e entenda o que o CRM guarda depois.
+  </Card>
+  <Card title="Cobranças" icon="receipt" href="/marketing/cobrancas">
+    Suba a planilha de quem deve e o CRM manda lembretes de pagamento automáticos pelo WhatsApp, de segunda a sábado.
   </Card>
 </CardGroup>

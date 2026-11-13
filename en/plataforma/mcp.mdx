@@ -1,25 +1,273 @@
 ---
 title: "MCP"
 sidebarTitle: "MCP"
-description: "Connect AI assistants to the CRM through the Model Context Protocol (MCP), so you can look up and organize your data by chatting with the AI of your choice."
+description: "Connect AI assistants and automations to the CRM through the Model Context Protocol (MCP): generate a key, copy the address and let the AI look up and organize your data safely."
 icon: "plug"
-tag: "Coming soon"
 ---
 
-<Info>
-  **Coming soon.** This integration is still in development. In the CRM, it already shows up under **Integrations**, in the **Other** group, with the **Coming soon** badge.
-</Info>
+MCP (Model Context Protocol) is a standard way to link an AI assistant to another system. With it, you chat with the AI of your choice and it looks things up in the CRM for you: finds leads, summarizes the funnel, reads a conversation, lists the calendar.
 
-When the integration is released, this page will have the step-by-step guide to connect your AI assistant to the CRM.
+If you allow it, the AI can also organize data: create leads, add tags, write notes, create tasks and appointments. The CRM's MCP **never deletes anything and never sends messages** to your customers.
+
+<Note>
+  The **Servidor MCP** (MCP server) screen is shown in Portuguese, even when the CRM is set to English. On this page, labels appear exactly as on screen, followed by the English meaning.
+</Note>
+
+## Who can use it
+
+- The screen lives in **Connections**. Anyone with access to **Connections** sees the MCP screen.
+- Only the company **owner** or a **manager** can generate a key. For everyone else, the **Gerar chave** (Generate key) button is disabled.
+- Some options are reserved for the company **owner**: turning on **Escrita** (Write), checking **Nunca expira** (Never expires) and turning off **Mascarar dados pessoais** (Mask personal data). For non-owners, the screen shows the notice **Só o dono da empresa libera esta opção.** (Only the company owner can enable this option.)
+
+## How to access
+
+In the side menu, open **Settings** and click **Connections**. On the **Integrations** screen, in the **Other** group, click **MCP**. The screen opens with the title **Servidor MCP**.
+
+<Card title="Open MCP in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/mcp">
+  Takes you straight to the screen. You need to be signed in to the CRM.
+</Card>
+
+## What the screen shows
+
+- **Endereço do servidor** (Server address): `https://app.attocorp.com/mcp`. Use this address to read and, if the key allows, to write.
+- **Somente leitura (mesmo com chave de escrita)** (Read only, even with a write key): `https://app.attocorp.com/mcp/readonly`. At this address the AI can only read, even if the key has write permission.
+- **Como conectar** (How to connect): ready-to-copy instructions in the **Claude**, **Claude Desktop / Cursor** and **n8n / outros** (n8n / others) tabs.
+- The key list, in the **Ativas** (Active) and **Inativas** (Inactive: expired or revoked) tabs. Each key shows its name, the start of the key (prefix), its permissions, the **Dados mascarados** (Masked data) badge when applicable and **Último uso** (Last used).
+
+Each field has a copy button next to it.
+
+## Generate a key
+
+The key is the password your AI assistant uses to get into the CRM. Each assistant or automation should have its own.
+
+<Steps>
+  <Step title="Open the window">
+    Click **Gerar chave** (Generate key).
+  </Step>
+  <Step title="Give it a name">
+    In **Nome** (Name), type something that helps you recognize the key later, for example "Team Claude".
+  </Step>
+  <Step title="Choose the scopes">
+    **Leitura** (Read) is already selected and is required. Click **Escrita** (Write) if you want the AI to also create and organize data. Only the company owner can enable **Escrita**.
+  </Step>
+  <Step title="Choose the access">
+    Under **Acesso** (Access), pick **Todas as minhas empresas** (All my companies) or **Empresas específicas** (Specific companies). **Todas as minhas empresas** includes future companies where you are the owner or a manager. With **Empresas específicas**, check each company in the list.
+  </Step>
+  <Step title="Set the expiration">
+    In **Expira em (dias)** (Expires in, days), enter 1 to 365 days. The default is 90. The company owner can check **Nunca expira** (Never expires).
+  </Step>
+  <Step title="Decide on personal data">
+    **Mascarar dados pessoais** (Mask personal data) is on by default and recommended. It hides phone, email and CPF in the answers. Only the company owner can turn it off.
+  </Step>
+  <Step title="Generate and copy">
+    Click **Gerar** (Generate). In the **Chave gerada** (Key generated) window, click the copy button and store the key somewhere safe. Then click **Concluir** (Done).
+  </Step>
+</Steps>
+
+<Warning>
+  The key is shown **only once**. After you close the window, the screen shows only its beginning. If you lose the key, revoke it and generate a new one. Never share the key in a chat, email or screenshot.
+</Warning>
+
+<Note>
+  If you are not the owner of every company in the key, the expiration is at most 90 days. If any company hides its members' phone numbers, the key is generated with personal data masked even if you turned the option off, and the screen tells you so.
+</Note>
+
+## Connect your assistant
+
+In every instruction, replace `SUA_CHAVE` (your key) with the key you copied. For an assistant that should only read, use `https://app.attocorp.com/mcp/readonly` instead of `https://app.attocorp.com/mcp`.
+
+<Tabs>
+  <Tab title="Claude">
+    Add a connector with the address and the authorization header:
+
+    ```text
+    https://app.attocorp.com/mcp
+    ```
+
+    ```text
+    Authorization: Bearer SUA_CHAVE
+    ```
+
+    In Claude Code, from the terminal:
+
+    ```bash
+    claude mcp add --transport http atto-crm https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
+    ```
+  </Tab>
+  <Tab title="Claude Desktop / Cursor">
+    Paste into the MCP servers configuration file:
+
+    ```json
+    {
+      "mcpServers": {
+        "atto-crm": {
+          "url": "https://app.attocorp.com/mcp",
+          "headers": {
+            "Authorization": "Bearer SUA_CHAVE"
+          }
+        }
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="n8n / outros">
+    In the MCP client node (HTTP), enter the address and the header:
+
+    ```text
+    https://app.attocorp.com/mcp
+    ```
+
+    ```text
+    Authorization: Bearer SUA_CHAVE
+    ```
+  </Tab>
+</Tabs>
+
+<Tip>
+  Once connected, ask the assistant to start with the `whoami` tool. It shows the key name, permissions, the companies the key reaches and the usage limits.
+</Tip>
+
+## What the AI can read
+
+With any key, the AI has these lookup tools:
+
+| Tool | What it does |
+| --- | --- |
+| `whoami` | Shows the key in use: name, permissions, whether the address is read only, whether data is masked, companies and limits. |
+| `list_companies` | Lists the companies the key can look up. |
+| `search_leads` | Finds leads by name, phone, tag, stage, funnel or change date. |
+| `get_lead` | Opens a lead: details, notes, funnel cards, stage history and tasks. |
+| `list_pipelines` | Lists the funnels with their stages and lead counts. |
+| `funnel_summary` | Summarizes the funnel: lead count and total value per stage. |
+| `list_tags` | Lists the tags with lead count and color. |
+| `list_conversations` | Lists conversations without the messages (channel, phone, name, status, dates). |
+| `get_conversation` | Opens a conversation with its messages: the 50 most recent by default, up to 150 at a time. |
+| `search_conversations_by_phone` | Finds conversations by the last 8 digits of the phone. |
+| `list_appointments` | Lists appointments between two dates (default: today to 30 days; at most 92 days). |
+| `list_activities` | Lists follow-up tasks, filtered by status and due date. |
+| `list_templates` | Lists message templates, with status and rejection reason. |
+| `list_campaigns` | Lists broadcasts with their sending counters. |
+| `billing_summary` | Summarizes the billing lists. Requires the broadcast feature to be active in the company. |
+| `list_agents` | Lists the AI agents (name, whether active, model, channels). Never shows the prompt. |
+| `list_team` | Lists the active team (name and role). |
+| `stage_history` | Shows lead stage changes, newest first. |
+| `list_send_failures` | Lists message sending failures. |
+
+Lists come in pages of up to 100 items. The AI asks for the next page when it needs to.
+
+## What the AI can write
+
+Only with a key that has **Escrita** (Write), and only through `https://app.attocorp.com/mcp`:
+
+| Tool | What it does |
+| --- | --- |
+| `create_lead` | Creates a lead with name and phone, and optionally funnel, stage, tags and value. If the phone already exists, it returns the existing lead without duplicating it. |
+| `add_tags` | Adds up to 10 tags to a lead. |
+| `remove_tags` | Removes up to 10 tags from a lead. Does not delete the lead. |
+| `move_stage` | Moves a lead to another funnel stage, the same way as on the CRM screen. |
+| `add_note` | Appends a note to the lead, with the date and the mark "via MCP". Never deletes existing notes. |
+| `create_activity` | Creates a follow-up task for a lead. The assignee is the person who generated the key. |
+| `create_appointment` | Creates an appointment for a lead in the CRM calendar. Does not create a Google event. |
+| `assign_lead` | Sets who is responsible for the lead and its conversations, among the active team members. |
+
+<Warning>
+  Moving a lead with `move_stage` can notify the team and send the conversion to [Meta Tracking](/en/marketing/rastreamento-meta). That happens outside the CRM and cannot be undone. The server itself tells the AI to confirm with you first.
+</Warning>
+
+## Security and limits
+
+- **Nothing is deleted and no message is sent.** There is no tool for that.
+- **Writing is owner only.** Even with a write key, a change only goes through if the person who generated the key is still the company owner.
+- **The key only works for the chosen companies.** Requests for any other company are refused.
+- **The key loses access on its own** when it expires or when the person who generated it is no longer an owner or manager of the company.
+- **Masked data.** With **Mascarar dados pessoais** on, phone, email and CPF reach the AI hidden.
+- **Customer text is treated as data.** The server tells the AI never to follow instructions written in messages, notes or names.
+- **Per-key limits, per minute:** 60 lookups, 30 searches, 10 reports and 20 writes.
+- **Per-company limits, adding up all keys:** 120 calls per minute and 5,000 per day.
+- **Load protection.** A lookup that runs past the time limit is cut off. When the CRM is busy, the request is refused and the AI is told how many seconds to wait. An answer that is too large asks the AI to fetch smaller pages.
+- **Key limit.** Up to 5 active keys per company and up to 20 keys generated per person in 24 hours.
+
+## Track a key's usage
+
+Click a key in the list to open its details. The window has three tabs:
+
+- **Detalhes** (Details): **Usado por último** (Last used), **Criado em** (Created on), **Expira em** (Expires on) or **Revogado em** (Revoked on), **Prefixo** (Prefix), **Escopos** (Scopes), **Empresas** (Companies) and **Criada por** (Created by).
+- **Conexões** (Connections): which assistants used the key, how many sessions, the first and last time and the IP.
+- **Atividade** (Activity): hourly usage per tool, with the result (for example **ok**, **recusado** (refused), **limite da chave** (key limit), **cota diaria da empresa** (company daily quota)), the number of calls and the average time. Covers the last 90 days.
+
+## Revoke a key
+
+<Steps>
+  <Step title="Open the key">
+    In the **Ativas** (Active) tab, click the key.
+  </Step>
+  <Step title="Revoke it">
+    Click **Revogar** (Revoke). In the **Revogar esta chave?** (Revoke this key?) window, click **Revogar** again.
+  </Step>
+</Steps>
+
+Access is cut off immediately for every assistant using the key. It cannot be undone. The key moves to the **Inativas** (Inactive) tab with the **Revogado** (Revoked) status.
+
+## Common errors
+
+| Message | What it means |
+| --- | --- |
+| **Limite de 5 chaves ativas por empresa. Revogue uma antes de gerar outra.** | The company already has 5 active keys. Revoke one you no longer use. |
+| **Só o dono da empresa pode liberar escrita.** | You are not the owner of every chosen company. Generate the key with **Leitura** (Read) only. |
+| **Só o dono ou um gerente da empresa pode gerar chave.** | Your role in the company does not allow generating keys. |
+| **Não foi possível gerar a chave. Tente de novo.** | Generating failed. Try again. |
+| **Informe de 1 a 365 dias.** | The expiration is outside the allowed range. |
+
+In the AI assistant, an invalid, expired or revoked key shows up as "token do MCP invalido ou revogado" (MCP token invalid or revoked). If the AI tries to write through the read-only address, it gets "este endereco e so leitura" (this address is read only). If the key has no write permission, it gets "esta chave nao tem o escopo de escrita" (this key does not have the write scope).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="I lost the key. Can I see it again?">
+    No. The key is shown only once. Revoke the old key and generate a new one.
+  </Accordion>
+
+  <Accordion title="Can the AI delete a lead or message a customer?">
+    No. The CRM's MCP has no tool that deletes data or sends messages.
+  </Accordion>
+
+  <Accordion title="Why is the Write option locked?">
+    Only the owner of every company in the key can enable **Escrita** (Write). Managers generate read-only keys.
+  </Accordion>
+
+  <Accordion title="I have several companies. How does the AI know which one to look up?">
+    If the key has a single company, the AI uses it. With several, the AI uses `list_companies` to see them and picks which one to look up on each request.
+  </Accordion>
+
+  <Accordion title="Why are phone numbers hidden?">
+    The key has **Mascarar dados pessoais** (Mask personal data) on, which is the default. Only the company owner can generate a key without the mask, and companies that hide their members' phone numbers always mask.
+  </Accordion>
+
+  <Accordion title="The AI said the limit was exceeded.">
+    The key or the company went over the usage limit. Wait a few seconds and ask again. The answer itself says how long to wait.
+  </Accordion>
+
+  <Accordion title="Can I use the same key in several assistants?">
+    You can, but it is best to have one key per assistant or automation. That way, revoking one keeps the others working, and the **Conexões** (Connections) tab shows who used each key.
+  </Accordion>
+</AccordionGroup>
 
 ## Related pages
 
 <CardGroup cols={2}>
-  <Card title="Platform overview" icon="compass" href="/en/plataforma/visao-geral">
-    Get to know the CRM modules.
-  </Card>
-
   <Card title="Connections" icon="plug" href="/en/conta/conexoes">
     Channels and integrations in your account.
+  </Card>
+
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    Owner, manager and other member roles.
+  </Card>
+
+  <Card title="Meta Tracking" icon="chart-line" href="/en/marketing/rastreamento-meta">
+    Conversions sent when a lead changes stage.
+  </Card>
+
+  <Card title="Platform overview" icon="compass" href="/en/plataforma/visao-geral">
+    Get to know the CRM modules.
   </Card>
 </CardGroup>

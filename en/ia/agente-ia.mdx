@@ -109,7 +109,7 @@ Inside an agent, the tabs appear in this order: **General**, **Personality**, **
     - The **Prompt Builder** window has three tabs: **Questionnaire**, **Editor and preview** and **Versions**.
     - In the **Questionnaire**, fill in fields such as **Company name**, **What you sell / offer**, **Target audience**, **Tone of voice**, **Service hours**, **What the AI CAN do** and **What the AI CANNOT do**. Then click **Generate prompt**.
     - You can also use **Attach documents** so the AI builds the text from one of your files.
-    - In **Editor and preview**, review the text and click **Save and activate version**. Saving puts the text live right away.
+    - In **Editor and preview**, review the text and click **Save and activate version**. Saving puts the text live right away. If nothing changed, the button shows **Saved: version N is live** and no new version is created.
     - **Active version** is the text the AI is using to reply right now.
     - In **Version history**, click **Restore** to go back to an earlier version.
 
@@ -311,7 +311,9 @@ Everything is in the **Advanced** tab. After making changes, click **Save change
     The screen also reminds you: "Meta may limit or raise the cost of official WhatsApp at any time. The in-app alert (bell) guarantees the team never misses the lead."
   </Accordion>
   <Accordion title="Media reading and scheduling">
-    In **Fine-tuning (advanced)**, the **Media reading** section sets whether the AI understands **Images**, **Audio**, **Documents** and **Videos** sent by the customer. When it's off, the AI asks for the content in text. The **AI can schedule** option lets the AI book appointments in the [Calendar](/en/crm/agenda).
+    In **Fine-tuning (advanced)**, the **Media reading** section sets whether the AI understands **Images**, **Audio**, **Documents** and **Videos** sent by the customer. When it's off, the AI asks for the content in text.
+
+    With **Audio** on, the **Keep audio transcripts** option makes the AI write down what the customer said. The text shows up below the audio in the conversation, and the AI remembers what was said in the next messages. Choose **Temporary (12 hours)**, the default, **Permanent** or **Off**. With temporary, only the text is deleted after 12 hours; the audio stays. The **AI can schedule** option lets the AI book appointments in the [Calendar](/en/crm/agenda).
 
     Scheduling is an action on the Prime and Ultra plans. On Start, the AI doesn't book appointments or move the card, even with the option turned on.
   </Accordion>

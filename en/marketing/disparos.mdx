@@ -26,7 +26,7 @@ In the side menu, open **Marketing** and click **Broadcasts**. The screen opens 
 
 You need a connected channel, either WhatsApp (QR Code) or Official WhatsApp (Meta). See [Connect your WhatsApp](/en/primeiros-passos/conectar-whatsapp) or open [Connections in the CRM](https://app.attocorp.com/app/connections) to connect now.
 
-If your company has more than one channel, choose which one the campaign goes out from in the **Sending channel** field, at the top of the screen. A disconnected channel shows **(disconnected)** next to its name.
+You choose which channel the campaign goes out from in the **What to send?** step, in the **Which number will send it?** field. A disconnected channel shows **(disconnected)** next to its name.
 
 The channel type changes how you write the message:
 
@@ -37,35 +37,35 @@ The channel type changes how you write the message:
 
 ## Create a campaign
 
-The **New Campaign** panel has three numbered parts.
+Click **New campaign** at the top of the screen. The campaign is built in 4 steps. Use **Continue** to move forward and **Back** to review a step. To leave without creating it, click **Back to campaigns**.
 
 <Steps>
-  <Step title="Choose the contacts">
-    In **Contact source**, in the **CRM Contacts** block, select who will receive the message.
+  <Step title="Who will receive it?">
+    In the **CRM Contacts** block, select who will receive the message.
 
     - Use **Search by name or number...** to find a person.
-    - Click **Include tag** to show only people who have a certain tag.
+    - Under **Filter by tags**, click **Include tag** to show only people who have a certain tag.
     - Click **Exclude tag** to remove from the list people who have a certain tag.
     - Check **Select all** to choose all the contacts in the list at once.
 
     The **in audience** counter shows how many people match the filters. It counts one contact per number and already leaves out unsubscribed and blocked numbers.
 
-    In **Origin**, only **WhatsApp** is selected. Instagram contacts show with their count, but don't receive WhatsApp broadcasts.
+    In **Origin**, only **WhatsApp** is selected. Instagram contacts show with their count, but don't receive WhatsApp broadcasts. The **Ignore duplicates** option is also in this step.
   </Step>
-  <Step title="Name it and write the message">
-    In **Message**, fill in **Campaign name**. This name is just for you, the contact does not see it.
+  <Step title="What to send?">
+    In **Which number will send it?**, choose the channel. Fill in **Campaign name**. This name is just for you, the contact does not see it.
 
     On the **WhatsApp** channel, write in **Message text**.
 
-    On the **Official WhatsApp (Meta)** channel, click **Select template...** and choose a template. If there are none yet, click **Create template**.
+    On the **Official WhatsApp (Meta)** channel, under **Approved template**, click **Select template...** and choose a template. If there are none yet, click **Create template**.
 
-    Before writing, read the "Variables in the message" section, further down this page. A variable written in the wrong place blocks sending.
+    Next to it, **How the message will arrive** shows the preview. Before writing, read the "Variables in the message" section, further down this page. A variable written in the wrong place blocks sending.
   </Step>
-  <Step title="Set the sending pace">
-    Set the intervals between sends. See the details in [Sending pace](#sending-pace).
+  <Step title="When to send?">
+    Under **Sending pace**, set the intervals between sends. See the details in [Sending pace](#sending-pace). Under **After sending**, choose the assigned salesperson and the tags, if you want.
   </Step>
   <Step title="Review and send">
-    In **Confirm and send**, review the summary: campaign name, total contacts, interval and **Estimated time**. Then click **Start Campaign**.
+    Review the summary: campaign, number, total contacts, interval and **Estimated time**. Then click **Start Campaign**. Sends begin right away and follow the allowed hours.
   </Step>
 </Steps>
 
@@ -149,7 +149,7 @@ The **Allowed send window** panel prevents broadcasts outside the hours you choo
 
 Outside the window, the broadcast pauses and resumes on its own at the next opening. In the list, the campaign shows **Waiting for window** with the time it will resume.
 
-To use different hours for a single campaign, turn on **Customize this campaign's window** when you create it.
+To use different hours for a single campaign, turn on **Customize this campaign's window** in the **When to send?** step.
 
 ## Track the results
 
@@ -177,7 +177,7 @@ Each broadcast send also appears in the contact's conversation, with the real de
 
 ## Contacts who asked not to receive messages
 
-People who asked to leave your list show the **Unsubscribed** label. These contacts cannot be selected and do not receive broadcasts, even with **Select all**. The screen shows how many unsubscribed contacts were left out.
+People who asked to leave your list show the **Unsubscribed** label. These contacts cannot be selected and do not receive broadcasts, even with **Select all**, unless you deliberately include unsubscribed contacts (see below). The screen shows how many unsubscribed contacts were left out.
 
 The label is added on its own when the person:
 
@@ -193,6 +193,16 @@ In this second case, the **AI Agent** also stops replying in that conversation a
 If Meta reports that a number does not have WhatsApp, it is also left out of broadcasts for 30 days and shows as **Unsubscribed** during that period.
 
 An unsubscribe requested by the person is never undone on its own.
+
+### Include unsubscribed contacts in a broadcast
+
+When there are unsubscribed contacts among your contacts, the **Who will receive it?** step shows the **Incluir descadastrados mesmo assim** (include unsubscribed anyway) switch. When you turn it on, the CRM asks for confirmation in the **Incluir descadastrados neste disparo?** (include unsubscribed in this broadcast?) window. Confirm with **Entendo o risco, incluir** (I understand the risk, include). After that, unsubscribed contacts can be selected in the list. These texts are shown in Portuguese in every language.
+
+<Warning>
+  Only turn it on if you have a legal basis to contact people who asked to unsubscribe. Sending to them increases reports and the risk of Meta banning your official number, plus legal risk (LGPD).
+</Warning>
+
+The choice applies to that campaign only. Contacts anonymized under LGPD, invalid numbers and people who said they are not the right person always stay blocked.
 
 ## Frequently asked questions
 
@@ -243,5 +253,8 @@ An unsubscribe requested by the person is never undone on its own.
   </Card>
   <Card title="Privacy and LGPD" icon="shield-halved" href="/en/crm/privacidade-lgpd">
     Export or anonymize a contact's data, silence the AI for one person and understand what the CRM keeps afterwards.
+  </Card>
+  <Card title="Collections" icon="receipt" href="/en/marketing/cobrancas">
+    Upload a spreadsheet of who owes you and the CRM sends automatic payment reminders on WhatsApp, Monday to Saturday.
   </Card>
 </CardGroup>

@@ -1,25 +1,269 @@
 ---
 title: "MCP"
 sidebarTitle: "MCP"
-description: "Conecte assistentes de IA ao CRM pelo Model Context Protocol (MCP), para consultar e organizar seus dados conversando com a IA de sua preferência."
+description: "Conecte assistentes de IA e automações ao CRM pelo Model Context Protocol (MCP): gere uma chave, copie o endereço e deixe a IA consultar e organizar seus dados com segurança."
 icon: "plug"
-tag: "Em breve"
 ---
 
-<Info>
-  **Em breve.** Esta integração ainda está em desenvolvimento. No CRM, ela já aparece em **Integrações**, no grupo **Diversos**, com o selo **Em breve**.
-</Info>
+O MCP (Model Context Protocol) é um jeito padrão de ligar um assistente de IA a outro sistema. Com ele, você conversa com a IA de sua preferência e ela consulta o CRM por você: busca leads, resume o funil, lê uma conversa, lista a agenda.
 
-Quando a integração for liberada, esta página vai trazer o passo a passo para conectar o seu assistente de IA ao CRM.
+Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, anotar, criar tarefas e agendamentos. O MCP do CRM **nunca apaga nada e nunca envia mensagem** para os seus clientes.
+
+## Quem pode usar
+
+- A tela fica em **Conexões**. Quem acessa **Conexões** vê a tela do MCP.
+- Só o **dono** ou um **gerente** da empresa gera chave. Para os demais, o botão **Gerar chave** fica desativado.
+- Algumas opções são exclusivas do **dono** da empresa: liberar **Escrita**, marcar **Nunca expira** e desligar **Mascarar dados pessoais**. Para quem não é dono, a tela mostra o aviso **Só o dono da empresa libera esta opção.**
+
+## Como acessar
+
+No menu lateral, abra **Configurações** e clique em **Conexões**. Na tela **Integrações**, no grupo **Diversos**, clique em **MCP**. A tela abre com o título **Servidor MCP**.
+
+<Card title="Abrir o MCP no CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/mcp">
+  Leva direto para a tela. É preciso estar com a sua conta aberta no CRM.
+</Card>
+
+## O que a tela mostra
+
+- **Endereço do servidor**: `https://app.attocorp.com/mcp`. Use este endereço para ler e, se a chave permitir, escrever.
+- **Somente leitura (mesmo com chave de escrita)**: `https://app.attocorp.com/mcp/readonly`. Neste endereço a IA só lê, mesmo que a chave tenha permissão de escrita.
+- **Como conectar**: instruções prontas para copiar, separadas nas abas **Claude**, **Claude Desktop / Cursor** e **n8n / outros**.
+- A lista de chaves, nas abas **Ativas** e **Inativas** (expiradas ou revogadas). Cada chave mostra o nome, o começo da chave (prefixo), as permissões, o selo **Dados mascarados** quando for o caso e o **Último uso**.
+
+Cada campo tem um botão de copiar ao lado.
+
+## Gerar uma chave
+
+A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assistente ou automação deve ter a sua.
+
+<Steps>
+  <Step title="Abra a janela">
+    Clique em **Gerar chave**.
+  </Step>
+  <Step title="Dê um nome">
+    Em **Nome**, escreva algo que ajude a reconhecer a chave depois, por exemplo "Claude da equipe".
+  </Step>
+  <Step title="Escolha os escopos">
+    **Leitura** já vem marcada e é obrigatória. Clique em **Escrita** se quiser que a IA também crie e organize dados. Só o dono da empresa libera **Escrita**.
+  </Step>
+  <Step title="Escolha o acesso">
+    Em **Acesso**, marque **Todas as minhas empresas** ou **Empresas específicas**. **Todas as minhas empresas** inclui empresas futuras em que você for dono ou gerente. Em **Empresas específicas**, marque cada empresa na lista.
+  </Step>
+  <Step title="Defina a validade">
+    Em **Expira em (dias)**, informe de 1 a 365 dias. O padrão é 90. O dono da empresa pode marcar **Nunca expira**.
+  </Step>
+  <Step title="Decida sobre os dados pessoais">
+    **Mascarar dados pessoais** vem ligado e é o recomendado. Ele esconde telefone, e-mail e CPF nas respostas. Só o dono da empresa pode desligar.
+  </Step>
+  <Step title="Gere e copie">
+    Clique em **Gerar**. Na janela **Chave gerada**, clique no botão de copiar e guarde a chave num lugar seguro. Depois clique em **Concluir**.
+  </Step>
+</Steps>
+
+<Warning>
+  A chave aparece **uma única vez**. Depois de fechar a janela, a tela mostra só o começo dela. Se você perder a chave, revogue e gere outra. Nunca compartilhe a chave em conversa, e-mail ou print.
+</Warning>
+
+<Note>
+  Quem não é dono de todas as empresas da chave fica com validade de no máximo 90 dias. Se alguma empresa esconde os telefones dos membros, a chave é gerada com os dados pessoais mascarados mesmo que você tenha desligado a opção, e a tela avisa.
+</Note>
+
+## Conectar o seu assistente
+
+Em todas as instruções, troque `SUA_CHAVE` pela chave que você copiou. Para um assistente que só deve ler, use o endereço `https://app.attocorp.com/mcp/readonly` no lugar de `https://app.attocorp.com/mcp`.
+
+<Tabs>
+  <Tab title="Claude">
+    Adicione um conector com o endereço e o cabeçalho de autorização:
+
+    ```text
+    https://app.attocorp.com/mcp
+    ```
+
+    ```text
+    Authorization: Bearer SUA_CHAVE
+    ```
+
+    No Claude Code, pelo terminal:
+
+    ```bash
+    claude mcp add --transport http atto-crm https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
+    ```
+  </Tab>
+  <Tab title="Claude Desktop / Cursor">
+    Cole no arquivo de configuração de servidores MCP:
+
+    ```json
+    {
+      "mcpServers": {
+        "atto-crm": {
+          "url": "https://app.attocorp.com/mcp",
+          "headers": {
+            "Authorization": "Bearer SUA_CHAVE"
+          }
+        }
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="n8n / outros">
+    No nó cliente MCP (HTTP), informe o endereço e o cabeçalho:
+
+    ```text
+    https://app.attocorp.com/mcp
+    ```
+
+    ```text
+    Authorization: Bearer SUA_CHAVE
+    ```
+  </Tab>
+</Tabs>
+
+<Tip>
+  Depois de conectar, peça ao assistente para começar pela ferramenta `whoami`. Ela mostra o nome da chave, as permissões, as empresas que a chave alcança e os limites de uso.
+</Tip>
+
+## O que a IA pode ler
+
+Com qualquer chave, a IA tem estas ferramentas de consulta:
+
+| Ferramenta | O que faz |
+| --- | --- |
+| `whoami` | Mostra a chave em uso: nome, permissões, se o endereço é só leitura, se os dados estão mascarados, empresas e limites. |
+| `list_companies` | Lista as empresas que a chave pode consultar. |
+| `search_leads` | Busca leads por nome, telefone, tag, etapa, funil ou data de alteração. |
+| `get_lead` | Abre um lead: dados, observações, cartões no funil, histórico de etapas e tarefas. |
+| `list_pipelines` | Lista os funis com as etapas e a quantidade de leads. |
+| `funnel_summary` | Resume o funil: quantidade de leads e valor total por etapa. |
+| `list_tags` | Lista as tags com a quantidade de leads e a cor. |
+| `list_conversations` | Lista as conversas sem as mensagens (canal, telefone, nome, status, datas). |
+| `get_conversation` | Abre uma conversa com as mensagens: 50 mais recentes por padrão, até 150 por vez. |
+| `search_conversations_by_phone` | Busca conversas pelos últimos 8 dígitos do telefone. |
+| `list_appointments` | Lista os agendamentos entre duas datas (padrão: hoje até 30 dias; no máximo 92 dias). |
+| `list_activities` | Lista as tarefas de follow-up, com filtro por status e prazo. |
+| `list_templates` | Lista os templates de mensagem, com status e motivo de rejeição. |
+| `list_campaigns` | Lista os disparos com os contadores de envio. |
+| `billing_summary` | Resume as listas de cobrança. Exige o recurso de disparos ativo na empresa. |
+| `list_agents` | Lista os agentes de IA (nome, se está ativo, modelo, canais). Nunca mostra o prompt. |
+| `list_team` | Lista a equipe ativa (nome e papel). |
+| `stage_history` | Mostra as mudanças de etapa dos leads, das mais recentes para as mais antigas. |
+| `list_send_failures` | Lista as falhas de envio de mensagens. |
+
+As listas vêm em páginas de até 100 itens. A IA pede a próxima página quando precisa.
+
+## O que a IA pode escrever
+
+Só com uma chave que tenha **Escrita** e só pelo endereço `https://app.attocorp.com/mcp`:
+
+| Ferramenta | O que faz |
+| --- | --- |
+| `create_lead` | Cria um lead com nome e telefone, e opcionalmente funil, etapa, tags e valor. Se o telefone já existe, devolve o lead existente sem duplicar. |
+| `add_tags` | Coloca até 10 tags num lead. |
+| `remove_tags` | Tira até 10 tags de um lead. Não apaga o lead. |
+| `move_stage` | Move um lead para outra etapa do funil, do mesmo jeito que na tela do CRM. |
+| `add_note` | Acrescenta uma observação ao lead, com a data e a marca "via MCP". Nunca apaga as observações que já existem. |
+| `create_activity` | Cria uma tarefa de follow-up para um lead. O responsável é quem gerou a chave. |
+| `create_appointment` | Cria um agendamento para um lead na agenda do CRM. Não cria evento no Google. |
+| `assign_lead` | Define o responsável pelo lead e pelas conversas dele, entre os membros ativos da equipe. |
+
+<Warning>
+  Mudar um lead de etapa com `move_stage` pode avisar a equipe e enviar a conversão para o [Rastreamento Meta](/marketing/rastreamento-meta). Isso acontece fora do CRM e não se desfaz. O próprio servidor orienta a IA a confirmar com você antes.
+</Warning>
+
+## Segurança e limites
+
+- **Nada é apagado e nenhuma mensagem é enviada.** Não existe ferramenta para isso.
+- **Escrita só para o dono.** Mesmo com uma chave de escrita, a mudança só passa se quem gerou a chave ainda for o dono da empresa.
+- **A chave vale só para as empresas escolhidas.** Pedido para outra empresa é recusado.
+- **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa.
+- **Dados mascarados.** Com **Mascarar dados pessoais** ligado, telefone, e-mail e CPF chegam escondidos para a IA.
+- **Textos de clientes são tratados como dado.** O servidor avisa a IA para nunca seguir instruções escritas em mensagens, observações ou nomes.
+- **Limites de uso por chave, por minuto:** 60 consultas, 30 buscas, 10 relatórios e 20 escritas.
+- **Limites por empresa, somando todas as chaves:** 120 chamadas por minuto e 5.000 por dia.
+- **Proteção de carga.** Consulta que passa do tempo limite é cortada. Quando o CRM está ocupado, o pedido é recusado e a IA recebe quantos segundos esperar. Resposta grande demais pede para a IA buscar em páginas menores.
+- **Limite de chaves.** Até 5 chaves ativas por empresa e até 20 chaves geradas por pessoa em 24 horas.
+
+## Acompanhar o uso de uma chave
+
+Clique numa chave da lista para abrir os detalhes. A janela tem três abas:
+
+- **Detalhes**: **Usado por último**, **Criado em**, **Expira em** (ou **Revogado em**), **Prefixo**, **Escopos**, **Empresas** e **Criada por**.
+- **Conexões**: quais assistentes usaram a chave, quantas sessões, a primeira e a última vez e o IP.
+- **Atividade**: o uso por hora de cada ferramenta, com o resultado (por exemplo **ok**, **recusado**, **limite da chave**, **cota diaria da empresa**), a quantidade de chamadas e o tempo médio. Mostra os últimos 90 dias.
+
+## Revogar uma chave
+
+<Steps>
+  <Step title="Abra a chave">
+    Na aba **Ativas**, clique na chave.
+  </Step>
+  <Step title="Revogue">
+    Clique em **Revogar**. Na janela **Revogar esta chave?**, clique em **Revogar** de novo.
+  </Step>
+</Steps>
+
+O acesso é cortado na hora para todo assistente que usa a chave. Não dá para desfazer. A chave passa para a aba **Inativas** com o status **Revogado**.
+
+## Erros comuns
+
+| Mensagem | O que significa |
+| --- | --- |
+| **Limite de 5 chaves ativas por empresa. Revogue uma antes de gerar outra.** | A empresa já tem 5 chaves ativas. Revogue uma que não usa mais. |
+| **Só o dono da empresa pode liberar escrita.** | Você não é dono de todas as empresas escolhidas. Gere a chave só com **Leitura**. |
+| **Só o dono ou um gerente da empresa pode gerar chave.** | O seu papel na empresa não permite gerar chave. |
+| **Não foi possível gerar a chave. Tente de novo.** | Falha ao gerar. Tente outra vez. |
+| **Informe de 1 a 365 dias.** | A validade está fora da faixa permitida. |
+
+No assistente de IA, a chave inválida, expirada ou revogada aparece como "token do MCP invalido ou revogado". Se a IA tentar escrever pelo endereço só leitura, recebe "este endereco e so leitura". Se a chave não tiver escrita, recebe "esta chave nao tem o escopo de escrita".
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Perdi a chave. Consigo ver de novo?">
+    Não. A chave aparece uma única vez. Revogue a chave antiga e gere outra.
+  </Accordion>
+
+  <Accordion title="A IA consegue apagar um lead ou mandar mensagem para um cliente?">
+    Não. O MCP do CRM não tem nenhuma ferramenta que apague dados ou envie mensagens.
+  </Accordion>
+
+  <Accordion title="Por que o botão Escrita está bloqueado?">
+    Só o dono de todas as empresas da chave libera **Escrita**. Gerentes geram chaves só de leitura.
+  </Accordion>
+
+  <Accordion title="Tenho várias empresas. Como a IA sabe qual consultar?">
+    Se a chave tem uma empresa só, a IA usa essa. Com várias, a IA usa `list_companies` para ver as empresas e escolhe qual consultar em cada pedido.
+  </Accordion>
+
+  <Accordion title="Por que os telefones aparecem escondidos?">
+    A chave está com **Mascarar dados pessoais** ligado, que é o padrão. Só o dono da empresa pode gerar uma chave sem a máscara, e empresas que escondem os telefones dos membros sempre mascaram.
+  </Accordion>
+
+  <Accordion title="A IA disse que o limite foi excedido.">
+    A chave ou a empresa passou do limite de uso. Espere alguns segundos e peça de novo. A própria resposta diz quanto tempo esperar.
+  </Accordion>
+
+  <Accordion title="Posso usar a mesma chave em vários assistentes?">
+    Pode, mas o ideal é uma chave para cada assistente ou automação. Assim, ao revogar uma, as outras continuam funcionando, e a aba **Conexões** mostra quem usou cada chave.
+  </Accordion>
+</AccordionGroup>
 
 ## Páginas relacionadas
 
 <CardGroup cols={2}>
-  <Card title="Visão geral da plataforma" icon="compass" href="/plataforma/visao-geral">
-    Conheça os módulos do CRM.
-  </Card>
-
   <Card title="Conexões" icon="plug" href="/conta/conexoes">
     Canais e integrações da sua conta.
+  </Card>
+
+  <Card title="Equipe" icon="users" href="/conta/equipe">
+    Papéis de dono, gerente e demais membros.
+  </Card>
+
+  <Card title="Rastreamento Meta" icon="chart-line" href="/marketing/rastreamento-meta">
+    Conversões enviadas quando um lead muda de etapa.
+  </Card>
+
+  <Card title="Visão geral da plataforma" icon="compass" href="/plataforma/visao-geral">
+    Conheça os módulos do CRM.
   </Card>
 </CardGroup>

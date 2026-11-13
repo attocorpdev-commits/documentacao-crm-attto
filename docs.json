@@ -72,6 +72,7 @@
                 "group": "Marketing",
                 "pages": [
                   "marketing/disparos",
+                  "marketing/cobrancas",
                   "marketing/rastreamento-meta"
                 ]
               },
@@ -178,6 +179,7 @@
                 "group": "Marketing",
                 "pages": [
                   "en/marketing/disparos",
+                  "en/marketing/cobrancas",
                   "en/marketing/rastreamento-meta"
                 ]
               },
