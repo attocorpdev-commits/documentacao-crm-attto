@@ -30,7 +30,7 @@ A template is a ready-made message that Meta approves before it can be used. On 
   </Step>
 </Steps>
 
-The list shows each template's **Name**, **Content**, **Category**, **Status** and **Language**. Use **Search templates by name or content...** to filter. Click **Details** to see the full message, including its buttons.
+The list shows each template's **Name**, **Content**, **Header**, **Category**, **Status** and **Language**. The **Header** column shows whether the header is text, image, video or document. Use **Search templates by name or content...** to filter. Click **Details** to see the full message, including its buttons.
 
 To fetch the channel's templates again, for example after an approval, click **Refresh**. With more than one channel, use the reload button next to the **Channel** field.
 
@@ -42,7 +42,7 @@ To fetch the channel's templates again, for example after an approval, click **R
 
 <Steps>
   <Step title="Start a new template">
-    In the **Templates** tab, click **New Template**. The **New WhatsApp Template** window opens, with the **Edit** and **Preview** tabs.
+    In the **Templates** tab, click **New Template**. The **New WhatsApp Template** window opens. Choose how to start: **Start from a suggestion**, **Create with help** or **From scratch**. See [Three ways to start](#three-ways-to-start). The editor has the **Edit** and **Preview** tabs.
   </Step>
   <Step title="Name it">
     Fill in **Name**. Use only lowercase letters, numbers and `_`, such as `welcome`. The **Adjust for Meta** button fixes the name to this format. If you do not like the result, click **Undo**.
@@ -60,6 +60,20 @@ To fetch the channel's templates again, for example after an approval, click **R
     Check the result in the **Preview** tab and click **Create Template**. The CRM shows **Template created! Awaiting Meta approval.**
   </Step>
 </Steps>
+
+### Three ways to start
+
+| Option | How it works |
+| --- | --- |
+| **Start from a suggestion** | Ready-made templates for billing, appointment reminder, order and delivery, team notice, welcome and satisfaction survey. Use **Filter by goal** and click **Use this suggestion** |
+| **Create with help** | Answer 5 questions: goal, company name, customer details, tone and button. Then click **Generate message** |
+| **From scratch** | Opens the full editor so you write everything |
+
+The suggestion and the generated message go into the editor for you to review and adjust before creating. To switch options, click **Back to options**. If you already changed the text, the CRM asks **Go back and lose your changes?**.
+
+### Check
+
+Below the editor, the **Check** panel checks the name and the message against Meta's rules as you type. Red items block sending. Yellow items are only warnings. When everything is fine, **All good with Meta's rules.** appears.
 
 ### Template fields
 
@@ -88,7 +102,7 @@ In the header, choose **Image**, **Video** or **Document** and upload the file w
 | Video | MP4, up to 16 MB |
 | Document | PDF, up to 100 MB |
 
-The file is the example sent to Meta. Wait for the upload to finish before clicking **Create Template**.
+The file is the example sent to Meta. Wait for the upload to finish before clicking **Create Template**. After the upload, the button shows the file name and the **Change file** option.
 
 <Note>
   In some cases the CRM cannot pass the header media to Meta. It warns that a template with a video, image or document header must be created outside the CRM, and that text-only templates can be created here. If you need help, contact [support](/en/empresa/suporte).
@@ -116,6 +130,12 @@ For each variable, fill in an example in **Samples for body content**, such as "
   Just below the **Message body**, click **See variable examples**. The **Variables: two different syntaxes** window shows that in a template the variable is numbered, while in a quick reply it uses the name. See [Quick replies](/en/atendimento/respostas-rapidas).
 </Tip>
 
+### Contact name variable
+
+If a body variable is the contact's name, check **This variable is the contact's name** below its example. On a template that already exists, choose the variable in **Details**, in the **Contact name variable** field. To undo it, choose **None (nothing is filled in)**. Only the account owner and managers can set it.
+
+When sending from a conversation, this variable comes filled with the contact's first name. The others still need to be filled in.
+
 ### Buttons
 
 Click **Add** under **Buttons (optional)** and choose the type:
@@ -131,6 +151,8 @@ Button limits:
 - up to 10 buttons per template;
 - up to 2 link buttons and 1 phone button;
 - button text up to 25 characters, with no emoji, no line break, no variable and no `*`, `_`, `~` or backtick.
+
+Meta requires quick replies to be together. If a link or phone button sits between them, the CRM tells you the order the template will be sent in. Click **Arrange now** to fix it.
 
 ## Approval status
 
@@ -161,7 +183,7 @@ After it is created, the template goes through Meta's review. The **Status** col
     The window shows the approved templates for the conversation's channel. Use **Search template by name...** to find one. Click **View broadcast message** to see the text before choosing.
   </Step>
   <Step title="Fill in the fields">
-    Fill in what the template asks for. To pick another template, click **← Back**.
+    Fill in what the template asks for. If the template has the contact name variable, it comes filled with the first name, and below it the CRM shows where it came from: **Name saved in the CRM** or **WhatsApp name**. To pick another template, click **← Back**.
   </Step>
   <Step title="Send">
     Click **Send**. The CRM confirms with **Template enviado!**.
@@ -179,6 +201,10 @@ After it is created, the template goes through Meta's review. The **Status** col
 Above the fields, the CRM shows the body text with the values you typed.
 
 The **Send** button is only enabled when every field is filled in.
+
+<Tip>
+  Can't find the right template? At the bottom of the **Send Template** window, click **Create template**. The CRM opens the **Templates** tab with template creation already open on the conversation's channel. This button appears for people with access to the templates screen. The same shortcut exists in [Broadcasts](/en/marketing/disparos).
+</Tip>
 
 <Note>
   If the template has an image, video or document in the header, the contact receives the approved file with the template.
@@ -228,6 +254,8 @@ The templates that notify your team about new leads are managed by the CRM and c
 | **Fix the buttons before publishing.** | Review the buttons' text, link and phone number |
 | **Attach and upload the header media before creating the template** | Upload the header file and wait for it to finish |
 | **Meta did not accept the template. Review the fields and try again.** | Review the content and create it again |
+| **A template with this name already exists in this language. Choose another name.** | Change the template's **Name** |
+| Another reason from Meta, explained in plain language | Follow the notice. If the reason is not known, the CRM shows **Message from Meta:** below it with the original text. Send that text to [support](/en/empresa/suporte) |
 | **No approved template found.** | The channel has no approved template. Create one and wait for approval |
 | **Template não entregue** with **Template variable not filled in** | A variable was left without a value. Fill in every field and send again |
 | **Template não entregue** with another reason | The send was refused. Read the reason in the notice and try again |

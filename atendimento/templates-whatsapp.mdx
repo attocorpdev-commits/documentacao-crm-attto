@@ -30,7 +30,7 @@ Template é uma mensagem pronta que a Meta aprova antes do uso. No WhatsApp Ofic
   </Step>
 </Steps>
 
-A lista mostra **Nome**, **Conteúdo**, **Categoria**, **Status** e **Idioma** de cada template. Use **Buscar template por nome ou conteúdo...** para filtrar. Clique em **Detalhes** para ver a mensagem completa, com os botões.
+A lista mostra **Nome**, **Conteúdo**, **Cabeçalho**, **Categoria**, **Status** e **Idioma** de cada template. A coluna **Cabeçalho** indica se o cabeçalho é texto, imagem, vídeo ou documento. Use **Buscar template por nome ou conteúdo...** para filtrar. Clique em **Detalhes** para ver a mensagem completa, com os botões.
 
 Para buscar de novo os templates do canal, como depois de uma aprovação, clique em **Atualizar**. Com mais de um canal, use o botão de recarregar ao lado do campo **Canal**.
 
@@ -42,7 +42,7 @@ Para buscar de novo os templates do canal, como depois de uma aprovação, cliqu
 
 <Steps>
   <Step title="Comece um template novo">
-    Na aba **Templates**, clique em **Novo Template**. Abre a janela **Novo Template WhatsApp**, com as abas **Editar** e **Prévia**.
+    Na aba **Templates**, clique em **Novo Template**. Abre a janela **Novo Template WhatsApp**. Escolha como começar: **Começar de uma sugestão**, **Criar com ajuda** ou **Do zero**. Veja [Três jeitos de começar](#três-jeitos-de-começar). O editor tem as abas **Editar** e **Prévia**.
   </Step>
   <Step title="Dê um nome">
     Preencha **Nome**. Use só letras minúsculas, números e `_`, como `boas_vindas`. O botão **Ajustar p/ Meta** corrige o nome para esse padrão. Se não gostar, clique em **Desfazer**.
@@ -60,6 +60,20 @@ Para buscar de novo os templates do canal, como depois de uma aprovação, cliqu
     Veja o resultado na aba **Prévia** e clique em **Criar Template**. O CRM mostra **Template criado! Aguardando aprovação da Meta.**
   </Step>
 </Steps>
+
+### Três jeitos de começar
+
+| Opção | Como funciona |
+| --- | --- |
+| **Começar de uma sugestão** | Modelos prontos de cobrança, lembrete de consulta, pedido e entrega, aviso para o time, boas-vindas e pesquisa de satisfação. Use **Filtrar por objetivo** e clique em **Usar esta sugestão** |
+| **Criar com ajuda** | Responda 5 perguntas: objetivo, nome da empresa, dados do cliente, tom e botão. Depois clique em **Gerar mensagem** |
+| **Do zero** | Abre o editor completo para você escrever tudo |
+
+A sugestão e a mensagem gerada entram no editor para você revisar e ajustar antes de criar. Para trocar de opção, clique em **Voltar para as opções**. Se você já mudou o texto, o CRM pergunta **Voltar e perder as mudanças?**.
+
+### Conferência
+
+Abaixo do editor, o quadro **Conferência** confere o nome e a mensagem com as regras da Meta enquanto você escreve. Os pontos em vermelho impedem o envio. Os amarelos são só avisos. Quando está tudo certo, aparece **Tudo certo com as regras da Meta.**
 
 ### Campos do template
 
@@ -88,7 +102,7 @@ No cabeçalho, escolha **Imagem**, **Vídeo** ou **Documento** e envie o arquivo
 | Vídeo | MP4, até 16 MB |
 | Documento | PDF, até 100 MB |
 
-O arquivo é o exemplo que vai para a Meta. Espere o envio terminar antes de clicar em **Criar Template**.
+O arquivo é o exemplo que vai para a Meta. Espere o envio terminar antes de clicar em **Criar Template**. Depois do envio, o botão mostra o nome do arquivo e a opção **Trocar arquivo**.
 
 <Note>
   Em alguns casos o CRM não consegue passar a mídia do cabeçalho para a Meta. Ele avisa que o template com vídeo, imagem ou documento no cabeçalho precisa ser criado fora do CRM, e que template só com texto pode ser criado aqui. Se precisar de ajuda, fale com o [suporte](/empresa/suporte).
@@ -116,6 +130,12 @@ Para cada variável, preencha um exemplo em **Amostras para o conteúdo**, como 
   Logo abaixo do **Corpo da mensagem**, clique em **Ver exemplos de variáveis**. A janela **Variáveis: duas sintaxes diferentes** mostra que no template a variável é numerada, enquanto na resposta rápida ela vai pelo nome. Veja [Respostas rápidas](/atendimento/respostas-rapidas).
 </Tip>
 
+### Variável do nome do contato
+
+Se uma variável do corpo é o nome do contato, marque **Esta variável é o nome do contato**, embaixo do exemplo dela. Num template já criado, escolha a variável em **Detalhes**, no campo **Variável do nome do contato**. Para desfazer, escolha **Nenhuma (nada é preenchido)**. Só o dono da conta e gerentes podem marcar.
+
+No envio pela conversa, essa variável já vem preenchida com o primeiro nome do contato. As outras continuam para preencher.
+
 ### Botões
 
 Clique em **Adicionar** em **Botões (opcional)** e escolha o tipo:
@@ -131,6 +151,8 @@ Limites dos botões:
 - até 10 botões por template;
 - até 2 botões de link e 1 de telefone;
 - o texto do botão tem até 25 caracteres, sem emoji, sem quebra de linha, sem variável e sem `*`, `_`, `~` ou crase.
+
+A Meta exige as respostas rápidas juntas. Se um botão de link ou telefone ficar entre elas, o CRM avisa a ordem em que o template vai sair. Clique em **Organizar agora** para arrumar.
 
 ## Status da aprovação
 
@@ -161,7 +183,7 @@ Depois de criado, o template passa pela análise da Meta. A coluna **Status** mo
     A janela mostra os templates aprovados do canal da conversa. Use **Buscar template pelo nome...** para encontrar. Clique em **Ver mensagem do disparo** para ver o texto antes de escolher.
   </Step>
   <Step title="Preencha os campos">
-    Preencha o que o template pede. Para trocar de template, clique em **← Voltar**.
+    Preencha o que o template pede. Se o template tem a variável do nome do contato, ela já vem com o primeiro nome, e embaixo o CRM mostra de onde ele veio: **Nome salvo no CRM** ou **Nome do WhatsApp**. Para trocar de template, clique em **← Voltar**.
   </Step>
   <Step title="Envie">
     Clique em **Enviar**. O CRM confirma com **Template enviado!**.
@@ -179,6 +201,10 @@ Depois de criado, o template passa pela análise da Meta. A coluna **Status** mo
 Acima dos campos, o CRM mostra o texto do corpo com os valores que você digitou.
 
 O botão **Enviar** só fica ativo quando todos os campos estão preenchidos.
+
+<Tip>
+  Não achou o template certo? No rodapé da janela **Enviar Template**, clique em **Criar template**. O CRM abre a aba **Templates** com a criação já aberta no canal da conversa. Esse botão aparece para quem tem acesso à tela de templates. O mesmo atalho existe nos [Disparos](/marketing/disparos).
+</Tip>
 
 <Note>
   Se o template tem imagem, vídeo ou documento no cabeçalho, o contato recebe o arquivo aprovado com o modelo.
@@ -228,6 +254,8 @@ Os templates que avisam sua equipe sobre leads novos são gerenciados pelo CRM e
 | **Corrija os botões antes de publicar.** | Revise texto, link e telefone dos botões |
 | **Anexe e faça o upload da mídia do cabeçalho antes de criar o template** | Envie o arquivo do cabeçalho e espere terminar |
 | **A Meta não aceitou o template. Revise os campos e tente novamente.** | Revise o conteúdo e crie de novo |
+| **Já existe um template com esse nome neste idioma. Escolha outro nome.** | Troque o **Nome** do template |
+| Outro motivo da Meta, explicado em português | Siga a orientação do aviso. Se o motivo não for conhecido, o CRM mostra embaixo **Mensagem da Meta:** com o texto original. Envie esse texto para o [suporte](/empresa/suporte) |
 | **Nenhum template aprovado encontrado.** | O canal não tem template aprovado. Crie um e aguarde a aprovação |
 | **Template não entregue** com **Variável do modelo não preenchida** | Sobrou variável sem valor. Preencha todos os campos e envie de novo |
 | **Template não entregue** com outro motivo | O envio foi recusado. Leia o motivo no aviso e tente de novo |

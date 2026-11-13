@@ -168,6 +168,14 @@ Você pode enviar imagem, vídeo, PDF, documento do Office ou arquivo compactado
   Preencha todos os campos da janela **Enviar Template** antes de enviar. Se um campo ficar em branco, a mensagem não sai e o CRM mostra **Template não entregue** com o motivo **Variável do modelo não preenchida**.
 </Note>
 
+### Inserir emoji
+
+Clique em **Inserir emoji**, ao lado do campo de mensagem, para abrir a lista completa de emojis. Use **Buscar emoji** para achar pelo nome ou navegue pelas categorias, como **Smileys e pessoas** e **Bandeiras**. Os que você usou aparecem em **Usados por último**. Em **Tom de pele**, escolha o tom dos emojis de pessoas e mãos.
+
+<Note>
+  No WhatsApp, o botão de emoji aparece no computador. No WhatsApp Oficial (Meta), com a janela de 24 horas fechada, ele fica bloqueado junto com o campo de mensagem.
+</Note>
+
 ### Aviso de problema de entrega no canal
 
 Quando um canal registra falha de entrega, aparece uma faixa vermelha no topo da conversa. No WhatsApp Oficial (Meta), ela pode indicar pagamento pendente na Meta. Clique em **Resolver** para abrir a janela **Problema de entrega no WhatsApp**, que explica o que conferir. Quando a entrega voltar ao normal, clique em **Resolvido**. Se o problema continuar, o aviso volta sozinho.
@@ -200,11 +208,17 @@ O botão **Mais opções** (três pontos) traz outras ações:
 
 ### Reagir a uma mensagem
 
-Abra uma imagem ou vídeo da conversa. Na barra de ações, clique em **Reagir** e escolha a reação. Esse botão aparece só nas conversas do WhatsApp (QR Code).
+Abra o menu **Mais opções** da mensagem. No topo, a linha **Reagir** traz seis reações rápidas. Clique em uma para enviar. O CRM confirma com **Reação enviada**. Numa imagem ou vídeo aberto, a barra de ações também tem **Reagir**.
+
+No WhatsApp Oficial (Meta), dá para reagir só a mensagens recebidas do contato, com a janela de 24 horas aberta e até 30 dias depois da mensagem. Em alguns canais oficiais a reação não está disponível. Quando não dá para reagir, as reações ficam desligadas e o menu mostra o motivo, como **Reação indisponível: a mensagem tem mais de 30 dias.**
 
 ### Buscar dentro da conversa
 
 Clique na lupa **Buscar na conversa**, no topo da conversa. Digite o termo e use as setas para navegar entre os resultados.
+
+<Note>
+  Em telas estreitas, como no celular, a busca, a fila e **Apagar contato** ficam no botão de três pontos (**Mais ações da conversa**), no topo da conversa.
+</Note>
 
 ## Atribuir ou transferir uma conversa
 
@@ -226,18 +240,39 @@ O botão **Fila** oferece **Atribuir próximo da fila**, que passa a conversa pa
 
 Se você é atendente e a conversa está atribuída a você, aparece o botão **Encerrar**. Informe o motivo, se quiser, e clique em **Encerrar atendimento**. O gerente responsável é avisado.
 
+## Apagar contato
+
+O botão **Apagar contato** (ícone de lixeira), no topo da conversa, apaga do CRM a conversa, as mídias e o contato daquele canal, junto com o que a IA lembra dessa pessoa (se ela não tiver conversa em outro canal).
+
+<Steps>
+  <Step title="Clique em Apagar contato">
+    No topo da conversa, clique no ícone de lixeira **Apagar contato**.
+  </Step>
+  <Step title="Confirme">
+    Na janela **Apagar contato**, digite `CONFIRMAR` e clique em **Apagar contato**. O CRM confirma com **Contato apagado do CRM**.
+  </Step>
+</Steps>
+
+<Warning>
+  A ação não tem volta. Ela apaga só do CRM: no WhatsApp do aparelho as mensagens continuam normalmente.
+</Warning>
+
+O botão aparece para o dono da conta e para gerentes. Outras pessoas da equipe só veem o botão com a permissão **Apagar contato**, dada na tela [Equipe](/conta/equipe).
+
 ## Ligar e desligar a IA
 
-Os controles de IA ficam no topo da conversa. Eles aparecem conforme o seu plano e a sua permissão. Passe o mouse sobre cada ícone para ver o que ele faz.
+Os controles de IA ficam no menu **IA**, no topo da conversa. Clique nele para abrir a lista **IA nesta conversa**. As opções aparecem conforme o seu plano e a sua permissão.
 
 | Controle | O que faz |
 | --- | --- |
 | **Pausar IA integrada nesta conversa** | A IA para de responder só nesta conversa |
 | **Retomar IA integrada nesta conversa** | A IA volta a responder nesta conversa e a marca de que uma pessoa assumiu é removida |
-| **Assumir** | Você assume a conversa e a IA é pausada. A conversa recebe um [protocolo de atendimento](/ia/protocolo-atendimento) |
+| **Assumir a conversa (pausa a IA integrada)** | Você assume a conversa e a IA é pausada. A conversa recebe um [protocolo de atendimento](/ia/protocolo-atendimento) |
 | **Desativar IA Personalizada nesta conversa** | Desliga a IA Personalizada só nesta conversa |
 | **Desligar IA Integrada neste canal** | Desliga a IA Integrada em todas as conversas do canal |
 | **Reiniciar memória da IA** | A IA esquece o histórico desta conversa e recomeça do zero |
+
+Quando a conversa tem protocolo de atendimento, ele aparece no fim do menu, em **Protocolo**. Clique para copiar o código.
 
 Quando você retoma uma conversa que estava pausada, o CRM confirma o que aconteceu:
 
@@ -266,9 +301,9 @@ Enquanto o CRM salva, o botão de pausar e retomar mostra um círculo girando e 
 
 ### Quando a IA está desligada em todas as conversas
 
-Na tela [Agente IA](/ia/agente-ia) você pode usar **Desligar IA para todas as conversas**. Isso vale também para as conversas novas que chegarem. Quando essa opção está ligada, as conversas que têm os controles de IA mostram um aviso no topo:
+Na tela [Agente IA](/ia/agente-ia) você pode usar **Desligar IA para todas as conversas**. Isso vale também para as conversas novas que chegarem. Quando essa opção está ligada, as conversas que têm os controles de IA mostram um aviso no menu **IA**:
 
-| Aviso no topo da conversa | O que significa |
+| Aviso no menu IA | O que significa |
 | --- | --- |
 | **IA global desligada** | A IA não responde nesta conversa |
 | **IA global desligada, ativa aqui** | A IA continua desligada nas outras conversas, mas volta a responder nesta |
@@ -283,7 +318,7 @@ Isso funciona mesmo quando a conversa está pausada por uma pessoa, seja pelo bo
 O CRM confirma com o mesmo aviso de retomada: **A conversa voltou para a IA.** quando alguém tinha usado **Assumir**, ou **A IA voltou a responder nesta conversa.** quando a IA estava apenas pausada.
 
 <Note>
-  O aviso **IA global desligada** aparece em telas largas. Em telas estreitas ele fica escondido, mas o botão de pausa continua funcionando do mesmo jeito.
+  No menu **IA**, o aviso **IA global desligada** aparece em qualquer tamanho de tela. Em telas largas o botão do menu mostra o nome **IA**; em telas estreitas, só o ícone.
 </Note>
 
 Para configurar como a IA responde, veja [Agente IA](/ia/agente-ia).
@@ -294,8 +329,10 @@ Clique no nome ou na foto do contato, no topo da conversa, para abrir o painel *
 
 | Campo | O que você faz |
 | --- | --- |
-| Número do contato | Clique para copiar |
-| **Salvar contato** | Define o nome do contato. O nome fica visível para toda a equipe |
+| Número do contato | Clique para copiar. O CRM confirma com **Número copiado** |
+| **Salvar contato** | Define o nome do contato. O nome fica visível para toda a equipe em todas as conversas deste número e aparece no lugar do nome do WhatsApp, na lista, na busca e no lead |
+| **Mídia, links e docs** | Abre tudo que foi enviado e recebido na conversa, nas abas **Mídia**, **Links**, **Docs** e **Favoritas** |
+| **Mensagens favoritas** | Abre direto a aba **Favoritas**, com as mensagens marcadas com estrela |
 | **Responsável** | Clique em **Alterar responsável** ou **Atribuir responsável** |
 | **Criar atividade** | Cria uma atividade ligada a este contato |
 | **Pipeline** | Escolhe em qual Pipeline o lead está |
@@ -306,6 +343,8 @@ Clique no nome ou na foto do contato, no topo da conversa, para abrir o painel *
 | **Notas** | Observações sobre o lead |
 
 O painel também mostra a quantidade de mensagens **Recebidas** e **Enviadas**, a data do **Primeiro contato** e a **Última interação**.
+
+Na janela **Mídia, links e docs**, clique em **Ver na conversa** para ir até a mensagem. Fotos e vídeos abrem em tela cheia, e documentos abrem pelo botão **Abrir**. Se houver muitas fotos e vídeos, clique em **Carregar mais**.
 
 <Tip>
   Pipeline, estágio e tags são salvos assim que você escolhe. Depois de preencher **Valor (R$)** e **Notas**, clique em **Salvar**.
@@ -326,11 +365,11 @@ O painel também mostra a quantidade de mensagens **Recebidas** e **Enviadas**, 
   <Accordion title="Não vejo os botões de IA na conversa. É normal?">
     Sim. Os controles de IA dependem do seu plano e da sua permissão de acesso. Fale com o responsável pela conta da sua empresa.
   </Accordion>
-  <Accordion title="O topo da conversa mostra IA global desligada. A IA parou de responder?">
+  <Accordion title="O menu IA mostra IA global desligada. A IA parou de responder?">
     Sim, enquanto esse aviso estiver ali. Alguém usou **Desligar IA para todas as conversas** na tela [Agente IA](/ia/agente-ia). Você pode liberar a IA só nesta conversa pelo botão **Ativar a IA só nesta conversa (IA global desligada)**.
   </Accordion>
   <Accordion title="Alguém assumiu a conversa e a IA não volta. O que eu faço?">
-    Clique no botão de IA no topo da conversa. Um clique devolve a conversa para a IA, mesmo com a IA desligada para todas as conversas. Nesse caso a IA volta a responder só nesta conversa e o CRM mostra **A conversa voltou para a IA.**
+    Abra o menu **IA**, no topo da conversa, e clique na opção de retomar. Um clique devolve a conversa para a IA, mesmo com a IA desligada para todas as conversas. Nesse caso a IA volta a responder só nesta conversa e o CRM mostra **A conversa voltou para a IA.**
   </Accordion>
   <Accordion title="A mensagem estava com dois tiques e agora mostra um alerta. Por quê?">
     O WhatsApp aceitou a mensagem e depois a recusou. O CRM tira os dois tiques para não mostrar uma entrega que não aconteceu. Clique no ícone de alerta para tentar novamente.
