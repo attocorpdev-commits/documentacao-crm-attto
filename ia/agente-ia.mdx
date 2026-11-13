@@ -109,7 +109,7 @@ Dentro de um agente, as abas aparecem nesta ordem: **Geral**, **Personalidade**,
     - A janela **Construtor de Prompt** tem três abas: **Questionário**, **Editor e prévia** e **Versões**.
     - No **Questionário**, preencha campos como **Nome da empresa**, **O que vende / oferece**, **Público-alvo**, **Tom de voz**, **Horário de atendimento**, **O que a IA PODE fazer** e **O que a IA NÃO pode fazer**. Depois clique em **Gerar prompt**.
     - Você também pode usar **Anexar documentos** para a IA montar o texto a partir de um arquivo seu.
-    - Em **Editor e prévia**, revise o texto e clique em **Salvar e ativar versão**. Salvar já coloca o texto no ar.
+    - Em **Editor e prévia**, revise o texto e clique em **Salvar e ativar versão**. Salvar já coloca o texto no ar. Se nada mudou, o botão mostra **Salvo: versão N ativa** e não cria versão nova.
     - **Versão ativa** é o texto que a IA usa agora para responder.
     - Em **Histórico de versões**, clique em **Restaurar** para voltar a uma versão anterior.
 
@@ -311,7 +311,9 @@ Tudo fica na aba **Avançado**. Depois de alterar, clique em **Salvar ajustes**.
     A tela também lembra: "O WhatsApp oficial pode ser limitado ou encarecido pela Meta a qualquer momento. O aviso no painel (sininho) é a garantia de que o time não perde o lead."
   </Accordion>
   <Accordion title="Leitura de mídia e agenda">
-    Em **Ajustes finos (avançado)**, a seção **Leitura de mídia** define se a IA entende **Imagens**, **Áudios**, **Documentos** e **Vídeos** enviados pelo cliente. Desligado, ela pede o conteúdo em texto. A opção **IA pode agendar** permite que a IA marque compromissos na [Agenda](/crm/agenda).
+    Em **Ajustes finos (avançado)**, a seção **Leitura de mídia** define se a IA entende **Imagens**, **Áudios**, **Documentos** e **Vídeos** enviados pelo cliente. Desligado, ela pede o conteúdo em texto.
+
+    Com **Áudios** ligado, a opção **Guardar transcrição dos áudios** faz a IA escrever o que o cliente falou. O texto aparece embaixo do áudio na conversa, e a IA lembra do que foi dito nas próximas mensagens. Escolha **Temporário (12 horas)**, que vem marcado, **Permanente** ou **Desligado**. No temporário, só o texto é apagado depois de 12 horas; o áudio continua. A opção **IA pode agendar** permite que a IA marque compromissos na [Agenda](/crm/agenda).
 
     Agendar é uma ação dos planos Prime e Ultra. No Start, a IA não marca compromisso nem move o card, mesmo com a opção ligada.
   </Accordion>
