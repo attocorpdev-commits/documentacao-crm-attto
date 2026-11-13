@@ -1,0 +1,369 @@
+---
+title: "Collections"
+sidebarTitle: "Collections"
+description: "Upload a spreadsheet of who owes you and the CRM sends automatic payment reminders on WhatsApp, Monday to Saturday."
+icon: "receipt"
+---
+
+On the **Collections** screen you upload a spreadsheet with who owes you, how much and when it is due. The CRM sends the payment reminders on WhatsApp by itself, on the day and at the time you choose. You track how much is still open, who paid and who replied.
+
+<Note>
+  This screen collects from **your customers**. It has nothing to do with your company's Atto Corp subscription. To see your plan and your invoices, see [Plans and billing](/en/conta/planos).
+</Note>
+
+<Note>
+  Inside the **Collections** screen, buttons and messages are shown in Portuguese in every language. On this page, the Portuguese label comes first, with the English meaning in parentheses.
+</Note>
+
+## How to access
+
+In the side menu, open **Marketing** and click **Collections**.
+
+<Card title="Open Collections in the CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/cobrancas" horizontal>
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+### Who can use it
+
+| Profile | Access |
+| --- | --- |
+| Company owner | Yes, when the company's plan includes **Broadcasts** |
+| Manager | Always |
+| Other team members | Only with the **Collections** page checked under allowed pages |
+
+To give someone on your team access, see [Team](/en/conta/equipe).
+
+If your profile has no access, the screen shows **Seu perfil não tem permissão para acessar as cobranças** (your profile does not have permission to access collections), asking you to have the administrator enable the page.
+
+<Note>
+  Someone with access to only some WhatsApp channels can use only those channels in collections.
+</Note>
+
+## What the CRM does and does not do
+
+The CRM **reminds** the person to pay. It does not receive the money.
+
+- Payment happens through the link you put in the spreadsheet, in the **Link de pagamento** (payment link) column. It can be a link from your bank, your billing system or wherever you already get paid.
+- The CRM does not check by itself whether the person paid. When the money arrives, you mark the charge as paid, one by one or with a spreadsheet. See [Mark who paid](#mark-who-paid).
+
+## The dashboard
+
+At the top of the screen there are six panels in reais. Each one shows the amount and how many people are in that situation.
+
+| Panel | What it shows |
+| --- | --- |
+| **Em aberto** (open) | Everything not paid yet |
+| **Vence hoje** (due today) | Bills due today |
+| **Vencido de 1 a 7 dias** (1 to 7 days overdue) | Bills overdue for up to a week |
+| **Vencido de 8 a 30 dias** (8 to 30 days overdue) | Bills overdue for up to a month |
+| **Vencido há mais de 30 dias** (over 30 days overdue) | Bills overdue for longer |
+| **Recebido no mês** (received this month) | What was marked as paid this month |
+
+Below, under **Suas cobranças** (your collections), is the list of your collections. Each collection is a spreadsheet of who owes and when it is due. Each row shows the name, the status, how many people it has, how many are waiting for you, the next reminder and the **Em aberto** (open) and **Recebido** (received) amounts.
+
+Each collection's status appears in a badge:
+
+| Badge | What it means |
+| --- | --- |
+| **Rascunho** (draft) | Saved, but the reminders are still off |
+| **Lembretes ligados** (reminders on) | The CRM is sending the reminders |
+| **Pausada** (paused) | Reminders are stopped until you turn them on again |
+
+## Create a collection
+
+Click **Nova cobrança** (new collection). The flow has four steps.
+
+<Steps>
+  <Step title="Upload your list">
+    Fill in **Nome da cobrança** (collection name), for example "December fees". Only you and your team see this name.
+
+    Under **Por qual WhatsApp os lembretes vão sair?** (which WhatsApp will send the reminders?), choose the channel. Each channel shows its type: **WhatsApp oficial** (official WhatsApp) or **WhatsApp por QR code** (WhatsApp by QR code).
+
+    Under **Planilha de quem deve** (spreadsheet of who owes), drag the file in or click to choose it. If you prefer, click **Baixar planilha modelo** (download template spreadsheet) and fill in the ready-made model.
+  </Step>
+  <Step title="When to remind">
+    Turn on the reminders you want. There are four:
+
+    - **3 dias antes do vencimento** (3 days before the due date)
+    - **No dia do vencimento** (on the due date)
+    - **2 dias depois do vencimento** (2 days after the due date)
+    - **7 dias depois do vencimento** (7 days after the due date)
+
+    Each reminder shows the date it goes out, using an example bill. Also choose the sending days and time. See [Sending days and time](#sending-days-and-time).
+  </Step>
+  <Step title="What to say">
+    Write the message for each reminder. A ready-made suggestion is already there. See [Write the message](#write-the-message).
+  </Step>
+  <Step title="Review and turn on">
+    Check the **Resumo** (summary), choose **Quem cuida das respostas** (who handles the replies) and, if you want, send a test to your WhatsApp. Then click **Ligar lembretes** (turn on reminders).
+
+    Not ready to turn them on? Click **Salvar rascunho** (save draft) and come back later.
+  </Step>
+</Steps>
+
+### The spreadsheet
+
+The spreadsheet can be .csv, .xlsx or .xls. It must have phone, amount and due date. Name, description and payment link help with the message.
+
+The template spreadsheet has these columns:
+
+| Column | Required | Example |
+| --- | --- | --- |
+| **Nome** (name) | No | Maria Exemplo |
+| **Telefone** (phone) | Yes | 5511900000001 |
+| **Valor** (amount) | Yes | 150,00 |
+| **Vencimento** (due date) | Yes | 10/12/2026 |
+| **Referente a** (description) | No | Mensalidade de dezembro |
+| **Link de pagamento** (payment link) | No | Your payment link |
+
+<Tip>
+  You do not need these exact column names. The CRM recognizes common Portuguese variations, such as "Cliente" for name, "Vcto" for due date, or "Pix" and "Boleto" for the link.
+</Tip>
+
+Dates use the day/month/year format and amounts use a comma for cents, as in Brazil.
+
+After reading the file, the screen shows how many rows are **prontos** (ready) and how many are **sem telefone** (no phone), **com data estranha** (odd date) or **com valor estranho** (odd amount).
+
+- Under **Corrija as linhas com problema** (fix the rows with problems), adjust the phone, amount or due date right there, or click **Remover** (remove). A row with a problem gets no reminder.
+- Repeated rows, with the same phone and the same due date, are left out.
+- If the spreadsheet goes over the row limit, the screen warns **Planilha grande demais** (spreadsheet too large) and the extra rows are left out.
+
+### Who will receive
+
+With the spreadsheet read and the channel chosen, the **Quem vai receber** (who will receive) panel splits people into:
+
+- **já conversaram** (already chatted): they have already messaged this WhatsApp;
+- **nunca conversaram** (never chatted): they never talked to this number;
+- **sem WhatsApp** (no WhatsApp): the number has no WhatsApp. This check only happens on a connected WhatsApp by QR code;
+- **pediram para não receber** (asked not to receive): unsubscribed people.
+
+People who asked not to receive and people without WhatsApp are left out of the reminders.
+
+### Sending days and time
+
+Under **Em quais dias pode mandar** (which days it can send), check the days from Monday to Saturday. The default is Monday to Saturday.
+
+Under **Em qual horário** (at what time), choose the start and end, in Brasília time. The default is 8 a.m. to 6 p.m.
+
+- Nothing is ever sent on Sunday.
+- Each person gets at most 1 reminder per day, even if they are in more than one collection.
+- If a reminder's date falls on a Sunday or on an unchecked day, it goes out on the next chosen day.
+
+## Write the message
+
+In the **O que dizer** (what to say) step, pick a reminder on the side and adjust its message.
+
+- Under **Tom da mensagem** (message tone), choose **Amigável** (friendly), **Neutro** (neutral) or **Firme** (firm). Changing the tone replaces the text with a ready-made suggestion. Then just adjust it.
+- Under **Mensagem** (message), edit the text freely.
+- Under **Inserir campo** (insert field), click **Nome** (name), **Valor** (amount), **Vencimento** (due date), **Referente a** (description) or **Link de pagamento** (payment link). The field goes into the text in square brackets, such as `[nome]` and `[valor]`, and is replaced with each person's data from the spreadsheet.
+
+The **Como a pessoa vai ver** (how the person will see it) panel shows a preview with the first person in the spreadsheet.
+
+<Note>
+  The suggested messages are in Portuguese. Edit the text if your customers speak another language.
+</Note>
+
+### On official WhatsApp
+
+On official WhatsApp, each message must be approved before it goes out. A payment reminder counts as a utility message, which costs less than marketing. Approval usually takes minutes.
+
+<Steps>
+  <Step title="Send for approval">
+    With the text ready, click **Enviar para aprovação** (send for approval). Do this for each reminder that is on.
+  </Step>
+  <Step title="Track the status">
+    Click **Atualizar situação** (refresh status) to see whether WhatsApp has answered.
+  </Step>
+</Steps>
+
+| Badge | What it means |
+| --- | --- |
+| **Ainda não enviada** (not sent yet) | You still need to click **Enviar para aprovação** |
+| **Aguardando aprovação** (awaiting approval) | WhatsApp is still reviewing it |
+| **Aprovada pelo WhatsApp** (approved by WhatsApp) | It can be used in the reminders |
+| **Recusada pelo WhatsApp** (rejected by WhatsApp) | Adjust the text and send it again |
+| **Texto mudou, envie de novo** (text changed, send again) | You changed the text after sending it |
+
+Before you send, the screen warns you when the text has something WhatsApp rejects. For example:
+
+- the message cannot start or end with a field;
+- two fields cannot sit right next to each other;
+- too many fields for too little text;
+- more than 1024 characters;
+- marketing words.
+
+<Warning>
+  On official WhatsApp, reminders can only be turned on after WhatsApp approves all the messages. Save the draft and come back once they are approved.
+</Warning>
+
+### On WhatsApp by QR code
+
+WhatsApp by QR code has no approval. The screen shows the risk of the number being blocked, based on how many people never talked to the number:
+
+| Notice | When it appears |
+| --- | --- |
+| **Risco baixo** (low risk) | Almost everyone has already talked to this number |
+| **Risco médio de bloqueio** (medium risk of blocking) | Some people never talked to this number |
+| **Risco alto de bloqueio** (high risk of blocking) | Most people never talked to this number |
+
+To lower the risk:
+
+- keep **Variar o texto com IA** (vary the text with AI) on, so each person gets a slightly different text;
+- under **Ritmo de envio** (sending pace), choose **Calmo** (calm, 1 every 40 to 120 s) instead of **Normal** (1 every 20 to 60 s).
+
+<Warning>
+  Many messages to people who do not know your number can make WhatsApp block the number. When most people never talked to you, the safest choice is official WhatsApp. See [WhatsApp (QR Code) or Official WhatsApp (Meta)](/en/primeiros-passos/tipos-whatsapp).
+</Warning>
+
+## Review, test and turn on
+
+In the **Conferir e ligar** (review and turn on) step:
+
+- the **Resumo** (summary) shows in one sentence how many people, how much is open, the days and the time;
+- the reminder list shows the status of each one;
+- under **Quem cuida das respostas** (who handles the replies), choose the team member who will get the conversations of people who reply, or **Ninguém em especial** (no one in particular).
+
+### Send a test
+
+Under **Mandar um teste para mim** (send me a test), type **Seu WhatsApp** (your WhatsApp), choose **Qual lembrete** (which reminder) and click **Mandar teste** (send test). The message arrives the way the customer will see it, with example data.
+
+- The test goes out right away, between 8 a.m. and 8 p.m., Monday to Saturday.
+- You can send up to 10 tests per day.
+- On official WhatsApp, the test is unlocked once WhatsApp approves that reminder.
+
+## Track a collection
+
+Click a collection under **Suas cobranças** (your collections) to open its details. The top shows how many people, the **Em aberto** (open) total and the **Recebido** (received) total.
+
+Use **Buscar por nome, telefone ou referente** (search by name, phone or description) to find someone. To filter, click one of the statuses below. Each one shows how many people it has.
+
+| Status | What it means |
+| --- | --- |
+| **Todas** (all) | Everyone in the collection |
+| **A vencer** (upcoming) | The due date has not arrived yet |
+| **Vence hoje** (due today) | The due date is today |
+| **Vencida** (overdue) | The due date has passed and it was not paid |
+| **Respondeu** (replied) | The person replied and the reminders stopped for them |
+| **Não chegou** (not delivered) | The last reminder was not delivered |
+| **Paga** (paid) | Marked as paid |
+
+On each person, the conversation icon opens their conversation in the inbox.
+
+### When the person replies
+
+If the person replies after a reminder, the reminders stop for that person only. They show as **Respondeu** (replied) and the top of the screen shows how many people are waiting for you.
+
+Talk to them. If you want to start reminding again, click **Retomar** (resume) on their row.
+
+### Tags on the lead
+
+The CRM puts a status tag on the lead of each person in the collection and swaps the tag when the status changes. The tags are in Portuguese:
+
+- `cobrança: a vencer`, `cobrança: vence hoje`, `cobrança: vencida`, `cobrança: respondeu`, `cobrança: não chegou` and `cobrança: paga`;
+- `cobrança: já conversou` and `cobrança: nunca conversou`.
+
+If the person has no lead in the CRM yet, the tag is added when the lead appears. To use these tags in filters and broadcasts, see [Tags](/en/crm/tags).
+
+## Mark who paid
+
+### One or more people
+
+<Steps>
+  <Step title="Select">
+    Check the box next to each person who paid. To check everyone on screen, use the box in the header.
+  </Step>
+  <Step title="Mark as paid">
+    Click **Marcar como pago** (mark as paid). Whoever is marked stops getting reminders.
+  </Step>
+</Steps>
+
+Marked someone by mistake? Select the person and click **Voltar para em aberto** (back to open).
+
+### With a spreadsheet
+
+<Steps>
+  <Step title="Open the window">
+    In the collection details, click **Subir planilha com os pagos** (upload spreadsheet of paid ones).
+  </Step>
+  <Step title="Upload the file">
+    Use a spreadsheet with the phone column and, if you have it, the due date column. The screen shows how many phones it found.
+  </Step>
+  <Step title="Confirm">
+    Click **Marcar como pagos** (mark as paid).
+  </Step>
+</Steps>
+
+- With the due date column, only the bill with that due date is marked as paid.
+- Without the due date column, all open bills for that phone in this collection are marked as paid.
+- A row with an invalid due date is left out. Fix the date in the dd/mm/yyyy format and upload again.
+
+## Pause, turn on and edit
+
+In the collection details:
+
+- **Pausar lembretes** (pause reminders) stops all sending for the collection. Nothing is lost.
+- **Ligar lembretes** (turn on reminders) starts sending again.
+- **Editar lembretes** (edit reminders) opens the four steps again. On a draft, the button is called **Continuar configurando** (continue setting up).
+
+When editing, you can upload another spreadsheet. It adds or updates people, and anyone who already paid stays paid.
+
+<Note>
+  On official WhatsApp, if you change the text of a reminder that was already approved, send it for approval again. Until WhatsApp approves the new version, the reminders keep using the previously approved message.
+</Note>
+
+The screen has no button to delete a collection. To stop it for good, use **Pausar lembretes** (pause reminders).
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Does the CRM receive the payment for me?">
+    No. The CRM only sends the reminders. The person pays through the link you put in the **Link de pagamento** (payment link) column. When the money arrives, mark the charge as paid.
+  </Accordion>
+  <Accordion title="Does the CRM find out by itself who paid?">
+    No. Mark who paid with **Marcar como pago** (mark as paid) or **Subir planilha com os pagos** (upload spreadsheet of paid ones). While the bill is open, reminders that are on keep going out.
+  </Accordion>
+  <Accordion title="Why did a reminder not go out on Sunday?">
+    Nothing is ever sent on Sunday. The reminder goes out on the next day chosen under **Em quais dias pode mandar** (which days it can send).
+  </Accordion>
+  <Accordion title="A person is in two collections. Do they get two reminders on the same day?">
+    No. Each person gets at most 1 reminder per day.
+  </Accordion>
+  <Accordion title="Why can't I click Ligar lembretes?">
+    On official WhatsApp, every message of the reminders that are on must be approved. In the other steps, the next button only unlocks with the collection name, the channel, at least one ready person, at least one reminder on and a valid time.
+  </Accordion>
+  <Accordion title="The test was not sent. What should I do?">
+    Check the error message. The most common ones: the test only goes out between 8 a.m. and 8 p.m., Monday to Saturday; the number needs an area code and 10 or 11 digits; the limit is 10 tests per day; and, on official WhatsApp, the message must be approved first.
+  </Accordion>
+  <Accordion title="Someone shows as Não chegou. What does it mean?">
+    The last reminder to that person was not delivered. Check that the number is right and that the channel is connected. Open their conversation with the conversation icon to see what happened.
+  </Accordion>
+  <Accordion title="The chosen WhatsApp shows as disconnected. Do the reminders go out?">
+    No. The reminders only go out after the channel is reconnected. See [Connections](/en/conta/conexoes).
+  </Accordion>
+  <Accordion title="I don't see Collections in the menu.">
+    Your profile does not have the page enabled, or the company's plan does not include **Broadcasts**. Ask the owner or a manager to enable the **Collections** page for you.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Broadcasts" icon="paper-plane" href="/en/marketing/disparos">
+    Send the same message to many CRM contacts.
+  </Card>
+  <Card title="Tags" icon="tags" href="/en/crm/tags">
+    Use the collection tags to filter leads and build audiences.
+  </Card>
+  <Card title="Official WhatsApp templates" icon="file-lines" href="/en/atendimento/templates-whatsapp">
+    Understand message approval on Official WhatsApp (Meta).
+  </Card>
+  <Card title="WhatsApp (QR Code) or Official WhatsApp (Meta)" icon="whatsapp" href="/en/primeiros-passos/tipos-whatsapp">
+    Compare official WhatsApp with WhatsApp by QR code.
+  </Card>
+  <Card title="Team" icon="users" href="/en/conta/equipe">
+    Enable the Collections page for team members.
+  </Card>
+  <Card title="Connections" icon="plug" href="/en/conta/conexoes">
+    Connect and reconnect the channels used for reminders.
+  </Card>
+</CardGroup>
