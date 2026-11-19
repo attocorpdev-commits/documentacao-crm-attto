@@ -7,7 +7,7 @@ icon: "plug"
 
 O MCP (Model Context Protocol) é um jeito padrão de ligar um assistente de IA a outro sistema. Com ele, você conversa com a IA de sua preferência e ela consulta o CRM por você: busca leads, resume o funil, lê uma conversa, lista a agenda.
 
-Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, anotar, criar tarefas e agendamentos. O MCP do CRM **nunca apaga nada e nunca envia mensagem** para os seus clientes.
+Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, anotar, criar tarefas e agendamentos. Com uma chave gerada pelo dono, ela também lê o prompt do seu [Agente IA](/ia/agente-ia) e pode propor um texto novo, que fica como **rascunho** e só entra no ar quando você ativa na tela. O MCP do CRM **nunca apaga nada e nunca envia mensagem** para os seus clientes.
 
 ## Quem pode usar
 
@@ -144,7 +144,9 @@ Com qualquer chave, a IA tem estas ferramentas de consulta:
 | `list_templates` | Lista os templates de mensagem, com status e motivo de rejeição. |
 | `list_campaigns` | Lista os disparos com os contadores de envio. |
 | `billing_summary` | Resume as listas de cobrança. Exige o recurso de disparos ativo na empresa. |
-| `list_agents` | Lista os agentes de IA (nome, se está ativo, modelo, canais). Nunca mostra o prompt. |
+| `list_agents` | Lista os agentes de IA (nome, se está ativo, modelo, canais). |
+| `get_agent_prompt` | Mostra o prompt ativo de um agente de IA: o texto completo, o número da versão e se há um rascunho aguardando você. Só funciona com chave gerada pelo dono da empresa. Com **Mascarar dados pessoais** ligado, telefones e e-mails do prompt chegam escondidos. |
+| `list_prompt_versions` | Lista o histórico do prompt de um agente: número da versão, origem, data, tamanho, qual está ativa e o começo do texto. Só funciona com chave gerada pelo dono da empresa. |
 | `list_team` | Lista a equipe ativa (nome e papel). |
 | `stage_history` | Mostra as mudanças de etapa dos leads, das mais recentes para as mais antigas. |
 | `list_send_failures` | Lista as falhas de envio de mensagens. |
@@ -165,10 +167,16 @@ Só com uma chave que tenha **Escrita** e só pelo endereço `https://app.attoco
 | `create_activity` | Cria uma tarefa de follow-up para um lead. O responsável é quem gerou a chave. |
 | `create_appointment` | Cria um agendamento para um lead na agenda do CRM. Não cria evento no Google. |
 | `assign_lead` | Define o responsável pelo lead e pelas conversas dele, entre os membros ativos da equipe. |
+| `save_prompt_draft` | Grava um **rascunho** de prompt para o agente de IA. O rascunho **não entra no ar**: ele fica no histórico e você revisa e ativa na tela do agente. Exige uma chave sem **Mascarar dados pessoais**. Limite de 30 rascunhos por agente por dia. |
+| `restore_prompt_version` | Volta o agente para uma versão anterior do prompt que você já fez ou aprovou na tela. Rascunho do MCP não é ativado por aqui. Nenhuma versão é apagada. |
 
 <Warning>
   Mudar um lead de etapa com `move_stage` pode avisar a equipe e enviar a conversão para o [Rastreamento Meta](/marketing/rastreamento-meta). Isso acontece fora do CRM e não se desfaz. O próprio servidor orienta a IA a confirmar com você antes.
 </Warning>
+
+<Note>
+  O MCP nunca coloca um prompt novo no ar sozinho. O que a IA propõe com `save_prompt_draft` aparece na tela do agente, na aba **Personalidade**, com o aviso **Rascunho do prompt aguardando você**. Clique em **Revisar rascunho**, leia o texto e clique em **Ativar esta versão** só se estiver certo. Assim, uma mensagem maliciosa de cliente lida pela IA nunca vira instrução do seu atendimento sem você ver.
+</Note>
 
 ## Segurança e limites
 
@@ -178,6 +186,8 @@ Só com uma chave que tenha **Escrita** e só pelo endereço `https://app.attoco
 - **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa.
 - **Dados mascarados.** Com **Mascarar dados pessoais** ligado, telefone, e-mail e CPF chegam escondidos para a IA.
 - **Textos de clientes são tratados como dado.** O servidor avisa a IA para nunca seguir instruções escritas em mensagens, observações ou nomes.
+- **Prompt só com você.** Ler o prompt pelo MCP exige chave gerada pelo dono. Mudar o prompt pelo MCP só grava rascunho, e quem ativa é você, na tela.
+- **Tudo fica registrado.** Cada rascunho e cada volta de versão feitos pelo MCP ficam no registro de auditoria, com a chave usada.
 - **Limites de uso por chave, por minuto:** 60 consultas, 30 buscas, 10 relatórios e 20 escritas.
 - **Limites por empresa, somando todas as chaves:** 120 chamadas por minuto e 5.000 por dia.
 - **Proteção de carga.** Consulta que passa do tempo limite é cortada. Quando o CRM está ocupado, o pedido é recusado e a IA recebe quantos segundos esperar. Resposta grande demais pede para a IA buscar em páginas menores.
