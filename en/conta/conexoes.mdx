@@ -46,7 +46,7 @@ Click the three dots next to the channel to see the actions.
 | Action | What it does |
 | --- | --- |
 | **Rename** | Changes the **Channel name** and the **Short name (nickname, up to 5 characters)**, which appears on cards and in conversations. |
-| **Disconnect** | Disconnects the number from the CRM. Appears only on a connected channel. Conversations that already came in through it stay in the CRM. |
+| **Disconnect** | Disconnects the number from the CRM. Appears only on a connected channel. Conversations, contacts and leads that already came in through it stay saved in the CRM. |
 | **Delete channel** | Removes the channel. Appears only on a disconnected channel, and only to the owner or a manager. |
 
 To delete, type **CONFIRMAR** in the window and click **Delete**.
@@ -103,7 +103,7 @@ Click the **Official WhatsApp (Meta)** card. The screen has two tabs: **Channels
     In the **Confirm channel activation** window, click **Yes, connect**.
   </Step>
   <Step title="Authorize in the Meta window">
-    A Meta window opens. Choose the account and authorize.
+    A Meta window opens. Choose the account and authorize. If it is your first time, Meta asks for the business details, the number, a code by SMS and the display name. Take your time: the CRM waits up to 30 minutes with the window open.
   </Step>
   <Step title="Finish">
     When **Channel connected successfully!** appears, click **Done**.
@@ -113,6 +113,12 @@ Click the **Official WhatsApp (Meta)** card. The screen has two tabs: **Channels
 <Tip>
   If the browser blocks the window, allow pop-ups for the site and click **Try again**. If you prefer help, click **Do it with support**.
 </Tip>
+
+If you close the Meta window before finishing, **Connection canceled: the window was closed.** appears. Just start again.
+
+<Note>
+  If you own more than one company in the CRM, you can connect Official WhatsApp (Meta) in each of them. Switch to the right company before clicking **Connect via Meta**. See [switch company](/en/conta/trocar-empresa).
+</Note>
 
 <Note>
   If your team already receives new lead alerts on WhatsApp, when you finish the connection (or a reconnection) the **Alert templates created** window appears. The CRM creates a single alert message on the new number, which works for all alert types, and it goes through Meta's review. This usually takes a few minutes. Click **Close** or **View template status**, which opens the **Templates** tab. You set up this alert in [AI Agent](/en/ia/agente-ia).
@@ -127,7 +133,7 @@ Click the three dots to see the actions. They change depending on whether the ch
 | Action | When it appears | What it does |
 | --- | --- | --- |
 | **Rename** | always | Changes the channel's name and short name. |
-| **Disconnect** | connected channel | Disconnects the channel. You can reconnect it later. |
+| **Disconnect** | connected channel | Disconnects the channel. Conversations and contacts stay saved, and you can reconnect it later. |
 | **Reauthorize (wrong account)** | connected channel | Removes the channel and starts the connection again, so you can choose the right account at Meta. |
 | **Reconnect** | disconnected channel | Turns the channel back on, using the connection that already exists. |
 | **Delete channel** | always | Removes the channel. Type **CONFIRMAR** and click **Delete**. |
@@ -222,6 +228,8 @@ Only the company owner or a manager can generate a key. See the step-by-step gui
 <AccordionGroup>
   <Accordion title="I reached the channel limit. How do I connect more?">
     On Official WhatsApp, the **Official API channel limit reached** window opens, showing how many channels your plan allows and how many you already have. It has the **Close** and **Buy extra channel** buttons. On Instagram, the button is **Purchase Instagram channel**. On the Start plan it does not appear, because the Instagram channel is for the Prime and Ultra plans. On WhatsApp by QR Code, the **WhatsApp QR Code channel limit reached** window opens. Click **Talk to support**.
+
+    Only the company owner can buy an extra channel. If someone else on the team tries, **Only the company owner can make this purchase, and the company must be active.** appears.
   </Accordion>
   <Accordion title="Does the WhatsApp channel limit count both types?">
     No. Each type has its own limit: your plan sets how many QR Code channels and how many official channels you can have. One type does not take a slot from the other.
@@ -234,6 +242,9 @@ Only the company owner or a manager can generate a key. See the step-by-step gui
   </Accordion>
   <Accordion title="I dismissed the out-of-sync session notice and it came back.">
     **Dismiss** only hides the notice. If the problem happens again on the same number, the CRM warns you again. Reconnect the number to fix it.
+  </Accordion>
+  <Accordion title="Does disconnecting a channel delete the conversations?">
+    No. When you disconnect, the CRM shows **Channel disconnected. Conversations and contacts are still saved.** The history and the leads stay in the CRM, and everything is still there when you reconnect.
   </Accordion>
   <Accordion title="Where do I set up ad tracking?">
     On the **Conversion Tracking** card. See the details in [Meta tracking](/en/marketing/rastreamento-meta).

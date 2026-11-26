@@ -88,13 +88,15 @@ Next to the time of each sent message, the CRM shows where it stands:
 | --- | --- |
 | Spinning circle | **Sending**: the message is going out right now |
 | One tick | **Sent**: WhatsApp accepted the message |
-| Two ticks | **Delivered**: the message reached the contact |
+| Two ticks | **Delivered**: the message reached the contact. It also appears when the contact has already read the message |
 | Alert icon | **Not delivered: click to try again**. When the CRM knows the reason, it appears in the notice |
 | Clock icon | **Could not send. Tap to try again.** Sending got stuck before it went out |
 
 Click the alert icon or the clock icon to try again. While the CRM retries, the icon spins and shows **Resending…**. To see the status in writing, open **More options** and click **Message info**.
 
 Messages sent by the AI and messages sent by a broadcast follow the same marks, with the real sending status. See [Broadcasts](/en/marketing/disparos).
+
+The mark only moves forward, never back. If the contact has already read the message, it keeps the two ticks, even if an old sent or delivered confirmation arrives late. This also applies to the read receipt from WhatsApp (QR Code), which now shows up on messages sent by the CRM.
 
 <Note>
   The two ticks only appear when delivery is confirmed. If WhatsApp rejects the message after accepting it, the two ticks go away and the message shows the alert icon. The CRM never shows a delivery mark for a delivery that did not happen.
@@ -240,6 +242,20 @@ The **Queue** button offers **Assign next in queue**, which hands the conversati
 
 If you are an agent and the conversation is assigned to you, the **End** button appears. Enter the reason, if you want, and click **End service**. The responsible manager is notified.
 
+### Owner change history
+
+Every owner change is recorded inside the conversation, in a yellow strip between the messages, at the point where it happened. Examples: **Carla assigned the conversation to Rafael** or **Carla removed the conversation from Rafael**. When the change is made by automatic distribution, the strip shows **Queue** instead of the name.
+
+The strip has the **team only** badge. It is not sent to the customer and is not part of the conversation the AI reads. Click the strip to see the details:
+
+| Field | What it shows |
+| --- | --- |
+| **Done by** | The person who changed the owner, or **Queue** and **System** when it was automatic |
+| **From** | The previous owner, or **Nobody** |
+| **To** | The new owner, or **Nobody** |
+| **When** | Date and time, in Brasília time |
+| **Where** | Where the change came from, such as **Conversation (chat)**, **Pipeline**, **Automatic queue**, **Queue when going online**, **Team member left**, **Contact merge** or **Service closed** |
+
 ## Delete a contact
 
 The **Apagar contato** (delete contact) button, with a trash icon at the top of the conversation, deletes from the CRM the conversation, the media and the contact on that channel, along with what the AI remembers about this person (if they have no conversation on another channel).
@@ -334,13 +350,13 @@ Click the contact's name or photo at the top of the conversation to open the **P
 | Field | What you do |
 | --- | --- |
 | Contact number | Click to copy. The CRM confirms with **Number copied** |
-| **Save contact** | Sets the contact's name. The name is visible to the whole team in every conversation with this number and replaces the WhatsApp name in the list, in search and in the lead |
+| **Save contact** or **Edit contact** | Sets the contact's name. The name is visible to the whole team in every conversation with this number and replaces the WhatsApp name in the list, in search and in the lead. The button shows **Edit contact**, with a pencil, when the contact already has a name, and **Save contact** when there is only the number or **Unknown** |
 | **Media, links and docs** | Opens everything sent and received in the conversation, in the **Media**, **Links**, **Docs** and **Starred** tabs |
 | **Starred messages** | Opens the **Starred** tab directly, with the messages marked with a star |
 | **Owner** | Click **Change owner** or **Assign owner** |
 | **Create activity** | Creates an activity linked to this contact |
 | **Pipeline** | Chooses which Pipeline the lead is in |
-| **Stage** | Chooses the lead's stage in the Pipeline |
+| **Stage** | Chooses the lead's stage in the Pipeline. For a loss stage, the CRM asks for the **Loss reason** before moving. See [Pipeline](/en/crm/pipeline) |
 | **Tags** | Click **Add tag...** to search for or create a tag |
 | **AI summary** | Shows the conversation summary written by the AI |
 | **Value (R$)** | Deal value |

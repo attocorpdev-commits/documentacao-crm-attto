@@ -1,6 +1,6 @@
 ---
 title: "Agenda"
-description: "Marque compromissos, bloqueie horários de folga, cadastre serviços e conecte sua conta do Google Calendar."
+description: "Marque compromissos, bloqueie horários de folga, cadastre serviços, conecte o Google Calendar e mande avisos de evento pelo WhatsApp."
 icon: "calendar"
 ---
 
@@ -154,6 +154,91 @@ O botão **Limpar** remove os compromissos que você criou no mês que está abe
 <Warning>
   Essa ação não pode ser desfeita. Confira o mês exibido antes de confirmar.
 </Warning>
+
+## Avisos de evento pelo WhatsApp
+
+Para lembrar as pessoas de um evento, como uma aula, um culto ou uma reunião, use a tela **Avisos**. O CRM manda sozinho, pelo WhatsApp, a confirmação de presença, o lembrete e o aviso de que o evento vai começar, até 30 minutos antes.
+
+No menu lateral, abra **Marketing** e clique em **Avisos**, logo abaixo de **Cobranças**. A tela lista os seus eventos, com a situação, a data e o próximo aviso.
+
+<Card title="Abrir Avisos no CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/avisos">
+  Leva direto para a tela. É preciso estar com a sua conta aberta no CRM.
+</Card>
+
+<Note>
+  Os avisos são independentes dos compromissos da Agenda. Quem pode usar a tela é quem tem acesso a **Cobranças**. Para liberar alguém da equipe, marque a página **Cobranças** nas permissões dela. Veja [Equipe](/conta/equipe).
+</Note>
+
+### Criar um aviso
+
+Clique em **Novo aviso**. O cadastro tem 4 passos.
+
+<Steps>
+  <Step title="Evento">
+    Preencha o **Nome do evento**, a data e a hora (horário de Brasília). **Local (opcional)** e **Link (opcional)** entram na mensagem só quando preenchidos. Em **Por qual WhatsApp os avisos vão sair?**, escolha o canal.
+  </Step>
+  <Step title="Pessoas">
+    Suba a planilha com nome e telefone de quem vai receber, ou clique em **Escolher dos contatos** para marcar pessoas da sua lista. Dá para usar os dois juntos: o mesmo telefone entra uma vez só. Linha com problema aparece em vermelho para você corrigir.
+  </Step>
+  <Step title="Avisos">
+    Ligue os avisos que quer mandar e ajuste a mensagem de cada um. Já deixamos um texto pronto em cada aviso.
+  </Step>
+  <Step title="Conferir">
+    Veja quando cada aviso sai e para quantas pessoas. Em **Seu WhatsApp**, mande um teste para você. Depois clique em **Ligar avisos**. Se preferir deixar para depois, clique em **Salvar sem ligar**.
+  </Step>
+</Steps>
+
+### Quando cada aviso sai
+
+| Aviso | Quando sai |
+| --- | --- |
+| **7 dias antes**, **5 dias antes**, **3 dias antes**, **2 dias antes** | No dia escolhido, dentro do horário de envio |
+| **1 dia antes (véspera)** | Na véspera, dentro do horário de envio |
+| **No dia do evento** | No dia, dentro do horário de envio |
+| **Algumas horas antes** | De 1 a 12 horas antes do evento, na hora exata |
+| **30 minutos antes** | 30 minutos antes do evento, na hora exata |
+
+Os avisos por dia saem no intervalo de **Avisos por dia saem entre**, que começa como 8h às 20h. Os avisos por hora saem entre 7h e 22h. Aviso cujo horário já passou, ou que cairia depois do evento, não sai.
+
+### Mensagens
+
+Cada aviso tem um modelo pronto: **Confirmação**, **Lembrete** ou **Começa em 30 minutos**. Use **Inserir campo:** para colocar os dados de cada pessoa e do evento. A prévia **Como a pessoa vai ver** mostra o resultado.
+
+| Campo | O que entra |
+| --- | --- |
+| `{nome}` | Primeiro nome da pessoa |
+| `{evento}` | Nome do evento |
+| `{data}` | Dia do evento |
+| `{hora}` | Hora do evento |
+| `{local}` | Endereço ou lugar do evento |
+| `{link}` | Link do evento, como transmissão ou inscrição |
+
+<Note>
+  No WhatsApp Oficial (Meta), cada mensagem precisa ser aprovada antes. Clique em **Enviar para aprovação**. Costuma aprovar em minutos. Os avisos só podem ser ligados depois que todas as mensagens forem aprovadas.
+</Note>
+
+<Warning>
+  No WhatsApp (QR Code), a prévia da agenda mostra em vermelho os riscos de envio, como ritmo e limite do dia. O limite diário é dividido com as [Cobranças](/marketing/cobrancas): os avisos usam só o que sobra.
+</Warning>
+
+Quem pediu para não receber mensagens fica de fora dos avisos.
+
+### Acompanhar e mudar um aviso
+
+Clique em um evento da lista para ver a situação de cada aviso e de cada pessoa: enviados, na fila, os que não chegaram e os que não foram enviados, com o motivo. Use **Buscar por nome ou telefone** para achar alguém.
+
+| Botão | O que faz |
+| --- | --- |
+| **Editar** | Muda as pessoas, os avisos e as mensagens |
+| **Pausar** ou **Ligar** | Pausa ou religa os avisos. Enquanto estiver pausado nada sai, e o aviso cujo horário passar nesse tempo não sai depois |
+| **Remarcar** | Muda a data e a hora do evento. Os avisos voltam a sair, contando a partir da nova data |
+| **Cancelar evento** | Para todos os avisos e cancela o que está na fila. Não dá para desfazer |
+| **Tentar de novo** | Reenvia as mensagens que falharam, de todos ou de uma pessoa |
+| **Tirar da lista** | Tira uma pessoa do evento. Ela não recebe mais os avisos |
+
+<Tip>
+  Para mudar a data de um aviso ligado, use **Remarcar**, e não **Editar**.
+</Tip>
 
 ## Perguntas frequentes
 
