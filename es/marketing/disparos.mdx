@@ -1,0 +1,263 @@
+---
+title: "Difusiones"
+description: "Envía un mismo mensaje de WhatsApp a varios contactos del CRM, con ritmo controlado y seguimiento del resultado."
+icon: "paper-plane"
+---
+
+En la pantalla **Difusiones** creas campañas: eliges los contactos, escribes el mensaje y el CRM lo envía a cada persona, una conversación a la vez. Después, sigues quién lo recibió y quién respondió.
+
+## Cómo acceder
+
+En el menú lateral, abre **Marketing** y haz clic en **Difusiones**. La pantalla se abre en la pestaña **Campañas**.
+
+<Note>
+  Si aparece el aviso **Envíos masivos** diciendo que tu perfil no tiene permiso, pide acceso al responsable de la cuenta de tu empresa.
+</Note>
+
+<Warning>
+  Enviar muchos mensajes a personas que no los pidieron perjudica tu número. En WhatsApp (Código QR), puede llevar al bloqueo o la suspensión del número. En WhatsApp Oficial (Meta), puede bajar la calidad del número y limitar los envíos. Envía solo a contactos que conocen tu negocio y mantén volúmenes moderados.
+</Warning>
+
+<Card title="Abrir Difusiones en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/broadcast" horizontal>
+  Te lleva directamente a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## Antes de empezar
+
+Necesitas un canal conectado, de WhatsApp (Código QR) o de WhatsApp Oficial (Meta). Consulta [Conectar tu WhatsApp](/es/primeiros-passos/conectar-whatsapp) o abre [Conexiones en el CRM](https://app.attocorp.com/app/connections) para conectar ahora.
+
+Eliges por qué canal sale la campaña en el paso **¿Qué enviar?**, en el campo **¿Desde qué número enviar?**. Un canal apagado aparece con **(desconectado)** al lado del nombre.
+
+El tipo de canal cambia la forma de escribir el mensaje:
+
+| Tipo de canal | Cómo es el mensaje |
+| --- | --- |
+| **WhatsApp (Código QR)** | Texto libre, escrito por ti |
+| **WhatsApp Oficial (Meta)** | Un modelo de mensaje ya aprobado por Meta, llamado plantilla |
+
+## Crear una campaña
+
+Haz clic en **Nueva campaña**, en la parte superior de la pantalla. La campaña se arma en 4 pasos. Usa **Continuar** para avanzar y **Volver** para revisar un paso. Para salir sin crearla, haz clic en **Volver a campañas**.
+
+<Steps>
+  <Step title="¿Quién lo recibirá?">
+    En el bloque **Contactos CRM**, marca quién va a recibir el mensaje.
+
+    - Usa **Buscar por nombre o número...** para encontrar a una persona.
+    - En **Filtrar por etiquetas**, haz clic en **Incluir tag** (incluir etiqueta) para mostrar solo a quien tiene determinada etiqueta.
+    - Haz clic en **Excluir tag** (excluir etiqueta) para quitar de la lista a quien tiene determinada etiqueta.
+    - Marca **Seleccionar todos** para elegir todos los contactos de la lista a la vez.
+
+    El contador **no público** (en el público) muestra cuántas personas encajan en los filtros. Cuenta un contacto por número y ya quita a los dados de baja y los números bloqueados.
+
+    En **Origen**, solo **WhatsApp** queda marcado. Los contactos de Instagram aparecen con el recuento, pero no reciben difusiones de WhatsApp. En este paso también está la opción **Ignorar duplicados**.
+  </Step>
+  <Step title="¿Qué enviar?">
+    En **¿Desde qué número enviar?**, elige el canal. Completa **Nombre de la campaña**. Ese nombre es solo para ti, el contacto no lo ve.
+
+    En el canal **WhatsApp**, escribe en **Texto del mensaje**.
+
+    En el canal **WhatsApp Oficial (Meta)**, en **Plantilla aprobada**, haz clic en **Seleccionar plantilla...** y elige un modelo. Si todavía no hay ninguno, haz clic en **Crear plantilla**.
+
+    Al lado, **Cómo llegará el mensaje** muestra la vista previa. Antes de escribir, lee la sección "Variables en el mensaje", más abajo en esta página. Una variable escrita en el lugar equivocado bloquea el envío.
+  </Step>
+  <Step title="¿Cuándo enviar?">
+    En **Ritmo de envío**, define los intervalos entre los envíos. Consulta los detalles en [Ritmo de envío](#ritmo-de-envio). En **Después del envío**, elige, si quieres, el vendedor responsable y las etiquetas.
+  </Step>
+  <Step title="Revisar y enviar">
+    Revisa el resumen: campaña, número, total de contactos, intervalo y **Tiempo estimado**. Después haz clic en **Iniciar Campaña**. Los envíos empiezan al momento y respetan el horario permitido.
+  </Step>
+</Steps>
+
+### Combinar etiquetas
+
+Al incluir más de una etiqueta, aparecen dos opciones:
+
+- **qualquer uma** (cualquiera): el contacto entra si tiene al menos una de las etiquetas.
+- **todas as tags** (todas las etiquetas): el contacto solo entra si tiene todas las etiquetas elegidas.
+
+La misma etiqueta no puede estar en incluir y en excluir al mismo tiempo. Para crear y organizar etiquetas, consulta [Etiquetas](/es/crm/tags).
+
+### Opciones de la campaña
+
+- **Ignorar duplicados**: viene activado. Envía solo una vez por número, aunque aparezca repetido.
+- **Vendedor responsable** (opcional): los contactos de la difusión quedan asignados a ese vendedor, en la conversación y en el Pipeline.
+- **Aplicar tag ao enviar** (aplicar etiqueta al enviar) (opcional): cada contacto que reciba el mensaje recibe las etiquetas elegidas.
+- **Personalización con IA**: disponible en el canal **WhatsApp**. Genera variaciones únicas del mensaje para cada contacto.
+
+<Note>
+  Quien responda a tu difusión entra en la atención como cualquier otra conversación. Si el **Agente IA** está activo en tu empresa, atiende esas respuestas automáticamente. Consulta [Agente IA](/es/ia/agente-ia) para activarlo o desactivarlo.
+</Note>
+
+### Variables en el mensaje
+
+El CRM tiene dos formas de escribir una variable, y no funcionan en el mismo lugar:
+
+| Dónde funciona | Cómo se escribe | Ejemplos |
+| --- | --- | --- |
+| Plantilla del canal **WhatsApp Oficial (Meta)** | numerada | `{{1}}`, `{{2}}` |
+| Respuesta rápida, dentro de la conversación | por nombre | `{{primeiro_nome}}`, `{{nome}}`, `{{empresa}}`, `{{vendedor}}` |
+
+En el **Texto del mensaje** del canal **WhatsApp**, la difusión no tiene variables: lo que escribas sale igual para todos los contactos.
+
+El CRM tiene una guía con ejemplos de las dos formas, llamada **Variables: dos sintaxis diferentes**. Se abre en dos lugares:
+
+- en la pantalla de plantillas de **WhatsApp Oficial**, en el enlace **Ver ejemplos de variables**, debajo de **Cuerpo del mensaje**. Es la misma pantalla que se abre con el botón **Crear plantilla**;
+- en [Respuestas rápidas](/es/atendimento/respostas-rapidas), en el botón **Ver ejemplos**.
+
+<Warning>
+  No mezcles las dos formas. Si queda alguna variable sin completar en el mensaje, ese contacto no recibe nada: el envío pasa a fallo con el motivo **Variable de la plantilla sin completar**. Es a propósito: así nadie recibe el mensaje con la variable sin reemplazar en lugar del nombre.
+</Warning>
+
+### Nombre del contacto y multimedia en la plantilla
+
+En el canal **WhatsApp Oficial (Meta)**, la plantilla puede tener espacios variables numerados. En la difusión, todos esos espacios se completan con el primer nombre del contacto. Si el contacto no tiene nombre, entra la palabra "cliente".
+
+Si la plantilla tiene imagen, video o documento, todos los contactos reciben el mismo archivo aprobado junto con el modelo.
+
+Antes de enviar, revisa la **Vista previa del envío**. Muestra el mensaje final con una muestra de contactos reales de tu selección.
+
+## Ritmo de envío
+
+El CRM nunca envía todo de una vez. Tú defines el intervalo y la pantalla muestra el tiempo estimado.
+
+**En WhatsApp (Código QR):** completa **Intervalo mínimo (min)** e **Intervalo máximo (min)**. El valor más bajo aceptado es 1 minuto.
+
+**En WhatsApp Oficial (Meta):** completa **Intervalo entre lotes** y elige **segundos** o **minutos**. El envío sale en grupos de unos 15 mensajes a la vez. La pantalla recomienda de 2 a 3 minutos. Para más de 200 contactos, recomienda de 3 a 5 minutos.
+
+<Tip>
+  Si eliges un intervalo demasiado corto, la pantalla avisa: **Intervalo por debajo de lo recomendado: riesgo de bloqueo o caída en la entrega.** Mejor sigue la recomendación.
+</Tip>
+
+En WhatsApp Oficial (Meta), las campañas con más de 1.000 contactos dependen del límite diario de tu número en Meta. Lo que pase del límite sale recién al día siguiente.
+
+## Definir el horario permitido para los envíos
+
+El recuadro **Ventana de envío permitida** impide difusiones fuera del horario que elijas. Vale para todas las campañas de la empresa y usa el horario de Brasilia.
+
+<Steps>
+  <Step title="Activa la ventana">
+    Activa el interruptor al lado de **Ventana de envío permitida**.
+  </Step>
+  <Step title="Elige horarios y días">
+    En **Horários permitidos** (horarios permitidos), define el inicio y el fin. Usa **Adicionar bloco** (agregar bloque) para tener más de un período en el día. En **Dias permitidos** (días permitidos), marca los días de la semana.
+  </Step>
+  <Step title="Guarda">
+    Haz clic en **Guardar ventana**.
+  </Step>
+</Steps>
+
+Fuera de la ventana, la difusión se pausa y se reanuda sola en la próxima apertura. En la lista, la campaña muestra **Esperando ventana** con el horario en que se reanuda.
+
+Para usar un horario diferente en una sola campaña, activa **Personalizar la ventana de esta campaña** en el paso **¿Cuándo enviar?**.
+
+## Seguir el resultado
+
+El recuadro **Campañas** lista tus difusiones más recientes. Cada una muestra la situación (**Enviando**, **Pausada** o **Completada**), la barra de progreso y el recuento de envíos y fallos.
+
+Haz clic en una campaña para abrir los detalles, con **Enviados**, **Fallos**, **Total** y **Tasa**.
+
+Haz clic en **Ver informe** para abrir el **Informe del envío**. Muestra **Entregues** (entregados), **Respondidos** (respondidos), **Taxa de entrega** (tasa de entrega) y **Taxa de resposta** (tasa de respuesta), además de la situación de cada contacto. En el informe puedes:
+
+- hacer clic en **Abrir conversa** (abrir conversación) para hablar con un contacto;
+- hacer clic en **Exportar CSV** para descargar la lista en una hoja de cálculo.
+
+Cuando un contacto aparece como fallo, el informe muestra el motivo a su lado, y el motivo también va a la hoja de cálculo de **Exportar CSV**. Si el motivo es **Variable de la plantilla sin completar**, fue el propio CRM el que bloqueó el envío: corrige el mensaje y vuelve a enviar a esos contactos.
+
+### El mensaje en la conversación del contacto
+
+Cada envío de la difusión también aparece en la conversación del contacto, con la situación real de entrega. Si WhatsApp rechaza el mensaje, la marca de entregado se quita y el error aparece en su lugar. El CRM además revisa esas marcas cada cierto tiempo y corrige solo las que quedaron con la situación equivocada.
+
+## Pausar, reanudar, repetir y eliminar
+
+- **Pausar**: la cola se detiene donde está y no se pierde nada.
+- **Reanudar**: el envío continúa desde donde se detuvo.
+- **Repetir**: completa una nueva campaña con el nombre, el mensaje y los intervalos de la anterior. Vuelves a elegir los contactos. En el canal oficial, vuelve a elegir la plantilla y revisa el intervalo.
+- **Eliminar**: abre los detalles y haz clic en el ícono de papelera. Solo aparece cuando la campaña no está enviando. Esta acción no se puede deshacer.
+
+## Contactos que pidieron no recibir
+
+Quien pidió salir de tu lista aparece con la etiqueta **Dado de baja**. Ese contacto no se puede marcar y no recibe difusiones, ni siquiera con **Seleccionar todos**, a menos que incluyas a los dados de baja a propósito (consulta más abajo). La pantalla muestra cuántos dados de baja quedaron fuera.
+
+La etiqueta se agrega sola cuando la persona:
+
+- responde solo "sair", "parar", "cancelar" o "descadastrar";
+- deja claro que no es la persona correcta o que no quiere contacto, con frases como "não conheço", "número errado", "foi engano", "não fui eu", "não pedi", "me tira da lista" o "pare de mandar mensagem".
+
+En este segundo caso, el **Agente IA** también deja de responder esa conversación y queda esperando a un agente. Es a propósito: insistir con quien nunca pidió contacto es lo que lleva al bloqueo de tu número.
+
+<Note>
+  Una frase común en medio de la conversación no da de baja a nadie. "Posso sair às 18h" o "não quero parar de receber" siguen valiendo como mensaje normal.
+</Note>
+
+Si Meta avisa que un número no tiene WhatsApp, también queda fuera de las difusiones durante 30 días y aparece como **Dado de baja** en ese período.
+
+La baja pedida por la propia persona nunca se deshace sola.
+
+### Incluir dados de baja en una difusión
+
+Cuando hay dados de baja entre los contactos, el paso **¿Quién lo recibirá?** muestra el interruptor **Incluir descadastrados mesmo assim** (incluir dados de baja de todos modos). Al activarlo, el CRM pide confirmación en la ventana **Incluir descadastrados neste disparo?** (¿incluir dados de baja en esta difusión?). Confirma en **Entendo o risco, incluir** (entiendo el riesgo, incluir). Después de eso, los dados de baja se pueden marcar en la lista.
+
+<Warning>
+  Actívalo solo si tienes base legal para hablar con quien pidió la baja. Enviar a esas personas aumenta las denuncias y el riesgo de que Meta suspenda tu número oficial, además del riesgo legal (LGPD).
+</Warning>
+
+La elección vale solo para esa campaña. Los contactos anonimizados por LGPD, los números inválidos y quien dijo que no es la persona correcta siguen siempre bloqueados.
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Puedo programar una difusión para otro día?">
+    No hay campo de fecha y hora para programar. La campaña empieza cuando haces clic en **Iniciar Campaña**. Para controlar el horario, usa la **Ventana de envío permitida**.
+  </Accordion>
+  <Accordion title="¿Puedo adjuntar una imagen a la difusión?">
+    En el canal **WhatsApp**, el mensaje de la difusión es solo texto. En el canal **WhatsApp Oficial (Meta)**, el contenido multimedia viene de la plantilla aprobada y es el mismo para todos.
+  </Accordion>
+  <Accordion title="¿Cómo cancelo una campaña que ya empezó?">
+    Haz clic en **Pausar** y confirma. Después, abre los detalles y elimina la campaña con el ícono de papelera.
+  </Accordion>
+  <Accordion title="¿El mismo contacto puede recibir el mensaje dos veces?">
+    Con **Ignorar duplicados** activado, no. El envío se hace una vez por número.
+  </Accordion>
+  <Accordion title="¿Por qué la campaña está detenida en Esperando ventana?">
+    El horario actual está fuera de la ventana de envío. La difusión se reanuda sola en el horario indicado.
+  </Accordion>
+  <Accordion title="El informe muestra Variable de la plantilla sin completar. ¿Qué hago?">
+    El mensaje se envió con una variable que quedó sin completar, así que el CRM bloqueó el envío antes de que saliera. Nadie recibió el mensaje con la variable sin reemplazar. Revisa las reglas en la sección "Variables en el mensaje", corrige el mensaje y vuelve a enviar a esos contactos.
+  </Accordion>
+  <Accordion title="¿Puedo usar el nombre del contacto en el texto libre de la difusión?">
+    En el canal **WhatsApp**, no: el **Texto del mensaje** sale igual para todos. Quien completa el nombre es la plantilla del canal **WhatsApp Oficial (Meta)**. Dentro de la conversación, las respuestas rápidas también completan nombre, empresa y vendedor. Consulta [Respuestas rápidas](/es/atendimento/respostas-rapidas).
+  </Accordion>
+  <Accordion title="¿Quien responde a la difusión es atendido por la IA?">
+    Sí, si el **Agente IA** está activo en tu empresa. La conversación abierta por la difusión nace con la IA activada, como cualquier otra. Puedes desactivar la IA conversación por conversación en la atención. Consulta [Agente IA](/es/ia/agente-ia).
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Etiquetas" icon="tags" href="/es/crm/tags">
+    Organiza contactos para armar el público de las difusiones.
+  </Card>
+  <Card title="Contactos" icon="address-book" href="/es/crm/contatos">
+    Consulta y actualiza tu base de contactos.
+  </Card>
+  <Card title="Conexiones" icon="plug" href="/es/conta/conexoes">
+    Gestiona los canales usados en los envíos.
+  </Card>
+  <Card title="Atención en WhatsApp" icon="whatsapp" href="/es/atendimento/whatsapp">
+    Responde a quien contestó tu difusión.
+  </Card>
+  <Card title="Plantillas de WhatsApp" icon="file-lines" href="/es/atendimento/templates-whatsapp">
+    Crea plantillas de WhatsApp Oficial (Meta), sigue la aprobación de Meta y envía plantillas en una conversación o en una difusión.
+  </Card>
+  <Card title="Privacidad y LGPD" icon="shield-halved" href="/es/crm/privacidade-lgpd">
+    Exporta o anonimiza los datos de un contacto, silencia la IA para una persona y entiende qué guarda el CRM después.
+  </Card>
+  <Card title="Cobranzas" icon="receipt" href="/es/marketing/cobrancas">
+    Sube la hoja de cálculo de quién te debe y el CRM envía recordatorios de pago automáticos por WhatsApp, de lunes a sábado.
+  </Card>
+  <Card title="Avisos de eventos" icon="calendar-check" href="/es/crm/agenda#avisos-de-eventos-por-whatsapp">
+    Recuerda a las personas un evento por WhatsApp, con confirmación, recordatorio y aviso hasta 30 minutos antes.
+  </Card>
+</CardGroup>

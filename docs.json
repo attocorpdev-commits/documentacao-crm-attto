@@ -231,6 +231,113 @@
             ]
           }
         ]
+      },
+      {
+        "language": "es",
+        "tabs": [
+          {
+            "tab": "Centro de ayuda",
+            "groups": [
+              {
+                "group": "Primeros pasos",
+                "pages": [
+                  "es/index",
+                  "es/primeiros-passos/primeiro-acesso",
+                  "es/primeiros-passos/planos",
+                  "es/primeiros-passos/tipos-whatsapp",
+                  "es/primeiros-passos/conectar-whatsapp",
+                  "es/primeiros-passos/problemas-comuns"
+                ]
+              },
+              {
+                "group": "Inteligencia artificial",
+                "pages": [
+                  "es/ia/assistente-ia",
+                  "es/ia/agente-ia",
+                  "es/ia/entrevista-inicial",
+                  "es/ia/protocolo-atendimento",
+                  "es/ia/creditos"
+                ]
+              },
+              {
+                "group": "Atención",
+                "pages": [
+                  "es/atendimento/whatsapp",
+                  "es/atendimento/instagram",
+                  "es/atendimento/instagram-mensagens-recusadas",
+                  "es/atendimento/respostas-rapidas",
+                  "es/atendimento/janela-24h",
+                  "es/atendimento/templates-whatsapp",
+                  "es/atendimento/fila-rodizio",
+                  "es/atendimento/status-ausente"
+                ]
+              },
+              {
+                "group": "CRM",
+                "pages": [
+                  "es/crm/pipeline",
+                  "es/crm/contatos",
+                  "es/crm/tags",
+                  "es/crm/atividades",
+                  "es/crm/agenda",
+                  "es/crm/importar-contatos",
+                  "es/crm/privacidade-lgpd"
+                ]
+              },
+              {
+                "group": "Marketing",
+                "pages": [
+                  "es/marketing/disparos",
+                  "es/marketing/cobrancas",
+                  "es/marketing/rastreamento-meta"
+                ]
+              },
+              {
+                "group": "Gestión",
+                "pages": [
+                  "es/gestao/dashboard",
+                  "es/gestao/relatorios",
+                  "es/gestao/area-gestor"
+                ]
+              },
+              {
+                "group": "Cuenta",
+                "pages": [
+                  "es/conta/conexoes",
+                  "es/conta/equipe",
+                  "es/conta/planos",
+                  "es/conta/perfil",
+                  "es/conta/seguranca",
+                  "es/conta/recuperar-senha",
+                  "es/conta/trocar-empresa"
+                ]
+              },
+              {
+                "group": "Plataforma",
+                "pages": [
+                  "es/plataforma/visao-geral",
+                  "es/plataforma/mcp",
+                  "es/plataforma/conectar-ia"
+                ]
+              },
+              {
+                "group": "Empresa",
+                "pages": [
+                  "es/empresa/marca",
+                  "es/empresa/politicas",
+                  "es/empresa/suporte",
+                  "es/empresa/embaixadores"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Novedades y actualizaciones",
+            "pages": [
+              "es/novidades/changelog"
+            ]
+          }
+        ]
       }
     ]
   },

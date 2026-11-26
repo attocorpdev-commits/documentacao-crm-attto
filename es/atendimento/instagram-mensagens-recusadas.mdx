@@ -1,0 +1,99 @@
+---
+title: "Instagram: mensajes rechazados por otra aplicación"
+sidebarTitle: "Instagram: mensajes rechazados"
+description: "Por qué el CRM no logra responder algunas conversaciones de Instagram y cómo liberarlas en 5 minutos en Meta."
+icon: "triangle-exclamation"
+---
+
+<Info>
+  **Resumen:** si tu Instagram está conectado a otras herramientas (ManyChat, Kommo, n8n, automatizaciones de comentarios), Meta puede entregar una conversación a una de ellas. Mientras tanto, las respuestas enviadas desde el CRM se rechazan. La solución es una configuración única en Meta, hecha por quien administra la cuenta.
+</Info>
+
+## Qué es NotificaMe
+
+**NotificaMe** es nuestra socia de integración con Instagram y **socia oficial de Meta**. A través de ella el CRM recibe y envía los mensajes de Direct y de los comentarios, usando los canales oficiales de Meta (sin automatizaciones no autorizadas y sin riesgo para la cuenta).
+
+En la lista de aplicaciones conectadas de tu página, aparece con el nombre **NotificaMeHub-IG**. Es esta aplicación la que necesita permiso para asumir las conversaciones, como se muestra abajo.
+
+## Cómo saber si es tu caso
+
+En el CRM, el mensaje enviado aparece **en rojo** con el ícono de exclamación y el texto:
+
+> "Otra aplicación conectada a Instagram controla esta conversación."
+
+Haz clic en el aviso del mensaje para abrir la ventana **Esta conversación está bajo el control de otra aplicación**. Explica el motivo y los pasos. Usa **Copiar instrucciones** para enviar los pasos a quien administra la cuenta de Instagram en Meta, o **Abrir Meta Business Suite** para ir directo a Meta.
+
+Señales comunes:
+
+- La persona llegó por un **comentario con palabra clave** en una publicación, un reel o un directo (ejemplo: comentar "QUIERO" para recibir un enlace).
+- Desde el **celular**, en la app de Instagram, la respuesta sale normalmente.
+- En otras conversaciones, el CRM envía normalmente.
+
+<Note>
+  No es una falla del CRM. El rechazo viene de la propia Meta, por una regla llamada **control de la conversación**: solo la aplicación dueña de la conversación puede responder por integración. La app de Instagram en el celular no pasa por esa regla.
+</Note>
+
+## Por qué ocurre
+
+1. La cuenta de Instagram tiene varias aplicaciones conectadas (por ejemplo, NotificaMe, ManyChat, Kommo, n8n).
+2. Una automatización de otra aplicación responde a la persona (por ejemplo, envía el enlace después de un comentario).
+3. Meta pasa a considerar esa aplicación como la **dueña** de esa conversación.
+4. Cuando el equipo responde desde el CRM, Meta lo rechaza con el error `100 - not the thread owner`.
+
+## Cómo resolverlo (una vez, 5 minutos)
+
+<Warning>
+  Lo tiene que hacer quien es **administrador de la página de Facebook** vinculada a Instagram, entrando en Facebook **como la página**.
+</Warning>
+
+<Steps>
+  <Step title="Abrir la configuración de la página">
+    En Facebook, cambia el perfil a la **página** vinculada a Instagram y abre **Configuración y privacidad**.
+    En el campo de búsqueda de la izquierda, escribe **"Configuración de la página"**.
+  </Step>
+  <Step title="Permitir que NotificaMe asuma las conversaciones">
+    Haz clic en **Configuración avanzada de mensajería**.
+    En la lista **Connected Apps** (apps conectadas), haz clic en **Editar** en **NotificaMeHub-IG**.
+    Activa las dos opciones:
+    - **Acceder al canal en espera**
+    - **Tomar el control de las conversaciones** ("NotificaMeHub-IG puede tomar el control de conversaciones de otras apps")
+
+    Haz clic en **Guardar**.
+  </Step>
+  <Step title="Definir NotificaMe como app predeterminada">
+    Vuelve a **Configuración de la página** y haz clic en **Enrutamiento de conversaciones de Instagram**.
+    En **App de enrutamiento predeterminada**, haz clic en **Configurar...** y elige **NotificaMeHub-IG**.
+    Meta lo confirma con el mensaje: *"El enrutamiento de conversaciones está configurado para Instagram"*.
+  </Step>
+  <Step title="Probar">
+    Responde desde el CRM una conversación que antes se rechazaba (dentro de las 24 horas del último mensaje de la persona). El mensaje debe salir sin el aviso rojo.
+  </Step>
+</Steps>
+
+<Tip>
+  Dirección directa de la pantalla de enrutamiento (con la sesión iniciada como la página): `facebook.com/settings/?tab=ig_conversation_routing`
+</Tip>
+
+## ¿Las otras herramientas siguen funcionando?
+
+Sí. ManyChat, Kommo, n8n y otras siguen conectadas y respondiendo normalmente. La diferencia es que, cuando el equipo responde desde el CRM, la conversación pasa al CRM automáticamente, en lugar de ser rechazada.
+
+<Note>
+  No elimines las otras aplicaciones sin hablar con quien configuró las automatizaciones: pueden tener flujos activos que la empresa usa.
+</Note>
+
+## Otros avisos de Instagram en el CRM
+
+| Aviso en el CRM | Qué significa | Qué hacer |
+|---|---|---|
+| **Fuera del plazo de 24 h de Instagram** | Meta solo permite un mensaje directo hasta 24 h después del último mensaje de la persona. Un comentario no abre esa ventana. | Pide a la persona que envíe un mensaje por Direct (el CRM ofrece "Responder en el comentario" con una invitación) y responde en menos de 24 h. |
+| **Esta conversación está bajo el control de otra aplicación** | Se explica en esta página. | Sigue los pasos de arriba. |
+| **¿El perfil no abre?** | El contacto cambió su @ en Instagram y la integración todavía envía el @ antiguo. | La conversación funciona normalmente; el @ se actualiza cuando Instagram envíe el nuevo. |
+
+## ¿Sigues con problemas?
+
+Habla con soporte e informa:
+
+- El nombre de la cuenta de Instagram.
+- El contacto y la hora del mensaje rechazado.
+- Una captura de pantalla de **Enrutamiento de conversaciones de Instagram** y de la pantalla **Editar** de NotificaMeHub-IG.

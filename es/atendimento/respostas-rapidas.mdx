@@ -1,0 +1,147 @@
+---
+title: "Respuestas rápidas"
+description: "Crea mensajes listos y usa un atajo para insertar cada uno durante la atención."
+icon: "bolt"
+---
+
+Las respuestas rápidas son mensajes listos que insertas en la conversación con pocos toques. Úsalas para saludos, horarios de atención, formas de pago y otras respuestas que se repiten.
+
+Las respuestas son compartidas. Todos los usuarios de tu empresa ven y usan la misma lista.
+
+## Cómo acceder
+
+En el menú lateral, abre la categoría **CRM** y haz clic en **Respuestas rápidas**.
+
+En la parte superior de la pantalla ves tres números: **Total**, **Con atajo** y **Activas**.
+
+<Card title="Abrir Respuestas rápidas en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/quick-replies" horizontal>
+  Te lleva directo a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## Crear una respuesta
+
+<Steps>
+  <Step title="Abre el formulario">
+    Haz clic en **Nueva respuesta**. Si la lista todavía está vacía, haz clic en **Crear primera respuesta**.
+  </Step>
+  <Step title="Ponle un título">
+    Completa **Título** con un nombre fácil de reconocer. Ejemplo: `Saludo`.
+  </Step>
+  <Step title="Define el atajo">
+    Completa **Atajo** con una palabra corta. Ejemplo: `hola`. Este campo es opcional.
+  </Step>
+  <Step title="Escribe el mensaje">
+    Completa **Contenido** con el texto de la respuesta.
+  </Step>
+  <Step title="Revisa la vista previa">
+    Debajo del contenido, la **Vista previa** muestra cómo recibirá el contacto el mensaje, usando un contacto de ejemplo.
+  </Step>
+  <Step title="Guarda">
+    Haz clic en **Guardar**.
+  </Step>
+</Steps>
+
+<Note>
+  **Título** y **Contenido** son obligatorios. El botón **Guardar** solo está disponible después de completar los dos.
+</Note>
+
+## Personalizar con variables
+
+Las variables son partes del texto que el CRM cambia por los datos reales al insertar la respuesta.
+
+| Variable | Se cambia por |
+| --- | --- |
+| `{{nome}}` | Nombre completo del contacto |
+| `{{primeiro_nome}}` | Primer nombre del contacto |
+| `{{empresa}}` | Nombre de tu empresa |
+| `{{vendedor}}` | Nombre de quien está atendiendo |
+
+Ejemplo: el texto `Hola {{primeiro_nome}}, te escribimos de {{empresa}}!` llega como "Hola María, te escribimos de Tu Empresa!".
+
+En el formulario, haz clic en **Ver ejemplos** para abrir la ventana **Variables: dos sintaxis diferentes**. Muestra los dos tipos lado a lado y marca **estás aquí** en el tipo que vale para la pantalla en la que estás:
+
+- **Respuesta rápida: variables por NOMBRE**: lista las cuatro variables de esta página con lo que cambia cada una.
+- **Plantilla oficial de WhatsApp: variables NUMERADAS**: valen solo en el editor de plantillas de las [Difusiones](/es/marketing/disparos).
+
+La ventana termina con el aviso **No las mezcles: una variable numerada en una respuesta rápida sale en crudo al cliente.**
+
+<Warning>
+  Las variables numeradas, como `{{1}}`, no funcionan en las respuestas rápidas. Llegarían al contacto sin cambiarse. Si usas una, el CRM muestra un aviso y no deja guardar: aparece **La variable numerada no funciona aquí**. Haz clic en **Cambiar a variable de nombre** para corregirlo.
+</Warning>
+
+## Usar una respuesta en la conversación
+
+### En WhatsApp
+
+<Steps>
+  <Step title="Escribe la barra">
+    En el campo de mensaje, escribe `/`. La lista de respuestas aparece encima del campo.
+  </Step>
+  <Step title="Filtra la lista">
+    Sigue escribiendo el atajo, parte del título o parte del contenido. Ejemplo: `/hola`.
+  </Step>
+  <Step title="Elige la respuesta">
+    Usa las flechas hacia arriba y hacia abajo y presiona **Enter**. También puedes hacer clic en la respuesta.
+  </Step>
+  <Step title="Revisa y envía">
+    El texto entra en el campo de mensaje, ya con las variables completadas. Ajústalo si quieres y envíalo.
+  </Step>
+</Steps>
+
+Otra forma: haz clic en el botón **+** (**Adjuntos y acciones**) y elige **Respuesta rápida**. Se abre la misma lista.
+
+Para cerrar la lista sin insertar nada, presiona **Esc**.
+
+<Tip>
+  La respuesta nunca se envía sola. Entra en el campo de mensaje para que la revises antes de enviar.
+</Tip>
+
+### En Instagram
+
+Haz clic en el botón **+** (**Adjuntos y acciones**), abre **Respuesta rápida** y elige la respuesta. En Instagram, el atajo con `/` no abre la lista.
+
+## Encontrar, editar y eliminar
+
+- **Buscar respuestas...**: busca por el título, por el atajo o por el contenido.
+- **Actualizar**: recarga la lista.
+- **Copiar**: aparece solo en las respuestas que tienen atajo. Pasa el mouse sobre la tarjeta y haz clic en el ícono de copiar. El atajo se copia con la barra, como `/hola`.
+- **Editar**: pasa el mouse sobre la tarjeta y haz clic en el ícono de lápiz. Cambia los campos y haz clic en **Guardar**.
+- **Eliminar**: pasa el mouse sobre la tarjeta y haz clic en el ícono de papelera. Confirma en **Eliminar**.
+
+<Warning>
+  La eliminación vale para todo el equipo. La respuesta desaparece de la lista de todos los usuarios de la empresa.
+</Warning>
+
+## Consejos para organizar
+
+- Usa títulos que describan el asunto, como `Horario de atención` o `Formas de pago`.
+- Crea atajos cortos y fáciles de recordar.
+- Usa la búsqueda para comprobar si ya existe una respuesta parecida antes de crear otra.
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Escribí la barra y la lista no apareció. ¿Por qué?">
+    La lista solo se abre cuando hay respuestas que coinciden con lo que escribiste. Comprueba si ya existe alguna respuesta registrada. La barra tiene que estar al comienzo del texto o después de un espacio.
+  </Accordion>
+  <Accordion title="La variable apareció sin cambiarse. ¿Qué hago?">
+    El CRM solo reconoce las cuatro variables de esta página. Comprueba si el nombre se escribió correctamente. La **Vista previa** del formulario avisa lo que llegaría sin cambiarse.
+  </Accordion>
+  <Accordion title="¿Quién puede crear y editar respuestas?">
+    Cualquier usuario de la empresa con acceso al CRM.
+  </Accordion>
+  <Accordion title="¿Tengo que crear un atajo?">
+    No. Sin atajo, igual encuentras la respuesta escribiendo parte del título o del contenido después de la barra.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp" icon="whatsapp" href="/es/atendimento/whatsapp">
+    Usa las respuestas durante la atención.
+  </Card>
+  <Card title="Instagram" icon="instagram" href="/es/atendimento/instagram">
+    Inserta respuestas listas en las conversaciones de Instagram.
+  </Card>
+</CardGroup>

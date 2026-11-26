@@ -1,0 +1,749 @@
+---
+title: "Cobranzas"
+sidebarTitle: "Cobranzas"
+description: "Sube la hoja de cálculo de quién te debe o elige entre tus contactos, y el CRM envía recordatorios de pago automáticos por WhatsApp, de lunes a sábado. En la misma pantalla, envía felicitaciones el día del cumpleaños."
+icon: "receipt"
+---
+
+En la pantalla **Cobranzas** subes una hoja de cálculo con quién debe, cuánto y cuándo vence, o eliges a las personas directamente de tus contactos. El CRM envía los recordatorios de pago por WhatsApp por sí solo, el día y a la hora que elijas. Sigues cuánto está pendiente, quién pagó y quién respondió.
+
+La pantalla tiene dos pestañas:
+
+- **Cobranças** (cobranzas): recordatorios de pago.
+- **Aniversariantes** (cumpleañeros): felicitación automática el día del cumpleaños. Consulta [Cumpleaños](#cumpleanos).
+
+<Note>
+  Esta pantalla cobra a **tus clientes**. No tiene relación con la suscripción de tu empresa en Atto Corp. Para ver tu plan y tus facturas, consulta [Planes y cobros](/es/conta/planos).
+</Note>
+
+<Note>
+  Dentro de la pantalla **Cobranzas**, los botones y mensajes se muestran en portugués en todos los idiomas. En esta página, el rótulo en portugués va primero, con el significado en español entre paréntesis. La etiqueta **Cobro** dentro de la conversación sí está traducida.
+</Note>
+
+## Cómo acceder
+
+En el menú lateral, abre **Marketing** y haz clic en **Cobranzas**.
+
+<Card title="Abrir Cobranzas en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/cobrancas" horizontal>
+  Te lleva directamente a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+### Quién puede usarla
+
+| Perfil | Acceso |
+| --- | --- |
+| Dueño de la empresa | Sí, cuando el plan de la empresa incluye **Difusiones** |
+| Gerente | Siempre |
+| Otros miembros del equipo | Solo con la página **Cobranzas** marcada en **Páginas permitidas** |
+
+Para habilitar la pantalla a alguien del equipo, consulta [Equipo](/es/conta/equipe). La pestaña **Aniversariantes** (cumpleañeros) sigue el mismo permiso.
+
+Si tu perfil no tiene acceso, la pantalla muestra: **Seu perfil não tem permissão para acessar as cobranças. Peça ao administrador para liberar a página "Cobranças" nas permissões do plano ou do usuário.** (tu perfil no tiene permiso para acceder a las cobranzas; pide al administrador que habilite la página en los permisos del plan o del usuario).
+
+<Note>
+  Quien solo tiene acceso a algunos canales de WhatsApp solo puede usar esos canales en las cobranzas.
+</Note>
+
+## Qué hace el CRM y qué no hace
+
+El CRM **recuerda** a la persona que pague. No recibe el dinero.
+
+- El pago se hace por el enlace que pones en la hoja de cálculo, en la columna **Link de pagamento** (enlace de pago). Puede ser el enlace de tu banco, de tu sistema de cobro, un código Pix o el medio por el que ya recibes.
+- El CRM no comprueba por sí solo si la persona pagó. Cuando el dinero entre, tú registras el pago: uno por uno, con una hoja de cálculo o actualizando con la hoja de cálculo de la tienda. Consulta [Registrar quién pagó](#registrar-quien-pago).
+
+## El panel
+
+En la parte superior de la pantalla hay seis recuadros en reales. Cada uno muestra el importe y cuántas personas están en esa situación.
+
+| Recuadro | Qué muestra |
+| --- | --- |
+| **Em aberto** (pendiente) | Todo lo que aún no se ha pagado |
+| **Vence hoje** (vence hoy) | Cuentas que vencen hoy |
+| **Vencido de 1 a 7 dias** (vencido de 1 a 7 días) | Cuentas vencidas hace hasta una semana |
+| **Vencido de 8 a 30 dias** (vencido de 8 a 30 días) | Cuentas vencidas hace hasta un mes |
+| **Vencido há mais de 30 dias** (vencido hace más de 30 días) | Cuentas vencidas hace más tiempo |
+| **Recebido no mês** (recibido en el mes) | Lo que se marcó como pagado en el mes |
+
+Debajo, en **Suas cobranças** (tus cobranzas), está la lista de tus cobranzas. Cada fila muestra el nombre, la situación, cuántas personas tiene, cuántas te están esperando, el próximo recordatorio y los importes **Em aberto** (pendiente) y **Recebido** (recibido).
+
+La situación de cada cobranza aparece en una insignia:
+
+| Insignia | Qué significa |
+| --- | --- |
+| **Rascunho** (borrador) | Guardada, pero los recordatorios aún están desactivados |
+| **Lembretes ligados** (recordatorios activados) | El CRM está enviando los recordatorios |
+| **Pausada** (pausada) | Los recordatorios están detenidos hasta que los vuelvas a activar |
+
+### Buscar en todas las cobranzas
+
+En el campo **Buscar: nome, telefone ou código** (buscar: nombre, teléfono o código), escribe al menos 2 letras o 3 números. La búsqueda revisa todas tus cobranzas a la vez. En cada resultado ves el pago y el recordatorio de la cuota, y puedes pausar, reanudar, reintentar el envío o abrir la cobranza.
+
+## Crear una cobranza
+
+Haz clic en **Nova cobrança** (nueva cobranza). El flujo tiene cuatro pasos.
+
+<Steps>
+  <Step title="Sube tu lista">
+    Completa **Nome da cobrança** (nombre de la cobranza), por ejemplo "Mensualidades de diciembre". Solo tú y tu equipo ven ese nombre.
+
+    En **Por qual WhatsApp os lembretes vão sair?** (¿por qué WhatsApp saldrán los recordatorios?), elige el canal. Cada canal muestra el tipo: **WhatsApp oficial** (WhatsApp oficial) o **WhatsApp por QR code** (WhatsApp por código QR).
+
+    Después arma la lista de quién debe. Puedes usar una hoja de cálculo, elegir de los contactos o las dos cosas juntas. Consulta [La hoja de cálculo](#la-hoja-de-calculo) y [Elegir de los contactos](#elegir-de-los-contactos).
+  </Step>
+  <Step title="Cuándo recordar">
+    Activa los recordatorios que quieras, elige los días y el horario de envío y qué hacer cuando la persona responda. Consulta [Cuándo recordar](#cuando-recordar).
+  </Step>
+  <Step title="Qué decir">
+    Escribe el mensaje de cada recordatorio. Ya viene una sugerencia lista. Consulta [Escribir el mensaje](#escribir-el-mensaje).
+  </Step>
+  <Step title="Revisar y activar">
+    Revisa el **Resumo** (resumen) y la agenda, elige **Quem cuida das respostas** (quién se encarga de las respuestas), decide si quieres **Cobrar agora** (cobrar ahora) y, si quieres, envía una prueba a tu WhatsApp. Después haz clic en **Ligar lembretes** (activar recordatorios).
+
+    ¿Todavía no quieres activarlos? Haz clic en **Salvar rascunho** (guardar borrador) y vuelve más tarde.
+  </Step>
+</Steps>
+
+## La hoja de cálculo
+
+En **Planilha de quem deve** (hoja de cálculo de quién debe), arrastra el archivo o haz clic para elegirlo. Puede ser la hoja de cálculo que ya usas: el CRM encuentra las columnas por sí solo.
+
+- Formatos aceptados: .csv, .xlsx y .xls.
+- Debe tener **teléfono**, **importe**, **vencimiento** y **concepto** (Referente a). Si falta el concepto, lo completas en la pantalla.
+- **Nombre** y **enlace de pago** ayudan en el mensaje, pero no son obligatorios.
+- El encabezado no tiene que estar en la primera fila. Las filas de total y las filas vacías se ignoran.
+- Si la hoja de cálculo supera el límite de 50.000 filas, la pantalla avisa **Planilha grande demais** (hoja de cálculo demasiado grande) y las filas de más quedan fuera.
+
+Si prefieres, haz clic en **Baixar planilha modelo** (descargar hoja de cálculo modelo) y completa el modelo listo. Tiene estas columnas:
+
+| Columna | Obligatoria | Ejemplo |
+| --- | --- | --- |
+| **Nome** (nombre) | No | Maria Exemplo |
+| **Telefone** (teléfono) | Sí | 5511900000001 |
+| **Valor** (importe) | Sí | 150,00 |
+| **Vencimento** (vencimiento) | Sí | 10/12/2026 |
+| **Código da parcela** (código de la cuota) | No | PARC-0001 |
+| **Referente a** (concepto) | Sí | Mensalidade de dezembro |
+| **Link de pagamento** (enlace de pago) | No | Enlace de tu cobro |
+
+Las fechas usan el formato día/mes/año y los importes usan coma para los centavos, como en Brasil.
+
+### Lo que entendí
+
+Después de leer el archivo, el recuadro **O que eu entendi** (lo que entendí) muestra cómo el CRM leyó la hoja de cálculo, antes de guardar:
+
+- cuántas cuotas y de cuántos clientes, por ejemplo "10 parcelas de 8 clientes" (10 cuotas de 8 clientes), y el total en reales;
+- de qué columna salió el teléfono;
+- cómo se identifica cada cuota (por el código de la cuota, por el código de la venta con la cuota, o por el teléfono y el vencimiento);
+- lo que dice la hoja de cálculo sobre cuotas ya pagadas;
+- tres mensajes de ejemplo, tal como van a llegar.
+
+Nada de esto se guarda. Con cada hoja de cálculo nueva, el CRM lee el archivo desde cero.
+
+### Cómo leemos la hoja de cálculo
+
+El recuadro **Como lemos a planilha** (cómo leemos la hoja de cálculo) muestra cada columna de tu hoja de cálculo con los primeros valores, el campo asociado, cómo se lee y ejemplos. Las columnas están en dos pestañas:
+
+- **Associadas** (asociadas): columnas que ya tienen un campo.
+- **Ação necessária** (acción necesaria): campo obligatorio sin columna (en rojo) y columnas que quedaron sin campo.
+
+Para cambiarlo, elige otro campo en la columna. El recuento se rehace al instante, sin editar la hoja de cálculo. La columna que no sirve queda en **Não usar esta coluna** (no usar esta columna).
+
+| Campo | Cómo se lee |
+| --- | --- |
+| **Nome** (nombre) | Nombre del cliente. Si falta, el CRM usa el nombre guardado en tus contactos |
+| **Telefone** (teléfono) | Celular con código de área (DDD), en cualquier formato |
+| **Telefone 2** (teléfono 2) | Otro teléfono, que se usa solo cuando la columna Telefone está vacía o sin número válido |
+| **Valor** (importe) | Importe en reales, con o sin R$, coma o punto |
+| **Vencimento** (vencimiento) | Fecha de vencimiento |
+| **Código da parcela** (código de la cuota) | Código que identifica la cuota y evita cobrar la misma cuota dos veces |
+| **Código da venda** (código de la venta) | Código de la venta o del pedido. Junto con la Parcela, identifica cada cuota |
+| **Parcela (1/3)** (cuota) | Número de la cuota, como 2/5 o "2 de 5" |
+| **Referente a** (concepto) | De qué es el cobro |
+| **Data da compra** (fecha de compra) | Fecha de la compra o de la emisión |
+| **Tipo (venda, troca)** (tipo: venta, cambio) | Tipo de venta |
+| **Data de pagamento** (fecha de pago) | Fecha en que se pagó la cuota. La fila con fecha queda fuera de la cobranza |
+| **Link de pagamento** (enlace de pago) | Enlace o código Pix para pagar |
+
+Dos ajustes más en el mismo recuadro:
+
+- **Formato da data** (formato de la fecha): cambia entre **Dia/mês (dd/mm/aaaa)** (día/mes) y **Mês/dia (mm/dd/aaaa)** (mes/día) si la lectura está invertida. El formato de la hoja de cálculo aparece marcado con "da planilha" (de la hoja de cálculo).
+- **DDD padrão (opcional)** (código de área predeterminado, opcional): se usa solo en los teléfonos que llegaron sin código de área. El CRM guarda el código de área para la próxima hoja de cálculo.
+
+### Números corregidos automáticamente
+
+El CRM ajusta el formato de los teléfonos para el envío: agrega el código de área predeterminado, el dígito 9 y el código del país. Si la celda tiene dos teléfonos, usa el celular (o el primero válido, si no hay celular).
+
+Haz clic en **números corrigidos automaticamente** (números corregidos automáticamente) para ver el antes y el después de cada fila.
+
+Cuando un número no tiene arreglo, la pantalla avisa **Não foi possível corrigir** (no se pudo corregir) y la fila queda fuera hasta que la corrijas o la quites.
+
+### Corregir las filas con problemas
+
+La pantalla muestra cuántas filas están **prontos** (listas), **sem telefone válido** (sin teléfono válido), **com data estranha** (con fecha extraña), **com valor estranho** (con importe extraño), **para corrigir** (por corregir), **sem referente a** (sin concepto), **repetidas** (repetidas) e **ignoradas** (ignoradas).
+
+En **Corrija as linhas com problema** (corrige las filas con problemas), ajústalas ahí mismo, sin tocar la hoja de cálculo:
+
+- filtra por **Telefone** (teléfono), **Valor** (importe), **Vencimento** (vencimiento) o **Referente a** (concepto);
+- cada fila muestra el número de fila en la hoja de cálculo y el valor tal como llegó;
+- escribe el teléfono completo, con código de área, por ejemplo (62) 99123-4567. Se aplica cuando sales del campo o presionas Enter;
+- la fecha va con el año completo (dd/mm/aaaa);
+- la fila corregida sigue en la lista con el aviso **corrigida, entra na cobrança** (corregida, entra en la cobranza);
+- haz clic en **Remover** (quitar) para sacar la fila.
+
+Una fila con problema no recibe recordatorio.
+
+### Concepto (Referente a)
+
+El **Referente a** (concepto) dice de qué es el cobro en el mensaje. Es obligatorio para continuar. Si algunas filas llegaron sin él, complétalo de una de estas formas:
+
+- escribe un texto y haz clic en **Usar em todas as vazias** (usar en todas las vacías);
+- haz clic en **Preencher automático** (completar automáticamente): el CRM usa "Parcela" y el código de la cuota o, sin código, "Vencimento" y la fecha;
+- complétalo fila por fila en la lista de corrección.
+
+Para deshacerlo, haz clic en **Desfazer** (deshacer).
+
+### Nombre
+
+Si la fila llegó sin nombre, el CRM busca el nombre guardado en tus contactos para ese teléfono. Quien no tiene nombre en ningún lugar recibe el recordatorio normalmente, sin el nombre en el mensaje.
+
+### Código de la cuota
+
+El código de la cuota es opcional, pero ayuda cuando vuelves a subir la hoja de cálculo:
+
+- mismo código: la cuota se actualiza y, si estaba pausada, sigue pausada;
+- código nuevo: entra como cuota nueva;
+- una cuota ya pagada nunca vuelve a quedar pendiente;
+- el mismo código en otro teléfono se convierte en un problema en la lista de corrección.
+
+Sin código, cada cuota se identifica por el teléfono y el vencimiento. Las filas repetidas quedan fuera: mismo código o, sin código, mismo teléfono y mismo vencimiento.
+
+<Tip>
+  Si el CRM encuentra una columna que parece código de la cuota, pero con el código repetido en más de una persona, avisa y no usa esa columna por sí solo. Si de verdad es el código, elige **Código da parcela** (código de la cuota) en ella.
+</Tip>
+
+### Archivo del sistema de la tienda (ERP)
+
+Puedes subir el archivo tal como lo exporta el sistema de la tienda, sin tratarlo:
+
+- el CRM arregla acentos cambiados y caracteres extraños del archivo;
+- cuando el código es de la venta y se repite en todas las cuotas, el CRM junta **Código da venda** (código de la venta), **Parcela** (cuota) y **Data da compra** (fecha de compra) para identificar cada cuota;
+- cuando la columna Telefone está vacía, usa la columna **Telefone 2** (teléfono 2). El teléfono del vendedor o del aval nunca se usa;
+- sin columna Referente a, arma el texto con la cuota, la fecha de compra y el tipo, por ejemplo "Parcela 4/4 da compra de 22/07/2026" (cuota 4/4 de la compra del 22/07/2026);
+- con la columna **Data de pagamento** (fecha de pago), la fila con fecha (o con "PAGO") queda fuera. Si la columna está vacía en todas las filas, el archivo trae solo cuotas pendientes.
+
+## Elegir de los contactos
+
+¿No tienes la hoja de cálculo a mano? En el paso **Suba sua lista** (sube tu lista), haz clic en **Escolher dos contatos** (elegir de los contactos).
+
+<Steps>
+  <Step title="Marca a las personas">
+    En la ventana, busca por nombre o número, usa **Filtrar por etiqueta** (filtrar por etiqueta) y marca a quién va a entrar. **Selecionar todos** (seleccionar todos) marca a todos los del filtro. Haz clic en **Usar contatos** (usar contactos).
+  </Step>
+  <Step title="Completa importe y vencimiento">
+    En **Escolhidos dos contatos** (elegidos de los contactos), escribe el **Valor (R$)** (importe) y el **Vencimento** (vencimiento, dd/mm/aaaa) de cada persona. **Referente a** (concepto) es opcional aquí.
+
+    Con más de una persona, usa **Mesmo valor e vencimento para todos** (mismo importe y vencimiento para todos) y haz clic en **Aplicar a todos** (aplicar a todos). Después puedes cambiar a una sola persona.
+  </Step>
+</Steps>
+
+- La lista muestra solo contactos con WhatsApp. Quien pidió no recibir mensajes no aparece.
+- El contacto con un número que no sirve para WhatsApp aparece con el motivo.
+- Quien ya está en la hoja de cálculo con el mismo vencimiento se queda con los datos de la hoja de cálculo.
+- Un repetido (mismo número y vencimiento) entra una sola vez.
+- Puedes elegir hasta 20.000 contactos.
+- Para continuar, completa a todos o quítalos de la lista con el ícono de papelera. **Tirar todos** (quitar todos) vacía la lista.
+
+Si usas hoja de cálculo y contactos juntos, la pantalla muestra el **Total da cobrança** (total de la cobranza), con cuántos vinieron de cada lado.
+
+<Note>
+  Si tu cuenta no muestra el teléfono de los contactos, no puedes elegir por aquí. Usa la hoja de cálculo.
+</Note>
+
+## Quién va a recibir
+
+Con la lista lista y el canal elegido, el recuadro **Quem vai receber** (quién va a recibir) separa a las personas en:
+
+- **já conversaram** (ya conversaron): ya enviaron un mensaje a ese WhatsApp;
+- **nunca conversaram** (nunca conversaron): nunca hablaron con ese número;
+- **pediram para não receber** (pidieron no recibir): personas dadas de baja. Quedan fuera de los recordatorios.
+
+El CRM no comprueba antes si el número tiene WhatsApp. Si el número no recibe mensajes, el recordatorio aparece como **Não chegou** (no llegó) después del envío.
+
+## Cuándo recordar
+
+En el paso **Quando lembrar** (cuándo recordar), activa los recordatorios que quieras. Son cuatro:
+
+- **3 dias antes do vencimento** (3 días antes del vencimiento)
+- **No dia do vencimento** (el día del vencimiento)
+- **2 dias depois do vencimento** (2 días después del vencimiento)
+- **7 dias depois do vencimento** (7 días después del vencimiento)
+
+Cada recordatorio muestra la fecha en que sale, con una cuenta de ejemplo.
+
+### Días y horario de envío
+
+En **Em quais dias pode mandar** (en qué días puede enviar), marca los días de lunes a sábado. El valor predeterminado es de lunes a sábado.
+
+En **Em qual horário** (en qué horario), elige el inicio y el fin, en el horario de Brasilia. El valor predeterminado es de 8 h a 18 h.
+
+- El domingo nunca hay envío.
+- Cada persona recibe como máximo 1 recordatorio por día, aunque esté en más de una cobranza.
+- Si la fecha del recordatorio cae en domingo o en un día desmarcado, sale el siguiente día elegido.
+
+### Cuando la persona responda
+
+En **Quando a pessoa responder** (cuando la persona responda), elige por cuántos días se detienen los recordatorios para quien respondió. El valor predeterminado es 3 días, y puede ser de 1 a 60. Pasado el plazo, los recordatorios vuelven solos.
+
+Marca **Até eu retomar** (hasta que yo reanude) para que los recordatorios solo vuelvan cuando alguien del equipo los reanude.
+
+## Escribir el mensaje
+
+En el paso **O que dizer** (qué decir), elige un recordatorio en el lateral y ajusta su mensaje.
+
+- En **Tom da mensagem** (tono del mensaje), elige **Amigável** (amigable), **Neutro** (neutro) o **Firme** (firme). Cambiar el tono cambia el texto por una sugerencia lista. Después solo tienes que ajustarlo.
+- En **Mensagem** (mensaje), edita el texto libremente.
+- En **Inserir campo** (insertar campo), haz clic en **Nome** (nombre), **Valor** (importe), **Vencimento** (vencimiento), **Referente a** (concepto), **Link de pagamento** (enlace de pago) o **Prazo** (plazo). El campo entra en el texto entre corchetes, como `[nome]` y `[valor]`, y se reemplaza por los datos de cada persona.
+
+El campo `[nome]` se convierte en el primer nombre de la persona, con la inicial en mayúscula. Por ejemplo, "MARIA DA SILVA" se convierte en "Maria".
+
+El recuadro **Como a pessoa vai ver** (cómo lo verá la persona) muestra la vista previa con la primera persona de la lista.
+
+<Note>
+  Los mensajes sugeridos están en portugués. Edita el texto si tus clientes hablan otro idioma.
+</Note>
+
+### El campo Prazo
+
+El campo `[prazo]` se convierte en "hoje" (hoy), "amanhã" (mañana), "em 3 dias" (en 3 días), "ontem" (ayer) o "há 2 dias" (hace 2 días), según el día en que sale el mensaje. Así el texto queda correcto aunque el recordatorio salga otro día, por ejemplo después de un domingo.
+
+<Warning>
+  Si el texto habla de un día fijo, como "hoje", "amanhã", "ontem", "vence hoje" o "dia do vencimento", sin usar `[prazo]`, y el recordatorio tiene que salir otro día, se omite para no enviar un texto equivocado. La pantalla avisa en el paso **O que dizer** (qué decir) y en la agenda. Las sugerencias listas ya usan `[prazo]`.
+</Warning>
+
+### En WhatsApp oficial
+
+En WhatsApp oficial, cada mensaje tiene que aprobarse antes de salir. El recordatorio de cobro entra como mensaje de utilidad, que cuesta menos que uno de publicidad. La aprobación suele salir en minutos.
+
+<Steps>
+  <Step title="Envía para aprobación">
+    Con el texto listo, haz clic en **Enviar para aprovação** (enviar para aprobación). Hazlo en cada recordatorio activado.
+  </Step>
+  <Step title="Sigue la situación">
+    Haz clic en **Atualizar situação** (actualizar situación) para ver si WhatsApp ya respondió.
+  </Step>
+</Steps>
+
+| Insignia | Qué significa |
+| --- | --- |
+| **Ainda não enviada** (aún no enviada) | Falta hacer clic en **Enviar para aprovação** |
+| **Aguardando aprovação** (esperando aprobación) | WhatsApp todavía lo está analizando |
+| **Aprovada pelo WhatsApp** (aprobada por WhatsApp) | Se puede usar en los recordatorios |
+| **Recusada pelo WhatsApp** (rechazada por WhatsApp) | Ajusta el texto y envíalo de nuevo |
+| **Texto mudou, envie de novo** (el texto cambió, envíalo de nuevo) | Cambiaste el texto después de enviarlo |
+
+La pantalla avisa antes de enviar cuando el texto tiene algo que WhatsApp rechaza. Por ejemplo:
+
+- el mensaje no puede empezar ni terminar con un campo;
+- dos campos no pueden quedar uno al lado del otro;
+- demasiados campos para poco texto;
+- más de 1024 caracteres;
+- palabras de publicidad.
+
+<Warning>
+  En WhatsApp oficial, los recordatorios solo se pueden activar después de que WhatsApp apruebe todos los mensajes. Guarda el borrador y vuelve cuando se aprueben.
+</Warning>
+
+### En WhatsApp por código QR
+
+En WhatsApp por código QR no hay aprobación. La pantalla muestra el riesgo de bloqueo, según cuántas personas nunca conversaron con el número:
+
+| Aviso | Cuándo aparece |
+| --- | --- |
+| **Risco baixo** (riesgo bajo) | Casi todos ya conversaron con ese número |
+| **Risco médio de bloqueio** (riesgo medio de bloqueo) | Una parte de las personas nunca conversó con ese número |
+| **Risco alto de bloqueio** (riesgo alto de bloqueo) | La mayoría nunca conversó con ese número |
+
+Para reducir el riesgo, deja activado **Variar o texto com IA** (variar el texto con IA). Así cada persona recibe un texto un poco diferente.
+
+<Warning>
+  Muchos mensajes a quien no conoce tu número pueden hacer que WhatsApp bloquee el número. Cuando la mayoría nunca conversó contigo, lo más seguro es usar WhatsApp oficial. Consulta [WhatsApp (Código QR) o WhatsApp Oficial (Meta)](/es/primeiros-passos/tipos-whatsapp).
+</Warning>
+
+## Envío seguro
+
+### Ritmo seguro de WhatsApp por código QR
+
+En WhatsApp por código QR, el envío siempre sale al ritmo seguro. No hay opción para cambiarlo.
+
+| Regla | Cómo funciona |
+| --- | --- |
+| Intervalo | 1 mensaje cada 2 a 4 minutos |
+| Límite por día en la 1.ª semana | Hasta 50 mensajes |
+| Límite por día en la 2.ª semana | Hasta 100 mensajes |
+| Límite por día después | Hasta 150 mensajes |
+
+El límite del día vale para todas las cobranzas de este WhatsApp juntas. Lo que pase del límite sale el siguiente día de envío, empezando por quien venció primero. Así el número corre menos riesgo de bloqueo.
+
+### Cuando el envío falla
+
+- Si WhatsApp falla por inestabilidad, el CRM lo intenta de nuevo por sí solo.
+- Lo que no llegó aparece como **Não chegou** (no llegó) en WhatsApp por código QR o **Falhou o envio** (falló el envío) en WhatsApp oficial. En el código QR, la pantalla explica que el número puede estar equivocado o no tener WhatsApp.
+- Corrige el número y usa **Tentar de novo** (intentar de nuevo), en la fila de la persona, en las seleccionadas o en la búsqueda. El reenvío sale en el siguiente horario de envío.
+- Solo puedes reintentar el día del recordatorio. Una vez pasado el día, el siguiente recordatorio sigue normalmente.
+- Con 5 o más fallos en el día, la cobranza muestra un aviso con **Ver quem não recebeu** (ver quién no recibió) y **Tentar de novo para todas** (intentar de nuevo para todas). Quien se encarga de las respuestas también recibe un aviso.
+
+## Revisar y activar
+
+En el paso **Conferir e ligar** (revisar y activar):
+
+- el **Resumo** (resumen) muestra en una frase cuántas personas, cuánto está pendiente, los días y el horario;
+- la lista de recordatorios muestra la situación de cada uno;
+- en **Quem cuida das respostas** (quién se encarga de las respuestas), elige a la persona del equipo que va a recibir las conversaciones de quien responda, o **Ninguém em especial** (nadie en especial).
+
+### Agenda de los próximos 14 días
+
+La **Agenda dos próximos 14 dias** (agenda de los próximos 14 días) muestra cuántos recordatorios salen por día y quién está en la cola, en el orden de envío. En una cobranza nueva, haz clic en **Ver a agenda** (ver la agenda): el CRM guarda el borrador para armar la agenda, pero los recordatorios solo empiezan cuando los actives.
+
+- En **Mensagens por dia** (mensajes por día), los días sin envío aparecen como **Não envia** (no envía). En WhatsApp por código QR aparece también el límite del día, por ejemplo "40 de 50".
+- En la **Fila de envio** (cola de envío), quien venció primero sale antes. En caso de empate, sale antes el importe mayor.
+- **Tirar da fila** (quitar de la cola) pausa los recordatorios de esa persona hasta que alguien los reanude.
+- Si algún recordatorio se va a omitir por hablar de un día fijo sin `[prazo]`, la agenda avisa.
+
+La agenda también aparece en los detalles de cada cobranza.
+
+### Cobrar ahora
+
+En **Cobrar agora?** (¿cobrar ahora?), elige si quieres enviar un recordatorio hoy mismo, en el horario elegido, a una parte de las personas:
+
+| Opción | Quién recibe hoy |
+| --- | --- |
+| **Não, seguir a programação** (no, seguir la programación) | Nadie. Cada recordatorio sale en su día |
+| **Quem já venceu** (quien ya venció) | Recibe el recordatorio de 2 días después |
+| **Quem vence hoje** (quien vence hoy) | Recibe el recordatorio del día del vencimiento |
+| **Quem vence em até 3 dias** (quien vence en hasta 3 días) | Recibe el recordatorio de 3 días antes |
+
+Cada opción muestra a cuántas personas alcanza. Quien ya recibió un recordatorio hoy, pidió no recibir o está pausado queda fuera. En WhatsApp por código QR vale el límite del día: quien no quepa sale el siguiente día de envío.
+
+### Enviar una prueba
+
+En **Mandar um teste para mim** (enviarme una prueba), escribe **Seu WhatsApp** (tu WhatsApp), elige **Qual lembrete** (qué recordatorio) y haz clic en **Mandar teste** (enviar prueba). El mensaje llega tal como lo verá el cliente, con datos de ejemplo.
+
+- La prueba sale al instante, entre las 8 h y las 20 h, de lunes a sábado.
+- Son hasta 10 pruebas por día.
+- En WhatsApp oficial, la prueba se habilita cuando WhatsApp aprueba ese recordatorio.
+
+## Seguir una cobranza
+
+Haz clic en una cobranza en **Suas cobranças** (tus cobranzas) para abrir los detalles. La parte superior muestra cuántas cuotas y de cuántos clientes, el total **Em aberto** (pendiente) y el **Recebido** (recibido).
+
+Usa **Filtrar: nome, telefone ou código** (filtrar: nombre, teléfono o código) para encontrar a alguien. Para filtrar por situación, haz clic en una de las opciones de abajo. Cada una muestra cuántas cuotas tiene.
+
+| Situación | Qué significa |
+| --- | --- |
+| **Todas** (todas) | Todos los de la cobranza |
+| **A vencer** (por vencer) | El vencimiento aún no llegó |
+| **Vence hoje** (vence hoy) | El vencimiento es hoy |
+| **Vencida** (vencida) | El vencimiento pasó y no se pagó |
+| **Respondeu** (respondió) | La persona respondió y los recordatorios se detuvieron para ella |
+| **Não chegou** o **Falhou o envio** (no llegó o falló el envío) | El último recordatorio no se entregó |
+| **Lembretes encerrados** (recordatorios terminados) | Pendiente, pero sin ningún recordatorio activado por delante |
+| **Paga** (pagada) | Marcada como pagada |
+
+La lista tiene las columnas **Pessoa** (persona), **Valor** (importe), **Vencimento** (vencimiento), **Pagamento** (pago), **Lembrete** (recordatorio) y **Ações** (acciones). Al lado del teléfono aparecen el código de la cuota y el concepto, cuando los hay.
+
+### Columna Pagamento (pago)
+
+| Insignia | Qué significa |
+| --- | --- |
+| **Em aberto** (pendiente) | Aún no venció |
+| **Vence hoje** (vence hoy) | Vence hoy |
+| **Vencida há N dias** (vencida hace N días) | Venció y no se pagó |
+| **Paga** (pagada) | Marcada como pagada |
+
+### Columna Lembrete (recordatorio)
+
+| Texto | Qué significa |
+| --- | --- |
+| **Próximo em dd/mm** (próximo el dd/mm) | Día del próximo recordatorio |
+| **Enviado dd/mm** (enviado dd/mm) | Recordatorio enviado hoy, con el próximo debajo |
+| **Ainda não enviado** (aún no enviado) | Todavía no salió ningún recordatorio |
+| **Pausado até dd/mm** (pausado hasta dd/mm) | Pausado, vuelve solo ese día |
+| **Pausado até retomar** (pausado hasta reanudar) | Pausado hasta que alguien lo reanude |
+| **Respondeu, pausado até dd/mm** (respondió, pausado hasta dd/mm) | Respondió y los recordatorios vuelven ese día |
+| **Respondeu, pausado até retomar** (respondió, pausado hasta reanudar) | Respondió y los recordatorios solo vuelven cuando alguien los reanude |
+| **Voltando** (volviendo) | Vuelve en el próximo envío |
+| **Lembretes encerrados** (recordatorios terminados) | Todos los recordatorios activados ya pasaron |
+| **Parou, já foi paga** (se detuvo, ya se pagó) | Pagada, sin más recordatorios |
+| **Não chegou** o **Falhou o envio** (no llegó o falló el envío) | El último envío no se entregó |
+
+Cuando los recordatorios de la cobranza están desactivados o pausados, la fila avisa **Lembretes da cobrança desligados** (recordatorios de la cobranza desactivados).
+
+En cada persona, el ícono de conversación abre su conversación en la atención.
+
+### Cuando la persona responde
+
+Si la persona responde después de un recordatorio, los recordatorios se detienen solo para ella, durante el plazo elegido en **Quando a pessoa responder** (cuando la persona responda). Aparece como **Respondeu** (respondió) y la parte superior muestra cuántas personas te están esperando.
+
+Conversa con ella. Si quieres volver a recordarle antes del plazo, usa **Retomar** (reanudar) en su fila.
+
+### Etiquetas en el lead
+
+El CRM pone una etiqueta de situación en el lead de cada persona de la cobranza y cambia la etiqueta cuando la situación cambia. Las etiquetas están en portugués:
+
+- `cobrança: a vencer`, `cobrança: vence hoje`, `cobrança: vencida`, `cobrança: respondeu`, `cobrança: não chegou` y `cobrança: paga`;
+- `cobrança: já conversou` y `cobrança: nunca conversou`.
+
+Si la persona todavía no tiene lead en el CRM, la etiqueta entra cuando aparezca el lead. Para usar estas etiquetas en filtros y difusiones, consulta [Etiquetas](/es/crm/tags).
+
+## Qué aparece en la conversación
+
+- El recordatorio enviado aparece en la conversación de la persona una sola vez. En WhatsApp por código QR, muestra si se entregó y se leyó.
+- Cuando la persona responde, la conversación va a quien se encarga de las respuestas.
+- En la parte superior de la conversación aparece la etiqueta **Cobro** cuando ese teléfono tiene una cuota pendiente. Haz clic en ella para ver las cuotas (importe, vencimiento, pago y recordatorio) y para pausar o reanudar los recordatorios ahí mismo. Muestra hasta 5 cuotas; el resto queda en Cobranzas.
+
+## Pausar y reanudar
+
+Puedes pausar los recordatorios de una persona sin pausar toda la cobranza. Haz clic en **Pausar** (pausar) y elige:
+
+- **3 dias** (3 días);
+- **7 dias** (7 días);
+- **Até uma data** (hasta una fecha): elige en **Voltar a lembrar no dia** (volver a recordar el día) un día a partir de mañana;
+- **Até eu retomar** (hasta que yo reanude).
+
+Con plazo, los recordatorios vuelven solos. Para que vuelvan antes, haz clic en **Retomar lembretes** (reanudar recordatorios). Los próximos recordatorios salen el día y a la hora de siempre.
+
+En la etiqueta **Cobro** de la conversación, las mismas opciones aparecen en español: **3 días**, **7 días**, **Hasta una fecha**, **Hasta que yo reanude** y **Reanudar recordatorios**.
+
+Encuentras Pausar y Reanudar:
+
+- en la fila de cada persona, en los detalles de la cobranza;
+- en las seleccionadas, cuando marcas varias personas;
+- en los resultados de la búsqueda de la parte superior;
+- en la etiqueta **Cobro** de la conversación.
+
+Para detener toda la cobranza, usa **Pausar lembretes** (pausar recordatorios) en los detalles. **Ligar lembretes** (activar recordatorios) vuelve a enviar. No se pierde nada.
+
+## Registrar quién pagó
+
+Todo registro de pago se puede deshacer. Después de marcar, el aviso muestra el botón **Desfazer** (deshacer) durante 10 segundos. Después de eso, usa **Últimas baixas de pagos** (últimos registros de pago), en los detalles de la cobranza: cada registro tiene el botón **Desfazer** (deshacer). Deshacer devuelve a pendiente solo lo que todavía está pagado por ese registro.
+
+### Una o varias personas
+
+<Steps>
+  <Step title="Selecciona">
+    Marca la casilla al lado de cada persona que pagó. Para marcar todas las que están en la pantalla, usa la casilla del encabezado.
+  </Step>
+  <Step title="Marca como pagado">
+    Haz clic en **Marcar como pago** (marcar como pagado). Quien fue marcado deja de recibir recordatorios.
+  </Step>
+</Steps>
+
+¿Marcaste a alguien por error? Haz clic en **Desfazer** (deshacer) o selecciona a la persona y haz clic en **Voltar para em aberto** (volver a pendiente).
+
+### Con una hoja de cálculo
+
+<Steps>
+  <Step title="Abre la ventana">
+    En los detalles de la cobranza, haz clic en **Subir planilha com os pagos** (subir hoja de cálculo con los pagados).
+  </Step>
+  <Step title="Sube el archivo">
+    Usa una hoja de cálculo con el código de la cuota o el teléfono y, si lo tiene, el vencimiento. La pantalla muestra cuántas cuotas pasan a pagadas, cuántas ya estaban pagadas y qué filas no se encontraron.
+  </Step>
+  <Step title="Confirma">
+    Haz clic en **Marcar como pagas** (marcar como pagadas).
+  </Step>
+</Steps>
+
+- Con el código de la cuota, el registro vale para esa cuota.
+- Sin código y con la columna de vencimiento, solo se marca como pagada la cuenta de ese vencimiento.
+- Sin código y sin la columna de vencimiento, todas las cuentas pendientes de ese teléfono en esta cobranza se marcan como pagadas.
+- La fila con vencimiento inválido queda fuera. Corrige la fecha en el formato dd/mm/aaaa y vuelve a subirla.
+- Si la hoja de cálculo tiene la columna **Data de pagamento** (fecha de pago), solo cuentan las filas con fecha (o "PAGO").
+
+### Actualizar con la hoja de cálculo de la tienda
+
+Úsalo cuando tienes la lista completa de quién debe hoy, por ejemplo el archivo del sistema de la tienda.
+
+<Steps>
+  <Step title="Abre la ventana">
+    En los detalles de la cobranza, haz clic en **Atualizar com a planilha da loja** (actualizar con la hoja de cálculo de la tienda).
+  </Step>
+  <Step title="Sube la hoja de cálculo">
+    La lectura es la misma que al crear: **O que eu entendi** (lo que entendí), **Como lemos a planilha** (cómo leemos la hoja de cálculo) y la corrección de las filas. Haz clic en **Conferir mudanças** (revisar cambios).
+  </Step>
+  <Step title="Revisa lo que cambia">
+    La pantalla muestra cuántas cuotas son **novas** (nuevas), **alteradas** (modificadas), **iguais** (iguales) y cuántas **sumiram** (desaparecieron).
+  </Step>
+  <Step title="Guarda">
+    Marca como pagadas las que desaparecieron y ya se pagaron y haz clic en **Salvar atualização** (guardar actualización) o **Salvar e marcar** (guardar y marcar).
+  </Step>
+</Steps>
+
+- Los recordatorios, los mensajes y el horario siguen iguales. Quien ya pagó sigue pagado.
+- En **Sumiram da planilha nova: marcar como pagas?** (desaparecieron de la hoja de cálculo nueva: ¿marcar como pagadas?), márcalas una a una o usa **Marcar todas** (marcar todas). Las que no marques siguen pendientes y recibiendo recordatorios.
+- En el archivo del sistema de la tienda que trae solo cuotas pendientes, las que desaparecieron ya vienen marcadas como pagadas. Quedan desmarcadas las que vencen fuera de las fechas de la hoja de cálculo.
+- Si la hoja de cálculo tiene filas con problemas, ninguna de las que desaparecieron se marca sola. Corrige las filas o márcalas a mano.
+- Marcar más del 30% de las cuotas pendientes pide una confirmación adicional.
+- En las cuotas nuevas, quien pidió no recibir queda fuera de los recordatorios.
+
+## Editar una cobranza
+
+En los detalles, **Editar lembretes** (editar recordatorios) vuelve a abrir los cuatro pasos. En un borrador, el botón se llama **Continuar configurando** (continuar configurando).
+
+Al editar, puedes subir otra hoja de cálculo. Agrega o actualiza las cuotas, y quien ya pagó sigue pagado. Para guardar sin cambiar la situación, usa **Salvar alterações** (guardar cambios).
+
+<Note>
+  En WhatsApp oficial, si cambias el texto de un recordatorio ya aprobado, envíalo de nuevo para aprobación. Hasta que WhatsApp apruebe la versión nueva, los recordatorios siguen con el mensaje aprobado antes.
+</Note>
+
+La pantalla no tiene botón para eliminar una cobranza. Para detenerla del todo, usa **Pausar lembretes** (pausar recordatorios).
+
+## Cumpleaños
+
+En la pestaña **Aniversariantes** (cumpleañeros), el CRM envía un mensaje de felicitación por WhatsApp el día del cumpleaños de cada persona de la lista. Cada persona recibe como máximo 1 felicitación por año.
+
+### Crear un envío de cumpleaños
+
+Haz clic en **Novo envio de aniversário** (nuevo envío de cumpleaños). Todo está en una sola pantalla.
+
+<Steps>
+  <Step title="Nombre y WhatsApp">
+    Completa **Nome do envio** (nombre del envío; el predeterminado es "Aniversariantes") y elige el WhatsApp que va a enviar el mensaje.
+  </Step>
+  <Step title="Lista de personas">
+    Sube la hoja de cálculo o haz clic en **Escolher dos contatos** (elegir de los contactos). La hoja de cálculo debe tener teléfono y fecha de nacimiento. El modelo (**Baixar planilha modelo**, descargar hoja de cálculo modelo) tiene las columnas **Nome** (nombre), **Telefone** (teléfono) y **Data de nascimento** (fecha de nacimiento).
+  </Step>
+  <Step title="Mensaje">
+    Escribe el texto del mensaje o, en WhatsApp oficial, elige la plantilla aprobada.
+  </Step>
+  <Step title="Horario y domingo">
+    Elige el horario y qué hacer cuando el cumpleaños cae en domingo.
+  </Step>
+  <Step title="Guarda">
+    Haz clic en **Salvar e ligar** (guardar y activar) para empezar, o en **Salvar sem ligar** (guardar sin activar) para activarlo después.
+  </Step>
+</Steps>
+
+### La hoja de cálculo de cumpleaños
+
+- La fecha de nacimiento puede ser dd/mm/aaaa o solo dd/mm.
+- Con el año, el mensaje puede decir la edad. Sin el año, la persona recibe el mensaje normalmente y la edad se convierte en "mais um ano" (un año más).
+- La pantalla muestra cuántos están **prontos** (listos), **sem telefone válido** (sin teléfono válido), **com data estranha** (con fecha extraña) y **repetidos** (repetidos, mismo teléfono). Corrige el teléfono o la fecha en la propia pantalla.
+- Puedes cambiar la columna de cada campo, el **Formato da data** (formato de la fecha) y el **DDD padrão** (código de área predeterminado). El CRM recuerda las columnas elegidas para una hoja de cálculo igual.
+- Quien pidió no recibir mensajes queda fuera de la felicitación.
+- Al editar, la hoja de cálculo nueva agrega o actualiza a las personas por el teléfono. Marca **Tirar da lista quem não está nesta planilha** (quitar de la lista a quien no está en esta hoja de cálculo) para reemplazar la lista. Quien sale no se borra: vuelve si aparece en una hoja de cálculo después.
+
+Si eliges de los contactos, escribe la fecha de nacimiento de cada persona (dd/mm o dd/mm/aaaa).
+
+### El mensaje de felicitación
+
+En WhatsApp por código QR, escribe el texto. Los campos entre corchetes se convierten en los datos de cada persona:
+
+| Campo | Se convierte en |
+| --- | --- |
+| `[primeiro nome]` | El primer nombre, como "Maria" |
+| `[nome]` | El nombre completo, como "Maria da Silva" |
+| `[idade]` | "30 anos" (30 años), o "mais um ano" (un año más) cuando la hoja de cálculo no tiene el año |
+
+El mensaje puede tener hasta 1000 letras y hasta 10 campos.
+
+En WhatsApp oficial, el mensaje tiene que ser una plantilla aprobada. Elige el **Modelo aprovado** (plantilla aprobada) e indica qué va en cada campo. Si el WhatsApp todavía no tiene una plantilla aprobada, crea una plantilla de felicitación en [Difusiones](/es/marketing/disparos) y vuelve cuando WhatsApp la apruebe.
+
+### Horario y domingo
+
+El horario es de Brasilia y vale todos los días. El valor predeterminado es de 9 h a 18 h, con al menos 30 minutos. El mensaje sale dentro de ese horario el día del cumpleaños y nunca después de ese día.
+
+En **Aniversário no domingo** (cumpleaños en domingo), elige:
+
+| Opción | Qué pasa |
+| --- | --- |
+| **Enviar no domingo mesmo** (enviar el domingo igualmente) | Predeterminado: el mensaje sale el día del cumpleaños |
+| **Enviar no sábado antes** (enviar el sábado anterior) | Quien cumple años el domingo lo recibe la víspera |
+| **Enviar na segunda depois** (enviar el lunes siguiente) | Quien cumple años el domingo lo recibe al día siguiente |
+
+<Warning>
+  En WhatsApp por código QR, la felicitación comparte el ritmo seguro y el límite del día con las cobranzas del mismo número. La pantalla muestra cuántas felicitaciones caben por día en el horario elegido. Quien no quepa en el día no la recibe ese año.
+</Warning>
+
+### Seguir los cumpleaños
+
+La pestaña muestra cada envío con la insignia **Ligado** (activado), **Pausado** (pausado) o **Desligado** (desactivado), cuántas personas tiene, cuántas felicitaciones salieron este año y el próximo cumpleaños.
+
+Haz clic en un envío para abrir los detalles:
+
+- los números de **pessoas na lista** (personas en la lista), **fazem aniversário hoje** (cumplen años hoy) y **nos próximos 30 dias** (en los próximos 30 días);
+- el mensaje de ejemplo;
+- **Mandar um teste para mim** (enviarme una prueba): la prueba sale al instante, con datos de ejemplo, entre las 8 h y las 20 h. Son hasta 10 pruebas por día;
+- **Próximos aniversários** (próximos cumpleaños), con búsqueda por nombre o teléfono. Cada persona muestra la próxima felicitación, si ya la recibió este año o por qué no salió;
+- **Tirar da lista** (quitar de la lista): la persona ya no recibe la felicitación. Si aparece en una hoja de cálculo nueva, vuelve;
+- **Editar ou subir planilha** (editar o subir hoja de cálculo) y **Pausar** (pausar) o **Ligar** (activar).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿El CRM recibe el pago por mí?">
+    No. El CRM solo envía los recordatorios. La persona paga por el enlace que pones en la columna **Link de pagamento** (enlace de pago). Cuando el dinero entre, registra el pago en la cobranza.
+  </Accordion>
+  <Accordion title="¿El CRM descubre solo quién pagó?">
+    No. Registra el pago con **Marcar como pago** (marcar como pagado), **Subir planilha com os pagos** (subir hoja de cálculo con los pagados) o **Atualizar com a planilha da loja** (actualizar con la hoja de cálculo de la tienda). Mientras la cuenta esté pendiente, los recordatorios activados siguen saliendo.
+  </Accordion>
+  <Accordion title="Mi hoja de cálculo no sigue el modelo. ¿Tengo que arreglarla?">
+    No. Súbela tal como está. El CRM encuentra las columnas, ignora las filas de total y corrige el formato de los teléfonos. Revisa en **O que eu entendi** (lo que entendí) y cambia la columna en **Como lemos a planilha** (cómo leemos la hoja de cálculo) si algo está mal.
+  </Accordion>
+  <Accordion title="¿Por qué no puedo avanzar del primer paso?">
+    Falta algo: el nombre de la cobranza, el canal, alguna fila sin **Referente a** (concepto), alguna persona elegida de los contactos sin importe o vencimiento, o ninguna persona lista. La pantalla muestra en rojo lo que falta.
+  </Accordion>
+  <Accordion title="¿Por qué un recordatorio no salió el domingo?">
+    El domingo nunca hay envío. El recordatorio sale el siguiente día elegido en **Em quais dias pode mandar** (en qué días puede enviar).
+  </Accordion>
+  <Accordion title="¿Por qué se omitió un recordatorio?">
+    El texto habla de un día fijo, como "hoje" (hoy), sin usar `[prazo]`, y el recordatorio tuvo que salir otro día. Edita el mensaje y usa `[prazo]`.
+  </Accordion>
+  <Accordion title="¿Por qué no todos recibieron hoy en WhatsApp por código QR?">
+    WhatsApp por código QR tiene un límite por día: hasta 50 mensajes en la 1.ª semana, 100 en la 2.ª y 150 después, sumando todas las cobranzas del número. Quien no cupo sale el siguiente día de envío.
+  </Accordion>
+  <Accordion title="Una persona está en dos cobranzas. ¿Recibe dos recordatorios el mismo día?">
+    No. Cada persona recibe como máximo 1 recordatorio por día.
+  </Accordion>
+  <Accordion title="¿Por qué no puedo hacer clic en Ligar lembretes?">
+    En WhatsApp oficial, todos los mensajes de los recordatorios activados deben estar aprobados. En los otros pasos, el botón de avanzar solo se habilita con el nombre de la cobranza, el canal, al menos una persona lista, al menos un recordatorio activado y un horario válido.
+  </Accordion>
+  <Accordion title="La prueba no se envió. ¿Qué hago?">
+    Revisa el mensaje de error. Los más comunes: la prueba solo sale entre las 8 h y las 20 h, de lunes a sábado; el número debe tener código de área y 10 u 11 dígitos; el límite es de 10 pruebas por día; y, en WhatsApp oficial, el mensaje tiene que estar aprobado antes.
+  </Accordion>
+  <Accordion title="Alguien aparece como Não chegou. ¿Qué significa?">
+    El último recordatorio para esa persona no se entregó. El número puede estar equivocado o no tener WhatsApp, o el canal puede estar desconectado. Corrige el número y usa **Tentar de novo** (intentar de nuevo). Abre su conversación con el ícono de conversación para ver qué pasó.
+  </Accordion>
+  <Accordion title="Marqué como pagado por error. ¿Cómo lo deshago?">
+    Haz clic en **Desfazer** (deshacer) en el aviso, o en **Últimas baixas de pagos** (últimos registros de pago), en los detalles de la cobranza. Para una sola persona, selecciónala y haz clic en **Voltar para em aberto** (volver a pendiente).
+  </Accordion>
+  <Accordion title="El WhatsApp elegido aparece como desconectado. ¿Salen los recordatorios?">
+    No. Los recordatorios solo salen después de que el canal se vuelva a conectar. Consulta [Conexiones](/es/conta/conexoes).
+  </Accordion>
+  <Accordion title="No veo Cobranzas en el menú.">
+    Tu perfil no tiene la página habilitada, o el plan de la empresa no incluye **Difusiones**. Pide al dueño o a un gerente que te habilite la página **Cobranzas**.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Difusiones" icon="paper-plane" href="/es/marketing/disparos">
+    Envía un mismo mensaje a varios contactos del CRM.
+  </Card>
+  <Card title="Etiquetas" icon="tags" href="/es/crm/tags">
+    Usa las etiquetas de cobranza para filtrar leads y armar públicos.
+  </Card>
+  <Card title="Plantillas de WhatsApp Oficial" icon="file-lines" href="/es/atendimento/templates-whatsapp">
+    Entiende la aprobación de mensajes en WhatsApp Oficial (Meta).
+  </Card>
+  <Card title="WhatsApp (Código QR) o WhatsApp Oficial (Meta)" icon="whatsapp" href="/es/primeiros-passos/tipos-whatsapp">
+    Compara WhatsApp oficial con WhatsApp por código QR.
+  </Card>
+  <Card title="Equipo" icon="users" href="/es/conta/equipe">
+    Habilita la página Cobranzas para miembros del equipo.
+  </Card>
+  <Card title="Conexiones" icon="plug" href="/es/conta/conexoes">
+    Conecta y vuelve a conectar los canales usados en los recordatorios.
+  </Card>
+</CardGroup>

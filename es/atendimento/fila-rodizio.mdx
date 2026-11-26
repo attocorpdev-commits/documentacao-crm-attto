@@ -1,0 +1,190 @@
+---
+title: "Cola y rotación de atención"
+sidebarTitle: "Cola y rotación"
+description: "Entiende cómo se distribuyen las nuevas conversaciones de WhatsApp entre el equipo y cómo asignar o transferir una atención."
+icon: "shuffle"
+---
+
+Cuando un contacto nuevo envía un mensaje, el CRM puede elegir solo quién del equipo lo va a atender. Tú decides si esa elección sigue un orden fijo (la rotación) o si va a cualquier persona disponible. Y, en cualquier momento, puedes asignar o transferir la conversación a mano.
+
+## Cuándo ocurre la distribución
+
+La distribución automática vale para las conversaciones que llegan a los canales de **WhatsApp (Código QR)**.
+
+| Situación | Qué hace el CRM |
+| --- | --- |
+| Un contacto nuevo envía el primer mensaje | Elige un responsable entre las personas disponibles. |
+| Un contacto que ya tiene responsable envía un mensaje | Mantiene el mismo responsable. |
+| Un contacto sin responsable envía un mensaje | Pone la conversación en espera hasta que alguien esté disponible. |
+
+<Note>
+  Las conversaciones de WhatsApp Oficial (Meta) y de Instagram no se distribuyen automáticamente. En ellas, define el responsable en la ventana **Asignar responsable**, que se explica más abajo.
+</Note>
+
+<Warning>
+  El canal tiene que tener al menos una persona con acceso. Un canal sin nadie vinculado no distribuye conversaciones. Mira cómo dar acceso a los canales en [Equipo](/es/conta/equipe).
+</Warning>
+
+## Quién puede recibir conversaciones
+
+Para entrar en la distribución automática, la persona tiene que cumplir todo esto:
+
+| Condición | Dónde se define |
+| --- | --- |
+| Tener el estado **En línea**, con el CRM abierto | En el menú del perfil. Mira [Estado y ausencia](/es/atendimento/status-ausente). |
+| Ser miembro activo del equipo o el propietario de la empresa | En **Equipo de la Empresa**. |
+| Tener marcado **Participa en la cola de atención** | En **Equipo de la Empresa**, en los permisos del miembro. |
+
+Quien está **Ausente** o **Desconectado** no recibe conversaciones nuevas. Lo mismo vale para quien cerró el navegador sin salir: después de 10 minutos sin señal del CRM abierto, la persona deja de recibir.
+
+<Tip>
+  Los gestores y otras personas que no atienden pueden quedar fuera de la distribución. Desmarca **Participa en la cola de atención** en sus permisos. Siguen pudiendo abrir, responder y recibir conversaciones asignadas a mano.
+</Tip>
+
+## Los dos modos de distribución
+
+<Note>
+  La ventana **Configurar Fila** y algunos mensajes de esta página se muestran en portugués en todos los idiomas. En esta página, el rótulo en portugués va primero, con el sentido en español entre paréntesis.
+</Note>
+
+| Modo | Cómo se elige a la persona |
+| --- | --- |
+| **Fila automática** (cola automática) activada: rotación | Sigue el orden de la lista **Vendedores na fila** (vendedores en la cola), a partir de quien está marcado como **Próximo** (siguiente). Salta a quien está desactivado en la cola, fuera de la cola de atención o no está **En línea**. Después de cada entrega, el turno pasa al siguiente de la lista. |
+| **Fila automática** desactivada | Sortea a una persona entre las que están **En línea** y tienen acceso al canal. |
+
+## Cuando no hay nadie disponible
+
+Si no hay nadie disponible en ese momento, la conversación queda **Sin asignación** y entra en espera. No va a quien está ausente o desconectado.
+
+- En cuanto alguien queda **En línea**, la conversación que espera hace más tiempo puede ir a esa persona.
+- Mientras haya conversaciones en espera, el CRM intenta entregarlas a quien está disponible y tiene acceso al canal, dando preferencia a quien tiene menos conversaciones abiertas.
+- Después de 24 horas, la conversación sale de la espera y sigue **Sin asignación**. A partir de ahí, alguien tiene que asignarla a mano.
+
+<Tip>
+  Para encontrar esas conversaciones, usa el filtro **Sin asig.** en la lista de conversaciones. Mira [WhatsApp](/es/atendimento/whatsapp).
+</Tip>
+
+## Configurar la cola
+
+<Note>
+  Solo el propietario y los gerentes pueden guardar la configuración de la cola. Para los demás, la ventana se abre, pero el cambio no se guarda y aparece **Erro ao salvar** (error al guardar).
+</Note>
+
+<Steps>
+  <Step title="Abre una conversación">
+    En el menú lateral, abre **WhatsApp** y haz clic en cualquier conversación.
+  </Step>
+  <Step title="Abre el menú de la cola">
+    En la parte superior de la conversación, haz clic en **Cola**. En el menú **Cola de asignación**, haz clic en **Configurar cola**.
+  </Step>
+  <Step title="Activa la rotación">
+    En la ventana **Configurar Fila**, activa **Fila automática**. El texto de abajo cambia a **Leads distribuídos automaticamente** (leads distribuidos automáticamente).
+  </Step>
+  <Step title="Agrega a las personas">
+    En **Adicionar vendedor...** (agregar vendedor), elige una persona y haz clic en **Adicionar** (agregar). Repite para cada persona que va a atender.
+  </Step>
+  <Step title="Define el orden">
+    Usa las flechas al lado de cada nombre para subir o bajar a la persona en la lista. El número muestra su posición en la rotación.
+  </Step>
+</Steps>
+
+Cada cambio se guarda al instante y aparece el aviso **Fila atualizada** (cola actualizada). No hay botón de guardar.
+
+### Qué aparece en la lista
+
+| Elemento | Para qué sirve |
+| --- | --- |
+| Punto en el avatar | Muestra el estado de la persona: verde para **En línea**, amarillo para **Ausente** y gris para **Desconectado**. |
+| **Próximo** (siguiente) | Marca quién recibe la próxima conversación. El mismo nombre aparece arriba de la lista, en **Próximo:**. |
+| Interruptor **Ativo na fila** (activo en la cola) | Desactívalo para saltar a la persona por un tiempo, sin quitarla de la lista. |
+| Papelera **Remover** (quitar) | Quita a la persona de la cola. |
+| **Reiniciar rotação** (reiniciar rotación) | Devuelve el turno a la primera persona de la lista. |
+
+Para desactivar la rotación, desactiva **Fila automática**. El texto cambia a **Distribuição automática desligada** (distribución automática desactivada) y las conversaciones nuevas pasan a sortearse entre quienes están disponibles.
+
+<Warning>
+  La lista **Vendedores na fila** y la opción **Participa en la cola de atención**, en **Equipo de la Empresa**, funcionan juntas. Quien está en la lista pero con **Participa en la cola de atención** desmarcado se salta en la rotación.
+</Warning>
+
+## Asignar o transferir una conversación
+
+Puedes cambiar el responsable en cualquier momento, con la distribución automática activada o no.
+
+<Steps>
+  <Step title="Abre la ventana de asignación">
+    En la parte superior de la conversación, haz clic en el botón que muestra el responsable actual o **Sin asignación**.
+  </Step>
+  <Step title="Elige el responsable">
+    En la ventana **Asignar responsable**, elige una de las opciones de la tabla de abajo.
+  </Step>
+  <Step title="Revisa">
+    El nombre del nuevo responsable aparece en la parte superior de la conversación.
+  </Step>
+</Steps>
+
+| Opción | Qué hace |
+| --- | --- |
+| **Asignarme a mí** | Pasas a ser el responsable. Aparece **Conversación asignada a ti**. |
+| **Siguiente en la cola** | Entrega la conversación al siguiente vendedor **En línea** de la rotación. |
+| Un nombre de la lista **Equipo** | Transfiere la conversación a esa persona. La persona actual aparece como **Responsable actual**. |
+| **Eliminar asignación** | Deja la conversación sin responsable. |
+
+Quien recibe la conversación recibe un aviso por correo electrónico.
+
+El botón **Cola**, en la parte superior de la conversación, también tiene el atajo **Asignar el siguiente de la cola**. Cuando funciona, aparece **Asignado a** seguido del nombre de la persona y de **por la cola**.
+
+<Note>
+  **Siguiente en la cola** y **Asignar el siguiente de la cola** usan la rotación. Si la **Fila automática** está desactivada, o si nadie de la lista está **En línea**, aparece **Ningún vendedor en línea en la cola**.
+</Note>
+
+### Desde el Pipeline
+
+En el [Pipeline](/es/crm/pipeline), abre la tarjeta de un lead de WhatsApp. En **Responsable de la conversación**, elige a la persona.
+
+- Quien está **Ausente** o **Desconectado** aparece atenuado y no se puede elegir. Si lo intentas, aparece **Este vendedor está ausente/offline e não pode receber atribuições** (este vendedor está ausente o desconectado y no puede recibir asignaciones).
+- Con la **Fila automática** activada, aparece también el botón **Fila** (cola), que entrega el lead al siguiente vendedor de la rotación.
+
+### Dónde ver quién hizo el cambio
+
+Todo cambio de responsable, hecho en la conversación, en el Pipeline o por la cola, aparece dentro de la conversación en una franja amarilla con el sello **solo el equipo ve**. Haz clic en ella para ver quién lo hizo, de quién salió, para quién fue, cuándo y de dónde vino el cambio. Mira [WhatsApp](/es/atendimento/whatsapp).
+
+## Asumir no es lo mismo que asignar
+
+El botón **Asumir**, en la parte superior de la conversación, sirve para pausar la IA y pasar la atención a una persona. No cambia el responsable de la conversación. Para eso, usa la ventana **Asignar responsable**. Mira [Agente IA](/es/ia/agente-ia) y [Protocolo de atención](/es/ia/protocolo-atendimento).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Apareció Ningún vendedor en línea en la cola. ¿Qué hago?">
+    Revisa tres puntos: si la **Fila automática** está activada, si hay alguien en la lista con **Ativo na fila** activado y si esa persona está **En línea**. Mientras tanto, asigna la conversación a alguien de la lista **Equipo**.
+  </Accordion>
+  <Accordion title="Quedé ausente. ¿Pierdo las conversaciones que ya son mías?">
+    No. Cambiar el estado no le quita conversaciones a nadie. Solo dejas de recibir conversaciones nuevas por la distribución automática.
+  </Accordion>
+  <Accordion title="Un contacto antiguo volvió a escribir. ¿Va a ir a otra persona?">
+    No. Si el contacto ya tiene responsable, la conversación sigue con la misma persona.
+  </Accordion>
+  <Accordion title="¿Las conversaciones de Instagram también entran en la rotación?">
+    No. La distribución automática vale solo para los canales de WhatsApp (Código QR). En Instagram y en WhatsApp Oficial (Meta), asigna con la ventana **Asignar responsable**.
+  </Accordion>
+  <Accordion title="¿Puedo asignar una conversación a quien está ausente?">
+    En la pantalla **WhatsApp**, sí: la lista **Equipo** muestra a todos. En el Pipeline, no: quien está **Ausente** o **Desconectado** queda bloqueado en **Responsable de la conversación**.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Estado y ausencia" icon="user-clock" href="/es/atendimento/status-ausente">
+    Mira cómo tu estado cambia la distribución de conversaciones.
+  </Card>
+  <Card title="Equipo" icon="users" href="/es/conta/equipe">
+    Da acceso a los canales y define quién participa en la cola.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/es/atendimento/whatsapp">
+    Atiende y organiza las conversaciones de WhatsApp.
+  </Card>
+  <Card title="Área del Gestor" icon="chart-line" href="/es/gestao/area-gestor">
+    Sigue la cola y el equipo en tiempo real.
+  </Card>
+</CardGroup>

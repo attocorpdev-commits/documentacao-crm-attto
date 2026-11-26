@@ -1,0 +1,125 @@
+---
+title: "Conectar tu WhatsApp"
+description: "Conecta un número al CRM por WhatsApp (Código QR) o por WhatsApp Oficial (Meta)."
+icon: "link"
+---
+
+Para atender desde el CRM, necesitas conectar al menos un número. Existen dos tipos de conexión. Si todavía no sabes cuál usar, consulta [Tipos de WhatsApp](/es/primeiros-passos/tipos-whatsapp).
+
+## Cómo acceder
+
+En el menú lateral, abre **Configuración** y haz clic en **Conexiones**. En el grupo **WhatsApp**, elige la tarjeta del tipo que quieres conectar: **WhatsApp** (por código QR) o **WhatsApp Oficial (Meta)**.
+
+<Card title="Abrir Conexiones en el CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections">
+  Lleva directo a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## Paso a paso
+
+<Tabs>
+  <Tab title="WhatsApp (Código QR)" icon="qrcode">
+    Ten a mano el celular con el WhatsApp del número y usa el CRM en la computadora, para escanear la pantalla.
+
+    <Steps>
+      <Step title="Agrega un canal">
+        En la tarjeta **WhatsApp**, haz clic en **Agregar canal**. Si todavía no hay ningún número, también puedes hacer clic en **Conectar número**.
+      </Step>
+      <Step title="Ponle un nombre al canal">
+        En **Nombre del canal**, escribe algo que ayude a identificar el número. Ejemplos: Ventas, Soporte, Finanzas. Haz clic en **Crear canal**.
+      </Step>
+      <Step title="Genera el código QR">
+        El canal aparece en la lista con el área **Conectar WhatsApp** abierta. Haz clic en **Conectar WhatsApp** para generar el código QR.
+      </Step>
+      <Step title="Escanéalo con el celular">
+        En el celular, abre WhatsApp, entra en **Dispositivos vinculados** y escanea el código QR que está en la pantalla.
+      </Step>
+      <Step title="Revisa la conexión">
+        El CRM muestra el mensaje **¡Canal conectado con éxito!**. El canal pasa a mostrar la etiqueta **Conectado** y el número de teléfono.
+      </Step>
+    </Steps>
+
+    <Warning>
+      El código QR expira en 60 segundos. La pantalla muestra la cuenta regresiva en **El QR expira en**. Para cambiar el QR antes de que termine, haz clic en **Generar nuevo QR**. Si se acaba el tiempo, haz clic en **Intentar de nuevo**.
+    </Warning>
+
+    <Tip>
+      Si el área del código QR está cerrada, haz clic en el ícono de código QR al lado del nombre del canal para abrirla de nuevo.
+    </Tip>
+
+    <Card title="Abrir WhatsApp (Código QR) en el CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/whatsapp">
+      Lleva directo a la lista de canales por código QR.
+    </Card>
+  </Tab>
+  <Tab title="WhatsApp Oficial (Meta)" icon="badge-check">
+    El número debe estar activo en Meta, con la tarifa pagada. La conexión se hace solo por la ventana de Meta, sin pegar token.
+
+    <Steps>
+      <Step title="Inicia la conexión">
+        En la tarjeta **WhatsApp Oficial (Meta)**, en la pestaña **Canales**, haz clic en **Conectar vía Meta**. En la ventana que se abre, haz clic de nuevo en **Conectar vía Meta**.
+      </Step>
+      <Step title="Confirma">
+        En la ventana **Confirmar activación del canal**, haz clic en **Sí, conectar**.
+      </Step>
+      <Step title="Autoriza en la ventana de Meta">
+        Se abre una ventana de Meta. Elige la cuenta y autoriza. No hace falta pegar token.
+      </Step>
+      <Step title="Finaliza">
+        Cuando aparezca **¡Canal conectado con éxito!**, haz clic en **Finalizar**.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Si el navegador bloquea la ventana, permite las ventanas emergentes para el sitio y haz clic en **Intentar de nuevo**. Si prefieres ayuda, haz clic en **Hacerlo con soporte**.
+    </Tip>
+
+    <Note>
+      Si aparece **Estamos preparando su canal…**, la activación del número la hace el equipo de Atto Corp. Deja la ventana abierta: cuando aparezca **¡Su canal fue habilitado!**, sigue con la autorización en Meta.
+
+      Si tu empresa ya tiene un canal oficial, el botón **Conectar vía Meta** abre la ventana **Reconectar WhatsApp Oficial**. Elige el número para reconectar sin crear un canal nuevo, o haz clic en **Conectar otro número**.
+    </Note>
+
+    Después de conectar, crea las plantillas en la pestaña **Plantillas**. Son necesarias para hablar con contactos fuera de la ventana de 24 horas. Consulta [Conexiones](/es/conta/conexoes).
+
+    <Card title="Abrir WhatsApp Oficial (Meta) en el CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/whatsapp-oficial/canais">
+      Lleva directo a la lista de canales oficiales.
+    </Card>
+  </Tab>
+</Tabs>
+
+## Después de conectar
+
+Los mensajes que lleguen a los dos tipos de número aparecen en **WhatsApp**, en el grupo **Atención** del menú.
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Apareció el mensaje de límite de canales alcanzado.">
+    Cada plan tiene un límite de canales para cada tipo de WhatsApp. En WhatsApp (Código QR), haz clic en **Hablar con soporte** en la misma ventana. En WhatsApp Oficial (Meta), la ventana muestra el botón **Contratar canal extra**. Consulta [Planes y facturación](/es/conta/planos).
+  </Accordion>
+  <Accordion title="No veo el botón Agregar canal.">
+    Tu usuario no tiene permiso para crear canales. Pide al propietario de la cuenta que habilite el permiso **Crear canal propio de WhatsApp** en la pantalla **Equipo de la Empresa**.
+  </Accordion>
+  <Accordion title="WhatsApp (Código QR): apareció un error en lugar del código QR.">
+    Haz clic en **Intentar de nuevo**. El CRM genera un nuevo código QR.
+  </Accordion>
+  <Accordion title="WhatsApp (Código QR): mi número aparece con el aviso Necesita reconectarse.">
+    Haz clic en **Reconectar**. Si no se resuelve, abre el código QR del canal y escanéalo de nuevo.
+  </Accordion>
+  <Accordion title="WhatsApp (Código QR): apareció la ventana La sesión de WhatsApp puede estar desincronizada.">
+    El número sigue conectado, pero parte de los mensajes que envías puede no llegar al cliente. Haz clic en **Sincronizar** para ir a la lista de canales y reconectar el número, o en **Descartar** para cerrar el aviso. En la lista de canales, ese número aparece con la etiqueta **La sesión puede estar desincronizada**. Más información en [Conexiones](/es/conta/conexoes).
+  </Accordion>
+  <Accordion title="WhatsApp Oficial (Meta): conecté la cuenta equivocada.">
+    En los tres puntos del canal, usa **Reautorizar (cuenta incorrecta)** y elige la cuenta correcta en Meta. Consulta [Conexiones](/es/conta/conexoes).
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Tipos de WhatsApp" icon="code-compare" href="/es/primeiros-passos/tipos-whatsapp">
+    Compara WhatsApp (Código QR) y WhatsApp Oficial (Meta).
+  </Card>
+  <Card title="Atención en WhatsApp" icon="comments" href="/es/atendimento/whatsapp">
+    Aprende a conversar con tus leads.
+  </Card>
+</CardGroup>

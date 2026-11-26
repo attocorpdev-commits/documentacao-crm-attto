@@ -1,0 +1,426 @@
+---
+title: "WhatsApp"
+description: "Atiende a tus leads por WhatsApp, organiza las conversaciones y actualiza los datos del contacto sin salir de la pantalla."
+icon: "whatsapp"
+---
+
+La pantalla **WhatsApp** reúne las conversaciones de todos tus canales, tanto de WhatsApp (Código QR) como de WhatsApp Oficial (Meta). En ella respondes mensajes, envías audios y archivos, defines quién se encarga de cada conversación y actualizas el lead en el Pipeline.
+
+<Info>
+  Casi todo en esta página vale para los dos tipos. Cuando algo vale solo para uno de ellos, el texto lo indica. Mira la diferencia en [Tipos de WhatsApp](/es/primeiros-passos/tipos-whatsapp).
+</Info>
+
+## Cómo acceder
+
+En el menú lateral, abre la categoría **Atención** y haz clic en **WhatsApp**.
+
+La pantalla tiene tres partes: la lista **Conversaciones** a la izquierda, la conversación abierta en el centro y el panel **Perfil** del contacto a la derecha.
+
+<Note>
+  Si la lista muestra **Conecta WhatsApp para recibir mensajes**, haz clic en **Conectar WhatsApp**. Mira el paso a paso en [Conectar tu WhatsApp](/es/primeiros-passos/conectar-whatsapp).
+</Note>
+
+<Card title="Abrir WhatsApp en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/whatsapp" horizontal>
+  Te lleva directo a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## Lista de conversaciones
+
+Las conversaciones fijadas aparecen primero. Después vienen las conversaciones con actividad más reciente. Una conversación con un mensaje escrito y no enviado sube en la lista y muestra el aviso **Borrador:**.
+
+Cada conversación muestra el nombre o número del contacto, el canal, el último mensaje y hace cuánto tiempo llegó. El número en verde indica mensajes no leídos. El círculo con iniciales muestra quién es el responsable. **YO** significa que la conversación está asignada a ti.
+
+Cuando llegan conversaciones nuevas y estás desplazándote por la lista, aparece un aviso como **1 conversación nueva**. Haz clic en él para volver arriba.
+
+### Buscar una conversación
+
+Usa el campo **Buscar conversación...** en la parte superior de la lista. La búsqueda encuentra conversaciones por:
+
+- nombre o número del contacto
+- texto de un mensaje
+- etiqueta del contacto
+- fecha, como `hoje` o `08/09/2026`
+
+### Filtrar la lista
+
+| Filtro | Qué muestra |
+| --- | --- |
+| **Todas** | Todas las conversaciones que puedes ver |
+| **Mías** | Conversaciones asignadas a ti |
+| **Sin asig.** | Conversaciones sin responsable |
+
+Cada filtro muestra el total de conversaciones. El número en rojo indica cuántas tienen mensajes no leídos.
+
+Haz clic en el ícono de campana al lado del selector de canal para activar **Mostrar solo no leídas**. Haz clic de nuevo para volver a ver todas.
+
+### Cambiar de canal
+
+Si tienes acceso a más de un canal, usa el selector **Todos los canales**. Elige un canal para ver solo sus conversaciones. Usa **Buscar canal...** para encontrar un canal por el nombre. El punto verde al lado del nombre indica que el canal está conectado.
+
+### Fijar y marcar como no leída
+
+- Pasa el mouse sobre la foto del contacto y haz clic en **Fijar conversación**. Para deshacerlo, haz clic en **Desfijar**.
+- Pasa el mouse sobre la conversación y haz clic en **Marcar como no leída**. Recibe un punto verde. Al abrir la conversación, la marca desaparece.
+
+### Alertas de nuevos mensajes
+
+En la parte superior de la lista, el ícono de campana activa o desactiva el sonido y el destaque de nuevos mensajes. El ajuste vale solo para el navegador que estás usando.
+
+## Enviar mensajes
+
+<Steps>
+  <Step title="Abre la conversación">
+    Haz clic en la conversación en la lista. Los mensajes aparecen en el centro de la pantalla.
+  </Step>
+  <Step title="Escribe el mensaje">
+    Escribe en el campo **Escribe un mensaje...**.
+  </Step>
+  <Step title="Envía">
+    Presiona **Enter** o haz clic en el botón de enviar. Para saltar una línea sin enviar, usa **Shift + Enter**.
+  </Step>
+</Steps>
+
+### Marcas de entrega
+
+Al lado de la hora de cada mensaje enviado, el CRM muestra en qué punto está:
+
+| Marca | Qué significa |
+| --- | --- |
+| Círculo girando | **Enviando**: el mensaje está saliendo ahora |
+| Un check | **Enviado**: WhatsApp aceptó el mensaje |
+| Dos checks | **Entregado**: el mensaje llegó al contacto. También aparece cuando el contacto ya leyó el mensaje |
+| Ícono de alerta | **No entregado: haz clic para intentar de nuevo**. Cuando el CRM conoce el motivo, aparece en el aviso |
+| Ícono de reloj | **No se pudo enviar. Toca para intentarlo de nuevo.** El envío se trabó antes de salir |
+
+Haz clic en el ícono de alerta o en el de reloj para intentar de nuevo. Mientras el CRM lo intenta, el ícono gira y muestra **Reenviando…**. Para ver el estado por escrito, abre el menú de tres puntos (**Mais opções**, más opciones) y haz clic en **Dados da mensagem** (datos del mensaje).
+
+Los mensajes enviados por la IA y los enviados por una difusión siguen las mismas marcas, con el estado real del envío. Mira [Difusiones](/es/marketing/disparos).
+
+La marca solo avanza, nunca retrocede. Si el contacto ya leyó el mensaje, queda con los dos checks, aunque una confirmación antigua de envío o de entrega llegue con retraso. Esto vale también para la confirmación de lectura de WhatsApp (Código QR), que ahora aparece en los mensajes enviados por el CRM.
+
+<Note>
+  Los dos checks solo aparecen cuando la entrega está confirmada. Si WhatsApp rechaza el mensaje después de aceptarlo, los dos checks desaparecen y el mensaje pasa a mostrar el ícono de alerta. El CRM no deja una marca de entrega que no ocurrió.
+</Note>
+
+<Note>
+  En WhatsApp Oficial (Meta), si el mensaje que falló se envió con una plantilla, el CRM no repite el texto suelto. Aparece el aviso **Reenvía con la plantilla** y se abre la ventana **Enviar plantilla** para que elijas la plantilla de nuevo.
+</Note>
+
+### Enviar audio
+
+<Steps>
+  <Step title="Empieza a grabar">
+    Con el campo de mensaje vacío, haz clic en **Grabar audio**.
+  </Step>
+  <Step title="Detén la grabación">
+    Haz clic en **Detener**. Para descartarla, haz clic en **Cancelar**.
+  </Step>
+  <Step title="Envía">
+    Revisa la duración del audio y haz clic en el botón de enviar.
+  </Step>
+</Steps>
+
+<Note>
+  En la primera grabación, el navegador pide permiso para usar el micrófono. Si lo niegas, el CRM muestra los pasos para liberar el acceso.
+</Note>
+
+### Enviar imagen o archivo
+
+<Steps>
+  <Step title="Abre el menú de adjuntos">
+    Haz clic en el botón **+** (**Adjuntos y acciones**) al lado del campo de mensaje.
+  </Step>
+  <Step title="Elige el tipo">
+    Haz clic en **Adjuntar imagen** o **Adjuntar archivo** y selecciona el archivo en tu computadora.
+  </Step>
+  <Step title="Envía">
+    Si quieres, escribe un texto para acompañarlo. Después haz clic en el botón de enviar.
+  </Step>
+</Steps>
+
+Puedes enviar imagen, video, PDF, documento de Office o archivo comprimido. Los límites de tamaño son:
+
+| Tipo | Tamaño máximo |
+| --- | --- |
+| Imagen | 5 MB |
+| Video y audio | 16 MB |
+| Documento | 95 MB |
+
+<Note>
+  En algunos canales WhatsApp solo acepta fotos en JPG o PNG y videos en MP4. Una foto en otro formato, una foto de más de 5 MB o un video grabado en iPhone (`.mov`) llegan al contacto como archivo, para que no dejen de llegar. En la conversación del CRM el mensaje sigue apareciendo como foto o video.
+</Note>
+
+<Note>
+  En WhatsApp Oficial (Meta), el texto que acompaña un archivo puede tener hasta 150 caracteres. Si se pasa, aparece la ventana **Leyenda demasiado larga** y el archivo no se envía. Acorta el texto o envía el texto completo en otro mensaje.
+</Note>
+
+### Otras acciones del menú de adjuntos
+
+- **Respuesta rápida**: inserta un mensaje listo. Mira [Respuestas rápidas](/es/atendimento/respostas-rapidas).
+- **Corregir con IA**: corrige el texto que escribiste. El texto corregido vuelve al campo de mensaje. Revísalo antes de enviar.
+- **Enviar plantilla**: aparece solo en las conversaciones de WhatsApp Oficial (Meta). Envía un mensaje aprobado por Meta.
+
+<Warning>
+  En WhatsApp Oficial (Meta), cuando el contacto no envía mensajes hace más de 24 horas, aparece el aviso **Fuera de la ventana de 24 h**. En ese caso el campo de mensaje y el botón **\+** quedan bloqueados. Si el aviso muestra el botón **Enviar plantilla**, haz clic en él. Si no lo muestra, espera a que el contacto responda.
+
+  En WhatsApp (Código QR) no existe esa ventana: respondes en cualquier momento.
+</Warning>
+
+<Note>
+  Completa todos los campos de la ventana **Enviar plantilla** antes de enviar. Si un campo queda en blanco, el mensaje no sale y el CRM muestra **Template não entregue** (plantilla no entregada) con el motivo **Variable de la plantilla sin completar**.
+</Note>
+
+### Insertar emoji
+
+Haz clic en **Insertar emoji**, al lado del campo de mensaje, para abrir la lista completa de emojis. Usa **Buscar emoji** para encontrarlo por el nombre o navega por las categorías, como **Caras y personas** y **Banderas**. Los que usaste aparecen en **Usados recientemente**. En **Tono de piel**, elige el tono de los emojis de personas y manos.
+
+<Note>
+  En WhatsApp, el botón de emoji aparece en la computadora. En WhatsApp Oficial (Meta), con la ventana de 24 horas cerrada, queda bloqueado junto con el campo de mensaje.
+</Note>
+
+### Aviso de problema de entrega en el canal
+
+Cuando un canal registra una falla de entrega, aparece una franja roja en la parte superior de la conversación. En WhatsApp Oficial (Meta), puede indicar un pago pendiente en Meta. Haz clic en **Resolver** para abrir la ventana **Problema de entrega en WhatsApp**, que explica qué revisar. Cuando la entrega vuelva a la normalidad, haz clic en **Resuelto**. Si el problema continúa, el aviso vuelve solo.
+
+## Acciones en un mensaje
+
+Pasa el mouse sobre el mensaje para ver los botones de acción.
+
+| Acción | Qué hace |
+| --- | --- |
+| **Responder** | Responde citando el mensaje elegido |
+| **Editar** | Cambia un mensaje de texto que enviaste hace menos de 15 minutos |
+| **Eliminar para todos** | Elimina el mensaje para ti y para el contacto. Disponible hasta 15 minutos después del envío |
+| **Eliminar para mí** | Quita el mensaje solo del CRM. El contacto lo sigue viendo en WhatsApp |
+
+Al hacer clic en **Editar**, aparece el aviso **Editando mensaje** encima del campo de mensaje, con el texto original. Para desistir de la edición, haz clic en la **X** al lado del aviso.
+
+El botón de tres puntos (**Mais opções**, más opciones) trae otras acciones:
+
+- **Dados da mensagem** (datos del mensaje): muestra dirección, fecha, estado y tipo.
+- **Copiar**: copia el texto.
+- **Encaminhar** (reenviar): envía el mensaje a otras conversaciones. Marca las conversaciones y haz clic en **Reenviar**.
+- **Fixar** (fijar): fija el mensaje en la parte superior de la conversación. Haz clic en él arriba para volver al mensaje.
+- **Favoritar** (destacar): marca el mensaje con una estrella.
+- **Salvar como** (guardar como): descarga la imagen, el video o el archivo del mensaje.
+
+<Note>
+  Puedes fijar hasta 3 mensajes por conversación. Para fijar otro, haz clic en **Desafixar** (desfijar) en uno de los fijados.
+</Note>
+
+### Reaccionar a un mensaje
+
+Abre el menú de tres puntos del mensaje. Arriba, la línea **Reaccionar** trae seis reacciones rápidas. Haz clic en una para enviarla. El CRM lo confirma con **Reacción enviada**. En una imagen o video abierto, la barra de acciones también tiene **Reaccionar**.
+
+En WhatsApp Oficial (Meta), solo puedes reaccionar a mensajes recibidos del contacto, con la ventana de 24 horas abierta y hasta 30 días después del mensaje. En algunos canales oficiales la reacción no está disponible. Cuando no se puede reaccionar, las reacciones quedan desactivadas y el menú muestra el motivo, como **Reacción no disponible: el mensaje tiene más de 30 días.**
+
+### Buscar dentro de la conversación
+
+Haz clic en la lupa **Buscar en la conversación**, en la parte superior de la conversación. Escribe el término y usa las flechas para navegar entre los resultados.
+
+<Note>
+  En pantallas estrechas, como en el celular, la búsqueda, la cola y **Apagar contato** (eliminar contacto) quedan en el botón de tres puntos (**Más acciones de la conversación**), en la parte superior de la conversación.
+</Note>
+
+## Asignar o transferir una conversación
+
+<Steps>
+  <Step title="Abre la ventana de asignación">
+    En la parte superior de la conversación, haz clic en el botón que muestra el responsable actual o **Sin asignación**.
+  </Step>
+  <Step title="Elige el responsable">
+    En la ventana **Asignar responsable**, elige **Asignarme a mí**, **Siguiente en la cola** o una persona de la lista **Equipo**.
+  </Step>
+  <Step title="Revisa">
+    El nombre del nuevo responsable aparece en la parte superior de la conversación.
+  </Step>
+</Steps>
+
+Para dejar la conversación sin responsable, haz clic en **Eliminar asignación**.
+
+El botón **Cola** ofrece **Asignar el siguiente de la cola**, que pasa la conversación al siguiente vendedor en línea, y **Configurar cola**.
+
+Si eres agente y la conversación está asignada a ti, aparece el botón **Finalizar**. Informa el motivo, si quieres, y haz clic en **Finalizar atención**. Se avisa al gerente responsable.
+
+### Historial de cambio de responsable
+
+Todo cambio de responsable queda registrado dentro de la conversación, en una franja amarilla entre los mensajes, en el punto en que ocurrió. Ejemplos: **Carla asignó la conversación a Rafael** o **Carla quitó la conversación de Rafael**. Cuando el cambio lo hace la distribución automática, la franja muestra **Cola** en lugar del nombre.
+
+La franja tiene el sello **solo el equipo ve**. No se envía al cliente y no entra en la conversación que lee la IA. Haz clic en la franja para ver los detalles:
+
+| Campo | Qué muestra |
+| --- | --- |
+| **Quién lo hizo** | La persona que cambió el responsable, o **Cola** y **Sistema** cuando fue automático |
+| **Salió de** | El responsable anterior, o **Nadie** |
+| **Fue para** | El nuevo responsable, o **Nadie** |
+| **Cuándo** | Fecha y hora, en el horario de Brasilia |
+| **Dónde** | De dónde vino el cambio, como **Conversación (chat)**, **Pipeline**, **Cola automática**, **Cola al conectarse**, **Salida del miembro del equipo**, **Unión de contactos** o **Cierre de la atención** |
+
+## Eliminar contacto
+
+El botón **Apagar contato** (eliminar contacto), con ícono de papelera, en la parte superior de la conversación, elimina del CRM la conversación, los archivos multimedia y el contacto de ese canal, junto con lo que la IA recuerda de esa persona (si no tiene conversación en otro canal).
+
+<Steps>
+  <Step title="Haz clic en Apagar contato">
+    En la parte superior de la conversación, haz clic en el ícono de papelera **Apagar contato**.
+  </Step>
+  <Step title="Confirma">
+    En la ventana **Apagar contato**, escribe `CONFIRMAR` y haz clic en **Apagar contato**. El CRM lo confirma con **Contato apagado do CRM** (contacto eliminado del CRM).
+  </Step>
+</Steps>
+
+<Warning>
+  La acción no tiene vuelta atrás. Elimina solo del CRM: en el WhatsApp del teléfono los mensajes siguen normalmente.
+</Warning>
+
+El botón aparece para el dueño de la cuenta y para los gerentes. Otras personas del equipo solo ven el botón con el permiso **Eliminar contacto**, que se da en la pantalla [Equipo](/es/conta/equipe).
+
+<Note>
+  Esta ventana y sus mensajes se muestran en portugués en todos los idiomas.
+</Note>
+
+## Encender y apagar la IA
+
+Los controles de IA están en el menú **IA**, en la parte superior de la conversación. Haz clic en él para abrir la lista **IA en esta conversación**. Las opciones aparecen según tu plan y tu permiso.
+
+| Control | Qué hace |
+| --- | --- |
+| **Pausar IA integrada en esta conversación** | La IA deja de responder solo en esta conversación |
+| **Reanudar IA integrada en esta conversación** | La IA vuelve a responder en esta conversación y se quita la marca de que una persona asumió |
+| **Asumir la conversación (pausa la IA integrada)** | Asumes la conversación y la IA se pausa. La conversación recibe un [protocolo de atención](/es/ia/protocolo-atendimento) |
+| **Desactivar IA Personalizada en esta conversación** | Apaga la IA Personalizada solo en esta conversación |
+| **Apagar IA Integrada en este canal** | Apaga la IA Integrada en todas las conversaciones del canal |
+| **Reiniciar memoria de la IA** | La IA olvida el historial de esta conversación y empieza de cero |
+
+Cuando la conversación tiene un protocolo de atención, aparece al final del menú, en **Protocolo**. Haz clic para copiar el código.
+
+Cuando reanudas una conversación que estaba pausada, el CRM confirma lo que pasó:
+
+| Aviso | Cuándo aparece |
+| --- | --- |
+| **La conversación volvió a la IA.** | Alguien del equipo había usado **Asumir**. El aviso completa: **Alguien del equipo había asumido esta conversación. La IA volvió a responder solo en ella.** |
+| **La IA volvió a responder en esta conversación.** | La IA estaba solo pausada aquí. El aviso completa: **La IA estaba pausada solo en esta conversación y fue reactivada.** |
+
+Mientras el CRM guarda, el botón de pausar y reanudar muestra un círculo girando y no acepta un segundo clic. Si el cambio no se guarda, la conversación vuelve a como estaba y aparece **No fue posible cambiar la IA en esta conversación.** con **No se cambió nada. Inténtalo de nuevo en unos instantes.**
+
+<Tip>
+  Reanudar la conversación también le quita la marca **Con una persona**. Con eso, vuelve a encenderse y apagarse en lote en la pantalla [Agente IA](/es/ia/agente-ia).
+</Tip>
+
+<Note>
+  **Reiniciar memoria de la IA** aparece para el dueño de la cuenta y para quien tiene acceso a la pantalla [Agente IA](/es/ia/agente-ia).
+</Note>
+
+<Note>
+  Cuando la IA responde con audio, el contacto recibe una nota de voz, como si alguien la hubiera grabado. Cuando responde con foto o video, el mensaje llega como foto o video.
+</Note>
+
+<Warning>
+  Los íconos de IA en la parte superior de la lista **Conversaciones** encienden o apagan la IA en todas las conversaciones o en todos los canales de la empresa. Úsalos con atención.
+</Warning>
+
+### Cuando la IA está apagada en todas las conversaciones
+
+En la pantalla [Agente IA](/es/ia/agente-ia) puedes usar **Apagar la IA para todas las conversaciones**. Esto vale también para las conversaciones nuevas que lleguen. Cuando esta opción está activada, las conversaciones que tienen los controles de IA muestran un aviso en el menú **IA**:
+
+| Aviso en el menú IA | Qué significa |
+| --- | --- |
+| **IA global apagada** | La IA no responde en esta conversación |
+| **IA global apagada, activa aquí** | La IA sigue apagada en las otras conversaciones, pero vuelve a responder en esta |
+
+Con la IA apagada para todas las conversaciones, el botón de pausa cambia de función:
+
+- **Activar la IA solo en esta conversación (IA global apagada)**: libera la IA solo en esta conversación. El aviso pasa a ser **IA global apagada, activa aquí**.
+- **Volver al global (apagar la IA en esta conversación)**: deshace la liberación. La conversación vuelve a seguir el apagado general.
+
+Esto funciona incluso cuando una persona pausó la conversación, ya sea con el botón **Asumir** o con **Pausar IA integrada en esta conversación**. Un clic en **Activar la IA solo en esta conversación (IA global apagada)** hace las dos cosas a la vez: devuelve la conversación a la IA y libera la IA solo en ella. No necesitas encender la IA de nuevo para todas las conversaciones.
+
+El CRM lo confirma con el mismo aviso de reanudación: **La conversación volvió a la IA.** cuando alguien había usado **Asumir**, o **La IA volvió a responder en esta conversación.** cuando la IA estaba solo pausada.
+
+<Note>
+  En el menú **IA**, el aviso **IA global apagada** aparece en cualquier tamaño de pantalla. En pantallas anchas el botón del menú muestra el nombre **IA**; en pantallas estrechas, solo el ícono.
+</Note>
+
+Para configurar cómo responde la IA, mira [Agente IA](/es/ia/agente-ia).
+
+## Panel del contacto
+
+Haz clic en el nombre o en la foto del contacto, en la parte superior de la conversación, para abrir el panel **Perfil**.
+
+| Campo | Qué haces |
+| --- | --- |
+| Número del contacto | Haz clic para copiarlo. El CRM lo confirma con **Número copiado** |
+| **Guardar contacto** o **Editar contacto** | Define el nombre del contacto. El nombre queda visible para todo el equipo en todas las conversaciones de este número y aparece en lugar del nombre de WhatsApp, en la lista, en la búsqueda y en el lead. El botón muestra **Editar contacto**, con un lápiz, cuando el contacto ya tiene nombre, y **Guardar contacto** cuando solo hay el número o **Desconhecido** (desconocido) |
+| **Multimedia, enlaces y docs** | Abre todo lo que se envió y recibió en la conversación, en las pestañas **Multimedia**, **Enlaces**, **Docs** y **Destacados** |
+| **Mensajes destacados** | Abre directo la pestaña **Destacados**, con los mensajes marcados con estrella |
+| **Responsable** | Haz clic en **Cambiar responsable** o **Asignar responsable** |
+| **Crear actividad** | Crea una actividad vinculada a este contacto |
+| **Embudo** | Elige en qué Pipeline está el lead |
+| **Etapa** | Elige la etapa del lead en el Pipeline. En una etapa de pérdida, el CRM pide el **Motivo de la pérdida** antes de moverlo. Mira [Pipeline](/es/crm/pipeline) |
+| **Etiquetas** | Haz clic en **Agregar etiqueta...** para buscar o crear una etiqueta |
+| **Resumen IA** | Muestra el resumen de la conversación hecho por la IA |
+| **Valor (R$)** | Valor del negocio |
+| **Notas** | Observaciones sobre el lead |
+
+El panel también muestra la cantidad de mensajes **Recibidos** y **Enviados**, la fecha del **Primer contacto** y la **Última interacción**.
+
+En la ventana **Multimedia, enlaces y docs**, haz clic en **Ver en el chat** para ir hasta el mensaje. Las fotos y los videos se abren en pantalla completa, y los documentos se abren con el botón **Abrir**. Si hay muchas fotos y videos, haz clic en **Cargar más**.
+
+<Tip>
+  El embudo, la etapa y las etiquetas se guardan en cuanto los eliges. Después de completar **Valor (R$)** y **Notas**, haz clic en **Guardar**.
+</Tip>
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Por qué no puedo editar o eliminar un mensaje para todos?">
+    Esas acciones están disponibles durante 15 minutos después del envío. Pasado ese plazo, solo aparece **Eliminar para mí**. La edición vale solo para mensajes de texto.
+  </Accordion>
+  <Accordion title="Mi archivo no se adjuntó. ¿Qué pasó?">
+    El CRM avisa cuando el tipo de archivo no se acepta o cuando el archivo supera el tamaño máximo. Revisa los límites en la sección de envío de archivos.
+  </Accordion>
+  <Accordion title="La conversación que estaba atendiendo desapareció de la lista. ¿Dónde está?">
+    Revisa el filtro seleccionado, el canal elegido y si **Mostrando solo no leídas** está activo. Vuelve a **Todas** y **Todos los canales** para ver la lista completa.
+  </Accordion>
+  <Accordion title="No veo los botones de IA en la conversación. ¿Es normal?">
+    Sí. Los controles de IA dependen de tu plan y de tu permiso de acceso. Habla con el responsable de la cuenta de tu empresa.
+  </Accordion>
+  <Accordion title="El menú IA muestra IA global apagada. ¿La IA dejó de responder?">
+    Sí, mientras ese aviso esté ahí. Alguien usó **Apagar la IA para todas las conversaciones** en la pantalla [Agente IA](/es/ia/agente-ia). Puedes liberar la IA solo en esta conversación con el botón **Activar la IA solo en esta conversación (IA global apagada)**.
+  </Accordion>
+  <Accordion title="Alguien asumió la conversación y la IA no vuelve. ¿Qué hago?">
+    Abre el menú **IA**, en la parte superior de la conversación, y haz clic en la opción de reanudar. Un clic devuelve la conversación a la IA, incluso con la IA apagada para todas las conversaciones. En ese caso la IA vuelve a responder solo en esta conversación y el CRM muestra **La conversación volvió a la IA.**
+  </Accordion>
+  <Accordion title="El mensaje tenía dos checks y ahora muestra una alerta. ¿Por qué?">
+    WhatsApp aceptó el mensaje y después lo rechazó. El CRM quita los dos checks para no mostrar una entrega que no ocurrió. Haz clic en el ícono de alerta para intentar de nuevo.
+  </Accordion>
+  <Accordion title="Hice clic para reenviar y el CRM abrió la lista de plantillas. ¿Por qué?">
+    Esto pasa en WhatsApp Oficial (Meta). El mensaje que falló era una plantilla. Para que la entrega salga bien, el CRM no repite el texto suelto: muestra **Reenvía con la plantilla** y abre la ventana **Enviar plantilla** para que elijas la plantilla de nuevo.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Respuestas rápidas" icon="bolt" href="/es/atendimento/respostas-rapidas">
+    Crea mensajes listos para responder más rápido.
+  </Card>
+  <Card title="Instagram" icon="instagram" href="/es/atendimento/instagram">
+    Atiende los mensajes de Instagram.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/es/crm/pipeline">
+    Sigue cada lead en el embudo de ventas.
+  </Card>
+  <Card title="Conexiones" icon="plug" href="/es/conta/conexoes">
+    Conecta y administra tus canales.
+  </Card>
+  <Card title="Ventana de 24 horas" icon="clock" href="/es/atendimento/janela-24h">
+    Entiende la ventana de 24 horas de WhatsApp Oficial (Meta), cómo avisa el CRM cuando se cierra y cómo volver a hablar con el contacto usando una plantilla.
+  </Card>
+  <Card title="Plantillas de WhatsApp" icon="file-lines" href="/es/atendimento/templates-whatsapp">
+    Crea plantillas de WhatsApp Oficial (Meta), sigue la aprobación de Meta y envía plantillas en una conversación o en una difusión.
+  </Card>
+  <Card title="Cola y rotación" icon="shuffle" href="/es/atendimento/fila-rodizio">
+    Entiende cómo se distribuyen las nuevas conversaciones de WhatsApp entre el equipo y cómo asignar o transferir una atención.
+  </Card>
+</CardGroup>
