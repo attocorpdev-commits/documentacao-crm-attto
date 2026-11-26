@@ -41,7 +41,7 @@ A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assis
     Clique em **Gerar chave**.
   </Step>
   <Step title="Dê um nome">
-    Em **Nome**, escreva algo que ajude a reconhecer a chave depois, por exemplo "Claude da equipe".
+    Em **Nome**, escreva algo que ajude a reconhecer a chave depois, por exemplo "Cursor - notebook da Ana". Diga sempre em qual ferramenta a chave vai ficar.
   </Step>
   <Step title="Escolha os escopos">
     **Leitura** já vem marcada e é obrigatória. Clique em **Escrita** se quiser que a IA também crie e organize dados e proponha rascunhos do prompt da IA. Só o dono da empresa libera **Escrita**.
@@ -70,54 +70,11 @@ A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assis
 
 ## Conectar o seu assistente
 
-Em todas as instruções, troque `SUA_CHAVE` pela chave que você copiou. Para um assistente que só deve ler, use o endereço `https://app.attocorp.com/mcp/readonly` no lugar de `https://app.attocorp.com/mcp`.
+O passo a passo para Claude Code, Cursor, GitHub Copilot no VS Code, Copilot Studio e n8n está em [Conectar o MCP à sua IA](/plataforma/conectar-ia). Em todas elas você usa o mesmo endereço e a chave no cabeçalho `Authorization: Bearer SUA_CHAVE`.
 
-<Tabs>
-  <Tab title="Claude">
-    Adicione um conector com o endereço e o cabeçalho de autorização:
-
-    ```text
-    https://app.attocorp.com/mcp
-    ```
-
-    ```text
-    Authorization: Bearer SUA_CHAVE
-    ```
-
-    No Claude Code, pelo terminal:
-
-    ```bash
-    claude mcp add --transport http atto-crm https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
-    ```
-  </Tab>
-  <Tab title="Claude Desktop / Cursor">
-    Cole no arquivo de configuração de servidores MCP:
-
-    ```json
-    {
-      "mcpServers": {
-        "atto-crm": {
-          "url": "https://app.attocorp.com/mcp",
-          "headers": {
-            "Authorization": "Bearer SUA_CHAVE"
-          }
-        }
-      }
-    }
-    ```
-  </Tab>
-  <Tab title="n8n / outros">
-    No nó cliente MCP (HTTP), informe o endereço e o cabeçalho:
-
-    ```text
-    https://app.attocorp.com/mcp
-    ```
-
-    ```text
-    Authorization: Bearer SUA_CHAVE
-    ```
-  </Tab>
-</Tabs>
+<Card title="Conectar o MCP à sua IA" icon="link" horizontal href="/plataforma/conectar-ia">
+  Guia por ferramenta, com o nome padrão **CRM - Atto Corp** para não confundir nem apagar o conector sem querer.
+</Card>
 
 <Tip>
   Depois de conectar, peça ao assistente para começar pela ferramenta `whoami`. Ela mostra o nome da chave, as permissões, as empresas que a chave alcança e os limites de uso.
