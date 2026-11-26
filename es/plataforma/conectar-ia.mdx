@@ -1,0 +1,223 @@
+---
+title: "Conectar el MCP a tu IA"
+sidebarTitle: "Conectar a tu IA"
+description: "Paso a paso para conectar el MCP del CRM a Claude Code, Cursor, GitHub Copilot en VS Code, Copilot Studio y n8n, siempre con el nombre CRM - Atto Corp."
+icon: "link"
+keywords:
+  - "MCP"
+  - "conector"
+  - "Claude"
+  - "Cursor"
+  - "Copilot"
+  - "n8n"
+  - "ChatGPT"
+---
+
+Esta guía muestra cómo conectar el [MCP del CRM](/es/plataforma/mcp) a la herramienta de IA que ya usas. Después de conectar, pides en lenguaje normal ("¿cuántos leads entraron hoy?") y la IA consulta el CRM por ti.
+
+## Antes de empezar
+
+Necesitas dos cosas:
+
+| Qué | Dónde obtenerlo |
+| --- | --- |
+| **Dirección del servidor** | `https://app.attocorp.com/mcp`. Para una IA que solo debe leer, usa `https://app.attocorp.com/mcp/readonly`. |
+| **Clave del MCP** | Se genera en la pantalla **Servidor MCP** (servidor MCP), en **Conexiones**. Empieza con `atto_mcp_`. Consulta [Generar una clave](/es/plataforma/mcp#generar-una-clave). |
+
+<Warning>
+  La clave aparece **una sola vez**. Genera una clave para cada herramienta de IA y nunca pegues la clave en una conversación, un e-mail o una captura de pantalla. En los ejemplos de abajo, cambia `SUA_CHAVE` por tu clave.
+</Warning>
+
+## Usa siempre el nombre "CRM - Atto Corp"
+
+Toda herramienta pide un nombre para el servidor o conector. Usa siempre **CRM - Atto Corp**. Donde el nombre no acepta espacios, usa **crm-atto-corp**.
+
+Así, dentro de algunos meses, cualquier persona que abra la lista de conectores sabe al instante qué es eso y no borra el MCP sin querer.
+
+En el CRM, haz lo mismo con el nombre de la clave: indica dónde está instalada. Ejemplos: "Cursor - notebook de Ana", "n8n - informes", "Copilot Studio - agente comercial". Así, en la pestaña **Conexões** (conexiones) de la clave, sabes quién está usando cada una.
+
+## Elige tu herramienta
+
+<Tabs>
+  <Tab title="Claude Code">
+    Claude Code es Claude en la terminal. La conexión se hace con un comando.
+
+    <Steps>
+      <Step title="Agrega el servidor">
+        En la terminal, ejecuta el comando de abajo, con tu clave en lugar de `SUA_CHAVE`:
+
+        ```bash
+        claude mcp add --transport http crm-atto-corp https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
+        ```
+      </Step>
+      <Step title="Verifica">
+        Ejecuta `claude mcp list`. El **crm-atto-corp** debe aparecer conectado. Dentro de una conversación, el comando `/mcp` muestra lo mismo.
+      </Step>
+      <Step title="Prueba">
+        Pide: "Usa el CRM - Atto Corp y ejecuta el whoami". La respuesta muestra el nombre de la clave, los permisos y las empresas.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Cursor">
+    <Steps>
+      <Step title="Abre la configuración de MCP">
+        En Cursor, abre **Settings** y el área de **MCP**. Haz clic para agregar un servidor. Cursor abre el archivo `mcp.json`.
+      </Step>
+      <Step title="Pega la configuración">
+        Pega el bloque de abajo. Si el archivo ya tiene otros servidores, agrega solo el fragmento de `crm-atto-corp` dentro de `mcpServers`.
+
+        ```json
+        {
+          "mcpServers": {
+            "crm-atto-corp": {
+              "url": "https://app.attocorp.com/mcp",
+              "headers": {
+                "Authorization": "Bearer SUA_CHAVE"
+              }
+            }
+          }
+        }
+        ```
+      </Step>
+      <Step title="Verifica">
+        Guarda el archivo. En la lista de servidores MCP de Cursor, el **crm-atto-corp** debe aparecer activo, con las herramientas listadas.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="GitHub Copilot (VS Code)">
+    GitHub Copilot usa el MCP en el modo agente del chat de VS Code.
+
+    <Steps>
+      <Step title="Crea el archivo de servidores">
+        En la carpeta de tu proyecto, crea el archivo `.vscode/mcp.json`. Para usarlo en todos los proyectos, ejecuta el comando **MCP: Open User Configuration** en la paleta de comandos.
+      </Step>
+      <Step title="Pega la configuración">
+        Este modelo pide la clave la primera vez y la guarda de forma segura, sin dejar la clave escrita en el archivo:
+
+        ```json
+        {
+          "inputs": [
+            {
+              "type": "promptString",
+              "id": "chave-atto",
+              "description": "Clave del MCP del CRM - Atto Corp",
+              "password": true
+            }
+          ],
+          "servers": {
+            "crm-atto-corp": {
+              "type": "http",
+              "url": "https://app.attocorp.com/mcp",
+              "headers": {
+                "Authorization": "Bearer ${input:chave-atto}"
+              }
+            }
+          }
+        }
+        ```
+      </Step>
+      <Step title="Inicia e ingresa la clave">
+        En el archivo, haz clic en **Start** encima de `crm-atto-corp` y pega tu clave cuando VS Code la pida.
+      </Step>
+      <Step title="Úsalo en el chat">
+        Abre el chat de Copilot en el modo **Agent**. En el botón de herramientas, verifica que las herramientas de **crm-atto-corp** estén marcadas.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Copilot Studio">
+    En Microsoft Copilot Studio, el MCP entra como una herramienta de tu agente.
+
+    <Steps>
+      <Step title="Agrega la herramienta">
+        Abre el agente, ve a **Herramientas** (Tools), haz clic en **Agregar una herramienta** y elige **Model Context Protocol**.
+      </Step>
+      <Step title="Completa los datos">
+        - **Nombre del servidor**: CRM - Atto Corp
+        - **Descripción**: Consulta y organiza los datos del CRM de Atto Corp.
+        - **URL del servidor**: `https://app.attocorp.com/mcp`
+      </Step>
+      <Step title="Elige la autenticación">
+        En autenticación, elige **Clave de API** (API key), tipo **Encabezado** (Header), con el nombre de encabezado `Authorization`.
+      </Step>
+      <Step title="Crea la conexión">
+        Al crear la conexión, pega en el campo de la clave la palabra `Bearer`, un espacio y tu clave:
+
+        ```text
+        Bearer SUA_CHAVE
+        ```
+      </Step>
+      <Step title="Verifica">
+        En la lista de herramientas del agente, el **CRM - Atto Corp** debe aparecer con las herramientas del CRM.
+      </Step>
+    </Steps>
+
+    <Note>
+      Los nombres de los botones de Copilot Studio pueden cambiar con las actualizaciones de Microsoft. Lo que importa es: servidor MCP, la dirección de arriba y la clave en el encabezado `Authorization` con `Bearer` delante.
+    </Note>
+  </Tab>
+  <Tab title="n8n">
+    <Steps>
+      <Step title="Agrega el nodo">
+        En tu flujo, agrega el nodo **MCP Client Tool** conectado a un nodo de agente de IA.
+      </Step>
+      <Step title="Configura la dirección">
+        En **Endpoint**, pega `https://app.attocorp.com/mcp`. En **Server Transport**, elige **HTTP Streamable**.
+      </Step>
+      <Step title="Crea la credencial">
+        En **Authentication**, elige **Bearer Auth** y crea una credencial nueva. Ponle el nombre **CRM - Atto Corp** a la credencial y pega tu clave en el campo del token, sin la palabra Bearer.
+      </Step>
+      <Step title="Cambia el nombre del nodo">
+        Cambia el nombre del nodo a **CRM - Atto Corp**, para que quien abra el flujo después entienda lo que hace.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Tip>
+  Después de conectar, en cualquier herramienta, pide que ejecute el `whoami`. Confirma que la clave funciona y muestra sus empresas y permisos.
+</Tip>
+
+## ChatGPT y Claude en el sitio o la app
+
+Los conectores personalizados de ChatGPT y de Claude (sitio y aplicación) todavía **no pueden** conectarse al MCP del CRM. Piden un inicio de sesión propio de la herramienta y no tienen un campo para pegar la clave del CRM.
+
+Mientras tanto, usa una de las herramientas de arriba. Cuando este tipo de conexión esté disponible, esta guía se actualizará y el aviso aparecerá en [Novedades y actualizaciones](/es/novidades/changelog).
+
+## Desconectar con seguridad
+
+Para quitarle el acceso a una herramienta:
+
+1. Elimina el **CRM - Atto Corp** de la lista de servidores o conectores de la herramienta.
+2. En el CRM, revoca la clave de esa herramienta. Consulta [Revocar una clave](/es/plataforma/mcp#revocar-una-clave).
+
+<Note>
+  Solo eliminar el conector de la herramienta no desactiva la clave. Revócala en el CRM para garantizar que nadie más use la clave.
+</Note>
+
+## Problemas comunes
+
+<AccordionGroup>
+  <Accordion title="La herramienta dice que no autorizó o que la clave no es válida">
+    Verifica que la clave se haya pegado completa y que el encabezado sea `Authorization: Bearer SUA_CHAVE`, con un espacio después de Bearer. Mira también si la clave no fue revocada o venció, en la pantalla **Servidor MCP** (servidor MCP).
+  </Accordion>
+
+  <Accordion title="La IA lee, pero no consigue crear nada">
+    La clave necesita tener el alcance **Escrita** (escritura), y la dirección tiene que ser `https://app.attocorp.com/mcp`. En la dirección que termina en `/readonly`, la IA solo lee.
+  </Accordion>
+
+  <Accordion title="Ya no sé qué es un conector de mi lista">
+    Por eso el nombre estándar es **CRM - Atto Corp**. Si encuentras un conector con ese nombre, es el acceso de la herramienta al CRM. Antes de borrarlo, revisa en la pantalla **Servidor MCP** (servidor MCP) qué clave usa, en la pestaña **Conexões** (conexiones) de la clave.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="MCP" icon="plug" href="/es/plataforma/mcp">
+    Genera claves, mira lo que la IA puede leer y escribir y sigue el uso.
+  </Card>
+
+  <Card title="Agente IA" icon="robot" href="/es/ia/agente-ia">
+    Revisa y activa los borradores de prompt propuestos por el MCP.
+  </Card>
+</CardGroup>

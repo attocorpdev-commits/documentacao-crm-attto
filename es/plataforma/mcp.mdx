@@ -1,0 +1,286 @@
+---
+title: "MCP"
+sidebarTitle: "MCP"
+description: "Conecta asistentes de IA y automatizaciones al CRM por el Model Context Protocol (MCP): genera una clave, copia la dirección y deja que la IA consulte y organice tus datos con seguridad."
+icon: "plug"
+---
+
+El MCP (Model Context Protocol) es una forma estándar de conectar un asistente de IA a otro sistema. Con él, conversas con la IA que prefieras y ella consulta el CRM por ti: busca leads, resume el embudo, lee una conversación, lista la agenda.
+
+Si lo permites, la IA también puede organizar datos: crear leads, poner etiquetas, tomar notas, crear tareas y citas. También puede leer el prompt de tu [Agente IA](/es/ia/agente-ia) y proponer un borrador de prompt, que solo entra en línea cuando lo revisas y lo activas en la pantalla del agente. El MCP del CRM **nunca borra nada y nunca envía mensajes** a tus clientes.
+
+## Quién puede usarlo
+
+- La pantalla está en **Conexiones**. Quien accede a **Conexiones** ve la pantalla del MCP.
+- Solo el **dueño** o un **gerente** de la empresa genera claves. Para los demás, el botón **Gerar chave** (generar clave) queda desactivado.
+- Algunas opciones son exclusivas del **dueño** de la empresa: habilitar **Escrita** (escritura), marcar **Nunca expira** (nunca expira) y apagar **Mascarar dados pessoais** (enmascarar datos personales). Para quien no es dueño, la pantalla muestra el aviso **Só o dono da empresa libera esta opção.** (solo el dueño de la empresa habilita esta opción).
+
+## Cómo acceder
+
+En el menú lateral, abre **Configuración** y haz clic en **Conexiones**. En la pantalla **Integraciones**, en el grupo **Otros**, haz clic en **MCP**. La pantalla se abre con el título **Servidor MCP** (servidor MCP).
+
+<Card title="Abrir el MCP en el CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/connections/mcp">
+  Te lleva directo a la pantalla. Debes tener tu cuenta abierta en el CRM.
+</Card>
+
+## Qué muestra la pantalla
+
+- **Endereço do servidor** (dirección del servidor): `https://app.attocorp.com/mcp`. Usa esta dirección para leer y, si la clave lo permite, escribir.
+- **Somente leitura (mesmo com chave de escrita)** (solo lectura, incluso con clave de escritura): `https://app.attocorp.com/mcp/readonly`. En esta dirección la IA solo lee, aunque la clave tenga permiso de escritura.
+- **Como conectar** (cómo conectar): instrucciones listas para copiar, separadas en las pestañas **Claude**, **Claude Desktop / Cursor** y **n8n / outros** (n8n / otros).
+- La lista de claves, en las pestañas **Ativas** (activas) e **Inativas** (inactivas: vencidas o revocadas). Cada clave muestra el nombre, el comienzo de la clave (prefijo), los permisos, la insignia **Dados mascarados** (datos enmascarados) cuando corresponde y el **Último uso** (último uso).
+
+Cada campo tiene un botón de copiar al lado.
+
+## Generar una clave
+
+La clave es la contraseña que tu asistente de IA usa para entrar en el CRM. Cada asistente o automatización debe tener la suya.
+
+<Steps>
+  <Step title="Abre la ventana">
+    Haz clic en **Gerar chave** (generar clave).
+  </Step>
+  <Step title="Ponle un nombre">
+    En **Nome** (nombre), escribe algo que ayude a reconocer la clave después, por ejemplo "Cursor - notebook de Ana". Indica siempre en qué herramienta va a quedar la clave.
+  </Step>
+  <Step title="Elige los alcances">
+    **Leitura** (lectura) ya viene marcada y es obligatoria. Haz clic en **Escrita** (escritura) si quieres que la IA también cree y organice datos y proponga borradores del prompt de la IA. Solo el dueño de la empresa habilita **Escrita** (escritura).
+  </Step>
+  <Step title="Elige el acceso">
+    En **Acesso** (acceso), marca **Todas as minhas empresas** (todas mis empresas) o **Empresas específicas** (empresas específicas). **Todas as minhas empresas** incluye empresas futuras en las que seas dueño o gerente. En **Empresas específicas**, marca cada empresa en la lista.
+  </Step>
+  <Step title="Define la validez">
+    En **Expira em (dias)** (expira en, días), indica de 1 a 365 días. El valor predeterminado es 90. El dueño de la empresa puede marcar **Nunca expira** (nunca expira).
+  </Step>
+  <Step title="Decide sobre los datos personales">
+    **Mascarar dados pessoais** (enmascarar datos personales) viene encendido y es lo recomendado. Oculta teléfono, e-mail y CPF en las respuestas. Solo el dueño de la empresa puede apagarlo.
+  </Step>
+  <Step title="Genera y copia">
+    Haz clic en **Gerar** (generar). En la ventana **Chave gerada** (clave generada), haz clic en el botón de copiar y guarda la clave en un lugar seguro. Luego haz clic en **Concluir** (listo).
+  </Step>
+</Steps>
+
+<Warning>
+  La clave aparece **una sola vez**. Después de cerrar la ventana, la pantalla muestra solo su comienzo. Si pierdes la clave, revócala y genera otra. Nunca compartas la clave en una conversación, un e-mail o una captura de pantalla.
+</Warning>
+
+<Note>
+  Quien no es dueño de todas las empresas de la clave queda con una validez de como máximo 90 días. Si alguna empresa oculta los teléfonos de los miembros, la clave se genera con los datos personales enmascarados aunque hayas apagado la opción, y la pantalla avisa.
+</Note>
+
+## Conectar tu asistente
+
+El paso a paso para Claude Code, Cursor, GitHub Copilot en VS Code, Copilot Studio y n8n está en [Conectar el MCP a tu IA](/es/plataforma/conectar-ia). En todas usas la misma dirección y la clave en el encabezado `Authorization: Bearer SUA_CHAVE`.
+
+<Card title="Conectar el MCP a tu IA" icon="link" horizontal href="/es/plataforma/conectar-ia">
+  Guía por herramienta, con el nombre estándar **CRM - Atto Corp** para no confundir ni borrar el conector sin querer.
+</Card>
+
+<Tip>
+  Después de conectar, pide al asistente que empiece por la herramienta `whoami`. Muestra el nombre de la clave, los permisos, las empresas que alcanza la clave y los límites de uso.
+</Tip>
+
+## Qué puede leer la IA
+
+Con cualquier clave, la IA tiene estas herramientas de consulta:
+
+| Herramienta | Qué hace |
+| --- | --- |
+| `whoami` | Muestra la clave en uso: nombre, permisos, si la dirección es solo de lectura, si los datos están enmascarados, empresas y límites. |
+| `list_companies` | Lista las empresas que la clave puede consultar. |
+| `search_leads` | Busca leads por nombre, teléfono, etiqueta, etapa, embudo o fecha de modificación. |
+| `get_lead` | Abre un lead: datos, observaciones, tarjetas en el embudo, historial de etapas y tareas. |
+| `list_pipelines` | Lista los embudos con las etapas y la cantidad de leads. |
+| `funnel_summary` | Resume el embudo: cantidad de leads y valor total por etapa. |
+| `list_tags` | Lista las etiquetas con la cantidad de leads y el color. |
+| `list_conversations` | Lista las conversaciones sin los mensajes (canal, teléfono, nombre, estado, fechas). |
+| `get_conversation` | Abre una conversación con los mensajes: los 50 más recientes de forma predeterminada, hasta 150 por vez. |
+| `search_conversations_by_phone` | Busca conversaciones por los últimos 8 dígitos del teléfono. |
+| `list_appointments` | Lista las citas entre dos fechas (predeterminado: de hoy a 30 días; como máximo 92 días). |
+| `list_activities` | Lista las tareas de seguimiento, con filtro por estado y plazo. |
+| `list_templates` | Lista las plantillas de mensaje, con estado y motivo de rechazo. |
+| `list_campaigns` | Lista los envíos con los contadores de envío. |
+| `billing_summary` | Resume las listas de cobranza. Exige que el recurso de envíos esté activo en la empresa. |
+| `list_agents` | Lista los agentes de IA (nombre, si está activo, modelo, canales). No muestra el prompt: para eso existe `get_agent_prompt`. |
+| `get_agent_prompt` | Lee el prompt activo de un agente de IA: el texto completo, el número de la versión activa, el total de versiones y, si existe, el borrador del MCP que te espera. Solo con una clave generada por el dueño de la empresa. |
+| `list_prompt_versions` | Muestra el historial de versiones del prompt de un agente, de la más nueva a la más antigua: número, origen (incluido si es borrador del MCP), fecha, tamaño, si es la activa y el comienzo del texto. 20 versiones de forma predeterminada, hasta 100. Solo con una clave generada por el dueño de la empresa. |
+| `list_team` | Lista el equipo activo (nombre y rol). |
+| `stage_history` | Muestra los cambios de etapa de los leads, de los más recientes a los más antiguos. |
+| `list_send_failures` | Lista las fallas de envío de mensajes. |
+
+Son 21 herramientas de consulta. Las listas vienen en páginas de hasta 100 elementos. La IA pide la página siguiente cuando la necesita.
+
+<Note>
+  `get_agent_prompt` y `list_prompt_versions` funcionan con una clave solo de **Leitura** (lectura), pero solo si quien generó la clave es el dueño de la empresa. Una clave generada por un gerente recibe el rechazo "So chave criada pelo dono da empresa le o prompt da IA" (solo una clave creada por el dueño de la empresa lee el prompt de la IA). Con **Mascarar dados pessoais** (enmascarar datos personales) encendido, los teléfonos y e-mails escritos en el prompt le llegan ocultos a la IA.
+</Note>
+
+## Qué puede escribir la IA
+
+Solo con una clave que tenga **Escrita** (escritura) y solo por la dirección `https://app.attocorp.com/mcp`:
+
+| Herramienta | Qué hace |
+| --- | --- |
+| `create_lead` | Crea un lead con nombre y teléfono, y opcionalmente embudo, etapa, etiquetas y valor. Si el teléfono ya existe, devuelve el lead existente sin duplicarlo. |
+| `add_tags` | Pone hasta 10 etiquetas en un lead. |
+| `remove_tags` | Quita hasta 10 etiquetas de un lead. No borra el lead. |
+| `move_stage` | Mueve un lead a otra etapa del embudo, igual que en la pantalla del CRM. |
+| `add_note` | Agrega una observación al lead, con la fecha y la marca "via MCP". Nunca borra las observaciones que ya existen. |
+| `create_activity` | Crea una tarea de seguimiento para un lead. El responsable es quien generó la clave. |
+| `create_appointment` | Crea una cita para un lead en la agenda del CRM. No crea un evento en Google. |
+| `save_prompt_draft` | Guarda un **borrador** de prompt para un agente de IA. El borrador **no entra en línea**: espera a que lo revises y lo actives en la pestaña **Personalidad** del agente. Consulta [Borrador del prompt de la IA](#borrador-del-prompt-de-la-ia). |
+| `restore_prompt_version` | Vuelve el agente a una versión anterior del prompt, del historial. No sirve para borradores del MCP, que solo se activan en la pantalla. No se borra ninguna versión. |
+| `assign_lead` | Define el responsable del lead y de sus conversaciones, entre los miembros activos del equipo. |
+
+Son 10 herramientas de escritura.
+
+<Warning>
+  Cambiar un lead de etapa con `move_stage` puede avisar al equipo y enviar la conversión al [Seguimiento de Meta](/es/marketing/rastreamento-meta). Esto ocurre fuera del CRM y no se deshace. El propio servidor orienta a la IA a confirmarlo contigo antes.
+</Warning>
+
+<Warning>
+  `restore_prompt_version` cambia al instante el texto que usa la IA: a partir del próximo mensaje, responde a tus clientes con la versión elegida. El propio servidor orienta a la IA a confirmarlo contigo antes. La versión que estaba activa sigue guardada en el historial.
+</Warning>
+
+## Borrador del prompt de la IA
+
+El prompt es el texto que guía todas las respuestas de tu [Agente IA](/es/ia/agente-ia). Por eso, el MCP **nunca pone un prompt nuevo en línea por su cuenta**. Solo propone un borrador, y una persona de tu empresa decide si lo activa.
+
+Esto te protege de un riesgo real: la IA de tu asistente lee mensajes, observaciones y nombres escritos por clientes. Si un cliente escribe ahí una instrucción disfrazada, no se convierte en regla de la IA que atiende a todos tus clientes sin que alguien la lea antes.
+
+<Steps>
+  <Step title="El asistente lee el prompt actual">
+    Con `get_agent_prompt`, el asistente lee el texto activo y anota el número de la versión activa.
+  </Step>
+  <Step title="El asistente guarda el borrador">
+    Con `save_prompt_draft`, envía el texto completo propuesto y el número de la versión que leyó. El borrador entra en el historial con el origen **Borrador del MCP**. La IA sigue respondiendo con la versión activa anterior.
+  </Step>
+  <Step title="Ves el aviso">
+    En la pestaña **Personalidad** del agente aparece el aviso **Borrador del prompt esperando por ti**. Haz clic en **Revisar borrador**.
+  </Step>
+  <Step title="Lo revisas">
+    En **Qué cambió**, mira las líneas nuevas y las eliminadas. En **Texto completo**, lee el prompt entero.
+  </Step>
+  <Step title="Decides">
+    Haz clic en **Activar esta versión** para poner el borrador en línea, o en **Cerrar sin activar** para dejar todo como está.
+  </Step>
+</Steps>
+
+Reglas del borrador:
+
+- **Solo el dueño.** Guardar un borrador exige una clave con **Escrita** (escritura), y el guardado solo pasa si quien generó la clave es el dueño de la empresa.
+- **Clave sin máscara.** Con **Mascarar dados pessoais** (enmascarar datos personales) encendido, el prompt leído viene con teléfonos y e-mails ocultos. Por eso, esa clave no guarda borradores: guardarlo de vuelta estropearía esos datos en el texto.
+- **Tamaño.** El texto debe tener de 20 a 100.000 caracteres.
+- **Sin caracteres invisibles.** Se rechaza el texto con caracteres invisibles (que pueden esconder instrucciones). Si alguno llega a la pantalla, aparece marcado como `[U+...]` y el botón de activar queda bloqueado.
+- **Versión verificada.** Si el prompt activo cambió después de la lectura, el borrador se rechaza y el asistente tiene que leer de nuevo.
+- **Sin repetición.** Un texto igual al de la versión activa o a un borrador que ya existe no se vuelve a guardar.
+- **Como máximo 5 borradores esperando** tu revisión por agente. Después de eso, el asistente tiene que esperar a que los revises.
+- **Como máximo 30 borradores por agente en 24 horas.**
+- **No se borra nada.** Los borradores y las versiones antiguas quedan en el historial.
+- **Registro.** Cada borrador y cada vuelta de versión por el MCP quedan registrados con la clave usada, sin guardar el texto en el registro.
+
+## Seguridad y límites
+
+- **No se borra nada y no se envía ningún mensaje.** No existe ninguna herramienta para eso.
+- **Escritura solo para el dueño.** Incluso con una clave de escritura, el cambio solo pasa si quien generó la clave sigue siendo el dueño de la empresa.
+- **Prompt de la IA solo para el dueño.** Leer el prompt y el historial de versiones solo funciona con una clave generada por el dueño de la empresa. Un borrador de prompt nunca entra en línea sin que alguien lo active en la pantalla.
+- **La clave vale solo para las empresas elegidas.** Un pedido para otra empresa se rechaza.
+- **La clave pierde el acceso sola** cuando vence o cuando quien la generó deja de ser dueño o gerente de la empresa.
+- **Datos enmascarados.** Con **Mascarar dados pessoais** (enmascarar datos personales) encendido, el teléfono, el e-mail y el CPF le llegan ocultos a la IA.
+- **Los textos de clientes se tratan como datos.** El servidor avisa a la IA que nunca siga instrucciones escritas en mensajes, observaciones o nombres.
+- **Límites de uso por clave, por minuto:** 60 consultas, 30 búsquedas, 10 informes y 20 escrituras.
+- **Límites por empresa, sumando todas las claves:** 120 llamadas por minuto y 5.000 por día.
+- **Protección de carga.** La consulta que pasa del tiempo límite se corta. Cuando el CRM está ocupado, el pedido se rechaza y la IA recibe cuántos segundos esperar. Una respuesta demasiado grande pide a la IA que busque en páginas más pequeñas.
+- **Límite de claves.** Hasta 5 claves activas por empresa y hasta 20 claves generadas por persona en 24 horas.
+
+## Seguir el uso de una clave
+
+Haz clic en una clave de la lista para abrir los detalles. La ventana tiene tres pestañas:
+
+- **Detalhes** (detalles): **Usado por último** (último uso), **Criado em** (creado el), **Expira em** (expira el) (o **Revogado em**, revocado el), **Prefixo** (prefijo), **Escopos** (alcances), **Empresas** (empresas) y **Criada por** (creada por).
+- **Conexões** (conexiones): qué asistentes usaron la clave, cuántas sesiones, la primera y la última vez y la IP.
+- **Atividade** (actividad): el uso por hora de cada herramienta, con el resultado (por ejemplo **ok**, **recusado** (rechazado), **limite da chave** (límite de la clave), **cota diaria da empresa** (cuota diaria de la empresa)), la cantidad de llamadas y el tiempo promedio. Muestra los últimos 90 días.
+
+## Revocar una clave
+
+<Steps>
+  <Step title="Abre la clave">
+    En la pestaña **Ativas** (activas), haz clic en la clave.
+  </Step>
+  <Step title="Revócala">
+    Haz clic en **Revogar** (revocar). En la ventana **Revogar esta chave?** (¿revocar esta clave?), haz clic en **Revogar** de nuevo.
+  </Step>
+</Steps>
+
+El acceso se corta al instante para todo asistente que use la clave. No se puede deshacer. La clave pasa a la pestaña **Inativas** (inactivas) con el estado **Revogado** (revocado).
+
+## Errores comunes
+
+| Mensaje | Qué significa |
+| --- | --- |
+| **Limite de 5 chaves ativas por empresa. Revogue uma antes de gerar outra.** (límite de 5 claves activas por empresa; revoca una antes de generar otra) | La empresa ya tiene 5 claves activas. Revoca una que ya no uses. |
+| **Só o dono da empresa pode liberar escrita.** (solo el dueño de la empresa puede habilitar la escritura) | No eres dueño de todas las empresas elegidas. Genera la clave solo con **Leitura** (lectura). |
+| **Só o dono ou um gerente da empresa pode gerar chave.** (solo el dueño o un gerente de la empresa puede generar claves) | Tu rol en la empresa no permite generar claves. |
+| **Não foi possível gerar a chave. Tente de novo.** (no fue posible generar la clave; inténtalo de nuevo) | Falla al generar. Inténtalo otra vez. |
+| **Informe de 1 a 365 dias.** (indica de 1 a 365 días) | La validez está fuera del rango permitido. |
+
+En el asistente de IA, la clave inválida, vencida o revocada aparece como "token do MCP invalido ou revogado" (token del MCP inválido o revocado). Si la IA intenta escribir por la dirección de solo lectura, recibe "este endereco e so leitura" (esta dirección es solo de lectura). Si la clave no tiene escritura, recibe "esta chave nao tem o escopo de escrita" (esta clave no tiene el alcance de escritura).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Perdí la clave. ¿Puedo verla de nuevo?">
+    No. La clave aparece una sola vez. Revoca la clave antigua y genera otra.
+  </Accordion>
+
+  <Accordion title="¿La IA puede borrar un lead o enviar un mensaje a un cliente?">
+    No. El MCP del CRM no tiene ninguna herramienta que borre datos o envíe mensajes.
+  </Accordion>
+
+  <Accordion title="¿Por qué el botón Escrita está bloqueado?">
+    Solo el dueño de todas las empresas de la clave habilita **Escrita** (escritura). Los gerentes generan claves solo de lectura.
+  </Accordion>
+
+  <Accordion title="Tengo varias empresas. ¿Cómo sabe la IA cuál consultar?">
+    Si la clave tiene una sola empresa, la IA usa esa. Con varias, la IA usa `list_companies` para ver las empresas y elige cuál consultar en cada pedido.
+  </Accordion>
+
+  <Accordion title="¿Por qué los teléfonos aparecen ocultos?">
+    La clave tiene **Mascarar dados pessoais** (enmascarar datos personales) encendido, que es lo predeterminado. Solo el dueño de la empresa puede generar una clave sin la máscara, y las empresas que ocultan los teléfonos de los miembros siempre enmascaran.
+  </Accordion>
+
+  <Accordion title="La IA dijo que se superó el límite.">
+    La clave o la empresa pasó del límite de uso. Espera unos segundos y pídelo de nuevo. La propia respuesta dice cuánto tiempo esperar.
+  </Accordion>
+
+  <Accordion title="¿El asistente puede cambiar el prompt de mi Agente IA por su cuenta?">
+    No. Con `save_prompt_draft` solo guarda un borrador, que queda esperando en la pestaña **Personalidad** del agente hasta que alguien haga clic en **Activar esta versión**. El único cambio directo es `restore_prompt_version`, que vuelve a una versión antigua del historial que no sea un borrador del MCP, y el servidor orienta a la IA a confirmarlo contigo antes.
+  </Accordion>
+
+  <Accordion title="¿Puedo usar la misma clave en varios asistentes?">
+    Puedes, pero lo ideal es una clave para cada asistente o automatización. Así, al revocar una, las otras siguen funcionando, y la pestaña **Conexões** (conexiones) muestra quién usó cada clave.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Conexiones" icon="plug" href="/es/conta/conexoes">
+    Canales e integraciones de tu cuenta.
+  </Card>
+
+  <Card title="Agente IA" icon="robot" href="/es/ia/agente-ia">
+    Donde revisas y activas el borrador del prompt.
+  </Card>
+
+  <Card title="Equipo" icon="users" href="/es/conta/equipe">
+    Roles de dueño, gerente y demás miembros.
+  </Card>
+
+  <Card title="Seguimiento de Meta" icon="chart-line" href="/es/marketing/rastreamento-meta">
+    Conversiones enviadas cuando un lead cambia de etapa.
+  </Card>
+
+  <Card title="Visión general de la plataforma" icon="compass" href="/es/plataforma/visao-geral">
+    Conoce los módulos del CRM.
+  </Card>
+</CardGroup>

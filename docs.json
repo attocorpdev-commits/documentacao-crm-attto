@@ -312,16 +312,28 @@
               },
               {
                 "group": "Plataforma",
-                "pages": []
+                "pages": [
+                  "es/plataforma/visao-geral",
+                  "es/plataforma/mcp",
+                  "es/plataforma/conectar-ia"
+                ]
               },
               {
                 "group": "Empresa",
-                "pages": []
+                "pages": [
+                  "es/empresa/marca",
+                  "es/empresa/politicas",
+                  "es/empresa/suporte",
+                  "es/empresa/embaixadores"
+                ]
               }
             ]
           },
           {
-            "tab": "Novedades y actualizaciones"
+            "tab": "Novedades y actualizaciones",
+            "pages": [
+              "es/novidades/changelog"
+            ]
           }
         ]
       }
