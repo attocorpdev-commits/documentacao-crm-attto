@@ -1,0 +1,269 @@
+---
+title: "Conexiones"
+description: "Conecta y gestiona los números de WhatsApp y las cuentas de Instagram que atienden a través del CRM."
+icon: "plug"
+---
+
+La pantalla de conexiones reúne todos los canales de tu empresa. Un canal es cada número de WhatsApp o cuenta de Instagram vinculada al CRM.
+
+## Cómo acceder
+
+En el menú lateral, abre **Configuración** y haz clic en **Conexiones**. La pantalla se abre con el título **Integraciones**.
+
+Está dividida en cuatro grupos:
+
+| Grupo | Opciones |
+| --- | --- |
+| **WhatsApp** | **WhatsApp** (por Código QR) y **WhatsApp Oficial (Meta)** |
+| **Instagram** | **Instagram Oficial (Meta)** |
+| **Seguimiento** | **Seguimiento de Conversiones** |
+| **Otros** | **MCP**, ya disponible. **n8n** y **Microsoft Clarity** aparecen con la etiqueta **Próximamente** y todavía no están disponibles. |
+
+Los dos tipos de WhatsApp funcionan de forma diferente. Consulta la comparación en [Tipos de WhatsApp](/es/primeiros-passos/tipos-whatsapp).
+
+Un punto verde junto a la opción indica que ya existe una conexión activa. Para volver a la lista, haz clic en **Volver a Integraciones**.
+
+<Card title="Abrir Conexiones en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/connections" horizontal>
+  Te lleva directo a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## WhatsApp (Código QR)
+
+Haz clic en la tarjeta **WhatsApp**. Aquí conectas números escaneando un Código QR.
+
+El paso a paso completo está en [Conectar tu WhatsApp](/es/primeiros-passos/conectar-whatsapp).
+
+### Qué muestra la pantalla
+
+- **Canales WhatsApp QR Code utilizados**: cuántos canales por Código QR ya creaste y cuántos permite tu plan. El WhatsApp Oficial tiene un límite aparte.
+- La lista de canales, cada uno con la etiqueta **Conectado** o **Desconectado**.
+- El número de teléfono de cada canal conectado.
+
+### Acciones de cada canal
+
+Haz clic en los tres puntos junto al canal para ver las acciones.
+
+| Acción | Qué hace |
+| --- | --- |
+| **Renombrar** | Cambia el **Nombre del canal** y la **Sigla (apodo, hasta 5 caracteres)**, que aparece en las tarjetas y en las conversaciones. |
+| **Desconectar** | Desvincula el número del CRM. Solo aparece en un canal conectado. Las conversaciones, los contactos y los leads que ya llegaron por él siguen guardados en el CRM. |
+| **Eliminar canal** | Elimina el canal. Solo aparece en un canal desconectado y solo para el propietario o un gerente. |
+
+Para eliminar, escribe **CONFIRMAR** en la ventana y haz clic en **Eliminar**.
+
+Cuando el canal es el único de la empresa o está vinculado a la IA, la ventana muestra un aviso antes: al eliminarlo, la empresa se queda sin ese canal, la IA se desvincula de él y el espacio queda libre para que conectes otro canal. Después de la eliminación, el CRM además avisa que la IA se quedó sin canal, para que la vincules a otro número.
+
+<Warning>
+  La eliminación no se puede deshacer. El canal y todas sus configuraciones se eliminan de forma definitiva, y la IA deja de atender por él. Las conversaciones que ya llegaron por ese número siguen en **WhatsApp**, en el grupo **Atención**.
+</Warning>
+
+<Note>
+  El primer canal de la lista, marcado con una estrella, no se puede eliminar.
+</Note>
+
+### Cuando un número se cae
+
+Si un número pierde la conexión, la pantalla muestra el aviso **Un número necesita reconectarse** y el canal recibe la etiqueta **Necesita reconectarse**. Haz clic en **Reconectar**. Si no vuelve, escanea el Código QR de nuevo.
+
+Cuando el CRM intenta reconectarlo solo y no lo consigue, también abre la ventana **Número desconectado** (o **Números desconectados**, si es más de uno), en cualquier pantalla del sistema. Esta lista los números afectados y trae dos botones:
+
+- **Ir a Conexiones**: te lleva a la lista de canales de WhatsApp para reconectar.
+- **Ahora no**: cierra el aviso.
+
+<Note>
+  Quien tiene acceso a canales específicos solo recibe avisos sobre los canales que ve. Consulta [Equipo](/es/conta/equipe).
+</Note>
+
+### Cuando la sesión se desincroniza
+
+A veces el número sigue conectado, pero la sesión pierde la sincronía. En ese caso, parte de los mensajes que envías puede no llegar al cliente.
+
+Cuando el CRM lo detecta, abre la ventana **La sesión de WhatsApp puede estar desincronizada** (o **Las sesiones de WhatsApp pueden estar desincronizadas**, si es más de un número). Esta lista los números afectados y trae dos botones:
+
+- **Sincronizar**: te lleva a la lista de canales de WhatsApp, para reconectar el número.
+- **Descartar**: cierra el aviso.
+
+En la lista, el canal afectado queda con la etiqueta **La sesión puede estar desincronizada**.
+
+<Note>
+  **Descartar** solo oculta el aviso, no resuelve la sesión. Si la falla vuelve a ocurrir, el aviso aparece de nuevo. Para resolverlo, reconecta el número: haz clic en **Reconectar**, cuando aparezca el botón, o desconecta el canal y escanea el Código QR de nuevo.
+</Note>
+
+## WhatsApp Oficial (Meta)
+
+Haz clic en la tarjeta **WhatsApp Oficial (Meta)**. La pantalla tiene dos pestañas: **Canales** y **Plantillas**.
+
+### Conectar un canal
+
+<Steps>
+  <Step title="Inicia la conexión">
+    En la pestaña **Canales**, haz clic en **Conectar vía Meta**. En la ventana que se abre, haz clic de nuevo en **Conectar vía Meta**.
+  </Step>
+  <Step title="Confirma">
+    En la ventana **Confirmar activación del canal**, haz clic en **Sí, conectar**.
+  </Step>
+  <Step title="Autoriza en la ventana de Meta">
+    Se abre una ventana de Meta. Elige la cuenta y autoriza. Si es la primera vez, Meta pide los datos de la empresa, el número, un código por SMS y el nombre visible. Hazlo con calma: el CRM espera hasta 30 minutos con la ventana abierta.
+  </Step>
+  <Step title="Finaliza">
+    Cuando aparezca **¡Canal conectado con éxito!**, haz clic en **Finalizar**.
+  </Step>
+</Steps>
+
+<Tip>
+  Si el navegador bloquea la ventana, permite las ventanas emergentes para el sitio y haz clic en **Intentar de nuevo**. Si prefieres ayuda, haz clic en **Hacerlo con soporte**.
+</Tip>
+
+Si cierras la ventana de Meta antes de terminar, aparece **Conexión cancelada: se cerró la ventana.** Basta con empezar de nuevo.
+
+<Note>
+  Si eres dueño de más de una empresa en el CRM, puedes conectar el WhatsApp Oficial (Meta) en cada una de ellas. Cambia a la empresa correcta antes de hacer clic en **Conectar vía Meta**. Consulta [cambiar de empresa](/es/conta/trocar-empresa).
+</Note>
+
+<Note>
+  Si tu equipo ya recibe aviso de lead nuevo por WhatsApp, al terminar la conexión (o una reconexión) aparece la ventana **Plantillas de aviso creadas**. El CRM crea un único mensaje de aviso en el número nuevo, que sirve para todos los tipos de aviso, y este pasa por la revisión de Meta. Esto suele tardar algunos minutos. Haz clic en **Cerrar** o en **Ver estado de las plantillas**, que abre la pestaña **Plantillas**. Configuras ese aviso en [Agente IA](/es/ia/agente-ia).
+</Note>
+
+### Gestionar canales
+
+En cada canal puedes elegir el **Embudo predeterminado de este canal**, para definir a dónde entran los leads que llegan por él.
+
+Haz clic en los tres puntos para ver las acciones. Cambian según el canal esté conectado o no.
+
+| Acción | Cuándo aparece | Qué hace |
+| --- | --- | --- |
+| **Renombrar** | siempre | Cambia el nombre y la sigla del canal. |
+| **Desconectar** | canal conectado | Desconecta el canal. Las conversaciones y los contactos siguen guardados, y puedes reconectar después. |
+| **Reautorizar (cuenta incorrecta)** | canal conectado | Elimina el canal y empieza la conexión de nuevo, para que elijas la cuenta correcta en Meta. |
+| **Reconectar** | canal desconectado | Vuelve a conectar el canal, aprovechando la conexión que ya existe. |
+| **Eliminar canal** | siempre | Elimina el canal. Escribe **CONFIRMAR** y haz clic en **Eliminar**. |
+
+Al hacer clic en **Reconectar**, se abre la ventana **Reconectar WhatsApp**. Haz clic en **Reconectar canal** y confirma en **Sí, conectar**. No hace falta abrir la ventana de Meta y esto no consume un espacio nuevo de tu plan. Al final, haz clic en **Finalizar**.
+
+<Warning>
+  **Reautorizar (cuenta incorrecta)** elimina el canal antes de reconectar. Confirma en **Eliminar y reconectar**. El canal y sus configuraciones se eliminan, y necesitas autorizar de nuevo por Meta y elegir la cuenta correcta. Las conversaciones de ese canal se conservan. Si la eliminación falla, el CRM avisa que no se eliminó nada y puedes intentarlo de nuevo en unos instantes.
+</Warning>
+
+Al eliminar un canal, el espacio vuelve a quedar libre en tu plan y puedes conectar otro número en su lugar. Si la IA atendía por él, el CRM avisa que la IA se quedó sin canal: vincula la IA a otro número.
+
+<Note>
+  El canal solo sale del CRM después de que el número se desconecta de verdad. Si esa desconexión falla, no se elimina nada: el CRM avisa y puedes intentarlo de nuevo en unos instantes.
+</Note>
+
+La etiqueta **Silencioso** indica que el canal no recibe mensajes desde hace más de 7 días. Verifica que el número siga activo. Quien es propietario también recibe un correo cuando un canal pasa a estar silencioso.
+
+<Note>
+  El conteo toma en cuenta el último mensaje recibido en las conversaciones de ese canal. Un canal que está recibiendo mensajes no recibe la etiqueta, y un canal creado hace pocos días tampoco.
+</Note>
+
+### Plantillas
+
+Las plantillas son mensajes listos, aprobados por Meta. Sirven para enviar mensajes fuera de la ventana de 24 h.
+
+<Steps>
+  <Step title="Abre la pestaña Plantillas">
+    Si hay más de un canal, elige el canal en el campo **Canal**.
+  </Step>
+  <Step title="Crea la plantilla">
+    Haz clic en **Nueva plantilla**. Completa **Nombre**, **Categoría** e **Idioma**.
+  </Step>
+  <Step title="Escribe el mensaje">
+    Completa el **Cuerpo del mensaje**. Si quieres, agrega **Encabezado (opcional)**, **Pie de página (opcional)** y **Botones (opcional)**.
+  </Step>
+  <Step title="Revisa y envía">
+    Mira el resultado en la pestaña **Vista previa** y haz clic en **Crear plantilla**.
+  </Step>
+</Steps>
+
+Las categorías son **Marketing**, **Utilidad** y **Autenticación**. El nombre solo acepta letras minúsculas, números y el guion bajo.
+
+Si usas variables, como el nombre del contacto, completa un ejemplo para cada una. Usa ejemplos ficticios, como "María". Meta revisa esos ejemplos.
+
+<Tip>
+  Justo debajo del **Cuerpo del mensaje**, haz clic en **Ver ejemplos de variables**. La ventana **Variables: dos sintaxis diferentes** muestra que en la plantilla la variable va numerada, mientras que en la respuesta rápida va por nombre. Consulta [Respuestas rápidas](/es/atendimento/respostas-rapidas).
+</Tip>
+
+| Estado | Significado |
+| --- | --- |
+| **Pendiente** | Esperando la aprobación de Meta. |
+| **Aprobado** | Lista para usar. |
+| **Rechazado** | Meta no la aceptó. Revísala y créala de nuevo. |
+| **Pausado** | La plantilla está detenida temporalmente. |
+| **No creada** | La plantilla todavía no existe en este canal. |
+
+Usa la búsqueda para encontrar una plantilla por nombre o contenido. Haz clic en **Detalles** para ver el mensaje completo.
+
+## Instagram Oficial (Meta)
+
+Haz clic en la tarjeta **Instagram Oficial (Meta)**.
+
+<Note>
+  El canal de Instagram es un complemento de los planes Prime y Ultra. En el plan Start, el CRM no permite agregar un canal de Instagram: en la ventana **Límite de canales de Instagram alcanzado** aparece el aviso de que el canal es exclusivo de los planes Prime y Ultra, y el botón de compra no se muestra. Consulta tu plan en [Planes y cobros](/es/conta/planos).
+</Note>
+
+<Steps>
+  <Step title="Inicia la conexión">
+    Haz clic en **Conectar vía Meta**. En la ventana que se abre, haz clic de nuevo en **Conectar vía Meta**.
+  </Step>
+  <Step title="Confirma y autoriza">
+    Haz clic en **Sí, conectar** y autoriza tu cuenta en la ventana de Meta.
+  </Step>
+  <Step title="Finaliza">
+    Haz clic en **Finalizar**. El canal aparece en la lista con la etiqueta **Conectado**.
+  </Step>
+</Steps>
+
+La pantalla muestra **Canales utilizados** y cuántos espacios quedan en tu plan. En cada canal puedes definir el **Pipeline predeterminado de este canal**, **Renombrar** o **Eliminar canal**.
+
+En **Renombrar** completas el **Nombre del canal** y la **Sigla (apodo, hasta 5 caracteres)**, que aparece junto al nombre en las tarjetas y en las conversaciones.
+
+## MCP
+
+En el grupo **Otros**, haz clic en **MCP** para abrir la pantalla **Servidor MCP**. Allí generas claves para conectar asistentes de IA y automatizaciones al CRM, como Claude, Cursor y n8n. La IA consulta los datos de las empresas elegidas y, si el dueño lo permite, crea leads, etiquetas, notas, tareas y citas. Nunca borra nada ni envía mensajes.
+
+Solo el dueño o un gerente de la empresa genera claves. Consulta el paso a paso en [MCP](/es/plataforma/mcp).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Alcancé el límite de canales. ¿Cómo conecto más?">
+    En el WhatsApp Oficial, se abre la ventana **Límite de canales de la API oficial alcanzado**, que muestra cuántos canales permite tu plan y cuántos ya tienes. Trae los botones **Cerrar** y **Contratar canal extra**. En Instagram, el botón es **Adquirir canal de Instagram**. En el plan Start no aparece, porque el canal de Instagram es de los planes Prime y Ultra. En el WhatsApp por Código QR, se abre la ventana **Límite de canales WhatsApp QR Code alcanzado**. Haz clic en **Hablar con soporte**.
+
+    Solo el dueño de la empresa puede comprar un canal extra. Si otra persona del equipo lo intenta, aparece **Solo el dueño de la empresa puede hacer esta compra, con la empresa activa.**
+  </Accordion>
+  <Accordion title="¿El límite de canales de WhatsApp cuenta los dos tipos?">
+    No. Cada tipo tiene su propio límite: el plan define cuántos canales por Código QR y cuántos canales oficiales puedes tener. Un tipo no ocupa el espacio del otro.
+  </Accordion>
+  <Accordion title="No puedo ver las plantillas de un canal.">
+    El canal puede estar desconectado. En la pestaña **Canales**, haz clic en los tres puntos del canal, elige **Reconectar** y después haz clic en **Actualizar**. Con más de un canal oficial, el botón se convierte en un ícono de recargar junto al campo **Canal**.
+  </Accordion>
+  <Accordion title="Conecté la cuenta incorrecta de Meta en el canal oficial. ¿Cómo la cambio?">
+    Haz clic en los tres puntos del canal y elige **Reautorizar (cuenta incorrecta)**. Confirma en **Eliminar y reconectar**: el canal se elimina y la conexión empieza de nuevo, para que elijas la cuenta correcta. Las conversaciones de ese canal se conservan.
+  </Accordion>
+  <Accordion title="Descarté el aviso de sesión desincronizada y volvió.">
+    **Descartar** solo oculta el aviso. Si la falla vuelve a ocurrir en el mismo número, el CRM avisa otra vez. Reconecta el número para resolverlo.
+  </Accordion>
+  <Accordion title="¿Desconectar un canal borra las conversaciones?">
+    No. Al desconectar, el CRM muestra **Canal desconectado. Las conversaciones y los contactos siguen guardados.** El historial y los leads quedan en el CRM, y al reconectar todo sigue ahí.
+  </Accordion>
+  <Accordion title="¿Dónde configuro el seguimiento de anuncios?">
+    En la tarjeta **Seguimiento de Conversiones**. Consulta los detalles en [Seguimiento de Meta](/es/marketing/rastreamento-meta).
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Atención en Instagram" icon="instagram" href="/es/atendimento/instagram">
+    Responde a los mensajes de tu cuenta.
+  </Card>
+  <Card title="Difusiones" icon="bullhorn" href="/es/marketing/disparos">
+    Usa tus plantillas para enviar mensajes masivos.
+  </Card>
+  <Card title="Plantillas de WhatsApp" icon="file-lines" href="/es/atendimento/templates-whatsapp">
+    Crea plantillas de WhatsApp Oficial (Meta), sigue la aprobación de Meta y envía plantillas en una conversación o en un envío.
+  </Card>
+  <Card title="MCP" icon="plug" href="/es/plataforma/mcp">
+    Conecta asistentes de IA y automatizaciones al CRM mediante el Model Context Protocol (MCP): genera una clave, copia la dirección y deja que la IA consulte y organice tus datos con seguridad.
+  </Card>
+</CardGroup>

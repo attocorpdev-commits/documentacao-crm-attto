@@ -1,0 +1,212 @@
+---
+title: "Importar contactos"
+sidebarTitle: "Importar contactos"
+description: "Trae tus contactos de una hoja de cálculo CSV o Excel al CRM: formato, columnas, límites, duplicados y qué hacer cuando algo sale mal."
+icon: "file-import"
+---
+
+Puedes traer de una vez los contactos que ya tienes fuera del CRM, como una lista de clientes en una hoja de cálculo. Hay dos caminos, y cada uno sirve para algo distinto:
+
+| Camino | Dónde está | Qué hace |
+| --- | --- | --- |
+| **Importar CSV** | Pestaña de la pantalla Contactos | Crea o actualiza leads y pone cada uno en un pipeline |
+| **Base externa** | Botón en la parte superior de la pantalla Contactos | Guarda una lista de teléfonos marcada por tipo, como clientes o ex alumnos. No crea leads |
+
+## Quién puede importar
+
+Los dos caminos exigen acceso completo a la pantalla Contactos. El dueño de la cuenta siempre lo tiene. Para los miembros del equipo, el acceso depende de los permisos habilitados en [Equipo](/es/conta/equipe).
+
+<Note>
+  Sin ese acceso, la pestaña **Importar CSV** aparece desactivada y el botón **Base externa** no aparece.
+</Note>
+
+## Prepara la hoja de cálculo
+
+El CRM acepta archivos `.csv`, `.xlsx` y `.xls`. En un archivo de Excel, solo se lee la primera pestaña de la hoja de cálculo.
+
+La primera fila tiene que ser el encabezado, con el nombre de cada columna. La única columna obligatoria es la de teléfono.
+
+<Tip>
+  La forma más segura es empezar por la plantilla. En la pestaña **Importar CSV**, haz clic en **Descargar plantilla (.xlsx)**. El archivo ya viene con todas las columnas que el CRM lee.
+</Tip>
+
+### Columnas que el CRM lee
+
+| Columna | Obligatoria | Cómo completarla |
+| --- | --- | --- |
+| **Teléfono** | Sí | Número con código de área, como `11999991234` o `5511999991234`. Una fila sin teléfono válido no se importa |
+| **Nombre** | No | Nombre del contacto. Sin esta columna, los contactos entran sin nombre |
+| **Etiquetas** | No | Una o más etiquetas, separadas por coma o punto y coma |
+| **Etapa** | No | Nombre de una etapa del pipeline elegido. En blanco, el contacto entra en la primera etapa |
+| **Canal** | No | Nombre de un canal conectado. En blanco, el contacto entra en el canal conectado más antiguo |
+| **Valor** | No | Valor de la negociación. Acepta `1.500,50`, `R$ 1500` o `1500.5` |
+| **Observación** | No | Texto libre, que se convierte en la nota del contacto |
+| **Origen** | No | De dónde vino el lead, en texto libre |
+| **Responsable** | No | Correo electrónico o nombre de un integrante del equipo |
+
+### Cómo encuentra el CRM la columna de teléfono
+
+El encabezado se reconoce por la palabra, no por el nombre exacto. **Nome do cliente** se toma como nombre y **Tags do lead** se toma como etiquetas.
+
+Para el teléfono, sirven nombres como Teléfono, Telefone, Celular, WhatsApp, Whats, Fone, Tel, Cel, Zap o Número de teléfono. Una columna llamada solo **Número** también sirve.
+
+<Warning>
+  El CRM no confunde otras columnas con el teléfono. **Número do pedido** (número de pedido), por ejemplo, no se lee como teléfono. Si tu columna de teléfono tiene un nombre diferente, cámbiale el nombre a **Teléfono** antes de subirla.
+</Warning>
+
+### Límites del archivo
+
+- Hasta 50.000 filas por archivo. Las filas que superen ese número no se importan, y la vista previa avisa cuántas quedaron fuera.
+- Hasta 25 MB por archivo. Por encima de eso, el archivo no se lee y el aviso pide dividirlo en archivos más pequeños.
+
+Si tienes más contactos, divide la lista en varios archivos e importa uno a la vez.
+
+## Importar como leads
+
+<Steps>
+  <Step title="Abre la importación">
+    En el menú lateral, abre **CRM** y haz clic en **Contactos**. Después haz clic en la pestaña **Importar CSV**. El área se llama **Importación masiva**.
+  </Step>
+  <Step title="Elige el pipeline">
+    En **Embudo de destino**, selecciona el pipeline que va a recibir los leads. Quien no tiene **Etapa** en la hoja de cálculo entra en la primera etapa de ese pipeline.
+  </Step>
+  <Step title="Sube el archivo">
+    Arrastra la hoja de cálculo a **Arrastra el archivo aquí o haz clic para seleccionar**, o haz clic en el área para elegir el archivo.
+  </Step>
+  <Step title="Revisa la vista previa">
+    Se abre la ventana **Importar contactos**. Antes de guardar nada, el CRM lee el archivo y muestra cuántas filas leyó, cuántos contactos son válidos y cuántos no tienen un teléfono válido. Justo debajo aparece la **Columna usada como teléfono:** y una muestra con los cinco primeros contactos.
+  </Step>
+  <Step title="Decide sobre la IA">
+    En **IA para los contactos importados**, elige **Activar** o **Silenciar (IA desactivada)**. Consulta [La IA en los contactos importados](#la-ia-en-los-contactos-importados).
+  </Step>
+  <Step title="Confirma">
+    Revisa el **Embudo de destino** y haz clic en **Importar**.
+  </Step>
+</Steps>
+
+<Note>
+  El botón **Importar** solo se habilita después de que termina la vista previa, y solo si el CRM encontró una columna de teléfono con al menos un contacto válido.
+</Note>
+
+<Tip>
+  Revisa los acentos en la muestra de la vista previa. Si el archivo no estaba en UTF-8, la vista previa avisa. Si los acentos aparecen cambiados, guarda la hoja de cálculo de nuevo como CSV UTF-8 y súbela otra vez.
+</Tip>
+
+### La IA en los contactos importados
+
+La opción **IA para los contactos importados** aparece para quien puede activar y desactivar la IA de los contactos: el dueño de la cuenta, el gerente y quien tiene el permiso del Agente IA.
+
+| Opción | Qué pasa |
+| --- | --- |
+| **Activar** | La IA responde normalmente. Los contactos que ya estaban en **Silenciados** siguen silenciados |
+| **Silenciar (IA desactivada)** | Los contactos van a **Silenciados** y la IA no les responde. El equipo los atiende normalmente y puede volver a activar la IA en el contacto o en la conversación |
+
+Usa **Silenciar (IA desactivada)** cuando la lista sea de clientes que tu equipo prefiere atender personalmente.
+
+## Contactos que ya están en el CRM
+
+La importación no crea registros duplicados.
+
+- Un contacto que ya existe no se duplica. Las etiquetas nuevas se suman a las que ya tiene.
+- **Valor**, **Observación**, **Origen** y **Responsable** solo completan lo que esté vacío en el contacto. No se sobrescribe nada de lo que ya tenías.
+- Un contacto que ya está en otro pipeline no se mueve al pipeline elegido.
+- Las filas repetidas dentro del mismo archivo se convierten en un solo contacto, con las etiquetas sumadas. La vista previa avisa cuántas son.
+
+## El resultado de la importación
+
+Al terminar, aparece **Importación completada** con un resumen. Cada línea del resumen solo aparece cuando tiene algo que contar.
+
+| Línea del resumen | Qué significa |
+| --- | --- |
+| Contactos guardados | Total de contactos guardados |
+| Nuevos | Contactos que todavía no existían |
+| Ya existían | Contactos que ya estaban en la base. Las etiquetas se sumaron |
+| Sin teléfono válido | Filas no importadas por falta de teléfono |
+| Filas repetidas | Filas iguales en el archivo, sumadas al mismo contacto |
+| Por encima del límite | Filas que superan las 50.000, no importadas |
+| No se guardaron | Contactos que el CRM no logró guardar |
+| Rechazados | Filas con etapa, canal, valor o responsable inválido |
+| Ya están en otro embudo | Contactos que no se movieron al pipeline elegido |
+
+### Por qué se rechaza una fila
+
+El CRM rechaza la fila en lugar de guardar un dato incorrecto. Esto ocurre cuando:
+
+- la **Etapa** no existe en el pipeline elegido;
+- el **Canal** no existe, está desconectado o hay dos canales con el mismo nombre;
+- el **Valor** no es un número;
+- el **Responsable** no se encuentra en el equipo o tiene el nombre repetido.
+
+Corrige esas filas en la hoja de cálculo e importa solo esas de nuevo.
+
+## Importar una base externa
+
+La base externa guarda listas de teléfonos que quieres que el CRM reconozca, sin convertir cada número en un lead. Los números importados aquí no entran en la **Lista de contactos**.
+
+<Steps>
+  <Step title="Abre la ventana">
+    En la pantalla Contactos, haz clic en **Base externa**. Se abre la ventana **Importar base externa**.
+  </Step>
+  <Step title="Elige el tipo">
+    En **Tipo de base**, elige **Cliente**, **Ex-alumno**, **Alumno**, **Bloqueado** u **Otro**.
+  </Step>
+  <Step title="Sube el archivo">
+    En **Archivo**, haz clic en **Haz clic para seleccionar (.csv, .xlsx, .xls)**. La columna de teléfono se encuentra sola, con las mismas reglas de la importación de leads.
+  </Step>
+  <Step title="Revisa e importa">
+    La ventana muestra cuántos números son válidos y cuántos se descartaron. Haz clic en **Importar**.
+  </Step>
+</Steps>
+
+Al terminar, aparece **Base externa importada** con cuántos contactos se guardaron. En la **Lista de contactos**, el cuadro **Base externa** muestra cuántos números hay en cada tipo.
+
+<Note>
+  Importar el mismo número de nuevo en el mismo tipo no crea un duplicado. Los números del tipo **Bloqueado** aparecen como contactos a evitar en el Área del Gestor.
+</Note>
+
+## Cuando algo sale mal
+
+| Aviso | Qué hacer |
+| --- | --- |
+| **Archivo inválido** | El archivo tiene que tener encabezado y al menos una fila de datos. Revisa la hoja de cálculo y súbela de nuevo |
+| **Columna de teléfono no encontrada** | Ponle a la columna un nombre como Teléfono, Celular, WhatsApp o Número de teléfono |
+| **Ningún registro válido** | Ninguna fila tiene un teléfono válido. Revisa que los números tengan el código de área |
+| **Error en la importación** | El guardado se detuvo a la mitad. Inténtalo de nuevo. Los contactos ya guardados no se duplican en el nuevo intento |
+| Archivo demasiado grande | El archivo supera los 25 MB. Divídelo en archivos más pequeños e importa cada uno |
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Puedo importar contactos de Instagram?">
+    No. La importación lee teléfonos. Los contactos de Instagram entran en el CRM cuando la persona envía un mensaje a tu cuenta.
+  </Accordion>
+  <Accordion title="¿La importación envía algún mensaje a los contactos?">
+    No. Importar solo registra los contactos. Para enviar mensajes a varios contactos, usa [Difusiones](/es/marketing/disparos).
+  </Accordion>
+  <Accordion title="Importé un contacto que ya tenía y no entró en el pipeline elegido.">
+    Un contacto que ya está en otro pipeline no se mueve con la importación. Para traer el lead, abre el contacto en [Contactos](/es/crm/contatos) y usa **Mover a embudo**.
+  </Accordion>
+  <Accordion title="Mi hoja de cálculo tiene varias pestañas. ¿Cuál se lee?">
+    Solo la primera. Pon los contactos en la primera pestaña o guarda cada pestaña como un archivo separado.
+  </Accordion>
+  <Accordion title="¿Cuál es la diferencia entre Importar CSV y Base externa?">
+    **Importar CSV** crea leads, que aparecen en la lista y en el pipeline. **Base externa** solo guarda los números por tipo, para que el CRM reconozca quién ya es cliente o a quién se debe evitar.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Contactos" icon="address-book" href="/es/crm/contatos">
+    Busca, edita y exporta tus leads.
+  </Card>
+  <Card title="Pipeline" icon="table-columns" href="/es/crm/pipeline">
+    Sigue los leads importados por etapa.
+  </Card>
+  <Card title="Etiquetas" icon="tags" href="/es/crm/tags">
+    Organiza los contactos con etiquetas.
+  </Card>
+  <Card title="Privacidad y LGPD" icon="shield-halved" href="/es/crm/privacidade-lgpd">
+    Exporta o anonimiza los datos de un contacto.
+  </Card>
+</CardGroup>

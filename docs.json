@@ -272,19 +272,43 @@
               },
               {
                 "group": "CRM",
-                "pages": []
+                "pages": [
+                  "es/crm/pipeline",
+                  "es/crm/contatos",
+                  "es/crm/tags",
+                  "es/crm/atividades",
+                  "es/crm/agenda",
+                  "es/crm/importar-contatos",
+                  "es/crm/privacidade-lgpd"
+                ]
               },
               {
                 "group": "Marketing",
-                "pages": []
+                "pages": [
+                  "es/marketing/disparos",
+                  "es/marketing/cobrancas",
+                  "es/marketing/rastreamento-meta"
+                ]
               },
               {
                 "group": "Gestión",
-                "pages": []
+                "pages": [
+                  "es/gestao/dashboard",
+                  "es/gestao/relatorios",
+                  "es/gestao/area-gestor"
+                ]
               },
               {
                 "group": "Cuenta",
-                "pages": []
+                "pages": [
+                  "es/conta/conexoes",
+                  "es/conta/equipe",
+                  "es/conta/planos",
+                  "es/conta/perfil",
+                  "es/conta/seguranca",
+                  "es/conta/recuperar-senha",
+                  "es/conta/trocar-empresa"
+                ]
               },
               {
                 "group": "Plataforma",

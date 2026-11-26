@@ -1,0 +1,178 @@
+---
+title: "Seguimiento de Meta"
+description: "Avisa a Meta qué leads de tus anuncios avanzaron o compraron, para que los anuncios encuentren mejores clientes."
+icon: "bullseye"
+---
+
+Cuando anuncias en Facebook o en Instagram, Meta sabe quién hizo clic en el anuncio. Pero no sabe qué pasó después, en la conversación de WhatsApp.
+
+El **Seguimiento de Conversiones** resuelve esto. Cada vez que un lead que vino de un anuncio llega a una etapa importante del Pipeline, el CRM avisa a Meta. Ese aviso se llama conversión. Con él, los anuncios aprenden a buscar personas parecidas a las que de verdad compran.
+
+<Note>
+  El aviso solo se envía para leads que llegaron por un anuncio con botón de WhatsApp (Click-to-WhatsApp). Los leads que llegaron por otros caminos no generan conversión.
+</Note>
+
+<Note>
+  <Badge color="blue" shape="pill" icon="layer-group">Prime</Badge> <Badge color="purple" shape="pill" icon="layer-group">Ultra</Badge>
+
+  Disponible en los planes [**Prime** y **Ultra**](/es/primeiros-passos/planos). Consulta [Planes y cobros](/es/conta/planos).
+</Note>
+
+## Cómo acceder
+
+En el menú lateral, abre **Configuración** y haz clic en **Conexiones**. En el grupo **Seguimiento**, haz clic en **Seguimiento de Conversiones**.
+
+En el celular, el elemento aparece en el menú como **Seguimiento**.
+
+También llegas a la pantalla por **Configuración**: en el grupo **Canales y Seguimiento**, haz clic en **Seguimiento de Meta**.
+
+<Note>
+  Esta pantalla depende de tu plan y de tu permiso de acceso. Si no te aparece, habla con el responsable de la cuenta de tu empresa.
+</Note>
+
+<Card title="Abrir Seguimiento de Conversiones en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/connections/rastreamento" horizontal>
+  Te lleva directamente a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## Lo que necesitas tener a mano
+
+Los dos datos de abajo vienen de tu cuenta de anuncios, en el Administrador de Eventos de Meta:
+
+- **Pixel de Meta**: el píxel es el número que identifica tu cuenta de anuncios para recibir los avisos de conversión. En Meta, también aparece como Dataset ID.
+- **Token de la Conversions API**: una clave de acceso, generada en Meta, que autoriza al CRM a enviar los avisos.
+
+Si otra persona se encarga de tus anuncios, pídele esos dos datos.
+
+## Conectar con Meta
+
+<Steps>
+  <Step title="Completa el Pixel">
+    En el recuadro **Conversions API de Meta**, pega el número en el campo **Pixel de Meta**.
+  </Step>
+  <Step title="Pega la clave de acceso">
+    En el campo **Token de la Conversions API**, pega la clave generada en Meta.
+  </Step>
+  <Step title="Prueba la conexión">
+    Haz clic en **Testar conexão** (probar conexión). Si todo está bien, aparece el mensaje **Conexão testada com sucesso. Você já pode ativar o rastreio.** (conexión probada con éxito; ya puedes activar el seguimiento).
+  </Step>
+  <Step title="Activa el seguimiento">
+    Activa el interruptor en la esquina del recuadro. El texto de al lado cambia de **Inactivo** a **Activo**.
+  </Step>
+</Steps>
+
+<Warning>
+  El CRM solo permite activarlo después de una prueba con éxito. Si cambias el Pixel o la clave de acceso, vuelve a probar antes de activarlo.
+</Warning>
+
+<Note>
+  Después de probar, la parte superior de la pantalla muestra el aviso **Este es el resultado de una PRUEBA de conexión**. Habla solo de la prueba: no se envió ninguna conversión real. Cuando termines de ajustar, haz clic en **Limpiar** para quitar ese resultado de la pantalla.
+</Note>
+
+Una vez guardada, la clave de acceso ya no se muestra. En su lugar aparece **Token configurado**. Para reemplazarla, haz clic en **Cambiar**, pega la nueva clave y haz clic en **Testar conexão** (probar conexión). Con la prueba aprobada, haz clic en **Guardar**. Con el seguimiento activo, el CRM solo permite guardar después de una prueba con éxito.
+
+Mientras el interruptor de activación esté apagado, la pantalla avisa que el módulo está inactivo y no se envía ninguna conversión.
+
+## Elegir qué etapa envía qué evento
+
+La conexión por sí sola no envía nada. Tienes que indicar qué etapas del Pipeline cuentan como conversión.
+
+<Steps>
+  <Step title="Abre el Pipeline">
+    En el recuadro **Mapear etapas → eventos** (asignar etapas a eventos), haz clic en **Ir para o Pipeline** (ir al Pipeline).
+  </Step>
+  <Step title="Abre la edición de etapas">
+    Pasa el mouse sobre el título de una columna y haz clic en el ícono de lápiz, **Editar etapas**.
+  </Step>
+  <Step title="Elige el evento de la etapa">
+    Edita la etapa que quieras. En el campo **Conversión Meta:**, elige el evento que debe enviar.
+  </Step>
+  <Step title="Elige si envía un valor">
+    Si quieres, define el valor que acompaña la conversión: **Sin valor**, **Valor del lead** o **Precio de la cita**. Al mover la tarjeta en el Pipeline, el valor solo se envía con la opción **Valor del lead**.
+  </Step>
+  <Step title="Guarda">
+    Haz clic en **Guardar**. La etapa pasa a mostrar una etiqueta con el nombre del evento.
+  </Step>
+</Steps>
+
+### Eventos disponibles
+
+| Opción en la pantalla | Cuándo usarla |
+| --- | --- |
+| **No enviar (solo CRM)** | La etapa no avisa a Meta |
+| **Lead (chegou)** (lead, llegó) | El lead se puso en contacto |
+| **Contato (Contact)** (contacto) | Hubo conversación con el lead |
+| **Agendamento (Schedule)** (cita) | El lead reservó un horario |
+| **Compra (Purchase)** | El lead cerró el negocio |
+
+<Tip>
+  Empieza por lo simple. Marca **Compra (Purchase)** en la etapa en la que se cierra la venta.
+</Tip>
+
+A partir de ahí, cada vez que un lead de anuncio entre en una etapa marcada, el CRM envía la conversión. Para saber más sobre las etapas, consulta [Pipeline](/es/crm/pipeline).
+
+## Comprobar que funciona
+
+La pantalla muestra avisos cuando algo necesita atención:
+
+- **Nenhuma etapa envia conversão ainda.** (ninguna etapa envía conversión todavía). El seguimiento está activo, pero ninguna etapa del Pipeline tiene un evento elegido. Marca al menos una etapa.
+- **La última conversión no se envió a Meta.** El último intento falló. Revisa el Pixel y la clave de acceso y vuelve a hacer clic en **Testar conexão** (probar conexión). Este aviso solo aparece cuando el fallo fue en una conversión real.
+- **Ninguna conversión llegó a Meta todavía** o **Ninguna conversión llegó a Meta en X días** (la X es el número de días desde la última). El seguimiento está activado, pero Meta no confirmó ninguna conversión en los últimos 7 días. Cuando existe una conversión confirmada más antigua, el aviso muestra **Última conversión confirmada:** con la fecha y la hora. Haz clic en el ícono de ayuda al lado del título para recordar qué revisar: si los leads están llegando por anuncios con botón de WhatsApp y si las etapas del Pipeline tienen un evento elegido.
+- **Este es el resultado de una PRUEBA de conexión.** El último resultado guardado vino del botón **Testar conexão** (probar conexión), y no de una conversión real. Por eso no muestra la salud real del seguimiento. Justo debajo lees **La prueba de conexión pasó.** o **La prueba de conexión falló.** Cuando Meta explica el motivo, aparece junto, con la fecha y la hora.
+- **Meta rechazó.** La prueba no pasó. Revisa los datos que pegaste. Si necesitas ayuda, abre **Detalhe técnico (para o suporte)** (detalle técnico, para el soporte) y envía esa información al soporte.
+
+Para quitar el resultado de la prueba de la pantalla, haz clic en **Limpiar**, en la esquina del aviso. Esto borra solo ese registro: el próximo envío, de prueba o real, vuelve a aparecer.
+
+<Note>
+  Solo cuenta como conversión enviada la que Meta confirmó haber recibido. El resultado del botón **Testar conexão** (probar conexión) no entra en esa cuenta.
+</Note>
+
+En **Conexiones**, el elemento **Seguimiento de Conversiones** muestra un punto verde cuando el seguimiento está activo.
+
+### Ver las pruebas dentro de Meta
+
+El campo **Código de evento de teste (opcional)** (código de evento de prueba, opcional) sirve para seguir las pruebas en la propia Meta. Copia el código en el Administrador de Eventos, pégalo en ese campo, haz clic en **Testar conexão** (probar conexión) y después en **Guardar**. Los eventos de prueba aparecen en la pestaña **Eventos de prueba** de Meta.
+
+El campo se abre vacío cada vez que entras en la pantalla. Vuelve a pegar el código cada vez que vayas a probar.
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Necesito tener un sitio web para usar el seguimiento?">
+    No. Los avisos salen del propio CRM, cuando el lead cambia de etapa en el Pipeline.
+  </Accordion>
+  <Accordion title="Moví un lead y no se envió nada. ¿Por qué?">
+    Revisa tres puntos: el seguimiento está **Activo**, la etapa de destino tiene un evento en **Conversión Meta:** y el lead llegó por un anuncio con botón de WhatsApp.
+  </Accordion>
+  <Accordion title="La pantalla dice que ninguna conversión llegó a Meta. ¿Qué reviso?">
+    Revisa dos cosas: las etapas del Pipeline tienen un evento elegido en **Conversión Meta:** y los leads que avanzaron llegaron por anuncios con botón de WhatsApp. Si ningún lead de anuncio pasó por esas etapas en los últimos días, el aviso es esperado y desaparece solo con el próximo envío. Si todo está bien y el aviso sigue, haz clic en **Testar conexão** (probar conexión) para comprobar el Pixel y la clave de acceso.
+  </Accordion>
+  <Accordion title="El aviso de prueba quedó en la pantalla. ¿El seguimiento tiene un problema?">
+    No necesariamente. Ese aviso muestra el resultado del último **Testar conexão** (probar conexión), que no representa la salud real del seguimiento. Haz clic en **Limpiar** para quitar el aviso y sigue los próximos envíos reales.
+  </Accordion>
+  <Accordion title="Cambié el nombre de una etapa. ¿El evento sigue?">
+    Sí. La etapa sigue enviando el mismo evento. El CRM te avisa para que compruebes si el nuevo nombre todavía encaja con él.
+  </Accordion>
+  <Accordion title="¿Por qué no puedo ver la clave de acceso que guardé?">
+    Por seguridad, se guarda y nunca se vuelve a mostrar. Si necesitas cambiarla, haz clic en **Cambiar** y pega una nueva.
+  </Accordion>
+  <Accordion title="¿Cómo dejo de enviar conversiones?">
+    Apaga el interruptor de activación en el recuadro **Conversions API de Meta**. El texto cambia a **Inactivo** y el envío se detiene al momento.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Pipeline" icon="table-columns" href="/es/crm/pipeline">
+    Organiza las etapas de tu embudo de ventas.
+  </Card>
+  <Card title="Conexiones" icon="plug" href="/es/conta/conexoes">
+    Gestiona tus canales e integraciones.
+  </Card>
+  <Card title="Dashboard" icon="chart-line" href="/es/gestao/dashboard">
+    Sigue los números de tu atención.
+  </Card>
+  <Card title="Informe semanal" icon="file-lines" href="/es/gestao/relatorios">
+    Consulta análisis de desempeño.
+  </Card>
+</CardGroup>

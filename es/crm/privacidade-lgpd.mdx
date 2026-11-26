@@ -1,0 +1,168 @@
+---
+title: "Privacidad y LGPD"
+sidebarTitle: "Privacidad y LGPD"
+description: "Exporta o anonimiza los datos de un contacto, silencia la IA para una persona y entiende qué guarda el CRM después."
+icon: "shield-halved"
+---
+
+Cuando un contacto pide ver o borrar sus datos, el CRM tiene herramientas para que atiendas la solicitud sin salir de la pantalla de Contactos. Esta página muestra cada una, quién puede usarla y qué pasa con los datos.
+
+<Note>
+  Esta página explica cómo funcionan las herramientas en el CRM. No es una orientación jurídica. Para saber cómo Atto Corp trata los datos de tu cuenta, consulta [Políticas](/es/empresa/politicas). Si tienes dudas sobre tus obligaciones, consulta a tu asesor jurídico.
+</Note>
+
+## Qué puedes hacer
+
+| Herramienta | Dónde está | Para qué sirve |
+| --- | --- | --- |
+| **Exportar datos del titular** | Panel del contacto, bloque **Privacidad (LGPD)** | Descarga un archivo con los datos de ese contacto en tu empresa |
+| **Anonimizar titular** | Panel del contacto, bloque **Privacidad (LGPD)** | Reemplaza nombre, teléfono, mensajes y datos del contacto por valores anónimos |
+| **La IA responde a este contacto** | Panel del contacto | Activa o desactiva la IA solo para esa persona |
+| Baja de las difusiones | Automática, en las [Difusiones](/es/marketing/disparos) | Saca de las difusiones a quien pidió salir |
+
+## Quién puede usarlas
+
+| Acción | Quién ve la opción |
+| --- | --- |
+| **Exportar datos del titular** y **Anonimizar titular** | Dueño de la cuenta y **Gerente** |
+| **La IA responde a este contacto** | Dueño de la cuenta, **Gerente** y quien tiene el permiso del Agente IA |
+
+Para quien tiene el rol **Agente de Atención**, el bloque **Privacidad (LGPD)** no aparece. Consulta los roles en [Equipo](/es/conta/equipe).
+
+## Encontrar el bloque de privacidad
+
+<Steps>
+  <Step title="Abre el contacto">
+    En el menú lateral, abre **CRM**, haz clic en **Contactos** y haz clic en la fila del contacto. Se abre el panel lateral con sus datos.
+  </Step>
+  <Step title="Desplázate hasta el final del panel">
+    El bloque **Privacidad (LGPD)** está al final del panel, después de **Programar actividad**.
+  </Step>
+</Steps>
+
+## Exportar los datos de un contacto
+
+Haz clic en **Exportar datos del titular**. El CRM descarga un archivo `.json` con el nombre `lgpd-titular-` seguido del nombre o teléfono del contacto y de la fecha. Al terminar, aparece **Datos del titular exportados**.
+
+El archivo reúne lo que tu empresa tiene sobre esa persona en el CRM, por ejemplo:
+
+- los registros del contacto en los pipelines, con las etiquetas;
+- las conversaciones y mensajes en WhatsApp y en Instagram;
+- actividades, citas y cambios de etapa;
+- envíos de difusiones y de seguimiento;
+- los resúmenes y la información que la IA guardó sobre el contacto;
+- si el número está en la lista de no contacto o en la [base externa](/es/crm/importar-contatos#importar-una-base-externa);
+- la lista de los adjuntos de las conversaciones.
+
+<Tip>
+  El archivo está hecho para que lo lean sistemas. Si necesitas entregarle los datos al contacto, guarda el archivo en un lugar seguro y envíalo por un canal de confianza.
+</Tip>
+
+Si aparece **No se encontraron datos para este titular**, el CRM no encontró nada de ese contacto en tu empresa.
+
+## Anonimizar un contacto
+
+La anonimización reemplaza los datos personales por valores anónimos en todos los embudos y conversaciones de tu empresa. No se puede deshacer.
+
+<Warning>
+  Esta acción es irreversible. Los datos originales no se pueden recuperar. Si necesitas una copia, usa **Exportar datos del titular** antes.
+</Warning>
+
+<Steps>
+  <Step title="Abre la confirmación">
+    En el bloque **Privacidad (LGPD)**, haz clic en **Anonimizar titular**. Se abre la ventana **Anonimizar titular**, con el resumen de lo que va a pasar.
+  </Step>
+  <Step title="Escribe la palabra de confirmación">
+    En el campo, escribe `ANONIMIZAR`. Las mayúsculas y minúsculas no hacen diferencia.
+  </Step>
+  <Step title="Confirma">
+    Haz clic en **Anonimizar definitivamente**. Para desistir, haz clic en **Cancelar**.
+  </Step>
+</Steps>
+
+Al terminar, aparece **Titular anonimizado**, el panel se cierra y la lista se vuelve a cargar. El aviso también indica cuántos archivos multimedia se eliminaron.
+
+### Qué cambia
+
+| Dato | Después de la anonimización |
+| --- | --- |
+| Nombre | Pasa a ser **Titular anonimizado**. El nombre guardado por el equipo con **Guardar contacto** también se borra |
+| Teléfono | Se convierte en un código numérico anónimo |
+| Mensajes, notas y resúmenes | El texto se convierte en `[anonimizado]` |
+| Fotos, audios, videos y archivos de las conversaciones | Se borran |
+| IA y seguimientos | Quedan desactivados para ese número |
+
+### Qué guarda el CRM
+
+- **Los números de tus métricas.** Los registros no se borran, solo se reemplaza su contenido. Por eso, los conteos y los informes siguen cuadrando.
+- **El teléfono en la lista de no contacto.** Es lo mínimo para que el CRM no vuelva a hablarle a esa persona. Una conversación nueva de ese número ya empieza con la IA desactivada.
+- **El número en la base externa del tipo Bloqueado**, si estaba ahí. Sin eso, el bloqueo dejaría de valer.
+- **Un registro de la acción**, con fecha y cantidades, sin ningún dato personal.
+
+### Archivos multimedia que no se borran
+
+Un archivo multimedia se mantiene cuando está fuera del CRM, cuando es compartido o cuando aparece en otra conversación. En ese caso, el aviso final indica cuántos se mantuvieron y que eso quedó registrado.
+
+Si el CRM no logra confirmar la eliminación de algún archivo multimedia, el aviso muestra cuántos quedaron pendientes. La anonimización ya se realizó, y los pendientes quedan registrados para limpieza.
+
+## Silenciar la IA para un contacto
+
+Cuando alguien pide no ser atendido por la IA, puedes desactivar la IA solo para esa persona.
+
+<Steps>
+  <Step title="Abre el contacto">
+    En **Contactos**, haz clic en la fila del contacto.
+  </Step>
+  <Step title="Desactiva el interruptor">
+    En la parte superior del panel, desactiva **La IA responde a este contacto**. Aparece **Contacto silenciado: la IA no le responde**.
+  </Step>
+</Steps>
+
+El contacto recibe la etiqueta **Silenciado**. El equipo sigue atendiendo normalmente. Para ver todos los contactos en esa situación, usa el filtro **Silenciados** en la lista.
+
+Para volver a activarla, activa el interruptor de nuevo. Si el contacto fue silenciado por el dueño o por un gerente, quien solo tiene el permiso del Agente IA puede no lograr volver a activarla.
+
+<Tip>
+  Para silenciar varios contactos a la vez, usa la opción **Silenciar (IA desactivada)** al [importar contactos](/es/crm/importar-contatos#la-ia-en-los-contactos-importados).
+</Tip>
+
+## Baja de las difusiones
+
+Quien responde a una difusión pidiendo salir, con palabras como "sair" o "parar", aparece con la etiqueta **Dado de baja** y ya no recibe difusiones. La baja pedida por la propia persona nunca se deshace sola. Consulta las reglas completas en [Difusiones](/es/marketing/disparos).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Cuál es la diferencia entre eliminar y anonimizar un contacto?">
+    **Eliminar**, en la lista de Contactos, borra el registro del contacto. **Apagar contato** (eliminar contacto), en la parte superior de la conversación, borra del CRM la conversación, los archivos multimedia y el contacto de ese canal. Consulta [WhatsApp](/es/atendimento/whatsapp#eliminar-contacto). **Anonimizar titular** reemplaza los datos de la persona por valores anónimos en todos los embudos y conversaciones de la empresa, borra los archivos multimedia y pone el número en la lista de no contacto.
+  </Accordion>
+  <Accordion title="Después de anonimizar, ¿la persona puede volver a hablar conmigo?">
+    Sí. Si envía un mensaje de nuevo, la conversación entra en el CRM con la IA desactivada. Tu equipo la atiende normalmente.
+  </Accordion>
+  <Accordion title="Apareció un aviso sobre más de un perfil con el mismo @usuario.">
+    Esto ocurre con contactos de Instagram. El CRM no sabe cuál de los perfiles es el correcto y no hace nada. Abre el contacto por el teléfono o por su identificador e inténtalo de nuevo.
+  </Accordion>
+  <Accordion title="¿Por qué no veo el bloque Privacidad (LGPD)?">
+    El bloque aparece solo para el dueño de la cuenta y para quien tiene el rol **Gerente**. Pide a uno de ellos que haga la exportación o la anonimización.
+  </Accordion>
+  <Accordion title="¿La anonimización vale para las otras empresas de mi cuenta?">
+    No. Vale solo para la empresa que está activa en el CRM. Si el contacto también está en otra empresa, cambia de empresa y repite el proceso.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Contactos" icon="address-book" href="/es/crm/contatos">
+    Abre el panel del contacto y edita los datos.
+  </Card>
+  <Card title="Políticas" icon="book-bookmark" href="/es/empresa/politicas">
+    Política de Privacidad y Términos de Uso de Atto Corp.
+  </Card>
+  <Card title="Difusiones" icon="paper-plane" href="/es/marketing/disparos">
+    Mira cómo funciona la baja.
+  </Card>
+  <Card title="Equipo" icon="users" href="/es/conta/equipe">
+    Define quién es Gerente en tu empresa.
+  </Card>
+</CardGroup>

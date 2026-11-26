@@ -1,0 +1,126 @@
+---
+title: "Verificación en dos pasos"
+sidebarTitle: "Seguridad"
+description: "Protege tu cuenta con un código de la app autenticadora además de la contraseña."
+icon: "shield-check"
+keywords: ["verificación en dos pasos", "2FA", "MFA", "autenticador", "seguridad", "código", "inicio de sesión"]
+---
+
+Con la verificación en dos pasos activada, el CRM pide tu contraseña y, después, un código de 6 números de la app autenticadora de tu celular. Aunque alguien descubra tu contraseña, no entra sin ese código.
+
+<Tip>
+  Recomendado para dueños de empresa: protege la cuenta incluso si la contraseña se filtra.
+</Tip>
+
+## Antes de empezar
+
+Instala una app autenticadora en el celular. Funcionan, por ejemplo, **Google Authenticator**, **Microsoft Authenticator** y **1Password**.
+
+## Activar
+
+<Steps>
+  <Step title="Abre Mi Perfil">
+    Haz clic en tu foto o inicial, en la esquina superior derecha, y elige **Mi Perfil**. En la sección **Perfil**, baja hasta el bloque **Seguridad**, que reúne **Cambiar contraseña** y **Verificación en dos pasos**.
+  </Step>
+  <Step title="Empieza la activación">
+    En **Verificación en dos pasos**, la etiqueta muestra **Desactivada**. Haz clic en **Activar**.
+  </Step>
+  <Step title="Escanea el código QR">
+    En la ventana **Activar verificación en dos pasos**, abre la app autenticadora y escanea el código QR.
+
+    ¿No puedes escanearlo? Copia la clave que aparece debajo del código QR con **Copiar clave** y escríbela en la app. En el celular, también puedes tocar **Abrir en la app autenticadora**.
+  </Step>
+  <Step title="Confirma el código">
+    Escribe los 6 números que muestra la app y haz clic en **Confirmar código**.
+  </Step>
+</Steps>
+
+El CRM lo confirma con **Verificación en dos pasos activada** y la etiqueta pasa a **Activada**. A partir del próximo acceso, se pedirá el código.
+
+<Card title="Abrir Mi Perfil en el CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/profile">
+  Te lleva directo a la pantalla. Necesitas tener tu cuenta abierta en el CRM.
+</Card>
+
+## Entrar con el código
+
+Después de la contraseña, aparece la pantalla **Verificación en dos pasos**.
+
+<Steps>
+  <Step title="Abre la app autenticadora">
+    Busca el código de Atto Corp. Cambia cada pocos segundos.
+  </Step>
+  <Step title="Escribe y verifica">
+    Escribe los 6 números y haz clic en **Verificar**.
+  </Step>
+</Steps>
+
+El CRM solo se abre después del código correcto. Para cambiar de cuenta, haz clic en **Salir y entrar con otra cuenta**.
+
+## Desactivar
+
+En **Mi Perfil**, en el bloque **Seguridad**, haz clic en **Desactivar** junto a **Verificación en dos pasos**. La ventana **¿Desactivar la verificación en dos pasos?** avisa que la cuenta vuelve a pedir solo la contraseña. Confirma en **Desactivar**.
+
+<Warning>
+  Recomendamos mantener la verificación activada. Sin ella, quien tenga tu contraseña entra en tu cuenta.
+</Warning>
+
+## Seguridad del equipo
+
+En la pantalla [Equipo](/es/conta/equipe), en la pestaña **Actividad** (visible para el propietario y los gerentes), la tarjeta **Seguridad del equipo** muestra quién del equipo ya tiene la verificación activa (**Verificación activa** o **Sin verificación**) y el último acceso de cada persona.
+
+<Note>
+  La opción **Exigir verificación en dos pasos al equipo** todavía no se puede activar. Por ahora, la tarjeta sirve para que revises quién ya la activó.
+</Note>
+
+Cuando la empresa pase a exigir la verificación, quien todavía no la activó verá la pantalla **Tu empresa exige verificación en dos pasos** al entrar y solo accede a la empresa después de activarla.
+
+## Mensajes que pueden aparecer
+
+| Mensaje | Qué hacer |
+| --- | --- |
+| **Escribe los 6 números de la app autenticadora.** | El campo está vacío o incompleto. Escribe los 6 números. |
+| **Código inválido o vencido. Revisa la app e inténtalo de nuevo.** | El código cambió o se escribió mal. Usa el código que aparece ahora en la app. Revisa también que la hora del celular esté en automático. |
+| **No pudimos verificar tu seguridad** | Falla de conexión. Revisa internet y haz clic en **Intentar de nuevo**. Por seguridad, el acceso solo se habilita después de esa verificación. |
+| **No se pudo completar. Inténtalo de nuevo en unos instantes.** | Error temporal. Espera unos segundos y repite. |
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Cambié o perdí el celular. ¿Cómo entro?">
+    Sin la app autenticadora, el CRM no habilita el acceso. Habla con [Soporte](/es/empresa/suporte) e indica el correo de tu cuenta.
+
+    Antes de cambiar de celular, transfiere las cuentas de la app autenticadora al aparato nuevo, o desactiva la verificación y actívala de nuevo en el celular nuevo.
+  </Accordion>
+
+  <Accordion title="El código no funciona, aunque lo escribo bien.">
+    El código depende de la hora del celular. Deja la fecha y la hora del aparato en modo automático e inténtalo con el código nuevo.
+  </Accordion>
+
+  <Accordion title="¿Tengo que escribir el código cada vez?">
+    El código se pide en cada nuevo acceso a la cuenta.
+  </Accordion>
+</AccordionGroup>
+
+## Reportar un problema de seguridad
+
+¿Encontraste algo sospechoso en tu cuenta o tienes dudas sobre seguridad? Escribe al equipo de seguridad de Atto Corp.
+
+<Card title="seguranca@attocorp.com" icon="shield-halved" horizontal href="mailto:seguranca@attocorp.com">
+  Para reportar problemas de seguridad o resolver dudas sobre el tema.
+</Card>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Perfil" icon="user" href="/es/conta/perfil">
+    Cambia la contraseña y ajusta tus datos.
+  </Card>
+
+  <Card title="Equipo" icon="users" href="/es/conta/equipe">
+    Mira quién del equipo ya activó la verificación.
+  </Card>
+
+  <Card title="Recuperar contraseña" icon="key" href="/es/conta/recuperar-senha">
+    ¿Olvidaste tu contraseña? Recibe un código por correo y crea una contraseña nueva desde la pantalla de inicio de sesión.
+  </Card>
+</CardGroup>
