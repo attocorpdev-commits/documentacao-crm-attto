@@ -26,6 +26,7 @@
                 "group": "Primeiros passos",
                 "pages": [
                   "index",
+                  "plataforma/visao-geral",
                   "primeiros-passos/primeiro-acesso",
                   "primeiros-passos/planos",
                   "primeiros-passos/tipos-whatsapp",
@@ -40,7 +41,9 @@
                   "ia/agente-ia",
                   "ia/entrevista-inicial",
                   "ia/protocolo-atendimento",
-                  "ia/creditos"
+                  "ia/creditos",
+                  "plataforma/mcp",
+                  "plataforma/conectar-ia"
                 ]
               },
               {
@@ -97,14 +100,6 @@
                 ]
               },
               {
-                "group": "Plataforma",
-                "pages": [
-                  "plataforma/visao-geral",
-                  "plataforma/mcp",
-                  "plataforma/conectar-ia"
-                ]
-              },
-              {
                 "group": "Empresa",
                 "tag": "Atto Corp",
                 "pages": [
@@ -134,6 +129,7 @@
                 "group": "Getting started",
                 "pages": [
                   "en/index",
+                  "en/plataforma/visao-geral",
                   "en/primeiros-passos/primeiro-acesso",
                   "en/primeiros-passos/planos",
                   "en/primeiros-passos/tipos-whatsapp",
@@ -148,7 +144,9 @@
                   "en/ia/agente-ia",
                   "en/ia/entrevista-inicial",
                   "en/ia/protocolo-atendimento",
-                  "en/ia/creditos"
+                  "en/ia/creditos",
+                  "en/plataforma/mcp",
+                  "en/plataforma/conectar-ia"
                 ]
               },
               {
@@ -205,14 +203,6 @@
                 ]
               },
               {
-                "group": "Platform",
-                "pages": [
-                  "en/plataforma/visao-geral",
-                  "en/plataforma/mcp",
-                  "en/plataforma/conectar-ia"
-                ]
-              },
-              {
                 "group": "Company",
                 "tag": "Atto Corp",
                 "pages": [
@@ -242,6 +232,7 @@
                 "group": "Primeros pasos",
                 "pages": [
                   "es/index",
+                  "es/plataforma/visao-geral",
                   "es/primeiros-passos/primeiro-acesso",
                   "es/primeiros-passos/planos",
                   "es/primeiros-passos/tipos-whatsapp",
@@ -256,7 +247,9 @@
                   "es/ia/agente-ia",
                   "es/ia/entrevista-inicial",
                   "es/ia/protocolo-atendimento",
-                  "es/ia/creditos"
+                  "es/ia/creditos",
+                  "es/plataforma/mcp",
+                  "es/plataforma/conectar-ia"
                 ]
               },
               {
@@ -310,14 +303,6 @@
                   "es/conta/seguranca",
                   "es/conta/recuperar-senha",
                   "es/conta/trocar-empresa"
-                ]
-              },
-              {
-                "group": "Plataforma",
-                "pages": [
-                  "es/plataforma/visao-geral",
-                  "es/plataforma/mcp",
-                  "es/plataforma/conectar-ia"
                 ]
               },
               {
