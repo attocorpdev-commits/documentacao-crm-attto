@@ -238,15 +238,37 @@
             "groups": [
               {
                 "group": "Primeros pasos",
-                "pages": []
+                "pages": [
+                  "es/index",
+                  "es/primeiros-passos/primeiro-acesso",
+                  "es/primeiros-passos/planos",
+                  "es/primeiros-passos/tipos-whatsapp",
+                  "es/primeiros-passos/conectar-whatsapp",
+                  "es/primeiros-passos/problemas-comuns"
+                ]
               },
               {
                 "group": "Inteligencia artificial",
-                "pages": []
+                "pages": [
+                  "es/ia/assistente-ia",
+                  "es/ia/agente-ia",
+                  "es/ia/entrevista-inicial",
+                  "es/ia/protocolo-atendimento",
+                  "es/ia/creditos"
+                ]
               },
               {
                 "group": "Atención",
-                "pages": []
+                "pages": [
+                  "es/atendimento/whatsapp",
+                  "es/atendimento/instagram",
+                  "es/atendimento/instagram-mensagens-recusadas",
+                  "es/atendimento/respostas-rapidas",
+                  "es/atendimento/janela-24h",
+                  "es/atendimento/templates-whatsapp",
+                  "es/atendimento/fila-rodizio",
+                  "es/atendimento/status-ausente"
+                ]
               },
               {
                 "group": "CRM",

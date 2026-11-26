@@ -1,0 +1,608 @@
+---
+title: "Agente IA"
+description: "Crea, enseña, prueba y enciende el agente automático que responde a tus leads en WhatsApp."
+icon: "robot"
+---
+
+El Agente IA es el agente de atención automático del CRM. Conversa con **tus leads** en WhatsApp, de la forma en que tú le enseñes.
+
+<Note>
+  No lo confundas con el [Asistente IA](/es/ia/assistente-ia). El Agente IA habla con tus leads. El Asistente IA habla contigo, sobre los datos de tu CRM.
+</Note>
+
+<Warning>
+  La IA atiende **solo conversaciones de WhatsApp**. Las conversaciones de [Instagram](/es/atendimento/instagram) siguen con atención manual: en la pantalla de la conversación de Instagram, el CRM muestra el aviso "La IA integrada atiende solo conversaciones de WhatsApp."
+</Warning>
+
+## Qué hace la IA en cada plan
+
+En todos los planes, la IA conversa con el lead, califica el contacto, pasa la conversación a una persona cuando hace falta y avisa al equipo sobre un nuevo lead.
+
+En el plan Start, la IA se queda solo en la conversación. En los planes Prime y Ultra, también ejecuta acciones dentro del CRM.
+
+| Qué hace la IA | Start | Prime y Ultra |
+| --- | --- | --- |
+| Responder, calificar y pasar a una persona | Sí | Sí |
+| Aplicar una [etiqueta](/es/crm/tags) al lead | No | Sí |
+| Agendar una cita en la [Agenda](/es/crm/agenda) y mover la tarjeta en el [Pipeline](/es/crm/pipeline) | No | Sí |
+| Enviar documento, producto, fotos o video al lead | No | Sí |
+| Armar el resumen automático de la conversación y el perfil del lead | No | Sí |
+| Avisar al equipo sobre el lead | Solo **Nuevo lead** y **Mostró interés** | Los cinco momentos |
+
+En el Start, la IA sigue respondiendo al lead con normalidad. Solo la acción dentro del CRM no ocurre.
+
+En ningún plan la IA atiende en Instagram. El canal de Instagram sigue existiendo para la atención hecha por personas.
+
+<Note>
+  El [Área del Gestor](/es/gestao/area-gestor) no está incluida en el Start, pero puede habilitarse en cuentas específicas. Para los valores de cada plan, consulta [attocorp.com](https://attocorp.com/#planos).
+</Note>
+
+## Cómo acceder
+
+En la parte superior del menú lateral, haz clic en la tarjeta **Agente IA**, que lleva la leyenda **Sua IA de atendimento** (tu IA de atención). Si ya le diste un nombre a tu IA, la tarjeta muestra ese nombre.
+
+Llegas a la pantalla **Tus agentes de IA**, con una tarjeta para cada agente de tu empresa. Cada tarjeta muestra el estado del agente:
+
+| Estado | Qué significa |
+| --- | --- |
+| **En línea** | El agente está configurado y activo. |
+| **Pausada** | El agente está configurado, pero fue pausado. |
+| **Configuración pendiente** | El agente todavía no tiene una personalidad definida. |
+
+Haz clic en **Abrir y configurar** para entrar en un agente.
+
+<Card title="Abrir Agente IA en el CRM" icon="arrow-up-right-from-square" href="https://app.attocorp.com/app/ai-agent" horizontal>
+  Te lleva directo a la pantalla. Debes tener tu cuenta abierta en el CRM.
+</Card>
+
+## Crear tu IA
+
+Si tu IA todavía no fue configurada, la pantalla muestra el aviso **Vamos a crear tu IA**.
+
+<Steps>
+  <Step title="Inicia la creación">
+    Haz clic en **Crear mi IA** y luego en **Empezar**. Si prefieres dejarlo para otro momento, haz clic en **Configurar después**.
+  </Step>
+  <Step title="Elige el ritmo">
+    En **¿Cómo quieres configurar?**, elige **Onboarding rápido** (solo lo esencial) u **Onboarding avanzado** (tono, límites y horarios con más detalle).
+  </Step>
+  <Step title="Elige cómo responder">
+    En **¿Cómo prefieres responder?**, elige **Responder por texto**, **Responder por voz** o **Crear a partir de documentos**.
+  </Step>
+  <Step title="Responde las preguntas">
+    Indica tu tipo de negocio y responde las preguntas. Usa **Avanzar** y **Volver** para navegar.
+  </Step>
+  <Step title="Genera la IA">
+    Haz clic en **Generar mi IA**. Cuando aparezca **¡Tu IA está lista!**, elige **Conectar a mi WhatsApp** o **Probar en el Playground**.
+  </Step>
+</Steps>
+
+<Tip>
+  Si te detienes a la mitad, vuelve a la pantalla y haz clic en **Continuar configuración**. El sistema retoma desde donde lo dejaste.
+</Tip>
+
+## Las pestañas del agente
+
+Dentro de un agente, las pestañas aparecen en este orden: **General**, **Personalidad**, **Documentos**, **Base de conocimiento**, **Canales**, **Avanzado**, **Probar** y **Métricas**.
+
+<Tabs>
+  <Tab title="General">
+    Reúne el resumen del agente.
+
+    - **Interruptor de la IA**: enciende o pausa la IA. Consulta [Encender y apagar la IA](#encender-y-apagar-la-ia).
+    - **Apagar la IA para todas las conversaciones**: un control separado del interruptor. Consulta [Apagar la IA para todas las conversaciones](#apagar-la-ia-para-todas-las-conversaciones).
+    - **Configuración de tu IA**: muestra los pasos completados y los pendientes. Haz clic en **Resolver** para ir directo al paso.
+    - **Identidad**: completa **Nombre de tu IA** y haz clic en **Guardar**. El nombre es de uso interno. Tu cliente no ve ese nombre.
+    - **Créditos**: muestra **Saldo de créditos**, con los botones **Recargar**, **Ver uso detallado** y **Ver consumo**. Cuando hay historial de uso, el bloque también estima cuántos días dura todavía el saldo al ritmo actual. Consulta [Conversaciones y créditos de IA](/es/ia/creditos).
+    - **Próximos pasos**: accesos directos a **Ajustar personalidad**, **Enviar documentos** y **Revisar canales**.
+    - **Actividad reciente**: los últimos mensajes que la IA entregó hoy.
+    - **Restablecer memoria de la IA**: hace que la IA olvide lo que ya se conversó. Consulta [Hacer que la IA olvide conversaciones](#hacer-que-la-ia-olvide-conversaciones).
+    - **Encender o apagar la IA por conversación**: enciende o apaga la IA en varias conversaciones a la vez. Consulta [Encender o apagar la IA por conversación](#encender-o-apagar-la-ia-por-conversacion).
+    - **Restablecer la IA**: reinicia la configuración desde cero.
+
+    Los bloques **Restablecer memoria de la IA**, **Encender o apagar la IA por conversación** y **Restablecer la IA** aparecen para el dueño de la cuenta y para quien, en el equipo, tiene el permiso de acceso al Agente IA. Consulta [Equipo](/es/conta/equipe).
+  </Tab>
+  <Tab title="Personalidad">
+    Aquí defines cómo habla la IA, qué puede y qué no puede hacer.
+
+    - Haz clic en **Generar mi prompt** la primera vez, o en **Editar prompt** si ya existe una versión. El botón **Empezar a construir** abre la misma ventana.
+    - La ventana **Constructor de Prompt** tiene tres pestañas: **Cuestionario**, **Editor y vista previa** y **Versiones**.
+    - En el **Cuestionario**, completa campos como **Nombre de la empresa**, **Qué vende / ofrece**, **Público objetivo**, **Tono de voz**, **Horario de atención**, **Lo que la IA PUEDE hacer** y **Lo que la IA NO puede hacer**. Luego haz clic en **Generar prompt**.
+    - También puedes usar **Adjuntar documentos** para que la IA arme el texto a partir de un archivo tuyo.
+    - En **Editor y vista previa**, revisa el texto y haz clic en **Guardar y activar versión**. Guardar ya pone el texto en línea. Si nada cambió, el botón muestra **Guardado: versión N activa** y no crea una versión nueva.
+    - **Versión activa** es el texto que la IA usa ahora para responder.
+    - En **Historial de versiones**, haz clic en **Restaurar** para volver a una versión anterior.
+
+    Para ajustar el texto sin reescribirlo todo, consulta [Mejorar el texto de la IA](#mejorar-el-texto-de-la-ia).
+
+    **Borrador del prompt esperando por ti**
+
+    Un asistente conectado por el [MCP](/es/plataforma/mcp) puede proponer un prompt nuevo. Nunca entra en línea solo: la IA sigue usando la versión activa hasta que tú decidas.
+
+    - Cuando hay un borrador, aparece en esta pestaña el aviso **Borrador del prompt esperando por ti**. Haz clic en **Revisar borrador**.
+    - En **Qué cambió**, mira las líneas nuevas y las eliminadas. En **Texto completo**, lee el prompt entero.
+    - Haz clic en **Activar esta versión** para poner el borrador en línea, o en **Cerrar sin activar** para dejarlo como está. La versión activa actual sigue guardada en el historial.
+    - En el historial, el borrador aparece como **borrador del MCP**, con el botón **Revisar** en lugar de **Restaurar**.
+    - Si el borrador tiene caracteres invisibles, aparecen marcados como `[U+...]` y no se puede activar, porque pueden esconder instrucciones.
+  </Tab>
+  <Tab title="Documentos">
+    Son los archivos que la IA usa en la atención. Con cada documento, la IA puede leer el contenido para responder y enviar el archivo al cliente.
+
+    Enviar el archivo al cliente es una acción de los planes Prime y Ultra. En el Start, la IA usa el contenido para responder, pero no envía el archivo.
+
+    Consulta el paso a paso en [Enseñar a la IA con documentos](#ensenar-a-la-ia-con-documentos).
+  </Tab>
+  <Tab title="Base de conocimiento">
+    Muestra todos los textos que la IA consulta antes de responder, incluido lo que el asistente inicial creó en la configuración. Cada bloque indica el origen: **Documento**, **Asistente inicial** o **Agregado a mano**.
+
+    - Haz clic en **Editar** para corregir el **Título** o el **Contenido** y luego en **Guardar**. La IA usa el texto nuevo ya en la próxima respuesta y en **Probar**.
+    - Haz clic en la papelera para eliminar un bloque. La pantalla pregunta **¿Eliminar este conocimiento?**. Esta acción no se puede deshacer.
+
+    Cambiar el texto de la **Personalidad** no borra estos bloques. Revisa esta pestaña cuando cambies de producto o servicio.
+  </Tab>
+  <Tab title="Canales">
+    Aquí eliges en qué números de WhatsApp responde la IA. Consulta [Elegir los canales](#elegir-los-canales).
+  </Tab>
+  <Tab title="Avanzado">
+    Ajustes opcionales. Lo que ya viene definido funciona bien. Consulta la sección "Horario, transferencia y otros ajustes", más abajo en esta página.
+  </Tab>
+  <Tab title="Probar">
+    Una conversación de ensayo con tu IA. Consulta [Probar la IA](#probar-la-ia).
+  </Tab>
+  <Tab title="Métricas">
+    Muestra el rendimiento **de este agente** en los **Últimos 7 días** o **Últimos 30 días**. Ves, entre otros, **Total de atenciones**, **Chats únicos atendidos**, **Entregadas**, **Tiempo de respuesta**, **Pases a humano**, **Por qué la IA no respondió**, **Por canal** y **Por agente**.
+  </Tab>
+</Tabs>
+
+<Note>
+  Si cambiaste algún campo y pasaste a otra pestaña sin guardar, el CRM abre el aviso **Cambios sin guardar**. Elige **Guardar todo**, **Descartar** o **Cancelar** para seguir donde estabas.
+</Note>
+
+## Mejorar el texto de la IA
+
+En la pestaña **Personalidad**, abre el **Constructor de Prompt** y ve a **Editor y vista previa**. Ahí tienes dos caminos para cambiar el texto que guía las respuestas de la IA.
+
+| Camino | Qué hace |
+| --- | --- |
+| **Mejorar con IA** | Pides el cambio con tus palabras y comparas antes de aplicar. La leyenda es **Conversa y compara los cambios**. |
+| **Editar manualmente** | Abre el texto completo para que lo escribas a mano. La leyenda es **Edita el texto completo**. |
+
+### Pedir una mejora
+
+<Steps>
+  <Step title="Abre la ventana">
+    Haz clic en **Mejorar con IA**. Se abre la ventana **Mejora del prompt**, con la leyenda **Describe lo que quieres ajustar**.
+  </Step>
+  <Step title="Escribe el pedido">
+    En el campo **Pedido de mejora**, di lo que quieres cambiar. Ejemplo: "haz el saludo más corto" o "agrega que atendemos los sábados". Presiona Enter para enviar y Shift + Enter para saltar de línea. Si prefieres hablar, haz clic en **Dictar por voz**.
+  </Step>
+  <Step title="Compara">
+    En **Cambios sugeridos**, el CRM muestra lo que sale y lo que entra, con el conteo de cambios. La leyenda es **Compara antes de aplicar al prompt**. En pantallas pequeñas, usa las pestañas **Conversación** y **Cambios**.
+  </Step>
+  <Step title="Aplica o descarta">
+    Haz clic en **Aplicar cambio** para ponerlo en línea. Aparece el aviso "¡Listo! Tu IA ya está usando el nuevo prompt." Para desistir, haz clic en **Descartar** y pídelo de otra forma.
+  </Step>
+</Steps>
+
+<Warning>
+  Lee la comparación antes de aplicar. Cuando la sugerencia cambia el nombre de tu IA o de tu empresa, la ventana avisa: "Esta sugerencia cambia el nombre de tu IA o de la empresa. Si no lo pediste, no la apliques."
+
+  Otros avisos que pueden aparecer: el cambio entró al final del texto, o el texto ganó títulos y marcas nuevas. En todos los casos, verifica que haya quedado como quieres.
+</Warning>
+
+<Note>
+  La IA puede responder que no consigue atender el pedido ("No puedo hacer este cambio solo con el prompt.") o que eso ya está en el texto ("Eso ya está en tu prompt. No hizo falta cambiar nada."). Reescribe el pedido de otra forma.
+
+  Si tu texto es muy grande, la ventana te orienta a usar **Editar manualmente**.
+</Note>
+
+### Pedir una sugerencia lista
+
+En la parte superior de **Editor y vista previa** está el botón **Sugerir mejora**, con la leyenda **analizando las conversaciones**. Lee las conversaciones reales de tu número y propone un texto mejor. Mientras trabaja, muestra "Analisando conversas..." (analizando conversaciones); al terminar, muestra **Sugerencia lista**. Lo revisas y lo guardas si te gusta.
+
+<Tip>
+  Al restaurar una versión antigua, el CRM pregunta **¿Restaurar esta versión?** y explica que la versión activa actual sigue guardada en el historial. Confirma en **Restaurar versión**.
+</Tip>
+
+## Enseñar a la IA con documentos
+
+<Steps>
+  <Step title="Abre la pestaña Documentos">
+    Haz clic en **Enviar archivo** o arrastra el archivo al área **Arrastra un archivo aquí o haz clic para subir**.
+  </Step>
+  <Step title="Completa los datos">
+    En **Nombre**, escribe cómo aparece el documento para ti. En **Alias para la IA**, indica un nombre corto. En **Cuándo debe enviar la IA**, di en qué situación envía el archivo. Ejemplo: cuando el cliente pida los precios.
+  </Step>
+  <Step title="Decide si va en la primera respuesta">
+    Marca **Enviar automáticamente en la primera respuesta de la IA** si quieres que ese archivo salga junto con el primer mensaje de la conversación. Ejemplo: un audio de bienvenida. En la lista, el documento pasa a mostrar la insignia **Va en la 1.ª respuesta**.
+  </Step>
+  <Step title="Confirma">
+    Haz clic en **Agregar documento**. El archivo entra en la lista **Documentos agregados**.
+  </Step>
+</Steps>
+
+La pantalla acepta PDF, DOCX, XLSX, TXT o audio (OGG, OPUS, MP3, M4A, WAV), con hasta 20 MB por archivo. También puedes enviar imágenes: la IA envía la imagen al cliente, pero no lee su contenido. Encima de la lista, la pantalla muestra cuánto de los 100 MB de espacio ya se usó.
+
+<Tip>
+  El audio le llega de formas distintas al cliente: OGG y OPUS llegan como nota de voz; el M4A grabado en iPhone, el MP3 y el WAV llegan como archivo de audio.
+</Tip>
+
+También puedes marcar o desmarcar **Enviar automáticamente en la primera respuesta de la IA** después, abriendo el documento en la lista. El cambio se guarda al instante.
+
+En la lista, la insignia de cada documento muestra el estado:
+
+| Insignia | Qué significa |
+| --- | --- |
+| **Indexado** | La IA lee el contenido y también puede enviar el archivo. |
+| **Procesando** | El contenido todavía se está leyendo. |
+| **Solo envía** | La IA envía el archivo, pero no consigue leer el contenido. |
+
+Si hay más de un documento, arrastra para definir la prioridad de envío.
+
+<Warning>
+  Los documentos de esta pestaña pueden enviarse al cliente. Si el sistema encuentra información privada en el archivo, muestra el aviso **Este arquivo tem informações privadas** (este archivo tiene información privada). Prefiere **Cancelar e reformular** (cancelar y reformular) y quita la parte privada antes de enviarlo.
+</Warning>
+
+## Elegir los canales
+
+La pestaña **Canales** trae el título **Dónde responde la IA** y lista solo tus números de WhatsApp. Las cuentas de Instagram no aparecen para encender la IA.
+
+<Steps>
+  <Step title="Abre la pestaña Canales">
+    La lista **Tus canales** muestra los números conectados de los dos tipos. La insignia de cada uno indica **WhatsApp Normal** (Código QR) o **WhatsApp Oficial**.
+  </Step>
+  <Step title="Enciende el interruptor del canal">
+    Enciende el interruptor junto al canal y confirma en **Activar IA Integrada**. La IA pasa a responder todas las conversaciones de ese número.
+  </Step>
+  <Step title="Para detenerla, apaga el interruptor">
+    Apaga el interruptor y confirma en **Desactivar IA Integrada**. La atención de ese número vuelve a ser manual.
+  </Step>
+</Steps>
+
+La IA queda encendida en como máximo un número de WhatsApp. Al encenderla en un número nuevo, el anterior se apaga solo, y la pantalla avisa: "La IA Integrada ahora responde solo en este canal. Se apagó automáticamente en los otros números de WhatsApp."
+
+Cada canal es atendido por una única IA a la vez. Si otro agente ya atiende el canal, apaga primero la IA de ese agente.
+
+Si la lista está vacía, haz clic en **Conectar canal**. Consulta [Conexiones](/es/conta/conexoes).
+
+<Note>
+  El interruptor solo puede encenderse cuando el agente está activo y ya tiene una personalidad activa. Sin eso, el interruptor queda bloqueado.
+</Note>
+
+<Note>
+  Si tienes alguna cuenta de Instagram conectada, el pie de la lista recuerda: "La IA integrada atiende solo conversaciones de WhatsApp." Un perfil de Instagram que quedó con la IA encendida de antes sigue visible solo para que puedas apagarla. Ya no es posible encender la IA en Instagram: la pantalla responde **No se puede activar**.
+
+  El canal de Instagram sigue siendo un recurso adicional de los planes Prime y Ultra para la atención hecha por personas. Consulta [Instagram](/es/atendimento/instagram) y [Planes y facturación](/es/conta/planos).
+</Note>
+
+<Warning>
+  Si la IA está encendida y ningún canal conectado atiende con ella, el CRM abre el aviso **Tu IA no tiene ningún canal conectado**: "La IA está encendida, pero no hay ningún canal conectado para que atienda. Activa un canal para que la IA vuelva a responder a tus clientes."
+
+  Haz clic en **Activar número** para ir directo a la pestaña **Canales**, o en **Verificar conexiones** para abrir [Conexiones](/es/conta/conexoes). También puedes cerrar el aviso. Mientras no haya canal, la IA no responde a nadie.
+
+  Este aviso aparece solo para el dueño de la cuenta, porque conectar números es tarea suya.
+
+  Cuando eliminas el canal que la IA atendía, el CRM también avisa al instante: "La IA quedó sin canal. Conecta otro número para que vuelva a atender."
+</Warning>
+
+## Horario, transferencia y otros ajustes
+
+Todo está en la pestaña **Avanzado**. Después de cambiar algo, haz clic en **Guardar ajustes**. Para abandonar lo que acabas de cambiar, haz clic en **Descartar**. Para volver a lo que vino definido, haz clic en **Restaurar valores predeterminados** y guarda: la pantalla confirma con **Valores predeterminados restaurados** y recuerda hacer clic en **Guardar ajustes** para aplicar.
+
+<AccordionGroup>
+  <Accordion title="Respuestas y ritmo">
+    Define **Máximo de caracteres**, **Espera mínima (s)**, **Espera máxima (s)** y **Agrupar mensajes (s)**. La espera aplicada nunca pasa de 8 segundos, aunque pongas un valor mayor. La opción **Simular escritura** muestra "escribiendo..." antes de la respuesta.
+  </Accordion>
+  <Accordion title="Restringir por horario comercial">
+    Enciende la opción y marca los días y los horarios en que la IA atiende. En **Mensaje fuera de horario**, escribe el aviso que el cliente recibe fuera de ese periodo. Si lo dejas vacío, la IA permanece en silencio hasta que vuelva el horario.
+  </Accordion>
+  <Accordion title="Pasar a un agente">
+    En **Palabras clave**, agrega palabras o frases que hacen que la IA transfiera la conversación al instante. Ejemplo: "hablar con humano". Haz clic en **Ver sugerencias** para marcar palabras listas y luego en **Añadir seleccionadas**. En **Transferir tras N respuestas de la IA**, define un límite de respuestas. En **Mensaje al transferir**, escribe el aviso que el cliente recibe.
+
+    Cada transferencia genera un código único para la conversación. Consulta [Protocolo de atención](/es/ia/protocolo-atendimento).
+  </Accordion>
+  <Accordion title="WhatsApp para notificaciones de leads">
+    Indica los números que reciben la alerta y, en **Cuándo avisar**, elige los momentos del lead.
+
+    Los momentos disponibles dependen de tu plan. En el Start aparecen **Nuevo lead** y **Mostró interés**. En los planes Prime y Ultra aparecen también **Lead calificado**, **Sin respuesta** y **Recibió enlace**. Los momentos que tu plan no incluye simplemente no aparecen en la lista.
+
+    **Nuevo lead** y **Mostró interés** ya vienen encendidos.
+
+    Todos los momentos usan una única plantilla de mensaje. Justo debajo de la lista, una línea muestra el estado de esa plantilla: **Plantilla de aviso lista**, **Plantilla en revisión por Meta (aprueba en minutos)**, "Plantilla de aviso aún no creada." o "Verificando plantilla...". Usa el botón de recargar al lado para actualizar.
+
+    El aviso que recibe tu equipo trae el nombre de tu **empresa**, el nombre del contacto y su teléfono. No es el nombre que le diste a la IA.
+
+    Al guardar con el primer número en la lista, el CRM crea la plantilla solo y abre la ventana **Plantillas de aviso creadas**. Haz clic en **Ver estado de las plantillas** para seguirla, o en **Cerrar**. Si prefieres crearla en el momento, haz clic en **Crear plantilla de aviso**. La aprobación suele tardar unos minutos, y el aviso solo funciona después de ella.
+
+    El botón **Crear plantilla de aviso** queda bloqueado mientras no haya ningún número en la lista. La pantalla explica: "Agrega al menos 1 miembro al aviso de lead antes de crear la plantilla."
+
+    El aviso para el equipo funciona solo en un canal **WhatsApp Oficial (Meta)**. Sin un número oficial, la sección aparece bloqueada con el mensaje **Disponible en el canal oficial de Meta** y el botón **Conectar canal oficial**. Si tu empresa ya tiene un número oficial, pero esta IA no está conectada a él, la sección muestra **Vincule la IA al canal oficial** y el botón **Vincular en la pestaña Canales**.
+
+    La pantalla también recuerda: "Meta puede limitar o encarecer el WhatsApp oficial en cualquier momento. El aviso en el panel (campanita) garantiza que el equipo no pierda el lead."
+  </Accordion>
+  <Accordion title="Lectura de multimedia y agenda">
+    En **Ajustes finos (avanzado)**, la sección **Lectura de multimedia** define si la IA entiende **Imágenes**, **Audios**, **Documentos** y **Videos** enviados por el cliente. Si está apagada, pide el contenido en texto.
+
+    Con **Audios** encendido, la opción **Guardar transcripción de los audios** hace que la IA escriba lo que dijo el cliente. El texto aparece debajo del audio en la conversación, y la IA recuerda lo que se dijo en los próximos mensajes. Elige **Temporal (12 horas)**, que viene marcado, **Permanente** o **Desactivado**. En el temporal, solo el texto se borra después de 12 horas; el audio se mantiene. La opción **La IA puede agendar** permite que la IA agende citas en la [Agenda](/es/crm/agenda).
+
+    Agendar es una acción de los planes Prime y Ultra. En el Start, la IA no agenda citas ni mueve la tarjeta, aunque la opción esté encendida.
+  </Accordion>
+</AccordionGroup>
+
+## Probar la IA
+
+<Steps>
+  <Step title="Abre la pestaña Probar">
+    Escribe en el campo **Escribe un mensaje de prueba...** como si fueras un cliente.
+  </Step>
+  <Step title="Usa las sugerencias, si quieres">
+    La pantalla ofrece preguntas listas: "Qual o horário de atendimento?" (¿cuál es el horario de atención?), "Quais as formas de pagamento?" (¿cuáles son las formas de pago?) y "Quero falar com um humano" (quiero hablar con un humano).
+  </Step>
+  <Step title="Empieza de nuevo cuando lo necesites">
+    Haz clic en **Limpiar** para borrar el ensayo y probar de nuevo desde el primer mensaje.
+  </Step>
+</Steps>
+
+Nada de lo que escribes en la prueba se envía a clientes reales.
+
+<Warning>
+  Las respuestas de la prueba también consumen el saldo de tu cuenta.
+</Warning>
+
+## Encender y apagar la IA
+
+Hay varios controles, del más amplio al más específico.
+
+| Dónde | Qué hace |
+| --- | --- |
+| Pestaña **General**, interruptor de la IA | Enciende o pausa la IA. Al apagarla, la pantalla pide confirmación en **Apagar IA** y avisa que la IA deja de responder en todos los canales de la empresa. |
+| Pestaña **General**, **Apagar la IA para todas las conversaciones** | Apaga la IA en todas las conversaciones, incluso en las nuevas. Consulta [Apagar la IA para todas las conversaciones](#apagar-la-ia-para-todas-las-conversaciones). |
+| Pantalla **Tus agentes de IA**, botón **Pausar** o **Activar** | Pausa o reactiva un agente específico. |
+| Pestaña **Canales**, interruptor del canal | Enciende o apaga la IA en un único canal. |
+| Pestaña **General**, **Controlar la IA por conversación** | Enciende o apaga la IA en varias conversaciones elegidas. Consulta [Encender o apagar la IA por conversación](#encender-o-apagar-la-ia-por-conversacion). |
+| Pantalla de conversación | Enciende o apaga la IA solo en esa conversación. Consulta [Cuando una persona asume la conversación](#cuando-una-persona-asume-la-conversacion). |
+
+## Apagar la IA para todas las conversaciones
+
+Este control está en la pestaña **General**, en el bloque **Apagar la IA para todas las conversaciones**. Es independiente del interruptor de la IA.
+
+<Steps>
+  <Step title="Enciende el interruptor del bloque">
+    En la pestaña **General**, enciende el interruptor junto a **Apagar la IA para todas las conversaciones**.
+  </Step>
+  <Step title="Confirma">
+    La pantalla pregunta **¿Apagar la IA para todas las conversaciones?** y avisa que la IA deja de responder en todas las conversaciones, incluso en las nuevas. Haz clic en **Apagar para todas**.
+  </Step>
+</Steps>
+
+Con el interruptor encendido, el bloque muestra el aviso: "La IA está apagada para todas las conversaciones. Para reactivarla en una conversación específica, abre el chat y toca para reactivar la IA allí."
+
+Para volver a la normalidad, apaga el interruptor. Aparece el aviso **IA reactivada para las conversaciones**.
+
+<Tip>
+  Usa este control cuando quieras atender todo a mano durante un periodo, pero dejar a la IA trabajando en algunas conversaciones. Tus mensajes siguen normales.
+</Tip>
+
+## Encender o apagar la IA por conversación
+
+En la pestaña **General**, en el bloque **Encender o apagar la IA por conversación**, haz clic en **Elegir conversaciones**. Se abre la ventana **Encender/Apagar IA por conversación**.
+
+<Steps>
+  <Step title="Encuentra las conversaciones">
+    Usa el campo **Buscar por nombre, número o @...** o desplázate por la lista. Aparecen las conversaciones de los canales conectados a esta IA, tuyas y del resto del equipo. Solo entran en la lista conversaciones de WhatsApp.
+  </Step>
+  <Step title="Revisa el estado de cada conversación">
+    Junto a cada nombre, una insignia muestra quién responde ahí: **IA activada**, **IA desactivada** o **Con una persona**.
+  </Step>
+  <Step title="Marca las conversaciones">
+    Haz clic en cada conversación para marcarla. Para marcar todo a la vez, haz clic en **Seleccionar todas**. Para empezar de nuevo, haz clic en **Limpiar selección**. El contador al lado muestra cuántas están marcadas.
+  </Step>
+  <Step title="Elige encender o apagar">
+    Haz clic en **Encender IA** o en **Apagar IA** y confirma en la pregunta que aparece. El número junto al botón muestra cuántas conversaciones van a cambiar de verdad. Si no quieres aplicar nada, haz clic en **Cancelar**.
+  </Step>
+</Steps>
+
+Así cambias muchas conversaciones a la vez, sin abrir cada una.
+
+La ventana también tiene la pestaña **Contactos**, junto a **Conversaciones**. Ahí eliges contactos en **Elegir de la lista**, con búsqueda y filtros, o envías una lista de números en **Importar**. Luego haz clic en **Silenciar** o en **Encender IA**. El contacto silenciado recibe la insignia **Silenciado**, y la IA deja de responderle en todas las conversaciones de WhatsApp. El equipo lo atiende con normalidad. La importación vale solo para números que ya están en tus contactos.
+
+Solo queda disponible el botón que cambia algo. Pasa el mouse sobre el botón desactivado para ver el motivo:
+
+| Motivo | Cuándo aparece |
+| --- | --- |
+| "Selecciona al menos una conversación." | Todavía no marcaste nada. |
+| "Todas las conversaciones seleccionadas ya tienen la IA activada." | No hay nada que encender. |
+| "Todas las conversaciones seleccionadas ya tienen la IA desactivada." | No hay nada que apagar. |
+
+<Note>
+  **Encender IA** es una reanudación manual: las conversaciones marcadas como **Con una persona** también vuelven a la IA. La pregunta de confirmación lo deja claro: "Las conversaciones con una persona también vuelven a la IA."
+
+  **Apagar IA** es diferente: no toca las conversaciones que alguien asumió. Si alguna conversación queda fuera, el aviso final informa cuántas fueron.
+
+  La ventana trae en el pie una observación que dice que las conversaciones asumidas por una persona no se ven afectadas. Eso valía para las dos acciones y hoy vale solo para **Apagar IA**. Guíate por la pregunta de confirmación.
+</Note>
+
+<Note>
+  Si nada cambia, el CRM avisa **Ninguna conversación fue modificada** y explica: "Las conversaciones ya estaban así o no pudieron modificarse."
+</Note>
+
+<Note>
+  Quien es del equipo y tiene acceso limitado a las conversaciones puede no ver el estado de la IA en ellas. En ese caso la ventana avisa: "No ves el estado de la IA de estas conversaciones. Activar y desactivar sigue disponible: el cambio vale en las conversaciones que alcanza tu permiso."
+
+  Si la lectura falla, aparece "No fue posible leer el estado de la IA de estas conversaciones." con el botón **Intentar de nuevo**. Tu selección se mantiene.
+</Note>
+
+<Warning>
+  Seleccionar todas vale para el agente entero. Con todas las conversaciones de la lista marcadas, **Apagar IA** y **Encender IA** hacen lo mismo que el bloque **Apagar la IA para todas las conversaciones**: valen también para las conversaciones nuevas que lleguen. Para cambiar solo algunas, marca conversación por conversación.
+</Warning>
+
+## Hacer que la IA olvide conversaciones
+
+La IA guarda un resumen y algunos datos aprendidos de cada contacto, para no empezar desde cero en cada mensaje. Cuando esa memoria queda desactualizada, puedes borrarla.
+
+El bloque está en la pestaña **General**, con el nombre **Restablecer memoria de la IA** y la tarjeta **Olvidar conversaciones**. Hay dos formas de usarlo.
+
+**Elegir conversaciones**
+
+<Steps>
+  <Step title="Abre la lista">
+    Haz clic en **Elegir conversaciones**. Se abre la ventana **Restablecer memoria por conversación**.
+  </Step>
+  <Step title="Marca las conversaciones">
+    Usa el campo **Buscar por nombre, número o @...**, haz clic en las conversaciones que quieras o usa **Seleccionar todas**. Solo aparecen conversaciones de los canales conectados a esta IA.
+  </Step>
+  <Step title="Confirma">
+    Haz clic en **Restablecer memoria**. La pantalla pregunta **¿Restablecer la memoria de estas conversaciones?** y explica que la IA va a olvidar el resumen y los datos aprendidos y empezar desde cero con esos contactos. Confirma en **Restablecer memoria**.
+  </Step>
+</Steps>
+
+Cuando todo sale bien, aparece el aviso **Memoria restablecida**. Si alguna conversación falla, aparece **Restablecimiento parcial** con cuántas salieron bien y cuántas fallaron, y las que fallaron quedan marcadas para que lo intentes de nuevo.
+
+**Restablecer todas**
+
+Haz clic en **Restablecer todas** para borrar la memoria de todas las conversaciones de esta IA a la vez. La pantalla pregunta **¿Restablecer la memoria de TODAS las conversaciones?**. Confirma en **Restablecer todo**.
+
+<Warning>
+  Olvidar conversaciones no se puede deshacer. La IA pierde el resumen y los datos que aprendió sobre esos contactos y empieza desde cero con ellos.
+
+  El historial del chat se conserva: los mensajes siguen visibles para ti y para el cliente. La configuración de la IA también queda intacta: personalidad, documentos y canales no se borran. Para borrar la configuración, usa **Restablecer IA**.
+</Warning>
+
+## Tener más de un agente
+
+En la pantalla **Tus agentes de IA**, haz clic en **Crear otra IA**. El nuevo agente se abre en la pestaña **General** para que lo configures.
+
+Si tu empresa ya usó todos los agentes disponibles, aparece la ventana **Agregar otra IA**. Haz clic en **Ir al pago** para contratar un agente adicional, o en **Ahora no** para cerrar. Consulta [Planes y facturación](/es/conta/planos).
+
+En el menú de tres puntos de cada tarjeta, encuentras:
+
+- **Abrir y configurar**
+- **Renombrar**
+- **Ver métricas**: abre la pestaña **Métricas** de ese agente, con los números solo de él.
+- **Pausar** o **Activar**
+- **Resetear**: limpia la configuración y la personalidad. Los canales y el historial de conversaciones no se ven afectados.
+- **Eliminar**: elimina el agente. El agente principal, incluido en el plan, no se puede eliminar.
+
+El botón **Ver métricas** también aparece directamente en la tarjeta, junto a **Pausar** y **Abrir y configurar**, y lleva al mismo lugar.
+
+### Ver el consumo de la cuenta
+
+En la pantalla **Tus agentes de IA**, junto al campo de búsqueda, está el botón **Ver consumo**, justo antes de **Crear otra IA**. Su texto de ayuda explica lo que muestra: **Conversaciones usadas por la IA en su cuenta (todas las IAs)**.
+
+Abre la ventana **Uso**, con la leyenda "Siga cuántas conversaciones ya atendió la IA en su cuenta." Ahí ves **Conversaciones utilizadas** con la barra de progreso, los bloques **Utilizadas** y **Disponibles** y el acceso directo **Agregar conversaciones**, que lleva a la recarga.
+
+<Note>
+  Son dos cosas diferentes. El **Uso** es el saldo de toda la cuenta, sumando todas tus IAs, porque el paquete de conversaciones es del plan. Las **Métricas** son el rendimiento de un solo agente.
+</Note>
+
+<Warning>
+  **Eliminar** en la pantalla de agentes y **Restablecer IA** en la pestaña **General** no se pueden deshacer. **Restablecer IA** borra la personalidad, las versiones, los documentos y el conocimiento, y apaga la IA.
+
+  No lo confundas con **Restablecer memoria de la IA**, que borra solo lo que la IA aprendió en las conversaciones y deja la configuración intacta.
+</Warning>
+
+## Cuando una persona asume la conversación
+
+En los canales con la IA encendida, la pantalla de conversación de [WhatsApp](/es/atendimento/whatsapp) muestra controles de la IA en la parte superior.
+
+- **Asumir**: asumes la conversación y la IA se pausa en ella. Aparece el aviso **Asumiste esta conversación.** La conversación también recibe un [protocolo de atención](/es/ia/protocolo-atendimento).
+- **Pausar IA integrada en esta conversación**: pausa la IA solo ahí. Haz clic de nuevo, ahora en **Reanudar IA integrada en esta conversación**, para devolverla a la IA.
+- **Reiniciar memoria de la IA**: la IA olvida el historial de esa conversación y empieza desde cero con ese contacto. El botón aparece para el dueño de la cuenta y para quien, en el equipo, tiene el permiso de acceso al Agente IA.
+
+La pausa vale para esa conversación. Las demás conversaciones del canal siguen con la IA.
+
+Reanudar funciona incluso cuando otra persona ya había asumido la conversación. El CRM lo confirma con uno de estos avisos:
+
+| Aviso | Qué pasó |
+| --- | --- |
+| **La conversación volvió a la IA.** | Alguien del equipo había asumido la conversación. Se quitó la marca de atención humana y la IA volvió a responder solo en ella. |
+| **La IA volvió a responder en esta conversación.** | La IA solo estaba pausada ahí y fue reactivada. |
+
+Si algo falla, aparece "No fue posible cambiar la IA en esta conversación." con la explicación "No se cambió nada. Inténtalo de nuevo en unos instantes."
+
+<Note>
+  En la pantalla de una conversación de [Instagram](/es/atendimento/instagram), en lugar de los controles de la IA aparece el aviso "La IA integrada atiende solo conversaciones de WhatsApp." Esa atención siempre es manual.
+</Note>
+
+Cuando usas el bloque **Apagar la IA para todas las conversaciones**, la parte superior de la conversación muestra una insignia con el estado:
+
+| Insignia | Qué significa |
+| --- | --- |
+| **IA global apagada** | La IA está apagada y no responde en esta conversación. |
+| **IA global apagada, activa aquí** | La IA está apagada en las demás conversaciones, pero sigue respondiendo en esta. |
+
+En ese estado, el mismo botón pasa a valer solo para esa conversación: **Activar la IA solo en esta conversación (IA global apagada)** enciende la IA ahí, y **Volver al global (apagar la IA en esta conversación)** devuelve la conversación al apagado general.
+
+La IA también puede transferir sola, según las reglas de **Pasar a un agente** en la pestaña **Avanzado**.
+
+## Conversaciones y consumo
+
+El uso de la IA se cuenta en conversaciones. Una conversación equivale a un contacto atendido dentro de una ventana de 24 horas.
+
+La IA no consume conversación cuando no responde o cuando el mensaje llega fuera del horario de atención. Si el cliente envía varios mensajes seguidos, responde todo de una vez y cuenta una sola conversación.
+
+Cuando las conversaciones del mes se acaban y no hay paquete extra, la IA se pausa hasta la renovación. Consulta [Planes y facturación](/es/conta/planos).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿El cliente ve el nombre que le di a la IA?">
+    No. El campo **Nombre de tu IA** es de uso interno. Sirve para que identifiques el agente dentro del CRM.
+  </Accordion>
+  <Accordion title="¿Por qué no consigo encender la IA en un canal?">
+    El interruptor queda bloqueado cuando el agente no está activo o todavía no tiene una personalidad activa. Si aparece el aviso de que el canal ya tiene otra IA encendida, apaga primero la otra.
+  </Accordion>
+  <Accordion title="Cambié la personalidad y no me gustó. ¿Puedo volver atrás?">
+    Sí. En la pestaña **Personalidad**, en **Historial de versiones**, haz clic en **Restaurar** en la versión deseada. La versión que estaba activa sigue guardada en el historial.
+  </Accordion>
+  <Accordion title="La IA dejó de responder. ¿Qué debo revisar?">
+    Revisa si el interruptor de la pestaña **General** está encendido, si el interruptor de **Apagar la IA para todas las conversaciones** está apagado, si el interruptor del canal está encendido en la pestaña **Canales**, si el mensaje llegó dentro del horario definido y si todavía hay **Saldo de créditos**. Mira también si la conversación fue pausada por alguien del equipo o apagada en lote. Si aparece el aviso **Tu IA no tiene ningún canal conectado**, conecta un número. La pestaña **Métricas** muestra los motivos en **Por qué la IA no respondió**.
+  </Accordion>
+  <Accordion title="¿Restablecer la memoria borra los mensajes de la conversación?">
+    No. El historial del chat se conserva: los mensajes siguen visibles para ti y para el cliente. La IA solo olvida el resumen y los datos que aprendió y empieza desde cero con ese contacto. La personalidad, los documentos y los canales también quedan intactos.
+  </Accordion>
+  <Accordion title="Apagué la IA para todas las conversaciones. ¿Puedo encenderla en una sola?">
+    Sí. Abre la conversación en la pantalla de [WhatsApp](/es/atendimento/whatsapp) y usa el botón **Activar la IA solo en esta conversación (IA global apagada)**. La conversación pasa a mostrar la insignia **IA global apagada, activa aquí**. Para devolverla al apagado general, haz clic en **Volver al global (apagar la IA en esta conversación)**.
+  </Accordion>
+  <Accordion title="La IA responde, pero no aplica etiquetas, no agenda y no envía archivos. ¿Por qué?">
+    Esas acciones forman parte de los planes Prime y Ultra. En el plan Start la IA es solo conversacional: responde, califica, pasa a una persona y avisa sobre el lead, pero no aplica [etiquetas](/es/crm/tags), no agenda citas en la [Agenda](/es/crm/agenda), no mueve la tarjeta y no envía archivos ni fotos. Consulta [Planes y facturación](/es/conta/planos).
+  </Accordion>
+  <Accordion title="¿Por qué no veo todos los momentos en Cuándo avisar?">
+    La lista muestra solo los momentos que incluye tu plan. En el Start aparecen **Nuevo lead** y **Mostró interés**. En los planes Prime y Ultra aparecen también **Lead calificado**, **Sin respuesta** y **Recibió enlace**.
+  </Accordion>
+  <Accordion title="Apareció el aviso de que mi IA no tiene canal conectado. ¿Qué hago?">
+    Esto ocurre cuando la IA está encendida pero ningún canal conectado atiende con ella, en general después de eliminar el número que usaba. Haz clic en **Activar número** para ir a la pestaña **Canales** y encender el interruptor de un número, o en **Verificar conexiones** para abrir [Conexiones](/es/conta/conexoes) y revisar el estado de tus canales. El aviso aparece para el dueño de la cuenta.
+  </Accordion>
+  <Accordion title="¿La IA responde en Instagram?">
+    No. La IA integrada atiende solo conversaciones de WhatsApp. En la pantalla de una conversación de [Instagram](/es/atendimento/instagram) aparece el aviso "La IA integrada atiende solo conversaciones de WhatsApp.", y la pestaña **Canales** no ofrece encender la IA en cuentas de Instagram. El canal de Instagram sigue sirviendo para la atención hecha por personas.
+  </Accordion>
+  <Accordion title="¿Quién de mi equipo puede encender y apagar la IA en lote?">
+    El dueño de la cuenta y quien tiene el permiso de acceso al Agente IA. Para esas personas aparecen los bloques **Restablecer memoria de la IA**, **Encender o apagar la IA por conversación** y **Restablecer la IA** en la pestaña **General**, además del botón **Reiniciar memoria de la IA** en la pantalla de conversación. Consulta [Equipo](/es/conta/equipe).
+  </Accordion>
+  <Accordion title="Alguien del equipo asumió una conversación. ¿Cómo se la devuelvo a la IA?">
+    Abre la conversación y haz clic en **Reanudar IA integrada en esta conversación**. El CRM avisa **La conversación volvió a la IA.** y se quita la marca de atención humana. Para devolver varias conversaciones a la vez, usa **Encender IA** en la ventana **Encender/Apagar IA por conversación**: las conversaciones marcadas como **Con una persona** también vuelven.
+  </Accordion>
+  <Accordion title="Quiero cambiar el texto de la IA sin reescribirlo todo. ¿Cómo lo hago?">
+    En la pestaña **Personalidad**, abre el **Constructor de Prompt**, ve a **Editor y vista previa** y haz clic en **Mejorar con IA**. Escribe lo que quieres cambiar, compara en **Cambios sugeridos** y haz clic en **Aplicar cambio**. Consulta [Mejorar el texto de la IA](#mejorar-el-texto-de-la-ia).
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Asistente IA" icon="sparkles" href="/es/ia/assistente-ia">
+    Conversa con el CRM sobre tus datos.
+  </Card>
+  <Card title="Conexiones" icon="plug" href="/es/conta/conexoes">
+    Conecta los canales que la IA va a atender.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp" href="/es/atendimento/whatsapp">
+    Sigue y asume las conversaciones.
+  </Card>
+  <Card title="Planes y facturación" icon="wallet" href="/es/conta/planos">
+    Entiende las conversaciones de tu plan.
+  </Card>
+  <Card title="Entrevista inicial" icon="comments" href="/es/ia/entrevista-inicial">
+    Responde algunas preguntas sobre tu negocio y el CRM arma tu primera IA de atención. Consulta cada camino, lo que se genera y cómo ajustarlo después.
+  </Card>
+</CardGroup>

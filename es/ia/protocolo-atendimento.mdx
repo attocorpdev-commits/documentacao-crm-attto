@@ -1,0 +1,90 @@
+---
+title: "Protocolo de atención"
+sidebarTitle: "Protocolo de atención"
+description: "Código único que recibe la conversación cuando sale de la IA y pasa a una persona del equipo."
+icon: "hashtag"
+keywords: ["protocolo", "código", "transferencia", "agente", "asumir", "IA"]
+---
+
+Cuando la IA transfiere la conversación a un agente, la conversación recibe un código único, el **protocolo de atención**. Ayuda a que el equipo y el cliente hablen de la misma conversación.
+
+<Info>
+  El dueño y los gerentes de la empresa ven esta configuración. Solo el dueño la cambia.
+</Info>
+
+## Cuándo se crea el protocolo
+
+- Cuando la IA pasa la conversación a una persona del equipo.
+- Cuando alguien hace clic en **Asumir** en una conversación, en [WhatsApp](/es/atendimento/whatsapp) o en [Instagram](/es/atendimento/instagram).
+
+El código aparece en la parte superior de la conversación, junto al nombre del contacto, con un botón para copiar.
+
+## Encontrar la conversación por el protocolo
+
+Escribe el código en la búsqueda del CRM, en el campo **Buscar páginas, conversaciones, contactos…**. Si el código existe en tu empresa, la búsqueda muestra el grupo **Protocolo** con la conversación. Haz clic en ella para abrirla. Da igual usar mayúsculas o minúsculas.
+
+## Enviar el protocolo al cliente
+
+El protocolo siempre se crea. Tú eliges si el cliente también recibe un mensaje con el código.
+
+<Steps>
+  <Step title="Abre la configuración">
+    Haz clic en tu foto o inicial, en la esquina superior derecha, y elige **Configuración**. En el grupo **Inteligencia artificial**, haz clic en **Protocolo de atención**.
+  </Step>
+  <Step title="Enciende el envío">
+    Enciende el interruptor **Enviar el protocolo al cliente**. El mensaje sale solo cuando se crea un protocolo nuevo.
+  </Step>
+  <Step title="Escribe el mensaje">
+    En el campo **Mensaje**, escribe el texto. Usa `{protocolo}` donde debe aparecer el código. El texto predeterminado, en portugués, es `Seu protocolo de atendimento é {protocolo}.` (tu protocolo de atención es...).
+  </Step>
+  <Step title="Revisa y guarda">
+    La **Vista previa** muestra cómo queda el mensaje con un código de ejemplo. Haz clic en **Guardar**. El CRM lo confirma con **Protocolo guardado**.
+  </Step>
+</Steps>
+
+<Card title="Abrir Protocolo de atención en el CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/settings/protocol">
+  Te lleva directo a la pantalla. Debes tener tu cuenta abierta en el CRM.
+</Card>
+
+<Tip>
+  El mensaje acepta hasta 500 caracteres. El contador está debajo del campo.
+</Tip>
+
+## Mensajes que pueden aparecer
+
+| Mensaje | Qué hacer |
+| --- | --- |
+| **Escribe el mensaje que recibirá el cliente.** | El campo está vacío. Escribe el texto o apaga el envío. |
+| **Incluye** `{protocolo}` **donde debe aparecer el código.** | Pon `{protocolo}` en el texto. |
+| **Usa hasta 500 caracteres.** | Acorta el mensaje. |
+| **Solo el dueño de la empresa cambia esta configuración.** | Lo estás viendo en modo lectura. Pídeselo al dueño de la empresa. |
+| **Sin permiso para cambiar el protocolo de esta empresa.** | Tu cuenta no puede guardar. Pídeselo al dueño de la empresa. |
+| **No fue posible cargar la configuración del protocolo.** | Haz clic en **Intentar de nuevo**. |
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Apagué el envío. ¿El protocolo deja de existir?">
+    No. El código se sigue creando y aparece en la parte superior de la conversación. Apagar solo impide que el cliente reciba el mensaje.
+  </Accordion>
+
+  <Accordion title="No veo Protocolo de atención en la configuración.">
+    La opción aparece solo para el dueño y los gerentes de la empresa. Consulta [Equipo](/es/conta/equipe).
+  </Accordion>
+
+  <Accordion title="¿El cliente recibe un mensaje en cada transferencia?">
+    El mensaje sale solo cuando se crea un protocolo nuevo.
+  </Accordion>
+</AccordionGroup>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Agente IA" icon="robot" href="/es/ia/agente-ia">
+    Configura cuándo la IA pasa la conversación a una persona.
+  </Card>
+
+  <Card title="WhatsApp" icon="whatsapp" href="/es/atendimento/whatsapp">
+    Asume y sigue las conversaciones.
+  </Card>
+</CardGroup>
