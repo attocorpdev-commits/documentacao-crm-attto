@@ -1,18 +1,23 @@
 ---
 title: "Collections"
 sidebarTitle: "Collections"
-description: "Upload a spreadsheet of who owes you and the CRM sends automatic payment reminders on WhatsApp, Monday to Saturday."
+description: "Upload a spreadsheet of who owes you or pick from your contacts, and the CRM sends automatic payment reminders on WhatsApp, Monday to Saturday. On the same screen, send birthday wishes on the person's birthday."
 icon: "receipt"
 ---
 
-On the **Collections** screen you upload a spreadsheet with who owes you, how much and when it is due. The CRM sends the payment reminders on WhatsApp by itself, on the day and at the time you choose. You track how much is still open, who paid and who replied.
+On the **Collections** screen you upload a spreadsheet with who owes you, how much and when it is due, or you pick people straight from your contacts. The CRM sends the payment reminders on WhatsApp by itself, on the day and at the time you choose. You track how much is still open, who paid and who replied.
+
+The screen has two tabs:
+
+- **Cobranças** (collections): payment reminders.
+- **Aniversariantes** (birthdays): automatic birthday wishes on the person's birthday. See [Birthdays](#birthdays).
 
 <Note>
   This screen collects from **your customers**. It has nothing to do with your company's Atto Corp subscription. To see your plan and your invoices, see [Plans and billing](/en/conta/planos).
 </Note>
 
 <Note>
-  Inside the **Collections** screen, buttons and messages are shown in Portuguese in every language. On this page, the Portuguese label comes first, with the English meaning in parentheses.
+  Inside the **Collections** screen, buttons and messages are shown in Portuguese in every language. On this page, the Portuguese label comes first, with the English meaning in parentheses. The **Billing** tag inside the conversation is translated.
 </Note>
 
 ## How to access
@@ -31,7 +36,7 @@ In the side menu, open **Marketing** and click **Collections**.
 | Manager | Always |
 | Other team members | Only with the **Collections** page checked under allowed pages |
 
-To give someone on your team access, see [Team](/en/conta/equipe).
+To give someone on your team access, see [Team](/en/conta/equipe). The **Aniversariantes** (birthdays) tab follows the same permission.
 
 If your profile has no access, the screen shows **Seu perfil não tem permissão para acessar as cobranças** (your profile does not have permission to access collections), asking you to have the administrator enable the page.
 
@@ -43,8 +48,8 @@ If your profile has no access, the screen shows **Seu perfil não tem permissão
 
 The CRM **reminds** the person to pay. It does not receive the money.
 
-- Payment happens through the link you put in the spreadsheet, in the **Link de pagamento** (payment link) column. It can be a link from your bank, your billing system or wherever you already get paid.
-- The CRM does not check by itself whether the person paid. When the money arrives, you mark the charge as paid, one by one or with a spreadsheet. See [Mark who paid](#mark-who-paid).
+- Payment happens through the link you put in the spreadsheet, in the **Link de pagamento** (payment link) column. It can be a link from your bank, your billing system, a Pix code or wherever you already get paid.
+- The CRM does not check by itself whether the person paid. When the money arrives, you record the payment: one by one, with a spreadsheet, or by updating with the store's spreadsheet. See [Record who paid](#record-who-paid).
 
 ## The dashboard
 
@@ -59,7 +64,7 @@ At the top of the screen there are six panels in reais. Each one shows the amoun
 | **Vencido há mais de 30 dias** (over 30 days overdue) | Bills overdue for longer |
 | **Recebido no mês** (received this month) | What was marked as paid this month |
 
-Below, under **Suas cobranças** (your collections), is the list of your collections. Each collection is a spreadsheet of who owes and when it is due. Each row shows the name, the status, how many people it has, how many are waiting for you, the next reminder and the **Em aberto** (open) and **Recebido** (received) amounts.
+Below, under **Suas cobranças** (your collections), is the list of your collections. Each row shows the name, the status, how many people it has, how many are waiting for you, the next reminder and the **Em aberto** (open) and **Recebido** (received) amounts.
 
 Each collection's status appears in a badge:
 
@@ -68,6 +73,10 @@ Each collection's status appears in a badge:
 | **Rascunho** (draft) | Saved, but the reminders are still off |
 | **Lembretes ligados** (reminders on) | The CRM is sending the reminders |
 | **Pausada** (paused) | Reminders are stopped until you turn them on again |
+
+### Search all collections
+
+In the **Buscar: nome, telefone ou código** (search: name, phone or code) field, type at least 2 letters or 3 digits. The search looks through all your collections at once. Each result shows the installment's payment and reminder, and you can pause, resume, retry the sending or open the collection.
 
 ## Create a collection
 
@@ -79,33 +88,32 @@ Click **Nova cobrança** (new collection). The flow has four steps.
 
     Under **Por qual WhatsApp os lembretes vão sair?** (which WhatsApp will send the reminders?), choose the channel. Each channel shows its type: **WhatsApp oficial** (official WhatsApp) or **WhatsApp por QR code** (WhatsApp by QR code).
 
-    Under **Planilha de quem deve** (spreadsheet of who owes), drag the file in or click to choose it. If you prefer, click **Baixar planilha modelo** (download template spreadsheet) and fill in the ready-made model.
+    Then build the list of who owes. You can use a spreadsheet, pick from your contacts, or both together. See [The spreadsheet](#the-spreadsheet) and [Pick from contacts](#pick-from-contacts).
   </Step>
   <Step title="When to remind">
-    Turn on the reminders you want. There are four:
-
-    - **3 dias antes do vencimento** (3 days before the due date)
-    - **No dia do vencimento** (on the due date)
-    - **2 dias depois do vencimento** (2 days after the due date)
-    - **7 dias depois do vencimento** (7 days after the due date)
-
-    Each reminder shows the date it goes out, using an example bill. Also choose the sending days and time. See [Sending days and time](#sending-days-and-time).
+    Turn on the reminders you want, choose the sending days and time, and what happens when the person replies. See [When to remind](#when-to-remind).
   </Step>
   <Step title="What to say">
     Write the message for each reminder. A ready-made suggestion is already there. See [Write the message](#write-the-message).
   </Step>
   <Step title="Review and turn on">
-    Check the **Resumo** (summary), choose **Quem cuida das respostas** (who handles the replies) and, if you want, send a test to your WhatsApp. Then click **Ligar lembretes** (turn on reminders).
+    Check the **Resumo** (summary) and the schedule, choose **Quem cuida das respostas** (who handles the replies), decide on **Cobrar agora** (charge now) and, if you want, send a test to your WhatsApp. Then click **Ligar lembretes** (turn on reminders).
 
     Not ready to turn them on? Click **Salvar rascunho** (save draft) and come back later.
   </Step>
 </Steps>
 
-### The spreadsheet
+## The spreadsheet
 
-The spreadsheet can be .csv, .xlsx or .xls. It must have phone, amount and due date. Name, description and payment link help with the message.
+Under **Planilha de quem deve** (spreadsheet of who owes), drag the file in or click to choose it. It can be the spreadsheet you already use: the CRM finds the columns by itself.
 
-The template spreadsheet has these columns:
+- Accepted formats: .csv, .xlsx and .xls.
+- It must have **phone**, **amount**, **due date** and **description** (Referente a). If the description is missing, you fill it in on screen.
+- **Name** and **payment link** help with the message, but are not required.
+- The header does not need to be on the first row. Total rows and empty rows are ignored.
+- If the spreadsheet goes over the 50,000-row limit, the screen warns **Planilha grande demais** (spreadsheet too large) and the extra rows are left out.
+
+If you prefer, click **Baixar planilha modelo** (download template spreadsheet) and fill in the ready-made model. It has these columns:
 
 | Column | Required | Example |
 | --- | --- | --- |
@@ -113,31 +121,164 @@ The template spreadsheet has these columns:
 | **Telefone** (phone) | Yes | 5511900000001 |
 | **Valor** (amount) | Yes | 150,00 |
 | **Vencimento** (due date) | Yes | 10/12/2026 |
-| **Referente a** (description) | No | Mensalidade de dezembro |
+| **Código da parcela** (installment code) | No | PARC-0001 |
+| **Referente a** (description) | Yes | Mensalidade de dezembro |
 | **Link de pagamento** (payment link) | No | Your payment link |
-
-<Tip>
-  You do not need these exact column names. The CRM recognizes common Portuguese variations, such as "Cliente" for name, "Vcto" for due date, or "Pix" and "Boleto" for the link.
-</Tip>
 
 Dates use the day/month/year format and amounts use a comma for cents, as in Brazil.
 
-After reading the file, the screen shows how many rows are **prontos** (ready) and how many are **sem telefone** (no phone), **com data estranha** (odd date) or **com valor estranho** (odd amount).
+### What I understood
 
-- Under **Corrija as linhas com problema** (fix the rows with problems), adjust the phone, amount or due date right there, or click **Remover** (remove). A row with a problem gets no reminder.
-- Repeated rows, with the same phone and the same due date, are left out.
-- If the spreadsheet goes over the row limit, the screen warns **Planilha grande demais** (spreadsheet too large) and the extra rows are left out.
+After reading the file, the **O que eu entendi** (what I understood) panel shows how the CRM read the spreadsheet, before saving:
 
-### Who will receive
+- how many installments and from how many customers, for example "10 parcelas de 8 clientes" (10 installments from 8 customers), and the total in reais;
+- which column the phone came from;
+- how each installment is identified (by the installment code, by the sale code with the installment, or by the phone and due date);
+- what the spreadsheet says about installments already paid;
+- three example messages, the way they will arrive.
 
-With the spreadsheet read and the channel chosen, the **Quem vai receber** (who will receive) panel splits people into:
+None of this is saved. With each new spreadsheet, the CRM reads the file from scratch.
+
+### How we read the spreadsheet
+
+The **Como lemos a planilha** (how we read the spreadsheet) panel shows each column of your spreadsheet with its first values, the matched field, how it is read and examples. The columns sit in two tabs:
+
+- **Associadas** (matched): columns that already have a field.
+- **Ação necessária** (action needed): a required field with no column (in red) and columns left without a field.
+
+To change one, pick another field on the column. The count updates right away, without editing the spreadsheet. A column you do not need goes under **Não usar esta coluna** (do not use this column).
+
+| Field | How it is read |
+| --- | --- |
+| **Nome** (name) | Customer name. If missing, the CRM uses the name saved in your contacts |
+| **Telefone** (phone) | Mobile number with area code, in any format |
+| **Telefone 2** (phone 2) | Another phone, used only when the Telefone column is empty or has no valid number |
+| **Valor** (amount) | Amount in reais, with or without R\$, comma or period |
+| **Vencimento** (due date) | Due date |
+| **Código da parcela** (installment code) | Code that identifies the installment and avoids charging the same installment twice |
+| **Código da venda** (sale code) | Sale or order code. Together with the Parcela, it identifies each installment |
+| **Parcela (1/3)** (installment) | Installment number, such as 2/5 or "2 de 5" |
+| **Referente a** (description) | What the charge is for |
+| **Data da compra** (purchase date) | Purchase or issue date |
+| **Tipo (venda, troca)** (type: sale, exchange) | Type of sale |
+| **Data de pagamento** (payment date) | Date the installment was paid. A row with a date is left out of the collection |
+| **Link de pagamento** (payment link) | Link or Pix code to pay |
+
+Two more settings in the same panel:
+
+- **Formato da data** (date format): switch between **Dia/mês (dd/mm/aaaa)** (day/month) and **Mês/dia (mm/dd/aaaa)** (month/day) if the dates were read the wrong way round. The spreadsheet's format is marked "da planilha" (from the spreadsheet).
+- **DDD padrão (opcional)** (default area code, optional): used only on phones that came without an area code. The CRM keeps it for the next spreadsheet.
+
+### Numbers fixed automatically
+
+The CRM adjusts the phone format for sending: it adds the default area code, the ninth digit and the country code. If a cell has two phones, it uses the mobile one (or the first valid one, if there is no mobile).
+
+Click **números corrigidos automaticamente** (numbers fixed automatically) to see the before and after of each row.
+
+When a number cannot be fixed, the screen warns **Não foi possível corrigir** (could not fix) and the row stays out until you fix or remove it.
+
+### Fix the rows with problems
+
+The screen shows how many rows are **prontos** (ready), **sem telefone válido** (no valid phone), **com data estranha** (odd date), **com valor estranho** (odd amount), **para corrigir** (to fix), **sem referente a** (no description), **repetidas** (repeated) and **ignoradas** (ignored).
+
+Under **Corrija as linhas com problema** (fix the rows with problems), adjust them right there, without touching the spreadsheet:
+
+- filter by **Telefone** (phone), **Valor** (amount), **Vencimento** (due date) or **Referente a** (description);
+- each row shows its row number in the spreadsheet and the value as it came;
+- type the full phone with the area code, for example (62) 99123-4567. It counts when you leave the field or press Enter;
+- the date takes the full year (dd/mm/yyyy);
+- a fixed row stays on the list with the note **corrigida, entra na cobrança** (fixed, goes into the collection);
+- click **Remover** (remove) to drop the row.
+
+A row with a problem gets no reminder.
+
+### Description (Referente a)
+
+The **Referente a** (description) says what the charge is for in the message. It is required to move on. If some rows came without it, fill it in one of these ways:
+
+- type a text and click **Usar em todas as vazias** (use on all empty ones);
+- click **Preencher automático** (fill automatically): the CRM uses "Parcela" and the installment code or, without a code, "Vencimento" and the date;
+- fill it row by row in the fix list.
+
+To go back, click **Desfazer** (undo).
+
+### Name
+
+If a row came without a name, the CRM looks for the name saved in your contacts for that phone. Someone with no name anywhere still gets the reminder, without the name in the message.
+
+### Installment code
+
+The installment code is optional, but it helps when you upload the spreadsheet again:
+
+- same code: the installment is updated and, if it was paused, it stays paused;
+- new code: it comes in as a new installment;
+- an installment already paid never goes back to open;
+- the same code on another phone becomes a problem in the fix list.
+
+Without a code, each installment is identified by the phone and the due date. Repeated rows are left out: same code or, without a code, same phone and same due date.
+
+<Tip>
+  If the CRM finds a column that looks like an installment code, but with the code repeated for more than one person, it warns you and does not use that column by itself. If it really is the code, choose **Código da parcela** (installment code) on it.
+</Tip>
+
+### File from the store's system (ERP)
+
+You can upload the file the way the store's system exports it, untreated:
+
+- the CRM fixes swapped accents and odd characters in the file;
+- when the code belongs to the sale and repeats on every installment, the CRM combines **Código da venda** (sale code), **Parcela** (installment) and **Data da compra** (purchase date) to identify each installment;
+- when the Telefone column is empty, it uses the **Telefone 2** (phone 2) column. A salesperson's or guarantor's phone is never used;
+- without a Referente a column, it builds the text from the installment, purchase date and type, for example "Parcela 4/4 da compra de 22/07/2026" (installment 4/4 of the purchase on 22/07/2026);
+- with the **Data de pagamento** (payment date) column, a row with a date (or "PAGO") is left out. If the column is empty on every row, the file only has open installments.
+
+## Pick from contacts
+
+No spreadsheet at hand? In the **Suba sua lista** (upload your list) step, click **Escolher dos contatos** (pick from contacts).
+
+<Steps>
+  <Step title="Check the people">
+    In the window, search by name or number, use **Filtrar por etiqueta** (filter by tag) and check who goes in. **Selecionar todos** (select all) checks everyone in the filter. Click **Usar contatos** (use contacts).
+  </Step>
+  <Step title="Fill in amount and due date">
+    Under **Escolhidos dos contatos** (picked from contacts), type each person's **Valor (R\$)** (amount) and **Vencimento** (due date, dd/mm/yyyy). **Referente a** (description) is optional here.
+
+    With more than one person, use **Mesmo valor e vencimento para todos** (same amount and due date for everyone) and click **Aplicar a todos** (apply to all). You can still change one person afterwards.
+  </Step>
+</Steps>
+
+- The list shows only contacts with WhatsApp. People who asked not to receive messages do not appear.
+- A contact whose number does not work for WhatsApp shows the reason.
+- Someone already in the spreadsheet with the same due date keeps the spreadsheet's data.
+- A repeat (same number and due date) goes in only once.
+- You can pick up to 20,000 contacts.
+- To move on, fill in everyone or remove them with the trash icon. **Tirar todos** (remove all) clears the list.
+
+When you use a spreadsheet and contacts together, the screen shows the **Total da cobrança** (collection total), with how many came from each side.
+
+<Note>
+  If your account does not show the contacts' phone numbers, you cannot pick from here. Use the spreadsheet.
+</Note>
+
+## Who will receive
+
+With the list ready and the channel chosen, the **Quem vai receber** (who will receive) panel splits people into:
 
 - **já conversaram** (already chatted): they have already messaged this WhatsApp;
 - **nunca conversaram** (never chatted): they never talked to this number;
-- **sem WhatsApp** (no WhatsApp): the number has no WhatsApp. This check only happens on a connected WhatsApp by QR code;
-- **pediram para não receber** (asked not to receive): unsubscribed people.
+- **pediram para não receber** (asked not to receive): unsubscribed people. They are left out of the reminders.
 
-People who asked not to receive and people without WhatsApp are left out of the reminders.
+The CRM does not check beforehand whether the number has WhatsApp. If the number cannot receive messages, the reminder shows as **Não chegou** (not delivered) after sending.
+
+## When to remind
+
+In the **Quando lembrar** (when to remind) step, turn on the reminders you want. There are four:
+
+- **3 dias antes do vencimento** (3 days before the due date)
+- **No dia do vencimento** (on the due date)
+- **2 dias depois do vencimento** (2 days after the due date)
+- **7 dias depois do vencimento** (7 days after the due date)
+
+Each reminder shows the date it goes out, using an example bill.
 
 ### Sending days and time
 
@@ -149,19 +290,35 @@ Under **Em qual horário** (at what time), choose the start and end, in Brasíli
 - Each person gets at most 1 reminder per day, even if they are in more than one collection.
 - If a reminder's date falls on a Sunday or on an unchecked day, it goes out on the next chosen day.
 
+### When the person replies
+
+Under **Quando a pessoa responder** (when the person replies), choose for how many days the reminders stop for someone who replied. The default is 3 days, and it can be from 1 to 60. After that, the reminders come back by themselves.
+
+Check **Até eu retomar** (until I resume) so the reminders only come back when someone on the team resumes them.
+
 ## Write the message
 
 In the **O que dizer** (what to say) step, pick a reminder on the side and adjust its message.
 
 - Under **Tom da mensagem** (message tone), choose **Amigável** (friendly), **Neutro** (neutral) or **Firme** (firm). Changing the tone replaces the text with a ready-made suggestion. Then just adjust it.
 - Under **Mensagem** (message), edit the text freely.
-- Under **Inserir campo** (insert field), click **Nome** (name), **Valor** (amount), **Vencimento** (due date), **Referente a** (description) or **Link de pagamento** (payment link). The field goes into the text in square brackets, such as `[nome]` and `[valor]`, and is replaced with each person's data from the spreadsheet.
+- Under **Inserir campo** (insert field), click **Nome** (name), **Valor** (amount), **Vencimento** (due date), **Referente a** (description), **Link de pagamento** (payment link) or **Prazo** (timing). The field goes into the text in square brackets, such as `[nome]` and `[valor]`, and is replaced with each person's data.
 
-The **Como a pessoa vai ver** (how the person will see it) panel shows a preview with the first person in the spreadsheet.
+The `[nome]` field becomes the person's first name, with a capital first letter. For example, "MARIA DA SILVA" becomes "Maria".
+
+The **Como a pessoa vai ver** (how the person will see it) panel shows a preview with the first person on the list.
 
 <Note>
   The suggested messages are in Portuguese. Edit the text if your customers speak another language.
 </Note>
+
+### The Prazo field
+
+The `[prazo]` field becomes "hoje" (today), "amanhã" (tomorrow), "em 3 dias" (in 3 days), "ontem" (yesterday) or "há 2 dias" (2 days ago), depending on the day the message goes out. That way the text stays right even if the reminder goes out on another day, for example after a Sunday.
+
+<Warning>
+  If the text mentions a fixed day, such as "hoje", "amanhã", "ontem", "vence hoje" or "dia do vencimento", without using `[prazo]`, and the reminder has to go out on another day, it is skipped so no wrong text is sent. The screen warns you in the **O que dizer** (what to say) step and in the schedule. The ready-made suggestions already use `[prazo]`.
+</Warning>
 
 ### On official WhatsApp
 
@@ -206,22 +363,66 @@ WhatsApp by QR code has no approval. The screen shows the risk of the number bei
 | **Risco médio de bloqueio** (medium risk of blocking) | Some people never talked to this number |
 | **Risco alto de bloqueio** (high risk of blocking) | Most people never talked to this number |
 
-To lower the risk:
-
-- keep **Variar o texto com IA** (vary the text with AI) on, so each person gets a slightly different text;
-- under **Ritmo de envio** (sending pace), choose **Calmo** (calm, 1 every 40 to 120 s) instead of **Normal** (1 every 20 to 60 s).
+To lower the risk, keep **Variar o texto com IA** (vary the text with AI) on. That way each person gets a slightly different text.
 
 <Warning>
   Many messages to people who do not know your number can make WhatsApp block the number. When most people never talked to you, the safest choice is official WhatsApp. See [WhatsApp (QR Code) or Official WhatsApp (Meta)](/en/primeiros-passos/tipos-whatsapp).
 </Warning>
 
-## Review, test and turn on
+## Safe sending
+
+### Safe pace on WhatsApp by QR code
+
+On WhatsApp by QR code, sending always uses the safe pace. There is no option to change it.
+
+| Rule | How it works |
+| --- | --- |
+| Interval | 1 message every 2 to 4 minutes |
+| Daily limit in week 1 | Up to 50 messages |
+| Daily limit in week 2 | Up to 100 messages |
+| Daily limit after that | Up to 150 messages |
+
+The daily limit counts all collections on this WhatsApp together. Anything over the limit goes out on the next sending day, starting with whoever's bill fell due first. That way the number runs less risk of being blocked.
+
+### When sending fails
+
+- If WhatsApp fails because of instability, the CRM retries by itself.
+- What was not delivered shows as **Não chegou** (not delivered) on WhatsApp by QR code or **Falhou o envio** (sending failed) on official WhatsApp. On QR code, the screen explains that the number may be wrong or not on WhatsApp.
+- Fix the number and use **Tentar de novo** (try again), on the person's row, on the selected ones or in the search. The resend goes out at the next sending time.
+- You can only retry on the day of the reminder. Once that day has passed, the next reminder follows as usual.
+- With 5 or more failures in a day, the collection shows a warning with **Ver quem não recebeu** (see who did not receive) and **Tentar de novo para todas** (try again for all). Whoever handles the replies also gets a notice.
+
+## Review and turn on
 
 In the **Conferir e ligar** (review and turn on) step:
 
 - the **Resumo** (summary) shows in one sentence how many people, how much is open, the days and the time;
 - the reminder list shows the status of each one;
 - under **Quem cuida das respostas** (who handles the replies), choose the team member who will get the conversations of people who reply, or **Ninguém em especial** (no one in particular).
+
+### Schedule for the next 14 days
+
+The **Agenda dos próximos 14 dias** (schedule for the next 14 days) shows how many reminders go out each day and who is in the queue, in sending order. On a new collection, click **Ver a agenda** (see the schedule): the CRM saves the draft to build the schedule, but the reminders only start when you turn them on.
+
+- Under **Mensagens por dia** (messages per day), days without sending show as **Não envia** (no sending). On WhatsApp by QR code, the daily limit shows too, for example "40 de 50" (40 of 50).
+- In the **Fila de envio** (sending queue), whoever's bill fell due first goes first. On a tie, the larger amount goes first.
+- **Tirar da fila** (remove from queue) pauses that person's reminders until someone resumes them.
+- If a reminder is going to be skipped because it mentions a fixed day without `[prazo]`, the schedule warns you.
+
+The schedule also appears in each collection's details.
+
+### Charge now
+
+Under **Cobrar agora?** (charge now?), choose whether to send a reminder today, at the chosen time, to part of the people:
+
+| Option | Who gets it today |
+| --- | --- |
+| **Não, seguir a programação** (no, follow the schedule) | No one. Each reminder goes out on its own day |
+| **Quem já venceu** (already overdue) | Gets the 2-days-after reminder |
+| **Quem vence hoje** (due today) | Gets the due-date reminder |
+| **Quem vence em até 3 dias** (due within 3 days) | Gets the 3-days-before reminder |
+
+Each option shows how many people it covers. People who already got a reminder today, asked not to receive or are paused are left out. On WhatsApp by QR code the daily limit applies: whoever does not fit goes out on the next sending day.
 
 ### Send a test
 
@@ -233,9 +434,9 @@ Under **Mandar um teste para mim** (send me a test), type **Seu WhatsApp** (your
 
 ## Track a collection
 
-Click a collection under **Suas cobranças** (your collections) to open its details. The top shows how many people, the **Em aberto** (open) total and the **Recebido** (received) total.
+Click a collection under **Suas cobranças** (your collections) to open its details. The top shows how many installments from how many customers, the **Em aberto** (open) total and the **Recebido** (received) total.
 
-Use **Buscar por nome, telefone ou referente** (search by name, phone or description) to find someone. To filter, click one of the statuses below. Each one shows how many people it has.
+Use **Filtrar: nome, telefone ou código** (filter: name, phone or code) to find someone. To filter by status, click one of the options below. Each one shows how many installments it has.
 
 | Status | What it means |
 | --- | --- |
@@ -244,16 +445,46 @@ Use **Buscar por nome, telefone ou referente** (search by name, phone or descrip
 | **Vence hoje** (due today) | The due date is today |
 | **Vencida** (overdue) | The due date has passed and it was not paid |
 | **Respondeu** (replied) | The person replied and the reminders stopped for them |
-| **Não chegou** (not delivered) | The last reminder was not delivered |
+| **Não chegou** or **Falhou o envio** (not delivered or sending failed) | The last reminder was not delivered |
+| **Lembretes encerrados** (reminders finished) | Still open, but no reminder left ahead |
 | **Paga** (paid) | Marked as paid |
+
+The list has the columns **Pessoa** (person), **Valor** (amount), **Vencimento** (due date), **Pagamento** (payment), **Lembrete** (reminder) and **Ações** (actions). Next to the phone you see the installment code and the description, when there are any.
+
+### Payment column
+
+| Badge | What it means |
+| --- | --- |
+| **Em aberto** (open) | Not due yet |
+| **Vence hoje** (due today) | Due today |
+| **Vencida há N dias** (overdue for N days) | Past due and not paid |
+| **Paga** (paid) | Marked as paid |
+
+### Reminder column
+
+| Text | What it means |
+| --- | --- |
+| **Próximo em dd/mm** (next on dd/mm) | Day of the next reminder |
+| **Enviado dd/mm** (sent dd/mm) | Reminder sent today, with the next one below |
+| **Ainda não enviado** (not sent yet) | No reminder has gone out yet |
+| **Pausado até dd/mm** (paused until dd/mm) | Paused, comes back by itself on that day |
+| **Pausado até retomar** (paused until resumed) | Paused until someone resumes |
+| **Respondeu, pausado até dd/mm** (replied, paused until dd/mm) | Replied and the reminders come back on that day |
+| **Respondeu, pausado até retomar** (replied, paused until resumed) | Replied and the reminders only come back when someone resumes |
+| **Voltando** (coming back) | Comes back on the next sending |
+| **Lembretes encerrados** (reminders finished) | All reminders that are on have already passed |
+| **Parou, já foi paga** (stopped, already paid) | Paid, no more reminders |
+| **Não chegou** or **Falhou o envio** (not delivered or sending failed) | The last sending was not delivered |
+
+When the collection's reminders are off or paused, the row shows **Lembretes da cobrança desligados** (collection reminders off).
 
 On each person, the conversation icon opens their conversation in the inbox.
 
 ### When the person replies
 
-If the person replies after a reminder, the reminders stop for that person only. They show as **Respondeu** (replied) and the top of the screen shows how many people are waiting for you.
+If the person replies after a reminder, the reminders stop for that person only, for the period chosen under **Quando a pessoa responder** (when the person replies). They show as **Respondeu** (replied) and the top of the screen shows how many people are waiting for you.
 
-Talk to them. If you want to start reminding again, click **Retomar** (resume) on their row.
+Talk to them. If you want to start reminding again before the period ends, use **Retomar** (resume) on their row.
 
 ### Tags on the lead
 
@@ -264,7 +495,37 @@ The CRM puts a status tag on the lead of each person in the collection and swaps
 
 If the person has no lead in the CRM yet, the tag is added when the lead appears. To use these tags in filters and broadcasts, see [Tags](/en/crm/tags).
 
-## Mark who paid
+## What shows in the conversation
+
+- The reminder that was sent shows in the person's conversation only once. On WhatsApp by QR code, it shows whether it was delivered and read.
+- When the person replies, the conversation goes to whoever handles the replies.
+- At the top of the conversation, the **Billing** tag appears when that phone has an open installment. Click it to see the installments (amount, due date, payment and reminder) and to pause or resume the reminders right there. It shows up to 5 installments; the rest stay in Collections.
+
+## Pause and resume
+
+You can pause one person's reminders without pausing the whole collection. Click **Pausar** (pause) and choose:
+
+- **3 dias** (3 days);
+- **7 dias** (7 days);
+- **Até uma data** (until a date): under **Voltar a lembrar no dia** (resume reminders on), pick a day from tomorrow on;
+- **Até eu retomar** (until I resume).
+
+With a time limit, the reminders come back by themselves. To bring them back sooner, click **Retomar lembretes** (resume reminders). The next reminders go out on the usual day and time.
+
+In the **Billing** tag inside the conversation, the same options appear in English: **3 days**, **7 days**, **Until a date**, **Until I resume** and **Resume reminders**.
+
+You find Pause and Resume:
+
+- on each person's row, in the collection details;
+- on the selected ones, when you check several people;
+- in the top search results;
+- in the **Billing** tag inside the conversation.
+
+To stop the whole collection, use **Pausar lembretes** (pause reminders) in the details. **Ligar lembretes** (turn on reminders) starts sending again. Nothing is lost.
+
+## Record who paid
+
+Every payment record can be undone. After marking, the notice shows a **Desfazer** (undo) button for 10 seconds. After that, use **Últimas baixas de pagos** (latest paid records) in the collection details: each record has a **Desfazer** (undo) button. Undoing sets back to open only what is still paid by that record.
 
 ### One or more people
 
@@ -277,7 +538,7 @@ If the person has no lead in the CRM yet, the tag is added when the lead appears
   </Step>
 </Steps>
 
-Marked someone by mistake? Select the person and click **Voltar para em aberto** (back to open).
+Marked someone by mistake? Click **Desfazer** (undo), or select the person and click **Voltar para em aberto** (back to open).
 
 ### With a spreadsheet
 
@@ -286,26 +547,50 @@ Marked someone by mistake? Select the person and click **Voltar para em aberto**
     In the collection details, click **Subir planilha com os pagos** (upload spreadsheet of paid ones).
   </Step>
   <Step title="Upload the file">
-    Use a spreadsheet with the phone column and, if you have it, the due date column. The screen shows how many phones it found.
+    Use a spreadsheet with the installment code or the phone and, if you have it, the due date. The screen shows how many installments become paid, how many were already paid and which rows were not found.
   </Step>
   <Step title="Confirm">
-    Click **Marcar como pagos** (mark as paid).
+    Click **Marcar como pagas** (mark as paid).
   </Step>
 </Steps>
 
-- With the due date column, only the bill with that due date is marked as paid.
-- Without the due date column, all open bills for that phone in this collection are marked as paid.
+- With the installment code, the record applies to that installment.
+- Without a code and with the due date column, only the bill with that due date is marked as paid.
+- Without a code and without the due date column, all open bills for that phone in this collection are marked as paid.
 - A row with an invalid due date is left out. Fix the date in the dd/mm/yyyy format and upload again.
+- If the spreadsheet has the **Data de pagamento** (payment date) column, only rows with a date (or "PAGO") count.
 
-## Pause, turn on and edit
+### Update with the store's spreadsheet
 
-In the collection details:
+Use this when you have the full list of who owes today, for example the file from the store's system.
 
-- **Pausar lembretes** (pause reminders) stops all sending for the collection. Nothing is lost.
-- **Ligar lembretes** (turn on reminders) starts sending again.
-- **Editar lembretes** (edit reminders) opens the four steps again. On a draft, the button is called **Continuar configurando** (continue setting up).
+<Steps>
+  <Step title="Open the window">
+    In the collection details, click **Atualizar com a planilha da loja** (update with the store's spreadsheet).
+  </Step>
+  <Step title="Upload the spreadsheet">
+    The reading is the same as when creating: **O que eu entendi** (what I understood), **Como lemos a planilha** (how we read the spreadsheet) and the row fixes. Click **Conferir mudanças** (review changes).
+  </Step>
+  <Step title="Check what changes">
+    The screen shows how many installments are **novas** (new), **alteradas** (changed), **iguais** (unchanged) and how many **sumiram** (disappeared).
+  </Step>
+  <Step title="Save">
+    Mark as paid the ones that disappeared and were already paid, then click **Salvar atualização** (save update) or **Salvar e marcar** (save and mark).
+  </Step>
+</Steps>
 
-When editing, you can upload another spreadsheet. It adds or updates people, and anyone who already paid stays paid.
+- The reminders, messages and time stay the same. Anyone who already paid stays paid.
+- Under **Sumiram da planilha nova: marcar como pagas?** (gone from the new spreadsheet: mark as paid?), mark them one by one or use **Marcar todas** (mark all). The ones you do not mark stay open and keep getting reminders.
+- On a file from the store's system that only has open installments, the ones that disappeared come already marked as paid. Ones due outside the spreadsheet's dates stay unmarked.
+- If the spreadsheet has rows with problems, none of the ones that disappeared is marked by itself. Fix the rows or mark them by hand.
+- Marking more than 30% of the open installments asks for an extra confirmation.
+- Among the new installments, people who asked not to receive are left out of the reminders.
+
+## Edit a collection
+
+In the details, **Editar lembretes** (edit reminders) opens the four steps again. On a draft, the button is called **Continuar configurando** (continue setting up).
+
+When editing, you can upload another spreadsheet. It adds or updates installments, and anyone who already paid stays paid. To save without changing the status, use **Salvar alterações** (save changes).
 
 <Note>
   On official WhatsApp, if you change the text of a reminder that was already approved, send it for approval again. Until WhatsApp approves the new version, the reminders keep using the previously approved message.
@@ -313,17 +598,109 @@ When editing, you can upload another spreadsheet. It adds or updates people, and
 
 The screen has no button to delete a collection. To stop it for good, use **Pausar lembretes** (pause reminders).
 
+## Birthdays
+
+On the **Aniversariantes** (birthdays) tab, the CRM sends a birthday message on WhatsApp on each listed person's birthday. Each person gets at most 1 birthday message per year.
+
+### Create a birthday sending
+
+Click **Novo envio de aniversário** (new birthday sending). Everything is on a single screen.
+
+<Steps>
+  <Step title="Name and WhatsApp">
+    Fill in **Nome do envio** (sending name; the default is "Aniversariantes") and choose the WhatsApp that will send the message.
+  </Step>
+  <Step title="List of people">
+    Upload the spreadsheet or click **Escolher dos contatos** (pick from contacts). The spreadsheet needs phone and date of birth. The template (**Baixar planilha modelo**, download template spreadsheet) has the columns **Nome** (name), **Telefone** (phone) and **Data de nascimento** (date of birth).
+  </Step>
+  <Step title="Message">
+    Write the message text or, on official WhatsApp, choose the approved template.
+  </Step>
+  <Step title="Time and Sunday">
+    Choose the time and what to do when the birthday falls on a Sunday.
+  </Step>
+  <Step title="Save">
+    Click **Salvar e ligar** (save and turn on) to start, or **Salvar sem ligar** (save without turning on) to turn it on later.
+  </Step>
+</Steps>
+
+### The birthday spreadsheet
+
+- The date of birth can be dd/mm/yyyy or just dd/mm.
+- With the year, the message can say the age. Without the year, the person still gets the message and the age becomes "mais um ano" (one more year).
+- The screen shows how many are **prontos** (ready), **sem telefone válido** (no valid phone), **com data estranha** (odd date) and **repetidos** (repeated, same phone). Fix the phone or the date right on screen.
+- You can change the column of each field, the **Formato da data** (date format) and the **DDD padrão** (default area code). The CRM remembers the columns you chose for an identical spreadsheet.
+- People who asked not to receive messages are left out of the birthday wishes.
+- When editing, the new spreadsheet adds or updates people by phone. Check **Tirar da lista quem não está nesta planilha** (remove from the list anyone not in this spreadsheet) to replace the list. Anyone removed is not deleted: they come back if they appear in a spreadsheet later.
+
+When picking from contacts, type each person's date of birth (dd/mm or dd/mm/yyyy).
+
+### The birthday message
+
+On WhatsApp by QR code, write the text. The fields in square brackets become each person's data:
+
+| Field | Becomes |
+| --- | --- |
+| `[primeiro nome]` | The first name, such as "Maria" |
+| `[nome]` | The full name, such as "Maria da Silva" |
+| `[idade]` | "30 anos" (30 years), or "mais um ano" (one more year) when the spreadsheet has no year |
+
+The message can have up to 1000 characters and up to 10 fields.
+
+On official WhatsApp, the message must be an approved template. Choose the **Modelo aprovado** (approved template) and say what goes in each field. If the WhatsApp has no approved template yet, create a birthday template in [Broadcasts](/en/marketing/disparos) and come back once WhatsApp approves it.
+
+### Time and Sunday
+
+The time is in Brasília time and applies every day. The default is 9 a.m. to 6 p.m., with at least 30 minutes. The message goes out within that time on the birthday and never after that day.
+
+Under **Aniversário no domingo** (birthday on Sunday), choose:
+
+| Option | What happens |
+| --- | --- |
+| **Enviar no domingo mesmo** (send on Sunday anyway) | Default: the message goes out on the birthday |
+| **Enviar no sábado antes** (send on the Saturday before) | Whoever has a birthday on Sunday gets it the day before |
+| **Enviar na segunda depois** (send on the Monday after) | Whoever has a birthday on Sunday gets it the next day |
+
+<Warning>
+  On WhatsApp by QR code, the birthday wishes share the safe pace and the daily limit with the collections on the same number. The screen shows how many birthday messages fit per day in the chosen time. Whoever does not fit that day does not get it that year.
+</Warning>
+
+### Track the birthdays
+
+The tab shows each sending with the badge **Ligado** (on), **Pausado** (paused) or **Desligado** (off), how many people it has, how many birthday messages went out this year and the next birthday.
+
+Click a sending to open its details:
+
+- the counts of **pessoas na lista** (people on the list), **fazem aniversário hoje** (birthdays today) and **nos próximos 30 dias** (in the next 30 days);
+- the example message;
+- **Mandar um teste para mim** (send me a test): the test goes out right away, with example data, between 8 a.m. and 8 p.m. You can send up to 10 tests per day;
+- **Próximos aniversários** (upcoming birthdays), with search by name or phone. Each person shows the next birthday message, whether they already got one this year or why it did not go out;
+- **Tirar da lista** (remove from list): the person no longer gets the birthday message. If they appear in a new spreadsheet, they come back;
+- **Editar ou subir planilha** (edit or upload spreadsheet) and **Pausar** (pause) or **Ligar** (turn on).
+
 ## Frequently asked questions
 
 <AccordionGroup>
   <Accordion title="Does the CRM receive the payment for me?">
-    No. The CRM only sends the reminders. The person pays through the link you put in the **Link de pagamento** (payment link) column. When the money arrives, mark the charge as paid.
+    No. The CRM only sends the reminders. The person pays through the link you put in the **Link de pagamento** (payment link) column. When the money arrives, record the payment in the collection.
   </Accordion>
   <Accordion title="Does the CRM find out by itself who paid?">
-    No. Mark who paid with **Marcar como pago** (mark as paid) or **Subir planilha com os pagos** (upload spreadsheet of paid ones). While the bill is open, reminders that are on keep going out.
+    No. Record it with **Marcar como pago** (mark as paid), **Subir planilha com os pagos** (upload spreadsheet of paid ones) or **Atualizar com a planilha da loja** (update with the store's spreadsheet). While the bill is open, reminders that are on keep going out.
+  </Accordion>
+  <Accordion title="My spreadsheet does not follow the template. Do I need to fix it?">
+    No. Upload it as it is. The CRM finds the columns, ignores total rows and fixes the phone format. Check **O que eu entendi** (what I understood) and change the column in **Como lemos a planilha** (how we read the spreadsheet) if something is wrong.
+  </Accordion>
+  <Accordion title="Why can't I move on from the first step?">
+    Something is missing: the collection name, the channel, a row without **Referente a** (description), a person picked from contacts without an amount or due date, or no ready person at all. The screen shows what is missing in red.
   </Accordion>
   <Accordion title="Why did a reminder not go out on Sunday?">
     Nothing is ever sent on Sunday. The reminder goes out on the next day chosen under **Em quais dias pode mandar** (which days it can send).
+  </Accordion>
+  <Accordion title="Why was a reminder skipped?">
+    The text mentions a fixed day, such as "hoje" (today), without using `[prazo]`, and the reminder had to go out on another day. Edit the message and use `[prazo]`.
+  </Accordion>
+  <Accordion title="Why didn't everyone get it today on WhatsApp by QR code?">
+    WhatsApp by QR code has a daily limit: up to 50 messages in week 1, 100 in week 2 and 150 after that, adding up all collections on the number. Whoever did not fit goes out on the next sending day.
   </Accordion>
   <Accordion title="A person is in two collections. Do they get two reminders on the same day?">
     No. Each person gets at most 1 reminder per day.
@@ -335,7 +712,10 @@ The screen has no button to delete a collection. To stop it for good, use **Paus
     Check the error message. The most common ones: the test only goes out between 8 a.m. and 8 p.m., Monday to Saturday; the number needs an area code and 10 or 11 digits; the limit is 10 tests per day; and, on official WhatsApp, the message must be approved first.
   </Accordion>
   <Accordion title="Someone shows as Não chegou. What does it mean?">
-    The last reminder to that person was not delivered. Check that the number is right and that the channel is connected. Open their conversation with the conversation icon to see what happened.
+    The last reminder to that person was not delivered. The number may be wrong or not on WhatsApp, or the channel may be disconnected. Fix the number and use **Tentar de novo** (try again). Open their conversation with the conversation icon to see what happened.
+  </Accordion>
+  <Accordion title="I marked someone as paid by mistake. How do I undo it?">
+    Click **Desfazer** (undo) on the notice, or under **Últimas baixas de pagos** (latest paid records) in the collection details. For a single person, select them and click **Voltar para em aberto** (back to open).
   </Accordion>
   <Accordion title="The chosen WhatsApp shows as disconnected. Do the reminders go out?">
     No. The reminders only go out after the channel is reconnected. See [Connections](/en/conta/conexoes).

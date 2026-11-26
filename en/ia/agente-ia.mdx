@@ -114,6 +114,16 @@ Inside an agent, the tabs appear in this order: **General**, **Personality**, **
     - In **Version history**, click **Restore** to go back to an earlier version.
 
     To adjust the text without rewriting all of it, see [Improve the AI text](#improve-the-ai-text).
+
+    **Prompt draft waiting for you**
+
+    An assistant connected through [MCP](/en/plataforma/mcp) can propose a new prompt. It never goes live on its own: the AI keeps using the active version until you decide.
+
+    - When there is a draft, this tab shows the notice **Prompt draft waiting for you**. Click **Review draft**.
+    - In **What changed**, see the new and removed lines. In **Full text**, read the whole prompt.
+    - Click **Activate this version** to put the draft live, or **Close without activating** to leave things as they are. The current active version stays saved in the history.
+    - In the history, the draft shows up as **MCP draft**, with a **Review** button instead of **Restore**.
+    - If the draft has invisible characters, they show up marked as `[U+...]` and it cannot be activated, because they can hide instructions.
   </Tab>
   <Tab title="Documents">
     These are the files the AI uses when serving customers. With each document, the AI can read the content to reply and send the file to the customer.

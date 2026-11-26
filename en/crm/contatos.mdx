@@ -61,7 +61,7 @@ Click a row in the list. A side panel opens with the lead's details.
 - **Name and phone:** click the field, change it and click outside. The change is saved right away.
 - **Tags:** click **Add tag...** to choose an existing tag or create a new one. To remove one, click the tag's **x**.
 - **Estimated value** and **Notes:** change them and click outside the field to save.
-- **Move to pipeline:** click the pipeline you want. In **Stage**, choose the stage.
+- **Move to pipeline:** click the pipeline you want. In **Stage**, choose the stage. For a loss stage, the CRM asks for the **Loss reason** before moving. See [Pipeline](/en/crm/pipeline).
 - **AI summary:** shows the conversation summary written by the AI.
 - **Schedule activity:** creates an appointment for this contact. It appears in the Calendar on the chosen day.
 - **AI replies to this contact:** turn it off so the AI does not reply to this contact on WhatsApp. Your team handles them as usual and the contact shows as **Silenced**. Depends on the AI Agent permission.
@@ -70,6 +70,8 @@ Click a row in the list. A side panel opens with the lead's details.
 ## Open a contact's conversation
 
 Open the contact and click **Start conversation**, at the bottom of the panel. The CRM takes you to the conversation on WhatsApp. If it does not exist yet, it is created right away. For an Instagram contact, the button is **Open in Direct**.
+
+The conversation opens in the company shown on the screen, without switching companies. See [switch company](/en/conta/trocar-empresa).
 
 <Warning>
   You need a connected WhatsApp. Without it, the **WhatsApp not connected** notice appears, with a **Go to Connections** shortcut.
@@ -81,12 +83,14 @@ Check the box next to the contacts, or use **Select all** to check all the ones 
 
 - **Apply:** type the tags, separated by commas, and add them to all selected contacts.
 - **Remove tags:** removes the typed tags from the selected contacts.
-- **Delete:** deletes the selected contacts.
+- **Delete:** deletes the selected contacts. It only appears for people with the **Delete contact** permission, besides the owner and managers.
 - **Clear:** clears the selection.
 
 <Warning>
   Deleting contacts cannot be undone.
 </Warning>
+
+If your permission does not allow deleting, **You don't have permission to delete contacts. Ask the company owner or a manager.** appears.
 
 <Tip>
   To delete a contact along with a channel's conversation and media, use **Apagar contato** (delete contact) at the top of the conversation. See [WhatsApp](/en/atendimento/whatsapp#delete-a-contact).

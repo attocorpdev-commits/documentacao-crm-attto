@@ -1,6 +1,6 @@
 ---
 title: "Calendar"
-description: "Book appointments, block time off, register services and connect your Google Calendar account."
+description: "Book appointments, block time off, register services, connect Google Calendar and send event reminders on WhatsApp."
 icon: "calendar"
 ---
 
@@ -154,6 +154,95 @@ The **Clear** button removes the appointments you created in the month open on t
 <Warning>
   This action cannot be undone. Check the month shown before confirming.
 </Warning>
+
+## Event reminders on WhatsApp
+
+To remind people about an event, such as a class, a service or a meeting, use the **Event reminders** screen. The CRM sends on its own, on WhatsApp, the attendance confirmation, the reminder and the notice that the event is about to start, up to 30 minutes before.
+
+In the side menu, open **Marketing** and click **Event reminders**, right below **Collections**. The screen lists your events, with the status, the date and the next reminder.
+
+<Card title="Open Event reminders in the CRM" icon="arrow-up-right-from-square" horizontal href="https://app.attocorp.com/app/avisos">
+  Takes you straight to the screen. You need to be signed in to your CRM account.
+</Card>
+
+<Note>
+  Inside the **Event reminders** screen, buttons and messages are shown in Portuguese in every language. In this section, the Portuguese label comes first, with the English meaning in parentheses.
+</Note>
+
+<Note>
+  Event reminders are separate from Calendar appointments. Anyone with access to **Collections** can use the screen. To give someone on your team access, check the **Collections** page in their permissions. See [Team](/en/conta/equipe).
+</Note>
+
+### Create a reminder
+
+Click **Novo aviso** (new reminder). Setup has 4 steps.
+
+<Steps>
+  <Step title="Event">
+    Fill in **Nome do evento** (event name), the date and the time (Brasília time). **Local (opcional)** (location, optional) and **Link (opcional)** (link, optional) only go into the message when filled in. Under **Por qual WhatsApp os avisos vão sair?** (which WhatsApp will send the reminders?), pick the channel.
+  </Step>
+  <Step title="People">
+    Upload the spreadsheet with the name and phone of who will receive them, or click **Escolher dos contatos** (pick from contacts) to select people from your list. You can use both together: the same phone goes in only once. Rows with a problem show in red for you to fix.
+  </Step>
+  <Step title="Reminders">
+    Turn on the reminders you want to send and adjust the message of each one. Each reminder already comes with a ready-made text.
+  </Step>
+  <Step title="Review">
+    See when each reminder goes out and to how many people. Under **Seu WhatsApp** (your WhatsApp), send yourself a test. Then click **Ligar avisos** (turn on reminders). If you prefer to leave it for later, click **Salvar sem ligar** (save without turning on).
+  </Step>
+</Steps>
+
+### When each reminder goes out
+
+| Reminder | When it goes out |
+| --- | --- |
+| **7 dias antes**, **5 dias antes**, **3 dias antes**, **2 dias antes** (7, 5, 3, 2 days before) | On the chosen day, within the sending hours |
+| **1 dia antes (véspera)** (1 day before, the eve) | On the eve, within the sending hours |
+| **No dia do evento** (on the event day) | On the day, within the sending hours |
+| **Algumas horas antes** (a few hours before) | From 1 to 12 hours before the event, at the exact time |
+| **30 minutos antes** (30 minutes before) | 30 minutes before the event, at the exact time |
+
+Day reminders go out within **Avisos por dia saem entre** (day reminders go out between), which starts as 8 a.m. to 8 p.m. Hour reminders go out between 7 a.m. and 10 p.m. A reminder whose time has already passed, or that would fall after the event, does not go out.
+
+### Messages
+
+Each reminder has a ready-made template: **Confirmação** (confirmation), **Lembrete** (reminder) or **Começa em 30 minutos** (starts in 30 minutes). Use **Inserir campo:** (insert field) to add each person's and the event's data. The **Como a pessoa vai ver** (how the person will see it) preview shows the result.
+
+| Field | What goes in |
+| --- | --- |
+| `{nome}` | The person's first name |
+| `{evento}` | Event name |
+| `{data}` | Event day |
+| `{hora}` | Event time |
+| `{local}` | Address or place of the event |
+| `{link}` | Event link, such as a livestream or sign-up |
+
+<Note>
+  On Official WhatsApp (Meta), each message needs to be approved first. Click **Enviar para aprovação** (send for approval). It is usually approved in minutes. The reminders can only be turned on after all messages are approved.
+</Note>
+
+<Warning>
+  On WhatsApp (QR Code), the schedule preview shows sending risks in red, such as pace and the daily limit. The daily limit is shared with [Collections](/en/marketing/cobrancas): reminders only use what is left.
+</Warning>
+
+People who asked not to receive messages are left out of the reminders.
+
+### Track and change a reminder
+
+Click an event in the list to see the status of each reminder and each person: sent, queued, not delivered and not sent, with the reason. Use **Buscar por nome ou telefone** (search by name or phone) to find someone.
+
+| Button | What it does |
+| --- | --- |
+| **Editar** (edit) | Changes the people, the reminders and the messages |
+| **Pausar** (pause) or **Ligar** (turn on) | Pauses or turns the reminders back on. While paused nothing goes out, and a reminder whose time passes in the meantime does not go out later |
+| **Remarcar** (reschedule) | Changes the event date and time. The reminders go out again, counting from the new date |
+| **Cancelar evento** (cancel event) | Stops all reminders and cancels what is queued. It cannot be undone |
+| **Tentar de novo** (try again) | Resends the messages that failed, for everyone or for one person |
+| **Tirar da lista** (remove from list) | Removes a person from the event. They no longer receive the reminders |
+
+<Tip>
+  To change the date of a reminder that is on, use **Remarcar** (reschedule), not **Editar** (edit).
+</Tip>
 
 ## Frequently asked questions
 

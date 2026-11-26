@@ -7,7 +7,7 @@ icon: "plug"
 
 O MCP (Model Context Protocol) é um jeito padrão de ligar um assistente de IA a outro sistema. Com ele, você conversa com a IA de sua preferência e ela consulta o CRM por você: busca leads, resume o funil, lê uma conversa, lista a agenda.
 
-Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, anotar, criar tarefas e agendamentos. O MCP do CRM **nunca apaga nada e nunca envia mensagem** para os seus clientes.
+Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, anotar, criar tarefas e agendamentos. Ela também pode ler o prompt do seu [Agente IA](/ia/agente-ia) e propor um rascunho de prompt, que só entra no ar quando você revisa e ativa na tela do agente. O MCP do CRM **nunca apaga nada e nunca envia mensagem** para os seus clientes.
 
 ## Quem pode usar
 
@@ -44,7 +44,7 @@ A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assis
     Em **Nome**, escreva algo que ajude a reconhecer a chave depois, por exemplo "Claude da equipe".
   </Step>
   <Step title="Escolha os escopos">
-    **Leitura** já vem marcada e é obrigatória. Clique em **Escrita** se quiser que a IA também crie e organize dados. Só o dono da empresa libera **Escrita**.
+    **Leitura** já vem marcada e é obrigatória. Clique em **Escrita** se quiser que a IA também crie e organize dados e proponha rascunhos do prompt da IA. Só o dono da empresa libera **Escrita**.
   </Step>
   <Step title="Escolha o acesso">
     Em **Acesso**, marque **Todas as minhas empresas** ou **Empresas específicas**. **Todas as minhas empresas** inclui empresas futuras em que você for dono ou gerente. Em **Empresas específicas**, marque cada empresa na lista.
@@ -144,12 +144,18 @@ Com qualquer chave, a IA tem estas ferramentas de consulta:
 | `list_templates` | Lista os templates de mensagem, com status e motivo de rejeição. |
 | `list_campaigns` | Lista os disparos com os contadores de envio. |
 | `billing_summary` | Resume as listas de cobrança. Exige o recurso de disparos ativo na empresa. |
-| `list_agents` | Lista os agentes de IA (nome, se está ativo, modelo, canais). Nunca mostra o prompt. |
+| `list_agents` | Lista os agentes de IA (nome, se está ativo, modelo, canais). Não mostra o prompt: para isso existe `get_agent_prompt`. |
+| `get_agent_prompt` | Lê o prompt ativo de um agente de IA: o texto completo, o número da versão ativa, o total de versões e, se houver, o rascunho do MCP que aguarda você. Só com chave gerada pelo dono da empresa. |
+| `list_prompt_versions` | Mostra o histórico de versões do prompt de um agente, da mais nova para a mais antiga: número, origem (inclusive se é rascunho do MCP), data, tamanho, se é a ativa e o começo do texto. 20 versões por padrão, até 100. Só com chave gerada pelo dono da empresa. |
 | `list_team` | Lista a equipe ativa (nome e papel). |
 | `stage_history` | Mostra as mudanças de etapa dos leads, das mais recentes para as mais antigas. |
 | `list_send_failures` | Lista as falhas de envio de mensagens. |
 
-As listas vêm em páginas de até 100 itens. A IA pede a próxima página quando precisa.
+São 21 ferramentas de consulta. As listas vêm em páginas de até 100 itens. A IA pede a próxima página quando precisa.
+
+<Note>
+  `get_agent_prompt` e `list_prompt_versions` funcionam com chave só de **Leitura**, mas só se quem gerou a chave for o dono da empresa. Chave gerada por gerente recebe a recusa "So chave criada pelo dono da empresa le o prompt da IA". Com **Mascarar dados pessoais** ligado, telefones e e-mails escritos no prompt chegam escondidos para a IA.
+</Note>
 
 ## O que a IA pode escrever
 
@@ -164,16 +170,62 @@ Só com uma chave que tenha **Escrita** e só pelo endereço `https://app.attoco
 | `add_note` | Acrescenta uma observação ao lead, com a data e a marca "via MCP". Nunca apaga as observações que já existem. |
 | `create_activity` | Cria uma tarefa de follow-up para um lead. O responsável é quem gerou a chave. |
 | `create_appointment` | Cria um agendamento para um lead na agenda do CRM. Não cria evento no Google. |
+| `save_prompt_draft` | Grava um **rascunho** de prompt para um agente de IA. O rascunho **não entra no ar**: ele espera você revisar e ativar na aba **Personalidade** do agente. Veja [Rascunho do prompt da IA](#rascunho-do-prompt-da-ia). |
+| `restore_prompt_version` | Volta o agente para uma versão anterior do prompt, do histórico. Não serve para rascunhos do MCP, que só são ativados na tela. Nenhuma versão é apagada. |
 | `assign_lead` | Define o responsável pelo lead e pelas conversas dele, entre os membros ativos da equipe. |
+
+São 10 ferramentas de escrita.
 
 <Warning>
   Mudar um lead de etapa com `move_stage` pode avisar a equipe e enviar a conversão para o [Rastreamento Meta](/marketing/rastreamento-meta). Isso acontece fora do CRM e não se desfaz. O próprio servidor orienta a IA a confirmar com você antes.
 </Warning>
 
+<Warning>
+  `restore_prompt_version` muda na hora o texto que a IA usa: a partir da próxima mensagem, ela responde aos seus clientes com a versão escolhida. O próprio servidor orienta a IA a confirmar com você antes. A versão que estava ativa continua salva no histórico.
+</Warning>
+
+## Rascunho do prompt da IA
+
+O prompt é o texto que guia todas as respostas do seu [Agente IA](/ia/agente-ia). Por isso, o MCP **nunca coloca um prompt novo no ar sozinho**. Ele só propõe um rascunho, e uma pessoa da sua empresa decide se ativa.
+
+Isso protege você de um risco real: a IA do seu assistente lê mensagens, observações e nomes escritos por clientes. Se um cliente escrever ali uma instrução disfarçada, ela não vira regra da IA que atende todos os seus clientes sem que alguém leia antes.
+
+<Steps>
+  <Step title="O assistente lê o prompt atual">
+    Com `get_agent_prompt`, o assistente lê o texto ativo e anota o número da versão ativa.
+  </Step>
+  <Step title="O assistente grava o rascunho">
+    Com `save_prompt_draft`, ele envia o texto completo proposto e o número da versão que leu. O rascunho entra no histórico com a origem **Rascunho do MCP**. A IA continua respondendo com a versão ativa de antes.
+  </Step>
+  <Step title="Você vê o aviso">
+    Na aba **Personalidade** do agente aparece o aviso **Rascunho do prompt aguardando você**. Clique em **Revisar rascunho**.
+  </Step>
+  <Step title="Você revisa">
+    Em **O que mudou**, veja as linhas novas e as removidas. Em **Texto completo**, leia o prompt inteiro.
+  </Step>
+  <Step title="Você decide">
+    Clique em **Ativar esta versão** para colocar o rascunho no ar, ou em **Fechar sem ativar** para deixar tudo como está.
+  </Step>
+</Steps>
+
+Regras do rascunho:
+
+- **Só o dono.** Gravar rascunho exige chave com **Escrita**, e a gravação só passa se quem gerou a chave for o dono da empresa.
+- **Chave sem máscara.** Com **Mascarar dados pessoais** ligado, o prompt lido vem com telefones e e-mails escondidos. Por isso, essa chave não grava rascunho: gravar de volta estragaria esses dados no texto.
+- **Tamanho.** O texto precisa ter de 20 a 100.000 caracteres.
+- **Sem caracteres invisíveis.** Texto com caracteres invisíveis (que podem esconder instruções) é recusado. Se algum chegar à tela, ele aparece marcado como `[U+...]` e o botão de ativar fica travado.
+- **Versão conferida.** Se o prompt ativo mudou depois da leitura, o rascunho é recusado e o assistente precisa ler de novo.
+- **Sem repetição.** Texto igual ao da versão ativa ou a um rascunho que já existe não é gravado de novo.
+- **No máximo 5 rascunhos esperando** a sua revisão por agente. Depois disso, o assistente precisa esperar você revisar.
+- **No máximo 30 rascunhos por agente em 24 horas.**
+- **Nada é apagado.** Rascunhos e versões antigas ficam no histórico.
+- **Registro.** Cada rascunho e cada volta de versão pelo MCP ficam registrados com a chave usada, sem guardar o texto no registro.
+
 ## Segurança e limites
 
 - **Nada é apagado e nenhuma mensagem é enviada.** Não existe ferramenta para isso.
 - **Escrita só para o dono.** Mesmo com uma chave de escrita, a mudança só passa se quem gerou a chave ainda for o dono da empresa.
+- **Prompt da IA só para o dono.** Ler o prompt e o histórico de versões só funciona com chave gerada pelo dono da empresa. Rascunho de prompt nunca entra no ar sem alguém ativar na tela.
 - **A chave vale só para as empresas escolhidas.** Pedido para outra empresa é recusado.
 - **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa.
 - **Dados mascarados.** Com **Mascarar dados pessoais** ligado, telefone, e-mail e CPF chegam escondidos para a IA.
@@ -243,6 +295,10 @@ No assistente de IA, a chave inválida, expirada ou revogada aparece como "token
     A chave ou a empresa passou do limite de uso. Espere alguns segundos e peça de novo. A própria resposta diz quanto tempo esperar.
   </Accordion>
 
+  <Accordion title="O assistente pode trocar o prompt do meu Agente IA sozinho?">
+    Não. Com `save_prompt_draft` ele só grava um rascunho, que fica esperando na aba **Personalidade** do agente até alguém clicar em **Ativar esta versão**. A única mudança direta é `restore_prompt_version`, que volta para uma versão antiga do histórico que não seja rascunho do MCP, e o servidor orienta a IA a confirmar com você antes.
+  </Accordion>
+
   <Accordion title="Posso usar a mesma chave em vários assistentes?">
     Pode, mas o ideal é uma chave para cada assistente ou automação. Assim, ao revogar uma, as outras continuam funcionando, e a aba **Conexões** mostra quem usou cada chave.
   </Accordion>
@@ -253,6 +309,10 @@ No assistente de IA, a chave inválida, expirada ou revogada aparece como "token
 <CardGroup cols={2}>
   <Card title="Conexões" icon="plug" href="/conta/conexoes">
     Canais e integrações da sua conta.
+  </Card>
+
+  <Card title="Agente IA" icon="robot" href="/ia/agente-ia">
+    Onde você revisa e ativa o rascunho do prompt.
   </Card>
 
   <Card title="Equipe" icon="users" href="/conta/equipe">
