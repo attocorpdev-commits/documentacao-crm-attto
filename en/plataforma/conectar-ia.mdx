@@ -1,0 +1,223 @@
+---
+title: "Connect the MCP to your AI"
+sidebarTitle: "Connect to your AI"
+description: "Step by step to connect the CRM MCP to Claude Code, Cursor, GitHub Copilot in VS Code, Copilot Studio and n8n, always named CRM - Atto Corp."
+icon: "link"
+keywords:
+  - "MCP"
+  - "connector"
+  - "Claude"
+  - "Cursor"
+  - "Copilot"
+  - "n8n"
+  - "ChatGPT"
+---
+
+This guide shows how to connect the [CRM MCP](/en/plataforma/mcp) to the AI tool you already use. Once connected, you ask in plain language ("how many leads came in today?") and the AI checks the CRM for you.
+
+## Before you start
+
+You need two things:
+
+| What | Where to get it |
+| --- | --- |
+| **Server address** | `https://app.attocorp.com/mcp`. For an AI that should only read, use `https://app.attocorp.com/mcp/readonly`. |
+| **MCP key** | Generated on the **Servidor MCP** (MCP Server) screen, in **Connections**. It starts with `atto_mcp_`. See [Generate a key](/en/plataforma/mcp#generate-a-key). |
+
+<Warning>
+  The key is shown **only once**. Generate one key for each AI tool and never paste the key in a chat, email or screenshot. In the examples below, replace `SUA_CHAVE` with your key.
+</Warning>
+
+## Always use the name "CRM - Atto Corp"
+
+Every tool asks for a name for the server or connector. Always use **CRM - Atto Corp**. Where the name does not accept spaces, use **crm-atto-corp**.
+
+That way, months from now, anyone who opens the list of connectors knows right away what it is and does not delete the MCP by mistake.
+
+In the CRM, do the same with the key name: say where it is installed. Examples: "Cursor - Ana's laptop", "n8n - reports", "Copilot Studio - sales agent". Then, in the key's **Conexões** (Connections) tab, you know who is using each one.
+
+## Choose your tool
+
+<Tabs>
+  <Tab title="Claude Code">
+    Claude Code is Claude in the terminal. You connect it with one command.
+
+    <Steps>
+      <Step title="Add the server">
+        In the terminal, run the command below, with your key in place of `SUA_CHAVE`:
+
+        ```bash
+        claude mcp add --transport http crm-atto-corp https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
+        ```
+      </Step>
+      <Step title="Check it">
+        Run `claude mcp list`. **crm-atto-corp** should show as connected. Inside a conversation, the `/mcp` command shows the same.
+      </Step>
+      <Step title="Test it">
+        Ask: "Use CRM - Atto Corp and run whoami". The answer shows the key name, permissions and companies.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Cursor">
+    <Steps>
+      <Step title="Open the MCP settings">
+        In Cursor, open **Settings** and the **MCP** area. Click to add a server. Cursor opens the `mcp.json` file.
+      </Step>
+      <Step title="Paste the configuration">
+        Paste the block below. If the file already has other servers, add only the `crm-atto-corp` part inside `mcpServers`.
+
+        ```json
+        {
+          "mcpServers": {
+            "crm-atto-corp": {
+              "url": "https://app.attocorp.com/mcp",
+              "headers": {
+                "Authorization": "Bearer SUA_CHAVE"
+              }
+            }
+          }
+        }
+        ```
+      </Step>
+      <Step title="Check it">
+        Save the file. In Cursor's list of MCP servers, **crm-atto-corp** should be active, with its tools listed.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="GitHub Copilot (VS Code)">
+    GitHub Copilot uses MCP in the agent mode of the VS Code chat.
+
+    <Steps>
+      <Step title="Create the servers file">
+        In your project folder, create the file `.vscode/mcp.json`. To use it in every project, run the **MCP: Open User Configuration** command from the command palette.
+      </Step>
+      <Step title="Paste the configuration">
+        This template asks for the key the first time and stores it safely, without leaving the key written in the file:
+
+        ```json
+        {
+          "inputs": [
+            {
+              "type": "promptString",
+              "id": "chave-atto",
+              "description": "CRM - Atto Corp MCP key",
+              "password": true
+            }
+          ],
+          "servers": {
+            "crm-atto-corp": {
+              "type": "http",
+              "url": "https://app.attocorp.com/mcp",
+              "headers": {
+                "Authorization": "Bearer ${input:chave-atto}"
+              }
+            }
+          }
+        }
+        ```
+      </Step>
+      <Step title="Start it and enter the key">
+        In the file, click **Start** above `crm-atto-corp` and paste your key when VS Code asks for it.
+      </Step>
+      <Step title="Use it in the chat">
+        Open the Copilot chat in **Agent** mode. In the tools button, check that the **crm-atto-corp** tools are selected.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Copilot Studio">
+    In Microsoft Copilot Studio, the MCP is added as a tool of your agent.
+
+    <Steps>
+      <Step title="Add the tool">
+        Open the agent, go to **Tools**, click **Add a tool** and choose **Model Context Protocol**.
+      </Step>
+      <Step title="Fill in the details">
+        - **Server name**: CRM - Atto Corp
+        - **Description**: Reads and organizes Atto Corp CRM data.
+        - **Server URL**: `https://app.attocorp.com/mcp`
+      </Step>
+      <Step title="Choose the authentication">
+        For authentication, choose **API key**, type **Header**, with the header name `Authorization`.
+      </Step>
+      <Step title="Create the connection">
+        When you create the connection, paste the word `Bearer`, a space and your key in the key field:
+
+        ```text
+        Bearer SUA_CHAVE
+        ```
+      </Step>
+      <Step title="Check it">
+        In the agent's list of tools, **CRM - Atto Corp** should show up with the CRM tools.
+      </Step>
+    </Steps>
+
+    <Note>
+      Copilot Studio button names can change with Microsoft updates. What matters is: MCP server, the address above, and the key in the `Authorization` header with `Bearer` in front.
+    </Note>
+  </Tab>
+  <Tab title="n8n">
+    <Steps>
+      <Step title="Add the node">
+        In your workflow, add the **MCP Client Tool** node connected to an AI agent node.
+      </Step>
+      <Step title="Set the address">
+        In **Endpoint**, paste `https://app.attocorp.com/mcp`. In **Server Transport**, choose **HTTP Streamable**.
+      </Step>
+      <Step title="Create the credential">
+        In **Authentication**, choose **Bearer Auth** and create a new credential. Name the credential **CRM - Atto Corp** and paste your key in the token field, without the word Bearer.
+      </Step>
+      <Step title="Rename the node">
+        Rename the node to **CRM - Atto Corp**, so whoever opens the workflow later understands what it does.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Tip>
+  After connecting, in any tool, ask it to run `whoami`. It confirms the key works and shows its companies and permissions.
+</Tip>
+
+## ChatGPT and Claude on the web or app
+
+The custom connectors in ChatGPT and in Claude (web and app) **cannot** connect to the CRM MCP yet. They ask for the tool's own sign-in and have no field to paste the CRM key.
+
+In the meantime, use one of the tools above. When this kind of connection becomes available, this guide will be updated and the news will show up in [Updates and news](/en/novidades/changelog).
+
+## Disconnect safely
+
+To remove a tool's access:
+
+1. Remove **CRM - Atto Corp** from the tool's list of servers or connectors.
+2. In the CRM, revoke that tool's key. See [Revoke a key](/en/plataforma/mcp#revoke-a-key).
+
+<Note>
+  Removing the connector from the tool does not turn the key off. Revoke it in the CRM to make sure nobody else uses the key.
+</Note>
+
+## Common problems
+
+<AccordionGroup>
+  <Accordion title="The tool says it is not authorized or the key is invalid">
+    Check that the whole key was pasted and that the header is `Authorization: Bearer SUA_CHAVE`, with a space after Bearer. Also check on the **Servidor MCP** (MCP Server) screen that the key was not revoked and has not expired.
+  </Accordion>
+
+  <Accordion title="The AI reads, but cannot create anything">
+    The key needs the **Escrita** (Write) scope, and the address must be `https://app.attocorp.com/mcp`. At the address ending in `/readonly`, the AI only reads.
+  </Accordion>
+
+  <Accordion title="I no longer know what a connector in my list is">
+    That is why the standard name is **CRM - Atto Corp**. If you find a connector with that name, it is the tool's access to the CRM. Before deleting it, check on the **Servidor MCP** (MCP Server) screen which key it uses, in the key's **Conexões** (Connections) tab.
+  </Accordion>
+</AccordionGroup>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="MCP" icon="plug" href="/en/plataforma/mcp">
+    Generate keys, see what the AI can read and write, and track usage.
+  </Card>
+
+  <Card title="AI Agent" icon="robot" href="/en/ia/agente-ia">
+    Review and activate the prompt drafts proposed by the MCP.
+  </Card>
+</CardGroup>

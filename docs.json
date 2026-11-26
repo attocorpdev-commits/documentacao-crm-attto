@@ -100,7 +100,8 @@
                 "group": "Plataforma",
                 "pages": [
                   "plataforma/visao-geral",
-                  "plataforma/mcp"
+                  "plataforma/mcp",
+                  "plataforma/conectar-ia"
                 ]
               },
               {
@@ -207,7 +208,8 @@
                 "group": "Platform",
                 "pages": [
                   "en/plataforma/visao-geral",
-                  "en/plataforma/mcp"
+                  "en/plataforma/mcp",
+                  "en/plataforma/conectar-ia"
                 ]
               },
               {

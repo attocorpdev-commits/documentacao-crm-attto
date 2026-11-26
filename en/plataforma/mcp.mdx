@@ -45,7 +45,7 @@ The key is the password your AI assistant uses to get into the CRM. Each assista
     Click **Gerar chave** (Generate key).
   </Step>
   <Step title="Give it a name">
-    In **Nome** (Name), type something that helps you recognize the key later, for example "Team Claude".
+    In **Nome** (Name), type something that helps you recognize the key later, for example "Cursor - Ana's laptop". Always say which tool the key will be used in.
   </Step>
   <Step title="Choose the scopes">
     **Leitura** (Read) is already selected and is required. Click **Escrita** (Write) if you want the AI to also create and organize data and propose drafts of the AI prompt. Only the company owner can enable **Escrita**.
@@ -74,54 +74,11 @@ The key is the password your AI assistant uses to get into the CRM. Each assista
 
 ## Connect your assistant
 
-In every instruction, replace `SUA_CHAVE` (your key) with the key you copied. For an assistant that should only read, use `https://app.attocorp.com/mcp/readonly` instead of `https://app.attocorp.com/mcp`.
+The step by step for Claude Code, Cursor, GitHub Copilot in VS Code, Copilot Studio and n8n is in [Connect the MCP to your AI](/en/plataforma/conectar-ia). In all of them you use the same address and the key in the `Authorization: Bearer SUA_CHAVE` header.
 
-<Tabs>
-  <Tab title="Claude">
-    Add a connector with the address and the authorization header:
-
-    ```text
-    https://app.attocorp.com/mcp
-    ```
-
-    ```text
-    Authorization: Bearer SUA_CHAVE
-    ```
-
-    In Claude Code, from the terminal:
-
-    ```bash
-    claude mcp add --transport http atto-crm https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
-    ```
-  </Tab>
-  <Tab title="Claude Desktop / Cursor">
-    Paste into the MCP servers configuration file:
-
-    ```json
-    {
-      "mcpServers": {
-        "atto-crm": {
-          "url": "https://app.attocorp.com/mcp",
-          "headers": {
-            "Authorization": "Bearer SUA_CHAVE"
-          }
-        }
-      }
-    }
-    ```
-  </Tab>
-  <Tab title="n8n / outros">
-    In the MCP client node (HTTP), enter the address and the header:
-
-    ```text
-    https://app.attocorp.com/mcp
-    ```
-
-    ```text
-    Authorization: Bearer SUA_CHAVE
-    ```
-  </Tab>
-</Tabs>
+<Card title="Connect the MCP to your AI" icon="link" horizontal href="/en/plataforma/conectar-ia">
+  Guide per tool, with the standard name **CRM - Atto Corp** so nobody confuses or deletes the connector by mistake.
+</Card>
 
 <Tip>
   Once connected, ask the assistant to start with the `whoami` tool. It shows the key name, permissions, the companies the key reaches and the usage limits.
