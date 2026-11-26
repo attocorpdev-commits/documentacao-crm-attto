@@ -229,6 +229,17 @@
             ]
           }
         ]
+      },
+      {
+        "language": "es",
+        "tabs": [
+          {
+            "tab": "Centro de ayuda"
+          },
+          {
+            "tab": "Novedades y actualizaciones"
+          }
+        ]
       }
     ]
   },
