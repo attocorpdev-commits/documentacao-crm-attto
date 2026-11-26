@@ -88,13 +88,15 @@ Ao lado do horário de cada mensagem enviada, o CRM mostra em que ponto ela est�
 | --- | --- |
 | Círculo girando | **Enviando**: a mensagem está saindo agora |
 | Um tique | **Enviado**: o WhatsApp aceitou a mensagem |
-| Dois tiques | **Entregue**: a mensagem chegou ao contato |
+| Dois tiques | **Entregue**: a mensagem chegou ao contato. Também aparece quando o contato já leu a mensagem |
 | Ícone de alerta | **Não entregue: clique para tentar novamente**. Quando o CRM sabe o motivo, ele aparece no aviso |
 | Ícone de relógio | **Não foi possível enviar. Toque para tentar novamente.** O envio travou antes de sair |
 
 Clique no ícone de alerta ou no de relógio para tentar de novo. Enquanto o CRM tenta, o ícone gira e mostra **Reenviando…**. Para ver o estado por escrito, abra **Mais opções** e clique em **Dados da mensagem**.
 
 As mensagens enviadas pela IA e as enviadas por um disparo seguem as mesmas marcas, com o estado real do envio. Veja [Disparos](/marketing/disparos).
+
+A marca só avança, nunca volta para trás. Se o contato já leu a mensagem, ela fica com os dois tiques, mesmo que uma confirmação antiga de envio ou de entrega chegue atrasada. Isso vale também para a confirmação de leitura do WhatsApp (QR Code), que agora aparece nas mensagens enviadas pelo CRM.
 
 <Note>
   Os dois tiques só aparecem quando a entrega é confirmada. Se o WhatsApp recusar a mensagem depois de aceitá-la, os dois tiques saem e a mensagem passa a mostrar o ícone de alerta. O CRM não deixa marca de entrega que não aconteceu.
@@ -240,6 +242,20 @@ O botão **Fila** oferece **Atribuir próximo da fila**, que passa a conversa pa
 
 Se você é atendente e a conversa está atribuída a você, aparece o botão **Encerrar**. Informe o motivo, se quiser, e clique em **Encerrar atendimento**. O gerente responsável é avisado.
 
+### Histórico de troca de responsável
+
+Toda troca de responsável fica registrada dentro da conversa, numa faixa amarela entre as mensagens, no ponto em que aconteceu. Exemplos: **Carla atribuiu a conversa para Rafael** ou **Carla tirou a conversa de Rafael**. Quando a troca é feita pela distribuição automática, a faixa mostra **Fila** no lugar do nome.
+
+A faixa tem o selo **só o time vê**. Ela não é enviada ao cliente e não entra na conversa que a IA lê. Clique na faixa para ver os detalhes:
+
+| Campo | O que mostra |
+| --- | --- |
+| **Quem fez** | A pessoa que trocou o responsável, ou **Fila** e **Sistema** quando foi automático |
+| **Saiu de** | O responsável anterior, ou **Ninguém** |
+| **Foi para** | O novo responsável, ou **Ninguém** |
+| **Quando** | Data e hora, no horário de Brasília |
+| **Onde** | De onde veio a troca, como **Conversa (chat)**, **Pipeline**, **Fila automática**, **Fila ao ficar online**, **Saída do membro da equipe**, **Junção de contatos** ou **Encerramento do atendimento** |
+
 ## Apagar contato
 
 O botão **Apagar contato** (ícone de lixeira), no topo da conversa, apaga do CRM a conversa, as mídias e o contato daquele canal, junto com o que a IA lembra dessa pessoa (se ela não tiver conversa em outro canal).
@@ -330,13 +346,13 @@ Clique no nome ou na foto do contato, no topo da conversa, para abrir o painel *
 | Campo | O que você faz |
 | --- | --- |
 | Número do contato | Clique para copiar. O CRM confirma com **Número copiado** |
-| **Salvar contato** | Define o nome do contato. O nome fica visível para toda a equipe em todas as conversas deste número e aparece no lugar do nome do WhatsApp, na lista, na busca e no lead |
+| **Salvar contato** ou **Editar contato** | Define o nome do contato. O nome fica visível para toda a equipe em todas as conversas deste número e aparece no lugar do nome do WhatsApp, na lista, na busca e no lead. O botão mostra **Editar contato**, com um lápis, quando o contato já tem nome, e **Salvar contato** quando só há o número ou **Desconhecido** |
 | **Mídia, links e docs** | Abre tudo que foi enviado e recebido na conversa, nas abas **Mídia**, **Links**, **Docs** e **Favoritas** |
 | **Mensagens favoritas** | Abre direto a aba **Favoritas**, com as mensagens marcadas com estrela |
 | **Responsável** | Clique em **Alterar responsável** ou **Atribuir responsável** |
 | **Criar atividade** | Cria uma atividade ligada a este contato |
 | **Pipeline** | Escolhe em qual Pipeline o lead está |
-| **Estágio** | Escolhe a etapa do lead no Pipeline |
+| **Estágio** | Escolhe a etapa do lead no Pipeline. Em etapa de perda, o CRM pede o **Motivo da perda** antes de mover. Veja [Pipeline](/crm/pipeline) |
 | **Tags** | Clique em **Adicionar tag...** para buscar ou criar uma tag |
 | **Resumo IA** | Mostra o resumo da conversa feito pela IA |
 | **Valor (R$)** | Valor do negócio |

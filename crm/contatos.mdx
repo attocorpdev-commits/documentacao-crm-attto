@@ -61,7 +61,7 @@ Clique em uma linha da lista. Abre um painel lateral com os dados do lead.
 - **Nome e telefone:** clique no campo, altere e clique fora. A mudança é salva na hora.
 - **Tags:** clique em **Adicionar tag...** para escolher uma tag existente ou criar outra. Para tirar, clique no **x** da tag.
 - **Valor estimado** e **Notas:** altere e clique fora do campo para salvar.
-- **Mover para pipeline:** clique no pipeline desejado. Em **Estágio**, escolha a etapa.
+- **Mover para pipeline:** clique no pipeline desejado. Em **Estágio**, escolha a etapa. Em etapa de perda, o CRM pede o **Motivo da perda** antes de mover. Veja [Pipeline](/crm/pipeline).
 - **Resumo IA:** mostra o resumo da conversa feito pela IA.
 - **Agendar atividade:** cria um compromisso para esse contato. Ele aparece na Agenda no dia escolhido.
 - **IA responde este contato:** desligue para a IA não responder esse contato no WhatsApp. A equipe atende normalmente e o contato aparece como **Silenciado**. Depende da permissão do Agente IA.
@@ -70,6 +70,8 @@ Clique em uma linha da lista. Abre um painel lateral com os dados do lead.
 ## Abrir a conversa de um contato
 
 Abra o contato e clique em **Iniciar Conversa**, no fim do painel. O CRM leva você para a conversa no WhatsApp. Se ela ainda não existir, é criada na hora. Em contato do Instagram, o botão é **Abrir no Direct**.
+
+A conversa abre na empresa que está na tela, sem trocar de empresa. Veja [trocar de empresa](/conta/trocar-empresa).
 
 <Warning>
   É preciso ter um WhatsApp conectado. Sem isso, aparece o aviso **WhatsApp não conectado**, com um atalho **Ir para Conexões**.
@@ -81,12 +83,14 @@ Marque a caixa ao lado dos contatos, ou use **Selecionar todos** para marcar tod
 
 - **Aplicar:** digite as tags, separadas por vírgula, e adicione a todos os selecionados.
 - **Remover tags:** retira as tags digitadas dos selecionados.
-- **Excluir:** apaga os contatos selecionados.
+- **Excluir:** apaga os contatos selecionados. Aparece só para quem tem a permissão **Apagar contato**, além do dono e dos gerentes.
 - **Limpar:** desmarca a seleção.
 
 <Warning>
   A exclusão de contatos não pode ser desfeita.
 </Warning>
+
+Se a sua permissão não deixar apagar, aparece **Você não tem permissão para apagar contatos. Fale com o dono ou um gerente da empresa.**
 
 <Tip>
   Para apagar um contato junto com a conversa e as mídias de um canal, use **Apagar contato** no topo da conversa. Veja [WhatsApp](/atendimento/whatsapp#apagar-contato).

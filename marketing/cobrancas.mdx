@@ -1,11 +1,16 @@
 ---
 title: "Cobranças"
 sidebarTitle: "Cobranças"
-description: "Suba a planilha de quem deve e o CRM manda lembretes de pagamento automáticos pelo WhatsApp, de segunda a sábado."
+description: "Suba a planilha de quem deve ou escolha dos contatos, e o CRM manda lembretes de pagamento automáticos pelo WhatsApp, de segunda a sábado. Na mesma tela, mande parabéns no dia do aniversário."
 icon: "receipt"
 ---
 
-Na tela **Cobranças** você sobe uma planilha com quem deve, quanto e quando vence. O CRM manda os lembretes de pagamento pelo WhatsApp sozinho, no dia e no horário que você escolher. Você acompanha quanto está em aberto, quem pagou e quem respondeu.
+Na tela **Cobranças** você sobe uma planilha com quem deve, quanto e quando vence, ou escolhe as pessoas direto dos seus contatos. O CRM manda os lembretes de pagamento pelo WhatsApp sozinho, no dia e no horário que você escolher. Você acompanha quanto está em aberto, quem pagou e quem respondeu.
+
+A tela tem duas abas:
+
+- **Cobranças**: lembretes de pagamento.
+- **Aniversariantes**: parabéns automático no dia do aniversário. Veja [Aniversariantes](#aniversariantes).
 
 <Note>
   Esta tela cobra os **seus clientes**. Ela não tem relação com a assinatura da sua empresa na Atto Corp. Para ver o seu plano e as suas faturas, veja [Planos e cobrança](/conta/planos).
@@ -27,7 +32,7 @@ No menu lateral, abra **Marketing** e clique em **Cobranças**.
 | Gerente | Sempre |
 | Outros membros da equipe | Só com a página **Cobranças** marcada em **Páginas permitidas** |
 
-Para liberar a tela para alguém da equipe, veja [Equipe](/conta/equipe).
+Para liberar a tela para alguém da equipe, veja [Equipe](/conta/equipe). A aba **Aniversariantes** segue a mesma permissão.
 
 Se o seu perfil não tiver acesso, a tela mostra: **Seu perfil não tem permissão para acessar as cobranças. Peça ao administrador para liberar a página "Cobranças" nas permissões do plano ou do usuário.**
 
@@ -39,8 +44,8 @@ Se o seu perfil não tiver acesso, a tela mostra: **Seu perfil não tem permiss�
 
 O CRM **lembra** a pessoa de pagar. Ele não recebe o dinheiro.
 
-- O pagamento acontece pelo link que você coloca na planilha, na coluna **Link de pagamento**. Pode ser o link do seu banco, do seu sistema de cobrança ou de onde você já recebe.
-- O CRM não confere sozinho se a pessoa pagou. Quando o dinheiro cair, você marca a cobrança como paga, uma por uma ou por planilha. Veja [Marcar quem pagou](#marcar-quem-pagou).
+- O pagamento acontece pelo link que você coloca na planilha, na coluna **Link de pagamento**. Pode ser o link do seu banco, do seu sistema de cobrança, um código Pix ou de onde você já recebe.
+- O CRM não confere sozinho se a pessoa pagou. Quando o dinheiro cair, você dá baixa: uma por uma, por planilha ou atualizando com a planilha da loja. Veja [Dar baixa de quem pagou](#dar-baixa-de-quem-pagou).
 
 ## O painel
 
@@ -55,7 +60,7 @@ No topo da tela ficam seis quadros em reais. Cada um mostra o valor e quantas pe
 | **Vencido há mais de 30 dias** | Contas vencidas há mais tempo |
 | **Recebido no mês** | O que foi marcado como pago no mês |
 
-Abaixo, em **Suas cobranças**, fica a lista das suas cobranças. Cada cobrança é uma planilha com quem deve e quando vence. Cada linha mostra o nome, a situação, quantas pessoas tem, quantas estão aguardando você, o próximo lembrete e os valores **Em aberto** e **Recebido**.
+Abaixo, em **Suas cobranças**, fica a lista das suas cobranças. Cada linha mostra o nome, a situação, quantas pessoas tem, quantas estão aguardando você, o próximo lembrete e os valores **Em aberto** e **Recebido**.
 
 A situação de cada cobrança aparece num selo:
 
@@ -64,6 +69,10 @@ A situação de cada cobrança aparece num selo:
 | **Rascunho** | Salva, mas os lembretes ainda estão desligados |
 | **Lembretes ligados** | O CRM está mandando os lembretes |
 | **Pausada** | Os lembretes estão parados até você ligar de novo |
+
+### Buscar em todas as cobranças
+
+No campo **Buscar: nome, telefone ou código**, digite pelo menos 2 letras ou 3 números. A busca olha todas as suas cobranças de uma vez. Em cada resultado você vê o pagamento e o lembrete da parcela, e pode pausar, retomar, tentar de novo o envio ou abrir a cobrança.
 
 ## Criar uma cobrança
 
@@ -75,33 +84,32 @@ Clique em **Nova cobrança**. O fluxo tem quatro passos.
 
     Em **Por qual WhatsApp os lembretes vão sair?**, escolha o canal. Cada canal mostra o tipo: **WhatsApp oficial** ou **WhatsApp por QR code**.
 
-    Em **Planilha de quem deve**, arraste o arquivo ou clique para escolher. Se preferir, clique em **Baixar planilha modelo** e preencha o modelo pronto.
+    Depois monte a lista de quem deve. Você pode usar uma planilha, escolher dos contatos ou as duas coisas juntas. Veja [A planilha](#a-planilha) e [Escolher dos contatos](#escolher-dos-contatos).
   </Step>
   <Step title="Quando lembrar">
-    Ligue os lembretes que quiser. São quatro:
-
-    - **3 dias antes do vencimento**
-    - **No dia do vencimento**
-    - **2 dias depois do vencimento**
-    - **7 dias depois do vencimento**
-
-    Cada lembrete mostra a data em que sai, com uma conta de exemplo. Escolha também os dias e o horário de envio. Veja a seção "Dias e horário de envio", mais abaixo.
+    Ligue os lembretes que quiser, escolha os dias e o horário de envio e o que fazer quando a pessoa responder. Veja [Quando lembrar](#quando-lembrar).
   </Step>
   <Step title="O que dizer">
     Escreva a mensagem de cada lembrete. Já vem uma sugestão pronta. Veja [Escrever a mensagem](#escrever-a-mensagem).
   </Step>
   <Step title="Conferir e ligar">
-    Confira o **Resumo**, escolha **Quem cuida das respostas** e, se quiser, mande um teste para o seu WhatsApp. Depois clique em **Ligar lembretes**.
+    Confira o **Resumo** e a agenda, escolha **Quem cuida das respostas**, decida se quer **Cobrar agora** e, se quiser, mande um teste para o seu WhatsApp. Depois clique em **Ligar lembretes**.
 
     Ainda não quer ligar? Clique em **Salvar rascunho** e volte depois.
   </Step>
 </Steps>
 
-### A planilha
+## A planilha
 
-A planilha pode ser .csv, .xlsx ou .xls. Ela precisa ter telefone, valor e vencimento. Nome, referente a e link de pagamento ajudam na mensagem.
+Em **Planilha de quem deve**, arraste o arquivo ou clique para escolher. Pode ser a planilha que você já usa: o CRM encontra as colunas sozinho.
 
-A planilha modelo tem estas colunas:
+- Formatos aceitos: .csv, .xlsx e .xls.
+- Precisa ter **telefone**, **valor**, **vencimento** e **referente a**. Se faltar o referente a, você completa na tela.
+- **Nome** e **link de pagamento** ajudam na mensagem, mas não são obrigatórios.
+- O cabeçalho não precisa estar na primeira linha. Linhas de total e linhas vazias são ignoradas.
+- Se a planilha passar do limite de 50.000 linhas, a tela avisa **Planilha grande demais** e as linhas a mais ficam de fora.
+
+Se preferir, clique em **Baixar planilha modelo** e preencha o modelo pronto. Ele tem estas colunas:
 
 | Coluna | Obrigatória | Exemplo |
 | --- | --- | --- |
@@ -109,29 +117,162 @@ A planilha modelo tem estas colunas:
 | **Telefone** | Sim | 5511900000001 |
 | **Valor** | Sim | 150,00 |
 | **Vencimento** | Sim | 10/12/2026 |
-| **Referente a** | Não | Mensalidade de dezembro |
+| **Código da parcela** | Não | PARC-0001 |
+| **Referente a** | Sim | Mensalidade de dezembro |
 | **Link de pagamento** | Não | Link da sua cobrança |
 
+### O que eu entendi
+
+Depois de ler o arquivo, o quadro **O que eu entendi** mostra como o CRM leu a planilha, antes de salvar:
+
+- quantas parcelas e de quantos clientes, por exemplo "10 parcelas de 8 clientes", e o total em reais;
+- de qual coluna veio o telefone;
+- como cada parcela é identificada (pelo código da parcela, pelo código da venda com a parcela, ou pelo telefone e o vencimento);
+- o que a planilha diz sobre parcelas já pagas;
+- três mensagens de exemplo, do jeito que vão chegar.
+
+Nada disso fica salvo. A cada planilha nova, o CRM lê o arquivo do zero.
+
+### Como lemos a planilha
+
+O quadro **Como lemos a planilha** mostra cada coluna da sua planilha com os primeiros valores, o campo associado, como ela é lida e exemplos. As colunas ficam em duas abas:
+
+- **Associadas**: colunas que já têm um campo.
+- **Ação necessária**: campo obrigatório sem coluna (em vermelho) e colunas que ficaram sem campo.
+
+Para trocar, escolha outro campo na coluna. A conta refaz na hora, sem editar a planilha. Coluna que não serve fica em **Não usar esta coluna**.
+
+| Campo | Como é lido |
+| --- | --- |
+| **Nome** | Nome do cliente. Se faltar, o CRM usa o nome salvo nos seus contatos |
+| **Telefone** | Celular com DDD, em qualquer formato |
+| **Telefone 2** | Outro telefone, usado só quando a coluna Telefone está vazia ou sem número válido |
+| **Valor** | Valor em reais, com ou sem R\$, vírgula ou ponto |
+| **Vencimento** | Data do vencimento |
+| **Código da parcela** | Código que identifica a parcela e evita cobrar a mesma parcela duas vezes |
+| **Código da venda** | Código da venda ou do pedido. Junto com a Parcela, identifica cada parcela |
+| **Parcela (1/3)** | Número da parcela, como 2/5 ou "2 de 5" |
+| **Referente a** | Do que é a cobrança |
+| **Data da compra** | Data da compra ou da emissão |
+| **Tipo (venda, troca)** | Tipo da venda |
+| **Data de pagamento** | Data em que a parcela foi paga. Linha com data fica de fora da cobrança |
+| **Link de pagamento** | Link ou código Pix para pagar |
+
+Mais dois ajustes no mesmo quadro:
+
+- **Formato da data**: troque entre **Dia/mês (dd/mm/aaaa)** e **Mês/dia (mm/dd/aaaa)** se a leitura estiver trocada. O formato da planilha aparece marcado com "da planilha".
+- **DDD padrão (opcional)**: usado só nos telefones que vieram sem DDD. O CRM guarda o DDD para a próxima planilha.
+
+### Números corrigidos sozinhos
+
+O CRM ajusta o formato dos telefones para o envio: coloca o DDD padrão, o dígito 9 e o código do país. Se a célula tiver dois telefones, ele usa o celular (ou o primeiro que vale, se não houver celular).
+
+Clique em **números corrigidos automaticamente** para ver o antes e o depois de cada linha.
+
+Quando um número não tem conserto, a tela avisa **Não foi possível corrigir** e a linha fica de fora até você corrigir ou remover.
+
+### Corrigir as linhas com problema
+
+A tela mostra quantas linhas estão **prontos**, **sem telefone válido**, **com data estranha**, **com valor estranho**, **para corrigir**, **sem referente a**, **repetidas** e **ignoradas**.
+
+Em **Corrija as linhas com problema**, ajuste ali mesmo, sem mexer na planilha:
+
+- filtre por **Telefone**, **Valor**, **Vencimento** ou **Referente a**;
+- cada linha mostra o número da linha na planilha e o valor como veio;
+- digite o telefone completo, com DDD, por exemplo (62) 99123-4567. Ele vale quando você sai do campo ou aperta Enter;
+- a data vai com o ano inteiro (dd/mm/aaaa);
+- a linha corrigida continua na lista com o aviso **corrigida, entra na cobrança**;
+- clique em **Remover** para tirar a linha.
+
+Linha com problema não recebe lembrete.
+
+### Referente a
+
+O **Referente a** diz do que é a cobrança na mensagem. Ele é obrigatório para seguir. Se algumas linhas vieram sem ele, complete de um destes jeitos:
+
+- digite um texto e clique em **Usar em todas as vazias**;
+- clique em **Preencher automático**: o CRM usa "Parcela" e o código da parcela ou, sem código, "Vencimento" e a data;
+- preencha linha a linha na lista de correção.
+
+Para voltar atrás, clique em **Desfazer**.
+
+### Nome
+
+Se a linha veio sem nome, o CRM procura o nome salvo nos seus contatos para aquele telefone. Quem não tem nome em lugar nenhum recebe o lembrete normalmente, sem o nome na mensagem.
+
+### Código da parcela
+
+O código da parcela é opcional, mas ajuda quando você sobe a planilha de novo:
+
+- mesmo código: a parcela é atualizada e, se estiver pausada, continua pausada;
+- código novo: entra como parcela nova;
+- parcela já paga nunca volta a ficar em aberto;
+- o mesmo código em outro telefone vira problema na lista de correção.
+
+Sem código, cada parcela é identificada pelo telefone e o vencimento. Linhas repetidas ficam de fora: mesmo código ou, sem código, mesmo telefone e mesmo vencimento.
+
 <Tip>
-  Não precisa usar exatamente esses nomes de coluna. O CRM reconhece variações comuns, como "Cliente" para nome, "Vcto" para vencimento ou "Pix" e "Boleto" para o link.
+  Se o CRM achar uma coluna com cara de código da parcela, mas com o código repetido em mais de uma pessoa, ele avisa e não usa essa coluna sozinho. Se for mesmo o código, escolha **Código da parcela** nela.
 </Tip>
 
-Depois de ler o arquivo, a tela mostra quantas linhas estão **prontos** e quantas estão **sem telefone**, **com data estranha** ou **com valor estranho**.
+### Arquivo do sistema da loja (ERP)
 
-- Em **Corrija as linhas com problema**, ajuste o telefone, o valor ou o vencimento ali mesmo, ou clique em **Remover**. Linha com problema não recebe lembrete.
-- Linhas repetidas, com o mesmo telefone e o mesmo vencimento, ficam de fora.
-- Se a planilha passar do limite de linhas, a tela avisa **Planilha grande demais** e as linhas a mais ficam de fora.
+Pode subir o arquivo do jeito que o sistema da loja exporta, sem tratar:
 
-### Quem vai receber
+- o CRM conserta acentos trocados e caracteres estranhos do arquivo;
+- quando o código é da venda e se repete em todas as parcelas, o CRM junta **Código da venda**, **Parcela** e **Data da compra** para identificar cada parcela;
+- quando a coluna Telefone está vazia, ele usa a coluna **Telefone 2**. Telefone de vendedor ou avalista nunca é usado;
+- sem coluna Referente a, ele monta o texto com a parcela, a data da compra e o tipo, por exemplo "Parcela 4/4 da compra de 22/07/2026";
+- com a coluna **Data de pagamento**, linha com data (ou com "PAGO") fica de fora. Se a coluna estiver vazia em todas as linhas, o arquivo traz só parcelas em aberto.
 
-Com a planilha lida e o canal escolhido, o quadro **Quem vai receber** separa as pessoas em:
+## Escolher dos contatos
+
+Não tem a planilha à mão? No passo **Suba sua lista**, clique em **Escolher dos contatos**.
+
+<Steps>
+  <Step title="Marque as pessoas">
+    Na janela, busque por nome ou número, use **Filtrar por etiqueta** e marque quem vai entrar. **Selecionar todos** marca todo mundo do filtro. Clique em **Usar contatos**.
+  </Step>
+  <Step title="Preencha valor e vencimento">
+    Em **Escolhidos dos contatos**, digite o **Valor (R\$)** e o **Vencimento** (dd/mm/aaaa) de cada pessoa. **Referente a** é opcional aqui.
+
+    Com mais de uma pessoa, use **Mesmo valor e vencimento para todos** e clique em **Aplicar a todos**. Depois dá para mudar uma pessoa só.
+  </Step>
+</Steps>
+
+- A lista mostra só contatos com WhatsApp. Quem pediu para não receber mensagens não aparece.
+- Contato com número que não serve para WhatsApp aparece com o motivo.
+- Quem já está na planilha com o mesmo vencimento fica com os dados da planilha.
+- Repetido (mesmo número e vencimento) entra uma vez só.
+- Dá para escolher até 20.000 contatos.
+- Para seguir, preencha todo mundo ou tire da lista com o ícone de lixeira. **Tirar todos** limpa a lista.
+
+Usando planilha e contatos juntos, a tela mostra o **Total da cobrança**, com quantos vieram de cada lado.
+
+<Note>
+  Se a sua conta não mostra o telefone dos contatos, não dá para escolher por aqui. Use a planilha.
+</Note>
+
+## Quem vai receber
+
+Com a lista pronta e o canal escolhido, o quadro **Quem vai receber** separa as pessoas em:
 
 - **já conversaram**: já mandaram mensagem para esse WhatsApp;
 - **nunca conversaram**: nunca falaram com esse número;
-- **sem WhatsApp**: o número não tem WhatsApp. Essa conferência só acontece no WhatsApp por QR code conectado;
-- **pediram para não receber**: pessoas descadastradas.
+- **pediram para não receber**: pessoas descadastradas. Elas ficam de fora dos lembretes.
 
-Quem pediu para não receber e quem não tem WhatsApp ficam de fora dos lembretes.
+O CRM não confere antes se o número tem WhatsApp. Se o número não receber mensagem, o lembrete aparece como **Não chegou** depois do envio.
+
+## Quando lembrar
+
+No passo **Quando lembrar**, ligue os lembretes que quiser. São quatro:
+
+- **3 dias antes do vencimento**
+- **No dia do vencimento**
+- **2 dias depois do vencimento**
+- **7 dias depois do vencimento**
+
+Cada lembrete mostra a data em que sai, com uma conta de exemplo.
 
 ### Dias e horário de envio
 
@@ -143,15 +284,31 @@ Em **Em qual horário**, escolha o início e o fim, no horário de Brasília. O 
 - Cada pessoa recebe no máximo 1 lembrete por dia, mesmo que esteja em mais de uma cobrança.
 - Se a data do lembrete cair num domingo ou num dia desmarcado, ele sai no próximo dia escolhido.
 
+### Quando a pessoa responder
+
+Em **Quando a pessoa responder**, escolha por quantos dias os lembretes param para quem respondeu. O padrão é 3 dias, e pode ser de 1 a 60. Depois do prazo, os lembretes voltam sozinhos.
+
+Marque **Até eu retomar** para os lembretes só voltarem quando alguém da equipe retomar.
+
 ## Escrever a mensagem
 
 No passo **O que dizer**, escolha um lembrete na lateral e ajuste a mensagem dele.
 
 - Em **Tom da mensagem**, escolha **Amigável**, **Neutro** ou **Firme**. Trocar o tom troca o texto por uma sugestão pronta. Depois é só ajustar.
 - Em **Mensagem**, edite o texto livremente.
-- Em **Inserir campo**, clique em **Nome**, **Valor**, **Vencimento**, **Referente a** ou **Link de pagamento**. O campo entra no texto entre colchetes, como `[nome]` e `[valor]`, e é trocado pelos dados de cada pessoa da planilha.
+- Em **Inserir campo**, clique em **Nome**, **Valor**, **Vencimento**, **Referente a**, **Link de pagamento** ou **Prazo**. O campo entra no texto entre colchetes, como `[nome]` e `[valor]`, e é trocado pelos dados de cada pessoa.
 
-O quadro **Como a pessoa vai ver** mostra a prévia com a primeira pessoa da planilha.
+O campo `[nome]` vira o primeiro nome da pessoa, com a inicial maiúscula. Por exemplo, "MARIA DA SILVA" vira "Maria".
+
+O quadro **Como a pessoa vai ver** mostra a prévia com a primeira pessoa da lista.
+
+### O campo Prazo
+
+O campo `[prazo]` vira "hoje", "amanhã", "em 3 dias", "ontem" ou "há 2 dias", conforme o dia em que a mensagem sai. Assim o texto fica certo mesmo se o lembrete sair em outro dia, por exemplo depois de um domingo.
+
+<Warning>
+  Se o texto falar de um dia fixo, como "hoje", "amanhã", "ontem", "vence hoje" ou "dia do vencimento", sem usar `[prazo]`, e o lembrete precisar sair em outro dia, ele é pulado para não mandar texto errado. A tela avisa no passo **O que dizer** e na agenda. As sugestões prontas já usam `[prazo]`.
+</Warning>
 
 ### No WhatsApp oficial
 
@@ -196,22 +353,66 @@ No WhatsApp por QR code não tem aprovação. A tela mostra o risco de bloqueio,
 | **Risco médio de bloqueio** | Uma parte das pessoas nunca conversou com esse número |
 | **Risco alto de bloqueio** | A maioria nunca conversou com esse número |
 
-Para diminuir o risco:
-
-- deixe ligado **Variar o texto com IA**, para cada pessoa receber um texto um pouco diferente;
-- em **Ritmo de envio**, escolha **Calmo** (1 a cada 40 a 120 s) em vez de **Normal** (1 a cada 20 a 60 s).
+Para diminuir o risco, deixe ligado **Variar o texto com IA**. Assim cada pessoa recebe um texto um pouco diferente.
 
 <Warning>
   Muitas mensagens para quem não conhece o seu número podem fazer o WhatsApp bloquear o número. Quando a maioria nunca conversou com você, o mais seguro é usar o WhatsApp oficial. Veja [WhatsApp (QR Code) ou WhatsApp Oficial (Meta)](/primeiros-passos/tipos-whatsapp).
 </Warning>
 
-## Conferir, testar e ligar
+## Envio seguro
+
+### Ritmo seguro do WhatsApp por QR code
+
+No WhatsApp por QR code, o envio sempre sai no ritmo seguro. Não tem opção para mudar.
+
+| Regra | Como funciona |
+| --- | --- |
+| Intervalo | 1 mensagem a cada 2 a 4 minutos |
+| Limite por dia na 1ª semana | Até 50 mensagens |
+| Limite por dia na 2ª semana | Até 100 mensagens |
+| Limite por dia depois | Até 150 mensagens |
+
+O limite do dia vale para todas as cobranças deste WhatsApp juntas. O que passar do limite sai no próximo dia de envio, começando por quem venceu primeiro. Assim o número corre menos risco de bloqueio.
+
+### Quando o envio falha
+
+- Se o WhatsApp falhar por instabilidade, o CRM tenta de novo sozinho.
+- O que não chegou aparece como **Não chegou** (WhatsApp por QR code) ou **Falhou o envio** (WhatsApp oficial). No QR code, a tela explica: o número pode estar errado ou sem WhatsApp.
+- Corrija o número e use **Tentar de novo**, na linha da pessoa, nas selecionadas ou na busca. O reenvio sai no próximo horário de envio.
+- Só dá para tentar de novo no dia do lembrete. Depois que o dia passa, o próximo lembrete segue normal.
+- Com 5 ou mais falhas no dia, a cobrança mostra um aviso com **Ver quem não recebeu** e **Tentar de novo para todas**. Quem cuida das respostas também recebe um aviso.
+
+## Conferir e ligar
 
 No passo **Conferir e ligar**:
 
 - o **Resumo** mostra em uma frase quantas pessoas, quanto em aberto, os dias e o horário;
 - a lista de lembretes mostra a situação de cada um;
 - em **Quem cuida das respostas**, escolha a pessoa da equipe que vai receber as conversas de quem responder, ou **Ninguém em especial**.
+
+### Agenda dos próximos 14 dias
+
+A **Agenda dos próximos 14 dias** mostra quantos lembretes saem por dia e quem está na fila, na ordem de envio. Numa cobrança nova, clique em **Ver a agenda**: o CRM salva o rascunho para montar a agenda, mas os lembretes só começam quando você ligar.
+
+- Em **Mensagens por dia**, os dias sem envio aparecem como **Não envia**. No WhatsApp por QR code aparece também o limite do dia, por exemplo "40 de 50".
+- Na **Fila de envio**, quem venceu primeiro sai antes. No empate, sai antes o maior valor.
+- **Tirar da fila** pausa os lembretes daquela pessoa até alguém retomar.
+- Se algum lembrete for ser pulado por falar de um dia fixo sem `[prazo]`, a agenda avisa.
+
+A agenda também aparece nos detalhes de cada cobrança.
+
+### Cobrar agora
+
+Em **Cobrar agora?**, escolha se quer mandar um lembrete já hoje, no horário escolhido, para uma parte das pessoas:
+
+| Opção | Quem recebe hoje |
+| --- | --- |
+| **Não, seguir a programação** | Ninguém. Cada lembrete sai no dia dele |
+| **Quem já venceu** | Recebe o lembrete de 2 dias depois |
+| **Quem vence hoje** | Recebe o lembrete do dia do vencimento |
+| **Quem vence em até 3 dias** | Recebe o lembrete de 3 dias antes |
+
+Cada opção mostra quantas pessoas pega. Quem já recebeu lembrete hoje, pediu para não receber ou está pausado fica de fora. No WhatsApp por QR code vale o limite do dia: quem não couber sai no próximo dia de envio.
 
 ### Mandar um teste
 
@@ -223,9 +424,9 @@ Em **Mandar um teste para mim**, digite **Seu WhatsApp**, escolha **Qual lembret
 
 ## Acompanhar uma cobrança
 
-Clique numa cobrança em **Suas cobranças** para abrir os detalhes. O topo mostra quantas pessoas, o total **Em aberto** e o **Recebido**.
+Clique numa cobrança em **Suas cobranças** para abrir os detalhes. O topo mostra quantas parcelas e de quantos clientes, o total **Em aberto** e o **Recebido**.
 
-Use **Buscar por nome, telefone ou referente** para achar alguém. Para filtrar, clique numa das situações abaixo. Cada uma mostra quantas pessoas tem.
+Use **Filtrar: nome, telefone ou código** para achar alguém. Para filtrar por situação, clique numa das opções abaixo. Cada uma mostra quantas parcelas tem.
 
 | Situação | O que significa |
 | --- | --- |
@@ -234,16 +435,46 @@ Use **Buscar por nome, telefone ou referente** para achar alguém. Para filtrar,
 | **Vence hoje** | O vencimento é hoje |
 | **Vencida** | O vencimento passou e não foi pago |
 | **Respondeu** | A pessoa respondeu e os lembretes pararam para ela |
-| **Não chegou** | O último lembrete não foi entregue |
+| **Não chegou** ou **Falhou o envio** | O último lembrete não foi entregue |
+| **Lembretes encerrados** | Em aberto, mas sem lembrete ligado pela frente |
 | **Paga** | Marcada como paga |
+
+A lista tem as colunas **Pessoa**, **Valor**, **Vencimento**, **Pagamento**, **Lembrete** e **Ações**. Ao lado do telefone aparecem o código da parcela e o referente a, quando houver.
+
+### Coluna Pagamento
+
+| Selo | O que significa |
+| --- | --- |
+| **Em aberto** | Ainda não venceu |
+| **Vence hoje** | Vence hoje |
+| **Vencida há N dias** | Venceu e não foi paga |
+| **Paga** | Marcada como paga |
+
+### Coluna Lembrete
+
+| Texto | O que significa |
+| --- | --- |
+| **Próximo em dd/mm** | Dia do próximo lembrete |
+| **Enviado dd/mm** | Lembrete enviado hoje, com o próximo embaixo |
+| **Ainda não enviado** | Nenhum lembrete saiu ainda |
+| **Pausado até dd/mm** | Pausado, volta sozinho nesse dia |
+| **Pausado até retomar** | Pausado até alguém retomar |
+| **Respondeu, pausado até dd/mm** | Respondeu e os lembretes voltam nesse dia |
+| **Respondeu, pausado até retomar** | Respondeu e os lembretes só voltam quando alguém retomar |
+| **Voltando** | Volta no próximo envio |
+| **Lembretes encerrados** | Todos os lembretes ligados já passaram |
+| **Parou, já foi paga** | Paga, sem mais lembretes |
+| **Não chegou** ou **Falhou o envio** | O último envio não foi entregue |
+
+Quando os lembretes da cobrança estão desligados ou pausados, a linha avisa **Lembretes da cobrança desligados**.
 
 Em cada pessoa, o ícone de conversa abre a conversa dela no atendimento.
 
 ### Quando a pessoa responde
 
-Se a pessoa responder depois de um lembrete, os lembretes param só para ela. Ela aparece como **Respondeu** e o topo mostra quantas pessoas estão aguardando você.
+Se a pessoa responder depois de um lembrete, os lembretes param só para ela, pelo prazo escolhido em **Quando a pessoa responder**. Ela aparece como **Respondeu** e o topo mostra quantas pessoas estão aguardando você.
 
-Converse com ela. Se quiser voltar a lembrar, clique em **Retomar** na linha dela.
+Converse com ela. Se quiser voltar a lembrar antes do prazo, use **Retomar** na linha dela.
 
 ### Tags no lead
 
@@ -254,7 +485,35 @@ O CRM coloca uma tag de situação no lead de cada pessoa da cobrança e troca a
 
 Se a pessoa ainda não tem lead no CRM, a tag entra quando o lead aparecer. Para usar essas tags em filtros e disparos, veja [Tags](/crm/tags).
 
-## Marcar quem pagou
+## O que aparece na conversa
+
+- O lembrete enviado aparece na conversa da pessoa uma vez só. No WhatsApp por QR code, ele mostra se foi entregue e lido.
+- Quando a pessoa responde, a conversa vai para quem cuida das respostas.
+- No topo da conversa aparece a etiqueta **Cobrança** quando aquele telefone tem parcela em aberto. Clique nela para ver as parcelas (valor, vencimento, pagamento e lembrete) e para pausar ou retomar os lembretes ali mesmo. Ela mostra até 5 parcelas; o resto fica em Cobranças.
+
+## Pausar e retomar
+
+Dá para pausar os lembretes de uma pessoa sem pausar a cobrança inteira. Clique em **Pausar** e escolha:
+
+- **3 dias**;
+- **7 dias**;
+- **Até uma data**: escolha em **Voltar a lembrar no dia** um dia a partir de amanhã;
+- **Até eu retomar**.
+
+Com prazo, os lembretes voltam sozinhos. Para voltar antes, clique em **Retomar lembretes**. Os próximos lembretes saem no dia e no horário de sempre.
+
+Você encontra Pausar e Retomar:
+
+- na linha de cada pessoa, nos detalhes da cobrança;
+- nas selecionadas, quando você marca várias pessoas;
+- nos resultados da busca do topo;
+- na etiqueta **Cobrança** da conversa.
+
+Para parar a cobrança inteira, use **Pausar lembretes** nos detalhes. **Ligar lembretes** volta a mandar. Nada é perdido.
+
+## Dar baixa de quem pagou
+
+Toda baixa pode ser desfeita. Depois de marcar, o aviso mostra o botão **Desfazer** por 10 segundos. Depois disso, use **Últimas baixas de pagos**, nos detalhes da cobrança: cada baixa tem o botão **Desfazer**. Desfazer volta para em aberto só o que ainda está pago por aquela baixa.
 
 ### Uma ou várias pessoas
 
@@ -267,7 +526,7 @@ Se a pessoa ainda não tem lead no CRM, a tag entra quando o lead aparecer. Para
   </Step>
 </Steps>
 
-Marcou alguém por engano? Selecione a pessoa e clique em **Voltar para em aberto**.
+Marcou alguém por engano? Clique em **Desfazer** ou selecione a pessoa e clique em **Voltar para em aberto**.
 
 ### Por planilha
 
@@ -276,26 +535,50 @@ Marcou alguém por engano? Selecione a pessoa e clique em **Voltar para em abert
     Nos detalhes da cobrança, clique em **Subir planilha com os pagos**.
   </Step>
   <Step title="Suba o arquivo">
-    Use uma planilha com a coluna de telefone e, se tiver, a de vencimento. A tela mostra quantos telefones encontrou.
+    Use uma planilha com o código da parcela ou o telefone e, se tiver, o vencimento. A tela mostra quantas parcelas viram pagas, quantas já estavam pagas e quais linhas não foram achadas.
   </Step>
   <Step title="Confirme">
-    Clique em **Marcar como pagos**.
+    Clique em **Marcar como pagas**.
   </Step>
 </Steps>
 
-- Com a coluna de vencimento, só a conta daquele vencimento é marcada como paga.
-- Sem a coluna de vencimento, todas as contas em aberto daquele telefone nesta cobrança são marcadas como pagas.
+- Com o código da parcela, a baixa vale para aquela parcela.
+- Sem código e com a coluna de vencimento, só a conta daquele vencimento é marcada como paga.
+- Sem código e sem a coluna de vencimento, todas as contas em aberto daquele telefone nesta cobrança são marcadas como pagas.
 - Linha com vencimento inválido fica de fora. Corrija a data no formato dd/mm/aaaa e suba de novo.
+- Se a planilha tiver a coluna **Data de pagamento**, só as linhas com data (ou "PAGO") contam.
 
-## Pausar, ligar e editar
+### Atualizar com a planilha da loja
 
-Nos detalhes da cobrança:
+Use quando você tem a lista inteira de quem deve hoje, por exemplo o arquivo do sistema da loja.
 
-- **Pausar lembretes** para todos os envios da cobrança. Nada é perdido.
-- **Ligar lembretes** volta a mandar.
-- **Editar lembretes** abre de novo os quatro passos. Num rascunho, o botão se chama **Continuar configurando**.
+<Steps>
+  <Step title="Abra a janela">
+    Nos detalhes da cobrança, clique em **Atualizar com a planilha da loja**.
+  </Step>
+  <Step title="Suba a planilha">
+    A leitura é a mesma da criação: **O que eu entendi**, **Como lemos a planilha** e correção das linhas. Clique em **Conferir mudanças**.
+  </Step>
+  <Step title="Confira o que muda">
+    A tela mostra quantas parcelas são **novas**, **alteradas**, **iguais** e quantas **sumiram**.
+  </Step>
+  <Step title="Salve">
+    Marque como pagas as que sumiram e já foram pagas e clique em **Salvar atualização** ou **Salvar e marcar**.
+  </Step>
+</Steps>
 
-Ao editar, você pode subir outra planilha. Ela acrescenta ou atualiza as pessoas, e quem já pagou continua pago.
+- Os lembretes, as mensagens e o horário continuam iguais. Quem já pagou continua pago.
+- Em **Sumiram da planilha nova: marcar como pagas?**, marque uma a uma ou use **Marcar todas**. As que você não marcar continuam em aberto e recebendo lembretes.
+- No arquivo do sistema da loja que traz só parcelas em aberto, as que sumiram já vêm marcadas como pagas. Ficam desmarcadas as que vencem fora das datas da planilha.
+- Se a planilha tiver linhas com problema, nenhuma que sumiu é marcada sozinha. Corrija as linhas ou marque à mão.
+- Marcar mais de 30% das parcelas em aberto pede uma confirmação a mais.
+- Nas parcelas novas, quem pediu para não receber fica de fora dos lembretes.
+
+## Editar uma cobrança
+
+Nos detalhes, **Editar lembretes** abre de novo os quatro passos. Num rascunho, o botão se chama **Continuar configurando**.
+
+Ao editar, você pode subir outra planilha. Ela acrescenta ou atualiza as parcelas, e quem já pagou continua pago. Para salvar sem mudar a situação, use **Salvar alterações**.
 
 <Note>
   No WhatsApp oficial, se você mudar o texto de um lembrete já aprovado, envie de novo para aprovação. Até o WhatsApp aprovar a versão nova, os lembretes seguem com a mensagem aprovada antes.
@@ -303,17 +586,109 @@ Ao editar, você pode subir outra planilha. Ela acrescenta ou atualiza as pessoa
 
 A tela não tem botão para excluir uma cobrança. Para parar de vez, use **Pausar lembretes**.
 
+## Aniversariantes
+
+Na aba **Aniversariantes**, o CRM manda uma mensagem de parabéns pelo WhatsApp no dia do aniversário de cada pessoa da lista. Cada pessoa recebe no máximo 1 parabéns por ano.
+
+### Criar um envio de aniversário
+
+Clique em **Novo envio de aniversário**. Tudo fica numa tela só.
+
+<Steps>
+  <Step title="Nome e WhatsApp">
+    Preencha **Nome do envio** (o padrão é "Aniversariantes") e escolha o WhatsApp que vai mandar a mensagem.
+  </Step>
+  <Step title="Lista de pessoas">
+    Suba a planilha ou clique em **Escolher dos contatos**. A planilha precisa ter telefone e data de nascimento. O modelo (**Baixar planilha modelo**) tem as colunas **Nome**, **Telefone** e **Data de nascimento**.
+  </Step>
+  <Step title="Mensagem">
+    Escreva o texto da mensagem ou, no WhatsApp oficial, escolha o modelo aprovado.
+  </Step>
+  <Step title="Horário e domingo">
+    Escolha o horário e o que fazer quando o aniversário cai no domingo.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar e ligar** para começar, ou em **Salvar sem ligar** para ligar depois.
+  </Step>
+</Steps>
+
+### A planilha de aniversários
+
+- A data de nascimento pode ser dd/mm/aaaa ou só dd/mm.
+- Com o ano, a mensagem pode dizer a idade. Sem o ano, a pessoa recebe a mensagem normalmente e a idade vira "mais um ano".
+- A tela mostra quantos estão **prontos**, **sem telefone válido**, **com data estranha** e **repetidos** (mesmo telefone). Corrija o telefone ou a data na própria tela.
+- Dá para trocar a coluna de cada campo, o **Formato da data** e o **DDD padrão**. O CRM lembra as colunas escolhidas para uma planilha igual.
+- Quem pediu para não receber mensagens fica de fora do parabéns.
+- Ao editar, a planilha nova acrescenta ou atualiza as pessoas pelo telefone. Marque **Tirar da lista quem não está nesta planilha** para trocar a lista. Quem sai não é apagado: volta se aparecer numa planilha depois.
+
+Escolhendo dos contatos, digite a data de nascimento de cada pessoa (dd/mm ou dd/mm/aaaa).
+
+### A mensagem de parabéns
+
+No WhatsApp por QR code, escreva o texto. Os campos entre colchetes viram os dados de cada pessoa:
+
+| Campo | Vira |
+| --- | --- |
+| `[primeiro nome]` | O primeiro nome, como "Maria" |
+| `[nome]` | O nome completo, como "Maria da Silva" |
+| `[idade]` | "30 anos", ou "mais um ano" quando a planilha não tem o ano |
+
+A mensagem pode ter até 1000 letras e até 10 campos.
+
+No WhatsApp oficial, a mensagem precisa ser um modelo aprovado. Escolha o **Modelo aprovado** e diga o que vai em cada campo. Se o WhatsApp ainda não tem modelo aprovado, crie um modelo de parabéns em [Disparos](/marketing/disparos) e volte quando o WhatsApp aprovar.
+
+### Horário e domingo
+
+O horário é de Brasília e vale todos os dias. O padrão é das 9h às 18h, com pelo menos 30 minutos. A mensagem sai dentro desse horário no dia do aniversário e nunca depois do dia.
+
+Em **Aniversário no domingo**, escolha:
+
+| Opção | O que acontece |
+| --- | --- |
+| **Enviar no domingo mesmo** | Padrão: a mensagem sai no dia do aniversário |
+| **Enviar no sábado antes** | Quem faz aniversário no domingo recebe na véspera |
+| **Enviar na segunda depois** | Quem faz aniversário no domingo recebe no dia seguinte |
+
+<Warning>
+  No WhatsApp por QR code, o parabéns divide o ritmo seguro e o limite do dia com as cobranças do mesmo número. A tela mostra quantos parabéns cabem por dia no horário escolhido. Quem não couber no dia não recebe naquele ano.
+</Warning>
+
+### Acompanhar os aniversários
+
+A aba mostra cada envio com o selo **Ligado**, **Pausado** ou **Desligado**, quantas pessoas tem, quantos parabéns saíram este ano e o próximo aniversário.
+
+Clique num envio para abrir os detalhes:
+
+- os números de **pessoas na lista**, **fazem aniversário hoje** e **nos próximos 30 dias**;
+- a mensagem de exemplo;
+- **Mandar um teste para mim**: o teste sai na hora, com dados de exemplo, entre 8h e 20h. São até 10 testes por dia;
+- **Próximos aniversários**, com busca por nome ou telefone. Cada pessoa mostra o próximo parabéns, se já recebeu este ano ou por que não saiu;
+- **Tirar da lista**: a pessoa não recebe mais o parabéns. Se aparecer numa planilha nova, volta;
+- **Editar ou subir planilha** e **Pausar** ou **Ligar**.
+
 ## Perguntas frequentes
 
 <AccordionGroup>
   <Accordion title="O CRM recebe o pagamento por mim?">
-    Não. O CRM só manda os lembretes. A pessoa paga pelo link que você coloca na coluna **Link de pagamento**. Quando o dinheiro cair, marque a cobrança como paga.
+    Não. O CRM só manda os lembretes. A pessoa paga pelo link que você coloca na coluna **Link de pagamento**. Quando o dinheiro cair, dê baixa na cobrança.
   </Accordion>
   <Accordion title="O CRM descobre sozinho quem pagou?">
-    Não. Marque quem pagou com **Marcar como pago** ou com **Subir planilha com os pagos**. Enquanto a conta estiver em aberto, os lembretes ligados continuam saindo.
+    Não. Dê baixa com **Marcar como pago**, **Subir planilha com os pagos** ou **Atualizar com a planilha da loja**. Enquanto a conta estiver em aberto, os lembretes ligados continuam saindo.
+  </Accordion>
+  <Accordion title="Minha planilha não segue o modelo. Preciso arrumar?">
+    Não. Suba do jeito que ela está. O CRM acha as colunas, ignora linhas de total e corrige o formato dos telefones. Confira em **O que eu entendi** e troque a coluna em **Como lemos a planilha** se algo estiver errado.
+  </Accordion>
+  <Accordion title="Por que não consigo seguir do primeiro passo?">
+    Falta algo: o nome da cobrança, o canal, alguma linha sem **Referente a**, alguma pessoa escolhida dos contatos sem valor ou vencimento, ou nenhuma pessoa pronta. A tela mostra o que falta em vermelho.
   </Accordion>
   <Accordion title="Por que um lembrete não saiu no domingo?">
     Domingo nunca tem envio. O lembrete sai no próximo dia escolhido em **Em quais dias pode mandar**.
+  </Accordion>
+  <Accordion title="Por que um lembrete foi pulado?">
+    O texto fala de um dia fixo, como "hoje", sem usar `[prazo]`, e o lembrete precisou sair em outro dia. Edite a mensagem e use `[prazo]`.
+  </Accordion>
+  <Accordion title="Por que nem todo mundo recebeu hoje no WhatsApp por QR code?">
+    O WhatsApp por QR code tem limite por dia: até 50 mensagens na 1ª semana, 100 na 2ª e 150 depois, somando todas as cobranças do número. Quem não coube sai no próximo dia de envio.
   </Accordion>
   <Accordion title="Uma pessoa está em duas cobranças. Ela recebe dois lembretes no mesmo dia?">
     Não. Cada pessoa recebe no máximo 1 lembrete por dia.
@@ -325,7 +700,10 @@ A tela não tem botão para excluir uma cobrança. Para parar de vez, use **Paus
     Confira a mensagem de erro. As mais comuns: o teste só sai entre 8h e 20h, de segunda a sábado; o número precisa ter DDD e 10 ou 11 dígitos; o limite é de 10 testes por dia; e, no WhatsApp oficial, a mensagem precisa estar aprovada antes.
   </Accordion>
   <Accordion title="Alguém aparece como Não chegou. O que significa?">
-    O último lembrete para essa pessoa não foi entregue. Confira se o número está certo e se o canal está conectado. Abra a conversa dela pelo ícone de conversa para ver o que aconteceu.
+    O último lembrete para essa pessoa não foi entregue. O número pode estar errado ou sem WhatsApp, ou o canal pode estar desconectado. Corrija o número e use **Tentar de novo**. Abra a conversa dela pelo ícone de conversa para ver o que aconteceu.
+  </Accordion>
+  <Accordion title="Marquei como pago por engano. Como desfaço?">
+    Clique em **Desfazer** no aviso, ou em **Últimas baixas de pagos**, nos detalhes da cobrança. Para uma pessoa só, selecione e clique em **Voltar para em aberto**.
   </Accordion>
   <Accordion title="O WhatsApp escolhido aparece como desconectado. Os lembretes saem?">
     Não. Os lembretes só saem depois que o canal for reconectado. Veja [Conexões](/conta/conexoes).
