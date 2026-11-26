@@ -234,7 +234,45 @@
         "language": "es",
         "tabs": [
           {
-            "tab": "Centro de ayuda"
+            "tab": "Centro de ayuda",
+            "groups": [
+              {
+                "group": "Primeros pasos",
+                "pages": []
+              },
+              {
+                "group": "Inteligencia artificial",
+                "pages": []
+              },
+              {
+                "group": "Atención",
+                "pages": []
+              },
+              {
+                "group": "CRM",
+                "pages": []
+              },
+              {
+                "group": "Marketing",
+                "pages": []
+              },
+              {
+                "group": "Gestión",
+                "pages": []
+              },
+              {
+                "group": "Cuenta",
+                "pages": []
+              },
+              {
+                "group": "Plataforma",
+                "pages": []
+              },
+              {
+                "group": "Empresa",
+                "pages": []
+              }
+            ]
           },
           {
             "tab": "Novedades y actualizaciones"
