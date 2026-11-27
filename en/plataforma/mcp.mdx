@@ -32,7 +32,8 @@ In the side menu, open **Settings** and click **Connections**. On the **Integrat
 - **Endereço do servidor** (Server address): `https://app.attocorp.com/mcp`. Use this address to read and, if the key allows, to write.
 - **Somente leitura (mesmo com chave de escrita)** (Read only, even with a write key): `https://app.attocorp.com/mcp/readonly`. At this address the AI can only read, even if the key has write permission.
 - **Como conectar** (How to connect): ready-to-copy instructions in the **Claude**, **Claude Desktop / Cursor** and **n8n / outros** (n8n / others) tabs.
-- The key list, in the **Ativas** (Active) and **Inativas** (Inactive: expired or revoked) tabs. Each key shows its name, the start of the key (prefix), its permissions, the **Dados mascarados** (Masked data) badge when applicable and **Último uso** (Last used).
+- The tip **In Claude, just paste the MCP address: it opens Atto CRM so you can approve the connection.** See [Connect without a key](#connect-without-a-key-through-the-crm-login).
+- The key list, in the **Ativas** (Active) and **Inativas** (Inactive: expired or revoked) tabs. Each key shows its name, the start of the key (prefix), its permissions, the **Dados mascarados** (Masked data) badge when applicable and **Último uso** (Last used). Apps connected through the CRM login appear in the same list, with the **Connected by** badge and the app's name.
 
 Each field has a copy button next to it.
 
@@ -72,9 +73,40 @@ The key is the password your AI assistant uses to get into the CRM. Each assista
   If you are not the owner of every company in the key, the expiration is at most 90 days. If any company hides its members' phone numbers, the key is generated with personal data masked even if you turned the option off, and the screen tells you so.
 </Note>
 
+## Connect without a key, through the CRM login
+
+In Claude (web, app and Claude Code), you do not need to generate a key. Just paste the MCP address into the connector. Claude opens the CRM on an authorization screen, and you approve it right there.
+
+The screen has the title **... wants to access your Atto CRM account**, with the app's name at the start (for example, "Claude wants to access your Atto CRM account"):
+
+<Steps>
+  <Step title="Choose the companies">
+    Under **Choose companies**, check the companies the AI can see, or click **Select all**. Only the companies where you are the **owner** or a **manager** appear.
+  </Step>
+  <Step title="Check the permissions">
+    Under **This will allow**, the screen shows what the app gets: **Read CRM data from the selected companies**, **Phone, e-mail and CPF arrive masked** and **Never deletes anything or sends messages**.
+  </Step>
+  <Step title="Allow editing, if you want">
+    Under **More options**, the **Allow creating and editing leads, tags, notes, tasks and calendar** box gives the app write permission. It only appears for the owner of every checked company and when the address is not `/readonly`.
+  </Step>
+  <Step title="Connect">
+    Click **Connect**. The screen shows **Done! You can go back to** and the app's name. Go back to Claude and use it as usual.
+  </Step>
+</Steps>
+
+- The connection **is valid for 90 days** and renews on its own while the app is in use.
+- Only the company **owner** or a **manager** can authorize. If the account asks for the second factor, confirm it before continuing.
+- Personal data always arrives masked with this kind of connection.
+- Each connected app counts toward the limit of 5 active keys per company.
+- If you connect the same app again, the new connection replaces the previous one.
+
+<Warning>
+  Read the address shown in **You will return to** before clicking **Connect**. If the screen warns that the app's name does not match its return address, or that the app runs on your computer, only continue if you are the one who just asked for the connection.
+</Warning>
+
 ## Connect your assistant
 
-The step by step for Claude Code, Cursor, GitHub Copilot in VS Code, Copilot Studio and n8n is in [Connect the MCP to your AI](/en/plataforma/conectar-ia). In all of them you use the same address and the key in the `Authorization: Bearer SUA_CHAVE` header.
+The step by step for Claude, Claude Code, Cursor, GitHub Copilot in VS Code, Copilot Studio and n8n is in [Connect the MCP to your AI](/en/plataforma/conectar-ia). In Claude, you connect through the CRM login. In the other tools, you use the address and the key in the `Authorization: Bearer SUA_CHAVE` header.
 
 <Card title="Connect the MCP to your AI" icon="link" horizontal href="/en/plataforma/conectar-ia">
   Guide per tool, with the standard name **CRM - Atto Corp** so nobody confuses or deletes the connector by mistake.
@@ -194,7 +226,7 @@ Draft rules:
 - **Per-key limits, per minute:** 60 lookups, 30 searches, 10 reports and 20 writes.
 - **Per-company limits, adding up all keys:** 600 calls per minute and 10,000 per day.
 - **Load protection.** A lookup that runs past the time limit is cut off. When the CRM is busy, the request is refused and the AI is told how many seconds to wait. An answer that is too large asks the AI to fetch smaller pages.
-- **Key limit.** Up to 5 active keys per company and up to 20 keys generated per person in 24 hours.
+- **Key limit.** Up to 5 active keys per company, counting the apps connected through the CRM login, and up to 20 keys or connections created per person in 24 hours.
 
 ## Track a key's usage
 
@@ -217,6 +249,12 @@ Click a key in the list to open its details. The window has three tabs:
 
 Access is cut off immediately for every assistant using the key. It cannot be undone. The key moves to the **Inativas** (Inactive) tab with the **Revogado** (Revoked) status.
 
+### Disconnect an app
+
+An app connected through the CRM login appears in the list with the **Connected by** badge and the app's name. In the details, instead of **Prefixo** (Prefix), you see **Returns to**, with the app's address.
+
+To remove its access, open the app in the list and click **Disconnect**. In the **Disconnect this app?** window, confirm. The app loses access right away and the screen shows **App disconnected.** To use it again, connect it again from the app.
+
 ## Common errors
 
 | Message | What it means |
@@ -226,6 +264,9 @@ Access is cut off immediately for every assistant using the key. It cannot be un
 | **Só o dono ou um gerente da empresa pode gerar chave.** | Your role in the company does not allow generating keys. |
 | **Não foi possível gerar a chave. Tente de novo.** | Generating failed. Try again. |
 | **Informe de 1 a 365 dias.** | The expiration is outside the allowed range. |
+| **Only the company owner or a manager can authorize.** | On the authorization screen, your role does not allow connecting the app. |
+| **Select at least one company.** | On the authorization screen, no company was checked. |
+| **Limit of 5 active keys per company. Disconnect one in Connections > MCP.** | Keys and connected apps add up to 5. Revoke a key or disconnect an app. |
 
 In the AI assistant, an invalid, expired or revoked key shows up as "token do MCP invalido ou revogado" (MCP token invalid or revoked). If the AI tries to write through the read-only address, it gets "este endereco e so leitura" (this address is read only). If the key has no write permission, it gets "esta chave nao tem o escopo de escrita" (this key does not have the write scope).
 

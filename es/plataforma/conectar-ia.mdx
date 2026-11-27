@@ -1,7 +1,7 @@
 ---
 title: "Conectar el MCP a tu IA"
 sidebarTitle: "Conectar a tu IA"
-description: "Paso a paso para conectar el MCP del CRM a Claude Code, Cursor, GitHub Copilot en VS Code, Copilot Studio y n8n, siempre con el nombre CRM - Atto Corp."
+description: "Paso a paso para conectar el MCP del CRM a Claude, Claude Code, Cursor, GitHub Copilot en VS Code, Copilot Studio y n8n, siempre con el nombre CRM - Atto Corp."
 icon: "link"
 keywords:
   - "MCP"
@@ -17,12 +17,14 @@ Esta guía muestra cómo conectar el [MCP del CRM](/es/plataforma/mcp) a la herr
 
 ## Antes de empezar
 
-Necesitas dos cosas:
+Necesitas:
 
 | Qué | Dónde obtenerlo |
 | --- | --- |
 | **Dirección del servidor** | `https://app.attocorp.com/mcp`. Para una IA que solo debe leer, usa `https://app.attocorp.com/mcp/readonly`. |
-| **Clave del MCP** | Se genera en la pantalla **Servidor MCP** (servidor MCP), en **Conexiones**. Empieza con `atto_mcp_`. Consulta [Generar una clave](/es/plataforma/mcp#generar-una-clave). |
+| **Clave del MCP** | Solo para las herramientas que piden clave. Se genera en la pantalla **Servidor MCP** (servidor MCP), en **Conexiones**. Empieza con `atto_mcp_`. Consulta [Generar una clave](/es/plataforma/mcp#generar-una-clave). |
+
+En **Claude** (sitio y aplicación) no usas clave: pegas solo la dirección y apruebas la conexión en el CRM, con tu cuenta de dueño o gerente. En **Claude Code** puedes usar las dos formas.
 
 <Warning>
   La clave aparece **una sola vez**. Genera una clave para cada herramienta de IA y nunca pegues la clave en una conversación, un e-mail o una captura de pantalla. En los ejemplos de abajo, cambia `SUA_CHAVE` por tu clave.
@@ -39,16 +41,53 @@ En el CRM, haz lo mismo con el nombre de la clave: indica dónde está instalada
 ## Elige tu herramienta
 
 <Tabs>
+  <Tab title="Claude (sitio y app)">
+    En Claude, el MCP entra como un conector personalizado. No necesita clave.
+
+    <Steps>
+      <Step title="Agrega el conector">
+        En Claude, abre **Configuración** (Settings), ve a **Conectores** (Connectors) y haz clic en **Agregar conector personalizado** (Add custom connector).
+      </Step>
+      <Step title="Completa los datos">
+        - **Nombre**: CRM - Atto Corp
+        - **URL**: `https://app.attocorp.com/mcp`
+
+        Haz clic en **Agregar** (Add).
+      </Step>
+      <Step title="Conecta">
+        Haz clic en **Conectar** (Connect) en el conector. Claude abre el CRM en la pantalla **Claude quiere acceder a tu cuenta de Atto CRM**.
+      </Step>
+      <Step title="Aprueba en el CRM">
+        Marca las empresas, revisa los permisos y haz clic en **Conectar**. Cuando aparezca **¡Listo! Puedes volver a Claude.**, vuelve a Claude. Consulta los detalles de la pantalla en [Conectar sin clave](/es/plataforma/mcp#conectar-sin-clave-con-el-login-del-crm).
+      </Step>
+      <Step title="Úsalo en la conversación">
+        En una conversación, activa el **CRM - Atto Corp** en el botón de herramientas y pide, por ejemplo: "Usa el CRM - Atto Corp y ejecuta el whoami".
+      </Step>
+    </Steps>
+
+    <Note>
+      Los nombres de los menús de Claude pueden cambiar con las actualizaciones. Los conectores personalizados pueden depender de tu plan en Claude, y en una cuenta de equipo quien los habilita es el administrador.
+    </Note>
+  </Tab>
   <Tab title="Claude Code">
-    Claude Code es Claude en la terminal. La conexión se hace con un comando.
+    Claude Code es Claude en la terminal. La conexión se hace con un comando, con el login del CRM o con una clave.
 
     <Steps>
       <Step title="Agrega el servidor">
-        En la terminal, ejecuta el comando de abajo, con tu clave en lugar de `SUA_CHAVE`:
+        En la terminal, ejecuta:
+
+        ```bash
+        claude mcp add --transport http crm-atto-corp https://app.attocorp.com/mcp
+        ```
+
+        Para usar una clave en lugar del login, agrega el encabezado, con tu clave en lugar de `SUA_CHAVE`:
 
         ```bash
         claude mcp add --transport http crm-atto-corp https://app.attocorp.com/mcp --header "Authorization: Bearer SUA_CHAVE"
         ```
+      </Step>
+      <Step title="Inicia sesión, si no usaste clave">
+        Dentro de una conversación, ejecuta `/mcp`, elige **crm-atto-corp** y la opción de autenticar. El navegador abre la pantalla de autorizar del CRM. Apruébala y vuelve a la terminal.
       </Step>
       <Step title="Verifica">
         Ejecuta `claude mcp list`. El **crm-atto-corp** debe aparecer conectado. Dentro de una conversación, el comando `/mcp` muestra lo mismo.
@@ -177,21 +216,19 @@ En el CRM, haz lo mismo con el nombre de la clave: indica dónde está instalada
   Después de conectar, en cualquier herramienta, pide que ejecute el `whoami`. Confirma que la clave funciona y muestra sus empresas y permisos.
 </Tip>
 
-## ChatGPT y Claude en el sitio o la app
+## ¿Y ChatGPT?
 
-Los conectores personalizados de ChatGPT y de Claude (sitio y aplicación) todavía **no pueden** conectarse al MCP del CRM. Piden un inicio de sesión propio de la herramienta y no tienen un campo para pegar la clave del CRM.
-
-Mientras tanto, usa una de las herramientas de arriba. Cuando este tipo de conexión esté disponible, esta guía se actualizará y el aviso aparecerá en [Novedades y actualizaciones](/es/novidades/changelog).
+El CRM ahora acepta la conexión con el login, la misma forma que usa Claude. Atto Corp todavía no probó la conexión con ChatGPT, por eso aún no forma parte de esta guía. Cuando esté confirmada, esta guía se actualizará y el aviso aparecerá en [Novedades y actualizaciones](/es/novidades/changelog).
 
 ## Desconectar con seguridad
 
 Para quitarle el acceso a una herramienta:
 
 1. Elimina el **CRM - Atto Corp** de la lista de servidores o conectores de la herramienta.
-2. En el CRM, revoca la clave de esa herramienta. Consulta [Revocar una clave](/es/plataforma/mcp#revocar-una-clave).
+2. En el CRM, revoca la clave de esa herramienta o, si entró con el login, desconecta la app. Consulta [Revocar una clave](/es/plataforma/mcp#revocar-una-clave) y [Desconectar una app](/es/plataforma/mcp#desconectar-una-app).
 
 <Note>
-  Solo eliminar el conector de la herramienta no desactiva la clave. Revócala en el CRM para garantizar que nadie más use la clave.
+  Solo eliminar el conector de la herramienta no desactiva el acceso. Revoca la clave o desconecta la app en el CRM para garantizar que nadie más lo use.
 </Note>
 
 ## Problemas comunes

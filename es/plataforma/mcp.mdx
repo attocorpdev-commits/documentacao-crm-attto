@@ -28,7 +28,8 @@ En el menú lateral, abre **Configuración** y haz clic en **Conexiones**. En la
 - **Endereço do servidor** (dirección del servidor): `https://app.attocorp.com/mcp`. Usa esta dirección para leer y, si la clave lo permite, escribir.
 - **Somente leitura (mesmo com chave de escrita)** (solo lectura, incluso con clave de escritura): `https://app.attocorp.com/mcp/readonly`. En esta dirección la IA solo lee, aunque la clave tenga permiso de escritura.
 - **Como conectar** (cómo conectar): instrucciones listas para copiar, separadas en las pestañas **Claude**, **Claude Desktop / Cursor** y **n8n / outros** (n8n / otros).
-- La lista de claves, en las pestañas **Ativas** (activas) e **Inativas** (inactivas: vencidas o revocadas). Cada clave muestra el nombre, el comienzo de la clave (prefijo), los permisos, la insignia **Dados mascarados** (datos enmascarados) cuando corresponde y el **Último uso** (último uso).
+- El consejo **En Claude, basta con pegar la dirección del MCP: abre Atto CRM para que apruebes la conexión.** Consulta [Conectar sin clave](#conectar-sin-clave-con-el-login-del-crm).
+- La lista de claves, en las pestañas **Ativas** (activas) e **Inativas** (inactivas: vencidas o revocadas). Cada clave muestra el nombre, el comienzo de la clave (prefijo), los permisos, la insignia **Dados mascarados** (datos enmascarados) cuando corresponde y el **Último uso** (último uso). Las apps conectadas con el login del CRM aparecen en la misma lista, con la insignia **Conectado por** y el nombre de la app.
 
 Cada campo tiene un botón de copiar al lado.
 
@@ -68,9 +69,40 @@ La clave es la contraseña que tu asistente de IA usa para entrar en el CRM. Cad
   Quien no es dueño de todas las empresas de la clave queda con una validez de como máximo 90 días. Si alguna empresa oculta los teléfonos de los miembros, la clave se genera con los datos personales enmascarados aunque hayas apagado la opción, y la pantalla avisa.
 </Note>
 
+## Conectar sin clave, con el login del CRM
+
+En Claude (sitio, aplicación y Claude Code), no necesitas generar una clave. Basta con pegar la dirección del MCP en el conector. Claude abre el CRM en una pantalla de autorizar, y apruebas ahí mismo.
+
+La pantalla tiene el título **... quiere acceder a tu cuenta de Atto CRM**, con el nombre de la app al comienzo (por ejemplo, "Claude quiere acceder a tu cuenta de Atto CRM"):
+
+<Steps>
+  <Step title="Elige las empresas">
+    En **Elige las empresas**, marca las empresas que la IA puede ver, o haz clic en **Marcar todas**. Aparecen solo las empresas en las que eres **dueño** o **gerente**.
+  </Step>
+  <Step title="Revisa los permisos">
+    En **Esto permitirá**, la pantalla muestra lo que recibe la app: **Leer los datos del CRM de las empresas elegidas**, **Teléfono, e-mail y CPF llegan enmascarados** y **Nunca borra nada ni envía mensajes**.
+  </Step>
+  <Step title="Habilita la edición, si quieres">
+    En **Más opciones**, la casilla **Permitir crear y editar leads, etiquetas, notas, tareas y agenda** le da a la app permiso de escritura. Solo aparece para el dueño de todas las empresas marcadas y cuando la dirección no es la `/readonly`.
+  </Step>
+  <Step title="Conecta">
+    Haz clic en **Conectar**. La pantalla muestra **¡Listo! Puedes volver a** y el nombre de la app. Vuelve a Claude y úsalo normalmente.
+  </Step>
+</Steps>
+
+- La conexión **vale por 90 días** y se renueva sola mientras se usa la app.
+- Solo el **dueño** o un **gerente** de la empresa autoriza. Si la cuenta pide el segundo factor, confírmalo antes de continuar.
+- Los datos personales llegan siempre enmascarados en esta forma de conexión.
+- Cada app conectada cuenta en el límite de 5 claves activas por empresa.
+- Si conectas la misma app de nuevo, la nueva conexión reemplaza a la anterior.
+
+<Warning>
+  Lee la dirección que aparece en **Volverás a** antes de hacer clic en **Conectar**. Si la pantalla avisa que el nombre de la app no coincide con la dirección de vuelta, o que la app se ejecuta en tu computadora, continúa solo si fuiste tú quien pidió la conexión ahora.
+</Warning>
+
 ## Conectar tu asistente
 
-El paso a paso para Claude Code, Cursor, GitHub Copilot en VS Code, Copilot Studio y n8n está en [Conectar el MCP a tu IA](/es/plataforma/conectar-ia). En todas usas la misma dirección y la clave en el encabezado `Authorization: Bearer SUA_CHAVE`.
+El paso a paso para Claude, Claude Code, Cursor, GitHub Copilot en VS Code, Copilot Studio y n8n está en [Conectar el MCP a tu IA](/es/plataforma/conectar-ia). En Claude, la conexión es con el login del CRM. En las demás herramientas, usas la dirección y la clave en el encabezado `Authorization: Bearer SUA_CHAVE`.
 
 <Card title="Conectar el MCP a tu IA" icon="link" horizontal href="/es/plataforma/conectar-ia">
   Guía por herramienta, con el nombre estándar **CRM - Atto Corp** para no confundir ni borrar el conector sin querer.
@@ -190,7 +222,7 @@ Reglas del borrador:
 - **Límites de uso por clave, por minuto:** 60 consultas, 30 búsquedas, 10 informes y 20 escrituras.
 - **Límites por empresa, sumando todas las claves:** 600 llamadas por minuto y 10.000 por día.
 - **Protección de carga.** La consulta que pasa del tiempo límite se corta. Cuando el CRM está ocupado, el pedido se rechaza y la IA recibe cuántos segundos esperar. Una respuesta demasiado grande pide a la IA que busque en páginas más pequeñas.
-- **Límite de claves.** Hasta 5 claves activas por empresa y hasta 20 claves generadas por persona en 24 horas.
+- **Límite de claves.** Hasta 5 claves activas por empresa, contando las apps conectadas con el login del CRM, y hasta 20 claves o conexiones creadas por persona en 24 horas.
 
 ## Seguir el uso de una clave
 
@@ -213,6 +245,12 @@ Haz clic en una clave de la lista para abrir los detalles. La ventana tiene tres
 
 El acceso se corta al instante para todo asistente que use la clave. No se puede deshacer. La clave pasa a la pestaña **Inativas** (inactivas) con el estado **Revogado** (revocado).
 
+### Desconectar una app
+
+Una app conectada con el login del CRM aparece en la lista con la insignia **Conectado por** y el nombre de la app. En el detalle, en lugar de **Prefixo** (prefijo), aparece **Vuelve a**, con la dirección de la app.
+
+Para quitarle el acceso, abre la app en la lista y haz clic en **Desconectar**. En la ventana **¿Desconectar esta app?**, confirma. La app pierde el acceso al instante y la pantalla muestra **App desconectada.** Para usarla de nuevo, conéctala otra vez desde la app.
+
 ## Errores comunes
 
 | Mensaje | Qué significa |
@@ -222,6 +260,9 @@ El acceso se corta al instante para todo asistente que use la clave. No se puede
 | **Só o dono ou um gerente da empresa pode gerar chave.** (solo el dueño o un gerente de la empresa puede generar claves) | Tu rol en la empresa no permite generar claves. |
 | **Não foi possível gerar a chave. Tente de novo.** (no fue posible generar la clave; inténtalo de nuevo) | Falla al generar. Inténtalo otra vez. |
 | **Informe de 1 a 365 dias.** (indica de 1 a 365 días) | La validez está fuera del rango permitido. |
+| **Solo el dueño o un gerente de la empresa puede autorizar.** | En la pantalla de autorizar, tu rol no permite conectar la app. |
+| **Marca al menos una empresa.** | En la pantalla de autorizar, no se marcó ninguna empresa. |
+| **Límite de 5 claves activas por empresa. Desconecta una en Conexiones > MCP.** | Las claves y las apps conectadas suman 5. Revoca una clave o desconecta una app. |
 
 En el asistente de IA, la clave inválida, vencida o revocada aparece como "token do MCP invalido ou revogado" (token del MCP inválido o revocado). Si la IA intenta escribir por la dirección de solo lectura, recibe "este endereco e so leitura" (esta dirección es solo de lectura). Si la clave no tiene escritura, recibe "esta chave nao tem o escopo de escrita" (esta clave no tiene el alcance de escritura).
 

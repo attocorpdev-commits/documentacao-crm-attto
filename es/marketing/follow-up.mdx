@@ -1,0 +1,238 @@
+---
+title: "Follow-up"
+sidebarTitle: "Follow-up"
+description: "Arma flujos de mensajes automáticos para el lead que dejó de responder o entró en una etapa, con esperas, condiciones y caminos."
+icon: "diagram-project"
+keywords:
+  - "follow-up"
+  - "flujo"
+  - "secuencia"
+  - "mensaje automático"
+  - "dejó de responder"
+  - "seguimiento"
+---
+
+El **Follow-up** envía mensajes automáticos al lead en el momento justo. Armas un **flujo** en forma de árbol: qué hace que el lead entre, qué recibe, cuánto tiempo esperar y qué hacer si responde o no.
+
+<Note>
+  El Follow-up se está habilitando de a poco. Si todavía no aparece para tu empresa, la pantalla muestra los planes que incluyen el recurso y el botón **Hablar con soporte**.
+</Note>
+
+## Quién puede usarlo
+
+- El **dueño** y el **gerente** siempre tienen acceso.
+- El colaborador solo tiene acceso si tiene la página **Follow-up** habilitada en [Equipo](/es/conta/equipe).
+- Solo el dueño y el gerente envían mensajes de prueba.
+
+## Cómo acceder
+
+En el menú lateral, abre el grupo **Marketing** y haz clic en **Follow-up**. La pantalla tiene tres pestañas:
+
+- **Flujos**: la lista de tus flujos, con la situación de cada uno.
+- **Leads en flujo**: quién está dentro de algún flujo ahora.
+- **Historial**: cada envío, con el resultado.
+
+Para empezar, haz clic en **Nuevo flujo**.
+
+## Cómo funciona un flujo
+
+El flujo empieza en un **Disparador**. Debajo de él, cada **+** abre el menú de bloques. Haz clic en un bloque para abrir su configuración al lado.
+
+Reglas del árbol:
+
+- Todo camino termina en un bloque **Finalizar**.
+- Un camino no puede volver a un paso anterior.
+- Los bloques con dos caminos (**Sí** y **No**, **Respondió** y **No respondió**) necesitan tener los dos conectados.
+- Un flujo tiene hasta 60 bloques y un nombre de hasta 80 letras.
+- La empresa puede tener hasta 20 flujos abiertos. Para crear otro, archiva uno.
+
+## Bloques
+
+<AccordionGroup>
+  <Accordion title="Disparador: qué hace que el lead entre al flujo" icon="bolt">
+    Elige el tipo:
+
+    - **Entró en la etapa**: el lead entra cuando llega a una etapa del embudo.
+    - **Se quedó sin responder**: el lead entra cuando pasa un tiempo sin responder, de 1 a 720 horas (o en días).
+
+    Después elige el **Pipeline**, la opción **En la etapa** (opcional en el tipo **Se quedó sin responder**) y el **Número que envía**.
+
+    Solo entra quien ya envió al menos 1 mensaje a la empresa. El Disparador no se puede quitar. Ahí también están las [reglas de este flujo](#reglas-de-envio).
+  </Accordion>
+
+  <Accordion title="Enviar mensaje: qué recibe el lead" icon="paper-plane">
+    - **Número de WhatsApp (Código QR):** el envío es solo de texto.
+    - **Número de WhatsApp Oficial (Meta):** completa la pestaña **Template de respaldo**, con una plantilla aprobada. La pestaña **Texto libre** es opcional. Si el lead envió un mensaje en las últimas 24 horas, sale el texto libre. Si no, sale la plantilla. Consulta [ventana de 24 horas](/es/atendimento/janela-24h) y [plantillas](/es/atendimento/templates-whatsapp).
+
+    En **Insertar dato del lead**, agrega datos que cambian para cada persona: `{nome}`, `{empresa}`, `{etapa}`, `{atendente}` y `{valor}`. Cuando el dato está vacío en el contacto, el CRM usa un texto en su lugar:
+
+    | Dato | Cuando está vacío, sale |
+    | --- | --- |
+    | `{nome}` | cliente |
+    | `{atendente}` | nossa equipe (nuestro equipo) |
+    | `{valor}` | o valor combinado (el valor acordado) |
+
+    El mensaje tiene hasta 1024 letras y hasta 10 datos del lead.
+
+    <Warning>
+      Meta cobra cada envío de las plantillas de la categoría **Marketing**.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Esperar tiempo" icon="hourglass">
+    Retiene al lead durante un tiempo antes del próximo bloque: de 5 minutos a 30 días. La espera solo cuenta dentro del horario de envío del flujo.
+  </Accordion>
+
+  <Accordion title="Esperar respuesta" icon="comments">
+    Espera la respuesta del lead **por hasta** el tiempo que elijas y divide el camino en dos: **Respondió** y **No respondió**. Cualquier mensaje del lead cuenta como respuesta, incluso una reacción.
+  </Accordion>
+
+  <Accordion title="Condición" icon="code-branch">
+    Pregunta si el lead cumple las reglas y divide el camino en **Sí** y **No**. Elige **Todas las reglas** o **Cualquier regla**.
+
+    Puedes revisar: etapa actual, etiqueta, si respondió desde el paso anterior, nivel de interés, valor, si vino de un anuncio, canal y si un asesor tomó la conversación.
+
+    Un lead sin el dato sigue el camino **No**, y el historial muestra "sin dato".
+  </Accordion>
+
+  <Accordion title="Etiqueta" icon="tag">
+    Agrega o quita una [etiqueta](/es/crm/tags) del lead. Puedes crear una etiqueta nueva ahí mismo.
+  </Accordion>
+
+  <Accordion title="Mover de etapa" icon="arrow-right">
+    Mueve al lead a otra etapa del embudo. No gasta crédito de IA y queda en el historial del lead con el origen **Follow-up**.
+
+    Mover a **Convertido** por el Follow-up no envía la conversión a Meta. Consulta [Seguimiento de Meta](/es/marketing/rastreamento-meta).
+  </Accordion>
+
+  <Accordion title="Asignar o avisar" icon="user-check">
+    Pasa el lead a un asesor en **Quién lo recibe** y, si quieres, avisa en la campana. Solo aparece quien usa ese número.
+  </Accordion>
+
+  <Accordion title="Finalizar" icon="flag-checkered">
+    El lead sale del flujo. Solo vuelve a entrar si el disparador ocurre otra vez, después del plazo de reingreso y dentro del límite del mes.
+  </Accordion>
+</AccordionGroup>
+
+## Reglas de envío
+
+Todo flujo nuevo empieza con las **Reglas predeterminadas de los flujos**:
+
+- Envía de 8 a 20 h, de lunes a sábado. El domingo siempre queda fuera.
+- Hasta 8 mensajes por lead por mes, sumando todos los flujos.
+- Hasta 100 entradas por hora.
+- El lead puede volver a entrar después de 30 días.
+- **Se detiene** cuando el lead responde, compra, se pierde o pide salir.
+- **Se pausa** cuando un asesor toma la conversación, cuando el robot está activo o cuando el número se cae.
+
+Para cambiar las reglas de un flujo, abre el **Disparador** y ve a **Reglas de este flujo**:
+
+| Regla | Rango |
+| --- | --- |
+| Horario de envío | Los días y las horas que elijas. El domingo siempre queda fuera. |
+| Mensajes por lead en el mes | 1 a 30 |
+| Entradas por hora | 1 a 1000 |
+| Días para reingreso | 0 a 365 (0 = puede volver en cualquier momento) |
+
+En el número de WhatsApp (Código QR), la tarjeta también muestra cuántos mensajes libres le quedan hoy al número para el Follow-up.
+
+## Probar antes de activar
+
+Guarda el flujo antes de probar. Mientras es borrador, no se envía nada.
+
+- **Probar > Enviarme a mí**: envía un bloque **Enviar mensaje** a tu WhatsApp, con datos de ejemplo. Llega en hasta 1 minuto. Funciona de lunes a sábado, de 8 a 20 h, con hasta 10 pruebas por día en la empresa.
+- **Probar > Simular con un lead**: indica el teléfono de un lead y mira el **Camino del lead**, con las fechas de cada paso. No se envía nada.
+
+## Activar el flujo
+
+<Steps>
+  <Step title="Haz clic en Activar">
+    La ventana muestra quién entra al flujo, el número que envía y cuántos leads tienen WhatsApp.
+  </Step>
+  <Step title="Resuelve lo que impide activarlo">
+    Los problemas aparecen en **Qué impide activarlo**. Los **Avisos** no bloquean. Consulta [problemas comunes](#problemas-comunes).
+  </Step>
+  <Step title="Elige quién entra">
+    Marca **Solo leads nuevos** o incluye a los leads que ya están en el público. Entran de a poco, hasta el límite de entradas por hora.
+  </Step>
+  <Step title="Confirma">
+    Marca **Estos leads ya hablaron con la empresa y pueden recibir mensajes.** Si el flujo tiene una plantilla de Marketing, la ventana muestra una estimación de costo y pide que marques **Entiendo que Meta cobra cada mensaje de Marketing**.
+  </Step>
+</Steps>
+
+Si es fuera del horario de envío, la ventana avisa cuándo empieza el flujo.
+
+<Warning>
+  El Follow-up no funciona junto con un robot. Si el número tiene la IA activada, desactiva la IA de ese número en [Conexiones](/es/conta/conexoes) o elige otro número.
+</Warning>
+
+El flujo necesita etapas de **Perdido** y de **Convertido** (o **Ganado**) en el embudo, para saber cuándo detenerse. Si faltan, usa el atajo **Marcar etapas Perdido y Convertido** o crea las etapas en el [Pipeline](/es/crm/pipeline).
+
+## Pausar, editar y archivar
+
+| Situación | Qué pasa |
+| --- | --- |
+| **Borrador** | No se dispara nada. |
+| **Activo** | Los leads entran y reciben los mensajes. |
+| **Pausado** | Nadie recibe mensajes. Al hacer clic en **Reanudar**, quien está dentro sigue desde donde se detuvo. |
+| **Archivado** | Los leads salen, los envíos en cola se cancelan y el flujo queda solo de lectura. No se puede deshacer. Usa **Mostrar archivados** para verlos. |
+
+En un flujo activo, solo puedes cambiar los textos y las reglas. Para cambiar los bloques de un flujo con leads, haz clic en **Duplicar y editar**: la copia nace como borrador, sin leads.
+
+## Seguimiento
+
+Abre un flujo para ver hace cuánto tiempo está activo, cuántos leads entraron, cuántos están esperando y cuántos respondieron en 7 días. En el árbol, cada bloque muestra cuántos pasaron, fallaron o están esperando ahí.
+
+- **Leads en el flujo**: filtra por **Abiertos**, **Activos**, **Esperando**, **Pausados**, **Concluidos** o **Detenidos**. Mira el bloque actual y la próxima acción de cada lead. Para sacar varios leads a la vez, selecciónalos y haz clic en **Sacar del flujo** (hasta 500 por vez).
+- **Historial de envíos**: cada envío con el resultado (**En cola**, **Enviado**, **Entregado**, **Leído**, **Falló**, **Omitido** o **Cancelado**), si salió como texto libre o plantilla y el motivo.
+
+## En la conversación
+
+- En la parte superior de la conversación de WhatsApp, la insignia **Follow-up** muestra el flujo, el bloque actual, la situación y el próximo paso. Desde ahí haces clic en **Abrir flujo** o en **Sacar del flujo**. Al sacarlo, los envíos que todavía no salieron se cancelan.
+- Los mensajes enviados por el flujo llevan la insignia **Follow-up**, con el nombre del flujo.
+- Cuando el bloque **Asignar o avisar** cambia el responsable, la franja de la conversación muestra el origen **Follow-up**.
+- El [Dashboard](/es/gestao/dashboard) muestra cuántos mensajes envió el Follow-up.
+- Los envíos del Follow-up no aparecen en la lista de [Difusiones](/es/marketing/disparos).
+
+## Cuándo el lead se detiene o se pausa
+
+- **Respondió:** cualquier respuesta saca al lead del flujo, salvo dentro de **Esperar respuesta**, donde lo lleva al camino **Respondió**.
+- **Un asesor tomó la conversación:** el lead se pausa. Si el último mensaje es del lead y el equipo no respondió, se pausa como "Esperando respuesta del equipo".
+- **Pidió salir:** el Follow-up usa la misma lista de bajas de la empresa. El lead sale con el motivo "Pidió no recibir mensajes".
+- **Un flujo a la vez:** el lead está en un solo flujo como máximo.
+- **Espera:** fuera del horario de envío, con el límite del mes alcanzado o antes del plazo de reingreso, el lead espera.
+- **Pausa:** canal desconectado o 2 fallas seguidas de envío.
+- **Finaliza:** convertido, perdido, salió del embudo, número inválido, sin WhatsApp o sin plantilla aprobada.
+
+## Problemas comunes
+
+| Problema | Qué hacer |
+| --- | --- |
+| Disparador incompleto | Completa el **Disparador**. |
+| Camino sin fin | Pon un bloque **Finalizar** al final. |
+| Camino faltante o bloque suelto | Conecta o quita el bloque. |
+| Envío sin mensaje o texto demasiado largo | Ajusta el mensaje. |
+| Sin plantilla aprobada (WhatsApp Oficial) | Elige una plantilla aprobada en la pestaña **Template de respaldo**. |
+| Canal desconectado | Vuelve a conectar el número en [Conexiones](/es/conta/conexoes). |
+| Robot activado en el número | Desactiva la IA del número o elige otro. |
+| Embudo sin Perdido y Convertido | Crea las etapas o usa **Marcar etapas Perdido y Convertido**. |
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Difusiones" icon="paper-plane" href="/es/marketing/disparos">
+    Envía una campaña a una lista de una sola vez.
+  </Card>
+
+  <Card title="Plantillas de WhatsApp Oficial" icon="file-lines" href="/es/atendimento/templates-whatsapp">
+    Modelos aprobados por Meta para WhatsApp Oficial.
+  </Card>
+
+  <Card title="Pipeline" icon="table-columns" href="/es/crm/pipeline">
+    Embudos y etapas que disparan y finalizan los flujos.
+  </Card>
+
+  <Card title="Agente IA" icon="robot" href="/es/ia/agente-ia">
+    La atención automática con IA, que no funciona junto con el Follow-up en el mismo número.
+  </Card>
+</CardGroup>
