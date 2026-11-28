@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Atto Corp - Central de Ajuda",
+  "name": "Atto Corp - Documentação",
   "description": "Aprenda a usar o CRM da Atto Corp: atendimento no WhatsApp e Instagram, funil de vendas, inteligência artificial e disparos.",
   "colors": {
     "primary": "#0B5FD1",
