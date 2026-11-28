@@ -1,0 +1,238 @@
+---
+title: "Follow-up"
+sidebarTitle: "Follow-up"
+description: "Build flows of automatic messages for the lead who stopped replying or entered a stage, with waits, conditions and paths."
+icon: "diagram-project"
+keywords:
+  - "follow-up"
+  - "flow"
+  - "sequence"
+  - "automatic message"
+  - "stopped replying"
+  - "drip"
+---
+
+**Follow-up** sends automatic messages to the lead at the right time. You build a **flow** shaped like a tree: what makes the lead enter, what they receive, how long to wait and what to do if they reply or not.
+
+<Note>
+  Follow-up is being released gradually. If it does not show up for your company yet, the screen shows the plans that include the feature and the **Talk to support** button.
+</Note>
+
+## Who can use it
+
+- The **owner** and the **manager** always have access.
+- A collaborator only has access if the **Follow-up** page is enabled for them in [Team](/en/conta/equipe).
+- Only the owner and the manager can send test messages.
+
+## How to access
+
+In the side menu, open the **Marketing** group and click **Follow-up**. The screen has three tabs:
+
+- **Flows**: the list of your flows, with the status of each one.
+- **Leads in a flow**: who is inside a flow right now.
+- **History**: each send, with its result.
+
+To get started, click **New flow**.
+
+## How a flow works
+
+The flow starts at a **Trigger**. Below it, each **+** opens the block menu. Click a block to open its settings on the side.
+
+Tree rules:
+
+- Every path ends in an **End** block.
+- A path cannot go back to a previous step.
+- Blocks with two paths (**Yes** and **No**, **Replied** and **Did not reply**) must have both connected.
+- A flow has up to 60 blocks and a name of up to 80 characters.
+- The company can have up to 20 open flows. To create another, archive one.
+
+## Blocks
+
+<AccordionGroup>
+  <Accordion title="Trigger: what makes the lead enter the flow" icon="bolt">
+    Choose the type:
+
+    - **Entered the stage**: the lead enters when they reach a stage of the pipeline.
+    - **Did not reply**: the lead enters after going some time without replying, from 1 to 720 hours (or in days).
+
+    Then choose the **Pipeline**, **In the stage** (optional for the **Did not reply** type) and the **Sending number**.
+
+    Only people who have already sent at least 1 message to the company enter. The Trigger cannot be removed. It is also where the [rules for this flow](#sending-rules) are.
+  </Accordion>
+
+  <Accordion title="Send message: what the lead receives" icon="paper-plane">
+    - **WhatsApp (QR Code) number:** sending is text only.
+    - **Official WhatsApp (Meta) number:** fill in the **Backup template** tab, with an approved template. The **Free text** tab is optional. If the lead sent a message in the last 24 hours, the free text goes out. If not, the template goes out. See [24-hour window](/en/atendimento/janela-24h) and [templates](/en/atendimento/templates-whatsapp).
+
+    In **Insert lead data**, add data that changes for each person: `{nome}` (name), `{empresa}` (company), `{etapa}` (stage), `{atendente}` (attendant) and `{valor}` (value). When the data is empty on the contact, the CRM uses a text in its place:
+
+    | Data | When it is empty, this goes out |
+    | --- | --- |
+    | `{nome}` | cliente (customer) |
+    | `{atendente}` | nossa equipe (our team) |
+    | `{valor}` | o valor combinado (the agreed amount) |
+
+    The message has up to 1024 characters and up to 10 lead data fields.
+
+    <Warning>
+      Templates in the **Marketing** category are charged by Meta for each send.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Wait time" icon="hourglass">
+    Holds the lead for some time before the next block: from 5 minutes to 30 days. The wait only counts during the flow's sending hours.
+  </Accordion>
+
+  <Accordion title="Wait for reply" icon="comments">
+    Waits for the lead's reply **for up to** the time you choose and splits the path in two: **Replied** and **Did not reply**. Any message from the lead counts as a reply, including a reaction.
+  </Accordion>
+
+  <Accordion title="Condition" icon="code-branch">
+    Asks whether the lead matches the rules and splits the path into **Yes** and **No**. Choose **All rules** or **Any rule**.
+
+    You can check: current stage, tag, whether they replied since the previous step, interest level, value, whether they came from an ad, channel and whether an attendant took over the conversation.
+
+    A lead without the data follows the **No** path, and the history shows "no data".
+  </Accordion>
+
+  <Accordion title="Tag" icon="tag">
+    Adds or removes a [tag](/en/crm/tags) on the lead. You can create a new tag right there.
+  </Accordion>
+
+  <Accordion title="Move stage" icon="arrow-right">
+    Moves the lead to another stage of the pipeline. It does not use AI credit and stays in the lead's history with the origin **Follow-up**.
+
+    Moving to **Converted** through Follow-up does not send a conversion to Meta. See [Meta Tracking](/en/marketing/rastreamento-meta).
+  </Accordion>
+
+  <Accordion title="Assign or notify" icon="user-check">
+    Hands the lead to an attendant in **Who receives it** and, if you want, notifies them on the bell. Only people who use that number appear.
+  </Accordion>
+
+  <Accordion title="End" icon="flag-checkered">
+    The lead leaves the flow. They only enter again if the trigger happens again, after the re-entry period and within the monthly cap.
+  </Accordion>
+</AccordionGroup>
+
+## Sending rules
+
+Every new flow starts with the **Default flow rules**:
+
+- Sends from 8 AM to 8 PM, Monday to Saturday. Sunday is always left out.
+- Up to 8 messages per lead per month, adding up all flows.
+- Up to 100 entries per hour.
+- The lead can enter again after 30 days.
+- **Stops** when the lead replies, buys, is lost or asks to leave.
+- **Pauses** when an attendant takes over the conversation, when the bot is active or when the number goes down.
+
+To change a flow's rules, open the **Trigger** and go to **Rules for this flow**:
+
+| Rule | Range |
+| --- | --- |
+| Sending hours | Days and hours you choose. Sunday is always left out. |
+| Messages per lead per month | 1 to 30 |
+| Entries per hour | 1 to 1000 |
+| Days before entering again | 0 to 365 (0 = can come back at any time) |
+
+On a WhatsApp (QR Code) number, the card also shows how many free messages the number still has today for Follow-up.
+
+## Test before turning it on
+
+Save the flow before testing. While it is a draft, nothing is sent.
+
+- **Test > Send to me**: sends a **Send message** block to your WhatsApp, with sample data. It arrives within 1 minute. It works Monday to Saturday, from 8 AM to 8 PM, with up to 10 tests per day in the company.
+- **Test > Simulate with a lead**: enter a lead's phone and see the **Lead's path**, with the dates of each step. Nothing is sent.
+
+## Turn on the flow
+
+<Steps>
+  <Step title="Click Turn on">
+    The window shows who enters the flow, the sending number and how many leads have WhatsApp.
+  </Step>
+  <Step title="Fix what prevents turning it on">
+    Problems appear under **What prevents turning it on**. **Warnings** do not block it. See [common problems](#common-problems).
+  </Step>
+  <Step title="Choose who enters">
+    Check **New leads only** or include the leads already in the audience. They enter gradually, up to the hourly entry limit.
+  </Step>
+  <Step title="Confirm">
+    Check **These leads have already talked to the company and can receive messages.** If the flow has a Marketing template, the window shows a cost estimate and asks you to check **I understand that Meta charges for each Marketing message**.
+  </Step>
+</Steps>
+
+If it is outside sending hours, the window tells you when the flow starts.
+
+<Warning>
+  Follow-up does not run alongside a bot. If the number has the AI on, turn off the AI for that number in [Connections](/en/conta/conexoes) or choose another number.
+</Warning>
+
+The flow needs **Lost** and **Converted** (or **Won**) stages in the pipeline, so it knows when to stop. If they are missing, use the **Mark Lost and Converted stages** shortcut or create the stages in the [Pipeline](/en/crm/pipeline).
+
+## Pause, edit and archive
+
+| Status | What happens |
+| --- | --- |
+| **Draft** | Nothing is sent. |
+| **On** | Leads enter and receive the messages. |
+| **Paused** | No one receives messages. When you click **Resume**, whoever is inside continues where they stopped. |
+| **Archived** | Leads leave, queued sends are cancelled and the flow becomes read only. This cannot be undone. Use **Show archived** to see it. |
+
+In a flow that is on, you can only change the texts and the rules. To change the blocks of a flow with leads, click **Duplicate and edit**: the copy starts as a draft, without leads.
+
+## Track it
+
+Open a flow to see how long it has been on, how many leads entered, how many are waiting and how many replied in 7 days. In the tree, each block shows how many passed, failed or are waiting there.
+
+- **Leads in the flow**: filter by **Open**, **Active**, **Waiting**, **Paused**, **Completed** or **Stopped**. See each lead's current block and next action. To remove several leads at once, select them and click **Remove from flow** (up to 500 at a time).
+- **Send history**: each send with its result (**Queued**, **Sent**, **Delivered**, **Read**, **Failed**, **Skipped** or **Cancelled**), whether it went out as free text or template, and the reason.
+
+## In the conversation
+
+- At the top of the WhatsApp conversation, the **Follow-up** badge shows the flow, the current block, the status and the next step. From there you click **Open flow** or **Remove from flow**. When you remove the lead, sends that have not gone out yet are cancelled.
+- Messages sent by the flow carry the **Follow-up** badge, with the flow's name.
+- When the **Assign or notify** block changes the owner, the conversation strip shows the origin **Follow-up**.
+- The [Dashboard](/en/gestao/dashboard) shows how many messages Follow-up sent.
+- Follow-up sends do not appear in the [Broadcasts](/en/marketing/disparos) list.
+
+## When the lead stops or pauses
+
+- **Replied:** any reply takes the lead out of the flow, except inside **Wait for reply**, where it leads to the **Replied** path.
+- **Attendant took over:** the lead pauses. If the last message is from the lead and the team has not replied, they pause as "Waiting for the team to reply".
+- **Asked to leave:** Follow-up uses the company's same unsubscribe list. The lead leaves with the reason "Asked not to receive messages".
+- **One flow at a time:** the lead is in at most one flow.
+- **Waiting:** outside sending hours, with the monthly cap reached or before the re-entry period, the lead waits.
+- **Paused:** channel disconnected or 2 sending failures in a row.
+- **Ended:** converted, lost, left the pipeline, invalid number, no WhatsApp or no approved template.
+
+## Common problems
+
+| Problem | What to do |
+| --- | --- |
+| Incomplete trigger | Complete the **Trigger**. |
+| Path with no end | Put an **End** block at the end. |
+| Missing path or loose block | Connect or remove the block. |
+| Send with no message or text too long | Adjust the message. |
+| No approved template (Official WhatsApp) | Choose an approved template in the **Backup template** tab. |
+| Channel disconnected | Reconnect the number in [Connections](/en/conta/conexoes). |
+| Bot on for the number | Turn off the number's AI or choose another one. |
+| Pipeline without Lost and Converted | Create the stages or use **Mark Lost and Converted stages**. |
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Broadcasts" icon="paper-plane" href="/en/marketing/disparos">
+    Send a campaign to a list all at once.
+  </Card>
+
+  <Card title="WhatsApp templates" icon="file-lines" href="/en/atendimento/templates-whatsapp">
+    Templates approved by Meta for Official WhatsApp.
+  </Card>
+
+  <Card title="Pipeline" icon="table-columns" href="/en/crm/pipeline">
+    Pipelines and stages that trigger and end the flows.
+  </Card>
+
+  <Card title="AI Agent" icon="robot" href="/en/ia/agente-ia">
+    Automatic AI service, which does not run alongside Follow-up on the same number.
+  </Card>
+</CardGroup>

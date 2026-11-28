@@ -1,0 +1,238 @@
+---
+title: "Follow-up"
+sidebarTitle: "Follow-up"
+description: "Monte fluxos de mensagens automáticas para o lead que parou de responder ou entrou numa etapa, com esperas, condições e caminhos."
+icon: "diagram-project"
+keywords:
+  - "follow-up"
+  - "fluxo"
+  - "sequência"
+  - "mensagem automática"
+  - "parou de responder"
+  - "régua"
+---
+
+O **Follow-up** manda mensagens automáticas para o lead no tempo certo. Você monta um **fluxo** em forma de árvore: o que faz o lead entrar, o que ele recebe, quanto tempo esperar e o que fazer se ele responder ou não.
+
+<Note>
+  O Follow-up está sendo liberado aos poucos. Se ele ainda não aparece para a sua empresa, a tela mostra os planos que incluem o recurso e o botão **Falar com o suporte**.
+</Note>
+
+## Quem pode usar
+
+- O **dono** e o **gerente** sempre acessam.
+- O colaborador só acessa se tiver a página **Follow-up** liberada em [Equipe](/conta/equipe).
+- Só o dono e o gerente mandam mensagens de teste.
+
+## Como acessar
+
+No menu lateral, abra o grupo **Marketing** e clique em **Follow-up**. A tela tem três abas:
+
+- **Fluxos**: a lista dos seus fluxos, com a situação de cada um.
+- **Leads em fluxo**: quem está dentro de algum fluxo agora.
+- **Histórico**: cada envio, com o resultado.
+
+Para começar, clique em **Novo fluxo**.
+
+## Como um fluxo funciona
+
+O fluxo começa num **Gatilho**. Abaixo dele, cada **+** abre o menu de blocos. Clique num bloco para abrir a configuração ao lado.
+
+Regras da árvore:
+
+- Todo caminho termina num bloco **Encerrar**.
+- Um caminho não pode voltar para um passo anterior.
+- Blocos com dois caminhos (**Sim** e **Não**, **Respondeu** e **Não respondeu**) precisam ter os dois ligados.
+- Um fluxo tem até 60 blocos e nome com até 80 letras.
+- A empresa pode ter até 20 fluxos abertos. Para criar outro, arquive um.
+
+## Blocos
+
+<AccordionGroup>
+  <Accordion title="Gatilho: o que faz o lead entrar no fluxo" icon="bolt">
+    Escolha o tipo:
+
+    - **Entrou na etapa**: o lead entra quando chega numa etapa do funil.
+    - **Ficou sem responder**: o lead entra quando passa um tempo sem responder, de 1 a 720 horas (ou em dias).
+
+    Depois escolha o **Funil**, a **Etapa** (opcional no tipo **Ficou sem responder**) e o **Número que envia**.
+
+    Só entra quem já mandou ao menos 1 mensagem para a empresa. O Gatilho não pode ser removido. É nele também que ficam as [regras deste fluxo](#regras-de-envio).
+  </Accordion>
+
+  <Accordion title="Enviar mensagem: o que o lead recebe" icon="paper-plane">
+    - **Número do WhatsApp (QR Code):** o envio é só de texto.
+    - **Número do WhatsApp Oficial (Meta):** preencha a aba **Template reserva**, com um modelo aprovado. A aba **Texto livre** é opcional. Se o lead mandou mensagem nas últimas 24 horas, sai o texto livre. Se não, sai o template. Veja [janela de 24 horas](/atendimento/janela-24h) e [templates](/atendimento/templates-whatsapp).
+
+    Em **Inserir dado do lead**, coloque dados que mudam para cada pessoa: `{nome}`, `{empresa}`, `{etapa}`, `{atendente}` e `{valor}`. Quando o dado está vazio no contato, o CRM usa um texto no lugar:
+
+    | Dado | Quando está vazio, sai |
+    | --- | --- |
+    | `{nome}` | cliente |
+    | `{atendente}` | nossa equipe |
+    | `{valor}` | o valor combinado |
+
+    A mensagem tem até 1024 letras e até 10 dados do lead.
+
+    <Warning>
+      Templates da categoria **Marketing** são cobrados pela Meta a cada envio.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Esperar tempo" icon="hourglass">
+    Segura o lead por um tempo antes do próximo bloco: de 5 minutos a 30 dias. A espera só conta dentro do horário de envio do fluxo.
+  </Accordion>
+
+  <Accordion title="Esperar resposta" icon="comments">
+    Espera a resposta do lead **por até** o tempo que você escolher e divide o caminho em dois: **Respondeu** e **Não respondeu**. Qualquer mensagem do lead conta como resposta, inclusive reação.
+  </Accordion>
+
+  <Accordion title="Condição" icon="code-branch">
+    Pergunta se o lead bate com as regras e divide o caminho em **Sim** e **Não**. Escolha **Todas as regras** ou **Qualquer regra**.
+
+    Você pode olhar: etapa atual, tag, se respondeu desde o passo anterior, nível de interesse, valor, se veio de anúncio, canal e se um atendente assumiu a conversa.
+
+    Lead sem o dado segue o caminho **Não**, e o histórico mostra "sem dado".
+  </Accordion>
+
+  <Accordion title="Tag" icon="tag">
+    Adiciona ou remove uma [tag](/crm/tags) do lead. Dá para criar uma tag nova ali mesmo.
+  </Accordion>
+
+  <Accordion title="Mover de etapa" icon="arrow-right">
+    Move o lead para outra etapa do funil. Não gasta crédito de IA e fica no histórico do lead com a origem **Follow-up**.
+
+    Mover para **Convertido** pelo Follow-up não manda conversão para a Meta. Veja [Rastreamento Meta](/marketing/rastreamento-meta).
+  </Accordion>
+
+  <Accordion title="Atribuir ou avisar" icon="user-check">
+    Passa o lead para um atendente em **Quem recebe** e, se quiser, avisa no sino. Só aparece quem usa aquele número.
+  </Accordion>
+
+  <Accordion title="Encerrar" icon="flag-checkered">
+    O lead sai do fluxo. Ele só entra de novo se o gatilho acontecer outra vez, depois do prazo de reentrada e dentro do limite do mês.
+  </Accordion>
+</AccordionGroup>
+
+## Regras de envio
+
+Todo fluxo novo começa com as **Regras padrão dos fluxos**:
+
+- Envia das 8h às 20h, de segunda a sábado. Domingo fica sempre de fora.
+- Até 8 mensagens por lead por mês, somando todos os fluxos.
+- Até 100 entradas por hora.
+- O lead pode voltar a entrar depois de 30 dias.
+- **Para** quando o lead responde, compra, é perdido ou pede para sair.
+- **Pausa** quando um atendente assume a conversa, quando o robô está ativo ou quando o número cai.
+
+Para mudar as regras de um fluxo, abra o **Gatilho** e vá em **Regras deste fluxo**:
+
+| Regra | Faixa |
+| --- | --- |
+| Horário de envio | Dias e horas que você escolher. Domingo fica sempre de fora. |
+| Mensagens por lead no mês | 1 a 30 |
+| Entradas por hora | 1 a 1000 |
+| Dias para reentrada | 0 a 365 (0 = pode voltar a qualquer momento) |
+
+No número de WhatsApp (QR Code), o card mostra também quantas mensagens livres o número ainda tem hoje para o Follow-up.
+
+## Testar antes de ligar
+
+Salve o fluxo antes de testar. Enquanto ele é rascunho, nada é enviado.
+
+- **Testar > Mandar para mim**: manda um bloco **Enviar mensagem** para o seu WhatsApp, com dados de exemplo. Chega em até 1 minuto. Funciona de segunda a sábado, das 8h às 20h, com até 10 testes por dia na empresa.
+- **Testar > Simular com um lead**: informe o telefone de um lead e veja o **Caminho do lead**, com as datas de cada passo. Nada é enviado.
+
+## Ligar o fluxo
+
+<Steps>
+  <Step title="Clique em Ligar">
+    A janela mostra quem entra no fluxo, o número que envia e quantos leads têm WhatsApp.
+  </Step>
+  <Step title="Resolva o que impede ligar">
+    Os problemas aparecem em **O que impede ligar**. Os **Avisos** não bloqueiam. Veja [problemas comuns](#problemas-comuns).
+  </Step>
+  <Step title="Escolha quem entra">
+    Marque **Só leads novos** ou inclua os leads que já estão no recorte. Eles entram aos poucos, até o limite de entradas por hora.
+  </Step>
+  <Step title="Confirme">
+    Marque **Estes leads já falaram com a empresa e podem receber mensagens.** Se o fluxo tem template de Marketing, a janela mostra uma estimativa de custo e pede que você marque **Entendo que a Meta cobra cada mensagem de Marketing**.
+  </Step>
+</Steps>
+
+Se for fora do horário de envio, a janela avisa quando o fluxo começa.
+
+<Warning>
+  O Follow-up não roda junto com robô. Se o número tem a IA ligada, desligue a IA desse número em [Conexões](/conta/conexoes) ou escolha outro número.
+</Warning>
+
+O fluxo precisa de etapas de **Perdido** e de **Convertido** (ou **Ganho**) no funil, para saber quando parar. Se faltar, use o atalho **Marcar etapas Perdido e Convertido** ou crie as etapas no [Pipeline](/crm/pipeline).
+
+## Pausar, editar e arquivar
+
+| Situação | O que acontece |
+| --- | --- |
+| **Rascunho** | Nada dispara. |
+| **Ligado** | Os leads entram e recebem as mensagens. |
+| **Pausado** | Ninguém recebe mensagem. Ao clicar em **Retomar**, quem está dentro continua de onde parou. |
+| **Arquivado** | Os leads saem, os envios na fila são cancelados e o fluxo fica só para leitura. Não dá para desfazer. Use **Mostrar arquivados** para ver. |
+
+Num fluxo ligado, você pode mudar só os textos e as regras. Para mudar os blocos de um fluxo com leads, clique em **Duplicar e editar**: a cópia nasce como rascunho, sem leads.
+
+## Acompanhar
+
+Abra um fluxo para ver há quanto tempo ele está ligado, quantos leads entraram, quantos estão aguardando e quantos responderam em 7 dias. Na árvore, cada bloco mostra quantos passaram, falharam ou estão aguardando ali.
+
+- **Leads no fluxo**: filtre por **Abertos**, **Ativos**, **Esperando**, **Pausados**, **Concluídos** ou **Parados**. Veja o bloco atual e a próxima ação de cada lead. Para tirar vários leads de uma vez, selecione e clique em **Tirar do fluxo** (até 500 por vez).
+- **Histórico de envios**: cada envio com o resultado (**Na fila**, **Enviado**, **Entregue**, **Lido**, **Falhou**, **Pulado** ou **Cancelado**), se saiu como texto livre ou template e o motivo.
+
+## Na conversa
+
+- No topo da conversa do WhatsApp, o selo **Follow-up** mostra o fluxo, o bloco atual, a situação e o próximo passo. Por ali você clica em **Abrir fluxo** ou em **Tirar do fluxo**. Ao tirar, os envios que ainda não saíram são cancelados.
+- As mensagens enviadas pelo fluxo levam o selo **Follow-up**, com o nome do fluxo.
+- Quando o bloco **Atribuir ou avisar** troca o responsável, a faixa da conversa mostra a origem **Follow-up**.
+- O [Dashboard](/gestao/dashboard) mostra quantas mensagens o Follow-up enviou.
+- Os envios do Follow-up não aparecem na lista de [Disparos](/marketing/disparos).
+
+## Quando o lead para ou pausa
+
+- **Respondeu:** qualquer resposta tira o lead do fluxo, a não ser dentro de **Esperar resposta**, onde ela leva para o caminho **Respondeu**.
+- **Atendente assumiu:** o lead pausa. Se a última mensagem é do lead e a equipe não respondeu, ele pausa como "Aguardando resposta da equipe".
+- **Pediu para sair:** o Follow-up usa a mesma lista de descadastro da empresa. O lead sai com o motivo "Pediu para não receber".
+- **Um fluxo por vez:** o lead está em no máximo um fluxo.
+- **Espera:** fora do horário de envio, com o limite do mês atingido ou antes do prazo de reentrada, o lead aguarda.
+- **Pausa:** canal desconectado ou 2 falhas seguidas de envio.
+- **Encerra:** convertido, perdido, saiu do funil, número inválido, sem WhatsApp ou sem template aprovado.
+
+## Problemas comuns
+
+| Problema | O que fazer |
+| --- | --- |
+| Gatilho incompleto | Complete o **Gatilho**. |
+| Caminho sem fim | Coloque um bloco **Encerrar** no fim. |
+| Caminho faltando ou bloco solto | Ligue ou remova o bloco. |
+| Envio sem mensagem ou texto longo demais | Ajuste a mensagem. |
+| Sem template aprovado (WhatsApp Oficial) | Escolha um template aprovado na aba **Template reserva**. |
+| Canal desconectado | Reconecte o número em [Conexões](/conta/conexoes). |
+| Robô ligado no número | Desligue a IA do número ou escolha outro. |
+| Funil sem Perdido e Convertido | Crie as etapas ou use **Marcar etapas Perdido e Convertido**. |
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Disparos" icon="paper-plane" href="/marketing/disparos">
+    Mande uma campanha para uma lista de uma vez.
+  </Card>
+
+  <Card title="Templates do WhatsApp" icon="file-lines" href="/atendimento/templates-whatsapp">
+    Modelos aprovados pela Meta para o WhatsApp Oficial.
+  </Card>
+
+  <Card title="Pipeline" icon="table-columns" href="/crm/pipeline">
+    Funis e etapas que disparam e encerram os fluxos.
+  </Card>
+
+  <Card title="Agente IA" icon="robot" href="/ia/agente-ia">
+    O atendimento automático com IA, que não roda junto com o Follow-up no mesmo número.
+  </Card>
+</CardGroup>
