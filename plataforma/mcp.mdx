@@ -47,6 +47,8 @@ A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assis
   </Step>
   <Step title="Escolha os escopos">
     **Leitura** já vem marcada e é obrigatória. Clique em **Escrita** se quiser que a IA também crie e organize dados e proponha rascunhos do prompt da IA. Só o dono da empresa libera **Escrita**.
+
+    Clique em **Montar follow-up (rascunho)** se quiser que a IA monte fluxos de follow-up como rascunho. O dono ou um gerente libera essa opção. Com **Escrita** marcada, ela já vem junto e a tela mostra **Já incluso na escrita.** Veja [Montar follow-up pelo MCP](#montar-follow-up-pelo-mcp).
   </Step>
   <Step title="Escolha o acesso">
     Em **Acesso**, marque **Todas as minhas empresas** ou **Empresas específicas**. **Todas as minhas empresas** inclui empresas futuras em que você for dono ou gerente. Em **Empresas específicas**, marque cada empresa na lista.
@@ -85,7 +87,7 @@ No Claude (site ou aplicativo, em claude.ai), você não precisa gerar nem colar
     Em **Escolha as empresas**, marque as empresas que a IA pode consultar. Cada empresa mostra o seu papel nela (**dono**, **gerente** ou **membro**). Com mais de duas empresas aparece **Marcar todas**.
   </Step>
   <Step title="Confira as permissões">
-    Em **Isto vai permitir**, a tela mostra o que a conexão libera: ler os dados do CRM das empresas escolhidas, **Telefone, e-mail e CPF chegam mascarados** e **Nunca apaga nada nem envia mensagem**. O dono da empresa pode abrir **Mais opções** e marcar **Permitir criar e editar leads, tags, notas, tarefas e agenda**.
+    Em **Isto vai permitir**, a tela mostra o que a conexão libera: ler os dados do CRM das empresas escolhidas, **Telefone, e-mail e CPF chegam mascarados** e **Nunca apaga nada nem envia mensagem**. O dono da empresa pode abrir **Mais opções** e marcar **Permitir criar e editar leads, tags, notas, tarefas e agenda**. O dono ou um gerente também pode marcar ali **Montar follow-up (rascunho)**.
   </Step>
   <Step title="Conecte">
     Clique em **Conectar**. Quando aparecer **Pronto! Pode voltar ao Claude.**, volte para o Claude e use o conector. Se desistir, clique em **Cancelar**.
@@ -249,9 +251,108 @@ Regras do rascunho:
 - **Nada é apagado.** Rascunhos e versões antigas ficam no histórico.
 - **Registro.** Cada rascunho e cada volta de versão pelo MCP ficam registrados com a chave usada, sem guardar o texto no registro.
 
+## Montar follow-up pelo MCP
+
+O assistente de IA pode ler os fluxos de follow-up da empresa e montar um fluxo inteiro como **rascunho**: validar, salvar, simular sem enviar nada e duplicar. Ele também pode pausar um fluxo e tirar leads de um fluxo.
+
+<Warning>
+  O MCP **nunca liga um fluxo de follow-up**. Ligar o fluxo e usar **Mandar para mim** continuam só na tela **Follow-up**, com o seu aceite.
+</Warning>
+
+Quem pode usar:
+
+- **Ler** os fluxos: qualquer chave. O membro lê só o que a tela **Follow-up** deixaria ele ver.
+- **Montar, pausar e tirar leads**: só com uma chave ou conexão que tenha **Montar follow-up (rascunho)**, que o dono ou um gerente libera, ou **Escrita**, que só o dono libera. A escrita geral (leads, tags, notas, tarefas e agenda) continua só do dono.
+
+Ferramentas de leitura do follow-up:
+
+| Ferramenta | O que faz |
+| --- | --- |
+| `followup_list_flows` | Lista os fluxos de follow-up: nome, status (rascunho, ligado, pausado ou arquivado), gatilho, leads e envios. |
+| `followup_get_flow` | Abre um fluxo: regras, gatilho, todos os blocos e os problemas encontrados. |
+| `followup_builder_options` | Mostra as opções para montar um fluxo, como na tela: funis e etapas, números que você alcança, membros para atribuir e templates aprovados do número. |
+| `followup_leads` | Lista os leads que estão nos fluxos: fluxo, contato, bloco atual, status e próxima execução. |
+| `followup_history` | Mostra o histórico do follow-up, dos mais recentes para os mais antigos: eventos por lead e bloco, envios, motivos de parada e erros. Os eventos de teste aparecem marcados. |
+| `followup_panel_rules` | Mostra as regras do follow-up da empresa: padrões, tetos de fluxos, leads e envios, testes do dia e cota do número QR. |
+
+Ferramentas para montar o follow-up:
+
+| Ferramenta | O que faz |
+| --- | --- |
+| `followup_validate` | Confere um fluxo com as mesmas regras da tela, sem gravar nada. Devolve os erros e os avisos. |
+| `followup_save_draft` | Cria ou edita um fluxo como **rascunho**. Nunca liga o fluxo. Só edita fluxo em rascunho. |
+| `followup_simulate` | Simula um fluxo salvo para um telefone, como o **Simular com um lead** da tela: mostra o caminho e as mensagens que sairiam. **Nada é enviado.** |
+| `followup_duplicate` | Duplica um fluxo. A cópia nasce como rascunho. |
+| `followup_pause` | Pausa um fluxo ligado, que para de mandar mensagens. Retomar e ligar são só na tela. |
+| `followup_remove_leads` | Tira até 100 leads de um fluxo e cancela os envios pendentes deles. Não apaga o lead. |
+
+<Steps>
+  <Step title="O assistente lê as opções">
+    Com `followup_builder_options`, ele vê os funis, as etapas, os números e os templates aprovados que pode usar.
+  </Step>
+  <Step title="O assistente monta e confere">
+    Ele monta o fluxo e confere com `followup_validate`, que usa as mesmas regras da tela.
+  </Step>
+  <Step title="O assistente salva o rascunho">
+    Com `followup_save_draft`, o fluxo fica salvo como rascunho. Nada dispara enquanto o fluxo não for ligado.
+  </Step>
+  <Step title="O assistente simula">
+    Com `followup_simulate`, ele mostra o caminho e as mensagens que um lead receberia, sem enviar nada.
+  </Step>
+  <Step title="Você revisa e liga">
+    Abra a tela **Follow-up**, revise o fluxo e, se estiver certo, clique em **Ligar**.
+  </Step>
+</Steps>
+
+Regras do follow-up pelo MCP:
+
+- **Fluxo ligado, pausado ou arquivado não é editado.** Para mudar um deles, o assistente duplica o fluxo, edita a cópia em rascunho e você liga a cópia na tela.
+- **Pausar e tirar leads pedem confirmação.** O próprio servidor orienta a IA a confirmar com você antes. Um lead tirado do fluxo para de receber as mensagens dele.
+- **Simulação sem envio.** A simulação aceita até 50 eventos (respondeu ou prazo venceu) e não manda nada para ninguém.
+
+## Permissões por ferramenta
+
+Além dos escopos da chave, você escolhe ferramenta por ferramenta o que a IA pode usar. Desligar uma ferramenta vale em poucos segundos, sem precisar revogar a chave.
+
+Há duas listas:
+
+- **Lista da empresa**, no bloco **Permissões das ferramentas** da tela **Servidor MCP**. Só o dono edita, e o gerente vê. Desligar uma ferramenta aqui corta essa ferramenta para **todas** as chaves e conexões da empresa.
+- **Lista de cada chave ou conexão**, nos detalhes da chave. Serve para o ajuste fino de uma chave só. O dono ou um gerente liga e desliga. Quem criou a chave, inclusive um membro, pode desligar ferramentas na própria chave, mas não ligar uma ferramenta de risco alto.
+
+Uma ferramenta só funciona se estiver ligada na lista da empresa, ligada na lista da chave e permitida pelos escopos da chave.
+
+Cada ferramenta da lista tem:
+
+- uma **chave de ligar e desligar**;
+- um selo de risco: **Baixo**, **Médio** ou **Alto**;
+- um **?** que, ao passar o mouse, explica o que a ferramenta faz.
+
+| Risco | Ferramentas | Como nasce |
+| --- | --- | --- |
+| **Baixo** | Todas as consultas, além de `followup_validate` e `followup_simulate`. | Ligada |
+| **Médio** | `create_lead`, `add_note`, `add_tags`, `create_activity`, `create_appointment`, `save_prompt_draft`, `followup_save_draft` e `followup_duplicate`. | Ligada |
+| **Alto** | `remove_tags`, `move_stage`, `assign_lead`, `restore_prompt_version`, `followup_pause` e `followup_remove_leads`. | **Desligada** |
+
+<Warning>
+  As ferramentas de risco alto nascem **desligadas**, na empresa, nas chaves novas e também nas chaves e conexões que já existem. Ligar uma delas é uma escolha sua. Para voltar atrás de uma vez, use **Desligar todas de risco alto**.
+</Warning>
+
+Quando a IA tenta usar uma ferramenta desligada, ela não aparece na lista do assistente e o pedido é recusado com "Ferramenta desligada nas permissoes do MCP desta empresa/chave".
+
+### Detalhes da conexão
+
+Nos detalhes de cada chave ou conexão, a tela mostra:
+
+- o **app conectado**, pelo nome que o próprio app informa (por exemplo Claude, Cursor ou n8n) e a versão dele;
+- um **ponto verde** quando a chave foi usada nos últimos 5 minutos;
+- o **último uso**, as chamadas de hoje e as chamadas por ferramenta;
+- quem criou, a validade e os escopos.
+
 ## Segurança e limites
 
 - **Nada é apagado e nenhuma mensagem é enviada.** Não existe ferramenta para isso.
+- **Follow-up só como rascunho.** O MCP nunca liga um fluxo de follow-up. Ligar e **Mandar para mim** ficam só na tela **Follow-up**.
+- **Você controla cada ferramenta.** Desligue qualquer ferramenta para a empresa inteira ou para uma chave só. As de risco alto nascem desligadas. Veja a seção **Permissões por ferramenta**, acima.
 - **Escrita só para o dono.** Mesmo com uma chave de escrita, a mudança só passa se quem gerou a chave ainda for o dono da empresa.
 - **Prompt da IA só para o dono.** Ler o prompt e o histórico de versões só funciona com chave gerada pelo dono da empresa. Rascunho de prompt nunca entra no ar sem alguém ativar na tela.
 - **A chave vale só para as empresas escolhidas.** Pedido para outra empresa é recusado.
