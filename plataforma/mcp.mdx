@@ -117,9 +117,43 @@ O passo a passo para Claude Code, Cursor, GitHub Copilot no VS Code, Copilot Stu
   Depois de conectar, peça ao assistente para começar pela ferramenta `whoami`. Ela mostra o nome da chave, as permissões, as empresas que a chave alcança e os limites de uso.
 </Tip>
 
+## Chave de membro
+
+Um membro da equipe pode ter a própria chave do MCP, ou conectar pelo Claude, para consultar o CRM com um assistente de IA. Ela vem desligada para todos.
+
+<Steps>
+  <Step title="O dono ou um gerente libera">
+    Em [Equipe](/conta/equipe), em **Adicionar membro** ou ao editar um membro, marque **MCP (assistentes de IA)** em **Páginas permitidas** e salve. Os pacotes **Atendente** e **Gerente** não ligam nem desligam essa opção.
+  </Step>
+  <Step title="O membro gera a chave">
+    O membro abre a tela **Servidor MCP** e clica em **Gerar chave**, ou conecta pelo Claude. A tela avisa: "Sua chave é pessoal: só leitura, com dados mascarados, e mostra só o que você vê no CRM. Você pode ter uma chave ativa por empresa."
+  </Step>
+</Steps>
+
+Regras da chave de membro:
+
+- **Só a própria chave.** O membro não gera chave para outra pessoa.
+- **Sempre só leitura e com dados mascarados.** Telefone, e-mail e CPF chegam escondidos para a IA.
+- **Uma empresa por chave** e **uma chave ativa por membro em cada empresa**. Para gerar outra, revogue a atual.
+- **Validade de até 90 dias.**
+- **Segundo fator.** Se a empresa exige a verificação em duas etapas, o membro também precisa confirmar o segundo fator para gerar a chave.
+- **Corte na hora.** Se o dono ou o gerente tirar a permissão **MCP (assistentes de IA)**, ou se o membro for removido da equipe, a chave para de funcionar na mesma hora.
+
+A IA vê só o que o membro vê no CRM:
+
+| O que a IA consulta | O que o membro alcança |
+| --- | --- |
+| Conversas | Só as dos canais liberados para ele. Nos canais em **Minhas**, só as conversas atribuídas a ele. |
+| Leads, funis e tags | Só se ele tiver a página **Contatos** liberada. |
+| Atividades | Só as dele. |
+| Agenda | Só se ele tiver a página **Agenda** liberada. |
+| Telefones | Escondidos quando a empresa mostra para o membro só o nome do contato. |
+
+Com a chave de membro, a IA tem só estas ferramentas: `whoami`, `list_companies`, `search_leads`, `get_lead`, `list_pipelines`, `funnel_summary`, `list_tags`, `list_conversations`, `get_conversation`, `search_conversations_by_phone`, `list_appointments` e `list_activities`. As ferramentas da empresa (equipe, cobranças, disparos, agentes de IA e prompts, templates, histórico de etapas e falhas de envio) não aparecem para o membro.
+
 ## O que a IA pode ler
 
-Com qualquer chave, a IA tem estas ferramentas de consulta:
+Com uma chave de dono ou de gerente, a IA tem estas ferramentas de consulta:
 
 | Ferramenta | O que faz |
 | --- | --- |
@@ -221,13 +255,14 @@ Regras do rascunho:
 - **Escrita só para o dono.** Mesmo com uma chave de escrita, a mudança só passa se quem gerou a chave ainda for o dono da empresa.
 - **Prompt da IA só para o dono.** Ler o prompt e o histórico de versões só funciona com chave gerada pelo dono da empresa. Rascunho de prompt nunca entra no ar sem alguém ativar na tela.
 - **A chave vale só para as empresas escolhidas.** Pedido para outra empresa é recusado.
-- **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa.
+- **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa. A chave de membro também perde o acesso na hora quando a permissão **MCP (assistentes de IA)** é desligada ou quando o membro sai da equipe.
 - **Dados mascarados.** Com **Mascarar dados pessoais** ligado, telefone, e-mail e CPF chegam escondidos para a IA.
 - **Textos de clientes são tratados como dado.** O servidor avisa a IA para nunca seguir instruções escritas em mensagens, observações ou nomes.
 - **Limites de uso por chave, por minuto:** 60 consultas, 30 buscas, 10 relatórios e 20 escritas.
 - **Limites por empresa, somando todas as chaves:** 600 chamadas por minuto e 10.000 por dia.
+- **Limites das chaves de membro:** cada chave de membro faz até 2.000 consultas por dia. Somadas, as chaves de membro da empresa fazem até 5.000 consultas por dia, metade da cota da empresa. Assim, o uso dos membros nunca tira a cota do dono e dos gerentes.
 - **Proteção de carga.** Consulta que passa do tempo limite é cortada. Quando o CRM está ocupado, o pedido é recusado e a IA recebe quantos segundos esperar. Resposta grande demais pede para a IA buscar em páginas menores.
-- **Limite de chaves.** Até 5 chaves ativas por empresa e até 20 chaves geradas por pessoa em 24 horas.
+- **Limite de chaves.** Até 5 chaves ativas por empresa, contando as conexões pelo Claude, e até 20 chaves ou conexões criadas por pessoa em 24 horas. Cada membro tem no máximo 1 chave ativa por empresa.
 
 ## Acompanhar o uso de uma chave
 
@@ -235,7 +270,9 @@ Clique numa chave da lista para abrir os detalhes. A janela tem três abas:
 
 - **Detalhes**: **Usado por último**, **Criado em**, **Expira em** (ou **Revogado em**), **Prefixo**, **Escopos**, **Empresas** e **Criada por**.
 - **Conexões**: quais assistentes usaram a chave, quantas sessões, a primeira e a última vez e o IP.
-- **Atividade**: o uso por hora de cada ferramenta, com o resultado (por exemplo **ok**, **recusado**, **limite da chave**, **cota diaria da empresa**), a quantidade de chamadas e o tempo médio. Mostra os últimos 90 dias.
+- **Atividade**: o uso por hora de cada ferramenta, com o resultado (por exemplo **ok**, **recusado**, **limite da chave**, **cota diaria da empresa**, **cota diaria da chave** ou **cota diaria das chaves de membro**), a quantidade de chamadas e o tempo médio. Mostra os últimos 90 dias.
+
+O dono e os gerentes veem e revogam as chaves de qualquer pessoa da empresa, inclusive as de membros. O membro vê e revoga só a própria.
 
 ## Revogar uma chave
 
@@ -250,13 +287,19 @@ Clique numa chave da lista para abrir os detalhes. A janela tem três abas:
 
 O acesso é cortado na hora para todo assistente que usa a chave. Não dá para desfazer. A chave passa para a aba **Inativas** com o status **Revogado**.
 
+Numa conexão feita pelo Claude, o botão se chama **Desconectar**. Na janela **Desconectar este app?**, clique em **Desconectar** de novo. O Claude perde o acesso na hora. Para usar de novo, conecte outra vez pelo Claude.
+
 ## Erros comuns
 
 | Mensagem | O que significa |
 | --- | --- |
 | **Limite de 5 chaves ativas por empresa. Revogue uma antes de gerar outra.** | A empresa já tem 5 chaves ativas. Revogue uma que não usa mais. |
 | **Só o dono da empresa pode liberar escrita.** | Você não é dono de todas as empresas escolhidas. Gere a chave só com **Leitura**. |
-| **Só o dono ou um gerente da empresa pode gerar chave.** | O seu papel na empresa não permite gerar chave. |
+| **Só o dono ou um gerente da empresa pode gerar chave.** | O seu papel na empresa não permite gerar chave. Peça ao dono ou a um gerente para ligar a permissão **MCP (assistentes de IA)** para você. |
+| **Sua permissão de MCP nesta empresa não está liberada. Fale com o dono da empresa.** | Você é membro e a permissão **MCP (assistentes de IA)** está desligada para você. |
+| **Você já tem uma chave MCP ativa nesta empresa. Revogue antes de gerar outra.** | Cada membro tem uma chave ativa por empresa. Revogue a atual para gerar outra. |
+| **A chave de membro é só de leitura.** | A chave de membro não recebe **Escrita**. |
+| **Confirme o segundo fator para continuar.** | A empresa exige a verificação em duas etapas. Confirme o código do app autenticador e tente de novo. |
 | **Não foi possível gerar a chave. Tente de novo.** | Falha ao gerar. Tente outra vez. |
 | **Informe de 1 a 365 dias.** | A validade está fora da faixa permitida. |
 
@@ -291,6 +334,14 @@ No assistente de IA, a chave inválida, expirada ou revogada aparece como "token
 
   <Accordion title="O assistente pode trocar o prompt do meu Agente IA sozinho?">
     Não. Com `save_prompt_draft` ele só grava um rascunho, que fica esperando na aba **Personalidade** do agente até alguém clicar em **Ativar esta versão**. A única mudança direta é `restore_prompt_version`, que volta para uma versão antiga do histórico que não seja rascunho do MCP, e o servidor orienta a IA a confirmar com você antes.
+  </Accordion>
+
+  <Accordion title="Um membro da equipe pode usar o MCP?">
+    Pode, se o dono ou um gerente ligar para ele a permissão **MCP (assistentes de IA)** na tela [Equipe](/conta/equipe). A chave dele é só leitura, com dados mascarados, vale para uma empresa e mostra só o que ele vê no CRM. Veja [Chave de membro](#chave-de-membro).
+  </Accordion>
+
+  <Accordion title="Preciso de chave para usar o Claude no site ou no aplicativo?">
+    Não. No Claude, adicione um conector personalizado com o endereço `https://app.attocorp.com/mcp` e aprove a conexão na tela do CRM. Veja [Conectar pelo Claude, sem copiar chave](#conectar-pelo-claude-sem-copiar-chave).
   </Accordion>
 
   <Accordion title="Posso usar a mesma chave em vários assistentes?">
