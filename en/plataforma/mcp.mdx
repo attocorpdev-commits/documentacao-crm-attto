@@ -51,6 +51,8 @@ The key is the password your AI assistant uses to get into the CRM. Each assista
   </Step>
   <Step title="Choose the scopes">
     **Leitura** (Read) is already selected and is required. Click **Escrita** (Write) if you want the AI to also create and organize data and propose drafts of the AI prompt. Only the company owner can enable **Escrita**.
+
+    Click **Build follow-up (draft)** if you want the AI to build follow-up flows as drafts. The owner or a manager can enable this option. With **Escrita** (Write) selected, it is already included and the screen shows **Already included in write.** See [Build follow-up through the MCP](#build-follow-up-through-the-mcp).
   </Step>
   <Step title="Choose the access">
     Under **Acesso** (Access), pick **Todas as minhas empresas** (All my companies) or **Empresas específicas** (Specific companies). **Todas as minhas empresas** includes future companies where you are the owner or a manager. With **Empresas específicas**, check each company in the list.
@@ -89,7 +91,7 @@ In Claude (web or app, at claude.ai), you do not need to generate or paste a key
     Under **Choose companies**, check the companies the AI can look up. Each company shows your role in it (**owner**, **manager** or **member**). With more than two companies, **Select all** appears.
   </Step>
   <Step title="Check the permissions">
-    Under **This will allow**, the screen shows what the connection unlocks: reading the CRM data of the chosen companies, **Phone, e-mail and CPF arrive masked** and **Never deletes anything or sends messages**. The company owner can open **More options** and check **Allow creating and editing leads, tags, notes, tasks and calendar**.
+    Under **This will allow**, the screen shows what the connection unlocks: reading the CRM data of the chosen companies, **Phone, e-mail and CPF arrive masked** and **Never deletes anything or sends messages**. The company owner can open **More options** and check **Allow creating and editing leads, tags, notes, tasks and calendar**. The owner or a manager can also check **Build follow-up (draft)** there.
   </Step>
   <Step title="Connect">
     Click **Connect**. When **Done! You can go back to Claude.** appears, go back to Claude and use the connector. If you change your mind, click **Cancel**.
@@ -253,9 +255,108 @@ Draft rules:
 - **Nothing is deleted.** Drafts and old versions stay in the history.
 - **Record.** Every draft and every version restore through the MCP is recorded with the key used, without storing the text in the record.
 
+## Build follow-up through the MCP
+
+The AI assistant can read the company's follow-up flows and build a whole flow as a **draft**: validate it, save it, simulate it without sending anything and duplicate it. It can also pause a flow and take leads out of a flow.
+
+<Warning>
+  The MCP **never turns a follow-up flow on**. Turning the flow on and using **Send to me** stay on the **Follow-up** screen only, with your approval.
+</Warning>
+
+Who can use it:
+
+- **Read** the flows: any key. A member only reads what the **Follow-up** screen would let them see.
+- **Build, pause and take leads out**: only with a key or connection that has **Build follow-up (draft)**, which the owner or a manager enables, or **Escrita** (Write), which only the owner enables. General writing (leads, tags, notes, tasks and calendar) stays owner only.
+
+Follow-up lookup tools:
+
+| Tool | What it does |
+| --- | --- |
+| `followup_list_flows` | Lists the follow-up flows: name, status (draft, on, paused or archived), trigger, leads and sends. |
+| `followup_get_flow` | Opens a flow: rules, trigger, every block and the problems found. |
+| `followup_builder_options` | Shows the options to build a flow, as on screen: funnels and stages, numbers you can reach, members to assign and approved templates of the number. |
+| `followup_leads` | Lists the leads in the flows: flow, contact, current block, status and next run. |
+| `followup_history` | Shows the follow-up history, newest first: events per lead and block, sends, stop reasons and errors. Test events are marked. |
+| `followup_panel_rules` | Shows the company's follow-up rules: defaults, caps on flows, leads and sends, today's tests and the QR number quota. |
+
+Tools to build the follow-up:
+
+| Tool | What it does |
+| --- | --- |
+| `followup_validate` | Checks a flow with the same rules as the screen, without saving anything. Returns the errors and warnings. |
+| `followup_save_draft` | Creates or edits a flow as a **draft**. Never turns the flow on. Only edits flows that are drafts. |
+| `followup_simulate` | Simulates a saved flow for a phone number, like **Simulate with a lead** on the screen: shows the path and the messages that would go out. **Nothing is sent.** |
+| `followup_duplicate` | Duplicates a flow. The copy starts as a draft. |
+| `followup_pause` | Pauses a flow that is on, so it stops sending messages. Resuming and turning on are on screen only. |
+| `followup_remove_leads` | Takes up to 100 leads out of a flow and cancels their pending sends. Does not delete the lead. |
+
+<Steps>
+  <Step title="The assistant reads the options">
+    With `followup_builder_options`, it sees the funnels, stages, numbers and approved templates it can use.
+  </Step>
+  <Step title="The assistant builds and checks">
+    It builds the flow and checks it with `followup_validate`, which uses the same rules as the screen.
+  </Step>
+  <Step title="The assistant saves the draft">
+    With `followup_save_draft`, the flow is saved as a draft. Nothing fires until the flow is turned on.
+  </Step>
+  <Step title="The assistant simulates">
+    With `followup_simulate`, it shows the path and the messages a lead would get, without sending anything.
+  </Step>
+  <Step title="You review and turn it on">
+    Open the **Follow-up** screen, review the flow and, if it is right, click **Turn on**.
+  </Step>
+</Steps>
+
+Rules for follow-up through the MCP:
+
+- **A flow that is on, paused or archived is not edited.** To change one, the assistant duplicates the flow, edits the copy as a draft and you turn the copy on on screen.
+- **Pausing and taking leads out ask for confirmation.** The server itself tells the AI to confirm with you first. A lead taken out of the flow stops getting its messages.
+- **Simulation without sending.** A simulation accepts up to 50 events (replied or time ran out) and sends nothing to anyone.
+
+## Per-tool permissions
+
+On top of the key's scopes, you choose tool by tool what the AI can use. Turning a tool off takes effect within seconds, without revoking the key.
+
+There are two lists:
+
+- **Company list**, in the **Tool permissions** block of the **Servidor MCP** screen. Only the owner edits it, and managers can see it. Turning a tool off here cuts it off for **every** key and connection in the company.
+- **List for each key or connection**, in the key details. It is for fine-tuning a single key. The owner or a manager turns tools on and off. Whoever created the key, a member included, can turn tools off on their own key, but cannot turn on a high-risk tool.
+
+A tool only works if it is on in the company list, on in the key list and allowed by the key's scopes.
+
+Each tool in the list has:
+
+- an **on and off switch**;
+- a risk badge: **Low**, **Medium** or **High**;
+- a **?** that explains what the tool does when you hover over it.
+
+| Risk | Tools | Starts as |
+| --- | --- | --- |
+| **Low** | All lookups, plus `followup_validate` and `followup_simulate`. | On |
+| **Medium** | `create_lead`, `add_note`, `add_tags`, `create_activity`, `create_appointment`, `save_prompt_draft`, `followup_save_draft` and `followup_duplicate`. | On |
+| **High** | `remove_tags`, `move_stage`, `assign_lead`, `restore_prompt_version`, `followup_pause` and `followup_remove_leads`. | **Off** |
+
+<Warning>
+  High-risk tools start **off**, in the company, in new keys and also in keys and connections that already exist. Turning one on is your choice. To undo it all at once, use **Turn off all high-risk tools**.
+</Warning>
+
+When the AI tries to use a tool that is off, the tool does not show up in the assistant's list and the request is refused with "Ferramenta desligada nas permissoes do MCP desta empresa/chave" (tool turned off in the MCP permissions of this company or key).
+
+### Connection details
+
+In the details of each key or connection, the screen shows:
+
+- the **connected app**, by the name the app itself reports (for example Claude, Cursor or n8n), and its version;
+- a **green dot** when the key was used in the last 5 minutes;
+- the **last use**, today's calls and calls per tool;
+- who created it, the expiration and the scopes.
+
 ## Security and limits
 
 - **Nothing is deleted and no message is sent.** There is no tool for that.
+- **Follow-up only as a draft.** The MCP never turns a follow-up flow on. Turning it on and **Send to me** stay on the **Follow-up** screen only.
+- **You control every tool.** Turn any tool off for the whole company or for a single key. High-risk tools start off. See the **Per-tool permissions** section above.
 - **Writing is owner only.** Even with a write key, a change only goes through if the person who generated the key is still the company owner.
 - **AI prompt is owner only.** Reading the prompt and its version history only works with a key generated by the company owner. A prompt draft never goes live unless someone activates it on screen.
 - **The key only works for the chosen companies.** Requests for any other company are refused.
