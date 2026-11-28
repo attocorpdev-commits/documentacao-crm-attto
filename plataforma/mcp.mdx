@@ -12,7 +12,9 @@ Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, 
 ## Quem pode usar
 
 - A tela fica em **Conexões**. Quem acessa **Conexões** vê a tela do MCP.
-- Só o **dono** ou um **gerente** da empresa gera chave. Para os demais, o botão **Gerar chave** fica desativado.
+- O **dono** e os **gerentes** da empresa geram chaves e conectam o Claude.
+- Um **membro** da equipe só usa o MCP se o dono ou um gerente ligar para ele a permissão **MCP (assistentes de IA)**, na tela [Equipe](/conta/equipe). Com ela, o membro abre a tela do MCP e gera só a própria chave, sempre só leitura. Veja [Chave de membro](#chave-de-membro).
+- Para quem não tem nenhuma dessas permissões, o botão **Gerar chave** fica desativado.
 - Algumas opções são exclusivas do **dono** da empresa: liberar **Escrita**, marcar **Nunca expira** e desligar **Mascarar dados pessoais**. Para quem não é dono, a tela mostra o aviso **Só o dono da empresa libera esta opção.**
 
 ## Como acessar
@@ -27,8 +29,8 @@ No menu lateral, abra **Configurações** e clique em **Conexões**. Na tela **I
 
 - **Endereço do servidor**: `https://app.attocorp.com/mcp`. Use este endereço para ler e, se a chave permitir, escrever.
 - **Somente leitura (mesmo com chave de escrita)**: `https://app.attocorp.com/mcp/readonly`. Neste endereço a IA só lê, mesmo que a chave tenha permissão de escrita.
-- **Como conectar**: instruções prontas para copiar, separadas nas abas **Claude**, **Claude Desktop / Cursor** e **n8n / outros**.
-- A lista de chaves, nas abas **Ativas** e **Inativas** (expiradas ou revogadas). Cada chave mostra o nome, o começo da chave (prefixo), as permissões, o selo **Dados mascarados** quando for o caso e o **Último uso**.
+- **Como conectar**: instruções prontas para copiar, separadas nas abas **Claude**, **Claude Desktop / Cursor** e **n8n / outros**. Na aba **Claude** aparece o aviso "No Claude, basta colar o endereço do MCP: ele abre o Atto CRM para você aprovar a conexão."
+- A lista de chaves, nas abas **Ativas** e **Inativas** (expiradas ou revogadas). Cada chave mostra o nome, o começo da chave (prefixo), as permissões, o selo **Dados mascarados** quando for o caso e o **Último uso**. A conexão feita pelo Claude aparece com o selo **Conectado pelo Claude**, e a chave de um membro, com o selo **Chave de membro**.
 
 Cada campo tem um botão de copiar ao lado.
 
@@ -68,9 +70,44 @@ A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assis
   Quem não é dono de todas as empresas da chave fica com validade de no máximo 90 dias. Se alguma empresa esconde os telefones dos membros, a chave é gerada com os dados pessoais mascarados mesmo que você tenha desligado a opção, e a tela avisa.
 </Note>
 
+## Conectar pelo Claude, sem copiar chave
+
+No Claude (site ou aplicativo, em claude.ai), você não precisa gerar nem colar chave. Basta adicionar um conector personalizado com o endereço `https://app.attocorp.com/mcp`. O Claude abre uma tela do CRM, você escolhe o que liberar e clica em **Conectar**.
+
+<Steps>
+  <Step title="Adicione o conector no Claude">
+    No Claude, adicione um conector personalizado com o nome **CRM - Atto Corp** e o endereço `https://app.attocorp.com/mcp`. O passo a passo está em [Conectar o MCP à sua IA](/plataforma/conectar-ia#claude-no-site-ou-app).
+  </Step>
+  <Step title="Entre no CRM">
+    O Claude abre a tela **Claude quer acessar sua conta do Atto CRM**. Se você não estiver com a conta aberta, entre com o seu login do CRM. Para usar outra conta, clique em **Trocar**.
+  </Step>
+  <Step title="Escolha as empresas">
+    Em **Escolha as empresas**, marque as empresas que a IA pode consultar. Cada empresa mostra o seu papel nela (**dono**, **gerente** ou **membro**). Com mais de duas empresas aparece **Marcar todas**.
+  </Step>
+  <Step title="Confira as permissões">
+    Em **Isto vai permitir**, a tela mostra o que a conexão libera: ler os dados do CRM das empresas escolhidas, **Telefone, e-mail e CPF chegam mascarados** e **Nunca apaga nada nem envia mensagem**. O dono da empresa pode abrir **Mais opções** e marcar **Permitir criar e editar leads, tags, notas, tarefas e agenda**.
+  </Step>
+  <Step title="Conecte">
+    Clique em **Conectar**. Quando aparecer **Pronto! Pode voltar ao Claude.**, volte para o Claude e use o conector. Se desistir, clique em **Cancelar**.
+  </Step>
+</Steps>
+
+Regras da conexão pelo Claude:
+
+- **Vale por 90 dias.** Depois disso, conecte de novo pelo Claude.
+- **Aparece na tela Servidor MCP**, na lista de chaves, com o selo **Conectado pelo Claude**. Clique nela para ver os detalhes e o uso, como numa chave comum.
+- **Conta no limite de 5 chaves ativas por empresa** e no limite de 20 conexões ou chaves criadas por pessoa em 24 horas.
+- **Membro conecta uma empresa só**, sempre só leitura. A tela avisa: "A conexão de membro vale para uma empresa só."
+- **Segundo fator.** Se a empresa exige a verificação em duas etapas, a tela pede **Confirme o segundo fator para continuar.** antes de conectar. Veja [Verificação em duas etapas](/conta/seguranca).
+- **Conectar de novo o mesmo app** substitui a conexão anterior dele, e a tela avisa antes.
+
+<Warning>
+  Só aprove a conexão se foi você quem pediu agora, pelo Claude. Se a tela disser que o nome do app não confere com o endereço de volta, só continue se você reconhece esse endereço.
+</Warning>
+
 ## Conectar o seu assistente
 
-O passo a passo para Claude Code, Cursor, GitHub Copilot no VS Code, Copilot Studio e n8n está em [Conectar o MCP à sua IA](/plataforma/conectar-ia). Em todas elas você usa o mesmo endereço e a chave no cabeçalho `Authorization: Bearer SUA_CHAVE`.
+O passo a passo para Claude Code, Cursor, GitHub Copilot no VS Code, Copilot Studio e n8n está em [Conectar o MCP à sua IA](/plataforma/conectar-ia). Nessas ferramentas você usa o mesmo endereço e a chave no cabeçalho `Authorization: Bearer SUA_CHAVE`.
 
 <Card title="Conectar o MCP à sua IA" icon="link" horizontal href="/plataforma/conectar-ia">
   Guia por ferramenta, com o nome padrão **CRM - Atto Corp** para não confundir nem apagar o conector sem querer.
