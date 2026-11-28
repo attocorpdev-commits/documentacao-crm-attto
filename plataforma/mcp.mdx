@@ -12,7 +12,9 @@ Se você liberar, a IA também pode organizar dados: criar leads, colocar tags, 
 ## Quem pode usar
 
 - A tela fica em **Conexões**. Quem acessa **Conexões** vê a tela do MCP.
-- Só o **dono** ou um **gerente** da empresa gera chave. Para os demais, o botão **Gerar chave** fica desativado.
+- O **dono** e os **gerentes** da empresa geram chaves e conectam o Claude.
+- Um **membro** da equipe só usa o MCP se o dono ou um gerente ligar para ele a permissão **MCP (assistentes de IA)**, na tela [Equipe](/conta/equipe). Com ela, o membro abre a tela do MCP e gera só a própria chave, sempre só leitura. Veja [Chave de membro](#chave-de-membro).
+- Para quem não tem nenhuma dessas permissões, o botão **Gerar chave** fica desativado.
 - Algumas opções são exclusivas do **dono** da empresa: liberar **Escrita**, marcar **Nunca expira** e desligar **Mascarar dados pessoais**. Para quem não é dono, a tela mostra o aviso **Só o dono da empresa libera esta opção.**
 
 ## Como acessar
@@ -27,9 +29,8 @@ No menu lateral, abra **Configurações** e clique em **Conexões**. Na tela **I
 
 - **Endereço do servidor**: `https://app.attocorp.com/mcp`. Use este endereço para ler e, se a chave permitir, escrever.
 - **Somente leitura (mesmo com chave de escrita)**: `https://app.attocorp.com/mcp/readonly`. Neste endereço a IA só lê, mesmo que a chave tenha permissão de escrita.
-- **Como conectar**: instruções prontas para copiar, separadas nas abas **Claude**, **Claude Desktop / Cursor** e **n8n / outros**.
-- A dica **No Claude, basta colar o endereço do MCP: ele abre o Atto CRM para você aprovar a conexão.** Veja [Conectar sem chave](#conectar-sem-chave-pelo-login-do-crm).
-- A lista de chaves, nas abas **Ativas** e **Inativas** (expiradas ou revogadas). Cada chave mostra o nome, o começo da chave (prefixo), as permissões, o selo **Dados mascarados** quando for o caso e o **Último uso**. Os apps conectados pelo login do CRM aparecem na mesma lista, com o selo **Conectado pelo** e o nome do app.
+- **Como conectar**: instruções prontas para copiar, separadas nas abas **Claude**, **Claude Desktop / Cursor** e **n8n / outros**. Na aba **Claude** aparece o aviso "No Claude, basta colar o endereço do MCP: ele abre o Atto CRM para você aprovar a conexão."
+- A lista de chaves, nas abas **Ativas** e **Inativas** (expiradas ou revogadas). Cada chave mostra o nome, o começo da chave (prefixo), as permissões, o selo **Dados mascarados** quando for o caso e o **Último uso**. A conexão feita pelo Claude aparece com o selo **Conectado pelo Claude**, e a chave de um membro, com o selo **Chave de membro**.
 
 Cada campo tem um botão de copiar ao lado.
 
@@ -69,40 +70,44 @@ A chave é a senha que o seu assistente de IA usa para entrar no CRM. Cada assis
   Quem não é dono de todas as empresas da chave fica com validade de no máximo 90 dias. Se alguma empresa esconde os telefones dos membros, a chave é gerada com os dados pessoais mascarados mesmo que você tenha desligado a opção, e a tela avisa.
 </Note>
 
-## Conectar sem chave, pelo login do CRM
+## Conectar pelo Claude, sem copiar chave
 
-No Claude (site, aplicativo e Claude Code), você não precisa gerar chave. Basta colar o endereço do MCP no conector. O Claude abre o CRM numa tela de autorizar, e você aprova ali mesmo.
-
-A tela tem o título **... quer acessar sua conta do Atto CRM**, com o nome do app no começo (por exemplo, "Claude quer acessar sua conta do Atto CRM"):
+No Claude (site ou aplicativo, em claude.ai), você não precisa gerar nem colar chave. Basta adicionar um conector personalizado com o endereço `https://app.attocorp.com/mcp`. O Claude abre uma tela do CRM, você escolhe o que liberar e clica em **Conectar**.
 
 <Steps>
+  <Step title="Adicione o conector no Claude">
+    No Claude, adicione um conector personalizado com o nome **CRM - Atto Corp** e o endereço `https://app.attocorp.com/mcp`. O passo a passo está em [Conectar o MCP à sua IA](/plataforma/conectar-ia#claude-no-site-ou-app).
+  </Step>
+  <Step title="Entre no CRM">
+    O Claude abre a tela **Claude quer acessar sua conta do Atto CRM**. Se você não estiver com a conta aberta, entre com o seu login do CRM. Para usar outra conta, clique em **Trocar**.
+  </Step>
   <Step title="Escolha as empresas">
-    Em **Escolha as empresas**, marque as empresas que a IA pode ver, ou clique em **Marcar todas**. Aparecem só as empresas em que você é **dono** ou **gerente**.
+    Em **Escolha as empresas**, marque as empresas que a IA pode consultar. Cada empresa mostra o seu papel nela (**dono**, **gerente** ou **membro**). Com mais de duas empresas aparece **Marcar todas**.
   </Step>
   <Step title="Confira as permissões">
-    Em **Isto vai permitir**, a tela mostra o que o app ganha: **Ler os dados do CRM das empresas escolhidas**, **Telefone, e-mail e CPF chegam mascarados** e **Nunca apaga nada nem envia mensagem**.
-  </Step>
-  <Step title="Libere edição, se quiser">
-    Em **Mais opções**, a caixa **Permitir criar e editar leads, tags, notas, tarefas e agenda** dá ao app permissão de escrita. Ela só aparece para o dono de todas as empresas marcadas e quando o endereço não é o `/readonly`.
+    Em **Isto vai permitir**, a tela mostra o que a conexão libera: ler os dados do CRM das empresas escolhidas, **Telefone, e-mail e CPF chegam mascarados** e **Nunca apaga nada nem envia mensagem**. O dono da empresa pode abrir **Mais opções** e marcar **Permitir criar e editar leads, tags, notas, tarefas e agenda**.
   </Step>
   <Step title="Conecte">
-    Clique em **Conectar**. A tela mostra **Pronto! Pode voltar ao** e o nome do app. Volte para o Claude e use normalmente.
+    Clique em **Conectar**. Quando aparecer **Pronto! Pode voltar ao Claude.**, volte para o Claude e use o conector. Se desistir, clique em **Cancelar**.
   </Step>
 </Steps>
 
-- A conexão **vale por 90 dias** e renova sozinha enquanto o app é usado.
-- Só o **dono** ou um **gerente** da empresa autoriza. Se a conta pede o segundo fator, confirme antes de continuar.
-- Os dados pessoais chegam sempre mascarados nessa forma de conexão.
-- Cada app conectado conta no limite de 5 chaves ativas por empresa.
-- Se você conectar o mesmo app de novo, a nova conexão substitui a anterior.
+Regras da conexão pelo Claude:
+
+- **Vale por 90 dias.** Depois disso, conecte de novo pelo Claude.
+- **Aparece na tela Servidor MCP**, na lista de chaves, com o selo **Conectado pelo Claude**. Clique nela para ver os detalhes e o uso, como numa chave comum.
+- **Conta no limite de 5 chaves ativas por empresa** e no limite de 20 conexões ou chaves criadas por pessoa em 24 horas.
+- **Membro conecta uma empresa só**, sempre só leitura. A tela avisa: "A conexão de membro vale para uma empresa só."
+- **Segundo fator.** Se a empresa exige a verificação em duas etapas, a tela pede **Confirme o segundo fator para continuar.** antes de conectar. Veja [Verificação em duas etapas](/conta/seguranca).
+- **Conectar de novo o mesmo app** substitui a conexão anterior dele, e a tela avisa antes.
 
 <Warning>
-  Leia o endereço que aparece em **Você vai voltar para** antes de clicar em **Conectar**. Se a tela avisar que o nome do app não confere com o endereço de volta, ou que o app roda no seu computador, só continue se foi você quem pediu a conexão agora.
+  Só aprove a conexão se foi você quem pediu agora, pelo Claude. Se a tela disser que o nome do app não confere com o endereço de volta, só continue se você reconhece esse endereço.
 </Warning>
 
 ## Conectar o seu assistente
 
-O passo a passo para Claude, Claude Code, Cursor, GitHub Copilot no VS Code, Copilot Studio e n8n está em [Conectar o MCP à sua IA](/plataforma/conectar-ia). No Claude, a conexão é pelo login do CRM. Nas outras ferramentas, você usa o endereço e a chave no cabeçalho `Authorization: Bearer SUA_CHAVE`.
+O passo a passo para Claude Code, Cursor, GitHub Copilot no VS Code, Copilot Studio e n8n está em [Conectar o MCP à sua IA](/plataforma/conectar-ia). Nessas ferramentas você usa o mesmo endereço e a chave no cabeçalho `Authorization: Bearer SUA_CHAVE`.
 
 <Card title="Conectar o MCP à sua IA" icon="link" horizontal href="/plataforma/conectar-ia">
   Guia por ferramenta, com o nome padrão **CRM - Atto Corp** para não confundir nem apagar o conector sem querer.
@@ -112,9 +117,43 @@ O passo a passo para Claude, Claude Code, Cursor, GitHub Copilot no VS Code, Cop
   Depois de conectar, peça ao assistente para começar pela ferramenta `whoami`. Ela mostra o nome da chave, as permissões, as empresas que a chave alcança e os limites de uso.
 </Tip>
 
+## Chave de membro
+
+Um membro da equipe pode ter a própria chave do MCP, ou conectar pelo Claude, para consultar o CRM com um assistente de IA. Ela vem desligada para todos.
+
+<Steps>
+  <Step title="O dono ou um gerente libera">
+    Em [Equipe](/conta/equipe), em **Adicionar membro** ou ao editar um membro, marque **MCP (assistentes de IA)** em **Páginas permitidas** e salve. Os pacotes **Atendente** e **Gerente** não ligam nem desligam essa opção.
+  </Step>
+  <Step title="O membro gera a chave">
+    O membro abre a tela **Servidor MCP** e clica em **Gerar chave**, ou conecta pelo Claude. A tela avisa: "Sua chave é pessoal: só leitura, com dados mascarados, e mostra só o que você vê no CRM. Você pode ter uma chave ativa por empresa."
+  </Step>
+</Steps>
+
+Regras da chave de membro:
+
+- **Só a própria chave.** O membro não gera chave para outra pessoa.
+- **Sempre só leitura e com dados mascarados.** Telefone, e-mail e CPF chegam escondidos para a IA.
+- **Uma empresa por chave** e **uma chave ativa por membro em cada empresa**. Para gerar outra, revogue a atual.
+- **Validade de até 90 dias.**
+- **Segundo fator.** Se a empresa exige a verificação em duas etapas, o membro também precisa confirmar o segundo fator para gerar a chave.
+- **Corte na hora.** Se o dono ou o gerente tirar a permissão **MCP (assistentes de IA)**, ou se o membro for removido da equipe, a chave para de funcionar na mesma hora.
+
+A IA vê só o que o membro vê no CRM:
+
+| O que a IA consulta | O que o membro alcança |
+| --- | --- |
+| Conversas | Só as dos canais liberados para ele. Nos canais em **Minhas**, só as conversas atribuídas a ele. |
+| Leads, funis e tags | Só se ele tiver a página **Contatos** liberada. |
+| Atividades | Só as dele. |
+| Agenda | Só se ele tiver a página **Agenda** liberada. |
+| Telefones | Escondidos quando a empresa mostra para o membro só o nome do contato. |
+
+Com a chave de membro, a IA tem só estas ferramentas: `whoami`, `list_companies`, `search_leads`, `get_lead`, `list_pipelines`, `funnel_summary`, `list_tags`, `list_conversations`, `get_conversation`, `search_conversations_by_phone`, `list_appointments` e `list_activities`. As ferramentas da empresa (equipe, cobranças, disparos, agentes de IA e prompts, templates, histórico de etapas e falhas de envio) não aparecem para o membro.
+
 ## O que a IA pode ler
 
-Com qualquer chave, a IA tem estas ferramentas de consulta:
+Com uma chave de dono ou de gerente, a IA tem estas ferramentas de consulta:
 
 | Ferramenta | O que faz |
 | --- | --- |
@@ -216,13 +255,14 @@ Regras do rascunho:
 - **Escrita só para o dono.** Mesmo com uma chave de escrita, a mudança só passa se quem gerou a chave ainda for o dono da empresa.
 - **Prompt da IA só para o dono.** Ler o prompt e o histórico de versões só funciona com chave gerada pelo dono da empresa. Rascunho de prompt nunca entra no ar sem alguém ativar na tela.
 - **A chave vale só para as empresas escolhidas.** Pedido para outra empresa é recusado.
-- **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa.
+- **A chave perde o acesso sozinha** quando expira ou quando quem a gerou deixa de ser dono ou gerente da empresa. A chave de membro também perde o acesso na hora quando a permissão **MCP (assistentes de IA)** é desligada ou quando o membro sai da equipe.
 - **Dados mascarados.** Com **Mascarar dados pessoais** ligado, telefone, e-mail e CPF chegam escondidos para a IA.
 - **Textos de clientes são tratados como dado.** O servidor avisa a IA para nunca seguir instruções escritas em mensagens, observações ou nomes.
 - **Limites de uso por chave, por minuto:** 60 consultas, 30 buscas, 10 relatórios e 20 escritas.
 - **Limites por empresa, somando todas as chaves:** 600 chamadas por minuto e 10.000 por dia.
+- **Limites das chaves de membro:** cada chave de membro faz até 2.000 consultas por dia. Somadas, as chaves de membro da empresa fazem até 5.000 consultas por dia, metade da cota da empresa. Assim, o uso dos membros nunca tira a cota do dono e dos gerentes.
 - **Proteção de carga.** Consulta que passa do tempo limite é cortada. Quando o CRM está ocupado, o pedido é recusado e a IA recebe quantos segundos esperar. Resposta grande demais pede para a IA buscar em páginas menores.
-- **Limite de chaves.** Até 5 chaves ativas por empresa, contando os apps conectados pelo login do CRM, e até 20 chaves ou conexões criadas por pessoa em 24 horas.
+- **Limite de chaves.** Até 5 chaves ativas por empresa, contando as conexões pelo Claude, e até 20 chaves ou conexões criadas por pessoa em 24 horas. Cada membro tem no máximo 1 chave ativa por empresa.
 
 ## Acompanhar o uso de uma chave
 
@@ -230,7 +270,9 @@ Clique numa chave da lista para abrir os detalhes. A janela tem três abas:
 
 - **Detalhes**: **Usado por último**, **Criado em**, **Expira em** (ou **Revogado em**), **Prefixo**, **Escopos**, **Empresas** e **Criada por**.
 - **Conexões**: quais assistentes usaram a chave, quantas sessões, a primeira e a última vez e o IP.
-- **Atividade**: o uso por hora de cada ferramenta, com o resultado (por exemplo **ok**, **recusado**, **limite da chave**, **cota diaria da empresa**), a quantidade de chamadas e o tempo médio. Mostra os últimos 90 dias.
+- **Atividade**: o uso por hora de cada ferramenta, com o resultado (por exemplo **ok**, **recusado**, **limite da chave**, **cota diaria da empresa**, **cota diaria da chave** ou **cota diaria das chaves de membro**), a quantidade de chamadas e o tempo médio. Mostra os últimos 90 dias.
+
+O dono e os gerentes veem e revogam as chaves de qualquer pessoa da empresa, inclusive as de membros. O membro vê e revoga só a própria.
 
 ## Revogar uma chave
 
@@ -245,11 +287,7 @@ Clique numa chave da lista para abrir os detalhes. A janela tem três abas:
 
 O acesso é cortado na hora para todo assistente que usa a chave. Não dá para desfazer. A chave passa para a aba **Inativas** com o status **Revogado**.
 
-### Desconectar um app
-
-Um app conectado pelo login do CRM aparece na lista com o selo **Conectado pelo** e o nome do app. No detalhe, no lugar de **Prefixo**, aparece **Volta para**, com o endereço do app.
-
-Para tirar o acesso, abra o app na lista e clique em **Desconectar**. Na janela **Desconectar este app?**, confirme. O app perde o acesso na hora e a tela mostra **App desconectado.** Para usar de novo, conecte outra vez pelo app.
+Numa conexão feita pelo Claude, o botão se chama **Desconectar**. Na janela **Desconectar este app?**, clique em **Desconectar** de novo. O Claude perde o acesso na hora. Para usar de novo, conecte outra vez pelo Claude.
 
 ## Erros comuns
 
@@ -257,12 +295,13 @@ Para tirar o acesso, abra o app na lista e clique em **Desconectar**. Na janela 
 | --- | --- |
 | **Limite de 5 chaves ativas por empresa. Revogue uma antes de gerar outra.** | A empresa já tem 5 chaves ativas. Revogue uma que não usa mais. |
 | **Só o dono da empresa pode liberar escrita.** | Você não é dono de todas as empresas escolhidas. Gere a chave só com **Leitura**. |
-| **Só o dono ou um gerente da empresa pode gerar chave.** | O seu papel na empresa não permite gerar chave. |
+| **Só o dono ou um gerente da empresa pode gerar chave.** | O seu papel na empresa não permite gerar chave. Peça ao dono ou a um gerente para ligar a permissão **MCP (assistentes de IA)** para você. |
+| **Sua permissão de MCP nesta empresa não está liberada. Fale com o dono da empresa.** | Você é membro e a permissão **MCP (assistentes de IA)** está desligada para você. |
+| **Você já tem uma chave MCP ativa nesta empresa. Revogue antes de gerar outra.** | Cada membro tem uma chave ativa por empresa. Revogue a atual para gerar outra. |
+| **A chave de membro é só de leitura.** | A chave de membro não recebe **Escrita**. |
+| **Confirme o segundo fator para continuar.** | A empresa exige a verificação em duas etapas. Confirme o código do app autenticador e tente de novo. |
 | **Não foi possível gerar a chave. Tente de novo.** | Falha ao gerar. Tente outra vez. |
 | **Informe de 1 a 365 dias.** | A validade está fora da faixa permitida. |
-| **Só o dono ou um gerente da empresa pode autorizar.** | Na tela de autorizar, o seu papel não permite conectar o app. |
-| **Marque pelo menos uma empresa.** | Na tela de autorizar, nenhuma empresa foi marcada. |
-| **Limite de 5 chaves ativas por empresa. Desconecte uma em Conexões > MCP.** | Chaves e apps conectados somam 5. Revogue uma chave ou desconecte um app. |
 
 No assistente de IA, a chave inválida, expirada ou revogada aparece como "token do MCP invalido ou revogado". Se a IA tentar escrever pelo endereço só leitura, recebe "este endereco e so leitura". Se a chave não tiver escrita, recebe "esta chave nao tem o escopo de escrita".
 
@@ -295,6 +334,14 @@ No assistente de IA, a chave inválida, expirada ou revogada aparece como "token
 
   <Accordion title="O assistente pode trocar o prompt do meu Agente IA sozinho?">
     Não. Com `save_prompt_draft` ele só grava um rascunho, que fica esperando na aba **Personalidade** do agente até alguém clicar em **Ativar esta versão**. A única mudança direta é `restore_prompt_version`, que volta para uma versão antiga do histórico que não seja rascunho do MCP, e o servidor orienta a IA a confirmar com você antes.
+  </Accordion>
+
+  <Accordion title="Um membro da equipe pode usar o MCP?">
+    Pode, se o dono ou um gerente ligar para ele a permissão **MCP (assistentes de IA)** na tela [Equipe](/conta/equipe). A chave dele é só leitura, com dados mascarados, vale para uma empresa e mostra só o que ele vê no CRM. Veja [Chave de membro](#chave-de-membro).
+  </Accordion>
+
+  <Accordion title="Preciso de chave para usar o Claude no site ou no aplicativo?">
+    Não. No Claude, adicione um conector personalizado com o endereço `https://app.attocorp.com/mcp` e aprove a conexão na tela do CRM. Veja [Conectar pelo Claude, sem copiar chave](#conectar-pelo-claude-sem-copiar-chave).
   </Accordion>
 
   <Accordion title="Posso usar a mesma chave em vários assistentes?">

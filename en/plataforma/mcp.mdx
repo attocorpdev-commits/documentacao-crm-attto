@@ -16,7 +16,9 @@ If you allow it, the AI can also organize data: create leads, add tags, write no
 ## Who can use it
 
 - The screen lives in **Connections**. Anyone with access to **Connections** sees the MCP screen.
-- Only the company **owner** or a **manager** can generate a key. For everyone else, the **Gerar chave** (Generate key) button is disabled.
+- The company **owner** and **managers** generate keys and connect Claude.
+- A team **member** can only use the MCP if the owner or a manager turns on the **MCP (AI assistants)** permission for them, on the [Team](/en/conta/equipe) screen. With it, the member opens the MCP screen and generates only their own key, always read only. See [Member key](#member-key).
+- For anyone without one of these permissions, the **Gerar chave** (Generate key) button is disabled.
 - Some options are reserved for the company **owner**: turning on **Escrita** (Write), checking **Nunca expira** (Never expires) and turning off **Mascarar dados pessoais** (Mask personal data). For non-owners, the screen shows the notice **Só o dono da empresa libera esta opção.** (Only the company owner can enable this option.)
 
 ## How to access
@@ -31,9 +33,8 @@ In the side menu, open **Settings** and click **Connections**. On the **Integrat
 
 - **Endereço do servidor** (Server address): `https://app.attocorp.com/mcp`. Use this address to read and, if the key allows, to write.
 - **Somente leitura (mesmo com chave de escrita)** (Read only, even with a write key): `https://app.attocorp.com/mcp/readonly`. At this address the AI can only read, even if the key has write permission.
-- **Como conectar** (How to connect): ready-to-copy instructions in the **Claude**, **Claude Desktop / Cursor** and **n8n / outros** (n8n / others) tabs.
-- The tip **In Claude, just paste the MCP address: it opens Atto CRM so you can approve the connection.** See [Connect without a key](#connect-without-a-key-through-the-crm-login).
-- The key list, in the **Ativas** (Active) and **Inativas** (Inactive: expired or revoked) tabs. Each key shows its name, the start of the key (prefix), its permissions, the **Dados mascarados** (Masked data) badge when applicable and **Último uso** (Last used). Apps connected through the CRM login appear in the same list, with the **Connected by** badge and the app's name.
+- **Como conectar** (How to connect): ready-to-copy instructions in the **Claude**, **Claude Desktop / Cursor** and **n8n / outros** (n8n / others) tabs. The **Claude** tab tells you that in Claude you just paste the MCP address: it opens Atto CRM so you can approve the connection.
+- The key list, in the **Ativas** (Active) and **Inativas** (Inactive: expired or revoked) tabs. Each key shows its name, the start of the key (prefix), its permissions, the **Dados mascarados** (Masked data) badge when applicable and **Último uso** (Last used). A connection made through Claude shows the **Connected by Claude** badge, and a member's key shows the **Member key** badge.
 
 Each field has a copy button next to it.
 
@@ -73,40 +74,44 @@ The key is the password your AI assistant uses to get into the CRM. Each assista
   If you are not the owner of every company in the key, the expiration is at most 90 days. If any company hides its members' phone numbers, the key is generated with personal data masked even if you turned the option off, and the screen tells you so.
 </Note>
 
-## Connect without a key, through the CRM login
+## Connect through Claude, no key to copy
 
-In Claude (web, app and Claude Code), you do not need to generate a key. Just paste the MCP address into the connector. Claude opens the CRM on an authorization screen, and you approve it right there.
-
-The screen has the title **... wants to access your Atto CRM account**, with the app's name at the start (for example, "Claude wants to access your Atto CRM account"):
+In Claude (web or app, at claude.ai), you do not need to generate or paste a key. Just add a custom connector with the address `https://app.attocorp.com/mcp`. Claude opens a CRM screen, you choose what to allow and click **Connect**.
 
 <Steps>
+  <Step title="Add the connector in Claude">
+    In Claude, add a custom connector named **CRM - Atto Corp** with the address `https://app.attocorp.com/mcp`. The step by step is in [Connect the MCP to your AI](/en/plataforma/conectar-ia#claude-on-the-web-or-app).
+  </Step>
+  <Step title="Sign in to the CRM">
+    Claude opens the **Claude wants to access your Atto CRM account** screen. If you are not signed in, sign in with your CRM login. To use another account, click **Switch**.
+  </Step>
   <Step title="Choose the companies">
-    Under **Choose companies**, check the companies the AI can see, or click **Select all**. Only the companies where you are the **owner** or a **manager** appear.
+    Under **Choose companies**, check the companies the AI can look up. Each company shows your role in it (**owner**, **manager** or **member**). With more than two companies, **Select all** appears.
   </Step>
   <Step title="Check the permissions">
-    Under **This will allow**, the screen shows what the app gets: **Read CRM data from the selected companies**, **Phone, e-mail and CPF arrive masked** and **Never deletes anything or sends messages**.
-  </Step>
-  <Step title="Allow editing, if you want">
-    Under **More options**, the **Allow creating and editing leads, tags, notes, tasks and calendar** box gives the app write permission. It only appears for the owner of every checked company and when the address is not `/readonly`.
+    Under **This will allow**, the screen shows what the connection unlocks: reading the CRM data of the chosen companies, **Phone, e-mail and CPF arrive masked** and **Never deletes anything or sends messages**. The company owner can open **More options** and check **Allow creating and editing leads, tags, notes, tasks and calendar**.
   </Step>
   <Step title="Connect">
-    Click **Connect**. The screen shows **Done! You can go back to** and the app's name. Go back to Claude and use it as usual.
+    Click **Connect**. When **Done! You can go back to Claude.** appears, go back to Claude and use the connector. If you change your mind, click **Cancel**.
   </Step>
 </Steps>
 
-- The connection **is valid for 90 days** and renews on its own while the app is in use.
-- Only the company **owner** or a **manager** can authorize. If the account asks for the second factor, confirm it before continuing.
-- Personal data always arrives masked with this kind of connection.
-- Each connected app counts toward the limit of 5 active keys per company.
-- If you connect the same app again, the new connection replaces the previous one.
+Rules for connecting through Claude:
+
+- **Valid for 90 days.** After that, connect again through Claude.
+- **Shows up on the Servidor MCP screen**, in the key list, with the **Connected by Claude** badge. Click it to see the details and usage, just like a regular key.
+- **Counts toward the limit of 5 active keys per company** and the limit of 20 connections or keys created per person in 24 hours.
+- **A member connects one company only**, always read only.
+- **Second factor.** If the company requires two-step verification, the screen asks you to confirm your second factor before connecting. See [Two-step verification](/en/conta/seguranca).
+- **Connecting the same app again** replaces its previous connection, and the screen warns you first.
 
 <Warning>
-  Read the address shown in **You will return to** before clicking **Connect**. If the screen warns that the app's name does not match its return address, or that the app runs on your computer, only continue if you are the one who just asked for the connection.
+  Only approve the connection if you are the one who just asked for it, from Claude. If the screen says the app name does not match the return address, only continue if you recognize that address.
 </Warning>
 
 ## Connect your assistant
 
-The step by step for Claude, Claude Code, Cursor, GitHub Copilot in VS Code, Copilot Studio and n8n is in [Connect the MCP to your AI](/en/plataforma/conectar-ia). In Claude, you connect through the CRM login. In the other tools, you use the address and the key in the `Authorization: Bearer SUA_CHAVE` header.
+The step by step for Claude Code, Cursor, GitHub Copilot in VS Code, Copilot Studio and n8n is in [Connect the MCP to your AI](/en/plataforma/conectar-ia). In those tools you use the same address and the key in the `Authorization: Bearer SUA_CHAVE` header.
 
 <Card title="Connect the MCP to your AI" icon="link" horizontal href="/en/plataforma/conectar-ia">
   Guide per tool, with the standard name **CRM - Atto Corp** so nobody confuses or deletes the connector by mistake.
@@ -116,9 +121,43 @@ The step by step for Claude, Claude Code, Cursor, GitHub Copilot in VS Code, Cop
   Once connected, ask the assistant to start with the `whoami` tool. It shows the key name, permissions, the companies the key reaches and the usage limits.
 </Tip>
 
+## Member key
+
+A team member can have their own MCP key, or connect through Claude, to look up the CRM with an AI assistant. It is off for everyone by default.
+
+<Steps>
+  <Step title="The owner or a manager allows it">
+    On [Team](/en/conta/equipe), in **Add member** or when editing a member, check **MCP (AI assistants)** under **Allowed pages** and save. The **Agent** and **Manager** packages do not turn this option on or off.
+  </Step>
+  <Step title="The member generates the key">
+    The member opens the **Servidor MCP** screen and clicks **Gerar chave** (Generate key), or connects through Claude. The screen says: "Your key is personal: read only, with masked data, and it shows only what you can see in the CRM. You can have one active key per company."
+  </Step>
+</Steps>
+
+Member key rules:
+
+- **Only their own key.** A member cannot generate a key for anyone else.
+- **Always read only, with masked data.** Phone, email and CPF reach the AI hidden.
+- **One company per key** and **one active key per member in each company**. To generate another, revoke the current one.
+- **Valid for up to 90 days.**
+- **Second factor.** If the company requires two-step verification, the member must also confirm the second factor to generate the key.
+- **Cut off right away.** If the owner or a manager turns off the **MCP (AI assistants)** permission, or the member is removed from the team, the key stops working at that moment.
+
+The AI sees only what the member sees in the CRM:
+
+| What the AI looks up | What the member can reach |
+| --- | --- |
+| Conversations | Only those in channels enabled for them. In channels set to **Mine**, only the conversations assigned to them. |
+| Leads, funnels and tags | Only if they have the **Contacts** page enabled. |
+| Activities | Only their own. |
+| Calendar | Only if they have the **Calendar** page enabled. |
+| Phone numbers | Hidden when the company shows the member only the contact's name. |
+
+With a member key, the AI only has these tools: `whoami`, `list_companies`, `search_leads`, `get_lead`, `list_pipelines`, `funnel_summary`, `list_tags`, `list_conversations`, `get_conversation`, `search_conversations_by_phone`, `list_appointments` and `list_activities`. Company tools (team, billing, broadcasts, AI agents and prompts, templates, stage history and sending failures) do not show up for the member.
+
 ## What the AI can read
 
-With any key, the AI has these lookup tools:
+With an owner or manager key, the AI has these lookup tools:
 
 | Tool | What it does |
 | --- | --- |
@@ -220,13 +259,14 @@ Draft rules:
 - **Writing is owner only.** Even with a write key, a change only goes through if the person who generated the key is still the company owner.
 - **AI prompt is owner only.** Reading the prompt and its version history only works with a key generated by the company owner. A prompt draft never goes live unless someone activates it on screen.
 - **The key only works for the chosen companies.** Requests for any other company are refused.
-- **The key loses access on its own** when it expires or when the person who generated it is no longer an owner or manager of the company.
+- **The key loses access on its own** when it expires or when the person who generated it is no longer an owner or manager of the company. A member key also loses access right away when the **MCP (AI assistants)** permission is turned off or the member leaves the team.
 - **Masked data.** With **Mascarar dados pessoais** on, phone, email and CPF reach the AI hidden.
 - **Customer text is treated as data.** The server tells the AI never to follow instructions written in messages, notes or names.
 - **Per-key limits, per minute:** 60 lookups, 30 searches, 10 reports and 20 writes.
 - **Per-company limits, adding up all keys:** 600 calls per minute and 10,000 per day.
+- **Member key limits:** each member key makes up to 2,000 lookups per day. Added together, the company's member keys make up to 5,000 lookups per day, half of the company quota. That way, member usage never takes away the owner's and managers' quota.
 - **Load protection.** A lookup that runs past the time limit is cut off. When the CRM is busy, the request is refused and the AI is told how many seconds to wait. An answer that is too large asks the AI to fetch smaller pages.
-- **Key limit.** Up to 5 active keys per company, counting the apps connected through the CRM login, and up to 20 keys or connections created per person in 24 hours.
+- **Key limit.** Up to 5 active keys per company, counting connections made through Claude, and up to 20 keys or connections created per person in 24 hours. Each member has at most 1 active key per company.
 
 ## Track a key's usage
 
@@ -234,7 +274,9 @@ Click a key in the list to open its details. The window has three tabs:
 
 - **Detalhes** (Details): **Usado por último** (Last used), **Criado em** (Created on), **Expira em** (Expires on) or **Revogado em** (Revoked on), **Prefixo** (Prefix), **Escopos** (Scopes), **Empresas** (Companies) and **Criada por** (Created by).
 - **Conexões** (Connections): which assistants used the key, how many sessions, the first and last time and the IP.
-- **Atividade** (Activity): hourly usage per tool, with the result (for example **ok**, **recusado** (refused), **limite da chave** (key limit), **cota diaria da empresa** (company daily quota)), the number of calls and the average time. Covers the last 90 days.
+- **Atividade** (Activity): hourly usage per tool, with the result (for example **ok**, **recusado** (refused), **limite da chave** (key limit), **cota diaria da empresa** (company daily quota), **cota diaria da chave** (key daily quota) or **cota diaria das chaves de membro** (member keys daily quota)), the number of calls and the average time. Covers the last 90 days.
+
+The owner and managers see and revoke the keys of anyone in the company, including members' keys. A member sees and revokes only their own.
 
 ## Revoke a key
 
@@ -249,11 +291,7 @@ Click a key in the list to open its details. The window has three tabs:
 
 Access is cut off immediately for every assistant using the key. It cannot be undone. The key moves to the **Inativas** (Inactive) tab with the **Revogado** (Revoked) status.
 
-### Disconnect an app
-
-An app connected through the CRM login appears in the list with the **Connected by** badge and the app's name. In the details, instead of **Prefixo** (Prefix), you see **Returns to**, with the app's address.
-
-To remove its access, open the app in the list and click **Disconnect**. In the **Disconnect this app?** window, confirm. The app loses access right away and the screen shows **App disconnected.** To use it again, connect it again from the app.
+For a connection made through Claude, the button is called **Disconnect**. In the **Disconnect this app?** window, click **Disconnect** again. Claude loses access right away. To use it again, connect again through Claude.
 
 ## Common errors
 
@@ -261,12 +299,13 @@ To remove its access, open the app in the list and click **Disconnect**. In the 
 | --- | --- |
 | **Limite de 5 chaves ativas por empresa. Revogue uma antes de gerar outra.** | The company already has 5 active keys. Revoke one you no longer use. |
 | **Só o dono da empresa pode liberar escrita.** | You are not the owner of every chosen company. Generate the key with **Leitura** (Read) only. |
-| **Só o dono ou um gerente da empresa pode gerar chave.** | Your role in the company does not allow generating keys. |
+| **Só o dono ou um gerente da empresa pode gerar chave.** | Your role in the company does not allow generating keys. Ask the owner or a manager to turn on the **MCP (AI assistants)** permission for you. |
+| **Your MCP permission in this company is not enabled. Talk to the company owner.** | You are a member and the **MCP (AI assistants)** permission is off for you. |
+| **You already have an active MCP key in this company. Revoke it before creating another.** | Each member has one active key per company. Revoke the current one to generate another. |
+| **A member key is read only.** | A member key cannot get **Escrita** (Write). |
+| **Confirm your second factor to continue.** | The company requires two-step verification. Confirm the code from your authenticator app and try again. |
 | **Não foi possível gerar a chave. Tente de novo.** | Generating failed. Try again. |
 | **Informe de 1 a 365 dias.** | The expiration is outside the allowed range. |
-| **Only the company owner or a manager can authorize.** | On the authorization screen, your role does not allow connecting the app. |
-| **Select at least one company.** | On the authorization screen, no company was checked. |
-| **Limit of 5 active keys per company. Disconnect one in Connections > MCP.** | Keys and connected apps add up to 5. Revoke a key or disconnect an app. |
 
 In the AI assistant, an invalid, expired or revoked key shows up as "token do MCP invalido ou revogado" (MCP token invalid or revoked). If the AI tries to write through the read-only address, it gets "este endereco e so leitura" (this address is read only). If the key has no write permission, it gets "esta chave nao tem o escopo de escrita" (this key does not have the write scope).
 
@@ -299,6 +338,14 @@ In the AI assistant, an invalid, expired or revoked key shows up as "token do MC
 
   <Accordion title="Can the assistant change my AI Agent's prompt on its own?">
     No. With `save_prompt_draft` it only saves a draft, which waits in the agent's **Personality** tab until someone clicks **Activate this version**. The only direct change is `restore_prompt_version`, which goes back to an old version from the history that is not an MCP draft, and the server tells the AI to confirm with you first.
+  </Accordion>
+
+  <Accordion title="Can a team member use the MCP?">
+    Yes, if the owner or a manager turns on the **MCP (AI assistants)** permission for them on the [Team](/en/conta/equipe) screen. Their key is read only, with masked data, covers one company and shows only what they see in the CRM. See [Member key](#member-key).
+  </Accordion>
+
+  <Accordion title="Do I need a key to use Claude on the web or in the app?">
+    No. In Claude, add a custom connector with the address `https://app.attocorp.com/mcp` and approve the connection on the CRM screen. See [Connect through Claude, no key to copy](#connect-through-claude-no-key-to-copy).
   </Accordion>
 
   <Accordion title="Can I use the same key in several assistants?">
