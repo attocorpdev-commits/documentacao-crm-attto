@@ -47,6 +47,8 @@ La clave es la contraseña que tu asistente de IA usa para entrar en el CRM. Cad
   </Step>
   <Step title="Elige los alcances">
     **Leitura** (lectura) ya viene marcada y es obligatoria. Haz clic en **Escrita** (escritura) si quieres que la IA también cree y organice datos y proponga borradores del prompt de la IA. Solo el dueño de la empresa habilita **Escrita** (escritura).
+
+    Haz clic en **Montar follow-up (rascunho)** (armar seguimiento, borrador) si quieres que la IA arme flujos de seguimiento como borrador. El dueño o un gerente habilita esta opción. Con **Escrita** marcada, ya viene incluida y la pantalla lo indica. Consulta [Armar seguimiento por el MCP](#armar-seguimiento-por-el-mcp).
   </Step>
   <Step title="Elige el acceso">
     En **Acesso** (acceso), marca **Todas as minhas empresas** (todas mis empresas) o **Empresas específicas** (empresas específicas). **Todas as minhas empresas** incluye empresas futuras en las que seas dueño o gerente. En **Empresas específicas**, marca cada empresa en la lista.
@@ -85,7 +87,7 @@ En Claude (sitio o aplicación, en claude.ai), no necesitas generar ni pegar una
     En **Elige las empresas**, marca las empresas que la IA puede consultar. Cada empresa muestra tu rol en ella (**dueño**, **gerente** o **miembro**). Con más de dos empresas aparece **Marcar todas**.
   </Step>
   <Step title="Revisa los permisos">
-    En **Esto permitirá**, la pantalla muestra lo que habilita la conexión: leer los datos del CRM de las empresas elegidas, **Teléfono, e-mail y CPF llegan enmascarados** y **Nunca borra nada ni envía mensajes**. El dueño de la empresa puede abrir **Más opciones** y marcar **Permitir crear y editar leads, etiquetas, notas, tareas y agenda**.
+    En **Esto permitirá**, la pantalla muestra lo que habilita la conexión: leer los datos del CRM de las empresas elegidas, **Teléfono, e-mail y CPF llegan enmascarados** y **Nunca borra nada ni envía mensajes**. El dueño de la empresa puede abrir **Más opciones** y marcar **Permitir crear y editar leads, etiquetas, notas, tareas y agenda**. El dueño o un gerente también puede marcar allí **Armar seguimiento (borrador)**.
   </Step>
   <Step title="Conecta">
     Haz clic en **Conectar**. Cuando aparezca **¡Listo! Puedes volver a Claude.**, vuelve a Claude y usa el conector. Si desistes, haz clic en **Cancelar**.
@@ -249,9 +251,108 @@ Reglas del borrador:
 - **No se borra nada.** Los borradores y las versiones antiguas quedan en el historial.
 - **Registro.** Cada borrador y cada vuelta de versión por el MCP quedan registrados con la clave usada, sin guardar el texto en el registro.
 
+## Armar seguimiento por el MCP
+
+El asistente de IA puede leer los flujos de seguimiento (follow-up) de la empresa y armar un flujo entero como **borrador**: validar, guardar, simular sin enviar nada y duplicar. También puede pausar un flujo y sacar leads de un flujo.
+
+<Warning>
+  El MCP **nunca activa un flujo de seguimiento**. Activar el flujo y usar **Mandar para mim** (enviarme a mí) siguen solo en la pantalla **Follow-up**, con tu aceptación.
+</Warning>
+
+Quién puede usarlo:
+
+- **Leer** los flujos: cualquier clave. El miembro lee solo lo que la pantalla **Follow-up** le dejaría ver.
+- **Armar, pausar y sacar leads**: solo con una clave o conexión que tenga **Montar follow-up (rascunho)** (armar seguimiento, borrador), que habilita el dueño o un gerente, o **Escrita** (escritura), que solo habilita el dueño. La escritura general (leads, etiquetas, notas, tareas y agenda) sigue siendo solo del dueño.
+
+Herramientas de lectura del seguimiento:
+
+| Herramienta | Qué hace |
+| --- | --- |
+| `followup_list_flows` | Lista los flujos de seguimiento: nombre, estado (borrador, activo, pausado o archivado), disparador, leads y envíos. |
+| `followup_get_flow` | Abre un flujo: reglas, disparador, todos los bloques y los problemas encontrados. |
+| `followup_builder_options` | Muestra las opciones para armar un flujo, como en la pantalla: embudos y etapas, números que alcanzas, miembros para asignar y plantillas aprobadas del número. |
+| `followup_leads` | Lista los leads que están en los flujos: flujo, contacto, bloque actual, estado y próxima ejecución. |
+| `followup_history` | Muestra el historial del seguimiento, de lo más reciente a lo más antiguo: eventos por lead y bloque, envíos, motivos de parada y errores. Los eventos de prueba aparecen marcados. |
+| `followup_panel_rules` | Muestra las reglas del seguimiento de la empresa: valores predeterminados, topes de flujos, leads y envíos, pruebas del día y cuota del número QR. |
+
+Herramientas para armar el seguimiento:
+
+| Herramienta | Qué hace |
+| --- | --- |
+| `followup_validate` | Revisa un flujo con las mismas reglas de la pantalla, sin guardar nada. Devuelve los errores y los avisos. |
+| `followup_save_draft` | Crea o edita un flujo como **borrador**. Nunca activa el flujo. Solo edita flujos en borrador. |
+| `followup_simulate` | Simula un flujo guardado para un teléfono, como el **Simular com um lead** (simular con un lead) de la pantalla: muestra el camino y los mensajes que saldrían. **No se envía nada.** |
+| `followup_duplicate` | Duplica un flujo. La copia nace como borrador. |
+| `followup_pause` | Pausa un flujo activo, que deja de enviar mensajes. Reanudar y activar son solo en la pantalla. |
+| `followup_remove_leads` | Saca hasta 100 leads de un flujo y cancela sus envíos pendientes. No borra el lead. |
+
+<Steps>
+  <Step title="El asistente lee las opciones">
+    Con `followup_builder_options`, ve los embudos, las etapas, los números y las plantillas aprobadas que puede usar.
+  </Step>
+  <Step title="El asistente arma y revisa">
+    Arma el flujo y lo revisa con `followup_validate`, que usa las mismas reglas de la pantalla.
+  </Step>
+  <Step title="El asistente guarda el borrador">
+    Con `followup_save_draft`, el flujo queda guardado como borrador. No se dispara nada mientras el flujo no se active.
+  </Step>
+  <Step title="El asistente simula">
+    Con `followup_simulate`, muestra el camino y los mensajes que recibiría un lead, sin enviar nada.
+  </Step>
+  <Step title="Tú revisas y activas">
+    Abre la pantalla **Follow-up**, revisa el flujo y, si está bien, haz clic en **Activar**.
+  </Step>
+</Steps>
+
+Reglas del seguimiento por el MCP:
+
+- **Un flujo activo, pausado o archivado no se edita.** Para cambiar uno de ellos, el asistente duplica el flujo, edita la copia en borrador y tú activas la copia en la pantalla.
+- **Pausar y sacar leads piden confirmación.** El propio servidor orienta a la IA a confirmarlo contigo antes. Un lead que sale del flujo deja de recibir sus mensajes.
+- **Simulación sin envío.** La simulación acepta hasta 50 eventos (respondió o venció el plazo) y no le envía nada a nadie.
+
+## Permisos por herramienta
+
+Además de los alcances de la clave, eliges herramienta por herramienta lo que la IA puede usar. Apagar una herramienta vale en pocos segundos, sin tener que revocar la clave.
+
+Hay dos listas:
+
+- **Lista de la empresa**, en el bloque **Permissões das ferramentas** (permisos de las herramientas) de la pantalla **Servidor MCP**. Solo el dueño la edita, y el gerente la ve. Apagar una herramienta aquí la corta para **todas** las claves y conexiones de la empresa.
+- **Lista de cada clave o conexión**, en los detalles de la clave. Sirve para el ajuste fino de una sola clave. El dueño o un gerente la enciende y la apaga. Quien creó la clave, incluido un miembro, puede apagar herramientas en su propia clave, pero no encender una herramienta de riesgo alto.
+
+Una herramienta solo funciona si está encendida en la lista de la empresa, encendida en la lista de la clave y permitida por los alcances de la clave.
+
+Cada herramienta de la lista tiene:
+
+- un **interruptor de encender y apagar**;
+- una insignia de riesgo: **Baixo** (bajo), **Médio** (medio) o **Alto** (alto);
+- un **?** que, al pasar el mouse, explica lo que hace la herramienta.
+
+| Riesgo | Herramientas | Cómo nace |
+| --- | --- | --- |
+| **Bajo** | Todas las consultas, además de `followup_validate` y `followup_simulate`. | Encendida |
+| **Medio** | `create_lead`, `add_note`, `add_tags`, `create_activity`, `create_appointment`, `save_prompt_draft`, `followup_save_draft` y `followup_duplicate`. | Encendida |
+| **Alto** | `remove_tags`, `move_stage`, `assign_lead`, `restore_prompt_version`, `followup_pause` y `followup_remove_leads`. | **Apagada** |
+
+<Warning>
+  Las herramientas de riesgo alto nacen **apagadas**, en la empresa, en las claves nuevas y también en las claves y conexiones que ya existen. Encender una de ellas es una decisión tuya. Para volver atrás de una vez, usa **Desligar todas de risco alto** (apagar todas las de riesgo alto).
+</Warning>
+
+Cuando la IA intenta usar una herramienta apagada, esta no aparece en la lista del asistente y el pedido se rechaza con "Ferramenta desligada nas permissoes do MCP desta empresa/chave" (herramienta apagada en los permisos del MCP de esta empresa o clave).
+
+### Detalles de la conexión
+
+En los detalles de cada clave o conexión, la pantalla muestra:
+
+- la **app conectada**, por el nombre que la propia app informa (por ejemplo Claude, Cursor o n8n) y su versión;
+- un **punto verde** cuando la clave se usó en los últimos 5 minutos;
+- el **último uso**, las llamadas de hoy y las llamadas por herramienta;
+- quién la creó, la validez y los alcances.
+
 ## Seguridad y límites
 
 - **No se borra nada y no se envía ningún mensaje.** No existe ninguna herramienta para eso.
+- **Seguimiento solo como borrador.** El MCP nunca activa un flujo de seguimiento. Activar y **Mandar para mim** (enviarme a mí) quedan solo en la pantalla **Follow-up**.
+- **Tú controlas cada herramienta.** Apaga cualquier herramienta para toda la empresa o para una sola clave. Las de riesgo alto nacen apagadas. Consulta la sección **Permisos por herramienta**, arriba.
 - **Escritura solo para el dueño.** Incluso con una clave de escritura, el cambio solo pasa si quien generó la clave sigue siendo el dueño de la empresa.
 - **Prompt de la IA solo para el dueño.** Leer el prompt y el historial de versiones solo funciona con una clave generada por el dueño de la empresa. Un borrador de prompt nunca entra en línea sin que alguien lo active en la pantalla.
 - **La clave vale solo para las empresas elegidas.** Un pedido para otra empresa se rechaza.
