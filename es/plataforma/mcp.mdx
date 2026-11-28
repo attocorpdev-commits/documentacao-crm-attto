@@ -48,7 +48,7 @@ La clave es la contraseña que tu asistente de IA usa para entrar en el CRM. Cad
   <Step title="Elige los alcances">
     **Leitura** (lectura) ya viene marcada y es obligatoria. Haz clic en **Escrita** (escritura) si quieres que la IA también cree y organice datos y proponga borradores del prompt de la IA. Solo el dueño de la empresa habilita **Escrita** (escritura).
 
-    Haz clic en **Montar follow-up (rascunho)** (armar seguimiento, borrador) si quieres que la IA arme flujos de seguimiento como borrador. El dueño o un gerente habilita esta opción. Con **Escrita** marcada, ya viene incluida y la pantalla lo indica. Consulta [Armar seguimiento por el MCP](#armar-seguimiento-por-el-mcp).
+    Haz clic en **Armar seguimiento (borrador)** si quieres que la IA arme flujos de seguimiento como borrador. El dueño o un gerente habilita esta opción. Con **Escrita** (escritura) marcada, ya viene incluida y la pantalla muestra **Ya incluido en la escritura.** Consulta [Armar seguimiento por el MCP](#armar-seguimiento-por-el-mcp).
   </Step>
   <Step title="Elige el acceso">
     En **Acesso** (acceso), marca **Todas as minhas empresas** (todas mis empresas) o **Empresas específicas** (empresas específicas). **Todas as minhas empresas** incluye empresas futuras en las que seas dueño o gerente. En **Empresas específicas**, marca cada empresa en la lista.
@@ -256,13 +256,13 @@ Reglas del borrador:
 El asistente de IA puede leer los flujos de seguimiento (follow-up) de la empresa y armar un flujo entero como **borrador**: validar, guardar, simular sin enviar nada y duplicar. También puede pausar un flujo y sacar leads de un flujo.
 
 <Warning>
-  El MCP **nunca activa un flujo de seguimiento**. Activar el flujo y usar **Mandar para mim** (enviarme a mí) siguen solo en la pantalla **Follow-up**, con tu aceptación.
+  El MCP **nunca activa un flujo de seguimiento**. Activar el flujo y usar **Enviarme a mí** siguen solo en la pantalla **Follow-up**, con tu aceptación.
 </Warning>
 
 Quién puede usarlo:
 
 - **Leer** los flujos: cualquier clave. El miembro lee solo lo que la pantalla **Follow-up** le dejaría ver.
-- **Armar, pausar y sacar leads**: solo con una clave o conexión que tenga **Montar follow-up (rascunho)** (armar seguimiento, borrador), que habilita el dueño o un gerente, o **Escrita** (escritura), que solo habilita el dueño. La escritura general (leads, etiquetas, notas, tareas y agenda) sigue siendo solo del dueño.
+- **Armar, pausar y sacar leads**: solo con una clave o conexión que tenga **Armar seguimiento (borrador)**, que habilita el dueño o un gerente, o **Escrita** (escritura), que solo habilita el dueño. La escritura general (leads, etiquetas, notas, tareas y agenda) sigue siendo solo del dueño.
 
 Herramientas de lectura del seguimiento:
 
@@ -281,7 +281,7 @@ Herramientas para armar el seguimiento:
 | --- | --- |
 | `followup_validate` | Revisa un flujo con las mismas reglas de la pantalla, sin guardar nada. Devuelve los errores y los avisos. |
 | `followup_save_draft` | Crea o edita un flujo como **borrador**. Nunca activa el flujo. Solo edita flujos en borrador. |
-| `followup_simulate` | Simula un flujo guardado para un teléfono, como el **Simular com um lead** (simular con un lead) de la pantalla: muestra el camino y los mensajes que saldrían. **No se envía nada.** |
+| `followup_simulate` | Simula un flujo guardado para un teléfono, como el **Simular con un lead** de la pantalla: muestra el camino y los mensajes que saldrían. **No se envía nada.** |
 | `followup_duplicate` | Duplica un flujo. La copia nace como borrador. |
 | `followup_pause` | Pausa un flujo activo, que deja de enviar mensajes. Reanudar y activar son solo en la pantalla. |
 | `followup_remove_leads` | Saca hasta 100 leads de un flujo y cancela sus envíos pendientes. No borra el lead. |
@@ -316,7 +316,7 @@ Además de los alcances de la clave, eliges herramienta por herramienta lo que l
 
 Hay dos listas:
 
-- **Lista de la empresa**, en el bloque **Permissões das ferramentas** (permisos de las herramientas) de la pantalla **Servidor MCP**. Solo el dueño la edita, y el gerente la ve. Apagar una herramienta aquí la corta para **todas** las claves y conexiones de la empresa.
+- **Lista de la empresa**, en el bloque **Permisos de las herramientas** de la pantalla **Servidor MCP**. Solo el dueño la edita, y el gerente la ve. Apagar una herramienta aquí la corta para **todas** las claves y conexiones de la empresa.
 - **Lista de cada clave o conexión**, en los detalles de la clave. Sirve para el ajuste fino de una sola clave. El dueño o un gerente la enciende y la apaga. Quien creó la clave, incluido un miembro, puede apagar herramientas en su propia clave, pero no encender una herramienta de riesgo alto.
 
 Una herramienta solo funciona si está encendida en la lista de la empresa, encendida en la lista de la clave y permitida por los alcances de la clave.
@@ -324,7 +324,7 @@ Una herramienta solo funciona si está encendida en la lista de la empresa, ence
 Cada herramienta de la lista tiene:
 
 - un **interruptor de encender y apagar**;
-- una insignia de riesgo: **Baixo** (bajo), **Médio** (medio) o **Alto** (alto);
+- una insignia de riesgo: **Bajo**, **Medio** o **Alto**;
 - un **?** que, al pasar el mouse, explica lo que hace la herramienta.
 
 | Riesgo | Herramientas | Cómo nace |
@@ -334,7 +334,7 @@ Cada herramienta de la lista tiene:
 | **Alto** | `remove_tags`, `move_stage`, `assign_lead`, `restore_prompt_version`, `followup_pause` y `followup_remove_leads`. | **Apagada** |
 
 <Warning>
-  Las herramientas de riesgo alto nacen **apagadas**, en la empresa, en las claves nuevas y también en las claves y conexiones que ya existen. Encender una de ellas es una decisión tuya. Para volver atrás de una vez, usa **Desligar todas de risco alto** (apagar todas las de riesgo alto).
+  Las herramientas de riesgo alto nacen **apagadas**, en la empresa, en las claves nuevas y también en las claves y conexiones que ya existen. Encender una de ellas es una decisión tuya. Para volver atrás de una vez, usa **Apagar todas las de riesgo alto**.
 </Warning>
 
 Cuando la IA intenta usar una herramienta apagada, esta no aparece en la lista del asistente y el pedido se rechaza con "Ferramenta desligada nas permissoes do MCP desta empresa/chave" (herramienta apagada en los permisos del MCP de esta empresa o clave).
@@ -351,7 +351,7 @@ En los detalles de cada clave o conexión, la pantalla muestra:
 ## Seguridad y límites
 
 - **No se borra nada y no se envía ningún mensaje.** No existe ninguna herramienta para eso.
-- **Seguimiento solo como borrador.** El MCP nunca activa un flujo de seguimiento. Activar y **Mandar para mim** (enviarme a mí) quedan solo en la pantalla **Follow-up**.
+- **Seguimiento solo como borrador.** El MCP nunca activa un flujo de seguimiento. Activar y **Enviarme a mí** quedan solo en la pantalla **Follow-up**.
 - **Tú controlas cada herramienta.** Apaga cualquier herramienta para toda la empresa o para una sola clave. Las de riesgo alto nacen apagadas. Consulta la sección **Permisos por herramienta**, arriba.
 - **Escritura solo para el dueño.** Incluso con una clave de escritura, el cambio solo pasa si quien generó la clave sigue siendo el dueño de la empresa.
 - **Prompt de la IA solo para el dueño.** Leer el prompt y el historial de versiones solo funciona con una clave generada por el dueño de la empresa. Un borrador de prompt nunca entra en línea sin que alguien lo active en la pantalla.
