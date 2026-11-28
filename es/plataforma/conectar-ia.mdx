@@ -17,7 +17,9 @@ Esta guía muestra cómo conectar el [MCP del CRM](/es/plataforma/mcp) a la herr
 
 ## Antes de empezar
 
-Necesitas dos cosas:
+En Claude (sitio o aplicación), solo necesitas la dirección: la conexión se aprueba en una pantalla del CRM, sin clave. Consulta [Claude en el sitio o la app](#claude-en-el-sitio-o-la-app).
+
+En las otras herramientas, necesitas dos cosas:
 
 | Qué | Dónde obtenerlo |
 | --- | --- |
@@ -177,11 +179,30 @@ En el CRM, haz lo mismo con el nombre de la clave: indica dónde está instalada
   Después de conectar, en cualquier herramienta, pide que ejecute el `whoami`. Confirma que la clave funciona y muestra sus empresas y permisos.
 </Tip>
 
-## ChatGPT y Claude en el sitio o la app
+## Claude en el sitio o la app
 
-Los conectores personalizados de ChatGPT y de Claude (sitio y aplicación) todavía **no pueden** conectarse al MCP del CRM. Piden un inicio de sesión propio de la herramienta y no tienen un campo para pegar la clave del CRM.
+En Claude (claude.ai, en el navegador o en la aplicación), conectas el CRM sin generar ni pegar una clave. Claude abre una pantalla del CRM y tú apruebas la conexión.
 
-Mientras tanto, usa una de las herramientas de arriba. Cuando este tipo de conexión esté disponible, esta guía se actualizará y el aviso aparecerá en [Novedades y actualizaciones](/es/novidades/changelog).
+<Steps>
+  <Step title="Agrega el conector">
+    En Claude, abre el área de conectores y agrega un **conector personalizado**. Usa el nombre **CRM - Atto Corp** y la dirección `https://app.attocorp.com/mcp`. No completes clave ni encabezado.
+  </Step>
+  <Step title="Aprueba en el CRM">
+    Al conectar, Claude abre la pantalla **Claude quiere acceder a tu cuenta de Atto CRM**. Entra con tu acceso del CRM, si lo pide. En **Elige las empresas**, marca las empresas y revisa lo que habilita la conexión en **Esto permitirá**.
+  </Step>
+  <Step title="Conecta">
+    Haz clic en **Conectar**. Cuando aparezca **¡Listo! Puedes volver a Claude.**, vuelve a la conversación en Claude.
+  </Step>
+  <Step title="Prueba">
+    Pide: "Usa el CRM - Atto Corp y ejecuta el whoami". La respuesta muestra los permisos y las empresas de la conexión.
+  </Step>
+</Steps>
+
+La conexión vale por 90 días, llega con teléfono, e-mail y CPF enmascarados y aparece en la pantalla **Servidor MCP** (servidor MCP) con la insignia **Conectado por Claude**. Solo el dueño de la empresa habilita crear y editar datos, en **Más opciones**. Un miembro con el permiso **MCP (asistentes de IA)** conecta una sola empresa, siempre de solo lectura. Consulta todas las reglas en [Conectar por Claude, sin copiar la clave](/es/plataforma/mcp#conectar-por-claude-sin-copiar-la-clave).
+
+<Note>
+  ChatGPT todavía no está disponible para conectarse al MCP del CRM. Usa Claude o una de las herramientas de arriba. Cuando esté disponible, esta guía se actualizará y el aviso aparecerá en [Novedades y actualizaciones](/es/novidades/changelog).
+</Note>
 
 ## Desconectar con seguridad
 
@@ -193,6 +214,8 @@ Para quitarle el acceso a una herramienta:
 <Note>
   Solo eliminar el conector de la herramienta no desactiva la clave. Revócala en el CRM para garantizar que nadie más use la clave.
 </Note>
+
+Si la conexión se hizo por Claude en el sitio o la app, abre la conexión con la insignia **Conectado por Claude** en la pantalla **Servidor MCP** (servidor MCP) y haz clic en **Desconectar**. Claude pierde el acceso al instante.
 
 ## Problemas comunes
 
